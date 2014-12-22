@@ -1,0 +1,116 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript">
+
+
+
+function Initialize(){
+
+    	
+
+	var d=window.parent.document.forms[0];
+
+	var o=document.forms[0];
+
+	d.action=o.action;
+
+	d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+	d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+	d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+	d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+	d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+	d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+	window.parent.document.getElementById('pagoMensual').innerHTML = document.getElementById('pagoMensual').value;
+
+	window.parent.document.getElementById('saldoLiquidacion').innerHTML = document.getElementById('saldoLiquidacion').value;
+
+	window.parent.document.getElementById('pagoMinimo').innerHTML = document.getElementById('pagoMinimo').value;
+
+	window.parent.document.getElementById('pagoNoGeneraIntereses').innerHTML = document.getElementById('pagoNoGeneraIntereses').value;
+
+	window.parent.Saldorevolventes();
+
+	window.parent.radioCredito();
+
+
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form  method="POST" action="" name="APPS_FORM_MAIN">
+
+<input type="hidden" name="EWF_SYS_0">
+
+<input type="hidden" name="EWF_SYS_1">
+
+<input type="hidden" name="EWF_FORM_NAME" value="LEV2 Main">
+
+<input type="hidden" name="DISPLAYPAGE">
+
+<input type="hidden" name="TEMPLATE_FILE">
+
+<input type="hidden" name="SEQUENCE_NUMBER">
+
+<input type="hidden" id="pagoMensual" value="$ [impmov]">
+
+<input type="hidden" id="saldoLiquidacion" value="$ [impliq]">
+
+<input type="hidden" id="pagoMinimo" value="$ [minpag]">
+
+<input type="hidden" id="pagoNoGeneraIntereses" value="$ [sdoulc]">
+
+<input type="hidden" name="DATA1">
+
+<input type="hidden" name="DATA2">
+
+<input type="hidden" name="DATA3">
+
+<input type="hidden" name="DATA4">
+
+<input type="hidden" name="DATA5">
+
+<input type="hidden" name="DATA6">
+
+<input type="hidden" name="DATA7">
+
+<input type="hidden" name="DATA8">
+
+<input type="hidden" name="DATA9">
+
+<input type="hidden" name="DATA10">
+
+<input type="hidden" name="DATA11">
+
+<input type="hidden" name="DATA12">
+
+<input type="hidden" name="DATA13">
+
+<input type="hidden" name="DATA14">
+
+<input type="hidden" name="DATA15">
+
+<input type="hidden" name="EWFBUTTON" value="">
+
+</form>
+
+
+
+</body>
+
+</html>
+

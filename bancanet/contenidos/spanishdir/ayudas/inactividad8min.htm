@@ -1,0 +1,71 @@
+<html>
+
+
+
+<head>
+
+<script> 
+
+var OpenerClosed;
+
+	
+
+
+
+var openerNoSeguro = false;
+
+
+
+	try {
+
+		window.opener.location.toString();
+
+	} catch (ex) {
+
+		openerNoSeguro = true;
+
+	}
+
+
+
+	try {
+
+		OpenerClosed = opener.closed
+
+	} catch (ex) {
+
+		OpenerClosed = true;
+
+	}
+
+	if (OpenerClosed || openerNoSeguro ) {
+
+		window.open("inactividad8min2.htm",'newWindow', 'status=1,toolbar=1');
+
+	} else {
+
+		opener.document.location.href = "inactividad8min2.htm";
+
+	}
+
+
+
+	setTimeout('window.close()', 1000);
+
+</script>
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+</body>
+
+
+
+</html>

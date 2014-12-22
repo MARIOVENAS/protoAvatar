@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+
+
+</head>
+
+
+
+<body  TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION="https://uattmp.boveda.banamex.com.mx/scripts/cgiclntcbbbnp3/4GPL3FWV6W6@P8N3BSSUIR/ND001__"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="351ff9d2-3d6c-458a-9dad-06c2b78f8532" ><input type=hidden name="EWF_SYS_1" value="R2G293OQIDJMS0I2SHWKGOI6L32XO69WSDE3S2UC" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZSCH-PAG CLAUSULADO"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="24-Contrato_Inscripcion_Chequera.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="13"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+
+		
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+		
+
+		$("a").each(function(){
+
+			if($(this).attr("href") == "#"){
+
+				$(this).attr("href","javascript:void(0)");
+
+			}
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+
+
+$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+
+
+function Initialize(){
+
+	if("SPANISH"=="ENGLISH"){
+
+	
+
+		es=["Below are the terms and conditions of Protected Checksbook. If you want to continue with the registration click &quot;Continue&quot;","Checkbooks management","I accept the Terms and Conditions"];
+
+		swap();
+
+		document.getElementById("aceptar").value="Continue";
+
+		document.getElementById("regresar").value="Return";
+
+	}
+
+	else{
+
+	
+
+	}
+
+}
+
+function DoSubmit( value ){
+
+	document.forms[0].EWFBUTTON.value = value;
+
+	document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+	document.forms[0].submit();
+
+}
+
+function continua(){	
+
+	if( checkselected() == true ){
+
+	document.forms[0].DATA8.value="2";
+
+	document.forms[0].DATA9.value="2";
+
+	parent.DoSubmit('Solicitud_de_Chequeras/Confirmacion_Inscripcion_Chequera.html');
+
+	//DoSubmit("Confirmacion_Inscripcion_Chequera.html");
+
+	}
+
+	
+
+}
+
+function regresa(){
+
+	parent.DoSubmit('Solicitud_de_Chequeras/Chequeras.html');
+
+	//DoSubmit("REGRESA");
+
+}
+
+		
+
+		//Manejo del continue
+
+		
+
+		function checkselected(){
+
+			
+
+		   	mensaje10= "Debe aceptar  T&eacute;rminos del Contrato";
+
+			
+
+
+
+			if(document.forms[0].checktmn.checked == false){
+
+				document.getElementById("cheka").innerHTML = mensaje10;
+
+				$("#cheka").show();
+
+				document.forms[0].checktmn.focus();
+
+				top.ajustarIframe();
+
+		        return false;
+
+		   }
+
+			
+
+			return true
+
+			
+
+		}
+
+		
+
+		
+
+		function borra_mje(){
+
+			$("#cheka").hide();
+
+		}	
+
+		
+
+		
+
+		
+
+		
+
+		</script>
+
+<script>parent.setFecha("30/04/12    17:47:35  ");</script>
+
+
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="174735  ";b$Cont="174735  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+</head>
+
+<body>
+
+
+
+	<div id="t1" class="panelIzEnca3_text2">Administraci&oacute;n de
+
+		chequeras</div>
+
+	<div id="t0" class="color666 paddingT4 f11">A continuaci&oacute;n
+
+		se presenta el clausulado y condiciones de Chequera Protegida. Si
+
+		deseas continuar con la inscripci&oacute;n da click en
+
+		&quot;Continuar&quot;.</div>
+
+
+
+
+
+
+
+	<div
+
+		class=" borderBSolid  borderRSolid borderTSolid borderLSolid  marginT22 f11 color666 "
+
+		style="height: 400px; overflow: auto;">
+
+		<div
+
+			class="f11 justifyText paddingL20 paddingR20   paddingB17 paddingT17  justifyText  color666">
+
+
+
+			<span class="negrita">CONVENIO PARA LA CONTRATACI&Oacute;N DEL
+
+				SERVICIO DENOMINADO "CHEQUERA PROTEGIDA" (EN LO SUCESIVO EL
+
+				"CONVENIO"), CELEBRADO ENTRE BANCO NACIONAL DE M&Eacute;XICO, S.A.,
+
+				INTEGRANTE DEL GRUPO FINANCIERO BANAMEX (EN LO SUCESIVO "BANAMEX") Y
+
+				LA PERSONA QUE MEDIANTE LA UTILIZACI&Oacute;N DE SU FIRMA
+
+				ELECTR&Oacute;NICA ACEPTA EL PRESENTE CONVENIO (EN LO SUCESIVO EL
+
+				"CLIENTE"), CONFORME A LAS SIGUIENTES:</span> <br /> <br />
+
+
+
+			<p class="negrita underline aligntextcenter">D E C L A R A C I O
+
+				N E S:</p>
+
+			<br /> <br /> Ambas partes declaran que: <br /> <br /> a) El
+
+			Cliente celebr&oacute; con Banamex uno o m&aacute;s contratos de
+
+			dep&oacute;sito bancario de dinero (en adelante el "Contrato")
+
+			mediante los cuales mantiene abierta en Banamex una o m&aacute;s
+
+			cuentas bajo un mismo n&uacute;mero de cliente (en lo sucesivo la
+
+			"Cuenta") y cuyo medio de disposici&oacute;n es una chequera. <br />
+
+
+
+			<br /> b) Se encuentran debidamente facultadas para celebrar el
+
+			Convenio y para cumplir con las obligaciones derivadas del mismo. <br />
+
+			<br /> c) Es su deseo celebrar el presente Convenio a efecto de que
+
+			Banamex active al Cliente el servicio denominado Chequera Protegida
+
+			Banamex. <br /> <br /> d) Se reconocen mutuamente la personalidad
+
+			con la que comparecen en este acto. <br /> <br /> En base a las
+
+			declaraciones anteriores, las cuales forman parte integrante del
+
+			Convenio, las partes convienen las siguientes: <br /> <br />
+
+			<p class="negrita underline aligntextcenter">C L &Aacute; U S U L
+
+				A S</p>
+
+
+
+			<br /> <br /> <span class="negrita underline">CL&Aacute;USULA
+
+				PRIMERA.- SOLICITUD.</span> El Cliente en este acto solicita a Banamex la
+
+			activaci&oacute;n del servicio denominado Chequera Protegida Banamex,
+
+			a trav&eacute;s del cual el Cliente deber&aacute; activar, a
+
+			trav&eacute;s de los medios determinados en la siguiente
+
+			Cl&aacute;usula, cada uno de los cheques que expida con cargo a la
+
+			Cuenta. <br /> El Cliente en este acto manifiesta saber que el
+
+			servicio de Chequera Protegida Banamex ser&aacute; activado en la
+
+			Cuenta especificada. <br /> <br /> <span class="negrita underline">CL&Aacute;USULA
+
+				SEGUNDA.- ACTIVACI&Oacute;N.</span> En virtud de lo pactado en la
+
+			Cl&aacute;usula anterior, ambas partes convienen que los cheques
+
+			librados por el Cliente &uacute;nicamente ser&aacute;n pagados por
+
+			Banamex si, previo a su presentaci&oacute;n para cobro, &eacute;stos
+
+			fueron activados por su n&uacute;mero de folio/monto y &eacute;ste
+
+			coincida exactamente con el n&uacute;mero de folio/monto del Cheque
+
+			que sea presentado. <br /> Se entender&aacute; por activaci&oacute;n
+
+			la confirmaci&oacute;n del n&uacute;mero de folio/monto de los
+
+			cheques, la cual deber&aacute; ser efectuada por el Cliente a
+
+			trav&eacute;s de los medios electr&oacute;nicos, &oacute;pticos o de
+
+			cualquier otra tecnolog&iacute;a que Banamex ponga a su
+
+			disposici&oacute;n para tales efectos, o bien, mediante escrito
+
+			presentado en cualquier sucursal a trav&eacute;s de los formatos que
+
+			Banamex le proporcione al Cliente. La expedici&oacute;n de los
+
+			cheques no presupone su activaci&oacute;n. <br /> Cuando se requiera
+
+			de la firma de dos o m&aacute;s personas para librar cheques y
+
+			siempre que los medios electr&oacute;nicos, &oacute;pticos o de
+
+			cualquier otra tecnolog&iacute;a referidos en el p&aacute;rrafo
+
+			anterior no contemplen la posibilidad de que la activaci&oacute;n se
+
+			d&eacute; por m&aacute;s de una persona, &eacute;sta se tendr&aacute;
+
+
+
+			hecha por todos los que deban firmar el cheque, a&uacute;n y cuando
+
+			la realice s&oacute;lo uno de ellos. Lo anterior en el entendido de
+
+			que Banamex &uacute;nicamente pagar&aacute; aquellos cheques librados
+
+			con las firmas necesarias de todas las personas que deben firmarlos.
+
+			<br /> <br /> <span class="negrita underline">CL&Aacute;USULA
+
+				TERCERA.- NO RESPONSABILIDAD.</span> La falta de pago de cheques derivada
+
+			de la omisi&oacute;n de activaci&oacute;n o bien por existir una
+
+			discrepancia entre el n&uacute;mero de folio/monto confirmados y el
+
+			n&uacute;mero de folio/monto del cheque presentado, ser&aacute; por
+
+			causa imputable al propio Cliente; por lo anterior, el Cliente desde
+
+			este momento exime a Banamex de la responsabilidad establecida en el
+
+			art&iacute;culo 184 de la Ley General de T&iacute;tulos y Operaciones
+
+			de Cr&eacute;dito y, por lo tanto, el Cliente manifiesta expresamente
+
+			que Banamex no ser&aacute; responsable de los da&ntilde;os y
+
+			perjuicios que el Cliente o cualquier tercero sufra a consecuencia de
+
+			dicha falta de pago, a&uacute;n y cuando existan fondos suficientes
+
+			en la Cuenta. <br /> <br /> <span class="negrita underline">CL&Aacute;USULA
+
+				CUARTA.- DOMICILIOS.-</span> Para efectos del presente Convenio las partes
+
+			se&ntilde;alan como sus domicilios los mismos que fueron determinados
+
+			en el Contrato. <br /> <br /> <span class="negrita underline">CL&Aacute;USULA
+
+				QUINTA.- JURISDICCI&Oacute;N.</span> Para la interpretaci&oacute;n,
+
+			ejecuci&oacute;n y cumplimiento del presente Convenio las partes se
+
+			someten a las leyes aplicables, as&iacute; como a la
+
+			jurisdicci&oacute;n de los tribunales de M&eacute;xico ubicados en la
+
+			Ciudad de M&eacute;xico, Distrito Federal respecto a cualquier
+
+			demanda, acci&oacute;n o procedimiento que se derive o se relacione
+
+			con el presente Convenio, renunciando a cualquier otra
+
+			jurisdicci&oacute;n que por sus domicilios presentes o futuros, les
+
+			correspondan o pudieran corresponder. <br /> <br /> El presente
+
+			Convenio es expresamente aceptado por el Cliente mediante la
+
+			utilizaci&oacute;n de su Firma Electr&oacute;nica, la cual digita
+
+			como medio de expresi&oacute;n de su voluntad.
+
+
+
+
+
+		</div>
+
+
+
+	</div>
+
+
+
+	<div class="f11 marginT22 color666">
+
+		<input type="checkbox" id="checktmn" name="checktmn" value=""
+
+			onclick="borra_mje();">
+
+			<script type="text/javascript">
+
+			if("SPANISH"=="ENGLISH"){
+
+				document.write("I accept the Terms and Conditions");
+
+			}
+
+			else{
+
+				document.write("Acepto los T&eacute;rminos y Condiciones");
+
+			}
+
+			</script>
+
+			</input> 
+
+	</div>
+
+
+
+	<div
+
+		class="saldos_bloque2_f4_error_display colorF00 f11 ancho210 DisplayN marginT10 marginB10"
+
+		id="cheka" style="display: none"></div>
+
+
+
+	<div class="marginT20 overflow clear">
+
+		<input id="regresar" type="button" class="btnRJ86 floatL"
+
+			value="Regresar" onclick="regresa()" /> <input id="aceptar"
+
+			type="button" class="btnAZ86 floatR" value="Continuar"
+
+			onclick="continua()" />
+
+	</div>
+
+
+
+
+
+</body>
+
+
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+<input type=hidden name="DATA8" value="">
+
+<input type=hidden name="DATA9" value="">
+
+
+
+<script type="text/javascript" language="javascript" src="https://www.banamex.com/recursos/js/mx_citi_s_code.js"></script>
+
+
+
+<script type="text/javascript" language="javascript">
+
+String.prototype.trimomt = function(){return this.replace(/^\s+|\s+$/g,"")};
+
+try{ var moduleeval = "ZSCH"; if(!parent.document.getElementById("main") && (moduleeval == "ZLOG" || moduleeval == "["+"CURRENT MODULE"+"]")){ OmnitureBNP2(); } if(parent.document.getElementById("main") && moduleeval != "["+"CURRENT MODULE"+"]" && moduleeval != "ZRUT"){ OmnitureBNP2();} }catch(exp){}
+
+function OmnitureBNP2(){ try{s.eVar21 = "BNP2"; var idusuario_omt = "DEMO"; idusuario_omt.trimomt(); var idusuariomemoria_omt = "["+"USERID"+"]"; if(idusuario_omt != "" && idusuario_omt != idusuariomemoria_omt){ s.prop5 = idusuario_omt; } var tipousuario_omt = "56"; tipousuario_omt.trimomt(); var tipousuariomemoria_omt = "["+"StatusToken"+"]"; if(tipousuario_omt == tipousuariomemoria_omt){ s.prop6 = "anon"; } else if(tipousuario_omt == "56"){ s.prop6 = "CHALLENGE"; }else if(tipousuario_omt == "06"){ s.prop6 = "PASSCODE"; } else{ s.prop6 = "LIGHT"; } var language_omt = "SPANISH"; if(language_omt == "SPANISH"){ s.prop10="ES"; }else if(language_omt == "ENGLISH"){ s.prop10="EN";} var pagenameomt = ""; var indicetable = "Solicitud de Chequeras|24-Contrato_Inscripcion_Chequera.html"; indicetable.trimomt(); var valuehashtableOmt = hashtableOmtRim[indicetable]; if(valuehashtableOmt != null && valuehashtableOmt != ""){ pagenameomt = "MX|BNP2|" + valuehashtableOmt; }else{ pagenameomt="MX|BNP2|ZSCH|Solicitud de Chequeras|24-Contrato_Inscripcion_Chequera.html"; } s.pageName = pagenameomt; var s_code=s.t();if(s_code)document.write(s_code); }catch(exp){} }
+
+</script>
+
+<input id="omtmodalvalue" type="hidden" value="Solicitud de Chequeras|24-Contrato_Inscripcion_Chequera.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

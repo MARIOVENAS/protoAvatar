@@ -1,0 +1,134 @@
+/***** Generic Styles *****/
+
+.jfpw-slider .ui-slider-range {z-index: -999; background: none transparent;}
+
+.jfpw-slider .ui-corner-all { -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+
+.jfpw-slider.ui-corner-all { -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+
+
+
+/***** Vertical Styles *****/
+
+.jfpw-slider-wrap-vertical {float:left;width:7px;border: 1px solid #E5E5E5;}
+
+.jfpw-slider.jfpw-slider-vertical {border: none; background: none; width: 7px !important; position: relative; height: 100%;}
+
+/* .jfpw-slider.jfpw-slider-vertical .ui-state-default { background: url('/JFP/images/widgets/ui-bg_glass_75_dadada_1x400_vertical.png') repeat-y scroll 50% 50% #F7F7F7 !important;} */
+
+.jfpw-slider.jfpw-slider-vertical .ui-state-default { height:1px; width:400px; background: url('/JFP/images/widgets/widget_sprite.png') -0px -662px repeat-y scroll #F7F7F7 !important}
+
+.jfpw-slider.jfpw-slider-vertical .ui-slider-handle { left: 0px; width: 7px; outline:none; margin:0 auto;display:block;position:absolute; border: none !important;}
+
+.jfpw-slider.jfpw-slider-vertical .jfpw-slider-icon-vertical { background: url('/JFP/images/widgets/widget_sprite.png') no-repeat -44px -26px; position: relative; left: 10%; text-transform: none !important; text-decoration: none !important; display: block; text-indent: -99999px; overflow: hidden;}
+
+.jfpw-slider.jfpw-slider-vertical .ui-handle-helper-parent { position: relative; width: 100%; height: 100%; margin: auto 0;}
+
+
+
+.jfpw-slider-wrap-vertical.ui-corner-all { -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+
+
+
+.bIE .jfpw-slider-icon-vertical { font-size: 12px; left: 1px;}
+
+.bIE .jfpw-slider-vertical .ui-slider-handle { left: 0px;}
+
+.bIE .jfpw-slider-wrap-vertical {border-top: none; border-bottom: none;}
+
+
+
+/***** Rounded Corners on IE *****/
+
+.jfpw-slider.jfpw-slider-vertical .jfpw-slider-tip-up {width:7px; font-size:5px; background: url('/JFP/images/widgets/widget_sprite.png') white no-repeat -1px -29px; text-transform: none !important; text-decoration: none !important; display: block; text-indent: -99999px;}
+
+.jfpw-slider.jfpw-slider-vertical .jfpw-slider-tip-down {width:7px; font-size:6px; background: url('/JFP/images/widgets/widget_sprite.png') no-repeat -1px -38px; text-transform: none !important; text-decoration: none !important; display: block; text-indent: -99999px; bottom: -3px; position: absolute;}
+
+
+
+.jfpw-slider-vertical-wrap-tip-up {width:9px; font-size:5px !important; background: url('/JFP/images/widgets/widget_sprite.png') no-repeat -29px -24px;}
+
+.jfpw-slider-vertical-wrap-tip-down {width:9px; font-size:6px !important; background: url('/JFP/images/widgets/widget_sprite.png') -29px -34px no-repeat; position: relative; height: 7px; z-index: -1; display: inline;}
+
+
+
+.jfpw-slider-vertical-corners-wrap {float:left;width:7px; position: relative;}
+
+
+
+/***** Horizontal Styles *****/
+
+.jfpw-slider-wrap-horizontal {float:left;height:7px;border:1px solid #E5E5E5;}
+
+.jfpw-slider.jfpw-slider-horizontal {border: none; background: none; height: 7px !important; position: relative; width: 100%;}
+
+.jfpw-slider.jfpw-slider-horizontal .ui-state-default { background: url('/JFP/images/widgets/ui-bg_glass_75_dadada_1x400.png') repeat-x scroll 50% 50% #F7F7F7 !important;}
+
+.jfpw-slider.jfpw-slider-horizontal .ui-slider-handle { top: -1px; height: 8px; outline:none; margin:auto 0;display:block;position:absolute;border: none !important; }
+
+.jfpw-slider.jfpw-slider-horizontal .jfpw-slider-icon-horizontal { background: url('/JFP/images/widgets/widget_sprite.png') no-repeat -14px -40px; position: relative; top: 2px; text-transform: none !important; text-decoration: none !important; display: block; text-indent: -99999px; overflow: hidden;}
+
+.jfpw-slider.jfpw-slider-horizontal .ui-handle-helper-parent { position: relative; width: 100%; height: 100%; margin: 0 auto;}
+
+
+
+.jfpw-slider-wrap-horizontal.ui-corner-all { -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+
+
+
+.bIE .jfpw-slider-icon-horizontal { font-size: 6px; top: 2px; display: inline;}
+
+.bIE .jfpw-slider-wrap-horizontal {border-left:none; border-right:none;}
+
+
+
+/***** Rounded Corners on IE *****/
+
+.jfpw-slider.jfpw-slider-horizontal .jfpw-slider-tip-left {height:7px; width:6px; font-size:7px; background: url('/JFP/images/widgets/widget_sprite.png') -11px -29px white no-repeat; text-transform: none !important; text-decoration: none !important; display: block; text-indent: -99999px; float: left;}
+
+.jfpw-slider.jfpw-slider-horizontal .jfpw-slider-tip-right {height:7px; width:6px; font-size:7px; top: 0; background: url('/JFP/images/widgets/widget_sprite.png') -20px -29px transparent no-repeat; text-transform: none !important; text-decoration: none !important; display: block; text-indent: -99999px; bottom: -3px; position: absolute; float: right;}
+
+
+
+.jfpw-slider-horizontal-wrap-tip-left {height:9px; width: 6px; font-size:5px !important; background: url('/JFP/images/widgets/widget_sprite.png') -53px -20px no-repeat; display: block; float: left;}
+
+.jfpw-slider-horizontal-wrap-tip-right {height:9px; font-size:6px; background: url('/JFP/images/widgets/widget_sprite.png') -53px -34px no-repeat; position: absolute; z-index: -100;}
+
+
+
+.jfpw-slider-horizontal-corners-wrap {float:left;height:7px;}
+
+
+
+/***********************************************************************************************/
+
+/***********************************************************************************************/
+
+
+
+/****** Blue Slider Style ******/
+
+.jfpw-blue-slider .ui-slider-range {background: none #A1CBE5; font-size: 4px;}
+
+
+
+/***** Horizontal Styles *****/
+
+.jfpw-blue-slider-wrap-horizontal {float:left;height:5px;border:1px solid #E5E5E5;background: url('/JFP/images/widgets/jfpw-blue-slider-horizontal-bg.png') 0 0 repeat-y white !important;}
+
+.jfpw-blue-slider-horizontal .ui-slider-handle { top: -3px; height: 12px; outline:none; margin:auto 0;display:block;position:absolute;border: none !important; background: url("/JFP/images/widgets/jfpw-blue-slider-horizontal.png") no-repeat transparent !important;  }
+
+.jfpw-blue-slider-horizontal {border: none; background: none white; height: 5px !important; position: relative; width: 100%;}
+
+
+
+/***** Vertical Styles *****/
+
+.jfpw-blue-slider-wrap-vertical { width:5px; border:1px solid #E5E5E5; background: url('/JFP/images/widgets/jfpw-blue-slider-vertical-bg.png') 0 0 repeat-x white !important;}
+
+.jfpw-blue-slider-vertical .ui-slider-handle { left: -3px; width: 12px; outline:none; margin:auto 0;display:block;position:absolute;border: none !important; background: url("/JFP/images/widgets/jfpw-blue-slider-vertical.png") no-repeat transparent !important;  }
+
+.jfpw-blue-slider-vertical {border: none; background: none white; width: 5px !important; position: relative; height: 100%;}
+
+
+

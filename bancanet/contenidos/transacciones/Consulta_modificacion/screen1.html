@@ -1,0 +1,371 @@
+       <html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+     <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	 <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+     <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+
+
+<script type="text/javascript">
+
+
+
+	$(document).ready(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='chequeRango']").imageTick({
+
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+
+			image_tick_class: "radios"
+
+		});
+
+		
+
+		
+
+		$("input[name='chequeRango2']").imageTick({
+
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+
+			image_tick_class: "radios"
+
+		});
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	</script>
+
+  
+
+     <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important " >  
+
+                    <div class="cH-appPanelHead">
+
+                        <h3 id="t0">Consulta y Modificaci&oacute;n de Estatus de Cheques</h3>
+
+                    </div>
+
+                    <div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%" >
+
+					  <div class="width98">
+
+							 <p class="instructions" style="width:100%" id="t1">Selecciona una cuenta, indica el n&uacute;mero del cheque que deseas consultar y da clic en "Continuar".</p>
+
+							
+
+
+
+                            <div class="form-row">
+
+                                <label class="for-table" id="t2">Cuenta:</label>
+
+                                <select>
+
+									<option id="t3">Seleccione:</option>
+
+									<option>Cheques - MXN - 12002 - Cheques</option>
+
+								</select>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+         
+
+							<div class="form-row margin-bottom10">
+
+                                <label class="for-table" >&nbsp;</label>
+
+								<label class="marginsRadios for-table radioR"><input id="cheque1" name="chequeRango" type="radio" class="float-left"  /></label>
+
+								<div class="margin-top5" id="t4">Por cheque</div>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                            
+
+                            
+
+                           
+
+                           
+
+                           <div class="form-row float-left margin-bottom10" id="numcheq">
+
+                                <label class="for-table">&nbsp;</label>
+
+								<span class="float-left " id="t5">N&uacute;mero de cheque:</span>
+
+								<input class="float-left margin-left5 short margin-topm5IE" type="text" value="25"/>
+
+                                <div class="clear"></div>
+
+                          </div>
+
+                          
+
+                          <!--termina num de cheque -->
+
+                            
+
+                      
+
+                      
+
+                      <div class="form-row "  id="rangocheq">
+
+                                <label class="for-table">&nbsp;</label>
+
+                                <label class="marginsRadios for-table radioR"><input name="chequeRango2" id="cheque2" type="radio"  /></label>
+
+                                <div class="float-left"id="t6">Por rango de cheques</div>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                    <!--  termina rango de cheques-->
+
+                       
+
+                 <div class="form-row"  id="chequein">
+
+                                    <label class="for-table">&nbsp;</label>
+
+                                    <span class="float-left sinBold width82" id="t7">Cheque inicial:</span>
+
+                                    <input class="short float-left margin-left5" type="text" value="1"/>
+
+                                    <span class="float-left sinBold width72 margin-left10" id="t8">Cheque final:</span>
+
+                                    <input class="short float-left margin-left5" type="text" value="15"/>
+
+                                    <div class="clear"></div>
+
+                                </div>     
+
+                      
+
+                      
+
+                            
+
+                            
+
+                        
+
+						</div><!--termina 98-->
+
+                               
+
+                               
+
+						</div>	
+
+							
+
+						<div class="cF-sideBySide cF-bottomNav margin-top1"   id="menuc">
+
+							<div class="width114">&nbsp;</div>
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton"><a onClick="chequerap()" id="t9">CONTINUAR</a></li>	
+
+							</ul>
+
+						 </div>	
+
+                            
+
+                        
+
+                    </div>
+
+                    <script>
+
+                    $('#numcheq').hide();
+
+					$("#chequein").hide();
+
+					
+
+                    </script>
+
+                    
+
+                    
+
+                    <script>
+
+                    $('input:radio[name=chequeRango]').click(function () {
+
+                   $("#chequein").hide();
+
+					$("#numcheq").show();
+
+					$('#rangocheq').addClass('margin-top35b');
+
+					 $('.cF-bottomNav').addClass('margin-botie'); 
+
+				   
+
+				    });
+
+                    
+
+                    
+
+                     $('input:radio[name=chequeRango2]').click(function () {
+
+                   	$("#chequein").show();
+
+					$("#numcheq").hide();
+
+					$('#rangocheq').removeClass('margin-top35b');
+
+					$('.cF-bottomNav').removeClass('margin-botie'); 
+
+				
+
+				    });
+
+                    
+
+                    </script>
+
+                    
+
+                    
+
+   				 <script>
+
+              
+
+					function chequerap(){
+
+					if($("#cheque1").is(':checked')) {  
+
+					top.Consultam2()
+
+				
+
+					}	
+
+					
+
+					
+
+					if($("#cheque2").is(':checked')) {  
+
+						top.Consultam2b()
+
+					}	
+
+
+
+
+
+						}
+
+						
+
+						es=new Array( 'Check status modifications and inquiries',
+
+						  'Select the account, enter the check number you wish to inquire, and click &quot;Continue&quot;.',
+
+						  'Account:',
+
+						  'Select an option',
+
+						  'Per Check',
+
+						  'Check number:',
+
+						  'Per range of checks',
+
+						  'Initial check:',
+
+						  'Final check:',
+
+						  'CONTINUE'
+
+						  
+
+	);
+
+                    </script>
+
+                    
+
+
+
+                    
+
+                    
+
+                    
+
+                    
+
+                 	</body>
+
+                    
+
+                    
+
+                    </html>

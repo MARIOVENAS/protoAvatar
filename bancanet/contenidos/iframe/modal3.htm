@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="pragma" content="no-cache"/>
+
+<meta http-equiv="cache-control" content="no-cache"/>
+
+<meta http-equiv="expires" content="-1"/>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+<link href="../contenidos/bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="../contenidos/bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" /> 
+
+<script type="text/javascript" src="../contenidos/bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../contenidos/bbAvatar/js/opciones.js"></script>
+
+ 
+
+       
+
+<script type="text/javascript" src="../contenidos/bbAvatar/js/plugins.js"></script>
+
+<script type="text/javascript" src="../contenidos/bbAvatar/js/script.js"></script>
+
+<script type="text/javascript" src="../contenidos/bbAvatar/js/calendar2.js"></script>
+
+
+
+<script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var diasSemanaPagoT = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+            var MesesPagoT = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+            var fmtFechaPagoT = 'dd M yy';
+
+            var fechaIni = new Date();  
+
+            CrearCal("#txtFecha3", fmtFechaPagoT, diasSemanaPagoT, MesesPagoT, fechaIni, fechaIni, 30, '100', '' );
+
+        });
+
+        </script>
+
+   <title></title>
+
+</head>
+
+
+
+<body>
+
+<div class="alto400 ancho490">
+
+  <div id="mensajeError_contenido_div" style="background-color:#FFF; height:auto;">
+
+    <div id="s0" style="font-size:22px;">Pago de tarjeta de cr&eacute;dito</div> 
+
+    <div id="s1" class="marginT8" style="font-size:12px; color:#666;">Has seleccionado realizar el pago m&iacute;nimo<span style="font-size:12px; color:#666;"></span> a la tarjeta:</div>
+
+    <div class=" marginT11 f16 boldText">Mi tarjeta - Tarjeta Oro - MXN - **678 - $9,166.76</div>
+
+    <div id="ntarjeta" class="f14 negrita marginT10"></div>    
+
+    <div class="marginT10 borderDEDEDE">
+
+      <div class="paddingL15 paddingR15 paddingT15 paddingB15">
+
+        <div id="s2" class="color333 ancho100p f11">El cargo ser&aacute; realizado a la siguiente cuenta:</div>
+
+        <div class="marginT10 ancho100p f11 color666 paddingL7">
+
+        	Cheques  -  **002  -  MXN: $ 40,000.00
+
+          <div id="errorcomboTB" class="displayN"></div>
+
+          </div>
+
+        <div id="divfecha" class="marginT10 ancho100p displayN">
+
+          <span id="s3" class="color666" style="font-size:11px;">* Fecha limite de pago:&nbsp;<span id="fechalimite" class="color666" style="font-size:11px;"></span></span>
+
+          </div>
+
+        <div class="marginT10 ancho100p">
+
+          <div class="paddingL20 paddingR20">
+
+            <table cellpadding="0" cellspacing="0" width="100%">
+
+              <tr><td style="padding:2px;" align="left" width="60%" valign="middle">
+
+                <input id="pagmin" style="vertical-align:central" checked="checked" type="radio" name="opcionpago" value="PM" />
+
+                <label id="s4" class="color333">M&iacute;nimo a pagar:</label>
+
+                </td>
+
+              <td class="color333" style="padding:2px;" align="right" width="40%" valign="bottom">
+
+          $ 1,000.00 MXN
+
+                  </td>
+
+               </tr>                  
+
+              <tr><td style="padding:2px;" align="left" width="60%"  valign="middle">
+
+                <input id="pagInt" type="radio" name="opcionpago" value="PT" />
+
+                <label id="s5" class="color333">Pago para no generar intereses:</label>
+
+                </td>
+
+              <td style="padding:2px;" align="right" width="40%" valign="bottom">
+
+            $ 8,166.00 MXN
+
+                  </td>
+
+               </tr>
+
+              <tr><td style="padding:2px;" align="left" width="60%"  valign="middle">
+
+                <input id="pagoOtr" type="radio" name="opcionpago" value="PO" />
+
+                <label id="s6" class="color333">Otra cantidad:</label>
+
+                </td><td style="padding:2px;" align="right" width="40%" valign="bottom">
+
+                  <input class="alignRight" id="otraCantidad" onblur="changeImp();" value="$000.00" maxlength="14" />
+
+                  </td>
+
+               </tr>
+
+              </table>
+
+            </div>
+
+          <div id="erroropcionpago" class="paddingL25 paddingR25 displayN"></div>
+
+          </div>
+
+        <div class="marginT27 ancho100p">
+
+          <div class="color333 f11">Programar a fecha futura</div>
+
+          <div class="marginT10 ancho100p">
+
+            <div class="paddingR20 paddingL20">
+
+              <table cellpadding="0" cellspacing="0" width="100%">
+
+                <tr><td width="40%" align="left">
+
+                  <label id="s8" class="color333" style="font-size:11px;">Fecha</label>
+
+                  </td><td width="60%" align="left">
+
+                    <label id="s9" class="color333" style="font-size:11px; margin-left:10px;">Hora</label>
+
+                    </td>
+
+                  </tr>
+
+                <tr><td class="paddingT5" width="40%" align="left" valign="bottom">                    		
+
+                 <div class="calendario">
+
+       <input style="width:95px" type="text" id="txtFecha3" class="yearpicker" readonly="readonly" />  
+
+    </div>                                  
+
+                  </td><td width="60%" align="left" valign="middle">
+
+                    <div style="margin-left:10px">
+
+                      <select id="combohrs" style="width:auto">
+
+                        <option value="0">08</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option>
+
+                        </select>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;                     
+
+                      <select id="combomin" style="width:auto" >
+
+                        <option value="0">00</option><option value="15">15</option><option value="30">30</option><option value="45">45</option>                                
+
+                        </select>&nbsp;&nbsp;<span class="color333" style="font-size:11px;">hrs</span>
+
+                      </div>
+
+                    </td>
+
+                  </tr>
+
+                </table>
+
+              </div>
+
+            </div>
+
+          </div>                
+
+        </div>       
+
+      </div>
+
+    <div class="ancho100p marginT20">
+
+      <table cellpadding="0" cellspacing="0" width="100%">
+
+        <tr><td width="50%" align="left" valign="top">
+
+          <input id="s10" type="button" align="left" class="btnRJ86" value="Cancelar" onclick="javascript:window.parent.cerrarmodal(0,0);"/></td>
+
+          <td width="50%" align="right" valign="top">
+
+            <input id="s11" type="button" align="right" class="btnAZ86" value="Pagar" onclick="javascript:window.parent.cerrarmodal(10,0);"/></td>
+
+        </tr></table>
+
+      </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+            $(document).ready(function(){
+
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #cuentas").addClass('selected')} ,true)
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+				select_busqueda_esp();
+
+				expandir_contraer();
+
+				// Datepicker
+
+				$('.input_calendar').datepicker({
+
+					dayNamesMin:['D','L','M','M','J','V','S'],
+
+					monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+
+					beforeShow: function(){
+
+						$(this).removeClass('ui-corner-all');
+
+						
+
+					},
+
+					showAnim: '',
+
+					showOtherMonths: true,
+
+					selectOtherMonths: false,
+
+					minDate: 'y'
+
+				});
+
+				$('.input_calendar').focus(
+
+					function(){
+
+						if( $(this).hasClass('modal_calendar') ){
+
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -60)+'px','left':($(this).offset().left+110)+'px', 'z-index':'99999999'});
+
+						}else{
+
+							$('.ui-widget').css({'top':($(this).offset().top-60)+'px','left':($(this).offset().left+110)+'px', 'z-index':'99999999'});
+
+						}
+
+						if( $('.ui-datepicker .close').length == 0){
+
+							$('.ui-datepicker').append('close');
+
+						}
+
+						$('.ui-datepicker').find('.close').click(function(){
+
+							$('.input_calendar').datepicker( "hide" );
+
+						});
+
+						
+
+					}
+
+				);
+
+            });
+
+        </script>
+
+		
+
+ 
+
+
+
+	<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	<!--
+
+	$(document).ready(function(){optieneAlturas();
+
+	top.window.scrollTo(0,0);
+
+	$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	setTimeout("showtooltip2();",200);
+
+	-->
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,475 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <title>Banamex</title>
+        <link href="prototipo_BancaNetAvatar/css/estilo.css" rel="stylesheet" type="text/css">
+	
+		<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+  
+     <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp2.css"/>  
+     <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+     <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/> 
+	 
+   
+ 
+    </head>
+    <body  class="bg_demo" style="background-color:#FFF !important">
+        <div class="overlay"></div>
+        <div class="overlay_trans"></div>
+        <div class="width691 floatL">
+                  <ul class="pagos_opc">
+                    <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t0">Captura</span> </li>
+                    <li id="opcVerifica"><strong>2</strong>  <span id="t1">Verifica</span> </li>
+                    <li id="opcRespuesta" class="respuesta"><strong>3</strong>  <span id="t2">Respuesta</span> </li>
+                  </ul>
+                  <div class="clear"></div>
+                  <div style="overflow:hidden;">
+<div class="pagos_tit" style="width:50%; float:left;" id="t3">Pagar Mi Tarjeta</div>
+<div style="width:49%; float:left; margin: 5px 0 0;">
+				
+                <div class="margin-top6 titulo" id="flechaLinksOpcoes">
+<span class="flechaGris float-left">&nbsp;</span>
+<a href="javascript:void(0);" onClick="javascript:top.Layuda5();" class="float-left" id="t4">&nbsp;Ayuda</a>
+				</div><!-- Termina ayuda -->
+                <div id="imp" class="displayNone">
+                   <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                        <span class="flechaGris float-left">&nbsp;</span>
+                        <a href="javascript:void(0);" onclick="javascript:window.print();" class="float-left" id="t5">&nbsp;Imprimir</a>
+                    </div>
+                </div><!-- Termina Imprimir -->
+                </div>
+				 </div>
+                 <div class="clear"></div>
+<div id="captura">
+  <div class="pagos_txt" id="t6">Selecciona la cuenta retiro y una tarjeta de cr&eacute;dito, indica los datos de pago y da clic en "Continuar"</div>                 
+  <div>
+    <table class="pagos_table">
+      <tr >
+        <td width="24%" id="t7">Cuenta de retiro:</td>
+        <td width="84%"><label for="textfield"></label>
+          <select autocomplete="off" class="width300 marginL2" name="select3" id="tarjCred" onChange="valTarjeta();" onFocus="focusTarjeta();">
+            <option value="seleccionar" selected id="t20">Selecciona una cuenta</option>
+            <option value="tarjeta">Banamex - Tarjeta Crédito - 12780 - MXN: $ 15,987.00</option>
+            </select>
+            
+            
+              <span  id="errorPagos1" class="errorB displayNone " style="height:100px; margin-left:-4px !important">
+          <span class="flecha2"></span>
+          <span class="content_big" style=" z-index:1 !important">
+           <p id="t21">Es necesario seleccionar una  cuenta retiro.
+ Favor de verificar. </p>
+          </span>
+      </span>
+            
+          </td>
+        </tr>
+       <tr id="fechaLim" class="displayNone" >
+        <td></td>
+        <td class="paddingT4 paddingB16 paddingL3">
+          <span id="t9">Tu fecha límite de pago es:</span> 20 Ago 2012
+          </td>
+        </tr>
+      <tr>
+        <td id="t8">Tarjeta de cr&eacute;dito:</td>
+        <td>
+          <select autocomplete="off" class="width300 marginL2" name="select2" id="vld2" onChange="valCuenta();" onFocus="focusCuenta();">
+            <option selected value="seleccionar" id="t22">Selecciona una tarjeta</option>
+            <option value="cuenta">Cheques - 12002 - MXN - $ 62,294.10</option>
+            </select>
+            
+            <span  id="errorPagos2" class="errorB displayNone " style="height:100px; margin-left:-4px !important"">
+          <span class="flecha2"></span>
+          <span class="content_big" style=" z-index:1 !important">
+           <p id="t23"> Es necesario seleccionar la tarjeta  de cr&eacute;dito. Favor de verificar. </p>
+          </span>
+      </span>
+             
+          </td>
+        </tr>
+      <tr>
+        <td height="22" id="t10">Importe:</td>
+        <td><input type="radio" name="importe" id="rdImporte1" value="rdImporte1" onClick="radioImporte()">
+         <label for="rdImporte1" > <span id="t11">M&iacute;nimo a pagar:</span> $ <span id="insMin">930.00</span>
+          </label></td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="radio" name="importe" id="rdImporte2" value="rdImporte2" onClick="radioImporte2()">
+          <label for="rdImporte2"><span id="t12">Pago para no generar intereses:</span> $ <span id="sinInteres">15,987.00</span></label></td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td class="paddingB13"><input type="radio" name="importe" id="rdImporte3" value="rdImporte3" checked="checked" onClick="radioImporte3()">
+          <label for="rdImporte3"> <span id="t13">Otra cantidad:</span> $</label> 
+          <input class="width123 padding0 textR f12" type="text" name="textfield3" id="otraCantidad" onChange="Miles(this); agregaceros(); borraOtracantidad()" onFocus="borrarCant(); focusOcant();" onKeyPress="return validateNumeric45(this,event);" >
+          
+           <span  id="errorPagos3" class="errorB displayNone " style="height:100px; margin-left:-4px !important"">
+          <span class="flecha2"></span>
+          <span class="content_big" style=" z-index:1 !important">
+           <p id="t19"> Digita un valor en el campo importe. </p>
+          </span>
+      </span>
+      
+          </td>
+        </tr>
+      </table>
+  </div>
+  <div class="brd_dot_table">
+    <table class="pagos_table2">
+      <tr>
+        <td class="valign_top" width="24%" id="t14"><p class="paddingT2">Opciones </p>
+          <p class="paddingT2">adicionales</p></td>
+        <td width="84%">
+          <div>
+            <input type="checkbox"  name="guardar" id="progFecha" value="progFecha" onClick="progFecha();" /> 
+           <!--  <input name="radio1" type="radio" id="progFecha" value="progFecha" onClick="progFecha()"> -->
+            <label for="progFecha" id="lbProg"><span id="t15">Programar a fecha futura</span></label>
+            </div>
+          <div class="pagos_cal_scroll">
+            <input type="text" id="fechaFut" class="calendario1 input_calendar floatL padding0 f12" readonly/ onChange="fechaError();" onFocus="focusFechafut();"><span class="cal_icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+            
+              <span  id="errorPagos4" class="errorB displayNone " style="height:100px; margin-left:-4px !important">
+          <span class="flecha2"></span>
+          <span class="content_big" style=" z-index:1 !important">
+           <p id="t24"> Si deseas programar tu transacci&oacute;n
+ selecciona una fecha. </p>
+          </span>
+      </span>
+          
+         
+            
+            <div class="comboH">
+              <input type="text" id="selHoras" class="selhoras f12" readonly disabled onFocus="HorasSel();focusSelhoras();" style="padding:0 0 0 5px;" /> 
+            
+              <div id="drpList" class="list_abs">
+                <div id="listaHoras2">
+                  <div class="scroll_y">
+                    <div class="scrollbar paddingR1"><div class="track"><div class="thumb"><div class="end"></div><div class="grip"></div></div></div></div>
+                    <div class="viewport height90">
+                      <div class="overview">
+                        
+                        
+                        <!-- You can add all your contents here -->
+                        <div id="horasM">
+                          
+                          
+                              
+                          
+                          </div>
+                        
+                        
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div><!-- end of updateHolder //-->
+                </div>
+              
+              
+              
+              </div>
+            </div>
+            
+              <span  id="errorPagos5" class="errorB displayNone marginlefts200" style="height:100px; margin-left:88px !important; margin-top:-48px !important; *margin-left:213px !important; *margin-top:-52px !important;">
+          <span class="flecha2"></span>
+          <span class="content_big" style=" z-index:1 !important">
+           <p id="t25">Si deseas programar tu transacci&oacute;n<br>
+ selecciona una hora. </p>
+          </span>
+      </span>
+              
+          </td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <li class="check_guardar">
+            <input type="checkbox"  name="guardar" id="guardaOp" value="guardaOp" onClick="progFecha2();" /> <label for="guardaOp"> 
+            <div class="guardaOp">
+              <p id="t16">Guardar como operaci&oacute;n frecuente </p>
+              <p class="paddingT5" id="t17">Las operaciones programadas no pueden ser almacenadas como frecuentes </p>
+              </div>
+            </label> 
+            </li> 
+          </td>
+        </tr>
+      </table>
+  </div>
+  <div class="pie_contenido1">
+    <input type="button" class="btn_az floatL width110" id="t18" value="CONTINUAR"  style="width:93px !important; margin:15px 0 0 167px !important" onClick="validaPagos()" />
+    <br />
+  </div>
+</div>
+                  
+    <!--   verifica  -->           
+     <div id="verifica" class="displayNone">
+          <div class="pagos_conf" id="t26">Confirma los datos de pago para aplicar.</div>
+                  
+                  <div class="brd_dot_table marginT15">
+  <table class="pagos_table3">
+  <tr>
+      <td width="24%" id="t7">Cuenta de retiro:</td>
+      <td><p>Cheques - 12002</p>
+        <p class=" marginT6"><span id="t35">Saldo</span> (MXN) $ 62,294.10</p></td>
+      </tr>
+    <tr>
+      <td width="17%" id="t8">Tarjeta de cr&eacute;dito:</td>
+      <td width="83%"><p>Banamex - Tarjeta Crédito - 12780</p>
+        <p class="marginT6"><span id="t35">Saldo</span> (MXN) $ 15,987.00</p>
+        </td>
+      </tr>
+    
+    <tr>
+      <td id="t9">Importe:</td>
+      <td>$ <span id="insImp">9,000.00</span>
+        </td>
+      </tr>
+  <tr id="verFechaprog" class="displayNone">
+    <td id="t27">Fecha programada:</td>
+    <td><span id="insFprog">12 Sep 2012</span></td>
+  </tr>
+  <tr id="verHoraprog" class="displayNone">
+    <td id="t28">Hora programada:</td>
+    <td><span id="insHprog">19:30</span> h</td>
+  </tr>
+      <td id="t29">Operaci&oacute;n frecuente:</td>
+      <td> <span id="insOpfrec">No</span>    </td>
+      </tr>
+    
+  </table>
+                  </div>
+                  
+                  
+                  <div class="marginT15">
+                   <input type="button" class="btn_az floatL marginR10" id="t31" value="ACEPTAR" onClick="confirmaPago2();" />
+                   <script type="text/javascript">
+				   var es = new Array("Capture",
+				                      "Verify",
+									  "Response",
+									  "Pay My Card",
+									  "Help",
+									  "Print",
+									  'Select a retirement account and a Credit Card, inidicate payment data and click "Continue".',
+									  "Withdrawl account: ",
+									  "Credit card: ",
+									  "Your payment due date is:",
+									  "Amount: ",
+									  "Minimum payment due: ",
+									  "Payment to avoid interest: ",
+									  "Another amount: ",
+									  "Additional options",
+									  "Programmed for a future date",
+									  "Save as frequent transaction",
+									  "Programmed transactions cannot be stored as frequent transactions",
+									  "CONTINUE",
+									  "Amount above limit",
+									  "Select an account",
+									  "It is necessary to select the withdrawal account.Please verify",
+									  "Select a card",
+									  "It is necessary to select the credit card.Please verify",
+									  "If you desire to program your transaction, please select a date.",
+									  "If you desire to program your transaction, please select a time.",
+									  "Confirm payment information to apply.",
+									  "Programmed date:",
+									  "Programmed time:",
+									  "Frequent transaction: ",
+									  "Yes",
+									  "ACCEPT",
+									  "Return",
+									  "Your payment has been applied with aothorization number",
+									  "Your payment has been applied with instruction number",
+									  "Balance");
+				   function confirmaPago2(){
+					
+					if($("#progFecha").is(':checked'))
+					{
+					$("#siGuardar").hide();
+					$("#noGuardar").show();
+				   $("#opcVerifica").removeClass().addClass("confirma");
+				   $("#opcRespuesta").removeClass().addClass("selected respuesta2")
+				   $("#verifica").hide();
+				   $("#respuesta").show();
+				   $("#imprimir").show();
+				   $('#imp').show();	
+				  }
+				  else{
+					$("#siGuardar").show();
+					$("#noGuardar").hide();
+				   $("#opcVerifica").removeClass().addClass("confirma");
+				   $("#opcRespuesta").removeClass().addClass("selected respuesta2")
+				   $("#verifica").hide();
+				   $("#respuesta").show();
+				   $("#imprimir").show();
+				   $('#imp').show();
+				  }
+				}
+				   </script>
+                   <a onClick="regresaPago();" href="javascript:void(0);" id="t32" class="accion2 floatL">Regresar</a>
+                </div>
+                  
+                  </div>
+     <!-- fin verifica -->
+     <!-- respuesta -->
+     <div id="respuesta" class="displayNone">
+       <div class="pagos_conf">
+    <span id="noGuardar">  <img src="../../../../JFP/regional/images/layout/green-check.jpg">   <span id="t34">Tu pago ha sido aplicado con n&uacute;mero de instrucci&oacute;n</span> 091101.</span>
+    <span id="siGuardar" class="displayNone"><span class="palomita">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span id="t33">Tu pago ha sido aplicado con n&uacute;mero de autorizaci&oacute;n</span> 091101.</span>
+         </div>
+         
+       <div class="brd_dot_table marginT15">
+         <table class="pagos_table3">
+         <tr>
+             <td width="24%" id="t7">Cuenta de retiro:</td>
+             <td><p>Cheques - 12002</p>
+               <p class=" marginT6"><span id="t35">Saldo</span> (MXN) $ 62,294.10</p></td>
+             </tr>
+           <tr>
+           <tr>
+             <td width="17%" id="t8">Tarjeta de cr&eacute;dito:</td>
+             <td width="83%"><p>Banamex - Tarjeta Crédito - 12780</p>
+               <p class="marginT6"><span id="t35">Saldo</span> (MXN) $ 15,987.00</p>
+               </td>
+             </tr>
+           
+             <td id="t9">Importe:</td>
+             <td>$ <span id="insIresp">9,000.00</span>
+               </td>
+             </tr>
+           <tr id="respFprog" class="displayNone">
+             <td id="t27">Fecha programada:</td>
+             <td><span id="insFresp">12 Sep 2012</span></td>
+             </tr>
+           <tr id="respHprog" class="displayNone">
+             <td id="t28">Hora programada:</td>
+             <td><span id="insHresp">19:30</span> h</td>
+             </tr>
+           <tr>
+             <td id="t29">Operaci&oacute;n frecuente:</td>
+             <td> <span id="insOPresp">No</span>     </td>
+             </tr>
+           
+           </table>
+       </div>  
+     </div>
+          <!-- fin respuesta       -->
+                
+                
+                </div>
+        <script type="text/javascript" src="prototipo_BancaNetAvatar/js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="prototipo_BancaNetAvatar/js/plugins.js"></script>
+        <script type="text/javascript" src="prototipo_BancaNetAvatar/js/script.js"></script>
+        
+
+          
+        
+        <script type="text/javascript">
+            $(document).ready(function(){      	
+        
+        ajustarOverlay();
+        ajusta_tooltpis();
+                
+      setTimeout(function(){top.$('#iframeConte').css({'height':(475)+'px'});},850);
+      
+        var diasSemana = ['D','L','M','M','J','V','S'];
+        var Meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+        var MesesShort = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];   
+      if(top.language == "eng") {
+        diasSemana = ['S','M','T','W','Th','F','Sa']; 
+        Meses = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        MesesShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      }
+      
+        
+        $('#fechaFut').datepicker({
+          dayNamesMin:diasSemana,
+          monthNames:Meses,
+          monthNamesShort: MesesShort,
+          beforeShow: function(){
+            $(this).removeClass('ui-corner-all');
+            
+          },
+          showAnim: '',
+          showOtherMonths: true,
+          selectOtherMonths: false,
+          minDate: 'y',
+          maxDate: '30d',
+          dateFormat:"d M yy",
+          disabled: true
+        });
+        
+        $('#fechaFut').focus(
+          function(){
+            if( $(this).hasClass('modal_calendar') ){
+              $('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+            }else{
+              $('.ui-widget').css({'top':($(this).offset().top-63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+            }
+            if( $('.ui-datepicker .close').length == 0){
+              $('.ui-datepicker').append("<div class='close'></div>");
+            }
+            $('.ui-datepicker').find('.close').click(function(){
+              $('.input_calendar').datepicker( "hide" );
+            });
+            if( $('.ui-datepicker .flecha').length == 0){
+              $('.ui-datepicker').prepend("<div class='flecha'></div>");
+            }
+            
+          }
+        );
+        
+         $(".cal_icon").click(function(){
+            $('#fechaFut').datepicker('show');
+         });
+       
+       
+             });
+       
+       
+ 
+ $(document).ready(function(){
+   setTimeout("$('#listaHoras2').hide();",200);
+   setTimeout("$('.scroll_y').tinyscrollbar({scroll:true,sizethumb: '36' });grip_scroll();",100);setTimeout("$('.scroll_y .overview').css({'width':$('.scroll_y .viewport').width()+'px'});ajusta_caja_popup_scroll();alto_popup();",200);
+   
+   });
+          
+
+  $(function(){
+    
+    $.imageTick.logging = true;
+    
+    $("input[name='importe']").imageTick({
+      tick_image_path: "../../../../JFP/regional/images/radio_check.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/radio_empty.png",
+      image_tick_class: "radios"
+    });
+    $("input[name='radio1']").imageTick({
+      tick_image_path: "../../../../JFP/regional/images/radio_check.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/radio_empty.png",
+      image_tick_class: "radios1"
+    });
+    
+    $("input[name='guardar']").imageTick({ 
+      tick_image_path: "../../../../JFP/regional/images/check_1.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+    });
+        
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+  });
+  
+  
+  
+</script> 
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+            google.load('search', '1', {language : 'es'});
+      
+    
+        </script> 
+    </body>
+</html>

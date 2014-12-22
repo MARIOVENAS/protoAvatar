@@ -1,0 +1,1516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body  TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="562aa956-1822-448a-94b3-280691f8e264" ><input type=hidden name="EWF_SYS_1" value="PF6H7@Z5VW382WXQ7JHJQP3X8IQ4F5JH40M@XSDD" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZDOA-TransaccionAplicada"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="daplica01.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="44"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" /> 
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>      
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+<script type="text/javascript">
+
+var es=new Array('Direct-bill-payment registration','The direct-bill-payment has been ',' and transaction number','Accounts','Withdrawal Account','Services','Payment data','Personalized Description:','*I am aware that I may cancel this instruction at any time and free of charge.','applied ','with authorization number ','Direct Debit','Amount MXN','Service Activation date');
+
+
+
+	 function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+	 
+
+function enviaDatosTx (Transaccion, TipoCta) {
+
+
+
+	document.forms[0].DATA1.value = Transaccion + TipoCta;
+
+	DoSubmit('DETALLE');
+
+
+
+}
+
+
+
+function enviaTx (Transaccion) {
+
+	if ("ZDOA"== 'Z3SP'&& ContadorSeq != -1){
+
+	      ContadorSeq += 1;
+
+	      document.forms[0].SEQUENCE_NUMBER.value = eval(document.forms[0].SEQUENCE_NUMBER.value) + ContadorSeq;
+
+	      DoSubmit('LIGA'+ Transaccion);
+
+	    }
+
+	else{
+
+		document.forms[0].DATA1.value = Transaccion;
+
+		DoSubmit("DETALLE");
+
+		}
+
+}
+
+	function DatosCuenta(NombreCorto, Alias, Mone, NumeroCuenta ) {
+
+	var Cadena;
+
+	var ValorAlias=Alias.replace(/^\s*|\s*$/g,"");
+
+	var Mon=Mone.replace(/^\s*|\s*$/g,"");
+
+	if(Mon == "M.N" || Mon=="MXN" || Mon=="M.N."){ 
+
+	   Moneda = "MXN";
+
+	}else{ 
+
+	   Moneda = "USD";
+
+	}
+
+	 
+
+  if( ValorAlias!="" ){
+
+	Cadena=Alias + " " + Moneda + " - **"+NumeroCuenta;
+
+	return Cadena;
+
+  }else{
+
+    Cadena=NombreCorto + " " + Moneda + " - **"+NumeroCuenta;
+
+	return Cadena;
+
+	}
+
+	
+
+}			
+
+
+
+
+
+function DatosSaldo(mone,saldo){
+
+				var Cadena;
+
+				var mon=mone.replace(/^\s*|\s*$/g,"");
+
+				if(mon == "M.N" || mon == "MXN" || mon=="M.N."){ 
+
+				Moneda = "MXN";
+
+				
+
+				}else{
+
+					
+
+				Moneda = "USD";
+
+				
+
+				}
+
+				
+
+				if(language == 'eng')
+
+					Cadena="Current balance (" + Moneda + "): $"+saldo;
+
+				else
+
+					Cadena="Saldo actual (" + Moneda + "): $"+saldo;
+
+				
+
+				return Cadena;
+
+				
+
+				
+
+				
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// JavaScript Document
+
+
+
+function AlternarColumnas(id) {
+
+	
+
+    if(document.getElementsByTagName){ 
+
+       var tabla = document.getElementById(id);  
+
+       var rows = tabla.getElementsByTagName("tr");
+
+          for(i = 1; i < rows.length; i++){        
+
+            if(i % 2 == 0){
+
+			  rows[i].className = "tablaSaldos2_bordeR";
+
+              }else{
+
+              rows[i].className = "tablaSaldos2_bordeR bgF0F4F9";
+
+              }       
+
+          }
+
+    }
+
+
+
+	
+
+	
+
+}
+
+function AlternarColumnasExp(){
+
+	
+
+	$('.TablaAlternar').each(function(){
+
+									 //$(this).find('.trExpan:odd').children('td').addClass('');
+
+									  $(this).find('.trExpan:even').children('td').addClass('bgF1F2F2');
+
+									  });
+
+
+
+	 
+
+	/*var fila=$('.trExpan');
+
+	$(fila).each(function(i){
+
+						
+
+				if(i>0)
+
+				{
+
+					if( $(this).is(':odd') )
+
+						$(this).addClass('tablaSaldos2_bordeR bgF0F4F9');
+
+					else if( $(this).is(':even') )
+
+						$(this).addClass('tablaSaldos2_bordeR');
+
+				}
+
+											   
+
+				});*/
+
+						  
+
+						  
+
+}
+
+
+
+
+
+
+
+
+
+function AlternarColumnasExp1(id) {
+
+	
+
+   	
+
+	
+
+    if(document.getElementsByTagName){ 
+
+       var tabla = document.getElementById(id);  
+
+       var rows = tabla.getElementsByTagName("trExpan");
+
+          for(i = 0; i < rows.length; i++){        
+
+            if(i % 2 == 0){
+
+			  rows[i].className = "tablaSaldos2_bordeR bgF0F4F9";
+
+              }else{
+
+              rows[i].className = "tablaSaldos2_bordeR";
+
+              }       
+
+          }
+
+    }
+
+
+
+	
+
+	
+
+}
+
+	$(document).ready(
+
+	function(){
+
+		top.impayuda();
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+	
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+	var winImp;
+
+var fecha;
+
+var lugar;
+
+
+
+function Impresion() {
+
+  var fechaComp = $("#fecha",window.parent.document).html().split(',');
+
+  var lugarComp = $("#fecha2",window.parent.document).html().split('|');
+
+  fecha = ( "SPANISH"=="ENGLISH" ) ? fechaComp[0]+', '+fechaComp[1]+', '+fechaComp[2] : fechaComp[0];
+
+  lugar = lugarComp[0];
+
+   if(navigator.userAgent.indexOf("MSIE") > 0 ){
+
+winImp=window.open("../../bbAvatar/impresion/ImpresionRecibo.html","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+}else{
+
+		winImp=window.open("bbAvatar/impresion/ImpresionRecibo.html","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+
+
+}
+
+ winImp.moveTo(0,0);
+
+}
+
+
+
+function llenar(){
+
+  var txtCtaret="";
+
+  var txtCtadep="";
+
+  var dCtar, dCtad, aCtar, aCtad, nCtar, nCtad;
+
+
+
+  
+
+  
+
+  
+
+    dCtar = "Cheques".replace(/^\s*|\s*$/g,"");
+
+	aCtar = "Cheques".replace(/^\s*|\s*$/g,"");
+
+	nCtar = "002".replace(/^\s*|\s*$/g,"");
+
+    txtCtaret = dCtar+" - "+aCtar+" - **"+nCtar;
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+  $('#divCom', winImp.document).html( $('#impComp').html() );
+
+  if( txtCtaret!="" ) { $('#lblRet', winImp.document).html( txtCtaret ); }
+
+  if( txtCtadep!="" ) { $('#lblDep', winImp.document).html( txtCtadep ); }
+
+  $('.nosimp', winImp.document).html('');
+
+  $('.nosimp', winImp.document).hide();
+
+  $('#lblNom', winImp.document).html( "Jose Rivera Lopez" );
+
+  $('#lblFec', winImp.document).html( fecha );
+
+  $('#lblHor', winImp.document).html( "6:35:09 PM"+lugar );
+
+}
+
+	var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+	
+
+	var mesesFecha_BB;
+
+
+
+
+
+$(document).ready
+
+
+
+(
+
+		function ()
+
+	{
+
+	    if(language=="eng")
+
+			mesesFecha_BB = ['Jan','Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+		else
+
+			mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+			
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+					catch(e)
+
+					{
+
+					}
+
+			}
+
+		)	
+
+	}
+
+)
+
+
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+	
+
+	
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+				var hora = fecha.substring(10);
+
+				var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+				return fechaformateada + hora;
+
+}
+
+
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+			fecha = fecha.replace(/\-/gi," ");
+
+			var conversion = (fecha.substring(4,6)).toLowerCase();
+
+			var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+			return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="20120420";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+			
+
+		if(splitFecha[0].length==1)
+
+		{
+
+			splitFecha[0]="0"+splitFecha[0];
+
+		}
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+function formato_dddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[Fecha]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+	
+
+	
+
+function formato_ddmmaaaaEBSJS(fecha)
+
+{
+
+	var indice;
+
+	var fechaAux;
+
+	var IdiomaAux="SPANISH";
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+	
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+	
+
+	if(indice!=-1)
+
+	{
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if(IdiomaAux=="SPANISH")
+
+		{
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+				
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+			else
+
+			{
+
+				mesFecha=fechaAux.substring(0,2);
+
+					if(mesFecha=="01")
+
+						{mesFecha1="Jan";}
+
+					if(mesFecha=="02")
+
+						{mesFecha1="Feb";}
+
+					if(mesFecha=="03")
+
+						{mesFecha1="Mar";}
+
+					if(mesFecha=="04")
+
+						{mesFecha1="Apr";}
+
+					if(mesFecha=="05")
+
+						{mesFecha1="May";}
+
+					if(mesFecha=="06")
+
+						{mesFecha1="Jun";}
+
+					if(mesFecha=="07")
+
+						{mesFecha1="Jul";}
+
+					if(mesFecha=="08")
+
+						{mesFecha1="Aug";}
+
+					if(mesFecha=="09")
+
+						{mesFecha1="Sep";}
+
+					if(mesFecha=="10")
+
+						{mesFecha1="Oct";}
+
+					if(mesFecha=="11")
+
+						{mesFecha1="Nov";}
+
+					if(mesFecha=="12")
+
+						{mesFecha1="Dec";}
+
+					
+
+				fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+				fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+			}
+
+		
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+
+
+function formateaFechaBB(formato, fecha)
+
+{	
+
+	
+
+	fechaFormateada="";
+
+	
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+		
+
+	if(fecha != '' &&  fecha != '&nbsp;'){
+
+		
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if(language=="eng")
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Causa:&nbsp;</div>
+
+
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+
+ 
+
+
+
+
+
+
+
+<script>parent.setFecha("20/04/12    18:35:09  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina.\n\n Esta Transacci&oacute;n no se efectuar&aacute;, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="183507  ";b$Cont="183509  "
+
+	//if (a$Cont==b$Cont)parent.scd();
+
+    </script>     
+
+            
+
+		       <script type="text/javascript">
+
+
+
+			$(document).ready(function(){
+
+			
+
+                        
+
+		   AlternarColumnasExp();
+
+			
+
+				
+
+			var Datos=DatosCuenta( "Cheques", "Cheques", "M.N", "002");
+
+			document.getElementById('lblRet').innerHTML=Datos;
+
+			var Saldo= DatosSaldo("M.N"," 40,000.00");
+
+			document.getElementById('Saldo').innerHTML=Saldo;
+
+                    	
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+top.ajustar();
+
+
+
+			});
+
+	
+
+		</script>
+
+        
+
+
+
+
+
+<div id="impComp">
+
+
+
+<div class="float-left fonttit" id="t11">Domiciliaci&oacute;n</div>
+
+    <div class="panelIzEnca3_text2" id="t0">
+
+            Alta de pagos domiciliados
+
+        </div>
+
+
+
+        <div class="saldos_bloque3_verde paddingT12">
+
+        	<label id="t1">La domiciliaci&oacute;n de tu pago ha sido</label> <span class="negrita"
+
+            id="t9">aplicada</span> <label id="t10">con n&uacute;mero de autorizaci&oacute;n</label> <span class="negrita">123456 </span><label id="t2"> y n&uacute;mero de instrucci&oacute;n</label> <span class="negrita">56734</span>       	
+
+        </div>
+
+
+
+        
+
+        <div class="saldos_bloque3_2">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12"><div id="t3">Cuentas</div></span></td>
+
+                    <td valign="top" class="padding20152015">
+
+                        <div class="titulo_tabla_at marginT0 paddingB5 marginB5" id="t4">Cuenta retiro</div>
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                            <tr>
+
+
+
+                                <td class="ancho50p paddingT0 paddingL0"><div id="lblRet"></div></td>
+
+                                <td class="ancho50p paddingT0 nosimp"><div id="Saldo"></div></td>
+
+                            </tr>
+
+                        </table>
+
+                    </td>
+
+                </tr>
+
+            </table> 
+
+        </div>
+
+        
+
+        
+
+                <div class="saldos_bloque3_2">
+
+
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12"><div id="t5">Servicios</div></span></td>
+
+                    <td valign="top" class="padding20152015">
+
+                        TELCEL, RADIOMOVIL DIPSA SA DE CV(TELCEL)
+
+                    </td>
+
+                </tr>
+
+            </table>         	
+
+        </div>
+
+
+
+        
+
+        
+
+           <div class="saldos_bloque3_2">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                            <tr>
+
+                                <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12"><div id="t6">Datos del pago</div></span></td>
+
+                                <td valign="top" class="padding20152015">
+
+                               <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 TablaAlternar">
+
+                                      
+
+                                        <tr class="trExpan">
+
+                                            <td class="ancho50p"><span>CONVENIO+REFERNCIA&nbsp; </span></td>
+
+
+
+                                            <td class="ancho50p">09002991112059</td>
+
+                                      </tr>
+
+                                      
+
+                                        <tr class="trExpan">
+
+                                            <td class="ancho50p"><span id="t13">Fecha de Alta del Servicio &nbsp; </span></td>
+
+                                            <td class="ancho50p" name="FECHA_BNP_ddmmaaaa">20/04/2012</td>
+
+                                      </tr>
+
+                                      
+
+                                      
+
+                                      
+
+                                      
+
+                                  <!-- Ingles -->
+
+                                      
+
+                                    </table>
+
+                                                   	<div class="color666 marginT20 f11"><label id="t7" class="color666 f11">
+
+                            Descripci&oacute;n personalizada:</label> Pago Telcel
+
+                  		</div>
+
+                               	
+
+                              </td>
+
+                            </tr>
+
+                        </table>
+
+                              </td>
+
+
+
+                            </tr>
+
+                        </table>
+
+                        <div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="t8">
+
+            	 * En cualquier momento podr&aacute;s solicitar la cancelaci&oacute;n de esta domiciliaci&oacute;n sin ning&uacute;n costo.
+
+            </div>
+
+        </div>
+
+        
+
+ 
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+
+
+
+
+</div>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Domiciliacion Alta|daplica01.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

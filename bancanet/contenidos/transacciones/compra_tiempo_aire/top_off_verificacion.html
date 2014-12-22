@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="format-detection" content="telephone=no">
+
+        <title>Banamex</title>
+
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>  
+
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/> 
+
+ 		<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+    </head>
+
+    <body class="bg_demo" style="background-color:#FFF !important">
+
+    	<div id="subapp-box" class="float-left">
+
+			<div class="contentSteps margin-topm18">
+
+				<div id="t0" class="step1"><b>1</b> Captura</div>
+
+				<div id="t1" class="step2"><b>2</b> Verifica</div>
+
+				<div id="t2" class="step3 active"><b>3</b> Respuesta</div>
+
+				<div class="barrita">&nbsp;</div>
+
+			</div>                 
+
+			<div class="clear"></div>
+
+			<div class="cH-appPanelHead">
+
+				<h3 id="t3">Compra de tiempo aire</h3>
+
+			</div>
+
+			<div class="greenCheck"></div>
+
+			<p class="margin-bottom20 strong" id="t4">Tu compra ha sido aplicada con número de autorización 091101.</p>
+
+			<div class="border-top"></div>
+
+			<div class="width139">
+
+				<div class="form-row">
+
+					<label class="for-table" id="t5">Cuenta de retiro:</label>
+
+					<p>Mi tarjeta - Tarj. Clásica - MXN - 12780 - $ 15,987.13</p>
+
+					<div class="clear"></div>
+
+				</div>
+
+				<div class="form-row">
+
+					<label class="for-table" id="t6">Número celular:</label>
+
+					<p>044 / 045 55 3504 9488</p>
+
+					<div class="clear"></div>
+
+				</div>
+
+				<div class="form-row">
+
+					<label class="for-table" id="t7">Compañía celular:</label>
+
+					<p>Movistar</p>
+
+					<div class="clear"></div>
+
+				</div>
+
+				<div class="form-row margin-bottom5">
+
+					<label class="for-table" id="t8">Importe MXN:</label>
+
+					<p>$ 200.00</p>
+
+					<div class="clear"></div>
+
+				</div>
+
+			</div>
+
+			<div class="cF-sideBySide cF-bottomNav border-top">
+
+				<ul class="cN-primaryNav">
+
+					<li class="cM-spriteBase cN-primaryNavButton">
+
+		            	<a href="javascript:top.cargaDocN('compra_tiempo_aire/top_off_captura.html');" id="t9">REALIZAR OTRA COMPRA</a>
+
+					</li>
+
+				</ul>
+
+				<div class="clear"></div>
+
+			 </div>
+
+		</div>
+
+		<script type="text/javascript">
+
+			var es = new Array(
+
+                '<b>1</b> Capture',
+
+                '<b>2</b> Verify',
+
+                '<b>3</b> Response',
+
+                'Mobile top up',
+
+                'Your purchase have been applied with authorization number 091101.',
+
+                'Withdrawal account:',
+
+                'Mobile number:',
+
+                'Carrier:',
+
+                'Amount MXN:',
+
+                'MAKE ANOTHER PURCHASE'
+
+            );
+
+			$(document).ready(function(){
+
+				var url_ayuda = 'javascript:void(0);';
+
+				if( isEnglishSel ) {
+
+					url_ayuda = 'https://bancanet.banamex.com/ayudas/en/pagos-y-transferencias/tiempo-aire.htm';
+
+				}else{
+
+					url_ayuda = 'https://bancanet.banamex.com/ayudas/es/pagos-y-transferencias/tiempo-aire.htm';
+
+				}
+
+				top.set_impayuda(url_ayuda,'transacciones/compra_tiempo_aire/top_off_print.html');
+
+			});
+
+		</script>
+
+    </body>
+
+</html>

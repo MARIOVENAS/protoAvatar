@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Untitled Document</title>
+
+	
+
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css"/>      
+
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css"/>
+
+
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css"/>
+
+<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css"/>
+
+	
+
+    <script type="text/javascript" src="../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/script.js"></script>
+
+     <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+    
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+<div class="top"></div>
+
+            <div class="content paddingR40">
+
+            	<div class="padding5T15B02 paddingT5">
+
+                    <div class="clear overflow">
+
+                        <div class="close" onClick="cerrar_modal( 'modal_filtrar' )"></div>
+
+                    </div>
+
+                    
+
+  <div class="titulo modaltitulo margin-top30">FILTRAR MOVIMIENTOS</div>
+
+  <div class=" borderB1dottedCCC width492 paddingB10 marginL5 marginB15 margin-top9">
+
+                    </div>
+
+                    <div class="contenido paddingT15 paddingL20 paddingR28">
+
+                        <div class="titulocontenido_normal paddingB15 width460ie puntos">
+
+                            <p>De acuerdo al criterio de b&uacute;squeda, elige al menos una de las opciones siguientes:</p>
+
+                        </div>
+
+                        <form action="" id="form_filtrar" onSubmit="return validador_filtrar();">
+
+                        	<div class="textocontenido">
+
+                                <div class="clear overflow marginT15">
+
+                                    <div class="width115 float-left bold paddingT3ie">Por palabra clave:</div>
+
+                                    <div class="width145 marginL7ie float-left">
+
+                                    	<input type="text" class="width100 filtro_porpalabra" maxlength="20" onKeyPress="soloLetrasNumerosComaPunto(this);" />
+
+                                        <span class="error displayNone" id="error_porpalabra">
+
+                                            <span class="flecha"></span>
+
+                                            <span class="content">Por favor ingresa la información en &lt;etiqueta&gt;</span>
+
+                                            <span class="fin"></span>
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="clear overflow marginT25">
+
+                                    <div class="width93 float-left bold paddingT3ie">Por fechas:</div>
+
+                                    <div class="width145 marginL7 float-left marginT-5">
+
+                                    	<span class="del2">De:</span> <input type="text" id="filtro_from" class="input_calendar modal_calendario1 modal_calendar float-left" value="" readonly />
+
+                                        <span class="cal_icon3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+                                        <span class="error displayNone" id="error_filtro_fecha1">
+
+                                            <span class="flecha"></span>
+
+                                            <span class="content">Por favor selecciona una opción en &lt;etiqueta&gt;</span>
+
+                                            <span class="fin"></span>
+
+                                        </span>
+
+                                    </div>
+
+                                    <div class="width160 marginL7 float-left marginT-5">
+
+                                    	<span class="del2">Al:</span> <input type="text" id="filtro_to" class="input_calendar modal_calendario2 input_calendar_des modal_calendar float-left ie7BgCCC" disabled="disabled" value="" readonly /> <span class="cal_icon4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+                                        <span class="error displayNone" id="error_filtro_fecha2">
+
+                                            <span class="flecha"></span>
+
+                                            <span class="content">Por favor selecciona una opción en &lt;etiqueta&gt;</span>
+
+                                            <span class="fin"></span>
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="clear overflow marginT25">
+
+                                    <div class="width115 float-left bold paddingT3ie">Por importe:</div>
+
+                                    <div class="float-left">
+
+                                        <label class="label_porimporte"><input type="radio" class="radio_especifico" name="por_importe" id="ximporte1" />Espec&iacute;fico</label>
+
+                                     
+
+                                        <label class="label_porimporte float-left"><input type="radio" class="radio_rango" name="por_importe" id="ximporte2" />Por rango</label>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="clear overflow marginT10">
+
+                                    <div class=" width83 float-left">&nbsp;</div>
+
+                                    <div class="width145 marginL7 float-left">
+
+                                    	De: $ <input id="importe1" type="text" class="width100 text_importe1 textR paddingR2 input_1 input_des" onKeyPress="return validateNumeric45(this,event);" onBlur="valida_filtro_onblur();" onChange="Miles(this); agregapesitos();" disabled="disabled" />
+
+                                         <span class="errorB4 displayNone" id="error_filtro_importe1" style="left:524px !important;*left:527px !important">
+
+                                   <span class="flecha4"></span>
+
+          						<span class="content_big">Por favor sólo ingresa números en importe
+
+                                 </span>
+
+                              
+
+                                 </span>
+
+                                        
+
+                                    </div>
+
+                                    <div class="float-left">
+
+                                    	<div class="float-left paddingT3">Al: $ </div>
+
+                                        <div class="float-left marginL2">
+
+                                            <input id="importe2" type="text" class="width100 text_importe2 float-left input_hasta input_des textR paddingR2" onBlur="valida_filtro_onblur();" onKeyPress="return validateNumeric45(this,event);" onChange="Miles(this); agregapesitos2()" disabled="disabled" />
+
+                                            <span class="errorB3 displayNone" id="error_filtro_importe2" style="left:367px !important;*left:367px !important">
+
+                                
+
+          						<span class="content_big">Por favor sólo ingresa números en importe
+
+                                 </span>
+
+                                 <span class="flecha3"></span>
+
+                                 </span>
+
+                                
+
+                                            
+
+                                        </div>
+
+                                    </div>
+
+                                </div>                            
+
+                            </div>
+
+                            <div class="paddingT10 puntos_foot clear overflow footerModal">
+
+                            	<div class="floatR">
+
+                                	<input type="submit" class="btn_az float-left" value="FILTRAR" />
+
+                                    <!--<span class="error displayNone" id="error_todos">
+
+                                        <span class="flecha"></span>
+
+                                        <span class="content">Por favor ingresa la información en &lt;etiqueta&gt;</span>
+
+                                        <span class="fin"></span>
+
+                                    </span>-->
+
+                                </div>
+
+                                <div class="floatR">
+
+                                	<a href="javascript:void(0);" onClick="cerrar_modal( 'modal_filtrar' )" class="accion3 paddingR15">Cancelar</a>
+
+                                </div>
+
+                                
+
+                                
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="sello"><p>&nbsp;</p></div>
+
+                </div>
+
+                <div class="bottom_contenido">
+
+                    <p class="titulo margin-leftm4">CONT&Aacute;CTANOS</p>
+
+                    <div class="links">
+
+                    	<a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="enviar">MENSAJES</a> <span class="paddingL10">|</span> 
+
+                        <a href="popup-a.html" class="llamar popup_menu">LL&Aacute;MANOS</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="bottom"></div>
+
+            
+
+  <script type="text/javascript">
+
+            $(document).ready(function(){
+
+		
+
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #miBancaNet").addClass('selected')} ,true)
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+				account_summary();
+
+				
+
+				setTimeout(function(){$('#MiBancaNet').addClass('active')},900);
+
+            });
+
+        </script>
+
+               <script type="text/javascript">
+
+
+
+	$(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='pagInicio']").imageTick({ 
+
+			tick_image_path: "../../JFP/regional/images/check_1.png", 
+
+			no_tick_image_path: "../../JFP/regional/images/no_check_1.png",
+
+			image_tick_class: "chkpagInicio"
+
+		});
+
+        
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	
+
+	function Layuda(){
+
+window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	
+
+	function Limprimir(){
+
+		window.print();
+
+		
+
+		}
+
+	
+
+</script>  
+
+
+
+   <script type="text/javascript">
+
+            $(document).ready(function(){
+
+			
+
+					$(window).scroll(function(){
+
+    if  ($(window).scrollTop() >= 171){
+
+         $('.div_cargando').css({position:'fixed',top:0});
+
+    } else {
+
+         $('.div_cargando').css({position:'absolute',top:171});
+
+        }
+
+});
+
+
+
+				/* Obtener el alto del contendor  del objeto a centrar. */
+
+   		var alto_canvas = $(window).height();
+
+	 
+
+	    /* Obtener el valor del margen a aplicar.  */
+
+	    var margen_top = (alto_canvas - $('.loader').height())/3.5;
+
+	 
+
+	    /* Aplicar el Margen */
+
+	    $('.loader').css("top",margen_top);
+
+
+
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #miBancaNet").addClass('selected')} ,true)
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+				select_busqueda_esp();
+
+				expandir_contraer();
+
+				porimporte();
+
+				cargando_movimientos();
+
+				datepicker_busqueda_filtro();
+
+				expUno()
+
+	
+
+				
+
+            });
+
+        </script> 
+
+</body>
+
+</html>
+

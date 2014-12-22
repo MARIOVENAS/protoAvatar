@@ -1,0 +1,3320 @@
+﻿ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Layout Avatar</title>
+
+		
+
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css"/>      
+
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css"/>
+
+
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css"/>
+
+<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css"/>
+
+	
+
+    <script type="text/javascript" src="../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/scriptebanking.js"></script>
+
+     <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+    
+
+
+
+
+
+	
+
+	
+
+	
+
+
+
+	
+
+    
+
+    
+
+
+
+</head>
+
+<body>
+
+ <div class="overlay"></div>
+
+<!--inicia contenedor principal-->
+
+	<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+		<div id="header">
+
+<div class="utilities_nav" id="navegacionPrincipal">
+
+ 
+
+</div>
+
+
+
+<div class="citibank-containerImg">
+
+    <a href="#"><div id="citibank-logo"></div></a>
+
+    <div id="citibank-image"></div>
+
+</div>
+
+
+
+<div class="main_nav" id="menuw">
+
+</div>
+
+
+
+<div id="user-info">
+
+    <div class="userInfo-content" id="msj_bienvenido">
+
+       
+
+        
+
+    </div>
+
+</div>
+
+<!--termina header-->
+
+  </div>
+
+  <div class="div_cargando displayNone" id="movimientos_cargando">
+
+                        	<div class="loader"><img src="../JFP/regional/images/loader.gif" alt="Cargando" /><br />
+
+                            Un momento por favor ...</div>
+
+                        </div> 				
+
+  <div class="cS-structBodyContainer">
+
+  
+
+			<div id="title-section" class="cH-appPageHead height20">
+
+				<div class="float-left">
+
+				  <h1>MOVIMIENTOS EN BANCA ELECTR&Oacute;NICA</h1></div>
+
+			   <div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="javascript:void(0);" onclick="Layuda()" class="float-left">&nbsp;Ayuda</a>
+
+		</div>
+
+     
+
+      <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="26-AccountSummary.html"  class="float-left">&nbsp;Ver todas las cuentas</a>
+
+		</div>
+
+			</div>
+
+		    <div id="content">		
+
+		        	<!-- The left menu divs are inserted by javascript if it is necessary -->
+
+				<!--div id="left-menu" class="float-left margin-top25"></div>
+
+		                <div id="shadow">&nbsp;</div-->
+
+			  <div id="subapp-box" class="noleftmenu float-left margin-top1">
+
+      <div class="contenido_movimientos">
+
+      <div class="expandir_contraer margin-bottom25 margin-bottom5ie" id="exp_cont">
+
+                        <a id="contTodo" href="javascript:void(0);" class="contraer deshabilitado">Contraer todo</a>
+
+                        <a id="expUno" href="javascript:void(0);" class="expandir deshabilitado">Expandir todo</a>
+
+                    </div>
+
+        <div class="busqueda_especifica mmargin-top40">
+
+                    	
+
+			<div class="titulo_busqueda_esp">B&Uacute;SQUEDA ESPEC&Iacute;FICA</div>
+
+						
+
+                        <div class="cont_busqueda_esp width640 height300 margin-top22">
+
+                        	<div class="float-left width132">
+
+                        <form action="#" id="form_busqueda_esp">
+
+                        	<div class="form-row">
+
+		
+
+       
+
+        
+
+        <label class="for-table">Buscar:</label>
+
+    	 <select name="sel_buscar"  class="sel_buscar width136" onChange="select_busqueda_esp(); buscaChange();">
+
+                                    	<option value="dia">Por d&iacute;a</option>
+
+                                        <option value="rango">Por rango de d&iacute;as</option>
+
+                                        <option value="periodo">Por periodo</option>
+
+                                        <option value="movimiento">Por movimiento</option>
+
+                                    </select>
+
+		<div class="clear"></div>
+
+	</div>
+
+    
+
+    
+
+    <div class="form-row div_porperiodo">
+
+		
+
+       
+
+        
+
+        <label class="for-table">Periodo:</label>
+
+    	 <select name="sel_periodo"  class="sel_periodo width136">
+
+                                        <option>Enero 2012</option>
+
+                                        <option>Diciembre 2011</option>
+
+                                    </select>
+
+		<div class="clear"></div>
+
+	</div>
+
+                       	  <div class="div_fecha height20 margin-bottom20">
+
+                            	<p class="widtht147 paddingT3">Fecha: </p>
+
+                                
+
+                                <span class="errorB3 displayNone" id="error_fecha1" style="left:227px !important; *left:225px !important ">
+
+                                
+
+          						<span class="content_big">
+
+                                 Por favor selecciona una  opción en Fecha</span>
+
+                                 <span class="flecha3"></span>
+
+                                 </span>
+
+                                <p class="fecha1 marginT-5"><span class="del float-left">De:</span> 
+
+                                   
+
+
+
+
+
+                                    <input type="text" id="busqueda_from" class="calendario1 input_calendar float-left f12 width70" value="" readonly onFocus="focusBuscfrom()" onblur="focusBusquedato();" />
+
+                                
+
+                                </p>
+
+                                <span class="cal_icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+                                <p class=" fecha2 marginL10 marginT-5">
+
+                                <span class="del float-left">Al:</span>  
+
+                                <input type="text" id="busqueda_to" class="calendario2 input_calendar input_calendar_des  float-left f12 width70 ie7BgCCC revisar2" disabled="disabled" value="" readonly onFocus="focusBusquedato();" />
+
+                                <span class="cal_icon2 float-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+                                                      <span class="errorB3 displayNone" id="error_fecha2" style="left:356px !important;*left:357px !important">
+
+                                
+
+          						<span class="content_big">Por favor selecciona una  opción en Fecha
+
+                                 </span>
+
+                                 <span class="flecha3"></span>
+
+                                 </span>
+
+                                
+
+                                
+
+                                </p>
+
+                            </div>
+
+                       	  
+
+                          
+
+                          <div class="form-row div_estatus">
+
+		
+
+       
+
+        
+
+        <label class="for-table ">Estatus del movimiento:</label>
+
+    	 <select name="sel_estatus"  class="sel_estatus width136">
+
+                                        <option>Todas</option>
+
+                                        <option>Aplicadas</option>
+
+                                        <option>Instrucciones recibidas</option>
+
+                                        <option>Rechazadas</option>
+
+                                        <option>Canceladas</option>
+
+                                    </select>
+
+		<div class="clear"></div>
+
+	</div>
+
+                          
+
+                            
+
+                            <div class="div_autorizacion height20">
+
+                            	<p class="width145 paddingT3">No. de autorizaci&oacute;n: </p>
+
+                                 <span class="errorB4 displayNone" id="error_num_auto" style="left:554px !important;*left:557px !important; top:386px !important;">
+
+                                   <span class="flecha4"></span>
+
+          						<span class="content_big">Ingresa No de autorizaci&oacute;n
+
+                                 </span>
+
+                              
+
+                                 </span>
+
+                            
+
+                                	<input type="text" class="width136 input_num_auto f12" onKeyPress="return validateNumeric45(this,event);"  onBlur="valida_busqueda_onblur();" onFocus="focusNumauto();" />
+
+                                    
+
+                                    
+
+                                    
+
+                             
+
+                            </div>
+
+                            <div class="clear">   </div>
+
+                            <div class="botones">
+
+                            	<input onClick="valida_busqueda_esp();" type="button" class="btn_az floatR" value="BUSCAR" />
+
+                   				<a onClick="clear_form_busqueda_esp();" href="javascript:void(0);" class="accion2 marginR20 floatR"><span class="flechaazul float-left"></span>Borrar</a>
+
+                            </div>
+
+                        </form>
+
+                        </div>
+
+                        </div>
+
+
+
+
+
+
+
+<div class="float-left margin-left20" >
+
+    	<div class="lineaVertical">&nbsp;</div>
+
+    <div class="float-leftI margin-rightie69" id="flechaLinksOpcoes">
+
+    <p class="strong">¿QU&Eacute; DESEAS HACER?</p>
+
+    
+
+    <div class="margin-top6" >
+
+                <span class="flechaGris float-left">&nbsp;</span>
+
+                <a href="#">Pagar mi tarjeta de cr&eacute;dito</a>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="margin-top6" >
+
+                <span class="flechaGris float-left">&nbsp;</span>
+
+                <a href="#">Invertir mi dinero</a>
+
+    </div>
+
+    </div>
+
+    </div>
+
+
+
+                    </div>
+
+                    <div class="clear"></div>
+
+              
+
+
+
+                    <div class="movimientos">
+
+                    <div class="titulo_movimientos margin-bottom40" id="movdrv">MOVIMIENTOS</div>
+
+                        <div id="movimientos_cargados">
+
+                        <div id="mov_pag1" class="clear overflow paddingT10 displayNone">
+
+                             <div class="paginacion float-left">
+
+                                <a onclick="javascript:prevpage();" href="javascript:void(0);" class="pag_iz displayNone" id="pre1">&nbsp;&nbsp;&nbsp;</a>
+
+                                <a onclick="javascript:page1();" href="javascript:void(0);" class="num_sel" id="p1">1</a>
+
+                                <a onclick="javascript:page2();" href="javascript:void(0);" class="num" id="p2">2</a>
+
+                                <a onclick="javascript:page3();" href="javascript:void(0);" class="num" id="p3">3</a>
+
+                                <a onclick="javascript:page4();" href="javascript:void(0);" class="num" id="p4">4</a>
+
+                                 <a onclick="javascript:page5();" href="javascript:void(0);" class="num" id="p5">5</a>
+
+                                <a onclick="javascript:nextpage();" href="javascript:void(0);" class="pag_der" id="sig1">&nbsp;&nbsp;&nbsp;</a>
+
+             
+
+                            </div>
+
+                            <div class="floatR"><a href="javascript:void(0);" class="accion EnConstruccion">Exportar</a></div>
+
+                            <div class="floatR"><a href="javascript:void(0);" class="accion " onClick="window.print()">Imprimir</a></div>
+
+                            <div class="floatR overflowV"><a href="javascript:void(0);" class="filtrar" onClick="mostrar_modal('modal_filtrar');">Filtrar movimientos</a></div>
+
+                        </div>
+
+                        <table class="table_movimientos" cellpadding="0" cellspacing="0">
+
+                        	<thead>
+
+                            	<tr>
+
+                                	<td width="2%" class="strong borderLabels border9A "></td>
+
+<td width="16%" class="strong borderLabels border9A"><div class="float-left">Fecha de solicitud</div> <div class="sort_black "></div>
+
+</td>
+
+<td width="14%" class="strong borderLabels border9A "><div class="float-left">Descripci&oacute;n</div><div class="sort_grey"></div></td>
+
+<td width="19%" class="strong borderLabels border9A "><div class="float-left">#Autorizaci&oacute;n / Instrucci&oacute;n</div><div class="sort_grey"></div></td>
+
+<td width="19%" class="strong borderLabels border9A "><div class="float-left">Estatus</div><div class="sort_grey"></div></td>
+
+<td width="20%" class="strong borderLabels border9A  paddingL120"><div class="float-left">Importe</div><div class="sort_grey"></div></td>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="mov_tb" class="displayNone"><tr>
+
+<td width="2%" class="borderTopLabels"><div class="ico expandir" id="mov1"></div></td>
+
+<td class="first">01 Ago 2012 - 19:55</td>
+
+<td class="first">PAG.IMP.CAR.CHS</td>
+
+<td class="first">308651</td>
+
+<td class="first">Cancelada por rechazo</td>
+
+<td class="first"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov1">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                               <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>   
+
+                                                    <tr>
+
+                                                        <td colspan="2"><span class="bold">Datos adicionales</span></td>
+
+                                                        <td colspan="2"><span class="bold">Datos de cancelaci&oacute;n</span></td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td width="147" class="bold">Banco:</td>
+
+                                                        <td width="365">Operadora de Recursos Reforma S.A. de C.V., S.F.P.</td>
+
+                                                        <td width="188" class="bold">Servicio / Medio:</td>
+
+                                                        <td>BCO/CASA INTERNET</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Clave de rastreo:</td>
+
+                                                        <td>123456789012345678901234567890</td>
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                        <td>1234</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Instrucci&oacute;n aplicada:</td>
+
+                                                        <td>11:03:19 h</td>
+
+                                                        <td class="bold">Fecha:</td>
+
+                                                        <td>01 Ago 2012 - 19:55</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Instrucci&oacute;n liquidada:</td>
+
+                                                        <td>11:03:21 h</td>
+
+                                                        <td class="bold">Operador:</td>
+
+                                                        <td>Mariana de &Aacute;ngeles Paz del Olmo</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">ID de ejecutivo 1:</td>
+
+                                                        <td>12</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Nombre de ejecutivo 1:</td>
+
+                                                        <td>Jos&eacute; Luis P&eacute;rez Martinez</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">ID de ejecutivo 2:</td>
+
+                                                        <td>64</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Nombre de ejecutivo 2:</td>
+
+                                                        <td>Armando V&aacute;zques Suarez</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr><td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+</tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov2"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov2">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                 <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>  
+
+                                                 
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr><tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov3"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov3">
+
+                                            <div class="div_descripcion_error">NO DISPONIBLE</div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                               <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov4"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov4">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                               <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov5"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov5">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion" border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                               <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov6"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov6">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion" border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                               <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov7"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov7">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov8"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov8">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                               <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov9"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov9">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0"  cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                              	
+
+                                <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov10"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov10">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                
+
+                               <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov11"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov11">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                
+
+                                <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov12"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov12">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                
+
+                               <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov13"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov13">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                
+
+                               <tr>
+
+<td class="borderTopLabels"><div class="ico expandir" id="mov14"></div></td>
+
+<td class="borderTopLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels">308651</td>
+
+<td class="borderTopLabels">Cancelada por rechazo</td>
+
+<td class="borderTopLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov14">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                <td>&nbsp;</td>
+
+                                                
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                                
+
+                               <tr>
+
+<td class="borderTopLabels last"><div class="ico expandir" id="mov15"></div></td>
+
+<td class="borderTopLabels last">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels last">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels last">308651</td>
+
+<td class="borderTopLabels last">Cancelada por rechazo</td>
+
+<td class="borderTopLabels last"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+                                <tr>
+
+                                	<td class="descripcion" colspan="6">
+
+                                    	<div class="mov mov15">
+
+                                            <div class="div_descripcion">
+
+                                                <table class="table_descripcion"  border="0" cellpadding="0" cellspacing="0">
+
+                                                <tr>
+
+                                                <td>&nbsp;</td>
+
+                                                 <td>&nbsp;</td>
+
+                                                  <td>&nbsp;</td>
+
+                                                   <td>&nbsp;</td>
+
+                                                    <td>&nbsp;</td>
+
+                                                </tr>
+
+                                                    <tr>
+
+                                                        <td class="bold" height="0">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>Banca Miffel</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="188" class="bold">Origen</td>
+
+                                                        <td class="bold">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2" height="0">&nbsp;</td>
+
+                                                        <td width="145" class="bold">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="bold">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218">24477411</td>
+
+                                                     
+
+                                                        <td class="bold">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2010 - 09:34</td>
+
+                                                        <td class="bold">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Tipo de cambio:</td>
+
+                                                      <td>10,000,000.000000</td>
+
+                                                        <td class="bold">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="bold">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="bold">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                        <div id="mov_pag2" class="clear paddingT10 overflow height30 displayNone">
+
+                            <div class="paginacion float-left">
+
+                                <a href="javascript:void(0);" class="pag_iz displayNone" id="pre1_2" onclick="javascript:prevpage();">&nbsp;&nbsp;&nbsp;</a>
+
+                                <a id="p1_2" href="javascript:void(0);" class="num_sel" onclick="javascript:page1();">1</a>
+
+                                <a id="p2_2" href="javascript:void(0);" class="num" onclick="javascript:page2();">2</a>
+
+                                <a id="p3_2" href="javascript:void(0);" class="num"
+
+onclick="javascript:page3();">3</a>
+
+                                <a id="p4_2" href="javascript:void(0);" class="num" onclick="javascript:page4();">4</a>
+
+                                <a id="p5_2" href="javascript:void(0);" class="num"
+
+onclick="javascript:page5();">5</a>
+
+                                <a href="javascript:void(0);" class="pag_der" id="sig1_2" onclick="javascript:nextpage();">&nbsp;&nbsp;&nbsp;</a>
+
+                            </div>
+
+                            <div class="floatR"><a href="javascript:void(0);" class="accion EnConstruccion">Exportar</a></div>
+
+                            <div class="floatR"><a href="javascript:void(0);" class="accion">Imprimir</a></div>
+
+                            <div class="floatR overflowV"><a href="javascript:void(0);" class="filtrar" onClick="mostrar_modal('modal_filtrar');">Filtrar Movimientos</a></div>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                      </div>
+
+                  </div>
+
+                
+
+                </div>
+
+                
+
+               
+
+			  </div>
+
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="footer"></div>				
+
+		</div>
+
+
+
+  
+
+  </div>
+
+  
+
+   <div class="modal" id="modal_filtrar">
+
+        	<div class="top"></div>
+
+            <div class="content paddingR40">
+
+            	<div class="padding5T15B02 paddingT5">
+
+                    <div class="clear overflow">
+
+                        <div class="close" onClick="cerrar_modal( 'modal_filtrar' )"></div>
+
+                    </div>
+
+                    
+
+  <div class="titulo modaltitulo margin-top30">FILTRAR MOVIMIENTOS</div>
+
+  <div class=" borderB1dottedCCC width492 paddingB10 marginL5 marginB15 margin-top9">
+
+                    </div>
+
+                    <div class="contenido paddingT15 paddingL20 paddingR28">
+
+                        <div class="titulocontenido_normal paddingB15 width460ie puntos">
+
+                            <p>De acuerdo al criterio de b&uacute;squeda, elige al menos una de las opciones siguientes:</p>
+
+                        </div>
+
+                        <form action="" id="form_filtrar">
+
+                        	<div class="textocontenido">
+
+                                <div class="clear overflow marginT15">
+
+                                    <div class="width115 float-left bold paddingT3ie">Por palabra clave:</div>
+
+                                    <div class="width145 marginL7ie float-left">
+
+                                    	<input type="text" class="width100 filtro_porpalabra" maxlength="20" id="porpalabra" onblur="validarebak()" onkeypress="return soloLetras(event)" />
+
+                                       <span class="errorB4 displayNone" id="error_porpalabra" style="left:522px !important;*left:524px !important; top:136px !important; *top:150px !important">
+
+                         <span class="flecha4"></span>
+
+          						<span class="content_big">Ingresa palabra clave
+
+                                 </span>
+
+                               
+
+                                 </span>     
+
+                                       
+
+                                      
+
+                                    </div>
+
+                                </div>
+
+                                <div class="clear overflow marginT25">
+
+                                    <div class="width93 float-left bold paddingT3ie">Por fechas:</div>
+
+                                    <div class="width145 marginL7 float-left marginT-5">
+
+                                    	<span class="del2">De:</span> <input type="text" id="filtro_from" class="input_calendar modal_calendario1 modal_calendar float-left" value="" readonly />
+
+                                        <span class="cal_icon3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+                                        
+
+                                   <span class="errorB3 displayNone" id="error_filtro_fecha1" style="left:356px !important;*left:357px !important">
+
+                                
+
+          						<span class="content_big">Por favor selecciona una  opción en Fecha
+
+                                 </span>
+
+                                 <span class="flecha3"></span>
+
+                                 </span>     
+
+                                        
+
+                                       
+
+                                    </div>
+
+                                    <div class="width160 marginL7 float-left marginT-5">
+
+                                    	<span class="del2">Al:</span> <input type="text" id="filtro_to" class="input_calendar modal_calendario2 input_calendar_des modal_calendar float-left ie7BgCCC" disabled="disabled"  value="" readonly onblur="quitacal()"  /> <span class="cal_icon4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+
+                                        
+
+                                       <span class="errorB3 displayNone" id="error_filtro_fecha2" style="left:376px !important;*left:377px !important">
+
+                                
+
+          						<span class="content_big">Por favor selecciona una  opción en Fecha
+
+                                 </span>
+
+                                 <span class="flecha3"></span>
+
+                                 </span>     
+
+                                 
+
+                                    </div>
+
+                                </div>
+
+                                <div class="clear overflow marginT25">
+
+                                    <div class="width115 float-left bold paddingT3ie">Por importe:</div>
+
+                                    <div class="float-left">
+
+                                        <label class="label_porimporte"><input type="radio" class="radio_especifico" name="por_importe" />Espec&iacute;fico</label>
+
+                                     
+
+                                        <label class="label_porimporte float-left"><input type="radio" class="radio_rango" name="por_importe"   />Por rango</label>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="clear overflow marginT10">
+
+                                    <div class=" width83 float-left">&nbsp;</div>
+
+                                    <div class="width145 marginL7 float-left">
+
+                                    	De: $ <input id="importe1" type="text" class="width100 text_importe1 textR paddingR2 input_1 input_des" onKeyPress="return validateNumeric45(this,event);" onBlur="valida_filtro_onblur();" onChange="Miles(this); agregapesitos();" disabled="disabled" />
+
+                                         <span class="errorB4 displayNone" id="error_filtro_importe1" style="left:524px !important;*left:527px !important; top:251px;*top:271px;">
+
+                                   <span class="flecha4"></span>
+
+          						<span class="content_big">Por favor sólo ingresa números en importe
+
+                                 </span>
+
+                              
+
+                                 </span>
+
+                                        
+
+                                    </div>
+
+                                    <div class="float-left">
+
+                                    	<div class="float-left paddingT3">Al: $ </div>
+
+                                        <div class="float-left marginL2">
+
+                                            <input id="importe2" type="text" class="width100 text_importe2 float-left input_hasta input_des textR paddingR2" onBlur="valida_filtro_onblur();" onKeyPress="return validateNumeric45(this,event);" onChange="Miles(this); agregapesitos2()" disabled="disabled" />
+
+                                            <span class="errorB3 displayNone" id="error_filtro_importe2" style="left:367px !important;*left:367px !important">
+
+                                
+
+          						<span class="content_big">Por favor sólo ingresa números en importe
+
+                                 </span>
+
+                                 <span class="flecha3"></span>
+
+                                 </span>
+
+                                
+
+                                            
+
+                                        </div>
+
+                                    </div>
+
+                                </div>                            
+
+                            </div>
+
+                            <div class="paddingT10 puntos_foot clear overflow footerModal">
+
+                            	<div class="floatR">
+
+                                	<input type="button" class="btn_az float-left" value="FILTRAR"  onclick="validador_filtrar();" id="filtrar_modal"  />
+
+                                    <!--<span class="error displayNone" id="error_todos">
+
+                                        <span class="flecha"></span>
+
+                                        <span class="content">Por favor ingresa la información en &lt;etiqueta&gt;</span>
+
+                                        <span class="fin"></span>
+
+                                    </span>-->
+
+                                </div>
+
+                                <div class="floatR">
+
+                                	<a href="javascript:void(0);" onClick="cerrar_modal( 'modal_filtrar' )" name="Reset" type="reset" class="accion3 paddingR15">Cancelar</a>
+
+                                </div>
+
+                                
+
+                                
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="sello"><p>&nbsp;</p></div>
+
+                </div>
+
+                <div class="bottom_contenido">
+
+                    <p class="titulo margin-leftm4">CONT&Aacute;CTANOS</p>
+
+                    <div class="links">
+
+                    	<a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="enviar">MENSAJES</a> <span class="paddingL10">|</span> 
+
+                        <a href="popup-a.html" class="llamar popup_menu">LL&Aacute;MANOS</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="bottom"></div>
+
+        </div>
+
+  
+
+  
+
+  <script type="text/javascript">
+
+            $(document).ready(function(){
+
+		
+
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #miBancaNet").addClass('selected')} ,true)
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+				account_summary();
+
+				
+
+				setTimeout(function(){$('#MiBancaNet').addClass('active')},900);
+
+            });
+
+        </script>
+
+               <script type="text/javascript">
+
+
+
+	$(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='pagInicio']").imageTick({ 
+
+			tick_image_path: "../../JFP/regional/images/check_1.png", 
+
+			no_tick_image_path: "../../JFP/regional/images/no_check_1.png",
+
+			image_tick_class: "chkpagInicio"
+
+		});
+
+        
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	
+
+	function Layuda(){
+
+window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	
+
+	function Limprimir(){
+
+		window.print();
+
+		
+
+		}
+
+	
+
+</script>  
+
+
+
+   <script type="text/javascript">
+
+            $(document).ready(function(){
+
+			
+
+					$(window).scroll(function(){
+
+    if  ($(window).scrollTop() >= 171){
+
+         $('.div_cargando').css({position:'fixed',top:0});
+
+    } else {
+
+         $('.div_cargando').css({position:'absolute',top:171});
+
+        }
+
+});
+
+
+
+				/* Obtener el alto del contendor  del objeto a centrar. */
+
+   		var alto_canvas = $(window).height();
+
+	 
+
+	    /* Obtener el valor del margen a aplicar.  */
+
+	    var margen_top = (alto_canvas - $('.loader').height())/3.5;
+
+	 
+
+	    /* Aplicar el Margen */
+
+	    $('.loader').css("top",margen_top);
+
+
+
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #miBancaNet").addClass('selected')} ,true)
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+				select_busqueda_esp();
+
+				expandir_contraer();
+
+				porimporte();
+
+				cargando_movimientos();
+
+				datepicker_busqueda_filtro();
+
+				expUno()
+
+	
+
+				
+
+            });
+
+        </script> 
+
+        
+
+      
+
+        
+
+    
+
+</body>
+
+<!--termina contenedor principal-->
+
+</html>
+

@@ -1,0 +1,115 @@
+﻿<div class="graphite">
+
+	<ul class="accordion" id="accordion-1">
+
+        <span class="border-topDotted">&nbsp;</span>
+
+		<li>
+			<a id="t26" class="dcjq-parent 2n" href="javascript:cambiaP1();">OPERACIONES FRECUENTES</a>
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+		<li>
+
+			<a id="t27" class="dcjq-parent 2n openN" href="javascript:cambiaP2_s1();">TRANSFERENCIAS <span class="dcjq-icon"></span></a>
+
+            <ul class="left_submenu">
+
+				<li> <a id="t28" href="javascript:cambiaP2_s1();" class="3n">A mis cuentas</a></li>
+
+                <li> <a id="t29" href="javascript:cambiaP2_s2();" class="3n">A otras cuentas</a></li>
+
+            </ul>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+        <!-- Pagos Tarjetas -->
+
+        <li>
+
+			<a id="t30" class="dcjq-parent 2n openN" href="javascript:cambiaP3_s1_1();">PAGOS <span class="dcjq-icon"></span></a>
+
+			<ul class="left_submenu">
+
+            	<li style="display:none;"> <a href="javascript:void(0);" class="3n"></a></li>
+
+				<li> <a id="t31" href="javascript:cambiaP3_s1_1();" class="3n flechas_sublevel openN dcjq-parent active">Tarjetas<span class="dcjq-icon"></span></a>
+
+					<ul class="paddingL20 left_subsubmenu">
+
+						<li><a id="t32" href="javascript:cambiaP3_s1_1();" class="4n">Mis Tarjetas Banamex</a></li>
+
+						<li><a id="t33" href="javascript:cambiaP3_s1_2();" class="4n">Otras Tarjetas</a></li>
+
+					</ul>
+
+				</li>
+
+                <li> <a id="t34" href="javascript:cambiaP3_s2();" class="3n">Servicios</a></li>
+
+                <li> <a id="t35" href="javascript:cambiaP3_s3();" class="3n">Impuestos</a></li>
+
+                <li> <a id="t36" href="javascript:cambiaP3_s4();" class="3n">Cr&eacute;ditos</a></li>
+
+                <li> <a id="t37" href="javascript:cambiaP3_s5();" class="3n">Domiciliaci&oacute;n</a></li>
+
+			</ul>
+
+		</li>
+        <!-- Fin Pagos Tarjetas -->
+        
+          <!-- COMPRA DE TIEMPO AIRE -->
+        <!--
+        <span class="border-topDotted">&nbsp;</span>
+        <li>
+            <a id="t38" class="dcjq-parent 2n" href="javascript:cambiaP6();">COMPRA DE TIEMPO AIRE</a>
+        </li>-->
+        
+        <span class="border-topDotted">&nbsp;</span>
+
+        <li>
+
+			<a id="t39" class="dcjq-parent 2n" href="javascript:cambiaP4();">COMPROBANTES GDF Y SAT</a>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+        <li>
+
+			<a id="t40" class="dcjq-parent 2n openN dosLineas_text" href="javascript:cambiaP5_s1();">ADMINISTRACI&Oacute;N DE<br />CUENTAS <span class="dcjq-icon"></span></a>
+
+            <ul class="left_submenu">
+
+                <li> <a id="t41" href="javascript:cambiaP5_s1();" class="3n">Alta de cuentas de terceros</a></li>
+
+                <li> <a id="t42" href="javascript:cambiaP5_s2();" class="3n">Modificaci&oacute;n de cuentas (Actualizar cuentas)</a></li>
+
+            </ul>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+	</ul>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        left_menu_fun();
+
+        link_click = getURLParameter('link');
+
+        $('#t26').click();
+
+        $('#'+link_click).click();
+
+    });
+
+</script>

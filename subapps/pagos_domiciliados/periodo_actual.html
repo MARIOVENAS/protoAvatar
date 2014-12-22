@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Layout Avatar</title>  
+        <link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css"/>      
+        <link rel="stylesheet" type="text/css" href="../../JFP/css/widgets/jquery.qtipW3.css"/>
+        <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css"/>
+        <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon_light.css"/>
+        <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css"/>
+        <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+        <script type="text/javascript" src="../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="../../JFP/js/script.js"></script>
+        <script type="text/javascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+        <script type="text/javascript" src="../../bancanet/contenidos/bbAvatar/js/swap.js"></script>
+    </head>
+    <body>
+        <div class="bg_demo width926 overflow">
+            <div id="title-section" class="cH-appPageHead height20 paddingT0 margin-bottom20 width926">
+                <div class="float-left"><h1 id="t0">PAGOS DOMICILIADOS</h1></div>
+                <div class="margin-top6 titulo " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0)" onclick="window.history.back();" class="float-left" id="t1">&nbsp;Regresar al detalle de la cuenta</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div id="subapp-box" class="float-left noleftmenu">
+                <div class="width141">
+                    <div class="cH-appPanelHead float-left margin-top-2 margin-bottom20">
+                        <select class="select_cuentas" onChange='top.loader_page();'>
+                            <option value='1'>Mi Chequera - Cheques - MXN - 12680</option>
+                            <option value='2'>Cta Maestra - Mi maestra - MXN - 12681</option>
+                            <option value='3'>Pagomático - BNM - Mi débito - MXN - 12680</option>
+                            <option value='4'>Mi Chequera - Cheques - USD - 12680</option>
+                            <option value='5'>Tarj. Oro - Mi tarjeta - MXN - 12680</option>
+                            <option value='6'>Credicheques - Mi crédito - MXN - 12300</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="bg_grey">
+                    <div class="float-left">
+                        <select>
+                            <option id="t2">Periodo Actual</option>
+                        </select>
+                    </div>
+                    <div class="float-right">
+                        <div class="buscador2">
+                            <input type="text"  class="float-left" />
+                            <a class="cancelar float-left margin-left10" href="#">&nbsp;</a>
+                            <a id="t3" class="bt_ir float-left margin-left10" href="#">Ir</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 bgFFFFFF">
+                    <tbody>
+                        <tr>
+                            <th width="5%" class="borderLabels pad15">
+                                <span class="strong float-left">&nbsp;</span>
+                            </th>
+                            <th width="20%" valign="middle" scope="col" class="borderLabels">
+                                <span class="strong float-left" id="t4">Fecha</span>
+                                <a href="#"><div class="descendente active float-left">&nbsp;</div></a>
+                            </th> 
+                            <th width="20%" valign="middle" scope="col" class="borderLabels">
+                                <span class="strong float-left" id="t5">Descripción</span>
+                                <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                            </th> 
+                            <th width="20%" valign="middle" scope="col" class="borderLabels">
+                                <a href="#"><div class="descendente float-right">&nbsp;</div></a>
+                                <span class="strong float-right" id="t6">Importe</span>
+                            </th>
+                            <th width="15%" valign="middle" scope="col" class="borderLabels">
+                                <span class="strong float-left">&nbsp;</span>
+                            </th> 
+                            <th width="20%" valign="middle" scope="col" class="borderLabels">
+                                <span class="strong float-left" id="t7">Estatus</span>
+                                <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                            </th>                 
+                        </tr>
+                        <tr class="degrade">
+                            <td class="borderB pad15"><a class="masMenos" id="mmC1">mas / menos</a></td>
+                            <td class="borderB" id="t8">20 Ene 2012</td>
+                            <td class="borderB">Emisor: Banamex</td>
+                            <td class="borderB alignRight">$ 45,000.00</td>
+                            <td class="borderB">&nbsp;</td>
+                            <td class="borderB padding-right10">CAUSA ERROR</td>
+                        </tr>
+                        <tr class="show" id="show1">
+                            <td class="borderB" colspan="6" style="padding:10px 0 !important">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pad15" width="5%">&nbsp;</td>
+                                            <td width="20%">RFC / CURP</td>
+                                            <td width="75%">BNM840515Vb1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t9">Leyenda Emisor:</td>
+                                            <td>PRUEBA</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t10">Referencia Emisor:</td>
+                                            <td colspan="2">879500357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t11">Autorización:</td>
+                                            <td colspan="2">123456789</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="greyBack">
+                            <td class="borderB pad15"><a class="masMenos" id="mmC2">mas / menos</a></td>
+                            <td class="borderB" id="t12">20 Ene 2012</td>
+                            <td class="borderB">Emisor: Banamex</td>
+                            <td class="borderB alignRight">$ 45,000.00</td>
+                            <td class="borderB">&nbsp;</td>
+                            <td class="borderB padding-right10">CAUSA ERROR</td>
+                        </tr>
+                        <tr class="show" id="show2">
+                            <td class="borderB" colspan="6" style="padding:10px 0 !important">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pad15" width="5%">&nbsp;</td>
+                                            <td width="20%">RFC / CURP</td>
+                                            <td width="75%">BNM840515Vb1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t13">Leyenda Emisor:</td>
+                                            <td>PRUEBA</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t14">Referencia Emisor:</td>
+                                            <td colspan="2">879500357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t15">Autorización:</td>
+                                            <td colspan="2">123456789</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="borderB pad15"><a class="masMenos" id="mmC3">mas / menos</a></td>
+                            <td class="borderB" id="t16">20 Ene 2012</td>
+                            <td class="borderB">Emisor: Banamex</td>
+                            <td class="borderB alignRight">$ 45,000.00</td>
+                            <td class="borderB">&nbsp;</td>
+                            <td class="borderB padding-right10">CAUSA ERROR</td>
+                        </tr>
+                        <tr class="show" id="show3">
+                            <td class="borderB" colspan="6" style="padding:10px 0 !important">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pad15" width="5%">&nbsp;</td>
+                                            <td width="20%">RFC / CURP</td>
+                                            <td width="75%">BNM840515Vb1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t17">Leyenda Emisor:</td>
+                                            <td>PRUEBA</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t18">Referencia Emisor:</td>
+                                            <td colspan="2">879500357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t19">Autorización:</td>
+                                            <td colspan="2">123456789</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="greyBack">
+                            <td class="borderB pad15"><a class="masMenos" id="mmC4">mas / menos</a></td>
+                            <td class="borderB" id="t20">20 Ene 2012</td>
+                            <td class="borderB">Emisor: Banamex</td>
+                            <td class="borderB alignRight">$ 45,000.00</td>
+                            <td class="borderB">&nbsp;</td>
+                            <td class="borderB padding-right10">CAUSA ERROR</td>
+                        </tr>
+                        <tr class="show" id="show4">
+                            <td class="borderB" colspan="6" style="padding:10px 0 !important">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pad15" width="5%">&nbsp;</td>
+                                            <td width="20%">RFC / CURP</td>
+                                            <td width="75%">BNM840515Vb1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t21">Leyenda Emisor:</td>
+                                            <td>PRUEBA</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t22">Referencia Emisor:</td>
+                                            <td colspan="2">879500357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t23">Autorización:</td>
+                                            <td colspan="2">123456789</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="borderB pad15"><a class="masMenos" id="mmC5">mas / menos</a></td>
+                            <td class="borderB" id="t24">20 Ene 2012</td>
+                            <td class="borderB">Emisor: Banamex</td>
+                            <td class="borderB alignRight">$ 45,000.00</td>
+                            <td class="borderB">&nbsp;</td>
+                            <td class="borderB padding-right10">CAUSA ERROR</td>
+                        </tr>
+                        <tr class="show" id="show5">
+                            <td class="borderB" colspan="6" style="padding:10px 0 !important">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pad15" width="5%">&nbsp;</td>
+                                            <td width="20%">RFC / CURP</td>
+                                            <td width="75%">BNM840515Vb1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t25">Leyenda Emisor:</td>
+                                            <td>PRUEBA</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t26">Referencia Emisor:</td>
+                                            <td colspan="2">879500357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t27">Autorización:</td>
+                                            <td colspan="2">123456789</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                          
+                        <tr class="greyBack">
+                            <td class="borderB pad15"><a class="masMenos" id="mmC6">mas / menos</a></td>
+                            <td class="borderB" id="t28">20 Ene 2012</td>
+                            <td class="borderB">Emisor: Banamex</td>
+                            <td class="borderB alignRight">$ 45,000.00</td>
+                            <td class="borderB">&nbsp;</td>
+                            <td class="borderB padding-right10">CAUSA ERROR</td>
+                        </tr>
+                        <tr class="show" id="show6">
+                            <td class="borderB" colspan="6" style="padding:10px 0 !important">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pad15" width="5%">&nbsp;</td>
+                                            <td width="20%">RFC / CURP</td>
+                                            <td width="75%">BNM840515Vb1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t29">Leyenda Emisor:</td>
+                                            <td>PRUEBA</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t30">Referencia Emisor:</td>
+                                            <td colspan="2">879500357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t31">Autorización:</td>
+                                            <td colspan="2">123456789</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="borderB pad15"><a class="masMenos" id="mmC7">mas / menos</a></td>
+                            <td class="borderB" id="t32">20 Ene 2012</td>
+                            <td class="borderB">Emisor: Banamex</td>
+                            <td class="borderB alignRight">$ 45,000.00</td>
+                            <td class="borderB">&nbsp;</td>
+                            <td class="borderB padding-right10">CAUSA ERROR</td>
+                        </tr>
+                        <tr class="show" id="show7">
+                            <td class="borderB" colspan="6" style="padding:10px 0 !important">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pad15" width="5%">&nbsp;</td>
+                                            <td width="20%">RFC / CURP</td>
+                                            <td width="75%">BNM840515Vb1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t33">Leyenda Emisor:</td>
+                                            <td>PRUEBA</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t34">Referencia Emisor:</td>
+                                            <td colspan="2">879500357</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pad15">&nbsp;</td>
+                                            <td id="t35">Autorización:</td>
+                                            <td colspan="2">123456789</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="greyBack">
+                            <td class="pad15 border9A" colspan="6">
+                                <div id="flechaLinksOpcoes" class="float-left overflow">
+                                    <span class="flechaGris float-left">&nbsp;</span>
+                                    <a class="float-left" href="javascript:void(0);" onClick="top.loader_page();" id="t36">Ver más movimientos</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <script>
+            $(document).ready(function(){
+                $('.select_cuentas').val( top.getURLParameter('cta') );
+                $("#show1,#show2,#show3,#show4,#show5,#show6,#show7").hide();
+                $("#mmC1").live('click',function(){
+                    $(this).addClass('act');
+                    $("#show1").show();
+                    top.ajustarP();
+                    $(".act").live('click',function(){
+                            $("#mmC1").removeClass('act');
+                            $("#show1").hide();
+                            top.ajustarP();
+                        });
+                }
+                );
+                $("#mmC2").live('click',function(){
+                    $(this).addClass('act');
+                    $("#show2").show();
+                    top.ajustarP();
+                    $(".act").live('click',function(){
+                            $("#mmC2").removeClass('act');
+                            $("#show2").hide();
+                            top.ajustarP();
+                        });
+                }
+                );
+                $("#mmC3").live('click',function(){
+                    $(this).addClass('act');
+                    $("#show3").show();
+                    top.ajustarP();
+                    $(".act").live('click',function(){
+                            $("#mmC3").removeClass('act');
+                            $("#show3").hide();
+                            top.ajustarP();
+                        });
+                }
+                );
+                $("#mmC4").live('click',function(){
+                    $(this).addClass('act');
+                    $("#show4").show();
+                    top.ajustarP();
+                    $(".act").live('click',function(){
+                            $("#mmC4").removeClass('act');
+                            $("#show4").hide();
+                            top.ajustarP();
+                        });
+                }
+                );
+                $("#mmC5").live('click',function(){
+                    $(this).addClass('act');
+                    $("#show5").show();
+                    top.ajustarP();
+                    $(".act").live('click',function(){
+                            $("#mmC5").removeClass('act');
+                            $("#show5").hide();
+                            top.ajustarP();
+                        });
+                }
+                );
+                $("#mmC6").live('click',function(){
+                    $(this).addClass('act');
+                    $("#show6").show();
+                    top.ajustarP();
+                    $(".act").live('click',function(){
+                            $("#mmC6").removeClass('act');
+                            $("#show6").hide();
+                            top.ajustarP();
+                        });
+                }
+                );
+                $("#mmC7").live('click',function(){
+                    $(this).addClass('act');
+                    $("#show7").show();
+                    top.ajustarP();
+                    $(".act").live('click',function(){
+                            $("#mmC7").removeClass('act');
+                            $("#show7").hide();
+                            top.ajustarP();
+                        });
+                }
+                );
+
+                setTimeout(function(){top.ajustarP();},800);
+            });
+
+            var es = new Array(
+                'DIRECT DEBIT PAYMENTS',
+                'Return to Account Detail',
+                'Current Period',
+                'Go',
+                'Date',
+                'Description',
+                'Balance',
+                'Status',
+                '20 Jan 2012',
+                'Issuer legend:',
+                'Issuer reference:',
+                'Authorization:',
+                '20 Jan 2012',
+                'Issuer legend:',
+                'Issuer reference:',
+                'Authorization:',
+                '20 Jan 2012',
+                'Issuer legend:',
+                'Issuer reference:',
+                'Authorization:',
+                '20 Jan 2012',
+                'Issuer legend:',
+                'Issuer reference:',
+                'Authorization:',
+                '20 Jan 2012',
+                'Issuer legend:',
+                'Issuer reference:',
+                'Authorization:',
+                '20 Jan 2012',
+                'Issuer legend:',
+                'Issuer reference:',
+                'Authorization:',
+                '20 Jan 2012',
+                'Issuer legend:',
+                'Issuer reference:',
+                'Authorization:',
+                'See more transactions'
+            );
+        </script>
+
+    </body>
+</html>

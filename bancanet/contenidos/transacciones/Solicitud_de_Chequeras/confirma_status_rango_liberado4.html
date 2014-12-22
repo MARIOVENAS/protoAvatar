@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+
+    	<title>Banamex</title>
+
+        <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+        
+
+
+
+        
+
+    	<script type="text/javascript">
+
+		
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+			
+
+			$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+		
+
+function Initialize(){
+
+	document.getElementById("divError").style.display="none";
+
+	if("SPANISH"=="ENGLISH"){
+
+
+
+		es=["Confirm the data of the modification to be applied","Modification Data","Account","Check","Check new status","Checkbooks management",
+
+		"Sorry the transaction could not be completed","Cause:","Possible solution","What can I do?",
+
+		"You can use online help or contact the customer service at 1226 3990 (D.F. and Metropolitan area) or<br> 01 800 110 3990 (rest of the Republic)",
+
+		"Is important to have on hand the following code:"];
+
+		swap();
+
+		document.getElementById("cont").value="Continue";
+
+		document.getElementById("regr").value="Return";
+
+		$("#btn_continuar_modal").val("Continue");
+
+		//$("[id=estatus] [value=ACTIVAR]").removeClass("bgF1F2F2");
+
+		//$("[id=estatus], :contains(ACTIVAR)").text("Released");
+
+	}
+
+	else{
+
+	
+
+	}
+
+	if("0" == "1"){
+
+		$("#causa").css("height","auto");
+
+		$("#mensajeError_contenido_div", window.parent.document).html(
+
+		$("#divError").html());
+
+		parent.$.modal({
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:true,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:'auto'
+
+		});
+
+	}
+
+}
+
+			
+
+function DoSubmit( value ){
+
+	document.forms[0].EWFBUTTON.value = value;
+
+	document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+	document.forms[0].submit();
+
+}
+
+			
+
+function continua(){
+
+	var cadena="Activado::1,~";
+
+	var arreglo=cadena.split("~");
+
+	cadena_de_datos="";
+
+	for(var i in arreglo){
+
+		if(arreglo[i]!=""){
+
+			var dato=arreglo[i];
+
+			var arr_datos=dato.split(":");
+
+			cheques=arr_datos[2];
+
+			var cheques=cheques.split(",");
+
+			var cheques=cheques.sort(sortNumber);
+
+			cadena_de_datos=cadena_de_datos+cheques;
+
+		}
+
+	}
+
+	var a=document.forms[0].DATA1.value="2";
+
+	document.forms[0].DATA2.value="Activado::1,~";
+
+	parent.DoSubmit("Solicitud_de_Chequeras/resultado_status_rango_liberado4.html");
+
+}
+
+
+
+function regresa(){
+
+	parent.DoSubmit('Solicitud_de_Chequeras/consulta_status_por_rangocheques.html')
+
+}
+
+
+
+function sortNumber(a,b){
+
+	return a - b;
+
+}
+
+		</script>
+
+<script>parent.setFecha("16/04/12    17:43:12  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="174312  ";b$Cont="174312  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body  TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="RDPV3Y1QU1I8YKTDSUGXLCGZN5165TMG0PDK9Y2T" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZSCH-PAG CONFIRMACION MOD"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="20-Confirmacion_Modificacion_Estatus.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="9"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+   
+
+
+
+         
+
+      
+
+        <div id="t5"class="panelIzEnca3_text2">Administraci&oacute;n de chequeras</div>
+
+        <div id="t0" class="color666 paddingT4 f11">Confirma los datos de la modificaci&oacute;n para aplicar.</div>
+
+        
+
+        
+
+        <div class=" ">
+
+        
+
+        <div class=" borderBSolid  borderRSolid borderTSolid borderLSolid  marginT22">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2" >
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p  paddingT18 paddingL20" valign="top"><p id="t1" class="f12">Datos de la<br>modificaci&oacute;n </p></td>
+
+                    <td valign="top" class="padding20">
+
+                    
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3" >
+
+							<thead>
+
+                        	<tr>
+
+                            	<td id="t2" class=" bgF1F2F2"><span>Cuenta</span></td>
+
+                                <td class=" bgF1F2F2">Cheques M.N 002 Cheques</td>
+
+                            </tr>
+
+							</thead>
+
+							<tbody>
+
+                            <tr>
+
+                            	<td colspan="2" class="  padding0" >
+
+									<div class="overflow clear borderBSolid   marginT20   marginB10 paddingB5" >
+
+									<span class="floatL negrita  f11 color000" ><label id="t3">Cheque</label> 4</span>
+
+									</div>
+
+         					    </td>
+
+								<tr>
+
+                            	<td id="t4" class=" bgF1F2F2 "><span>Nuevo estatus del cheque</span></td>
+
+                                <td id="estatus" class=" bgF1F2F2 ">Activado</td>
+
+								</tr>
+
+                            </tr>
+
+							</tbody></table></td>
+
+                </tr>
+
+            </table>        	
+
+        </div>
+
+        </div>
+
+        <div class="marginT20 overflow">
+
+        	<input id="regr" type="button" class="btnRJ86 floatL" value="Regresar" onclick="regresa()"/>
+
+            <input id="cont" type="button" class="btnAZ86 floatR" value="Aceptar" onclick="continua()"/>
+
+        </div>
+
+		
+
+
+
+
+
+<div id="divError" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div id="t6" class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    Consulta de Estatus de Cheques<br/>
+
+		<div id="causa"><label id="t8" class="f11 color666">Causa:</label>&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+    <div id="t10" class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      <label id="t11">Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).</label><br/>
+
+	  <label id="t12">Es importante tener a la mano el siguiente c&oacute;digo:</label>
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+        
+
+    <INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">   
+
+	<INPUT TYPE=HIDDEN NAME="DATA1" VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA2" VALUE="">
+
+ 
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Solicitud de Chequeras|20-Confirmacion_Modificacion_Estatus.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

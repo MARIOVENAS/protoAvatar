@@ -1,0 +1,989 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+   <title></title>
+</head>
+
+<body>
+		<div class="div_cargando displayNone" id="movimientos_cargando">
+              <div class="loader"><img src="../../../../JFP/regional/images/loader.gif" alt="Cargando" /><br />
+              Un momento por favor ...</div>
+        </div> 
+<div class="bg_demo width926">
+
+<div id="title-section" class="cH-appPageHead height20 paddingT0 margin-bottom20 width926">
+                    <div class="float-left">
+                      <h1 id="t23">DETALLE DE LA CUENTA</h1></div>
+                        
+               <div id="ayuda">  
+                <div class="margin-top6 titulo " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0)" onclick="top.dash()" class="float-left" id="t24">&nbsp;Ver todas las cuentas</a>
+                </div>
+                </div>   
+             
+             <div id="imp" class="displayNone">
+               <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+                </div>
+                </div>
+                </div>
+
+<div class="clear"></div>
+
+<div class="noleftmenu margintop0 width926" id="subapp-box" >
+
+
+<div class="widthOpt2 float-left padding-right35" >
+
+				<table width="100%" cellspacing="0" cellpadding="0" border="0" class="valigntop" >
+                   <tbody >
+                   		<tr class="noborder height20">
+                      	<td rowspan="2"  valign="top" class="valigntop border9A height20 padding-bottom10" ><div class="card2">&nbsp;</div></td>
+                        <td class="valigntop height55" valign="top" colspan="4" >
+                        <select class="ancho100p" name="select" id="select" onchange="valor2=this.value;Cta3();">
+                      		<option value="0" >Mi Chequera - Cheques - MXN - 12680</option>
+                          <option value="1">Cta Maestra - Mi maestra - MXN - 12681</option>
+                          <option value="2">Pagom&aacute;tico - BNM - Mi d&eacute;bito - MXN - 12680</option>
+                          <option value="3">Mi Chequera - Cheques - USD - 12680</option>
+                          <option value="4">Tarj. Oro - Mi tarjeta - MXN - 12680</option>
+                          <option selected="selected">Tarj. Premia - Ptos Premia - MXN 12244</option>
+                          <option value="6">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="7">Credicheques - Mi cr&eacute;dito - MXN - 12300</option>
+                          <option value="8">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="9">Mi inversi&oacute;n - Inv. Integral - MXN - 12299</option>
+                          <option value="10">Mi plazo - Inv. Plazo - MXN - 12282</option>
+                          <option value="11">Horzcob - MXN - 123456 - Horzcob</option>
+                          <option value="12">Banca Inversi&oacute;n - MXN - 123456 - Multiseries</option>
+                          <option value="13">Mi retiro - AFORE NSS - MXN - 12312</option>
+                        </select>
+                        </td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="border9A height20 padding-bottom10" width="25%" id="t25">Estatus:</td>
+                        <td class="color666 border9A height20 padding-bottom10 alignRight padding-right35" width="25%">NORMAL</td>
+                        <td class="border9A height20 padding-bottom10 pad15" width="30%"><a href="#" class=" tooltip" id="t26" title="Aportacion voluntaria<br> (corto y largo plazo)">Saldo disponible en pesos</a></td>
+                        <td class="color666 border9A height20 padding-bottom10 alignRight" width="20%">$ 123,248.84</td>
+                      </tr>
+                      
+                      <tr class="noborder">
+                      	<td colspan="5" class="alignRight valigntop paddingT20" style="height:60px !important;">
+                        	<span id="t27">Saldo en puntos</span> 421,384,230
+                        </td>
+                      </tr>
+
+                  </tbody>
+                </table>
+                
+
+</div>
+
+
+<div class="float-left width-190 padding-left20">
+	<h4 class="margin-bottom10 f14p" id="t64">&iquest;QU&Eacute; DESEAS HACER?</h4>
+    <div class="clear"></div> 
+    <div id="flechaLinksOpcoes" class="float-left height20 width-180" style="*height:14px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.Servicios_cuentas()" id="t28">Reportar por robo o extrav&iacute;o</a>
+    </div>
+    <div class="clear"></div>
+    <div id="flechaLinksOpcoes" class="float-left height20 width-180" style="*height:14px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.Transferencias_pagos_transferencias()" id="t29">Realizar transferencia</a>
+    </div>
+    <div class="clear"></div> 
+   
+    <div class="clear"></div>
+  
+</div>
+<div class="clear"></div>
+
+<div class="clear"></div>
+<div class="marginB15 overflow marginR15 marginT34" id="searchMov2">
+
+             <div id="flechaLinksOpcoes" class="titulo">
+                <span class="flechaGris float-left">&nbsp;</span>
+                <a class="float-left" href="#" onclick="exportar();" id="t31">Exportar</a>
+            </div>
+            
+            <div id="flechaLinksOpcoes" class="titulo ancho10">
+            &nbsp;
+            </div>
+            
+            <div id="flechaLinksOpcoes" class="titulo">
+                <span class="flechaGris float-left">&nbsp;</span>
+                <a class="float-left" onClick="window.open('../../print7.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" id="t30">Imprimir</a>
+            </div>
+</div>
+ 
+ <div class="clear"></div>
+
+
+<div class="width100p float-left back-grey borderB1solidCCC borderT1solidCCC marginB15 height104 ">
+  <div class=" overflow margin-left16 marginT54" >
+   	    <div class="btn_cuenta_s border" id="todas2"><span id="t34">Todas</span></div>
+            <div class="btn_cuenta border displayNone" onclick="todas();" id="todas1"><span id="t34">Todas</span></div>
+            <div class="btn_cuenta2" onclick="depositos();" id="depositos1"><span id="t35">Compras</span></div>
+            <div class="btn_cuenta2_s displayNone" id="depositos2"><span id="t35">Compras</span></div>
+            <div class="btn_cuenta2" onclick="retiros();" id="retiros1"><span id="t36">Pagos y dep&oacute;sitos</span></div>
+            <div class="btn_cuenta2_s displayNone" id="retiros2"><span id="t36">Pagos y dep&oacute;sitos</span></div>
+            
+            
+        	<div class="floatR">
+           		<ul class="right">
+                   <li class="noborder search_tool" id="nav_home">
+                        <div class="search_wrapper2 overflow margin-top10 width230">
+                            <form id="search-form" action="" method="get" enctype="multipart/form-data">
+                                <input type="text" class="float-left marginT2 color666" id="t37" onclick="limpia()" value="Buscar" name="buscar"/>
+                                <div class="float-right paddingR15 paddingT1">
+                                    <a class="iblock" href="#" id="t38">Ir</a>
+                                    <div class="pipe marginR-4">|</div>
+                                    <a id="X" class="search_clean IEpaddingR8" onclick="limpia();" href="#">&nbsp;</a>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </li>           
+    			</ul>
+            </div>
+        </div>
+</div>
+
+<div class="clear"></div>
+
+<table cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top5 back_white width926" id="tabla1">
+                   <tbody>
+                      <tr class="ada">
+                        <th width="15%" valign="middle" scope="col" class="borderLabels pad15 height20">
+                            <span class="strong float-left" id="t39">Fecha</span>
+                            <a href="#"><div class="descendente2 active float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="40%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t40">Descripci&oacute;n</span>
+                            <a href="#"><div class="descendente2 float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="15%" valign="middle" scope="col" class="borderLabels height20">
+                            <a href="#"><div class="descendente2 float-right">&nbsp;</div></a>
+                            <span class="strong float-right" id="t41">Dep&oacute;sitos</span>
+                        </th> 
+                        <th width="15%" valign="middle" scope="col" class="borderLabels height20">
+                            <a href="#"><div class="descendente2 float-right">&nbsp;</div></a>
+                            <span class="strong float-right" id="t42">Retiros</span>
+                            
+                        </th> 
+                        <th width="15%" valign="middle" scope="col" class="borderLabels paddingR15 height20">
+                        	<a href="#"><div class="descendente2 float-right">&nbsp;</div></a>
+                            <span class="strong float-right" id="t43">Compras</span>
+                        </th>                    
+                    </tr>
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">BCA.ELECTRONICA MTY00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">600.00</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">1,000.00</td>
+                      </tr>
+                      
+                      
+                      
+                       <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">GHANDI MADERO 1 ELGA 0111196B6</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">96.00</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">293.00</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">LIVERPOOL CENTRO 1aDL931201Ml9</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">2,650.00</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">1,768.50</td>
+                      </tr>
+						
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">TICKETMASTER TFS 2QGBC 9106178R1</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">100.00</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">1,650.00</td>
+                      </tr>  
+					  
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">WAL MART CUAJIMALPA 1brN9709244W4</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">600.00</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">365.00</td>
+                      </tr>
+						
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">BONIF IVA C ANUAL XPAQBNM 840515VB1</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight borderB1solidCCC">600.00</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">BONIF IVA C ANUAL XPAQBNM 840515VB1</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight borderB1solidCCC">96.00</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO GRACIAS...</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight borderB1solidCCC">2,650.00</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">LOB MORELIA 2 03/061223OLO 890914R16</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">200.10</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">465.00</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO GRACIAS...</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight borderB1solidCCC">600.00</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">N&Uacute;CLEOS Y ENVASES DE CART&Oacute;N EN S.A. DE C.V.</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">24.98</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">3,800.00</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PULL AND BEAR REFORMA 1FZB0108104K7</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">439.00</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">439.00</td>
+                      </tr>
+                      
+                     <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">LIVERPOOL CENTRO 1aDL931201Ml9</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">61.20</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">61.20</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">LIVERPOOL CENTRO 1aDL931201Ml9</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">61.20</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">61.20</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC" colspan="5">
+                            <div id="flechaLinksOpcoes" class="float-left">
+                                <span class="flechaGris float-left">&nbsp;</span>
+                                <a class="float-left" onclick="top.window.scrollTo(0,0); top.cargando_movimientos();" id="t45" href="javascript:void(0)">&nbsp;Ver m&aacute;s movimientos</a>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                      	<td class="border9A height36" colspan="5">&nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+
+
+
+
+<table cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top5 back_white width926 displayNone" id="tabla2">
+                   <tbody>
+                      <tr class="ada">
+                        <th width="20%" valign="middle" scope="col" class="borderLabels pad15 height20">
+                            <span class="strong float-left" id="t39">Fecha</span>
+                            <a href="#"><div class="descendente2 active float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="40%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t40">Descripci&oacute;n</span>
+                            <a href="#"><div class="descendente2 float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="20%" valign="middle" scope="col" class="borderLabels height20">
+                            <a href="#"><div class="descendente2 float-right">&nbsp;</div></a>
+                            <span class="strong float-right">Pagos y dep&oacute;sitos</span>
+                            
+                        </th> 
+                        <th width="15%" valign="middle" scope="col" class="borderLabels paddingR15 height20">
+                        	<a href="#"><div class="descendente2 float-right">&nbsp;</div></a>
+                            <span class="strong float-right">Compras</span>
+                        </th>                    
+                    </tr>
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">NUCLEOS  Y ENVASES DE CART&Oacute;N EN S.A. DE C.V.</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 1,600.00</td>
+                      </tr>
+                      
+                      
+                      
+                       <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">BONIF IVA C ANUAL XPAQ BNM 840515VB1</td>
+                        <td class="borderB1solidCCC alignRight">$ 600.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">BONIF IVA C ANUAL XPAQ BNM 840515VB1</td>
+                        <td class="borderB1solidCCC alignRight">$ 96.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+						
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PULL BEAR REFORMA 1FZB0108104K7</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 293.00</td>
+                      </tr>  
+					  
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">LIVERPOOL CENTRO 1aADL931201MI9</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 1,768.50</td>
+                      </tr>
+						
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">LIVERPOOL CENTRO 1aADL931201MI9</td>
+                        <td class="colorff0000 alignRight borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">$ 1,650.00</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">BCA.ELECTRONICA MTY00</td>
+                        <td class="alignRight borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">$ 365.00</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">GANDHI MADERO 1 IELGA 0111296B6</td>
+                        <td class="alignRight borderB1solidCCC"></td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">$ 465.00</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">LIVERPOOL CENTRO 1aADL931201MI9</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 3,800.00</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">TICKETMASTER TFS 2QGBC 9106178R1</td>
+                        <td class="alignRight borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">$ 439.00</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">WAL MART CUAJIMALPA 1brN 9709244W4</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 61.20</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="borderB1solidCCC alignRight">$ 2,650.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                     <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">LOB MORELIA 2 03/061223OLO 890914R16</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 61.20</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="borderB1solidCCC alignRight">$ 600.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC" colspan="4">
+                            <div id="flechaLinksOpcoes" class="float-left">
+                                <span class="flechaGris float-left">&nbsp;</span>
+                                <a class="float-left" onclick="top.window.scrollTo(0,0); top.cargando_movimientos();" id="t45" href="javascript:void(0)">&nbsp;Ver m&aacute;s movimientos</a>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                      	<td class="border9A height36" colspan="4">&nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                
+                <table cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top5 back_white width926 displayNone" id="tabla3">
+                   <tbody>
+                      <tr class="ada">
+                        <th width="20%" valign="middle" scope="col" class="borderLabels pad15 height20">
+                            <span class="strong float-left" id="t39">Fecha</span>
+                            <a href="#"><div class="descendente2 active float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="40%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t40">Descripci&oacute;n</span>
+                            <a href="#"><div class="descendente2 float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="20%" valign="middle" scope="col" class="borderLabels height20">
+                            <a href="#"><div class="descendente2 float-right">&nbsp;</div></a>
+                            <span class="strong float-right">Pagos y dep&oacute;sitos</span>
+                            
+                        </th> 
+                        <th width="15%" valign="middle" scope="col" class="borderLabels paddingR15 height20">
+                        	<a href="#"><div class="descendente2 float-right">&nbsp;</div></a>
+                            <span class="strong float-right">Compras</span>
+                        </th>                    
+                    </tr>
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PLAN PERSONAL 12/12</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 1,000.00</td>
+                      </tr>
+                      
+                      
+                      
+                       <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="borderB1solidCCC alignRight">$ 15,650.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="borderB1solidCCC alignRight">$ 5,650.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+						
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PLAN PERSONAL 12/12</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 1,650.00</td>
+                      </tr>  
+					  
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="borderB1solidCCC alignRight">$ 1,550.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+						
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PLAN PERSONAL 12/12</td>
+                        <td class="colorff0000 alignRight borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">$ 293.00</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PLAN PERSONAL 12/12</td>
+                        <td class="alignRight borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">$ 15,000.00</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="alignRight borderB1solidCCC">$ 2,650.00</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PLAN PERSONAL 12/12</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 465.00</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="alignRight borderB1solidCCC">$ 600.00</td>
+                        <td class="alignRight padding-right10 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PLAN PERSONAL 12/12</td>
+                        <td class="borderB1solidCCC"></td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 3,800.00</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="borderB1solidCCC alignRight">$ 650.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                     <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">PLAN PERSONAL 12/12</td>
+                        <td class="borderB1solidCCC">&nbsp;</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">$ 1,768.50</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="pad15 borderB1solidCCC">01 <span id="t44">Ago</span> 2013</td>
+                        <td class="borderB1solidCCC">SU ABONO ... GRACIAS</td>
+                        <td class="borderB1solidCCC alignRight">$ 15,650.00</td>
+                        <td class="alignRight paddingR15 borderB1solidCCC">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC" colspan="4">
+                            <div id="flechaLinksOpcoes" class="float-left">
+                                <span class="flechaGris float-left">&nbsp;</span>
+                                <a class="float-left" onclick="top.window.scrollTo(0,0); top.cargando_movimientos();" id="t45" href="javascript:void(0)">&nbsp;Ver m&aacute;s movimientos</a>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                      	<td class="border9A height36" colspan="4">&nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+
+
+</div>
+</div>
+                
+		
+        
+</div>
+
+<!-- Exportar NEW-->
+                            
+                            <div class="modal" id="divExportar">
+                            <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+                        <div class="overlay-error">
+							<div class="overlay-content">
+								<div class="external-tranfer">
+									<div class="external-tranfer-content" style="left:-38px !important; top:-15px; position:relative;">
+										<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+										<div class="content-top">
+											<div class="center">
+												<div class="dot-bottom">
+													<div class="left"><span class="title" id="t51">EXPORTAR RESULTADOS</span></div>                                   
+												</div>
+												<div class="error-content">
+
+													<div id="scrollbar2" class="">
+														<div>
+															<!--div class="flechaUp"></div-->
+                                                            <div class="clear"></div>
+															<div class="scrollbar">
+																
+															</div>
+															<div class="viewport">
+																<div class="overview" style="width:440px !important;">
+																	 <p class="instructions margin-bottom15" id="t52">Selecciona el formato en el que deseas exportar el resultados de tus movimientos.</p>
+                                                                     <div class="border-dotted_top margin-bottom20"></div>
+														             <div class="width88">
+														                <div class="form-row sinMarginRight">
+														                    <label class="for-table margin-bottom5" style="width:100px !important;"><span class="strong" id="t53">Formato:</span></label>
+														                    <select style="width:75%;">
+														                        <option selected="selected" id="t54">Excel - (CSV)</option>
+                                                                                <option id="t55">Texto separado por tab</option>
+                                                                                <option id="t56">Texto separado por coma</option>
+                                                                                <option id="t57">Texto separado por pipe</option>
+														                    </select>
+														                    <div class="clear"></div>
+														                </div>
+														            </div>
+																</div>
+															</div>
+															<!--div class="flechaDown"></div-->
+														</div>
+													</div>
+
+														<div class="clear"></div>									
+														<div class="cF-sideBySide cF-bottomNav" style="background:none !important; top:200px;">
+															<ul class="cN-primaryNav">
+																<li class="cN-primaryNav">
+																</li>
+																<li class="cM-spriteBase cN-primaryNavButton "><a href="#" value="EXPORTAR" id="export" onclick="loading();"><span id="t59">Exportar</span></a></li> 
+															</ul>
+                                                            <div id="flechaLinksOpcoes">
+                                                                <span class="flechaGris float-left"></span>
+                                                                <a class="sinBold" href="javascript:void(0);" onClick="$.modal.close();" name="Reset" type="reset" id="t58">Cancelar</a>
+                                                            </div>
+														 </div>
+
+													</div>
+													<div class="content-footer" style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important;">
+														<div class="title" id="t60">Cont&aacute;ctanos</div>
+														<div class="telefono"><a href="popup-a.html" class="telefono" id="t62">Ll&aacute;manos</a></div>
+														<div class="lineaDivisoria">&nbsp;</div>
+														<div class="email"><a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="email" id="t61">Mensajes</a></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                            </div>
+                            
+                            <!-- Exportar NEW-->
+							
+                            <script type="text/javascript">
+							
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('ACCOUNT DETAIL','See all accounts','Status:','Available balance in pesos:','Balance in points:','Report theft or loss','Make a transfer','Print','Download','Current period','Previous period','All','Purchases','Payments and deposits','Search','Go','Date','Description','Deposits','Withdrawals','Balance in points','Aug','See more transactions','Period detail','Status','Purchases and withdrawals','Fees and VAT','Minimum payment','EXPORT RESULTS','Select the formats desired to export your transactions.','Format','Excel - (CSV)','Text separated by tab','Text separated by comma','Text separated by pipe','Cancel','EXPORT','CONTACT US','MESSAGES','CALL US','Wait a moment please','WHAT DO YOU WISH TO DO?');
+							
+            $(document).ready(function(){
+				
+					$(window).scroll(function(){
+    if  ($(window).scrollTop() >= 171){
+         $('.div_cargando').css({position:'fixed',top:0});
+    } else {
+         $('.div_cargando').css({position:'absolute',top:171});
+        }
+});
+
+				/* Obtener el alto del contendor  del objeto a centrar. */
+   		var alto_canvas = $(window).height();
+	 
+	    /* Obtener el valor del margen a aplicar.  */
+	    var margen_top = (alto_canvas - $('.loader').height())/3.5;
+	 
+	    /* Aplicar el Margen */
+	    $('.loader').css("top",margen_top);
+
+				
+            });
+			
+			
+			
+        </script> 
+                            
+							<script>
+							$( document ).ready(function() {
+							setTimeout(function(){top.ajustarIframe();},800);
+							});
+							
+							function limpia(){document.getElementById('t37').value="";
+											  document.getElementById('X').style.display="none";}
+							</script>
+                            
+                            <script>
+							function loading(){
+								top.$.modal.close();
+								setTimeout(function(){cargando_movimientos();},800);
+								}
+							
+							var valor1=0;
+							function cambia1(){
+								if(valor1==1){
+								$('.overlay').hide();
+								top.cargando_movimientos();
+								$('#tabla2').hide();
+								$('#tabla1').show();
+								$('#tool1').show();
+								$('#tool2').hide();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#tabla3').hide();
+								$('#cargos1').show();
+								$('#cargos2').hide();
+								$('#todas1').hide();
+								$('#todas2').show();
+								$('#depositos1').show();
+								$('#depositos2').hide();
+								$('#retiros1').show();
+								$('#retiros2').hide();
+								}
+								if(valor1==2){
+								$('.overlay').hide();
+								top.cargando_movimientos();
+								$('#tabla2').show();
+								$('#tabla1').hide();
+								$('#tool1').hide();
+								$('#tool2').show();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#tabla3').hide();
+								$('#cargos1').show();
+								$('#cargos2').hide();
+								$('#todas1').hide();
+								$('#todas2').show();
+								$('#depositos1').show();
+								$('#depositos2').hide();
+								$('#retiros1').show();
+								$('#retiros2').hide();
+								}
+							}
+							
+							function cargos(){
+								$('.overlay').hide();
+								top.cargando_movimientos();
+								$('#tabla3').show();
+								$('#tabla1').hide();
+								$('#tabla2').hide();
+								$('#tool1').show();
+								$('#tool2').hide();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#todas1').show();
+								$('#todas2').hide();
+								$('#cargos1').hide();
+								$('#cargos2').show();
+								$('#depositos1').show();
+								$('#depositos2').hide();
+								$('#retiros1').show();
+								$('#retiros2').hide();
+								}
+							
+							function todas(){
+								$('.overlay').hide();
+								top.cargando_movimientos();
+								$('#tabla1').show();
+								$('#tabla2').hide();
+								$('#tabla3').hide();
+								$('#tool1').show();
+								$('#tool2').hide();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#cargos1').show();
+								$('#cargos2').hide();
+								$('#todas1').hide();
+								$('#todas2').show();
+								$('#depositos1').show();
+								$('#depositos2').hide();
+								$('#retiros1').show();
+								$('#retiros2').hide();
+								}
+								
+								function depositos(){
+								$('.overlay').hide();
+								top.cargando_movimientos();
+								$('#tabla1').show();
+								$('#tabla2').hide();
+								$('#tabla3').hide();
+								$('#tool1').show();
+								$('#tool2').hide();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#cargos1').show();
+								$('#cargos2').hide();
+								$('#todas1').show();
+								$('#todas2').hide();
+								$('#depositos1').hide();
+								$('#depositos2').show();
+								$('#retiros1').show();
+								$('#retiros2').hide();
+								}
+								
+								function retiros(){
+								$('.overlay').hide();
+								top.cargando_movimientos();
+								$('#tabla1').show();
+								$('#tabla2').hide();
+								$('#tabla3').hide();
+								$('#tool1').show();
+								$('#tool2').hide();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#cargos1').show();
+								$('#cargos2').hide();
+								$('#todas1').show();
+								$('#todas2').hide();
+								$('#depositos1').show();
+								$('#depositos2').hide();
+								$('#retiros1').hide();
+								$('#retiros2').show();
+								}
+								
+							</script>
+                            <script type="text/javascript">
+           
+function Layuda(){
+window.open('https://bancanet.banamex.com/ayudas/es/Movimientos-en-Banca-Electronica.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+       </script>
+       
+       <script>
+	   function exportar(){
+	$('#mensajeError_contenido_div', window.parent.document).html(
+		$("#divExportar").html()
+	);
+	
+		
+	parent.$.modal(				
+			{
+				closeHTML: '',
+				opacity:60,
+				overlayClose:false,
+				flagDiv:true,
+				widthDivIfrm:570,
+				heightDivIfrm:'auto'
+			}
+		);
+		
+		top.$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		top.$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');
+		
+		
+}
+	   </script>
+       <script>
+	   function mostrar_modal2( id_modal ,callback){
+		   
+	window.scrollTo(0,0)
+	$('.overlay').show();
+	
+	var ancho_pantalla = $(window).width()/2;
+	var ancho_modal = $('#'+id_modal).width()/2;
+	var pos_left = ancho_pantalla -  ancho_modal;
+	
+	$('#'+id_modal).css({
+		left: pos_left+'px',
+		top: '0px'
+	});
+	$('#'+id_modal).show();
+     try{ eval('('+callback+')();')    }catch(e){}
+	
+	$(window).resize(function() {
+        var ancho_pantalla = $(window).width()/2;
+		var ancho_modal = $('#'+id_modal).width()/2;
+		var pos_left = ancho_pantalla -  ancho_modal;
+		
+		$('#'+id_modal).css({
+			left: pos_left+'px'
+		});
+    });
+	
+    
+}
+	   </script>
+       <script>
+	var valor2=0;
+	
+	function Cta3(){
+		
+			if(valor2==0)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==1)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Maestra.html'
+			}
+			if(valor2==2)
+			{
+			top.cargando_movimientos();
+			window.location.href='Tarjeta-de-Debito.html'
+			}
+			if(valor2==3)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==4)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta-de-Credito.html'
+			}
+			if(valor2==5)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta_premia.html'
+			}
+			if(valor2==6)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==7)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Credicheque.html'
+			}
+			if(valor2==8)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==9)
+			{
+			top.cargando_movimientos();	
+			window.location.href='39-AccountDetail_integral.html'
+			}
+			if(valor2==10)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_plazo_folio.html'
+			}
+			if(valor2==11)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_fondos.html'
+			}
+			if(valor2==12)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_multiseries.html'
+			}
+			if(valor2==13)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail.html'
+			}
+		}
+	</script>	
+</div>
+</body>
+</html>

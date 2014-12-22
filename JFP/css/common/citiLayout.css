@@ -1,0 +1,5279 @@
+/* GUILDLINES AND DOCUMENTATION.
+
+----------------------------------------------------------
+
+STYLE PREFIXES AND NAMING CONVENTIONS:
+
+All styles start with the below two character prefix, this allows the style class to be easily identified and categorized.
+
+Style names should be meaningful, but not explicitly specify things such as color, text size, etc.
+
+cH - styles for site heading structures.
+
+cT - styles for tabular structures
+
+cF - styles for form structures
+
+cM - styles for modular rules, allows for mix-ins with other structures
+
+cL - styles for list structures
+
+cN - styles for navigation structures
+
+cS - styles for base site structure
+
+example style : .xX-styleName
+
+----------------------------------------------------------
+
+CSS DOCUMENTATION:
+
+Styles within each and every CSS file should be well documented. Blocks of like style classes should be grouped together - by application, screen,
+
+etc.- along with each style class having notes explain what purpose the style was written.
+
+----------------------------------------------------------
+
+FILE NOTES:
+
+This file contains all css files that pertain to rendering application strcture on the screen.
+
+
+
+*/
+
+/* BASE SITE STRUCTURES 
+
+----------------------------------------------------------
+
+*/
+
+
+
+/***** Base site structures *****/
+
+.cS-structMainContainer {
+
+	 width:984px; 
+
+}
+
+.cS-structCarouselContainer{
+
+	float: left;
+
+	text-align:center;
+
+}
+
+/* These styles are for the overall page structure for accounts panel*/
+
+/* Main container for the accounts panel application */
+
+.cS-structBodyContainer {
+
+	float:left;
+
+	width: 935px;
+
+}
+
+/* Main container for the quick tasks and finance tools applications */
+
+.cS-structRightPanel {
+
+	width: 285px;
+
+	height: 474px;
+
+	float: left; 
+
+	padding: 15px 0px 15px 16px;
+
+}
+
+/* Gutter for padding on the left of the page */
+
+.cS-structLeftGutter {
+
+	width: 20px;
+
+	height: 474px;
+
+	float: left;
+
+}
+
+/* Gutter for padding on the right of the page */
+
+.cS-structRightGutter {
+
+	width: 29px;
+
+	height: 100%;
+
+	float: left;
+
+}
+
+/***** End base site structures *****/
+
+
+
+/***** Overlay base structures *****/
+
+/*Restructuring of padding, which allows children to take care of positioning within the element - UPDATED*/
+
+.cS-overlayContainer {
+
+	padding: 27px 30px 0 30px;
+
+	width: 490px;
+
+	height: 393px;
+
+	position: relative;
+
+	background: url('/JFP/images/overlay_stripe_bg.png');
+
+	border: 1px solid #999999;
+
+}
+
+/*Set the overlay content div at a set height and allow inner divs to set their own size*/
+
+.cS-overlayContent {
+
+	clear: both;
+
+	height: 279px;
+
+	width: 488px;
+
+	background-color: transparent;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-overlayContentLong {
+
+	height: 320px;
+
+}
+
+/*Add a spacer between content and footer for disclaimer text that some overlays which utilize*/
+
+div.cS-overlayContentDisclosure {
+
+	height: 25px;
+
+	margin: 3px 20px 3px 10px;
+
+}
+
+/*Add a spacer between content and footer for disclaimer text that some overlays which utilize*/
+
+.cS-overlayDisclaimerFooter{
+
+	height: 30px;
+
+}
+
+/*Format text of disclaimer when it appears within overlayDisclaimerFotter of Overlay*/
+
+.cS-overlayDisclaimerFooter > span{
+
+	display: block;
+
+	float: left;
+
+	margin-top: 9px;
+
+}
+
+/*Format link button of disclaimer when it appears within overlayDisclaimerFotter of Overlay - */
+
+.cS-overlayDisclaimerFooter .cN-linkButton{
+
+	float: right;
+
+}
+
+/*Overlay Content area for Alert Overlays triggered by 'See More' Link*/
+
+.cS-overlayAlert .cS-overlayContent{
+
+	height: 304px;
+
+	padding: 10px;
+
+}
+
+/*Overlay Content area for Saved Mortgage Rate Quotes Snapshot*/
+
+.cS-overlayMortgage .cS-overlayContent{
+
+	height: 299px;
+
+	background: white;
+
+	margin-top: 25px;
+
+	width: 508px;
+
+}
+
+/***** End Overlay base structures *****/
+
+
+
+/***** Accounts Panel base structures *****/
+
+.cS-structAccountsPanelContainer{
+
+	float:left; 
+
+	width: 634px; 
+
+	padding-top: 15px;
+
+}
+
+/***** End Accounts Panel base structures *****/
+
+
+
+/* END BASE SITE STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+/* NAVIGATION STRUCTURES
+
+----------------------------------------------------------
+
+This section contains styles for navigation structures. Class names should be prefixed with "cN-"
+
+
+
+*/
+
+/*Navigation structure for options assoicated with a specific form element rather than overall form*/
+
+.cF-element.cN-elementNav{
+
+	clear: both;
+
+	margin-top: 10px;
+
+}
+
+/*Navigation structure for options assoicated with a specific form element rather than overall form*/
+
+.cN-elementNav ul{
+
+	margin-left: 280px;
+
+}
+
+.cF-sideBySide.cF-threeColumnLabel .cN-primaryNav{
+
+	margin: 0 0 0 117px;
+
+}
+
+.cN-primaryNav li{
+
+	display: block;
+
+	float: left;
+
+}
+
+.cN-primaryNavButton {
+
+	font-weight: bold; 
+
+	padding: 3px 10px; 
+
+	color: #FFF;
+
+	background-position: -0px -74px;
+
+	cursor: pointer;
+
+}
+
+.cN-primaryNavButton:hover {
+
+	background-position: 0 -95px;
+
+}
+
+.cN-primaryNavSecondaryOption {
+
+	margin: 3px 0 0 10px;
+
+	cursor: pointer;
+
+}
+
+
+
+.cN-linkButton > *, .cN-linkButton > a{
+
+	float: left;
+
+	color: #05589D;
+
+}
+
+/* For inline link buttons where link should wrap with multi-line text. Text should be placed
+
+inside first span followed by a nested span with linkbutton class */
+
+span span.cN-linkButton{
+
+	display: inline-block;
+
+	margin-left: 5px;
+
+	position: relative;
+
+	top: 1px;
+
+}
+
+/* IE7 Fix - For inline link buttons where link should wrap with multi-line text. Text should be placed
+
+inside first span followed by a nested span with linkbutton class */
+
+html.vIE7 span span.cN-linkButton{
+
+	display: inline-block;
+
+	margin-left: 5px;
+
+	margin-bottom: 2px;
+
+}
+
+/*Link button where arrow appears after text alternative */
+
+.cN-linkButton.cN-linkButtonArrowAfter > *{
+
+	float: right;
+
+}
+
+/*Position Carat icon that appears next to link buttons*/
+
+.cN-linkButton .cN-buttonCarat{
+
+	margin-right: 4px;
+
+	margin-top: 4px;
+
+}
+
+/*IE fix for - Position Carat icon that appears next to link buttons*/
+
+.vIE7 .cN-linkButton .cN-buttonCarat, .vIE8 .cN-linkButton .cN-buttonCarat{
+
+	margin-right: 4px;
+
+	margin-top: 3px;
+
+}
+
+/*Position Carat icon that appears next to link buttons where the carat is after the text */
+
+.cN-linkButtonArrowAfter .cN-buttonCarat{
+
+	margin-left: 4px;
+
+	margin-top: 4px;
+
+}
+
+/*Position Carat icon that appears next to link buttons where the carat is after the text */
+
+.vIE7 .cN-linkButtonArrowAfter .cN-buttonCarat, .vIE8 .cN-linkButtonArrowAfter .cN-buttonCarat{
+
+	margin-left: 4px;
+
+	margin-top: 3px;
+
+}
+
+/*Buttons for navigation between previous and next screens*/
+
+.cN-prevNextButton > *{
+
+	float: left;
+
+}
+
+/*Buttons for navigation between previous and next screens*/
+
+.cN-prevNextButton > a{
+
+	color: #05589D;
+
+}
+
+/*Buttons for navigation between previous and next screens*/
+
+.cN-prevNextButton .cN-buttonSeparator{
+
+	position: relative;
+
+	margin: 0 5px;
+
+	bottom: 1px;
+
+}
+
+/*Buttons for navigation between previous and next screens*/
+
+.cN-prevNextButton .cN-buttonCarat{
+
+	margin-left: 4px;
+
+	margin-top: 4px;
+
+}
+
+/*IE fix for - Buttons for navigation between previous and next screens*/
+
+.vIE7 .cN-prevNextButton .cN-buttonCarat, .vIE8 .cN-prevNextButton .cN-buttonCarat{
+
+	margin-left: 4px;
+
+	margin-top: 3px;
+
+}
+
+/*Buttons for navigation between previous and next screens*/
+
+.cN-prevNextButton .cN-leftButtonCarat{
+
+	margin-right: 4px;
+
+	margin-top: 4px;
+
+}
+
+/*IE fix for - Buttons for navigation between previous and next screens*/
+
+.vIE7 .cN-prevNextButton .cN-leftButtonCarat, .vIE8 .cN-prevNextButton .cN-leftButtonCarat{
+
+	margin-right: 4px;
+
+	margin-top: 3px;
+
+}
+
+/*Buttons for navigation between previous and next screens*/
+
+.cN-leftButtonCarat {
+
+    background-position: -1px -398px; 
+
+    width: 6px;
+
+    height: 6px;                 
+
+}
+
+.cN-buttonCarat {
+
+	background-position: -8px -398px;
+
+    width: 6px;
+
+    height: 6px;
+
+}
+
+.cN-iconButtonText{
+
+	display: block;
+
+	margin-top: 2px;
+
+	margin-left: 3px;
+
+	color:	#3399CC;
+
+
+
+}
+
+.cN-iconButtonText.cN-maxMinAltText{
+
+	display: none;
+
+}
+
+.cN-iconButtonText:HOVER{
+
+	color: #05589D;
+
+}
+
+
+
+/*Overlay contact us footer container for overlays*/
+
+.cN-contactUsFooter {
+
+	margin: 0;
+
+	padding: 0;
+
+	height: 48px;
+
+	color: #333333;
+
+	background-color: transparent;
+
+}
+
+/*Formats overlay contact us text that appears within contact us footer in some overlays*/
+
+.cN-contactUsFooter > span{
+
+	display: block;
+
+	float: left;
+
+	margin-top: 13px;
+
+	line-height: 26px;
+
+	font-size: 20px;
+
+}
+
+/*IE7 FIx - Formats overlay contact us text that appears within contact us footer in some overlays */
+
+HTML.vIE7 .cN-contactUsFooter > span{
+
+	margin-top: 9px;
+
+}
+
+/*Formats overlay contact us link lists that appears within contact us footer in overlays*/
+
+.cN-contactUsFooter ul{
+
+	float: right;
+
+	font-size: 11px;
+
+	margin-top: 15px;
+
+}
+
+
+
+/*IE7 Fix - Formats overlay contact us link lists that appears within contact us footer in overlays */
+
+HTML.vIE7 .cN-contactUsFooter ul{
+
+	margin-top: 11px;
+
+}
+
+/*Formats overlay contact us links that appears within contact us footer in overlays*/
+
+.cN-contactUsFooter a{
+
+	color: #333333;
+
+	padding: 7px 10px 6px 0;
+
+	margin-right: 10px;
+
+	border-right: 1px solid #999999;
+
+}
+
+/*IE 7 fixes for overlay contact us footer Icon alignment and Border height*/
+
+.vIE7 .cN-contactUsFooter a{
+
+	display: block;
+
+	float: left;
+
+	height: 27px;
+
+	padding: 0 10px 0 0;
+
+}
+
+/*Overlay call Us icon is taller than others and needs adjustment to align properly with text*/
+
+.cN-contactUsFooter a > span.cM-callUsIcon{
+
+	position: relative;
+
+	top: 2px;	
+
+}
+
+/*IE7 fixes for overlay contact us footer Icon alignment*/
+
+.vIE7 .cN-contactUsFooter a > span.cM-spriteBase{
+
+	position: relative;
+
+	top: 4px;
+
+}
+
+/*IE 7 fixes for overlay contact us footer Icon alignment*/
+
+.vIE7 .cN-contactUsFooter a > span{
+
+	position: relative;
+
+	top: 6px;
+
+}
+
+/*Overlay Contact Us link hover color*/
+
+.cN-contactUsFooter a:hover{
+
+	color: #3399CC;
+
+}
+
+/*Remove border for last link in overlay contact us footer link list*/
+
+.cN-contactUsFooter a.cM-lastElementHorizontal{
+
+	border: none;	
+
+}
+
+/* END NAVIGATION STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+
+
+
+
+/* FORM STRUCTURES
+
+----------------------------------------------------------
+
+This section contains styles for form structures. Class names should be prefixed with "cF-"
+
+
+
+*/
+
+
+
+/***** Form section borders *****/
+
+
+
+/*Creates a solid border for the bottom edge of form sections*/
+
+.cF-solidSectionBorder{
+
+	padding-bottom: 28px;
+
+	border-bottom: 1px solid #666666;
+
+}
+
+/*Creates a solid border for the bottom and top edge of form sections*/
+
+.cF-solidSectionBorderBoth{
+
+	padding-bottom: 28px;
+
+	padding-top: 28px;
+
+	border-bottom: 1px solid #666666;
+
+	border-top: 1px solid #666666;
+
+}
+
+/*Creates a dotted border for the bottom edge of form sections*/
+
+.cF-dottedSectionBorderBoth{
+
+	padding-bottom: 28px;
+
+	padding-top: 28px;
+
+	border-bottom: 1px dotted #999999;
+
+	border-top: 1px dotted #999999;
+
+}
+
+/*Creates a dotted border for the bottom and top edge of form sections*/
+
+.cF-dottedSectionBorder{
+
+	padding-bottom: 28px;
+
+	border-bottom: 1px dotted #999999;
+
+}
+
+
+
+/***** Form section titles *****/
+
+
+
+/*Formats form section title wrapper*/
+
+.cF-sectionTitle{
+
+	float: left;
+
+	width: 100%;
+
+	padding: 0 0 28px 0;
+
+}
+
+.cF-sectionTitleRight{
+
+	float:right;
+
+}
+
+.cS-overlayContent .cF-sectionTitle{
+
+	padding: 0 0 10px 0;
+
+}
+
+/*Formats form section title main title text*/
+
+.cF-sectionTitle h1 {
+
+margin: 0 0 18px 0;
+
+display: block;
+
+float: left;
+
+color: #000;
+
+}
+
+/*Formats form section title alternate main title text*/
+
+.cF-sectionTitle h2{
+
+	padding: 0 0 0 0;
+
+	display: block;
+
+	float: left;
+
+	color: #666666;
+
+}
+
+/*Formats form section sub title text*/
+
+.cF-appInput h3{
+
+	padding: 0 0 0 0;
+
+	clear: left;
+
+	display: block;
+
+}
+
+/*Formats form section sub title text*/
+
+.cF-appInput span.cF-subHeader{
+
+	margin: 0 0 0 0;
+
+	padding: 0 0 24px 0;
+
+	display: block;
+
+	font-size: 12px;
+
+	line-height: 14px;
+
+	font-weight: bold;
+
+	float: left;
+
+	clear: left;
+
+	width: 100%;
+
+}
+
+/*Formats form section sub title text, special case for when sub header labels content below it.
+
+Has reduced bottom padding*/
+
+.cF-appInput span.cF-subHeader.cF-subHeaderLabel{
+
+	padding: 0 0 8px 0;
+
+}
+
+/*Formats the text in input, recap, confirm pages that shows what step user is on float to right side of screen*/
+
+.cF-appInput .cF-stepsText{
+
+	font-weight: bold;
+
+}
+
+span.cF-formInstructions{
+
+	clear: left;
+
+	float: left;
+
+	margin: 0 0 18px 0;
+
+	font-style: italic;
+
+	width: 100%;
+
+}
+
+.cF-appInput .cF-formText{
+
+	clear: left;
+
+	float: left;
+
+	margin: 0 0 18px 0;
+
+	width: 100%;
+
+}
+
+.cF-appInput .cF-formErrorMessage{
+
+	display: none;
+
+	line-height: 17px;
+
+}
+
+.cF-appInput .cF-formErrorMessage .cF-formErrorMessageIcon{
+
+	display: block;
+
+	float: left;
+
+	margin-right: 4px;
+
+}
+
+.cF-appInput .cF-formErrorMessage .cF-formErrorMessageText{
+
+	display: block;
+
+	float: left;
+
+	font-weight: bold;
+
+	width: 520px;
+
+	
+
+}
+
+/*Formats the sub header text in recap, confirm pages*/
+
+.cF-recapConfirmSubHeader{
+
+	font-weight: bold;
+
+}
+
+/*Formats icons that appear in recap, confirm sub headers to have a margin separating them from the text*/
+
+.cF-recapConfirmSubHeader .cM-spriteBase{
+
+	margin-right: 5px;
+
+}
+
+.cF-entryGuidelines{
+
+	width: 365px;
+
+	padding: 6px 0 6px 24px;
+
+	float: left;
+
+	border-left: 1px dotted #999;
+
+}
+
+/***** All forms (Stacked and Side By Side) *****/
+
+
+
+/*Formats form element to fill its container*/
+
+.cF-appInput{
+
+	margin: 30px 0 0 0;
+
+	/*width: 100%;*/
+
+	float: left;
+
+}
+
+.cF-appInput.cF-fullPage{
+
+	width: 926px;
+
+}
+
+
+
+/*Formats form fieldsets (form sections) to add margin*/
+
+.cF-appInput fieldset{
+
+	padding-bottom: 28px;
+
+	width: 100%;
+
+}
+
+/*Formats form fieldsets (form sections) to add margin*/
+
+.cS-overlayContent .cF-appInput{
+
+	width: 419px;
+
+	float: left;
+
+	margin: 24px 35px 0px 34px;
+
+}
+
+/*Formats form fieldsets (form sections) to add margin*/
+
+.cS-overlayContent .cF-appInput fieldset{
+
+	padding-bottom: 0px;
+
+	margin-bottom: 0px;
+
+	height: 213px;
+
+}
+
+/*Formats form inputs to remove default padding*/
+
+.cF-appInput input{
+
+	padding: 0 0 0 0;
+
+}
+
+/*This class is used on divs that wrap form values (as part of label - value pairs) when the value is made up of multiple html elements*/
+
+.cF-value{
+
+	float: left;
+
+	display: block;
+
+}
+
+/*Formats elements within the value wrapper to float left*/
+
+.cF-value > *{
+
+	float: left;
+
+}
+
+
+
+/*ElementInputBox is a wrapper used to specify this form element contains an input box or select. When this class is used
+
+elements within the value wrapper need a line height of 20px to properly align with the vertical center of the input*/
+
+.cF-elementInputBox .cF-value{
+
+	line-height: 20px;
+
+}
+
+/*ElementText is a wrapper used to specify this form element contains an text instead of an input box.
+
+When this wrapper is used spans that are a part of the value wrapper require formatting to align correctly*/
+
+.cF-elementText .cF-value span{
+
+	clear: both;
+
+	display: block;
+
+	margin-bottom: 5px; 
+
+}
+
+/*Formats disclaimer text appearing within a form*/
+
+.cF-disclaimer{
+
+	font-size: 11px;
+
+	display: block;
+
+	line-height: normal;
+
+	color: #666666;
+
+}
+
+/*Special formatting for form elements that display current balance of an account*/
+
+.cF-currentBalance{
+
+	font-weight: bold;
+
+}
+
+/*Special formatting for form elements that display alternate currency conversion*/
+
+.cF-secondCurrency{
+
+	color: #999999;
+
+}
+
+/*Formats form labels*/
+
+.cF-element label{
+
+	color: #333333;
+
+}
+
+/*Formats form inputs and selects*/
+
+.cF-elementInputBox input[type="text"], .cF-elementInputBox  select{
+
+	display: block;
+
+	margin: 0 0 0 0;
+
+}
+
+/*Formats textarea shown within form to default size*/
+
+.cF-elementInputBox textarea{
+
+	width: 330px;
+
+	height: 55px;
+
+}
+
+/*Formats currency sign for inputs that display currency symbols before*/
+
+.cF-CurrencySymbol{
+
+	display: block;
+
+	margin: 0px 9px 0 0;
+
+}
+
+/*Formats cents for inputs that display cents after*/
+
+.cF-CurrencyCents{
+
+	display: block;
+
+	margin: 0 0 0 9px;
+
+}
+
+.cF-footerDisclaimer{
+
+	clear:left;
+
+	font-style: italic;
+
+	padding-bottom: 18px;
+
+}
+
+.cF-InvalidInputBackground{
+
+	background-color: #FFFF99!important;
+
+}
+
+/***** Side by side forms *****/
+
+
+
+.cF-sideBySide{
+
+	clear: left;
+
+	float: left;
+
+	display: block;
+
+}
+
+.cF-fullPage .cF-sideBySide{
+
+	width: 536px;
+
+}
+
+.cF-sideBySide.cF-threeColumnLabel .cF-element > label{
+
+	width: 107px;
+
+}
+
+.cF-sideBySide.cF-twoColumnLabel .cF-element > label{
+
+	width: 68px;
+
+}
+
+.cF-sideBySide .cF-multiColumn{
+
+	clear: left;
+
+	float: left;
+
+	display: block;
+
+	width: 100%;
+
+}
+
+.cF-sideBySide .cF-multiColumn > .cF-element{
+
+	clear: none;
+
+	width: auto;
+
+	margin-bottom: 19px;
+
+	margin-right: 20px;
+
+}
+
+.cF-sideBySide .cF-multiColumn > .cF-element.cF-newColumn > label{
+
+	width: auto;
+
+}
+
+/*Formats div wrapper of form labels and inputs that display in a side by side manner*/
+
+.cF-sideBySide .cF-element{
+
+	display: block;
+
+	float: left;
+
+	clear: both;
+
+	width: 100%;
+
+}
+
+.cF-sideBySide .cF-elementText{
+
+	margin: 0 0 19px 0;
+
+}
+
+.cF-sideBySide .cF-elementText label{
+
+	margin: -2px 13px 0 0;
+
+}
+
+/*Formats disclaimer text associated with a side by side form input field*/
+
+.cF-sideBySide .cF-disclaimer{
+
+	clear: left;
+
+	width: 350px;
+
+	margin: 12px 0 4px 0;
+
+}
+
+.cF-sideBySide .cF-inputInfo{
+
+	color: #999999;
+
+	margin-left: 9px;
+
+}
+
+/*Formats form labels to have their inputs and selects display to the side the label*/
+
+.cF-sideBySide .cF-element label{
+
+	text-align: left;
+
+	width: 208px;
+
+	float: left;
+
+	display: block;
+
+	line-height: 18px;
+
+}
+
+/*Formats select elements within the value wrapper to have margin on right, added for multiple selects within one line*/
+
+.cF-sideBySide .cF-elementInputBox .cF-value > .select{
+
+	margin: 0 7px 0 0;
+
+}
+
+.cF-sideBySide .cF-elementInputBox{
+
+	margin: 0 0 18px 0;
+
+}
+
+.cF-sideBySide .cF-elementInputBox label{
+
+	margin: 1px 10px 0 0;
+
+}
+
+.cF-withLeftNav .cF-sideBySide .cF-element label{
+
+	width: 100px;
+
+}
+
+.cF-wideLabelWithLeftNav .cF-sideBySide .cF-element label{
+
+	width: 180px;
+
+}
+
+.cF-sideBySide .cF-doubleMargin{
+
+	margin-bottom: 36px!important;
+
+}
+
+/*Formats labels within confirmation structure for sending emails*/
+
+#sendEmailNotification .cF-element label{
+
+	width: 40px;
+
+}
+
+/*Formats labels within confirmation structure for sending emails*/
+
+#sendEmailNotification .cF-element input{
+
+	width: 330px;
+
+}
+
+/*Formats labels within confirmation structure for sending emails*/
+
+#sendEmailNotification .cF-element textarea{
+
+	height: 80px;
+
+	width: 382px;
+
+}
+
+/***** Stacked forms *****/
+
+
+
+.cF-stacked{
+
+	clear: left;
+
+	float: left;
+
+	margin-left: 29px;
+
+	margin-right: 29px;
+
+	width: 692px;
+
+	display: block;
+
+}
+
+/*Stacked with margins the same as side by side (more narrow margins). Can be used to put stacked elements
+
+within a side by side stucture so the margins match*/
+
+.cF-stackedNarrowMargins{
+
+	margin-left: 13px;
+
+	margin-right: 0px;
+
+}
+
+/*Formats div wrapper of form labels and inputs that display in a stacked manner*/
+
+.cF-stacked .cF-element{
+
+	float: left;
+
+	position: relative;
+
+}
+
+.cF-stacked .cF-elementInputBox{
+
+	margin: 0 29px 34px 0;
+
+}
+
+.cF-stacked .cF-elementText{
+
+}
+
+/*Formats disclaimer text display to right of stacked form input fields*/
+
+.cF-stacked .cF-disclaimer{
+
+	width: 350px;
+
+	float: left;
+
+	margin: 0 0 0 29px;
+
+	position: absolute;
+
+	bottom: 0;
+
+	display: inline;
+
+}
+
+.cF-stacked .cF-disclaimer.cF-multiDisclaimer{
+
+	position: relative;
+
+}
+
+.cF-stacked .cF-disclaimer.cF-multiDisclaimer span{
+
+	display: block;
+
+	margin-bottom: 24px;
+
+}
+
+/*Formats form labels to have their inputs and selects display underneath the label*/
+
+.cF-stacked .cF-element label{
+
+	display: block;
+
+	margin: 0 0 5px 0;
+
+}
+
+/*Formats form inputs and selects in a stacked form to display underneath their labels*/
+
+.cF-stacked .cF-elementInputBox input, .cF-stacked .cF-elementInputBox select{
+
+	float: left;
+
+}
+
+
+
+/***** Radio Button / Check Box lists  *****/
+
+
+
+/*Formats form labels and buttons for input choice elements (radio or checkbox)*/
+
+.cF-elementInputChoiceHoriz{
+
+	margin: 0 0 19px 0;
+
+	color: #333333;
+
+}
+
+.cF-elementInputChoiceHoriz .cF-value{
+
+	margin-right: 28px;
+
+}
+
+.cF-elementInputChoiceHoriz label{
+
+	margin: -3px 13px 0 0;
+
+}
+
+/*Formats input form's input choice elements (radio or checkbox)*/
+
+.cF-elementInputChoiceHoriz input{
+
+	float: left;
+
+	margin: 0 6px 0 0;
+
+	height: 13px;
+
+	width: 13px;
+
+}
+
+/*Formats input form's input choice element's associated text (radio or checkbox)*/
+
+.cF-elementInputChoiceHoriz span{
+
+
+
+}
+
+/*Formats form labels and buttons for input choice elements (radio or checkbox)*/
+
+.cF-elementInputChoiceVert{
+
+	float: left;
+
+	margin: 0 0 18px 0;
+
+	color: #333333;
+
+}
+
+/*Formats element that wraps all inputs (radio or checkbox) in the list*/
+
+.cF-inputChoiceList{
+
+	float: left;
+
+}
+
+/*Formats element that wraps all inputs (radio or checkbox) in the list, when list has no label*/
+
+.cF-inputChoiceList.cF-inputChoiceListNoLabel{
+
+	margin: 0 0 0 39px;
+
+}
+
+/*Formats input form's input choice element's associated text (radio or checkbox)*/
+
+.cF-elementInputChoiceVert .cF-inputChoiceList > .cF-value{
+
+	clear: both;
+
+	margin-bottom: 12px;
+
+}
+
+.cF-elementInputChoiceVert label{
+
+	margin: -3px 13px 0 0;
+
+}
+
+.cF-elementInputChoiceVert input[type="radio"]{
+
+	margin: 0 6px 0 0;
+
+	height: 13px;
+
+	width: 13px;
+
+}
+
+.cF-elementInputChoiceVert .cF-inputChoiceList .cF-value > label{
+
+	margin: -2px 9px 0 30px;
+
+	width: 25px;
+
+	text-align: center;
+
+	
+
+}
+
+.cF-elementInputChoiceVert .cF-inputChoiceList > .cF-value > input[type="text"]{
+
+	margin: -2px 0 0 0;
+
+}
+
+.cF-elementInputChoiceVert .cF-inputChoiceList > .cF-value > span{
+
+	width: auto;
+
+}
+
+
+
+/***** Form disclaimer choice inputs (ex. - Agree/Disagree radio button /check box for Terms & Conditions)  *****/
+
+
+
+/*Formats form labels and buttons for disclaimer choice elements (radio or checkbox)*/
+
+.cF-elementInputDisclaimerChoice{
+
+	margin: 0 0 0 0;
+
+	color: #666666;
+
+}
+
+/*Formats input form disclaimer choice elements (radio or checkbox)*/
+
+.cF-elementInputDisclaimerChoice input{
+
+	margin: 0 9px 0 0;
+
+	height: 13px;
+
+	width: 13px;
+
+	padding: 0 0 0 0;
+
+}
+
+/*Formats input form disclaimer choice input's associated text (radio or checkbox)*/
+
+.cF-elementInputDisclaimerChoice .cF-value > span{
+
+ 	width: 90%;
+
+}
+
+/*Formats form labels and buttons for vertical input elements (radio or checkbox)*/
+
+.cF-elementInputDisclaimerChoice .cF-value{
+
+	clear: left;
+
+	margin: 0 0 19px 0;
+
+	width: 100%;
+
+}
+
+/*Formats disclaimer text associated with a disclaimer input choice structure
+
+(ex.- radio inputs for agree/disagree with Terms of service)*/
+
+.cF-elementInputDisclaimerChoice .cF-disclaimer{
+
+	font-size: 12px;
+
+	color: #333333;
+
+	font-style: italic;
+
+	margin-bottom: 10px;
+
+	width: auto;
+
+}
+
+
+
+/***** Expanding form sections *****/
+
+
+
+.cF-expandingSection{
+
+	clear: left;
+
+	float: left;
+
+	width: 100%;
+
+}
+
+.cF-expandingSectionLink{
+
+	float: left;
+
+	margin-bottom: 15px;
+
+}
+
+HTML.vIE7 .cF-expandingSectionLink{
+
+	padding-bottom: 15px;
+
+	margin-bottom: 0px;
+
+}
+
+.cF-expandingSectionLink > span{
+
+	float: left;
+
+	display: block;
+
+}
+
+.cF-expandingForm{
+
+	clear: left;
+
+	float: left;
+
+	width: 100%;
+
+	display: none;
+
+}
+
+
+
+/***** Navigation below form *****/
+
+
+
+.cF-bottomNav{
+
+	display: block;
+
+	float: left;
+
+	border-top: 1px dotted #999999;
+
+	padding-top: 11px;
+
+	padding-bottom: 18px;
+
+	width: 100%;
+
+}
+
+.cS-overlayContent .cF-bottomNav ul{
+
+	float: right;
+
+}
+
+.cS-overlayContent .cF-bottomNav .cN-primaryNavSecondaryOption{
+
+	margin: 3px 10px 0 0;
+
+}
+
+.cF-stacked.cF-bottomNav{
+
+	margin-left: 29px;
+
+}
+
+.cF-sideBySide.cF-bottomNav{
+
+	margin: 0 0 0 0;
+
+}
+
+/*Override of dottedSectionBorderBoth class to format it within an overlay header*/
+
+.cH-overlayHeader .cH-overlayTitleLine.cF-dottedSectionBorderBoth{
+
+	padding-top: 10px;
+
+	padding-bottom: 10px;
+
+	margin-bottom: 10px;
+
+}
+
+/*Override of dottedSectionBorderBoth class to format it within an overlay header*/
+
+.cH-overlayHeader .cH-overlayTitleLine.cF-dottedSectionBorder{
+
+	padding-top: 10px;
+
+	margin-bottom: 13px;
+
+}
+
+
+
+/*Override of cF-element class to format it within an overlay header*/
+
+.cH-overlayTitleLine .cF-element{
+
+	margin-bottom: 0px!important;
+
+}
+
+/*Override of cF-newColumn class to format it within an overlay header*/
+
+.cH-overlayTitleLine .cF-multiColumn .cF-newColumn{
+
+	float: right;
+
+}
+
+/*Override of cF-element class to format it within an overlay header with multiple columns*/
+
+.cH-overlayTitleLine .cF-multiColumn .cF-newColumn > .cF-element{
+
+	float: right;
+
+	width: 100%;	
+
+}
+
+/*Override of cF-element class to format it within an overlay header with multiple columns */
+
+.cH-overlayTitleLine .cF-multiColumn .cF-newColumn > .cF-element .cF-value{
+
+	float: right;
+
+}
+
+/*Override of cF-element class to format it within an overlay header with multiple columns */
+
+.cH-overlayTitleLine .cF-multiColumn .cF-newColumn > .cF-element span{
+
+	float: right;
+
+}
+
+/*Override of cF-value class to format it within an overlay header*/
+
+.cH-overlayTitleLine .cF-value span{
+
+	margin-bottom: 0px;
+
+}
+
+/*Make multi-column element labels have auto width instead of fixed*/
+
+.cF-sideBySide .cF-multiColumn .cF-element label{
+
+	width: auto;
+
+}
+
+/*Make multi-column element labels have auto width instead of fixed */
+
+ .cH-overlayTitleLine.cF-sideBySide  .cF-multiColumn .cF-element.cF-newColumn label{
+
+	width: 133px;
+
+	text-align: right;
+
+}
+
+/*Style to reduce right margin for form elements appearing in overlay header */
+
+.cH-overlayTitleLine.cF-sideBySide .cF-multiColumn > .cF-element{
+
+	margin-right: 5px;
+
+}
+
+.cH-overlayTitleLine.cF-sideBySide  .cF-multiColumn .cF-element select{
+
+	width: 225px;
+
+}
+
+
+
+.cH-overlayTitleLine.cF-sideBySide  .cF-multiColumn .cF-element .select
+
+	{
+
+	width: 225px;
+
+}
+
+/*Overlay Content sub header text formatting (APR text)*/
+
+.cH-overlayContentSubHeader{
+
+	clear: both;
+
+	float:right;
+
+	font-size: 12px;
+
+	margin: 10px 0 -22px 0;
+
+	display: block;
+
+	position: relative;
+
+	z-index: 1;
+
+}
+
+
+
+html.vIE7 .cH-overlayContentSubHeader {
+
+	clear: none;
+
+}
+
+/*Overlay Content sub header text formatting (APR text)*/
+
+.cH-overlayContentSubHeader span{
+
+	display: block;
+
+}
+
+/* END FORM STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+
+
+/* BEGIN MODULAR RULES
+
+----------------------------------------------------------
+
+This section contains styles for modular, reusable code. Class names should be prefixed with "cM-"
+
+
+
+*/
+
+
+
+/***** Utilities *****/
+
+/*Removes margin from elements that are the last in a vertical group so extra margins are not added*/
+
+.cM-lastElementVertical{
+
+	margin-bottom: 0px!important;
+
+	padding-bottom: 0px!important;
+
+}
+
+/*Removes margin from elements that are the last in a horizontal group so extra margins are not added*/
+
+.cM-lastElementHorizontal{
+
+	margin-right: 0px!important;
+
+	padding-right: 0px!important;
+
+}
+
+/*Hides tool tip content divs so they don't show up before widget is initialized*/
+
+.cM-toolTipContent{
+
+	display: none;
+
+}
+
+/****************************************************************************/
+
+/** START CLASSES FOR STRUCTURES THAT GIVE CHILDREN ICONS SPECIFIC PADDING **/
+
+
+
+/* Generic spacing between icon and adjacent element */
+
+.cM-iconPadSpnc span.cM-spriteBase {
+
+    padding: 0 0 0 0;
+
+    margin-right: 5px;
+
+}
+
+
+
+/** END CLASSES FOR STRUCTURES THAT GIVE CHILDREN ICONS SPECIFIC PADDING **/ 
+
+/**************************************************************************/
+
+
+
+/*****************************/
+
+/** START COMMON DIMENSIONS **/
+
+
+
+/* Common widths and heights, 11px X 10px */
+
+.cM-negAlertIcon, .cM-posAlertIcon {
+
+	width: 11px;
+
+	height: 10px;
+
+}
+
+
+
+/* Common widths and heights, 12px X 12px */
+
+.cM-posErrIcon, .cM-negErrIcon {
+
+	width: 12px;
+
+	height: 12px;
+
+}
+
+
+
+/* Common widths and heights, 15px X 15px */
+
+.cM-minimizeButton, .cM-maximizeButton, .cM-maximizeButtonDisabled, 
+
+.cM-minimizeButtonDisabled, .cM-closeButton {
+
+	width: 15px;
+
+	height: 15px;
+
+}
+
+
+
+/** END COMMON DIMENSIONS **/
+
+/***************************/
+
+
+
+/***********************************/
+
+/** START ICON AND BUTTON CLASSES (in alphabetical order) **/
+
+
+
+/* Displays a Big Down Arrow. B stands for Big, d stands for Down */
+
+.cM-arrowIconBd {
+
+    top: 0;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 5px;
+
+    background-position: 0 -500px;
+
+    width: 13px;
+
+    height: 6px;
+
+}
+
+
+
+/* Displays a Call Us icon  */
+
+.cM-callUsIcon {
+
+	top: 3px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 0;
+
+    background-position: -1px -335px;
+
+    width: 14px;
+
+    height: 15px; 
+
+}
+
+.cM-callUsIcon:hover {
+
+    background-position: -1px -350px;
+
+}
+
+
+
+/* Displays a Big Down Carat. B stands for Big, d stands for Down */
+
+.cM-caratIconBd {
+
+    top: 0;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 5px;
+
+    background-position: 0 -519px;
+
+    width: 13px;
+
+    height: 6px;
+
+}
+
+
+
+/* Displays a Chat icon */
+
+.cM-chatIcon {
+
+    top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 2px;
+
+    background-position: -1px -142px;
+
+    width: 9px;
+
+    height: 10px;
+
+}
+
+.cM-chatIcon:hover {
+
+    background-position: -1px -153px;
+
+}
+
+
+
+/* Displays a Green Check Mark */
+
+.cM-checkIcon {
+
+	top: 2px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 1px;
+
+	background-position: -1px -545px;
+
+    width: 13px;
+
+    height: 12px; 	
+
+}
+
+
+
+/* Displays a Close Button */
+
+.cM-closeButton {
+
+    top: 3px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 0px;
+
+	background-position: -1px -366px;
+
+
+
+}
+
+.cM-closeButton:hover {
+
+	background-position: -1px -382px;
+
+}
+
+
+
+/* Temporary class for Date Picker image - to be replaced by widget*/
+
+.cM-datePickerImage{
+
+	background-image: url('global/images/jfpw.datepicker.png');
+
+	margin: 2px 0 0 2px;
+
+	height: 15px;
+
+	width: 15px;
+
+	float: left;
+
+	display: block;
+
+}
+
+
+
+/* Displays an eBill Eligible icon */
+
+.cM-eBillEligibleIcon {
+
+	top: 3px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: -1px;
+
+	background-position: -1px -14px;
+
+	width: 14px;
+
+	height: 16px;
+
+}
+
+
+
+/* Displays a eBill Enrolled icon */
+
+.cM-enrolledIcon {
+
+	top: 2px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 0px;
+
+	background-position: -1px -47px;
+
+	width: 14px;
+
+	height: 14px;
+
+}
+
+
+
+/* Displays a Question Mark/Help icon */
+
+.cM-helpIcon  {
+
+	margin-left: 3px;
+
+	top: 4px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 0px;
+
+	background-position: -1px -304px;
+
+	height: 16px;
+
+	width: 13px;
+
+	cursor: pointer;
+
+}
+
+
+
+.cM-helpIcon:hover {
+
+	background-position: -1px -320px;
+
+}
+
+
+
+/* Displays a Small Left Arrow icon */
+
+.cM-leftArrowIcon {
+
+    top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 5px;
+
+    background-position: -7px -398px; 
+
+    width: 6px;
+
+    height: 8px;                 
+
+} 
+
+
+
+/* Displays a Big Left Arrow. B stands for Big */
+
+.cM-leftArrowIconB {
+
+    top: 2px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 0px;
+
+    background-position: -1px -487px;
+
+    width: 6px;
+
+    height: 13px;
+
+}
+
+
+
+/* Displays a Big Left Carat. B stands for Big */
+
+.cM-leftCaratIconB {
+
+    top: 2px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 1px;
+
+    background-position: -1px -506px;
+
+    width: 6px;
+
+    height: 13px;
+
+}
+
+
+
+/* Displays a Lock icon */
+
+.cM-lockIcon {
+
+    top: 0;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 1px;
+
+    background-position: -1px -164px;
+
+    width: 8px;
+
+    height: 10px;
+
+}
+
+.cM-lockIcon:hover {
+
+    background-position: -1px -175px;
+
+}
+
+
+
+/* Displays a Maximize Button*/
+
+.cM-maximizeButton {
+
+	top: 4px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 0;
+
+	background-position: -1px -427px;
+
+}
+
+
+
+/* Displays a Disabled Maximize Button */
+
+.cM-maximizeButtonDisabled {
+
+	top: 4px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 0;
+
+	background-position: -1px -459px;
+
+} 
+
+
+
+/* Displays a Minimize Button*/
+
+.cM-minimizeButton {
+
+	top: 4px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 0;
+
+	background-position: -1px -411px;
+
+}
+
+
+
+/* Displays a Disabled Minimize Button */
+
+.cM-minimizeButtonDisabled {
+
+	top: 4px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 0;
+
+	background-position: -1px -443px;
+
+}
+
+
+
+/* Displays a Blue (Positive) Message Alert icon */
+
+.cM-posAlertIcon {
+
+	top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 1px;
+
+	background-position: -1px -258px;
+
+}
+
+
+
+/* Displays a Red (Negative) Error icon */
+
+.cM-negErrIcon {
+
+    top: 2px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 1px;
+
+    background-position: -1px -212px;
+
+}
+
+
+
+
+
+/* Displays a Red (Negative) Message Alert icon */
+
+.cM-negAlertIcon {
+
+	top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 1px;
+
+	background-position: -1px -247px;
+
+}
+
+
+
+/* Displays a Blue (Positive) Error icon */
+
+.cM-posErrIcon {
+
+    top: 2px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 1px;
+
+    background-position: -1px -1px;
+
+}
+
+
+
+/* Displays a Large Blue Error icon. B is for Big. */
+
+.cM-posErrIconB {
+
+	top: 5px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: -1px;
+
+	background-position: -1px -526px;
+
+	width: 17px;
+
+	height: 18px; 
+
+}
+
+
+
+/* Displays a Recurring icon */
+
+.cM-recurringIcon {
+
+	top: 2px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 1px;
+
+	background-position: -1px -475px;
+
+	height: 12px;
+
+	width: 10px;
+
+}
+
+
+
+/* Displays a Small Right Arrow icon */
+
+.cM-rightArrowIcon {
+
+    top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 4px;
+
+    background-position: -1px -398px;
+
+    width: 5px;
+
+    height: 8px;
+
+}
+
+
+
+/* Displays a Search icon/button */
+
+.cM-searchIcon {
+
+    top: 2px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 2px;
+
+    background-position: -1px -187px;
+
+    width: 11px;
+
+    height: 11px;
+
+}
+
+.cM-searchIcon:hover {
+
+    background-position: -1px -200px;
+
+}
+
+
+
+/* Displays a Send Message icon */
+
+.cM-sendMessageIcon {
+
+	top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 2px;
+
+    background-position: -1px -282px;
+
+	width: 16px;
+
+    height: 10px; 
+
+}
+
+.cM-sendMessageIcon:hover {
+
+   background-position: -1px -293px; 
+
+}
+
+
+
+/* Displays a Sheild icon */
+
+.cM-shieldIcon {
+
+	top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: 2px;
+
+	background-position: -1px -62px;
+
+	height: 11px;
+
+	width: 12px;
+
+}
+
+
+
+/* Displays a Snap Shot icon */
+
+.cM-snapShotIcon {
+
+    top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 1px;
+
+	background-position: -1px -224px;
+
+    width: 15px;
+
+    height: 12px;
+
+}
+
+.cM-snapShotIcon:hover {
+
+	background-position: -1px -235px;
+
+}
+
+
+
+/* Displays a Blue Star icon */
+
+.cM-starIcon {
+
+    top: 1px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+    *margin-top: 1px;
+
+	background-position: -1px -269px;
+
+    width: 13px;
+
+    height: 12px;
+
+}
+
+
+
+/* Displays a View eBill Icon */
+
+.cM-viewEbillIcon {
+
+	top: 3px;
+
+	/* IE7 hack to correctly position sprite icon */
+
+	*margin-top: -1px;
+
+	background-position: -1px -31px;
+
+	width: 14px;
+
+	height: 15px;
+
+}
+
+/*********************************/
+
+/** END ICON AND BUTTON CLASSES **/
+
+
+
+/*Used for common section and page headings in application screens  */
+
+.cH-appPageHead,.cH-appPanelHead,.cH-appOverlayHead {
+
+	display: inline-block;
+
+	*display: inline;
+
+	text-transform: uppercase;
+
+}
+
+
+
+.cH-appPageHead h1 {
+
+	font-weight: normal;
+
+}
+
+
+
+/* Removes all of the underlines for links */
+
+a {
+
+	text-decoration: none;
+
+}
+
+
+
+/* Tooltip styling */
+
+.cM-tooltip {
+
+	cursor: pointer;
+
+	border-bottom: 1px dotted #ccc;
+
+}
+
+
+
+/* Hover effect for tooltips */
+
+.cM-tooltip:hover {
+
+	color: #3399CC !important;
+
+	border-bottom: 1px dotted #3399CC;
+
+}
+
+
+
+/* END MODULAR RULES
+
+----------------------------------------------------------
+
+*/
+
+
+
+/* BEGIN HEADER STRUCTURES
+
+----------------------------------------------------------
+
+This section contains styles for header structures. Class names should be prefixed with "cH-"
+
+
+
+*/
+
+/*Overlay Header wrapper element class to format header position and spacing of a header within an overlay*/
+
+.cH-overlayHeader{
+
+	clear: both;
+
+	float: left;
+
+}
+
+/*Overlay headers are broken up into "title lines" which are formatted by this class*/
+
+.cH-overlayHeader .cH-overlayTitleLine{
+
+	clear: left;
+
+	width: 490px;
+
+	float: left;
+
+	margin-left: 0px;
+
+	padding-bottom: 10px;
+
+}
+
+/*Format header elements that appear within Overlay headers*/
+
+.cH-overlayTitleLine h1{
+
+	float: left;
+
+	color: #333333;
+
+
+
+}
+
+/*Format sub headers that appear within overlays*/
+
+.cH-overlayTitleLine .cH-overlaySubHeader{
+
+	margin: 6px 0 0 15px;
+
+	display: block;
+
+	float: left;
+
+	color: #333333;
+
+	font-size: 12px;
+
+}
+
+/*Format header elements that are floated right within overlays. Usually used for progress text ("step x of y")*/
+
+.cH-overlayTitleLine .cH-overlayRightHeader{
+
+	margin: 7px 0 0 0;
+
+	display: block;
+
+	float: right;
+
+	color: #000000;
+
+	font-size: 11px;
+
+}
+
+.cH-overlayTitleLine .cH-overlayRightHeader .cN-prevNextButton{
+
+	font-size: 12px;
+
+}
+
+/* END HEADER STRUCTURES
+
+----------------------------------------------------------
+
+
+
+/* BEGIN TABLE STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+
+
+/* Start - Basic Table Styles */
+
+
+
+/*Standard line height and padding for tabular cells*/
+
+.cT-tableBase > div > table > tbody > tr > td,
+
+.cT-tableBase > tbody > tr > td {
+
+	line-height: 18px;
+
+	padding: 5px 0;
+
+}
+
+/*Standard padding for header cells and align contents to left*/
+
+.cT-tableBase > div > table > thead > tr > th,
+
+.cT-tableBase > thead > tr > th {
+
+	padding: 13px 0px 13px 0px;
+
+	text-align: left;
+
+}
+
+
+
+/* End - Basic Table Styles */
+
+
+
+
+
+/* Start - Table Type Styles */
+
+
+
+/* The following styles can be added to the table wrapper to apply the styles to the table */
+
+/* Background color for odd rows */
+
+.cT-odd {
+
+	background: #F4F1F1;
+
+}
+
+/* Creates a grey divider between the header and all the rows */
+
+.cT-greyDivider > div > table > thead > .cT-tableHeader > th {
+
+	border-bottom: 1px solid #999;
+
+}
+
+/* Makes the table header text bold */
+
+.cT-boldHeader > div > table > thead > tr > th,
+
+.cT-boldHeader > thead > tr > th {
+
+	font-weight: bold;
+
+}
+
+/* The inner/outer divs are needed for scrollable tbody */
+
+/* Selects outer div container for the table */
+
+.cT-scrollableTable{
+
+	position: relative;
+
+	/*Adjust this padding on an application specific level to accommodate for a bigger header size*/
+
+	padding: 42px 0 0 0;
+
+}
+
+/* Needs more pixels in firefox */
+
+html.bFF .cT-scrollableTable.cT-tableAccountsPanel{
+
+	/*Adjust this padding to accommodate for a bigger header size*/
+
+	padding: 46px 0 0 0;
+
+}
+
+/* Fixes problem where bottom border does not show up in firefox/opera */
+
+.cT-scrollableTable div.cT-innerTableDiv {
+
+	padding-bottom: 1px;
+
+}
+
+/* Moves table header outside the inner div which controls the scrolling */
+
+.cT-scrollableTable > div > table > thead > tr {
+
+	position: absolute;
+
+	left: 0;
+
+	top: 3px;
+
+}
+
+/* Overrides table width setting in IE7/IE8 to get rid of horizontal scroll */
+
+.cT-scrollableTable > div > table {
+
+	width: auto !important;
+
+}
+
+/* Fixes issues in rows not being the right height in IE7 */
+
+html.vIE7 .cT-scrollableTable tr {
+
+	height: auto !important;
+
+}
+
+
+
+/* End - Table Type Styles */
+
+
+
+/* Start - Accounts Panel Styles */
+
+
+
+/*Styling for the primary header of the Accounts Panel application*/
+
+h3.cH-accountSummaryHead {
+
+	font-weight: bold;
+
+	text-transform: uppercase;
+
+	display:inline;
+
+	*float: left;
+
+}
+
+/*Classes that position and alter .cN-linkButton*/
+
+.cN-linkButton.cH-accountSummaryHead {
+
+	float: right;
+
+	margin-right: 18px;
+
+}
+
+
+
+.cN-linkButton.cT-caratLink {
+
+	float: left;
+
+	margin-left: 10px;
+
+}
+
+/*Fixes carat in the head of Accounts Panel*/
+
+.cH-accountSummaryHead .cM-leftArrowIcon {
+
+	margin-top: 2px;
+
+	margin-right: 3px;
+
+}
+
+/*Override padding from base*/
+
+.cT-tableAccountsPanel  > div > table > tbody > tr > td {
+
+	padding: 0px;
+
+}
+
+/*Add appropriate padding to each subrow of every row*/
+
+.cT-tableAccountsPanel > div > table > tbody > tr.cT-subRow > td {
+
+	padding-bottom: 10px;
+
+}
+
+/* Padding for the last sub row, which contains the borders for each accounts */
+
+.cT-tableAccountsPanel > div > table > tbody > tr.cT-lastSubRow > td {
+
+	padding-bottom: 10px;
+
+}
+
+/* Add appropriate padding to the first row of every row */
+
+.cT-tableAccountsPanel > div > table > tbody > tr.cT-firstRow > td{
+
+	padding-bottom: 10px;
+
+	padding-top: 20px;
+
+}
+
+.cT-tableAccountsPanel .cT-subRow {
+
+	height: auto;
+
+	text-align: right;
+
+}
+
+/* Align text to right in the amount column */
+
+.cT-tableAccountsPanel > div > table > thead > tr > th.cT-headerColumn3,
+
+.cT-tableAccountsPanel > div > table > tbody > tr > td.cT-bodyTableColumn3{
+
+	text-align: right;
+
+}
+
+/* Adds divider to bottom of cT-lastSubRow */
+
+.cT-tableAccountsPanel .cT-lastSubRow > td{
+
+	border-bottom: 1px solid #999;
+
+}
+
+/* Fixes header border issue in IE7*/
+
+html.vIE7 .cT-tableAccountsPanel .cT-tableHeader > th {
+
+	border-bottom: 1px solid #999;
+
+	position: relative;
+
+}
+
+/* Make account name wrap within cell by putting it in a fixed-width container */
+
+.cT-tableAccountsPanel .cT-accountName {
+
+	width: 200px;
+
+}
+
+/* Float and make alert text red */
+
+.cT-tableAccountsPanel .cT-accountSummaryAlertText,
+
+.cT-accountSummaryTable .cT-accountSummaryAlertText {
+
+	float: left;
+
+	color: red;
+
+}
+
+.cT-tableAccountsPanel .cT-accountSummaryAlertTextSub,
+
+.cT-accountSummaryTable .cT-accountSummaryAlertTextSub {
+
+	font-size: 11px;
+
+	float: left;
+
+}
+
+/* Sets links to the appropriate color */
+
+.cT-tableAccountsPanel a, 
+
+.cT-globalAlert a{
+
+	color: #05589D;
+
+}
+
+/* Floats necessary span items to the left */
+
+.cT-tableAccountsPanel .cT-alertText/
+
+.cT-accountSummaryTable .cT-alertText{
+
+	float: left;
+
+}
+
+/*Fixes issue where IE7 pushed elements down if accounts name wrapped*/
+
+html.vIE7 .cT-tableAccountsPanel td,
+
+html.vIE7 .cT-accountSummaryTable td {
+
+	vertical-align: top;
+
+}
+
+/*Pushes icons down a few pixels so they are centered*/
+
+.cT-tableAccountsPanel .cM-spriteBase,
+
+.cT-accountSummaryTable .cM-spriteBase,
+
+.cT-globalAlert .cM-spriteBase
+
+{
+
+	margin-top: 2px;
+
+}
+
+/*Pushes carat icons down a few pixels so they are centered*/
+
+.cT-tableAccountsPanel .cM-leftArrowIcon,
+
+.cT-accountSummaryTable .cM-leftArrowIcon,
+
+.cT-globalAlert .cM-leftArrowIcon{
+
+	margin-top: 3px;
+
+	margin-right: 3px;
+
+}
+
+
+
+/* Accounts Panel Table Dimension Rules */
+
+
+
+/* Selects inner div container for the table */
+
+/* Height of scrollable section */
+
+.cT-tableAccountsPanel > div.cT-innerTableDiv{
+
+	/*Set this to the desired height of the scrollable tbody*/
+
+	height: 364px;
+
+	
+
+	/*This does not need to be changed*/
+
+	overflow: hidden;
+
+}
+
+
+
+/* Width of table + slider */
+
+.cT-tableAccountsPanel {
+
+	width: 634px;
+
+}
+
+/* Sets width of table container */
+
+.cT-tableAccountsPanel > div.cT-innerTableDiv {
+
+	width: 615px;
+
+	float: left;
+
+}
+
+
+
+/* These styles are used to configure the width of each column. */
+
+/* You must add a new rule for each column. */
+
+.cT-tableAccountsPanel > div > table > thead > tr > th.cT-headerColumn1,
+
+.cT-tableAccountsPanel > div > table > tbody > tr > td.cT-bodyTableColumn1 {
+
+	width: 230px;
+
+	padding-right: 5px;
+
+}
+
+.cT-tableAccountsPanel > div > table > thead > tr > th.cT-headerColumn2,
+
+.cT-tableAccountsPanel > div > table > tbody > tr > td.cT-bodyTableColumn2 {
+
+	width: 110px;
+
+}
+
+.cT-tableAccountsPanel > div > table > thead > tr > th.cT-headerColumn3,
+
+.cT-tableAccountsPanel > div > table > tbody > tr > td.cT-bodyTableColumn3 {
+
+	width: 270px;
+
+}
+
+/*Fixes icons not showing up, as well as adding some margin to the right */
+
+.cT-tableAccountsPanel .cM-starIcon,
+
+.cT-tableAccountsPanel .cM-snapShotIcon,
+
+.cT-tableAccountsPanel .cM-posAlertIcon,
+
+.cT-tableAccountsPanel .cM-negAlertIcon,
+
+.cT-tableAccountsPanel .cM-starIcon,
+
+.cT-accountSummaryTable .cM-starIcon,
+
+.cT-accountSummaryTable .cM-snapShotIcon,
+
+.cT-accountSummaryTable .cM-posAlertIcon,
+
+.cT-accountSummaryTable .cM-negAlertIcon,
+
+.cT-accountSummaryTable .cM-starIcon {
+
+    float: left;
+
+    margin-right:3px;
+
+}
+
+/*Needed for positioning for various div elements */
+
+.cT-tableAccountsPanel td,
+
+.cT-tableAccountsPanel td div{
+
+	vertical-align: top !important;
+
+}
+
+/* Styling for second currency */
+
+.cT-tableAccountsPanel .cT-secondCurrency{
+
+	color: #AEAEAE;
+
+}
+
+/* Used for dual currency support, increases the gap between each label */
+
+.cT-tableAccountsPanel .cT-dualCurrency .cM-appClear{
+
+	height: 19px;
+
+}
+
+/* Adds margin on slider */
+
+.cT-tableAccountsPanel .jfpw-slider-wrap-vertical{
+
+	margin-left: 10px;
+
+}
+
+/* Moves tips of slider to the right in IE */
+
+.cT-tableAccountsPanel .jfpw-slider-vertical-wrap-tip-up,
+
+.cT-tableAccountsPanel .jfpw-slider-vertical-wrap-tip-down {
+
+	margin-left: 10px;
+
+}
+
+/* Set width of column if it needs to span 2 columns */
+
+.cT-tableAccountsPanel .cT-bodyTableColumn3.cT-colSpan2{
+
+	width: 270px;
+
+}
+
+/* Make label val items float left*/
+
+.cT-tableAccountsPanel .cT-bodyTableColumn3 .cT-labelValItem{
+
+	float: left;
+
+}
+
+/* Make label items float left and have a width of 140px */
+
+.cT-tableAccountsPanel .cT-bodyTableColumn3 .cT-labelValItem .cT-labelItem{
+
+	float: left;
+
+	width: 140px;
+
+}
+
+/* Make label items float left and have a width of 139px */
+
+/*REQUIRED IE7 FIX*/
+
+html.vIE7 .cT-tableAccountsPanel .cT-bodyTableColumn3 .cT-labelValItem .cT-labelItem{
+
+	float: left;
+
+	width: 139px;
+
+}
+
+/* Make value items float right and have a width of 130px */
+
+.cT-tableAccountsPanel .cT-bodyTableColumn3 .cT-labelValItem .cT-valueItem{
+
+	float: right;
+
+	width: 130px;
+
+}
+
+/* Bold first value item */
+
+.cT-tableAccountsPanel .cT-bodyTableColumn3 .cT-labelValItem .cT-valueItem .cT-balanceIndicator1{
+
+	font-weight: bold;
+
+}
+
+/*Red text for delinquent items*/
+
+.cT-tableAccountsPanel .cT-labelValItem .cT-delinqBalanceIndicator1,
+
+.cT-tableAccountsPanel .cT-labelValItem .cT-delinqBalanceIndicator2,
+
+.cT-tableAccountsPanel .cT-labelValItem .cT-delinqBalanceIndicator3{
+
+	font-weight:normal;
+
+	color:red;
+
+}
+
+/* Forces text to left on multi line alerts */
+
+.cT-alerts {
+
+	text-align: left;
+
+}
+
+/* Rewards account styling */
+
+.cT-tableAccountsPanel .cT-rewardsHeader > td.cT-bodyTableColumn2,
+
+.cT-tableAccountsPanel .cT-rewardsHeader > td.cT-bodyTableColumn3{
+
+	padding-top: 38px;
+
+}
+
+/* Used for TY Account template header text */
+
+.cT-tableAccountsPanel .cT-rewardsHeaderRow td{
+
+	padding-top:15px;
+
+}
+
+/* Used for TY Account template header text */
+
+.cT-tableAccountsPanel .cT-lastSubRowDotted td{
+
+	border-bottom: 1px dotted #ccc;
+
+	padding-top: 10px;
+
+}
+
+/* Bold the header text for Rewards Accounts */
+
+.cT-tableAccountsPanel .cT-rewardsHeaderRow .cT-rewardsHeaderText
+
+{
+
+	font-weight: bold;
+
+}
+
+/* Float alerts left */
+
+.cT-tableAccountsPanel .cT-alertText{
+
+	float: left;
+
+}
+
+/* Global alert padding */
+
+.cT-globalAlert{
+
+	padding: 10px 0px;
+
+}
+
+/* Margin after link buttons for consecutive links */
+
+.cT-tableAccountsPanel .cN-linkButton a{
+
+	margin-right:10px;
+
+}
+
+/* Spacing for View Account Holding Links */
+
+.cT-tableAccountsPanel .cT-viewAccountHoldingsSpacing{
+
+	height: 13px;
+
+}
+
+/* Generic red style for alerts */
+
+.cM-redAlert {
+
+	color: red;
+
+}
+
+/* Styling for headers above the Accounts Panel Table */
+
+.cH-headerLink{
+
+	margin-right: 18px;
+
+	float: right;
+
+}
+
+.cH-headerLink .cM-leftArrowIcon {
+
+	margin-top: 2px;
+
+	margin-right: 3px;
+
+}
+
+/* Styling for headers above the Quick Tasks Application */
+
+.cH-quickTasksHead .cM-leftArrowIcon{
+
+	float:left;
+
+}
+
+/* Disclaimer styling */
+
+.cT-tableAccountsPanel .cM-disclaimerBold{
+
+	font-weight: bold;
+
+	text-transform: uppercase;
+
+	font-size:11px;
+
+	color:#6B6B6B;
+
+	float: left;
+
+	line-height: 16px;
+
+}
+
+/* Secondary disclaimer styling within Account Panel Templates */
+
+.cT-tableAccountsPanel .cM-disclaimer{
+
+	font-size:11px;
+
+	color: #A4A4A4;
+
+	margin-bottom: 10px;
+
+	float:left;
+
+	line-height: 16px;
+
+}
+
+/* Disclaimer Container Styling */
+
+.cT-tableAccountsPanel .cM-disclaimerTextContainer{
+
+	float:left;
+
+	width:600px; 
+
+}
+
+/* Styling for the asterick to the left of disclaimers within Account Panel Templates */
+
+.cT-tableAccountsPanel .cM-disclaimerAsterick{
+
+	font-weight: bold;
+
+	width: 12px;
+
+	font-size:11px;
+
+	color:#6B6B6B;
+
+	float: left;
+
+	line-height: 16px;
+
+}
+
+/* Styling for the text of disclaimers within Account Panel Templates */
+
+.cT-tableAccountsPanel .cM-disclaimerTextOnly{
+
+	color: #A4A4A4;
+
+	margin-bottom: 10px;
+
+	float:left;
+
+	line-height: 16px;
+
+}
+
+/* Float blue buttons to the right */
+
+.cT-tableAccountsPanel .cT-blueButton{
+
+	float:right;
+
+}
+
+/* Float for global alerts */
+
+.cT-alerts.cT-globalAlert div.cT-globalAlertContent,
+
+.cT-alerts.cT-globalAlert > span{
+
+	float:left;
+
+}
+
+/* Fix alingment of icon for global alerts */
+
+.cT-alerts.cT-globalAlert .cM-posErrIcon,
+
+.cT-alerts.cT-globalAlert .cM-negErrIcon{
+
+	top: 0px;
+
+	margin-right: 3px;
+
+}
+
+/* Makes global alerts wrap appropriately and not push the parent container to the next line */
+
+.cT-alerts.cT-globalAlert > .cT-globalAlertContent{
+
+	line-height: 16px;
+
+	width: 920px;
+
+}
+
+/* Makes link buttons float to left when they are in column3 for offer accounts and gives appropriate spacing */
+
+.cN-linkButton.cT-offerLinkButton{
+
+	float: right;
+
+	margin-top: 5px;
+
+}
+
+/* Make account name links black */
+
+.cT-tableAccountsPanel .cT-accountName>a{
+
+	color: black;
+
+}
+
+/* Multiline alert support to make inline link line up correctly */
+
+.cT-tableAccountsPanel .cT-colSpan2Alert{
+
+	width:320px;
+
+	float:left;
+
+}
+
+/* Bold red text for alerts */
+
+.cT-tableAccountsPanel .cM-redAlertBold{
+
+	color: red;
+
+	font-weight: bold;
+
+}
+
+/* Text styling for REL sub text */
+
+.cT-subRELAccountTypeText{
+
+	font-size: 11px;
+
+	color: #999;
+
+}
+
+/* Gets padding to show up in IE7 */
+
+/* Must have an empty span in the td */
+
+.cT-tableAccountsPanel .cT-lastSubRow > td > span,
+
+.cT-tableAccountsPanel .cT-lastSubRowDotted > td > span {
+
+	width: 0px;
+
+}
+
+/* REL Last Pay Date grey tooltip styling */
+
+.cT-tableAccountsPanel .cT-lastPayDateText{
+
+	color: #999;
+
+	font-size: 11px;
+
+	float: left;
+
+}
+
+/* Color of disabled accounts */
+
+.cT-tableAccountsPanel tbody .cT-firstRow > .cT-disabled > div > a{
+
+	color: #999;
+
+}
+
+/* Special Coloring for REL amount values */
+
+.cT-tableAccountsPanel > div > table > tbody > tr > td > .cT-RELAmountText{
+
+	color: #747474;
+
+	text-align: left;
+
+}
+
+/* Fixes border issues in Accounts Panel in FF */
+
+html.bFF .cT-tableBase.cT-scrollableTable table{
+
+	border-collapse: separate
+
+}
+
+/* Underline styling for not available account name */
+
+.cT-tableAccountsPanel .cT-accountNameUnderline{
+
+	text-decoration: underline;
+
+}
+
+/* Needed for mortage account inline buttons under account name */
+
+.cT-tableAccountsPanel .cT-inlineButtons{
+
+	float: left;
+
+	margin-right: 8px;
+
+}
+
+/* For hiding the see more link intially */
+
+.cT-tableAccountsPanel .cT-seeMoreLink{
+
+	display:none;
+
+}
+
+/* Spacing between consecutive links */
+
+.cT-tableAccountsPanel .cT-alerts .cM-leftArrowIcon,
+
+.cT-alerts .cT-globalAlertContent .cM-leftArrowIcon{
+
+	margin-right: 5px;
+
+	margin-left: 5px;
+
+}
+
+/* Makes it so value items do not wrap, this is needed for the JS that adjust value/label widths */
+
+.cT-valueItem > span{
+
+	white-space: nowrap;
+
+}
+
+.cS-overlayLinkButton {
+
+	float: left;
+
+	margin-right: 10px;
+
+}
+
+.cS-overlayLinkButton.cT-blueButton > a{
+
+	padding: 4px 7px 5px 7px;
+
+	margin-top: -3px;
+
+}
+
+/*Styling for blue buttons with white text*/
+
+.cN-colorBGBlueButton {
+
+	background-position: -0px -74px;
+
+	color: white !important;
+
+	font-weight: bold;
+
+	margin-left: 5px;
+
+	padding: 2px 4px 1px 4px;
+
+}
+
+/*Styling for grey buttons with grey text - disabled state*/
+
+.cN-colorBGGreyButton {
+
+	background-position: -0px -116px;
+
+	color: white !important;
+
+	cursor: default;
+
+	font-weight: bold;
+
+	margin-left: 5px;
+
+	padding: 2px 4px 1px 4px;
+
+}
+
+/* Styling for min and late payment warnings */
+
+.cT-warning {
+
+	font-size: 11px; 
+
+	color: #999; 
+
+	border-bottom: 1px dotted #999;
+
+	margin-right: 10px;
+
+	float: left;
+
+	cursor: pointer;
+
+}
+
+/*Added to intially hide tooltips on load*/
+
+.cM-toolTipInitHide {
+
+	display: none;
+
+}
+
+.cT-tableAccountsPanel .jfpw-tooltip-info,
+
+.cT-tableAccountsPanel .bubble-title{
+
+	display:none;
+
+}
+
+/*Bold text for 'Payment On' Labels*/
+
+.cT-tableAccountsPanel .cT-paymentOnText{
+
+	font-weight: bold;
+
+}
+
+/*Makes links in alerts wrap properly*/
+
+.cT-alertLink{
+
+	display: inline-block;
+
+}
+
+/* End - Accounts Panel Styles */
+
+
+
+/* Start - Late and Minimum Tooltip Styles */
+
+
+
+.cT-minPayTooltip{
+
+	width: 515px !important;
+
+	height: 260px;
+
+	color: black;
+
+}
+
+.cT-minPayTooltipHeaderSub{
+
+	margin-top: 10px;
+
+}
+
+.cT-minPayTooltipTable {
+
+	margin-top: 10px;
+
+	text-align: center;
+
+	border-bottom: 1px solid #888;
+
+}
+
+.cT-minPayTooltipTable>thead>tr>th{
+
+	font-weight: normal;
+
+	padding: 13px;
+
+	border-bottom: 1px solid #888;
+
+	border-top: 1px solid #888;
+
+}
+
+
+
+.cT-minPayTooltipTable > tbody > tr > td{
+
+	font-weight: normal;
+
+	padding: 13px;
+
+}
+
+.cT-phoneNumText{
+
+	font-weight: bold;
+
+}
+
+.cT-minPayTooltipContact{
+
+	margin-top: 10px;
+
+}
+
+.cT-minPayToolTipDisclaimer{
+
+	font-size: 11px;
+
+	margin-top: 10px;
+
+	color: #999;
+
+}
+
+.cT-minPayTooltipBold{
+
+	font-weight: bold;
+
+}
+
+.cT-minPayTooltipTableBG1{
+
+	background: #F7F7F7;
+
+}
+
+.cT-minPayTooltipTableBG2{
+
+	background: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(#FEFEFE));
+
+	background: -moz-linear-gradient(top, #F7F7F7, #FEFEFE);
+
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F7F7F7', endColorstr='#FEFEFE');
+
+}
+
+/*These styles are used to configure the width of each column.*/
+
+/*You must add a new rule for each column.*/
+
+.cT-minPayTooltipTable > thead > tr > th.cT-headerColumn1,
+
+.cT-minPayTooltipTable > tbody > tr > td.cT-bodyTableColumn1 {
+
+	width: 165px;
+
+}
+
+.cT-minPayTooltipTable > thead > tr > th.cT-headerColumn2,
+
+.cT-minPayTooltipTable > tbody > tr > td.cT-bodyTableColumn2 {
+
+	width: 160px;
+
+}
+
+.cT-minPayTooltipTable > thead > tr > th.cT-headerColumn3,
+
+.cT-minPayTooltipTable > tbody > tr > td.cT-bodyTableColumn3 {
+
+	width: 160px;
+
+}
+
+
+
+.cT-latePayTooltip{
+
+	width: 480px !important;
+
+	height: 85px;
+
+	color: black;
+
+}
+
+.cT-latePayToolTipContent{
+
+	margin-top: 10px;
+
+}
+
+.cT-latePayToolTipDisclaimer{
+
+	font-size: 11px;
+
+	font-style: italic;
+
+	margin-top: 15px;
+
+	color: #999;
+
+}
+
+.cT-latePayToolTipBold{
+
+	font-weight: bold;
+
+}
+
+/* End - Late and Minimum Tooltip Styles */
+
+
+
+/* Start - Mortgage Overlay Styles */
+
+.cS-overlayMortgage .cH-overlayHeader .cH-overlayTitleLine {
+
+	border-bottom: 1px dotted #ccc;
+
+	width: 488px;
+
+}
+
+.cS-overlayMortgage .cS-overlayContent{
+
+	height: 280px;
+
+	margin-top: 25px;
+
+	width: 488px;
+
+}
+
+
+
+/* End - Mortgage Overlay Styles */
+
+
+
+/* Start - Styles for Finance Tools Application*/
+
+
+
+/* Fixes carat in the head of Accounts Panel */
+
+.cT-financeToolsHeader .cM-leftArrowIcon,
+
+.cH-quickTasksHead .cM-leftArrowIcon{
+
+	margin-top: 2px;
+
+	margin-right: 3px;
+
+}
+
+/* Floats link to the right */
+
+.cT-financeToolsHeader .cN-linkButton,
+
+.cH-quickTasksHead .cN-linkButton {
+
+	float: right;
+
+}
+
+.cT-financeToolsHeader h2{
+
+	display: block;
+
+	float: left;
+
+	font-size: 13px;
+
+	line-height: 17px;
+
+	padding-bottom: 10px;
+
+	text-transform: uppercase;
+
+}
+
+/* Styling for Expense Analysis text sub header */
+
+.cT-financeToolsSubHeader {
+
+	font-weight: bold;
+
+}
+
+.cT-financeToolsTable tbody {
+
+	font-size: 11px;
+
+}
+
+
+
+.cT-financeToolsTable {
+
+	margin-top: 12px;
+
+}
+
+.cT-financeToolsTable thead tr th {
+
+	height: 20px;
+
+	/*Opera fix*/
+
+	vertical-align: top;
+
+}
+
+.cT-financeToolsTable thead tr td {
+
+	border-top: 1px dotted #ccc;
+
+	height: 10px;
+
+}
+
+.cT-financeToolsTable tbody tr {
+
+	height: 25px;
+
+}
+
+.cT-financeToolsWrapper {
+
+	margin-top: 20px;
+
+	border-top: 2px solid gray;
+
+	padding-top: 20px;
+
+	width: 285px;
+
+}
+
+/* Override padding that was needed for other header */
+
+.cT-financeToolsWrapper .cN-linkButton.cH-accountSummaryHead {
+
+	margin-right: 0px;
+
+}
+
+/* Width of columns */
+
+/* Width of table w/o expanded pixels for pushing out slider */
+
+.cT-financeToolsTable{
+
+	width: 285px !important;
+
+}
+
+/* Float last header to the right */
+
+.cT-financeToolsTable > thead > tr > th.cT-headerColumn3,
+
+.cT-financeToolsTable > tbody > tr > td.cT-bodyTableColumn3 {
+
+	text-align:right;
+
+}
+
+/* These styles are used to configure the width of each column. */
+
+/* You must add a new rule for each column. */
+
+.cT-financeToolsTable > thead > tr > th.cT-headerColumn1,
+
+.cT-financeToolsTable > tbody > tr > td.cT-bodyTableColumn1 {
+
+	width: 147px;
+
+}
+
+.cT-financeToolsTable > thead > tr > th.cT-headerColumn2,
+
+.cT-financeToolsTable > tbody > tr > td.cT-bodyTableColumn2 {
+
+	width: 49px;
+
+}
+
+.cT-financeToolsTable > thead > tr > th.cT-headerColumn3,
+
+.cT-financeToolsTable > tbody > tr > td.cT-bodyTableColumn3 {
+
+	width: 89px;
+
+}
+
+.cT-financeToolsTable > thead > tr.cT-tableHeader > th.cT-headerColumn1 a{
+
+	float: left;
+
+	color: #05589D;
+
+}
+
+.cT-financeToolsTable > tbody > tr > td.cT-bodyTableColumn2,
+
+.cT-financeToolsTable > tbody > tr > td.cT-bodyTableColumn3 {
+
+	font-weight: bold;
+
+}
+
+/* Color box styling */
+
+.cT-financeToolsTable .cT-financeToolsColorBox {
+
+	width: 12px;
+
+	height: 14px;
+
+	float: left;
+
+	margin-right: 5px;
+
+}
+
+.cT-financeToolsTable .cT-bodyTableRow1 .cT-financeToolsColorBox {
+
+	background-color: #7EB0E3;	
+
+}
+
+.cT-financeToolsTable .cT-bodyTableRow2 .cT-financeToolsColorBox {
+
+	background-color: #D8D8D8;	
+
+}
+
+.cT-financeToolsTable .cT-bodyTableRow3 .cT-financeToolsColorBox {
+
+	background-color: #628282;	
+
+}
+
+.cT-financeToolsTable .cT-bodyTableRow4 .cT-financeToolsColorBox {
+
+	background-color: #D0C43F;	
+
+}
+
+/* Get snap shot icon to show up */
+
+.cT-financeToolsTable .cM-snapShotIcon {
+
+	float: left;
+
+	margin-right: 3px;
+
+}
+
+.cT-financeToolsTable .cT-financeToolsErrorAlert,
+
+.cS-quickTasksPanel .cT-quickTasksErrorAlert{
+
+	font-weight: bold;
+
+	font-size: 12px;
+
+	margin-left: 5px;
+
+}
+
+.cT-financeToolsTable .cT-financeToolsErrorText,
+
+.cS-quickTasksPanel .cT-quickTasksErrorText{
+
+	margin-top: 5px;
+
+	font-size: 12px;
+
+}
+
+
+
+/* End - Styles for Finance Tools Application */
+
+
+
+/* Start - Styles for Quick Tasks Application */
+
+.cS-quickTasksPanel .cM-spriteBase.cM-negAlertIcon{
+
+	margin-top:15px;
+
+}
+
+/* Styles for Quick Tasks Widget */
+
+/* Give quick tasks static height */
+
+.cS-structRightPanelUpperContainer{
+
+	height: 192px;
+
+}
+
+div.cS-quickTasksPanel {
+
+	display:inline;
+
+	height:187px;
+
+	margin:0;
+
+	width:285px;
+
+}
+
+div.cH-quickTasksHead > h3 {
+
+	text-transform: uppercase;
+
+	display: block;
+
+	float: left;
+
+	line-height: 17px;
+
+	padding-bottom: 8px;
+
+	font-size: 13px;
+
+}
+
+div.cH-quickTasksHead .cS-qTHeadSpan {
+
+	font-weight:bold;
+
+	margin-bottom:10px;
+
+}
+
+.cL-quickTasksList li {
+
+	clear:both;
+
+	display:block;
+
+	height:20px;
+
+	line-height:10px;
+
+	padding-bottom:10px;
+
+	width:285px;
+
+	border-bottom:1px dotted #CCCCCC;
+
+	margin:0px;
+
+}
+
+.cN-quickTaskLink{color:#000000;}
+
+.cN-quickTaskLink:hover{color: #3399CC;}
+
+.cM-quickTasksSprite {
+
+	background-image:url(/JFP/images/citiFastIcons.png);
+
+	background-repeat:no-repeat;
+
+	display: inline-block;
+
+}
+
+.cM-dollarIconSpan{
+
+	background-position:-1px -1px;
+
+	height:16px;
+
+	float:left;
+
+	margin-top:8px;
+
+	width:6%;
+
+}
+
+.cM-transferIconSpan {
+
+	background-position:-19px -1px;
+
+	height:16px;
+
+	float:left;
+
+	margin-top:8px;
+
+	width:6%;
+
+}
+
+.cM-downloadIconSpan{
+
+	background-position:-37px -1px;
+
+	height:16px;
+
+	float:left;
+
+	margin-top:8px;
+
+	width:6%;
+
+}
+
+.cM-rewardsIconSpan{
+
+	background-position:-55px -1px;
+
+	height:16px;
+
+	float:left;
+
+	margin-top:8px;
+
+	width:6%;
+
+}
+
+.cM-balanceIconSpan {
+
+	background-position: -73px -1px;
+
+	height:16px;
+
+	float:left;
+
+	margin-top:8px;
+
+	width:6%;
+
+}
+
+.cM-mobileIconSpan {
+
+	background-position: -91px -1px;
+
+	height:16px;
+
+	float:left;
+
+	margin-top:8px;
+
+	width:6%;
+
+}
+
+a.cN-quickTaskLink:hover span.cM-dollarIconSpan {background-position: -1px -18px;}
+
+a.cN-quickTaskLink:hover span.cM-transferIconSpan {background-position: -19px -18px;}
+
+a.cN-quickTaskLink:hover span.cM-downloadIconSpan{background-position: -37px -18px;}
+
+a.cN-quickTaskLink:hover span.cM-rewardsIconSpan{background-position: -55px -18px;}
+
+a.cN-quickTaskLink:hover span.cM-balanceIconSpan{background-position: -73px -18px;}
+
+a.cN-quickTaskLink:hover span.cM-mobileIconSpan{background-position: -91px -18px;}
+
+a.cN-quickTaskLink:hover span.cS-rightGoSpan {color: #3399CC;}
+
+span.cS-leftSpan{
+
+	float:left;
+
+	margin-left:5px;
+
+	margin-top:12px;
+
+	width:auto;
+
+}
+
+span.cS-rightGoSpan{
+
+	display:inline-block;
+
+	float:right;
+
+	height:6px;
+
+	margin-right:0;
+
+	margin-top:12px;
+
+	padding-bottom:5px;
+
+	padding-right:4px;
+
+	width:auto;
+
+	color: #05589D;
+
+}
+
+span.cS-rightSpan{
+
+	float:right;
+
+	height:6px;
+
+	margin-right:0;
+
+	margin-top:14px;
+
+	text-indent:10px;
+
+	width:auto;
+
+}
+
+
+
+ul.cL-quickTasksList{
+
+	padding: 0px;
+
+}
+
+
+
+.cS-quickTasksPanel .cL-quickTasksList .cM-leftArrowIcon {
+
+	float: right;
+
+	margin-top: 14px;
+
+	margin-right: 3px;
+
+}
+
+
+
+/* End - Styles for Quick Tasks Application */
+
+
+
+/* END TABLE STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+/* ACCOUNT SNAPSHOT STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+.cS-overlaySnapshot .cS-overlayContent ul li a span{
+
+	font-size: 12px;
+
+	font-weight: bold;
+
+}
+
+.cS-overlaySnapshot .cS-overlayContent .ui-tabs{
+
+	padding: 0;
+
+}
+
+.cS-overlaySnapshot .cS-overlayContent .ui-tabs ul li.cS-tab1 {
+
+	background-color: white;
+
+	margin-right: 5px;
+
+}
+
+.cS-overlaySnapshot .cS-overlayContent{
+
+	background: transparent;
+
+}
+
+.cS-overlaySnapshot .cS-overlayContent .cS-overlayTab{
+
+	width: 488px;
+
+	padding: 0 !important;
+
+}
+
+/* Transaction Table heights for different account types */
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotLoading {
+
+	height: 231px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotOneHeaderValue {
+
+	height: 227px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotTwoHeaderValues {
+
+	height: 207px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotThreeHeaderValues {
+
+	height: 187px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotFourHeaderValues {
+
+	height: 167px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotFiveHeaderValues {
+
+	height: 147px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotSixHeaderValues {
+
+	height: 127px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotOneHeaderValueStatement {
+
+	height: 211px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotTwoHeaderValuesStatement {
+
+	height: 191px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotThreeHeaderValuesStatement {
+
+	height: 171px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotFourHeaderValuesStatement {
+
+	height: 151px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotFiveHeaderValuesStatement {
+
+	height: 131px;
+
+}
+
+/*Changes the height of different overlay containers when used in conjunction with cM-overlayContent class */
+
+.cS-overlayContent.cS-accountSnapshotSixHeaderValuesStatement {
+
+	height: 111px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotLoading .cS-overlayTab{
+
+	height: 202px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotOneHeaderValue .cS-overlayTab{
+
+	height: 197px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotTwoHeaderValues .cS-overlayTab{
+
+	height: 177px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotThreeHeaderValues .cS-overlayTab{
+
+	height: 157px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotFourHeaderValues .cS-overlayTab{
+
+	height: 137px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotFiveHeaderValues .cS-overlayTab{
+
+	height: 117px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotSixHeaderValues .cS-overlayTab{
+
+	height: 97px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotOneHeaderValueStatement .cS-overlayTab{
+
+	height: 181px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotTwoHeaderValuesStatement .cS-overlayTab{
+
+	height: 161px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotThreeHeaderValuesStatement .cS-overlayTab{
+
+	height: 141px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotFourHeaderValuesStatement .cS-overlayTab{
+
+	height: 121px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotFiveHeaderValuesStatement .cS-overlayTab{
+
+	height: 101px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotSixHeaderValuesStatement .cS-overlayTab{
+
+	height: 81px !important;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotLoading .cT-innerTableDiv{
+
+	height: 170px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotOneHeaderValue .cT-innerTableDiv{
+
+	height: 166px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotTwoHeaderValues .cT-innerTableDiv{
+
+	height: 146px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotThreeHeaderValues .cT-innerTableDiv{
+
+	height: 126px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotFourHeaderValues .cT-innerTableDiv{
+
+	height: 106px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotFixHeaderValues .cT-innerTableDiv{
+
+	height: 86px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotSixHeaderValues .cT-innerTableDiv{
+
+	height: 66px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotOneHeaderValueStatement .cT-innerTableDiv{
+
+	height: 150px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotTwoHeaderValuesStatement .cT-innerTableDiv{
+
+	height: 130px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotThreeHeaderValuesStatement .cT-innerTableDiv{
+
+	height: 110px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotFourHeaderValuesStatement .cT-innerTableDiv{
+
+	height: 90px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotFiveHeaderValuesStatement .cT-innerTableDiv{
+
+	height: 70px;
+
+}
+
+.cS-overlaySnapshot .cS-accountSnapshotSixHeaderValuesStatement .cT-innerTableDiv{
+
+	height: 50px;
+
+}
+
+/*END - Height Classes */
+
+.cS-overlaySnapshot{
+
+	display: none;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable a{
+
+	color:#05589D;
+
+}
+
+
+
+.cS-overlaySnapshot .cT-recentTransactionsTable .cT-secondLinkLeftMargin{
+
+	margin-left: 10px;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable .cM-leftArrowIcon{
+
+	margin-right: 4px;
+
+}
+
+
+
+.cS-overlaySnapshot #tab1,
+
+.cS-overlaySnapshot #tab2{
+
+	background:white
+
+}
+
+/*Width of table + slider*/
+
+.cS-overlaySnapshot .cT-recentTransactionsTable  {
+
+	width: 488px;	
+
+}
+
+/*Sets width of table container*/
+
+.cS-overlaySnapshot .cT-recentTransactionsTable  > div.cT-innerTableDiv {
+
+	width: 479px;
+
+	float: left;
+
+	overflow: auto;
+
+}
+
+/*These styles are used to configure the width of each column.*/
+
+/*You must add a new rule for each column.*/
+
+/* Three column Model */
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-threeColumnTransactionTable > thead > tr > th.cT-headerColumn1,
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-threeColumnTransactionTable > tbody > tr > td.cT-bodyTableColumn1 {
+
+	width: 78px;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-threeColumnTransactionTable > thead > tr > th.cT-headerColumn2,
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-threeColumnTransactionTable > tbody > tr > td.cT-bodyTableColumn2 {
+
+	width: 240px;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-threeColumnTransactionTable > tbody > tr > td.cT-bodyTableColumn3 {
+
+	width: 119px;
+
+	text-align: right;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-threeColumnTransactionTable > thead > tr > th.cT-headerColumn3{
+
+	width: 119px;
+
+	padding-right: 17px;
+
+	text-align: right;
+
+}
+
+/* Four column Model */
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-fourColumnTransactionTable > thead > tr > th.cT-headerColumn1,
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-fourColumnTransactionTable > tbody > tr > td.cT-bodyTableColumn1 {
+
+	width: 78px;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-fourColumnTransactionTable > thead > tr > th.cT-headerColumn2,
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-fourColumnTransactionTable > tbody > tr > td.cT-bodyTableColumn2 {
+
+	width: 140px;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-fourColumnTransactionTable > thead > tr > th.cT-headerColumn3,
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-fourColumnTransactionTable > tbody > tr > td.cT-bodyTableColumn3 {
+
+	width: 100px;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-fourColumnTransactionTable > tbody > tr > td.cT-bodyTableColumn4 {
+
+	width: 119px;
+
+	text-align: right;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table.cT-fourColumnTransactionTable > thead > tr > th.cT-headerColumn4{
+
+	width: 119px;
+
+	padding-right: 17px;
+
+	text-align: right;
+
+}
+
+/* End Column width styling */
+
+
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table > thead > tr > th{
+
+	border-bottom: 1px solid #ccc;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table > thead > tr > th,
+
+.cS-overlaySnapshot .cT-recentTransactionsTable > div > table > tbody > tr > td {
+
+	padding: 7px;
+
+	line-height:12px;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable.cT-scrollableTable {
+
+	padding: 30px 0 0 0;
+
+}
+
+html.vIE7 .cT-recentTransactionsTable .cT-tableHeader > th 
+
+{
+
+	position: relative;
+
+	border-bottom: 1px solid #ccc !important;
+
+}
+
+.cS-overlaySnapshot .ui-tabs.jfpw-tabs .ui-tabs-nav{
+
+	background-color: transparent;
+
+}
+
+.cS-overlaySnapshot .cT-recentTransactionsTable  > div.cT-innerTableDiv > table.cT-alertMessageTable{
+
+	width: 479px!important;
+
+	text-align: center;
+
+}
+
+.cS-overlaySnapshot .cS-negativeValue{
+
+	color: red;
+
+	font-weight: bold;
+
+}
+
+/* END ACCOUNT SNAPSHOT STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+
+
+/* CARD ACTIVATION STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+.jfpw-tooltip-error{
+
+	max-width: 185px!important;
+
+}
+
+div.jfw-select-wrapper a.ui-selectmenu-dropdown{
+
+	padding: 2px 0 2px 0;
+
+}
+
+.cS-overlayContent.cS-otpContent{
+
+	background-color: #fff;
+
+	border: 1px solid #999;
+
+}
+
+.cS-overlayContent.cS-otpContent .cF-sectionTitle{
+
+	padding: 0 0 24px 0;
+
+}
+
+.cF-appInput.cF-withProgressBar{
+
+	margin: 0 0 0 0;
+
+}
+
+.cS-overlayContent .cF-overlayCancelForm{
+
+	display: none;
+
+}
+
+/*Progress Bar Style overrides for Card Activation*/
+
+.cM-cardActivationForm .cF-progressBarContainer{
+
+	margin: 0 0 0 0;
+
+	width: 100%;
+
+	float: left;
+
+}
+
+.cM-cardActivationForm .cM-progressbar{
+
+	width: auto;
+
+	margin: 0 0 0 0;
+
+	float:right;
+
+	height: 28px;
+
+	overflow: hidden;
+
+}
+
+.cM-cardActivationForm .cM-progressbar .cM-progressbar-underline, .cM-progressbar .cM-progressbar-active{
+
+	height: 1px;
+
+}
+
+.cM-cardActivationForm .cM-progressbar .cM-progressbar-active.cM-progressbar-currentStep{
+
+	height: 4px;
+
+}
+
+.cM-cardActivationForm .cM-progressbar .cM-progressbar-underline > span{
+
+	width: 0px;
+
+}
+
+.cM-cardActivationForm .cM-progressbar > ul > li {
+
+	padding-right: 0px;
+
+	padding-left: 10px;
+
+}
+
+.cM-cardActivationForm .cM-progressbar.cM-progressbar-cols-3 > ul > li{
+
+	width: 107px;
+
+}
+
+.cM-cardActivationForm .cM-progressbar > ul > li > .cM-progressbar-itemcontainer{
+
+	padding-left: 12px;
+
+}
+
+.cM-cardActivationForm .cM-progressbar .cM-progressbar-active .cM-progressbar-underline > .cM-progressbar-underline-partial{
+
+	background-color: #999999;
+
+	height: 1px;
+
+}
+
+.cM-cardActivationForm .cM-progressbar .cM-progressbar-active.cM-progressbar-currentStep .cM-progressbar-underline > .cM-progressbar-underline-partial{
+
+	height: 4px;
+
+}
+
+.cM-cardActivationForm .cM-progressbar li.cM-progressbar-active {
+
+	color: #333333;
+
+}
+
+.cM-cardActivationForm .cM-progressbar > ul, .cM-progressbar > ol{
+
+	padding: 0 0 0 0;
+
+	width: auto;
+
+}
+
+/*End Progress Bar style overrides for Card Activation*/
+
+/* END CARD ACTIVATION STRUCTURES
+
+----------------------------------------------------------
+
+*/
+
+
+
+/*TEMPORY*/
+
+body .cT-tableAccountsPanel{
+
+	font-size: 12px;
+
+}
+
+
+
+/* Temp classes for containers */
+
+#tempContainerLeftNav{
+
+	float: left;
+
+	width: 250px;
+
+	margin-left: 28px;
+
+}
+
+#tempContainerRightContent{
+
+	float: left;
+
+	width: 720
+
+}
+
+
+
+/*TEMP PATCH FIXES*/
+
+.cS-structToolsPanel{font-size:12px;}
+
+#accLoadingImgDiv.StructPreLoaderWrapper{padding-top:125px}
+
+#accLoadingImgDiv.StructPreLoaderWrapper > img{margin:auto; display:block;}
+
+.cS-quickTasksPanel{font-size:12px;}
+
+#toolsLoadingImgDiv.StructPreLoaderWrapper{padding-top:100px}
+
+#toolsLoadingImgDiv.StructPreLoaderWrapper>img{margin:auto; display:block;}
+
+/*Fixes overlay title background */
+
+.ui-dialog.jfpw-dialog{
+
+	background: url('/JFP/images/widgets/jfpw.overlay.stripe.bg.png')!important;
+
+	background-color: #F7F7F7 !important;
+
+}
+
+/* Class to hide containers, need to determine where to add this */
+
+.cM-hide{
+
+	display: none;
+
+}
+
+/* End temp classes */

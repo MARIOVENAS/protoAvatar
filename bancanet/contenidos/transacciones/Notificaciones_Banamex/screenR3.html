@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/jscript">
+      es = new Array(
+          'Capture',
+          'Verify',
+          'Response',
+          'Notificaciones Banamex',
+          'Your data have been modified successfully and notices will be sent to:',
+          'E-mail 1:',
+          'E-mail 2:',
+          'Mobile:',
+          'Carrier:',
+          'Last modified by JOS&Eacute; FRANCISCO FERN&Aacute;NDEZ MART&iacute;N DEL CAMPO (12345678)',
+          'By Law',
+          'CONTINUE'
+      );
+      $(document).ready(function() {
+          top.set_imprimir('transacciones/Notificaciones_Banamex/screen_print1.html', 800, 670);
+      });
+    </script>
+  </head>
+  <body class="bg_demo">
+    <div class="width100p overflow margin-bottom5">
+      <ul class="pagos_opc">
+        <li id="opcCaptura"><strong>1</strong> <span id="t0">Captura</span> </li>
+        <li id="opcVerifica"><strong>2</strong>  <span id="t1">Verifica</span> </li>
+        <li id="opcRespuesta" class="selected"><strong>3</strong>  <span id="t2">Respuesta</span> </li>
+      </ul>
+    </div>
+    <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">
+      <div class="cH-appPanelHead">
+        <h3 id="t3">Notificaciones Banamex</h3>
+      </div>
+      <div class="width100p">
+        <div class="form-row margin-botom0">
+          <div class="greenCheck"></div>
+          <p class="sinMarginTop topNotes margin-left17 bold" style="margin-bottom:20px\0/ !important;">
+          <span id="t4" class="bold">
+          La modifiaci&oacute;n de tus datos ha sido aplicada exit&oacute;samente y las notificaciones se enviar&aacute;n a:
+          </span>
+          </p>
+          <div class="clear"></div>
+        </div>
+        <div class="border-top"></div>
+        <div class="form-row">
+          <label  class="for-table width139i margin-top4" id="t5">Correo electr&oacute;nico<br>(e-mail 1):</label>
+          esteesmicorreo@elmismodominio.com.mx
+          <div class="clear"></div>
+        </div>
+        <div class="form-row marginT2">
+          <label  class="for-table width139i" id="t6">Correo electr&oacute;nico<br>(e-mail 2):</label>
+          aquivaelotro@otrodominio.com
+          <div class="clear"></div>
+        </div>
+        <div class="form-row marginT2">
+          <label  class="for-table width139i" id="t7">N&uacute;mero de celular:</label>
+          044 5512345678
+          <div class="clear"></div>
+        </div>
+        <div class="form-row marginT2">
+          <label  class="for-table width139i" id="t8">Compa&ntilde;ia de celular:</label>
+          Movistar
+          <div class="clear"></div>
+        </div>
+        <div class="border-top"></div>
+        <div class="form-row marginT2">
+          <div class="info_icon"></div>
+          <p class="f12 color000 float-left margin-left5 margin-top2" id="t9">&Uacute;ltima modificaci&oacute;n por JOS&Eacute; FRANCISCO FERN&Aacute;NDEZ MART&Iacute;N DEL CAMPO (12345678)<br>el d&iacute;a 17 Sep 2014 a las 10:16:12 A.M.</p>
+          <div class="clear"></div>
+        </div>
+        <!--  termina rango de cheques-->
+        </div><!--termina 98-->
+      </div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+            top.tamano7();
+            $.imageTick.logging = true;
+            $("input[name='cuenta']").imageTick({
+                tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png",
+                no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+                image_tick_class: "radios"
+            });
+            $("input[name='cuenta2']").imageTick({
+                tick_image_path: "../../../../JFP/regional/images/check_1.png",
+                no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+            });
+        });
+
+        function aceptar() {
+            top.cargaDocN('Notificaciones_Banamex/screenR1.html');
+        }
+
+        function regresar() {
+            top.cargaDocN('Notificaciones_Banamex/screenC1.html');
+        }
+      </script>
+    </body>
+  </html>

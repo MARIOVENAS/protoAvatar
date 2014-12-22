@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Banamex</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+    <link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css" />
+	<link rel="stylesheet" type="text/css" href="../../JFP/css/widgets/jquery.qtipW3.css" />
+	<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css" />
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css" />
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    <script type="text/javascript" src="../../JFP/js/jquery/jquery-1.5.1.js"></script>
+	<script type="text/javascript" src="../../JFP/js/widgets/jquery.dcjqaccordion.2.7.min.js"></script>
+    <script type="text/javascript" src="../../JFP/js/widgets/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/left_menu_multilevel.js"></script>
+	<script type="text/javascript" src="../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="bbAvatar/js/menuSpanish.js"></script>
+	<script type="text/javascript" src="bbAvatar/js/swap.js"></script>
+</head>
+
+<body>
+<!--inicia contenedor principal-->
+	<div id="wrap" class="cS-structMainContainer">
+    <!--inicia header-->
+		<div id="header">
+			<div class="utilities_nav" id="navegacionPrincipal"></div>
+			<div class="citibank-containerImg">
+				<a href="#"><div id="citibank-logo"></div></a>
+				<div id="citibank-image"></div>
+			</div>
+			<div class="main_nav" id="menuw"></div>
+			<div id="user-info">
+				<div class="userInfo-content" id="msj_bienvenido"></div>
+			</div>
+<!--termina header-->
+		</div>
+		<div class="cS-structBodyContainer">
+			<div id="title-section" class="cH-appPageHead height20">
+				<div class="float-left"><h1>AFORE BANAMEX</h1></div>
+				<div id="ayuda">
+					<div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="liga"><a id="t23" href="javascript:void(0);" class="float-left">&nbsp;Ayuda</a></div>
+					</div>
+				</div>
+				<div id="imp" class="displayNone">
+					<div class="margin-top6 titulo" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a id="t24" href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+					</div>
+				</div>
+			</div>
+            <div class="bg_demo">
+				<div id="content">
+					<!-- The left menu divs are inserted by javascript if it is necessary -->
+					<div id="left-menu" class="float-left margin-top25"></div>
+		            <div id="shadow" class="width14">&nbsp;</div>
+					<!-- Cuando no lleva menu izquierdo  <div id="subapp-box" class="noleftmenu float-left margin-top1"> -->
+					<div id="subapp-box" class="float-left">
+						<iframe id="iframeConte" name="main" class="ifrContenedor" scrolling="no" frameborder="0" src="transacciones/Edo_Cta_Afore/screen1.html" height="1040" width="765"></iframe>
+					</div>
+				</div>
+				<div class="clear"></div>
+            </div>
+			<div id="footer"></div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push(
+			'&nbsp;Help', //t23
+			'&nbsp;Print', //t24
+			'ACCOUNT STATEMENT', //t25
+			'VOLUNTARY SAVING CONTRIBUTIONS', //t26
+			'WITHDRAWALS', //t27
+			'UPDATE ADDRESS', //t28
+			'AUTHENTICATION', // Modal -- t29
+			'For your security, this operation needs to be authenticated with your NetKey.', //t30
+			'Enter the code in your device and press "ENT". A dynamic code will be generated, which you must enter in the textbox. Click on "CONTINUE".', //t31
+			'Dynamic code:', //t32
+			'CONTINUE', //t33
+			'Cancel' //t34
+			);
+
+	$(document).ready(function(){
+		ajustarOverlay();
+		ajusta_tooltpis();
+		funciones_loginML5_2();
+		account_summary();
+		cambiaEC();
+		setTimeout(function(){$('#AFOREBanamex').addClass('active')},800);
+		setTimeout(function(){menuAfore();},1100);
+	});
+	$( document ).ajaxStop( function(){
+		if( isEnglishSel ) {
+			$( '#lstAccDate' ).html( '03/24/2010' );
+		}
+	});
+	function cambiaEC(){
+		tamano7();
+		ayuda();
+		cargaDocN('Edo_Cta_Afore/screen1.html');
+		setTimeout('liga2();', 880);
+	}
+	function cambiaP3(){
+		tamano7();
+		cargaDocN('Aportaciones_Afore/screen1.html');
+		ayuda();
+		setTimeout('liga3();', 880);
+	}
+	function cambiaP4(){
+		tamano7();
+		cargaDocN('Retiro_Afore/screen1.html');
+		ayuda();
+		setTimeout('liga4();', 880);
+	}
+	function cambiaP5(){
+		challengeDom();
+		cargaDocN('Actualiza_Domicilio_Afore/screen_none.html');
+		ayuda();
+		setTimeout('liga5();', 880);
+	}
+	function Layuda(){
+		window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda1(){
+		window.open(rutaAyudaAv+'Afore/Alta.htm',"_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
+	}
+	function Layuda2(){
+		window.open(rutaAyudaAv+'Afore/Estado-de-cuenta.htm',"_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
+	}
+	function Layuda3(){
+		window.open(rutaAyudaAv+'Afore/Aportaciones-Ahorro-Voluntario.htm',"_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
+	}
+	function Layuda4(){
+		window.open(rutaAyudaAv+'Afore/Retiros.htm',"_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
+	}
+	function Layuda5(){
+		window.open(rutaAyudaAv+'Afore/Actualizar-domicilio.htm',"_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
+	}	
+	function Limprimir(){
+		window.print();
+	}
+	
+	
+	/*  Modal de Afore */
+	
+	function challengeDom(){ 
+		
+		$('#mensajeError_contenido_div', window.document).html(
+			$("#divAutenticacion").html()
+		);
+		
+
+		$.modal({
+			closeHTML: '',
+			opacity:60,
+			overlayClose:false,
+			flagDiv:true,
+			widthDivIfrm:570,
+			heightDivIfrm:'auto'
+
+		});
+		
+		$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');	
+
+		setTimeout(function(){
+			llenarValores('input','.challenge_input','12345678');	
+		},1000);
+	}
+	
+	function cancelarModal(){
+		$('#t25').click();
+		cambiaEC();
+		$.modal.close();
+	}
+	/*  Modal de Afore */
+	
+</script>
+
+<!--<IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="../bancanet_demo/contenidos/menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>-->
+    <input type="hidden" id="objs" value="1"/>
+    <input type="hidden" id="TIMEOUT" value="" />
+    <input type="hidden" name="LASTRESET" value="" />
+    <input type="hidden" id="segRestan" value="" />
+    <input type="button" name="exit" style = "display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');" />
+    <input type="hidden" id="DATAAUX"  name="DATAAUX" value="" />
+	<input type="hidden" id="DATADEMO" name="DATADEMO" value="" />
+	<input type="hidden" id="REGRESADEMO" name="REGRESADEMO" value="" />
+	<input type="hidden" id="CONTINUADEMO" name="CONTINUADEMO" value="" />
+    <input type="hidden" id="titHdn" name="titHdn" value="" />
+
+<!--termina contenedor principal-->
+	<div id="cortinaOverlay" class="cerrarOverlay" style="display:none;"></div>
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+			<tbody><tr><td>
+				<div id="mensajeError_contenido_div"></div>
+				<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+			</td></tr></tbody>
+			</table>
+		</div>
+	</div>
+	<iframe id="nwd" src="if.htm" name="ndw" style="display:none"></iframe>
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display:none;"></div>
+	<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+		<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+			<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+				<tbody>
+					<tr>
+						<td>
+							<div id="mensajeError_contenido_divEspecial"></div>
+							<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+    
+    <!-- Clave Dinámica -->
+    <div class="modal" id="divAutenticacion">
+
+		<div class="overlay-error">
+
+			<div class="overlay-content">
+
+				<div class="external-tranfer2">
+
+					<div class="external-tranfer-content" style="left:-18px !important; top:20px; position:relative;">
+
+						<a href="#" class="external-tranfer-close" onClick="cancelarModal();"></a>
+
+						<div class="content-top">
+
+							<div class="center">
+
+								<div class="dot-bottom">
+
+									<div class="left"><span class="title" id="t29">AUTENTICACIÓN</span></div>                                   
+
+								</div>
+
+								<div class="error-content">
+
+									<div id="scrollbar">
+
+                                        <div class="clear"></div>
+
+										<div class="viewport">
+
+											<div class="overview">
+
+												 <p class="instructions margin-bottom15 strong" id="t30">Por tu seguridad, esta operación debe ser autenticada con tu NetKey.</p>
+
+                                                 <div class="clear border-dotted_top margin-bottom20"></div>
+
+									             <div class="width103">
+
+													<p class="margin-bottom20" id="t31">Ingresa en tu dispositivo la clave que a continuación se muestra y presiona "ENT". Se generará una clave dinámica que debes ingresar en el espacio en blanco. Da clic en "CONTINUAR".</p>
+
+													<p class="textBig margin-bottom20 margin-left130">CHALLENGE: <span class="colorBlue">24018778</span></p>
+
+													
+
+									                <div class="form-row margin-bottom0 margin-left130">
+
+									                    <div class="for-table margin-bottom5 float-left margin-top2 margin-right10">
+
+									                    	<span class="strong" id="t32">Clave dinámica:</span>
+
+									                    </div>
+
+									                    <input type="password" class="width70 float-left challenge_input" readonly="readonly" />
+
+									                    <div class="clear"></div>
+
+									                </div>
+
+									            </div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="clear margin-bottom30"></div>								
+
+									<div class="cF-sideBySide cF-bottomNav">
+
+										<ul class="cN-primaryNav">
+
+											<li style="float:right;" class="cM-spriteBase cN-primaryNavButton margin-left10">
+										
+                                        <a href="javascript:cargaDocN('Actualiza_Domicilio_Afore/screen1.html'); $.modal.close();" id="t33">Continuar</a>
+
+											</li>
+
+											<li style="float:right;">
+
+												<div id="flechaLinksOpcoes">
+
+													<span class="flechaGris float-left"></span>
+
+													<a class="sinBold" href="javascript:cancelarModal();" id="t34">Cancelar</a>
+
+												</div>
+
+											</li>
+
+										</ul>
+
+									</div>
+
+									<div class="clear"></div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+    <!-- Fin Clave Dinámica -->
+    
+</body>
+</html>

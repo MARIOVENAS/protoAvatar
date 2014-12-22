@@ -1,0 +1,329 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+        
+        <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+        <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+        <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+        <script type="text/jscript">
+            es = new Array(
+
+                'Capture',
+                'Verify',
+                'Response',
+
+                'Notificaciones Banamex',
+                'Current data to sent Banamex Notices.',
+
+                'E-mail 1:',
+                'E-mail 2:',
+                'Mobile:',
+                'Carrier:',
+
+                'If you want to register or modify all your accounts, select "All accounts" or if you want to register or modify a specific account, select it.',
+                'All accounts.',
+                'Specific account:',
+                'Select an account',
+                'WITHDRAWALS AND DEPOSITS GROUP',
+                'Delivery means',
+                'Mobile:',
+                'Withdrawal for an amount equal to or higher than:',
+                'Deposit for an amount equal to or higher than:',
+
+                'ACCOUNT STATEMENTS GROUP',
+                'Mobile',
+                'Account Statement of Selected Account(s)',
+                'Modify password',
+
+                'SECURITY GROUP',
+                'Mobile',
+                'Change on the Checks Status',
+                'Register/Cancel or Modification of Target Account',
+                'Change of Secret Number/Password',
+                'Blocking/Unblocking of Passwords',
+                'Unblocking voice-to-voice service',
+                'Change of Confidential Number in ATM',
+                'CONTINUE'
+            );   
+        </script>
+    </head>
+    <body class="bg_demo">
+        
+        <div class="width100p overflow margin-bottom5">
+            <ul class="pagos_opc">
+                <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t0">Captura</span> </li>
+                <li id="opcVerifica"><strong>2</strong>  <span id="t1">Verifica</span> </li>
+                <li id="opcRespuesta"><strong>3</strong>  <span id="t2">Respuesta</span> </li>
+            </ul>
+        </div>
+        <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">
+            
+            <div class="cH-appPanelHead">
+                <h3 id="t3">Notificaciones Banamex</h3>
+            </div>
+            <div class="width100p">
+                <div class="clear"></div>
+                <p style="margin-bottom:23px" id="t4">Datos actuales para el env&iacute;o de tus Notificaciones Banamex.</p>
+                <!--<span class="strong">Instruç&otilde;es</span>-->
+                <div class="width141">
+                    <div class="form-row margin-bottom10">
+                        <label class="for-table" id="t5">Correo electr&oacute;nico </br>(e-mail 1):</label>
+                        <span class="margin-right5">esteesmicorreo@elmismodominio.com.mx</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="form-row margin-bottom10">
+                        <label class="for-table" id="t6">Correo electr&oacute;nico </br>(e-mail 2):</label>
+                        <span class="margin-right5">aquivaelotro@otrodominio.com</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="form-row margin-bottom10">
+                        <label class="for-table" id="t7">N&uacute;mero de celular:</label>
+                        <span class="margin-right5">044 5512345678</span>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <div class="form-row margin-bottom20">
+                        <label class="for-table" id="t8">Compa&ntilde;ia de celular:</label>
+                        <span class="margin-right5">Movistar</span>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    
+                    <div class="border-top"></div>
+                    <div class="width139">
+                        <p class="margin-bottom18" id="t9">Si deseas dar de alta o modificar todas tus cuentas, selecciona "Todas las cuentas" o si deseas dar de alta o modificar una cuenta en espec&iacute;fico, seleccionala.</p>
+                        <p class="margin-bottom18"><input type="checkbox" checked="checked" name="investment" id="investment1"/><span class="margin-left5 " id="t10">Todas las cuentas.</span></p>
+                    </div>
+                    
+                    <div class="form-row">
+                        <!-- label class="for-table">N&uacute;mero de celular:</label -->
+                        <span class="margin-right5" id="t11">Cuenta espec&iacute;fica:</span>
+                        <!-- input class="width87" type="text" value="5512345678" / -->
+                        
+                        <select>
+                            <option selected="selected" id="t12">Selecciona una cuenta</option>
+                        </select>
+                        <div class="clear"></div>
+                    </div>
+                    
+                    
+                    <div class="border-top"></div>
+                    
+                    
+                    <h4 class="margin-bottom10" id="t13">GRUPO RETIROS Y DEP&Oacute;SITOS</h4>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="bottomNotes margin-bottom20">
+                        <tbody>
+                            
+                            <!-- tr>
+                            
+                            <th width="10%" valign="middle" class="borderLabels" colspan="1"></th>
+                            <th width="90" valign="middle" class=" pad15 borderLabels" colspan="4"><span class="margin-left29">Medio de entrega</span></th>
+                        </tr>-->
+                        
+                        <tr class="ie7BgFFF">
+                            
+                            <th width="70%" valign="middle" class="borderLabels pad15"><span class="margin-left29" id="t14">Medio de entrega</span></th>
+                            <th width="10%" valign="middle" class="borderLabels">
+                                <span class="strong float-left">e-mail 1</span>
+                            </th>
+                            <th width="10%" valign="middle" class="borderLabels">
+                                <span class="strong float-left">e-mail 2</span>
+                            </th>
+                            
+                            <th width="10%" valign="middle" scope="col" class="borderLabels">
+                                <span class="strong float-left padding-left20" id="t15">Cel.</span>
+                            </th>
+                        </tr>
+                        <tr class="degrade">
+                            <td valign="middle" class="paddingL10">
+                                <div class="form-row sinMarginBottom">
+                                    <label class="for-table width225"  id="t16">Retiro por un importe mayor o igual a:</label>
+                                    <p><input class="width110" type="text" value="$   " /></p>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                                
+                                
+                            </td>
+                            <td valign="middle" class="TXTCN"><input type="checkbox" checked="checked" name="investment" id="investment2"/></td>
+                            <td valign="middle" class="TXTCN"><input type="checkbox" checked="checked" name="investment" id="investment3"/></td>
+                            <td valign="middle" class="TXTCN"><input type="checkbox" checked="checked" name="investment" id="investment4"/></td>
+                        </tr>
+                        
+                        <tr class="greyBack degradeInv" >
+                            <td valign="middle" class="paddingL10 border-bottom-c5">
+                                <div class="form-row sinMarginBottom">
+                                    <label class="for-table width225" id="t17">Dep&oacute;sito por un importe mayor o igual a: </label>
+                                    <p><input class="width110" type="text" value="$   " />  </p>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                            </td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment5"/></td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment6"/></td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment7"/></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <h4 class="margin-bottom10" id="t18">GRUPO ESTADOS DE CUENTA</h4>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="bottomNotes margin-bottom20">
+                    <tbody>
+                        <tr class="ie7BgFFF">
+                            <th width="70%" valign="middle" class="borderLabels pad15"><span class="margin-left29"></span></th>
+                            <th width="10%" valign="middle" class="borderLabels">
+                                <span class="strong float-left">e-mail 1</span>
+                            </th>
+                            <th width="10%" valign="middle" class="borderLabels">
+                                <span class="strong float-left">e-mail 2</span>
+                            </th>
+                            
+                            <th width="10%" valign="middle" scope="col" class="borderLabels">
+                                <span class="strong float-left padding-left20" id="t19">Cel.</span>
+                            </th>
+                        </tr>
+                        <tr class="degrade degradeInv">
+                            <td valign="middle" class="paddingL10 border-bottom-c5">
+                                <div class="form-row sinMarginBottom">
+                                    <label  id="t20">Estado de cuenta de mi(s) cuenta(s) seleccionada(s)</label>
+                                    <div class="clear"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment8"/></td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment9"/></td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment10"/></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <div id="flechaLinks" class="margin-bottom20">
+                    <span class="flechaazul float-left"></span>
+                    <a href="#" class="sinBold" id="t21">Modificar contrase&ntilde;a</a>
+                </div>
+                <h4 class="margin-bottom10" id="t22">GRUPO SEGURIDAD</h4>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="bottomNotes margin-bottom20">
+                    <tbody>
+                        
+                        
+                        <tr class="ie7BgFFF">
+                            <th width="70%" valign="middle" class="borderLabels pad15"><span class="margin-left29"></span></th>
+                            <th width="10%" valign="middle" class="borderLabels">
+                                <span class="strong float-left">e-mail 1</span>
+                            </th>
+                            <th width="10%" valign="middle" class="borderLabels">
+                                <span class="strong float-left">e-mail 2</span>
+                            </th>
+                            
+                            <th width="10%" valign="middle" scope="col" class="borderLabels">
+                                <span class="strong float-left padding-left20" id="t23">Cel.</span>
+                            </th>
+                        </tr>
+                        <tr class="degrade">
+                            <td valign="middle" class="paddingL10">
+                                <div class="form-row sinMarginBottom">
+                                    <label class="width315" id="t24">Cambio de Estatus de Cheques</label>
+                                    <div class="clear"></div>
+                                </div>
+                            </td>
+                            <td valign="middle" class="TXTCN"><input type="checkbox" checked="checked" name="investment" id="investment11"/></td>
+                            <td valign="middle" class="TXTCN"><input type="checkbox" checked="checked" name="investment" id="investment12"/></td>
+                            <td valign="middle" class="TXTCN"><input type="checkbox" checked="checked" name="investment" id="investment13"/></td>
+                        </tr>
+                        
+                        <tr class="greyBack">
+                            <td valign="middle" class="paddingL10">
+                                <div class="form-row sinMarginBottom ">
+                                    <label class="for-table width315" id="t25">Alta / Baja o Modificaci&oacute;n de Cuenta Destino</label>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                            </td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment14"/></td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment15"/></td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment16"/></td>
+                        </tr>
+                        
+                        <tr class="ie7BgFFF">
+                            <td valign="middle" class="paddingL10">
+                                <div class="form-row sinMarginBottom">
+                                    <label class="for-table width315 " id="t26">Cambio de N&uacute;mero Secreto / Password</label>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                            </td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment17"/></td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment18"/></td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment19"/></td>
+                        </tr>
+                        
+                        <tr class="greyBack">
+                            <td valign="middle" class="paddingL10">
+                                <div class="form-row sinMarginBottom">
+                                    <label class="for-table width315" id="t27">Bloqueo / Desbloqueo de Claves</label>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                            </td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment20"/></td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment21"/></td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment22"/></td>
+                        </tr>
+                        
+                        <tr class="ie7BgFFF">
+                            <td valign="middle" class="paddingL10">
+                                <div class="form-row sinMarginBottom">
+                                    <label class="for-table width315" id="t28">Desbloqueo de Servicio de Voz a Voz</label>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                            </td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment23"/></td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment24"/></td>
+                            <td valign="middle" class="TXTCN "><input type="checkbox" checked="checked" name="investment" id="investment25"/></td>
+                        </tr>
+                        
+                        <tr class="greyBack degradeInv">
+                            <td valign="middle" class="paddingL10 border-bottom-c5">
+                                <div class="form-row sinMarginBottom">
+                                    <label class="for-table width315" id="t29">Cambio de N&uacute;mero Confidencial en Cajero Autom&aacute;tico</label>
+                                    <div class="clear"></div>
+                                </div>
+                                
+                            </td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment26"/></td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment27"/></td>
+                            <td valign="middle" class="TXTCN border-bottom-c5"><input type="checkbox" checked="checked" name="investment" id="investment28"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="cF-sideBySide border-topSolid ancho100p margin-top1 paddingT3">
+                    <ul class="cN-primaryNav paddingT10 floatLI">
+                        <li class="cM-spriteBase cN-primaryNavButton"><a onClick="top.cargaDocN('Notificaciones_Banamex/screenV2.html')" id="t30">Continuar</a></li>
+                    </ul>
+                </div>
+                <br><br><br>    
+            
+            <!--  termina rango de cheques-->
+            </div><!--termina 98-->
+            
+        </div>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                top.tamano1_3();
+                top.ligaNotificaciones();
+                $.imageTick.logging = true;
+                $("input[name='investment']").imageTick({
+                    tick_image_path: "../../../../JFP/regional/images/check_1.png",
+                    no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+                });
+            });
+
+            function continuar() {
+                top.cargaDocN('Notificaciones_Banamex/screenV1.html');
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,2670 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+	<title>Banamex</title>
+
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+	<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/estilos.css"  />
+
+	<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script> 
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script> 
+
+	<script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="292a9cc4-56b7-4712-af5b-0bbb3bce8f52" ><input type=hidden name="EWF_SYS_1" value="Z34LEEORNZHRY2PEY5GZ3GVS9ML1HA8IU3G7ZCRB" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZITS-PAG PRINCIPAL"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="SeleccionarTipo de Pago.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="10"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<script language="JavaScript">
+
+var es = new Array(
+
+					'GDF AND SAT RECEIPTS',
+
+					'Receipts "GDF and SAT"',
+
+					'Enter the required data to reprint the receipt and click on \"Continue\"',
+
+					'Payment data',
+
+					'Payment type',
+
+					'GDF',
+
+					'Taxes',
+
+					'Payment date',
+
+					'From',
+
+					'To',
+
+					'Criterion (optional)',
+
+					'Authorization Number',
+
+					'RFC',
+
+					'Capture line',
+
+					'Continue',
+
+					
+
+					'Mexico city\'s goverment treasury office',
+
+					'To get your receipt, click \"Detail\"',
+
+					'Date',
+
+					'Payment type',
+
+					'Authorization',
+
+					'Capture line',
+
+					'Amount',
+
+					'Service',
+
+					'Detail',
+
+					
+
+					'Federal taxes',
+
+					'To get your receipt, click \"Print\"',
+
+					'Date',
+
+					'Operation',
+
+					'Authorization',
+
+					'Folio',
+
+					'SAT or RFC capture line',
+
+					'Amount',
+
+					'Print',
+
+					
+
+					'Federal taxes',
+
+					'To get your receipt, click \"Print\"',
+
+					'Date',
+
+					'Operation',
+
+					'Authorization',
+
+					'SAT or RFC capture line',
+
+					'Amount',
+
+					'Print',
+
+
+
+					'Federal taxes',
+
+					'To get your receipt, click \"Print\"',
+
+					'Date',
+
+					'Operation',
+
+					'Authorization',
+
+					'Folio',
+
+					'SAT or RFC capture line',
+
+					'Amount',
+
+					'Print');
+
+
+
+function DoSubmit( value ) {
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+function AnioActualValido(anio,mensaje){
+
+    hoy=new Date();
+
+    anioactual=hoy.getYear();
+
+   
+
+    if(anio.value!=anioactual){
+
+        alert(mensaje);
+
+        anio.focus();
+
+        return false;
+
+    }else{
+
+        return true;
+
+    }
+
+}
+
+
+
+		
+
+function ConsultaOperaciones(){
+
+    DoSubmit('CONSULTA');  
+
+}
+
+
+
+function AbrirVentanaSAT(Nom_Ventana){
+
+var setting='toolbar=no,resizable=yes,directories=no,menubar=no,status=no,scrollbars=yes,width=600,height=350';
+
+var setFrame='<html><head></head><frameset rows="100%,*" framespacing="0" border="0" frameborder="0"><frame name="superior" src="/spanishdir/ayudas/blanco.htm" scrolling="auto"><frame name="inferior" src="/spanishdir/ayudas/blanco.htm" scrolling="no" noresize><noframes><body><p>Esta página usa marcos, pero su explorador no los admite.</p></body></noframes></frameset></html>';
+
+
+
+var strInfo='<html><head><style type="text/css">p {color: black;font-family: Verdana, Arial, sans-serif;font-size: 10px}</style><title>Banamex</title></head><body>  <table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"><p></p></td><td width="25%"><p><img border="0" src="/spanishdir/bankicon/logoBanamex.jpg"></p></td><td width="70%"><p></p></td></tr><tr><td width="5%"><p></p></td><td width="95%" colspan="2" align="center"><hr><font size="2"><b>RECIBO BANCARIO DE PAGO DE CONTRIBUCIONES, PRODUCTOS Y APROVECHAMIENTOS FEDERALES</b></font><br><hr></td></tr></table><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="2%"><p></p></td><td><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"><p></p></td><td><b><p>[DENOMINACION]</p></b></td><td><p>[NombreJava]</p></td></tr><tr><td width="5%"><p></p></td><td><b><p>Fecha y Hora de Pago:</p></b></td><td><p>[FechaHost]&nbsp;[HoraHost]</p></td></tr><tr><td width="5%"><p></p></td><td><b><p>Total de Pagos:</p></b></td><td><p>[TotalPagos]</p></td></tr></table></td><td valign=top><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="2%"><p></p></td><td width="40%"><b><p>No. Autorización del medio:</p></b></td><td><p>[autori]</p></td></tr><tr><td width="2%"><p></p></td><td><b><p>No. Operación:</b></td><td><p>[aut701]</p></td></tr><tr><td width="2%"><p></p></td><td><p><b>Página</b><b>:</b></p></td><td><p>1/[TotalPagos]</p></td></tr></table></td></tr><tr><td colspan=3><p>&nbsp;</p></td></tr><tr><td></td><td></td><td><p><b>TOTAL EFECTIVAMENTE PAGADO: $ [impcgos]</b></p></td></tr></table><table style="margin-top:5px;margin-left:0px;" border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"><p></p></td><td width="95%" colspan="2"><p>&nbsp;</p></td></tr><tr><td width="5%"><p></p></td><td width="95%" colspan="2"><b><p>Cadena</p></b></td></tr><tr><td width="5%"><p></p></td><td width="2%"><p></p></td><td width="93%"><p>[cadsat1Java][cadsat2Java][cadsat3Java][cadsat4Java][cadsat5Java][cadsat6Java][cadsat7Java][cadsat8Java][cadsat9Java][cadsat10Java][cadsat11Java][cadsat12Java][cadsat13Java]</p></td></tr></table><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"><p></p></td><td width="95%" colspan="2"><p>&nbsp;</p></td></tr><tr><td width="5%"><p></p></td><td width="95%" colspan="2"><b><p>Sello Digital</p></b></td></tr><tr><td width="5%"><p></p></td><td width="2%"><p></p></td><td width="93%"><p>[sellodig1][sellodig2][sellodig3][sellodig4]</p></td></tr></table>[CadenaVisible]</body></html>';
+
+
+
+var strPrint='<html><head><style type="text/css">p {color: black;font-family: Verdana, Arial, sans-serif;font-size: 10px}H3 {page-break-before: always}</style><title>Banamex</title></head><body>[CadenaInvisible]</body></html>';
+
+
+
+//<tr><td width="5%"><p></p></td><td width="95%" colspan="2" align="center"><p><b><font size="3">Bancanet Personal</font></b></p></td></tr>
+
+//<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"><p></p></td><td width="25%"><p><img border="0" src="/spanishdir/bankicon/logoBanamex.jpg"></p></td><td width="70%"><p></p></td></tr><tr><td width="5%"><p></p></td><td width="95%" colspan="2" align="center"><p><b><font size="3">Bancanet Personal</font></b></p></td></tr><tr><td width="5%"><p></p></td><td width="95%" colspan="2" align="center"><hr><font size="2"><b>RECIBO BANCARIO DE PAGO DE CONTRIBUCIONES FEDERALES</b></font><hr></td></tr></table>
+
+
+
+ if (Nom_Ventana == "Imprimir")
+
+    {
+
+      newWin=window.open("","",setting);
+
+      newWin.document.write(setFrame);
+
+      newWin.document.close();
+
+      
+
+      newWin.superior.document.open();
+
+      newWin.superior.document.write(strInfo);
+
+      newWin.superior.document.close();
+
+
+
+      newWin.inferior.document.open();
+
+      newWin.inferior.document.write(strPrint);
+
+      newWin.inferior.document.close();
+
+
+
+      setTimeout("newWin.frames[1].focus()",100); 
+
+      setTimeout("newWin.frames[1].print()",100); 
+
+      }
+
+}
+
+
+
+
+
+function AbrirVentanaREF(Nom_Ventana)
+
+{
+
+var setting='toolbar=no,resizable=yes,directories=no,menubar=no,status=no,scrollbars=yes,width=600,height=350';
+
+var setFrame='<html><head></head><frameset rows="100%,*" framespacing="0" border="0" frameborder="0"><frame name="superior" src="/spanishdir/ayudas/blanco.htm" scrolling="auto"><frame name="inferior" src="/spanishdir/ayudas/blanco.htm" scrolling="no" noresize><noframes><body><p>Esta página usa marcos, pero su explorador no los admite.</p></body></noframes></frameset></html>';
+
+
+
+var strInfo=' <html><head><style type="text/css">p {color: black;font-family: Verdana, Arial, sans-serif;font-size: 10px}                               .intrntLbl {color: black;font-family: Verdana, Arial, sans-serif;font-weight: bold;font-size: 12px;}</style>               </head><body><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"></td><td width="25%"><p><img border="0" src="/spanishdir/bankicon/logoBanamex.jpg"></p></td><td width="70%"></td></tr><tr><td width="5%"></td><td width="95%" colspan="2" align="center"><br><br><font size="4"><b>BancaNet</b><br><br></font><SPAN class="intrntLbl">INTERNET</SPAN><br><br> </td></tr><tr><td width="5%"></td><td width="95%" colspan="2" align="center"><hr><font size="2"><b>RECIBO BANCARIO DE PAGO DE CONTRIBUCIONES FEDERALES</b></font><br><hr></td></tr></table><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="2%"></td><td><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"></td><td width="40%"><p><b>&nbsp;<!-- Nombre: --></b></p></td><td><p>&nbsp;<!-- [Cliente] --></p></td></tr><tr><td width="5%"></td><td><p><b>Fecha de Pago:</b></p></td><td><p>[FechaTran]</p></td></tr><tr><td width="5%"></td><td><p><b>Hora de Pago:</b></p></td><td><p>[HoraTranAMPM]</p></td></tr><tr><td width="5%"></td></tr></table></td><td valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0"><!--<tr><td width="2%"></td><td width="40%"><p><b>No. Autorizaci&oacute;n:</b></p></td><td><p>[numaut]</p></td></tr>--><tr><td width="2%"></td><td width="40%"><p><b>No. Operaci&oacute;n:</b></p></td><td><p>[auts701]</p></td></tr><tr><td width="2%"></td><td><p><b>Estatus:</b></p></td><td><p>APLICADA</p></td></tr><tr><td width="2%"></td><td NOWRAP><p><b>Importe Pagado:</b></p></td><td><p>[importeF]</p></td></tr></table></td></tr><tr><td colspan="3"><p>&nbsp;</p></td></tr><tr><td></td><td></td><td><p><b><!-- FINAL --></b></p></td></tr></table><table style="margin-top:5px;margin-left:0px;" border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"></td><td width="95%" colspan="2"><p>&nbsp;</p></td></tr><tr><td width="5%"></td><td width="95%" colspan="2" align="center"><p><b>LÍNEA DE CAPTURA</b></p></td></tr><tr><td width="5%"></td><td width="95%" align="center"><p>[lineacapFormateada]</p></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td width="5%"></td><td width="95%" align="center"><p>"Este documento tiene validez oficial ante la Secretaría de Hacienda y Crédito Público"</p></td></tr></table></body></html>';
+
+							
+
+var strPrint='<html><head><style type="text/css">p {color: black;font-family: Verdana, Arial, sans-serif;font-size: 10px}H3 {page-break-before: always} .intrntLbl {color: black;font-family: Verdana, Arial, sans-serif;font-weight: bold;font-size: 12px;}</style><title>Banamex</title></head><body><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"></td><td width="25%"><p><img border="0" src="/spanishdir/bankicon/logoBanamex.jpg"></p></td><td width="70%"></td></tr><tr><td width="5%"></td><td width="95%" colspan="2" align="center"><br><br><font size="4"><b>BancaNet</b><br><br></font><SPAN class="intrntLbl">INTERNET</SPAN><br><br> </td></tr><tr><td width="5%"></td><td width="95%" colspan="2" align="center"><hr><font size="2"><b>RECIBO BANCARIO DE PAGO DE CONTRIBUCIONES FEDERALES</b></font><br><hr></td></tr></table><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="2%"></td><td><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"></td><td width="40%"><p><b>&nbsp;<!-- Nombre: --></b></p></td><td><p>&nbsp;<!-- [Cliente] --></p></td></tr><tr><td width="5%"></td><td><p><b>Fecha de Pago:</b></p></td><td><p>[FechaTran]</p></td></tr><tr><td width="5%"></td><td><p><b>Hora de Pago:</b></p></td><td><p>[HoraTranAMPM]</p></td></tr><tr><td width="5%"></td></tr></table></td><td valign="top"><table border="0" width="100%" cellspacing="0" cellpadding="0"><!--<tr><td width="2%"></td><td width="40%"><p><b>No. Autorizaci&oacute;n:</b></p></td><td><p>[numaut]</p></td></tr>--><tr><td width="2%"></td><td width="40%"><p><b>No. Operaci&oacute;n:</b></p></td><td><p>[auts701]</p></td></tr><tr><td width="2%"></td><td><p><b>Estatus:</b></p></td><td><p>APLICADA</p></td></tr><tr><td width="2%"></td><td NOWRAP><p><b>Importe Pagado:</b></p></td><td><p>[importeF]</p></td></tr></table></td></tr><tr><td colspan="3"><p>&nbsp;</p></td></tr><tr><td></td><td></td><td><p><b><!-- FINAL --></b></p></td></tr></table><table style="margin-top:5px;margin-left:0px;" border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="5%"></td><td width="95%" colspan="2"><p>&nbsp;</p></td></tr><tr><td width="5%"></td><td width="95%" colspan="2" align="center"><p><b>LÍNEA DE CAPTURA</b></p></td></tr><tr><td width="5%"></td><td width="95%" align="center"><p>[lineacapFormateada]</p></td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td width="5%"></td><td width="95%" align="center"><p>"Este documento tiene validez oficial ante la Secretaría de Hacienda y Crédito Público"</p></td></tr></table></body></html>';
+
+
+
+ if (Nom_Ventana == "Imprimir")
+
+    {
+
+      newWin=window.open("","",setting);
+
+      newWin.document.write(setFrame);
+
+      newWin.document.close();
+
+      
+
+      newWin.superior.document.open();
+
+      newWin.superior.document.write(strInfo);
+
+      newWin.superior.document.close();
+
+
+
+      newWin.inferior.document.open();
+
+      newWin.inferior.document.write(strPrint);
+
+      newWin.inferior.document.close();
+
+
+
+      setTimeout("newWin.frames[1].focus()",100); 
+
+      setTimeout("newWin.frames[1].print()",100); 
+
+      }
+
+}		
+
+		$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+		function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/
+
+  var valMail = $("#"+idCampo, contexto ).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"", contexto ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function curpValido( idTxt ) {
+
+  var regexCurp;
+
+  var valCurp = $( "#"+idTxt+"" ).val();
+
+  regexCurp = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[0-9]{2}$/;
+
+  return regexCurp.test( valCurp );
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+	
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+		var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+		
+
+	</script>
+
+		
+
+		
+
+    <script type="text/javascript">
+
+		$(document).ready(function(){optieneAlturas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});		
+
+			
+
+		function fOpcional()
+
+		{			
+
+			var CadOP="";
+
+			var tam= CadOP.length;
+
+			var ComboOP="";			
+
+			
+
+
+
+				
+
+			if(CadOP!="")
+
+			{
+
+				ComboOP = CadOP.substring(0,1); 				
+
+				
+
+				if(ComboOP=="0") 		$("#ID_OPcional").val(0);
+
+				else if(ComboOP=="1")	$("#ID_OPcional").val(1);
+
+				else if(ComboOP=="2")	$("#ID_OPcional").val(2);
+
+				else if(ComboOP=="3")	$("#ID_OPcional").val(3);
+
+				
+
+				ComboOP=CadOP.substring(1,tam);
+
+				$("#ID_TextOpcional").val(ComboOP);
+
+				
+
+			}
+
+			
+
+			if($("#ID_OPcional").val()==0)
+
+				$("#ID_TextOpcional").hide();
+
+			else
+
+				$("#ID_TextOpcional").show();
+
+			
+
+		}
+
+		
+
+		function FechaFinal()
+
+		{
+
+			if($("#yearpicker3").val()=="")
+
+				$("#yearpicker3").attr("value", $("#yearpicker2").val());			
+
+		}
+
+		function Initialize()
+
+		{	
+
+
+
+			TipoPA_default();
+
+						
+
+			FechaFinal();
+
+			
+
+			fOpcional();
+
+			
+
+			ComplementarTablaGral();
+
+			
+
+			
+
+	var mesesFecha_BB;
+
+
+
+
+
+$(document).ready
+
+
+
+(
+
+		function ()
+
+	{
+
+		mesesFecha_BB = ( language=='eng' ) ? ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'] : ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+					catch(e)
+
+					{
+
+					}
+
+			}
+
+		)	
+
+	}
+
+)
+
+
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+	
+
+	
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+				var hora = fecha.substring(10);
+
+				var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+				return fechaformateada + hora;
+
+}
+
+
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+			fecha = fecha.replace(/\-/gi," ");
+
+			var conversion = (fecha.substring(4,6)).toLowerCase();
+
+			var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+			return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[fecha8]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma=language;
+
+			
+
+		if(splitFecha[0].length==1)
+
+		{
+
+			splitFecha[0]="0"+splitFecha[0];
+
+		}
+
+								
+
+		if( Idioma!="eng" )
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+function formato_dddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[Fecha]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma=language;
+
+								
+
+		if( Idioma!="eng" )
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+	
+
+	
+
+function formato_ddmmaaaaEBSJS(fecha)
+
+{
+
+	var indice;
+
+	var fechaAux;
+
+	var IdiomaAux=language;
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+	
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+	
+
+	if(indice!=-1)
+
+	{
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if( IdiomaAux!="eng" )
+
+		{
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+				
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+			else
+
+			{
+
+				mesFecha=fechaAux.substring(0,2);
+
+					if(mesFecha=="01")
+
+						{mesFecha1="Jan";}
+
+					if(mesFecha=="02")
+
+						{mesFecha1="Feb";}
+
+					if(mesFecha=="03")
+
+						{mesFecha1="Mar";}
+
+					if(mesFecha=="04")
+
+						{mesFecha1="Apr";}
+
+					if(mesFecha=="05")
+
+						{mesFecha1="May";}
+
+					if(mesFecha=="06")
+
+						{mesFecha1="Jun";}
+
+					if(mesFecha=="07")
+
+						{mesFecha1="Jul";}
+
+					if(mesFecha=="08")
+
+						{mesFecha1="Aug";}
+
+					if(mesFecha=="09")
+
+						{mesFecha1="Sep";}
+
+					if(mesFecha=="10")
+
+						{mesFecha1="Oct";}
+
+					if(mesFecha=="11")
+
+						{mesFecha1="Nov";}
+
+					if(mesFecha=="12")
+
+						{mesFecha1="Dec";}
+
+					
+
+				fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+				fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+			}
+
+		
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+
+
+function formateaFechaBB(formato, fecha)
+
+{	
+
+	
+
+	fechaFormateada="";
+
+	
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+		
+
+	if(fecha != '' &&  fecha != '&nbsp;'){
+
+		
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if( language=="eng" )
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+
+
+
+
+			
+
+			
+
+					var titulo="Pagos";
+
+					rutaAyuda=rutaAyuda+"Comprobantes.htm";
+
+			 			
+
+			
+
+			
+
+			
+
+			if(""=="Mostrar" ||("FALSE"=="TRUE" && ""=="Mostrar"))
+
+				ImprimirEnVentanaSAT();
+
+				
+
+			if(""=="Mostrar" ||("FALSE"=="TRUE" && ""=="Mostrar"))
+
+				ImprimirEnVentanaREF();
+
+			if(""=="ERROR")
+
+			{
+
+				$("#causa").css("height","auto");
+
+				$("#mensajeError_contenido_div", window.parent.document).html(
+
+					$("#idErr").html()
+
+				);
+
+				parent.$.modal
+
+				(				
+
+					{
+
+					opacity:60,
+
+					overlayClose:false,
+
+					flagDiv:true,
+
+					widthDivIfrm:600
+
+					}
+
+				);
+
+			}
+
+			
+
+			
+
+		}			
+
+	</script>
+
+	
+
+
+
+
+
+<script language="JavaScript">
+
+//Validaciones
+
+function MensajeDeError(id_Error, mensaje)
+
+{
+
+		$(id_Error).html('<span>' + mensaje + '<\span>');
+
+		$(id_Error).show();
+
+}
+
+function ValidaLineaCaptura(obj_LineaCap)
+
+{		
+
+		if( obj_LineaCap.length != 20 ) {
+
+			
+
+			MensajeDeError('#Mensaje_error_otros', esp[1]);			
+
+			$('#ID_TextOpcional').focus();
+
+			$('#ID_TextOpcional').select();
+
+			//obj_LineaCap.focus();
+
+			return false;
+
+		}
+
+		if ( StringOfDigitsLNCP(obj_LineaCap) == false ) {
+
+			MensajeDeError('#Mensaje_error_otros', esp[2]);			
+
+			$('#ID_TextOpcional').focus();
+
+			$('#ID_TextOpcional').select();
+
+			return false;
+
+		}
+
+	return true;
+
+}
+
+
+
+function StringOfDigitsLNCP(theString)
+
+{
+
+	var	validDigits	=	"0123456789abcdefghijklmn??rstuvwxyzABCDEFGHIJKLMN?PQRSTUVWXYZ=!$/?";
+
+	var	i =	0;
+
+	for( i = 0; i < theString.length ; i++ )	
+
+      {
+
+        var	thisChar	=	theString.charAt(i);	
+
+	 	 if ( validDigits.indexOf( thisChar ) == -1 )	
+
+          return false
+
+          
+
+	 }
+
+	return true;
+
+}
+
+
+
+function StringOfDigits(theString)
+
+{
+
+	var	validDigits	=	"0123456789";
+
+	var	i =	0;
+
+	for( i = 0; i < theString.length ; i++ )	
+
+      {
+
+        var	thisChar	=	theString.charAt(i);	
+
+	 	 if ( validDigits.indexOf( thisChar ) == -1 )	
+
+          return false   // end if
+
+          
+
+	 } // end for
+
+	return true;
+
+} 
+
+
+
+function onKeyDownOptional(obj)
+
+{
+
+	if($('#ID_OPcional').val()==2)
+
+		cambiaMayus(obj);
+
+}
+
+
+
+
+
+function onChangedDate(obj)
+
+{
+
+	$('#Mensaje_error_date').hide();
+
+}
+
+function onChangedOpcional(obj)
+
+{
+
+	$('#Mensaje_error_otros').hide();
+
+}
+
+
+
+function ValidaNumeroTransaccion(NumOP){
+
+		if(!StringOfDigits(NumOP) || NumOP=="")
+
+		{
+
+		    MensajeDeError('#Mensaje_error_otros', esp[3]);
+
+			$('#ID_TextOpcional').focus();
+
+			$('#ID_TextOpcional').select();		    
+
+			return false;
+
+		}
+
+	return true;
+
+}
+
+</script>
+
+
+
+<script language="JavaScript">
+
+var esp;
+
+
+
+jQuery(document).ready(function(){
+
+	var formato;
+
+	var dias;
+
+	var meses;
+
+	
+
+	var VarFecha = new Date();		
+
+	var anio = VarFecha.getFullYear();
+
+	var mes  = VarFecha.getMonth();
+
+	var dia  = VarFecha.getDate();
+
+	var InicioCal= new Date(2000, 0, 1);
+
+	var today = new Date(anio , mes, dia);
+
+	
+
+	formato = ( language=='eng' ) ? 'mm/dd/yy' : 'dd/mm/yy';
+
+	dias = ( language=='eng' ) ? ['Sun','Mon','Tue','Wed','Thu','Fry','Sat'] : ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+	meses = ( language=='eng' ) ? ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'] : ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];	
+
+
+
+	CrearCal('#yearpicker1', formato, dias, meses, today, InicioCal, today,100,'');
+
+	CrearCal('#yearpicker2', formato, dias, meses, today, InicioCal, today,100,'');
+
+	CrearCal('#yearpicker3', formato, dias, meses, today, InicioCal, today,100,'');
+
+
+
+	if( isEnglishSel ) {
+
+		esp = new Array('Wrong RFC','Capture line must be 20 characters','Capture line contains invalid characters','Only numeric data allowed. Please verify',
+
+		'Dates of reference are required','Opening date is required','Closing date is required','Opening date must be less than closing date',
+
+		'All days amoung dates must not be more than 30 days');
+
+	} else {
+
+		esp = new Array('RFC no valido','La L&iacute;nea de Captura debe ser de 20 caracteres','La L&iacute;nea de Captura contiene caracteres inv&aacute;lidos','Solo se permiten datos num&eacute;ricos en este campo. Favor de Verificar.',
+
+		'Las fechas de consulta son requeridas','La fecha inicial es requerida','La fecha final es requerida','La fecha inical debe ser menor a la fecha final',
+
+		'El total de d&iacute;as entre fechas no debe ser mayor a 30');	
+
+	}
+
+});
+
+	
+
+	
+
+	
+
+	function ImprimirEnVentanaSAT()
+
+	{
+
+	
+
+		
+
+	}
+
+
+
+	function ImprimirEnVentanaREF()
+
+	{
+
+		
+
+	}
+
+	
+
+	function ComplementarTablaGral()
+
+	{	//TBL_CONSULTA-SAT_TOTAL,MT_RPREFC_TOTAL	
+
+			var ColorLinea='Color';
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+	}
+
+
+
+	function onChangedOpcionalCombo()
+
+	{		
+
+		if($("#ID_OPcional").val()==0)		
+
+			$("#ID_TextOpcional").hide();
+
+		else
+
+			$("#ID_TextOpcional").show();
+
+		
+
+		$("#ID_TextOpcional").attr("value", "");
+
+		$('#Mensaje_error_otros').hide();
+
+		
+
+	}
+
+	function onClick_DetalleGDF(value)
+
+	{		
+
+		
+
+		var obj_Data1 = document.getElementById("ID_Data1");
+
+		obj_Data1.value=value;
+
+		parent.cargaDocN('Comprobantes GDF e Impuestos/detalle1_GDF.html');
+
+	}
+
+	
+
+	
+
+	function onClick_ImprimirSAT(value1, value2, value3)
+
+	{
+
+		var obj_Dat1 = document.getElementById("ID_Data1");
+
+		var obj_Dat2 = document.getElementById("ID_Data2");
+
+		var obj_Dat3 = document.getElementById("ID_Data3");
+
+
+
+		obj_Dat1.value=value1;
+
+		obj_Dat2.value=value2;
+
+		obj_Dat3.value=value3;
+
+		DoSubmit('DETALLESAT');
+
+	}
+
+	
+
+	
+
+	function onClick_ImprimirREF(value1, value2, value3)
+
+	{
+
+		var obj_Dat1 = document.getElementById("ID_Data1");
+
+		var obj_Dat2 = document.getElementById("ID_Data2");
+
+		var obj_Dat3 = document.getElementById("ID_Data3");
+
+		
+
+		obj_Dat1.value=value1;
+
+		obj_Dat2.value=value2;
+
+		obj_Dat3.value=value3;
+
+		DoSubmit('DETALLEREF');
+
+	}
+
+	
+
+	function onClick_Continuar()
+
+	{					
+
+		$('#ID_Data1').val('');
+
+		$('#ID_Data2').val('');
+
+		$('#ID_Data3').val('');
+
+		$('#ID_Data4').val('');
+
+		$('#ID_Data5').val('');
+
+		$('#ID_Data6').val('');
+
+		
+
+
+
+		if($('#ID_TipoPago option:selected').val()=="GDF")		
+
+		{ //RECIBO GDF
+
+				$('#ID_Data1').val("RECIBO GDF");
+
+				if($('#yearpicker1').val()=="")
+
+					$('#ID_Data2').val('PS');
+
+				else
+
+					$('#ID_Data2').val($('#yearpicker1').val());
+
+				
+
+				parent.cargaDocN('Comprobantes GDF e Impuestos/Tipo_de_pago_GDF.html');
+
+		}
+
+		else 
+
+		{	
+
+			if($('#yearpicker2').val()=="" && $('#yearpicker3').val()=="")
+
+			{			
+
+				MensajeDeError('#Mensaje_error_date', esp[4]);
+
+				return;
+
+			}
+
+			if($('#yearpicker2').val()==""){			
+
+				MensajeDeError('#Mensaje_error_date', esp[5]);
+
+				return;
+
+			}
+
+			else if($('#yearpicker3').val()==""){			
+
+				MensajeDeError('#Mensaje_error_date', esp[6]);
+
+				return;
+
+			}
+
+			var TotalDias=getNumeroDeNits();
+
+			if(TotalDias<0)
+
+			{
+
+				MensajeDeError('#Mensaje_error_date', esp[7]);
+
+				return;
+
+			}
+
+			else if(TotalDias>30)
+
+			{
+
+				MensajeDeError('#Mensaje_error_date', esp[8]);
+
+				return;
+
+			}
+
+			
+
+			
+
+			$('#ID_Data4').val($('#yearpicker2').val());			
+
+			
+
+			if(TotalDias==0)
+
+				$('#ID_Data5').val('');				
+
+			else
+
+				$('#ID_Data5').val($('#yearpicker3').val());			
+
+			
+
+			if($('#ID_OPcional').val() =='1') //1=Numero de operaciÃ³n			
+
+			{
+
+				if(ValidaNumeroTransaccion($('#ID_TextOpcional').val())==false)				
+
+					return;
+
+				$('#ID_Data3').val($('#ID_TextOpcional').val());
+
+			}
+
+				
+
+			else if($('#ID_OPcional').val() =='2') //2=RFC
+
+			{	
+
+				if (!rfcValido('ID_TextOpcional'))
+
+				{
+
+					MensajeDeError('#Mensaje_error_otros',esp[0]);					
+
+					return;}
+
+				$('#ID_Data2').val($('#ID_TextOpcional').val());				
+
+			}
+
+			else if($('#ID_OPcional').val() =='3') //3=LÃ­nea de captura
+
+			{
+
+				if (ValidaLineaCaptura($('#ID_TextOpcional').val())==false)
+
+					return;
+
+				$('#ID_Data2').val($('#ID_TextOpcional').val());
+
+			}
+
+			
+
+			
+
+			/////////////////////////////////////////////////////////
+
+			//////////////////////Envio de Submit////////////////////
+
+			/////////////////////////////////////////////////////////
+
+			if($('#ID_OPcional').val() =='2')//Si impuesto es SAT			
+
+				parent.cargaDocN('Comprobantes GDF e Impuestos/impuestos_RFC.html');
+
+			else if($('#ID_OPcional').val() =='3')//Si impuesto es REF
+
+				parent.cargaDocN('Comprobantes GDF e Impuestos/impuestos_linea_de_captura.html');
+
+				
+
+			else{			
+
+				$('#ID_Data6').val('SAT y REF');
+
+				//obj_Data6.value="SAT y REF";
+
+				parent.cargaDocN('Comprobantes GDF e Impuestos/impuestos_numero_de_autorizacion.html');
+
+			}
+
+		}		
+
+	}
+
+
+
+	
+
+
+
+	function getNumeroDeNits()
+
+	{
+
+		var d1;
+
+		var dat1;
+
+		var d2;
+
+		var dat2;
+
+		var fin;
+
+		var dias;
+
+					
+
+		d1 = $('#yearpicker2').val().split("/");
+
+		d2 = $('#yearpicker3').val().split("/");
+
+		
+
+		if( language=='eng' ) {
+
+			dat1 = new Date( $('#yearpicker2').val() );
+
+			dat2 = new Date( $('#yearpicker3').val() );
+
+		} else {
+
+			dat1 = new Date(d1[2], parseFloat(d1[1])-1, parseFloat(d1[0]));
+
+			dat2 = new Date(d2[2], parseFloat(d2[1])-1, parseFloat(d2[0]));
+
+		}
+
+		
+
+		fin = dat2.getTime() - dat1.getTime();
+
+		dias = Math.floor(fin / (1000 * 60 * 60 * 24));
+
+		return dias;
+
+	}
+
+	
+
+	
+
+	function Muestra(object)
+
+	{
+
+		var obj_show = document.getElementById(object);
+
+		obj_show.style.display = 'block';
+
+	}
+
+	
+
+	function Oculta(object) 
+
+	{
+
+		var obj_hide = document.getElementById(object);
+
+		obj_hide.style.display = 'none';	
+
+	}
+
+	
+
+	function TipoPA_default()
+
+	{	
+
+		var obj_Tipo = document.getElementById("ID_TipoPago");		
+
+		if("GDF"=="GDF" || "GDF"=="Impuestos")
+
+		{
+
+			$("#ID_TipoPago").val("GDF");
+
+			TipoPAgoOnChange("GDF");			
+
+		}
+
+	}
+
+	
+
+	
+
+function TipoPAgoOnChange(value){
+
+	if (value == "GDF")
+
+    {
+
+		Oculta('Id_div_Imp');
+
+		Muestra('Id_div_GDF');
+
+		
+
+		/*Limpiar calendarios de impuestos, option y texto, mensaje de error*/
+
+		$('#Mensaje_error_otros').hide();
+
+		$('#Mensaje_error_date').hide();
+
+		
+
+		
+
+		$('#ID_TextOpcional').val('');
+
+		$('#ID_OPcional').val(0);
+
+		$('#yearpicker2').val('');
+
+		$('#yearpicker3').val('');
+
+    }
+
+	else
+
+    {
+
+		Oculta('Id_div_GDF');
+
+		Muestra('Id_div_Imp');
+
+		
+
+		/*Limpiar calendario del GDF*/
+
+		$('#yearpicker1').val('');
+
+    }
+
+	
+
+	window.parent.ajustarIframe();
+
+	
+
+	
+
+}
+
+
+
+
+
+</script>
+
+<div id="t0" class="float-left fonttit">COMPROBANTES GDF y SAT</div>
+
+  
+
+        <div id="t1" class="panelIzEnca3_text2">Comprobantes</div>
+
+        <div id="t2" class="color666 paddingT5 f11">
+
+		Ingresa los datos requeridos para la reimpresi&oacute;n del comprobante y da clic en "Continuar".
+
+        </div>
+
+		<div class="saldos_bloque3_2 paddingT12">
+
+        	<table class="tablaSaldos2" width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                <tr>
+
+
+
+                	<td valign="top" class="ancho10 bordesIz1">&nbsp;</td>
+
+                    <td>                    
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                            <tr>
+
+                                <td class="borderRDotted ancho25p padding20152015" valign="top"><span id="t3" class="f12">Datos del pago</span>
+
+								</td>
+
+                                <td valign="top" class="padding20152015">                                        
+
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+										<tr>
+
+
+
+                                            <td valign="top" class="paddingL0">
+
+                                                 
+
+												<div id="t4" class="negrita color333 f11 paddingB5">Tipo de pago</div>
+
+			
+
+												<select id="ID_TipoPago" name="Sel_TipoPago" class=" ancho300" onChange=TipoPAgoOnChange(this.value)>
+
+													<option id="t5" VALUE="GDF"> GDF </option>
+
+													
+
+													<option id="t6" VALUE="Impuestos"> Impuestos </option>
+
+													
+
+												</select>
+
+
+
+												
+
+												<!-- GDFGDFGDFGDFGDFGDFGDFGDFGDFGDFGDFGDFGDFGDF -->												
+
+												<div id="Id_div_GDF" name="Div_GDF">
+
+												<div class="marginT20">
+
+													<div id="t7" class="negrita color333 f11 paddingB5">Fecha de pago realizado:</div>
+
+													<div class="floatL paddingT4 paddingL4 overflow f11 calendario ancho137">
+
+														<input id ="yearpicker1" type="text" class="yearpicker input3" value="10/04/2012" readonly="readonly"/>
+
+														
+
+													</div>
+
+												</div>
+
+												</div>
+
+
+
+												<!-- ImpuestosImpuestosImpuestosImpuestosImpuestos -->
+
+												<div id="Id_div_Imp" name="Tb_Impuesto" value="" class="displayN">														
+
+													<div class="ancho100p clear overflow marginT20">													
+
+														<div id="t7" class="negrita color333 f11 paddingB5">Fecha de pago realizado:</div>
+
+														<div id="t8" class="floatL paddingT4 overflow f11">De</div>
+
+														<div class="floatL paddingT4 paddingL4 overflow f11 calendario ancho137" >
+
+															<input id="yearpicker2" type="text" name="TextCal" class="yearpicker input3" value="" readonly="readonly" onChange="JavaScript:onChangedDate(this)"/>
+
+														</div>
+
+														
+
+														<div class="floatL overflow paddingL10">
+
+
+
+															<div id="t9" class="floatL paddingT4 f11 calendario">Al</div>
+
+															<div class="floatL paddingT4 paddingL25 ancho150 f11 calendario">																		
+
+																<input id="yearpicker3" type="text" name="TextCal" class="yearpicker input3"   value="" readonly="readonly" onChange="JavaScript:onChangedDate(this)"/>
+
+															</div>
+
+														</div>													
+
+													</div>
+
+													
+
+													<div id="Mensaje_error_date" class="saldos_bloque2_f4_error_display" style="display:none;"></div>
+
+													
+
+													<!-- Aqui se muestran los mensajes de error DATE -->
+
+													<!--
+
+														<div class="ancho100p clear overflow marginT20">
+
+															<div id="Mensaje_error_date" class="saldos_bloque2_f4_error_display" style="display:none;"></div>
+
+														</div>
+
+													-->			
+
+													<div class="ancho100p clear overflow marginT20">
+
+
+
+														<div class="floatL overflow">
+
+															<div id="t10" class="negrita color333 f11 paddingB5">Criterio (opcional)</div>
+
+															<select name="select2" id="ID_OPcional" class=" ancho140" onChange="JavaScript:onChangedOpcionalCombo()">
+
+																<option value="0">  </option>
+
+																<option id="t11" value="1"> N&uacute;mero de autorizaci&oacute;n </option>
+
+																<option id="t12" value="2"> RFC </option>
+
+
+
+																<option id="t13" value="3"> L&iacute;nea de captura </option>
+
+															</select>
+
+														</div>
+
+															
+
+														<!--  -->
+
+														<div class="floatL overflow paddingL40">
+
+															<div class="negrita color333 f11 paddingB5">&nbsp;</div>
+
+															<div>
+
+
+
+																<input type="text" id="ID_TextOpcional" class="input  ancho105" value="" onKeyDown="JavaScript:onChangedOpcional(this)" onkeyup="onKeyDownOptional(this)" maxlength="20"/>
+
+															</div>
+
+															<div id="Mensaje_error_otros" class="saldos_bloque2_f4_error_display" style="display:none;"></div>
+
+															
+
+															<!-- Aqui se muestran los mensajes de error -->
+
+															<!--
+
+															<div class="ancho100p clear overflow marginT20">
+
+																<div id="Mensaje_error_otros" class="saldos_bloque2_f4_error_display" style="display:none;"></div>
+
+															</div>
+
+															-->
+
+														</div>													
+
+													</div>
+
+											</td>    
+
+                                        </tr>                                           
+
+                                    </table>
+
+
+
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                                          
+
+                    </td>
+
+                    <td valign="top" class="ancho10 bordesDe1">&nbsp;</td>
+
+                </tr>
+
+                <tr>
+
+                	<td valign="bottom"><div class="saldos_bordeSupIz2c"></div></td>
+
+                    <td class="bordeSupCe2c">&nbsp;</td>
+
+
+
+                    <td valign="bottom"><div class="saldos_bordeInfDe2c"></div></td>
+
+                </tr>
+
+            </table>        	
+
+        </div>
+
+        
+
+        <div class="marginT20 overflow">  						
+
+            <input id="t14" type="button" class="btnAZ86 floatR" value="Continuar" onclick="JavaScript:onClick_Continuar()" />
+
+        </div>
+
+
+
+		<input type="hidden" name="EWFBUTTON"/>
+
+		
+
+		
+
+		
+
+								
+
+						<div class="saldos_bloque3">
+
+
+
+								<div class="clear ancho100p overflow">
+
+									<div id="t15" class="floatL panelIzEnca3_text2">Tesoreria del Gobierno del Distrito Federal</div>
+
+								</div>
+
+								<div id="t16" class="color666 normal f11">Para obtener tu comprobante, da click en "Detalle".</div>
+
+																						
+
+								<table width="100%"  border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 pinta2 marginT20">
+
+									<THEAD>
+
+										<tr>                                    
+
+											<td class="borderRSolid"><span id="t17">Fecha</span></td>
+
+
+
+											<td class="borderRSolid"><span id="t18">Tipo de pago</span></td>
+
+											<td class="borderRSolid"><span id="t19">Autorizaci&oacute;n</span></td>
+
+											<td class="borderRSolid"><span id="t20">L&iacute;nea captura</span></td>
+
+											<td class="borderRSolid"><span id="t21">Importe</span></td>
+
+											<td class="borderRSolid"><span id="t22">Servicio</span></td>
+
+
+
+											<td>&nbsp;</td>
+
+										</tr>
+
+									</THEAD>
+
+									<TBODY>
+
+										<tr>                                   
+
+											<td class="borderRSolid" name="FECHA_BNP_ddmmaaaa">15/02/2003</td>
+
+											<td class="borderRSolid " valign="top" align="left">LIC "A" 1 pago</td>
+
+											<td class="borderRSolid " valign="top" align="left">003062</td>
+
+
+
+											<td class="borderRSolid " valign="top" align="left">01XCARJ761010KN80127</td>
+
+											<td class="borderRSolid " valign="top" align="left">$65,000.00</td>
+
+											<td class="borderRSolid " valign="top" align="left">BCO/CASA INTERNET</td>
+
+											<td valign="top" class="" align="left"><a id="t23" href="javascript:parent.detalle1()">Detalle</a></td>
+
+										</tr><tr>                                   
+
+											<td class="borderRSolid" name="FECHA_BNP_ddmmaaaa">15/02/2003</td>
+
+											<td class="borderRSolid " valign="top" align="left">LIC "A" 1 pago</td>
+
+
+
+											<td class="borderRSolid " valign="top" align="left">123456</td>
+
+											<td class="borderRSolid " valign="top" align="left">07XMORA710806KN40308</td>
+
+											<td class="borderRSolid " valign="top" align="left">$65,100.00</td>
+
+											<td class="borderRSolid " valign="top" align="left">BCO/CASA INTERNET</td>
+
+											<td valign="top" class="" align="left"><a id="t23" href="javascript:parent.detalle1()">Detalle</a></td>
+
+										</tr><tr>                                   
+
+											<td class="borderRSolid" name="FECHA_BNP_ddmmaaaa">15/02/2003</td>
+
+
+
+											<td class="borderRSolid " valign="top" align="left">LIC "A" 1 pago</td>
+
+											<td class="borderRSolid " valign="top" align="left">123456</td>
+
+											<td class="borderRSolid " valign="top" align="left">36103XX123FESKN4XX21</td>
+
+											<td class="borderRSolid " valign="top" align="left">$65,200.00</td>
+
+											<td class="borderRSolid " valign="top" align="left">BCO/CASA INTERNET</td>
+
+											<td valign="top" class="" align="left"><a id="t23" href="javascript:parent.detalle1()">Detalle</a></td>
+
+
+
+										</tr><tr>                                   
+
+											<td class="borderRSolid" name="FECHA_BNP_ddmmaaaa">12/02/2003</td>
+
+											<td class="borderRSolid " valign="top" align="left">LIC "A" 1 pago</td>
+
+											<td class="borderRSolid " valign="top" align="left">123456</td>
+
+											<td class="borderRSolid " valign="top" align="left">11XFOGO710204KN40123</td>
+
+											<td class="borderRSolid " valign="top" align="left">$65,300.00</td>
+
+											<td class="borderRSolid " valign="top" align="left">BCO/CASA INTERNET</td>
+
+
+
+											<td valign="top" class="" align="left"><a id="t23" href="javascript:parent.detalle1()">Detalle</a></td>
+
+										</tr><tr>                                   
+
+											<td class="borderRSolid" name="FECHA_BNP_ddmmaaaa">12/02/2003</td>
+
+											<td class="borderRSolid " valign="top" align="left">LIC "A" 1 pago</td>
+
+											<td class="borderRSolid " valign="top" align="left">123456</td>
+
+											<td class="borderRSolid " valign="top" align="left">16XGACP520530KN80102</td>
+
+											<td class="borderRSolid " valign="top" align="left">$65,400.00</td>
+
+
+
+											<td class="borderRSolid " valign="top" align="left">BCO/CASA INTERNET</td>
+
+											<td valign="top" class="" align="left"><a id="t23" href="javascript:parent.detalle1()">Detalle</a></td>
+
+										</tr><tr>                                   
+
+											<td class="borderRSolid" name="FECHA_BNP_ddmmaaaa">15/02/2003</td>
+
+											<td class="borderRSolid " valign="top" align="left">LIC "A" 1 pago</td>
+
+											<td class="borderRSolid " valign="top" align="left">123456</td>
+
+											<td class="borderRSolid " valign="top" align="left">21XMAJO620704KN8XX59</td>
+
+
+
+											<td class="borderRSolid " valign="top" align="left">$65,500.00</td>
+
+											<td class="borderRSolid " valign="top" align="left">BCO/CASA INTERNET</td>
+
+											<td valign="top" class="" align="left"><a id="t23" href="javascript:parent.detalle1()">Detalle</a></td>
+
+										</tr>
+
+									</TBODY></table>  
+
+						</div>							
+
+
+
+		<br></br>
+
+		<br></br>
+
+		
+
+   <INPUT TYPE=HIDDEN id="ID_Data1" NAME=DATA1 VALUE="">
+
+   <INPUT TYPE=HIDDEN id="ID_Data2" NAME=DATA2 VALUE="">
+
+   <INPUT TYPE=HIDDEN id="ID_Data3" NAME=DATA3 VALUE="">
+
+   <INPUT TYPE=HIDDEN id="ID_Data4" NAME=DATA4 VALUE="">
+
+   <INPUT TYPE=HIDDEN id="ID_Data5" NAME=DATA5 VALUE="">
+
+   <INPUT TYPE=HIDDEN id="ID_Data6" NAME=DATA6 VALUE="">
+
+   <INPUT TYPE=HIDDEN id="ID_Data7" NAME=DATA7 VALUE="">
+
+   
+
+   <INPUT TYPE=HIDDEN id="ID_Ini_Tabla2" name=Ini_Tabla2 VALUE="">
+
+
+
+   
+
+   
+
+   <!--
+
+	Hiden para variables de memoria
+
+   --> 
+
+   
+
+   <INPUT TYPE=HIDDEN id="ID_HidenFechaGDF" NAME="HidenFechaGDF" VALUE="10/04/2012">   
+
+   <INPUT TYPE=HIDDEN id="ID_HidenFechaIniREF" NAME="HidenFechaIniREF" VALUE="">
+
+   <INPUT TYPE=HIDDEN id="ID_HidenFechaFinREF" NAME="HidenFechaFinREF" VALUE="">
+
+   
+
+	<INPUT TYPE=HIDDEN ID ="ID_AYUDA" NAME=AYUDA_SPANISH VALUE="../../spanishdir/ayudas/Comprobantes.htm">
+
+	<INPUT TYPE=HIDDEN ID ="ID_HELP" NAME=AYUDA_ENGLISH VALUE="../../englishdir/ayudas/Comprobantes.htm">
+
+	
+
+   
+
+   <!--MODAL-->
+
+	
+
+		<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Causa:&nbsp;</div>
+
+
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+
+	
+
+		
+
+
+
+<script>parent.setFecha("10/04/12    17:58:38  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="175838  ";b$Cont="175838  "
+
+	//
+
+    </script>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Comprobantes GDF e Impuestos|SeleccionarTipo de Pago.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+
+
+</body>
+
+</html>
+

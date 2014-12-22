@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script language="javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script language="javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script language="JavaScript">
+
+var es = new Array("Afore Banamex statement","Consult your balance report online or request your statement home delivery within a period not exceeding 5 days.","Select the statement type request and click &quot;Continue&quot;","Statement","Online Balance<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report","Home delivery","Continue","STATEMENT");
+
+function Valida(){
+
+	var flag = true;
+
+	var mensaje1 = (language == "eng") ? "You have to select a NSS. Please verify.":"Es necesario seleccionar un NSS. Favor de verificar.";
+
+	if(flag)
+
+	{
+
+		if($("input:radio[id=ConsLinea]").is(':checked')==true){
+
+			parent.cargaDocN("Consulta_Estados_de_Cuenta_Afore/Consulta_en_Linea.html");
+
+		} else{
+
+			parent.cargaDocN("Consulta_Estados_de_Cuenta_Afore/Envio_a_Domicilio.html");
+
+		}
+
+	} else
+
+	parent.Expandir();
+
+}
+
+</script>
+
+<div id="t7" class="float-left fonttit">ESTADO DE CUENTA</div>
+
+<div class="panelIzEnca3_text2 font_arial" id="t0">Estado de cuenta Afore Banamex</div>
+
+<div class="color666 paddingT5 f11 font_arial" id="t1">Consulta tu estado de cuenta en l&iacute;nea o solicita el env&iacute;o a tu domicilio en un plazo no mayor a 15 d&iacute;as. </div>
+
+<div class="color666 paddingT5 f11 font_arial" id="t2">Selecciona el tipo de solicitud del estado de cuenta y da clic en &quot;Continuar&quot;.</div>
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t3">Estado de cuenta</span></td>
+
+			<td valign="top" class="padding20152015">
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+					<tr>
+
+						<td class="padding0 ancho33p">
+
+								<div class="negrita color333 f11 paddingB5">Mi afore NSS MXN - 424</div>
+
+								<select class="displayN" name="DATA1" id ="DATA1"></select>
+
+							<input name="DATA2"  checked="checked" type="radio" value="L" id="ConsLinea"/><span id="t4">Consulta en l&iacute;nea</span>
+
+						</td>
+
+						<td class="padding0L20 ancho33p">
+
+							<div class="negrita color333 f11 paddingB5">&nbsp;</div>
+
+							<input type="radio" value="D" name="DATA2" id="EnvDomicilio"/><span id="t5">Env&iacute;o a domicilio</span>
+
+						</td>
+
+						<td class="padding0L20">&nbsp;</td>
+
+					</tr>
+
+				</table>
+
+			</td>
+
+		</tr>
+
+	</table>       	
+
+</div>
+
+<div class="marginT20 overflow">
+
+	<input type="button" class="btnAZ86 floatR" value="Continuar" id="t6" onclick="Valida()"/>
+
+</div>
+
+</body>
+
+</html>

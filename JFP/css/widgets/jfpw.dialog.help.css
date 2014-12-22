@@ -1,0 +1,138 @@
+/*
+
+ * jQuery UI Dialog 1.8.7
+
+ *
+
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+
+ * http://jquery.org/license
+
+ *
+
+ * http://docs.jquery.com/UI/Dialog#theming
+
+ */
+
+
+
+.ui-dialog.jfpw-help-dialog { 
+
+	position: absolute; 
+
+	padding: .2em; 
+
+	width: 300px; 
+
+	overflow: hidden; 
+
+	background: #00599D;
+
+	color: white;
+
+}
+
+
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-titlebar { 
+
+	padding: .5em 1em .3em; 
+
+	position: relative;
+
+	background: #00599D;
+
+	border: 1px solid #00599D;
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-title { float: left; margin: .1em 16px .2em 0; } 
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-titlebar-close { 
+
+	position: absolute; 
+
+	right: .3em; 
+
+	top: 50%; 
+
+	width: 19px; 
+
+	margin: -10px 0 0 0; 
+
+	padding: 0px; 
+
+	height: 18px;
+
+	border: 1px solid #ffffff; 
+
+}
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-titlebar-close span { 
+
+	display: block; 
+
+	margin: 1px; 
+
+	background-image: url('/JFP/images/widgets/ui-icons_ffffff_256x240.png');
+
+	background-position: -48px -128px;
+
+}
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-titlebar-close:hover, .ui-dialog.jfpw-help-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-content { 
+
+	position: relative; 
+
+	border: 0; 
+
+	padding: .5em .5em; 
+
+	background: none; 
+
+	overflow: auto; 
+
+	zoom: 1; 
+
+}
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-buttonpane { text-align: left; border-width: 1px 0 0 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; }
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { float: right; }
+
+.ui-dialog.jfpw-help-dialog .ui-dialog-buttonpane button { margin: .5em .4em .5em 0; cursor: pointer; }
+
+.ui-dialog.jfpw-help-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+
+.ui-draggable.jfpw-help-dialog .ui-dialog-titlebar { cursor: move; }
+
+
+
+.jfpw-help-dialog .ui-state-hover, 
+
+.jfpw-help-dialog .ui-widget-content .ui-state-hover, 
+
+.jfpw-help-dialog .ui-widget-header .ui-state-hover, 
+
+.jfpw-help-dialog .ui-state-focus, 
+
+.jfpw-help-dialog .ui-widget-content .ui-state-focus, 
+
+.jfpw-help-dialog .ui-widget-header .ui-state-focus { 
+
+	border: 1px solid #ffffff; 
+
+	background: none;
+
+	font-weight: normal; color: #212121; 
+
+}
+

@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+ <html xmlns="http://www.w3.org/1999/xhtml"> 
+
+ 
+
+ <head>
+
+   
+
+    	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+        <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+        <META HTTP-EQUIV="Expires" CONTENT="-1">
+
+        <META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    	<title>Banamex</title>
+
+        <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+		        
+
+    	<script type="text/javascript">
+
+			
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+
+
+  var msg1 = "Seleccione la cuenta origen.";
+
+  var msg2 = "Error en n&uacute;mero de chequeras.";
+
+  var msg3 = "Debe seleccionar una cuenta origen.";
+
+  var msg4 = "El n&uacute;mero m&aacute;ximo de chequeras que puede solicitar: Personas f&iacute;sicas 5, Personas morales 10.";
+
+  var msg5 = "Seleccione alguna de las opciones disponibles.";
+
+  var msg6 = "Es necesario indicar el valor del cheque. Favor de verificar.";
+
+  var msg7 = "El valor ingresado debe ser num&eacute;rico. Por favor verifique.";
+
+  var msg8 = "Es necesario indicar el rango de cheques para cambio de estatus.";
+
+  var msg9 = "El dato debe ser num&eacute;rico. Por favor verifique.";
+
+  var msg11 = "Para una solicitud o modificaci&oacute;n, el n&uacute;mero de chequeras debe ser un valor num&eacute;rico mayor a cero.";
+
+  var msg10 = "El rango de Cheques ingresado es Incorrecto."
+
+  var msg12 = "Seleccione un Cheque para cambiar su estatus."
+
+  var msg13 = "Seleccione una opci&oacute;n para realizar el cambio de estatus."
+
+  var msg14 = "Para continuar, es necesario hacer el cambio de estatus de al menos un cheque."
+
+  var msg15 = "Importe inv&aacute;lido. Favor de verificar."
+
+
+
+
+
+
+
+
+
+//var ctasProp = true;
+
+var hasError = false;
+
+
+
+function validateForm1(){
+
+	hideErrorsChe();
+
+	if( comboVacio("comboCuentas") ) 
+
+		showErrorChe( "comboCuentas", msg1 );
+
+	if(radbutton4("ch1", "ch2", "ch3", "ch4"))
+
+		showErrorChe("err_radios",msg5);
+
+	if(document.getElementById("ch1").checked==true){
+
+		if(campoVacio("txtbox1")){
+
+			showErrorChe("err_txt1",msg11);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox1") || importeCero("txtbox1"))
+
+				showErrorChe("err_txt1",msg2);
+
+			if(personaFoM("txtbox1"))
+
+				showErrorChe("err_txt1",msg4);
+
+		}
+
+		if(document.getElementById("bloque1")){
+
+			if(radbutton3("op1","op2","op3"))
+
+				showErrorChe("tiposChequera1",msg5);
+
+		}
+
+	}
+
+	if(document.getElementById("ch3").checked==true){
+
+		if(campoVacio("txtbox2")){
+
+			showErrorChe("err_txt2",msg11);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox2") || importeCero("txtbox2"))
+
+				showErrorChe("err_txt2",msg2);
+
+			if(personaFoM("txtbox2"))
+
+				showErrorChe("err_txt2",msg4);
+
+		}
+
+		if(document.getElementById("bloque2")){
+
+			if(radbutton3("op4","op5","op6"))
+
+				showErrorChe("tiposChequera3",msg5);
+
+		}
+
+	}
+
+	if(document.getElementById("ch4").checked==true){
+
+		if(document.getElementById("bloque3")){
+
+			if(radbutton3("op7","op8","op9"))
+
+				showErrorChe("tiposChequera2",msg5);
+
+		}
+
+	}
+
+
+
+	if( !hasError ){
+
+		DoSubmit( 'VARIABLES' );
+
+	}
+
+	window.parent.ajustar();
+
+}
+
+
+
+function validateForm2(){
+
+	hideErrorsChe();
+
+	if( comboVacio( "comboCuentas2" ) ) 
+
+		showErrorChe( "comboCuentas2", msg3);
+
+	if(radbutton2("ch5", "ch6"))
+
+		showErrorChe("err_radios2",msg5);
+
+	if(document.getElementById("ch5").checked==true){
+
+		if(campoVacio("txtbox3")){
+
+			showErrorChe("err_txt3",msg6);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox3") || importeCero("txtbox3")){
+
+				showErrorChe("err_txt3",msg7);
+
+			}
+
+		}
+
+	}
+
+	if(document.getElementById("ch6").checked==true){
+
+		if(campoVacio("txtbox4") || campoVacio("txtbox5") ){
+
+			showErrorChe("err_txt4",msg8);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox4") || importeCero("txtbox4") || campoNumerico("txtbox5")  || importeCero("txtbox5")){
+
+				showErrorChe("err_txt4",msg9);
+
+			}
+
+			else{
+
+				if(rango("txtbox4","txtbox5"))
+
+					showErrorChe("err_txt4",msg10);
+
+			}
+
+		}
+
+	}
+
+	if( !hasError ){
+
+		DoSubmit( 'MOD ESTATUS' );
+
+	}
+
+	window.parent.ajustar();
+
+}
+
+
+
+function validateForm3(){
+
+	hideErrorsChe();
+
+	if(validaChecks()){
+
+		showErrorChe("tablas",msg12);
+
+	}
+
+	if(comboVacio("estatus"))
+
+		showErrorChe("opciones",msg13);
+
+	if(document.getElementById("estatus").value=="Liberado con importe"){
+
+		if(campoVacio("txtimporte") || importeCero("txtimporte")){
+
+			showErrorChe("ff",msg15);
+
+		}
+
+		else{	
+
+			if(importeValido("txtimporte")){}
+
+			else{showErrorChe("ff",msg15);}
+
+		}
+
+	}
+
+}
+
+function validateForm4(){
+
+	hideErrorsChe();
+
+	if(comboVacio( "comboCuentas3" ) ) 
+
+		showErrorChe( "leyen_err3", msg1);
+
+	if(!hasError){
+
+		DoSubmit("PROTEGIDA");
+
+	}
+
+}
+
+
+
+
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+
+
+$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+			
+
+			
+
+function Initialize(){
+
+	document.getElementById('tipoDchequera').style.display = "none";
+
+		if('1'== "1"){
+
+			document.getElementById('tipoDchequera').style.display = "";
+
+		}
+
+		else{
+
+			document.getElementById('tipoDchequera').style.display = "none";
+
+		}
+
+		
+
+	if("SPANISH"=="ENGLISH"){
+
+		
+
+		es=["Confirm the request data","Request Data","","Account","Number of requested checkbooks","Checksbook type requested","Checkbooks management",
+
+		"Sorry the transaction could not be completed","Checkbooks request","Cause:","Possible solution","What can I do?",
+
+		"You can use online help or contact the customer service at 1226 3990 (D.F. and Metropolitan area) or<br> 01 800 110 3990 (rest of the Republic)",
+
+		"Is important to have on hand the following code:"];
+
+		swap();
+
+		document.getElementById("aceptar").value="Accept";
+
+		document.getElementById("regresar").value="Return";
+
+		$("#btn_continuar_modal").val("Continue");
+
+	}
+
+	else{
+
+	
+
+	}
+
+	if("0" == "1"){
+
+		$("#causa").css("height","auto");
+
+		$("#mensajeError_contenido_div", window.parent.document).html(
+
+		$("#divError").html());
+
+		parent.$.modal({
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:true,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:'auto'
+
+			});
+
+	}
+
+}
+
+			
+
+function DoSubmit( value ){
+
+	document.forms[0].EWFBUTTON.value = value;
+
+	document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+	document.forms[0].submit();
+
+}
+
+
+
+function continua(){
+
+	document.forms[0].DATA1.value="00";
+
+	document.forms[0].DATA2.value="2";
+
+	document.forms[0].DATA3.value="5";
+
+	document.forms[0].DATA4.value="";
+
+	document.forms[0].DATA5.value="";
+
+	document.forms[0].DATA6.value="00";
+
+	DoSubmit("APLICACION");
+
+}
+
+
+
+function regresa(){
+
+	DoSubmit("REGRESAR");
+
+}
+
+
+
+		</script>
+
+<script>parent.setFecha("13/04/12    12:53:25  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="125316  ";b$Cont="125325  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+				
+
+		
+
+		
+
+		</head>
+
+		
+
+		<body>
+
+		
+
+		<div id="t6" class="panelIzEnca3_text2">Administraci&oacute;n de chequeras</div>
+
+        <div id="t0" class="color666 paddingT4 f11">Confirma los datos de la solicitud.</div>
+
+        
+
+        
+
+        <div class=" ">
+
+        
+
+        <div class=" borderBSolid  borderRSolid borderTSolid borderLSolid marginT22 ">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p  paddingT18 paddingL20" valign="top"><p id="t1" class="f12">Datos de la </p>
+
+                  <p id="t2" class="f12">solicitud</p></td>
+
+                    <td valign="top" class="padding20">
+
+                    
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                        	<tr>
+
+                            	<td class=" bgF1F2F2"><span id="t3">Cuenta</span></td>
+
+                                <td class=" bgF1F2F2">Cheques M.N 002 Cheques</td>
+
+                            </tr>
+
+                            <tr>
+
+                            	<td class=""><span id="t4">Cantidad de chequeras solicitadas</span></td>
+
+                                <td class="">5</td>
+
+                            </tr>
+
+							<tr id="tipoDchequera">
+
+								<td class=" bgF1F2F2"><span id="t5">Tipo de chequera solicitada</span></td>
+
+								<td id="tip" class=" bgF1F2F2">Integrada</td>
+
+							</tr>
+
+                            
+
+                        </table></td>
+
+                </tr>
+
+            </table>        	
+
+        </div>
+
+        </div>
+
+        <div class="marginT20 overflow">
+
+        	<input id="regresar" type="button" class="btnRJ86 floatL" value="Regresar" onclick="parent.DoSubmit('Solicitud_de_Chequeras/Chequeras.html')"; />
+
+            <input id="aceptar" type="button" class="btnAZ86 floatR" value="Aceptar" onclick="parent.DoSubmit('Solicitud_de_Chequeras/resultado_solicitud_chequera3.html');"; />
+
+        </div>
+
+		
+
+<div id="divError" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div id="t7" class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    Cancelación de Solicitud<br/>
+
+		<div id="causa"><label id="t9" class="f11 color666">Causa:</label>&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+    <div id="t11" class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      <label id="t12">Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).</label><br/>
+
+	  <label id="t13">Es importante tener a la mano el siguiente c&oacute;digo:</label>
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>		
+
+		
+
+		
+
+		
+
+		
+
+		
+
+        <INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+		<input type=hidden name="DATA1" value="">
+
+		<input type=hidden name="DATA2" value="">
+
+		<input type=hidden name="DATA3" value="">
+
+		<input type=hidden name="DATA4" value="">
+
+		<input type=hidden name="DATA5" value="">
+
+		<input type=hidden name="DATA6" value="">
+
+		<input type=hidden name="DATA10" value="">
+
+    <input id="omtmodalvalue" type="hidden" value="Solicitud de Chequeras|cheque04.htm" />
+
+    </body>
+
+</html>
+
+
+
+
+
+
+

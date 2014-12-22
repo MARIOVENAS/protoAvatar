@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+   <title></title>
+</head>
+
+<body>
+		<div class="div_cargando displayNone" id="movimientos_cargando">
+              <div class="loader"><img src="../../../../JFP/regional/images/loader.gif" alt="Cargando" /><br />
+              Un momento por favor ...</div>
+        </div> 
+<div class=" width926 bg_demo2">
+
+<div id="title-section" class="cH-appPageHead height20 paddingT0 margin-bottom20 width926">
+                    <div class="float-left">
+                      <h1 id="t23">DETALLE DE LA CUENTA</h1></div>
+                        
+               <div id="ayuda">  
+                <div class="margin-top6 titulo " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0)" onclick="top.dash()" class="float-left" id="t24">&nbsp;Ver todas las cuentas</a>
+                </div>
+                </div>   
+             
+             <div id="imp" class="displayNone">
+               <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+                </div>
+                </div>
+                </div>
+
+<div class="clear"></div>
+
+<div class="noleftmenu margintop0 width926" id="subapp-box" >
+
+
+<div class="widthOpt2 float-left padding-right35" >
+
+				<table width="100%" cellspacing="0" cellpadding="0" border="0" class="valigntop" >
+                   <tbody >
+                   		<tr class="noborder height20">
+                      	
+                        <td class="valigntop height55" valign="top" colspan="4" >
+                        <select class="ancho100p" name="select" id="select" onchange="valor2=this.value;Cta3();">
+                      		<option value="0" >Mi Chequera - Cheques - MXN - 12680</option>
+                          <option value="1">Cta Maestra - Mi maestra - MXN - 12681</option>
+                          <option value="2">Pagom&aacute;tico - BNM - Mi d&eacute;bito - MXN - 12680</option>
+                          <option value="3">Mi Chequera - Cheques - USD - 12680</option>
+                          <option value="4">Tarj. Oro - Mi tarjeta - MXN - 12680</option>
+                          <option value="5">Tarj. Premia - Ptos Premia - MXN 12244</option>
+                          <option selected="selected">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="7">Credicheques - Mi cr&eacute;dito - MXN - 12300</option>
+                          <option value="8">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="9">Mi inversi&oacute;n - Inv. Integral - MXN - 12299</option>
+                          <option value="10">Mi plazo - Inv. Plazo - MXN - 12282</option>
+                          <option value="11">Horzcob - MXN - 123456 - Horzcob</option>
+                          <option value="12">Banca Inversi&oacute;n - MXN - 123456 - Multiseries</option>
+                          <option value="13">Mi retiro - AFORE NSS - MXN - 12312</option>
+                        </select>
+                        </td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20" width="20%" id="t25">N&uacute;mero de folio</td>
+                        <td class="color666 height20 alignRight padding-right35" width="40%">0100</td>
+                        <td class="height20 pad15" width="25%"><a href="#" class=" tooltip" id="t26" title="Aportacion voluntaria<br> (corto y largo plazo)">Fecha &uacute;ltimo pago:</a></td>
+                        <td class="color666 height20 alignRight" width="15%">05 Feb 2012</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20 valigntop" id="t27">Producto:</td>
+                        <td class="color666 height20 alignRight padding-right35">Prest. ABCD AutoPersonal M ND CCP</td>
+                        <td class="height20 pad15" id="t28">Pagos pendientes:</td>
+                        <td class="color666 height20 alignRight valignbottom">2</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20 valigntop" id="t29">Plazo:</td>
+                        <td class="color666 height20 alignRight valignbottom padding-right35">0048</td>
+                        <td class="height20 pad15" id="t30">&Uacute;ltimo pago pendiente:</td>
+                        <td class="color666 height20 alignRight valignbottom">24</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20 valigntop" id="t31">Tasa:</td>
+                        <td class="color666 height20 alignRight padding-right35">5.000 %</td>
+                        <td class="height20 pad15" id="t32">Moneda:</td>
+                        <td class="color666 height20 alignRight valignbottom">M.N.</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20 valigntop" id="t33">Saldo del periodo:</td>
+                        <td class="color666 height20 alignRight padding-right35">$ 5,512.15</td>
+                        <td class="height20 pad15" id="t34">Fecha l&iacute;mite de pago:</td>
+                        <td class="color666 height20 alignRight valignbottom">14 Feb 2012</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20 valigntop" id="t35">Saldo de liquidaci&oacute;n</td>
+                        <td class="color666 height20 alignRight padding-right35">$ 137,500.59</td>
+                        <td class="height20 pad15" id="t36">Valor UDI:</td>
+                        <td class="color666 height20 alignRight valignbottom">$ 1.00000000</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20 valigntop" id="t37">D&iacute;a de corte:</td>
+                        <td class="color666 height20 alignRight padding-right35">05</td>
+                        
+                      </tr>
+                      
+
+                  </tbody>
+                </table>
+                
+
+</div>
+
+
+<div class="float-left width-190 padding-left20">
+	<h4 class="margin-bottom10 f14p" id="t38">&iquest;QU&Eacute; DESEAS HACER?</h4>
+    <div class="clear"></div> 
+    <div id="flechaLinksOpcoes" class="float-left height20 width-180" style="*height:14px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.Transferencias_pagos_creditos()" id="t39">Pagar tu cr&eacute;dito</a>
+    </div>
+    
+    
+</div>
+<div class="clear"></div>
+
+<div class="clear"></div>
+<div class="clear"></div>
+<div class="clear"></div>
+
+
+
+</div>
+</div>
+                
+		
+        
+</div>
+
+<!-- Exportar -->
+                       
+                       
+							
+                            <script type="text/javascript">
+							
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('ACCOUNT DETAIL','See all accounts','Folio number:','Last payment date:','Product:','Pending payments:','Term:','Last pending payments:','Rate:','Currency:','Period balance:','Payment due date:','Maturity balance:','UDI value:','Cutoff date:','WHAT DO YOU WISH TO DO?','Pay your loan');
+							
+            $(document).ready(function(){
+				
+				
+				funciones_login();
+			
+					$(window).scroll(function(){
+    if  ($(window).scrollTop() >= 171){
+         $('.div_cargando').css({position:'fixed',top:0});
+    } else {
+         $('.div_cargando').css({position:'absolute',top:171});
+        }
+});
+
+				/* Obtener el alto del contendor  del objeto a centrar. */
+   		var alto_canvas = $(window).height();
+	 
+	    /* Obtener el valor del margen a aplicar.  */
+	    var margen_top = (alto_canvas - $('.loader').height())/3.5;
+	 
+	    /* Aplicar el Margen */
+	    $('.loader').css("top",margen_top);
+
+				
+				select_busqueda_esp();
+				porimporte();
+				datepicker_busqueda_filtro();
+				expUno()
+	
+				
+            });
+			
+			
+			
+        </script> 
+                            
+							<script>
+							$( document ).ready(function() {
+							setTimeout(function(){top.ajustarIframe();},800);
+							});
+							
+							function limpia(){document.getElementById('buscar').value="";
+											  document.getElementById('X').style.display="none";}
+							</script>
+                            
+                            <script>
+							function loading(){
+								$('.overlay').hide();
+								cargando_movimientos();	
+								top.mFiltro();
+								}
+							
+							var valor1=0;
+							function cambia1(){
+								if(valor1==1){
+								$('.overlay').hide();
+								cargando_movimientos();	
+								top.mFiltro();
+								$('#tabla2').hide();
+								$('#tabla1').show();
+								$('#tool1').show();
+								$('#tool2').hide();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#tabla3').hide();
+								$('#cargos1').show();
+								$('#cargos2').hide();
+								$('#todas1').hide();
+								$('#todas2').show();
+								}
+								if(valor1==2){
+								$('.overlay').hide();
+								cargando_movimientos();	
+								top.mFiltro();
+								$('#tabla2').show();
+								$('#tabla1').hide();
+								$('#tool1').hide();
+								$('#tool2').show();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#tabla3').hide();
+								$('#cargos1').show();
+								$('#cargos2').hide();
+								$('#todas1').hide();
+								$('#todas2').show();
+								}
+							}
+							
+							function cargos(){
+								$('.overlay').hide();
+								cargando_movimientos();	
+								top.mFiltro();
+								$('#tabla3').show();
+								$('#tabla1').hide();
+								$('#tabla2').hide();
+								$('#tool1').show();
+								$('#tool2').hide();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#todas1').show();
+								$('#todas2').hide();
+								$('#cargos1').hide();
+								$('#cargos2').show();
+								}
+							
+							function todas(){
+								$('.overlay').hide();
+								cargando_movimientos();	
+								top.mFiltro();
+								$('#tabla1').show();
+								$('#tabla2').hide();
+								$('#tabla3').hide();
+								$('#tool1').show();
+								$('#tool2').hide();
+								$('#tool-tip2').hide();
+								$('#tool-tip1').hide();
+								$('#cargos1').show();
+								$('#cargos2').hide();
+								$('#todas1').hide();
+								$('#todas2').show();
+								}
+								
+							</script>
+                            <script type="text/javascript">
+           $(document).ready(function(){
+                               ajustarOverlay();
+                               ajusta_tooltpis();
+                   funciones_loginP()
+                     
+           });
+function Layuda(){
+window.open('https://bancanet.banamex.com/ayudas/es/Movimientos-en-Banca-Electronica.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+       </script>
+       
+       <script>
+	   function exportar(){
+	$('#mensajeError_contenido_div', window.parent.document).html(
+		$("#divExportar").html()
+	);
+	$("#mensajeError_contenido_div input[name='radio_formato']", window.parent.document).click(function(){
+		if($(this).val() == "Texto"){
+			$("#mensajeError_contenido_div #combo_separador", window.parent.document).attr("disabled", "");
+		}else{
+			$("#mensajeError_contenido_div #combo_separador option:eq(0)", window.parent.document).attr("selected", "selected");
+			$("#mensajeError_contenido_div #combo_separador", window.parent.document).attr("disabled", "disabled");
+		}
+	});
+	parent.$.modal(				
+			{
+				closeHTML: '',
+				opacity:60,
+				overlayClose:false,
+				flagDiv:true,
+				widthDivIfrm:270,
+				heightDivIfrm:'auto'
+			}
+		);
+	$("#mensajeError_contenido_div input[name='radio_formato']:eq(0)", window.parent.document).attr("checked", "checked");
+}
+	   </script>
+       <script>
+	   function mostrar_modal2( id_modal ,callback){
+		   
+	window.scrollTo(0,0)
+	$('.overlay').show();
+	
+	var ancho_pantalla = $(window).width()/2;
+	var ancho_modal = $('#'+id_modal).width()/2;
+	var pos_left = ancho_pantalla -  ancho_modal;
+	
+	$('#'+id_modal).css({
+		left: pos_left+'px',
+		top: '0px'
+	});
+	$('#'+id_modal).show();
+     try{ eval('('+callback+')();')    }catch(e){}
+	
+	$(window).resize(function() {
+        var ancho_pantalla = $(window).width()/2;
+		var ancho_modal = $('#'+id_modal).width()/2;
+		var pos_left = ancho_pantalla -  ancho_modal;
+		
+		$('#'+id_modal).css({
+			left: pos_left+'px'
+		});
+    });
+	
+}
+	   </script>
+       <script>
+	var valor2=0;
+	
+	function Cta3(){
+		
+			if(valor2==0)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==1)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Maestra.html'
+			}
+			if(valor2==2)
+			{
+			top.cargando_movimientos();
+			window.location.href='Tarjeta-de-Debito.html'
+			}
+			if(valor2==3)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==4)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta-de-Credito.html'
+			}
+			if(valor2==5)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta_premia.html'
+			}
+			if(valor2==6)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==7)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Credicheque.html'
+			}
+			if(valor2==8)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==9)
+			{
+			top.cargando_movimientos();	
+			window.location.href='39-AccountDetail_integral.html'
+			}
+			if(valor2==10)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_plazo_folio.html'
+			}
+			if(valor2==11)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_fondos.html'
+			}
+			if(valor2==12)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_multiseries.html'
+			}
+			if(valor2==13)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail.html'
+			}
+		}
+	</script>
+</div>
+</body>
+</html>

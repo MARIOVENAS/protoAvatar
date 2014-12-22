@@ -1,0 +1,70 @@
+.sf-vertical.jfpw-landing-menu {
+
+	padding-bottom: 3px;
+
+	background: url("/JFP/css/widgets/images/jfpw-menu-white-back.png") repeat transparent; 
+
+}
+
+.sf-vertical.jfpw-landing-menu, .sf-vertical.jfpw-landing-menu li {
+
+    width: 17em;
+
+    margin-bottom: 0;
+
+}
+
+.sf-menu.jfpw-landing-menu a{
+
+	color: #000000 !important;
+
+    border-left: none;
+
+    border-top: 1px solid #DADBDD;
+
+    padding: 0.75em 1em;
+
+    margin:	0 1em;
+
+    text-decoration: none;
+
+    background: url("/JFP/css/widgets/images/submenu_arrow.png") no-repeat 0% 50% transparent;
+
+ }
+
+.sf-menu.jfpw-landing-menu li{
+
+	background: none;
+
+}
+
+.sf-menu.jfpw-landing-menu li:hover, .sf-menu.jfpw-landing-menu li.sfHover{
+
+	border-top: 	1px solid #DADBDD;
+
+	border-bottom: 	1px solid #DADBDD;
+
+	margin-bottom:	-1px;
+
+	background: url("/JFP/css/widgets/images/jfpw-menu-item-hoover.png") repeat-x bottom #FFF;
+
+}
+
+.sf-menu.jfpw-landing-menu li:hover a, .sf-menu.jfpw-landing-menu li.sfHover a
+
+{
+
+	border-top: 	none;
+
+}
+
+.sf-menu.jfpw-landing-menu li:hover, .sf-menu.jfpw-landing-menu li.sfHover,
+
+.sf-menu.jfpw-landing-menu a:hover, .sf-menu.jfpw-landing-menu a:active {
+
+	outline:	none;
+
+	font-weight: normal; 
+
+}
+

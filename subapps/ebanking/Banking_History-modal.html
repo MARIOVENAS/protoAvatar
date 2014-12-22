@@ -1,0 +1,790 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Layout Avatar</title>
+
+		
+
+	<link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    <!-- <script type="text/javascript" src="../../JFP/js/widgets/jfpw.spinner.js"></script>-->
+
+     <script type="text/ecmascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+
+		
+
+          <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout('top.cargando_movimientos()', 1000);
+
+			
+
+			});
+
+			-->
+
+		</script>
+
+     
+
+        
+
+</head>
+
+<body>
+
+
+
+<div id="wrap" class="cS-structMainContainer">
+
+        <div id="header">
+
+			<img src="../../JFP/regional/images/header-para-ppt.jpg" />
+
+        </div>
+
+        <div class="div_cargando displayN" id="movimientos_cargando">
+
+                        	<div class="loader"><img src="../../JFP/images/JAMP_large.gif" alt="Cargando" /><br />
+
+                            Un momento por favor ...</div>
+
+        </div>
+
+		<div class="cS-structBodyContainer">
+
+	      <div id="title-section" class="cH-appPageHead">
+
+              <div class="ancho100p overflow">
+
+		<div class="floatLI"><h1>MOVIMIENTOS EN BANCA ELECTR&Oacute;NICA</h1></div>
+
+        <div class="margin-top6 titulo width50" id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="#" class="float-left">&nbsp;Ayuda</a>
+
+		</div>
+
+        
+
+        <div class="margin-top6 titulo width10" id="flechaLinksOpcoes">
+
+        &nbsp;
+
+		</div>
+
+        
+
+        <div class="margin-top6 titulo width140" id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="#" class="float-left">&nbsp;Ver todas las cuentas</a>
+
+		</div>
+
+</div>
+
+            </div>
+
+  		    <div id="content">
+
+              <div id="subapp-box" class="noleftmenu float-left">
+
+             
+
+              
+
+						
+
+					<div class="contentTitle">
+
+   
+
+    <div class="ancho100p floatRI">
+
+    <div class="floatRI"><div class="minus">&nbsp;</div>Contraer todo</div>
+
+    <div class="floatRI width10">&nbsp;</div>
+
+    <div class="floatRI"><div class="plus">&nbsp;</div>Expandir todo</div>
+
+    </div>
+
+    
+
+   <div class="cH-appPanelHead">
+
+   <h4>B&Uacute;SQUEDA ESPEC&Iacute;FICA</h4>
+
+   </div>
+
+   
+
+      <div class="width640 height300">    
+
+	<div class="float-left width132">
+
+        <div class="form-row">
+
+		
+
+        <label class="for-table">Buscar:</label>
+
+    	<select class="width136">
+
+		<option selected="selected">Por periodo</option>							
+
+		</select>
+
+		<div class="clear"></div>
+
+	</div>
+
+
+
+
+
+
+
+    <div class="form-row">
+
+    <label class="for-table">Periodo:</label>
+
+        <select class="width100">
+
+		<option selected="selected">Agosto 2012</option>							
+
+		</select>
+
+ 
+
+    <div class="clear"></div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="form-row">
+
+    <label class="for-table">Estatus del movimiento:</label>
+
+        <select class="width136">
+
+        <option selected="selected">Todas</option>                               
+
+        </select>
+
+        
+
+        <div class="width141 margin-top15">
+
+	         <div class="form-row">
+
+               <label class="for-table">&nbsp;</label>
+
+	                 <ul class="cN-primaryNav float-left">
+
+	 		<li>
+
+                <div id="flechaLinks">
+
+	            <span class="flechaazul float-left"></span>
+
+  	            <a href="#" class="sinBold">Borrar</a>
+
+	      		</div>
+
+	 		</li>	
+
+	 <li class="cM-spriteBase cN-primaryNavButton"><a href="#">BUSCAR</a></li>
+
+                  </ul>
+
+	                  <div class="clear"></div>
+
+	         </div>
+
+         </div>
+
+                        
+
+    <div class="clear"></div>
+
+    </div>
+
+    </div><!-- Termina el primer div a la izquierda-->
+
+</div>
+
+   <!-- Termina el segundo div a la izquierda (espacio)-->
+
+    <div class="float-left margin-left20">
+
+    	<div class="lineaVertical">&nbsp;</div>
+
+    <div class="floatLI" id="flechaLinksOpcoes"><p class="strong">¿QU&Eacute; DESEAS HACER?</p>
+
+    
+
+    <div class="margin-top6" >
+
+                <span class="flechaGris float-left">&nbsp;</span>
+
+                <a href="#">Pagar mi tarjeta de cr&eacute;dito</a>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="margin-top6" >
+
+                <span class="flechaGris float-left">&nbsp;</span>
+
+                <a href="#">Invertir mi dinero</a>
+
+    </div>
+
+    </div>
+
+    </div><!-- Termina el tercer div a la izquierda -->
+
+	<div class="clear"></div>
+
+    
+
+
+
+                        
+
+
+
+
+
+<div class="ancho100p">
+
+<div class="float-left strong">MOVIMIENTOS</div>
+
+<div class="clear margin-bottom20">&nbsp;</div>
+
+<!--paginacion-->  
+
+<div class="containerPag paddingB10"> 
+
+	<a href="#"><div class="prevBlue"></div></a> 
+
+	<div class="numberPageBlue"><a href="#">1</a></div>
+
+                  <div class="float-left margin-top-4">&nbsp;&nbsp;</div>
+
+                  <div class="numberPageBlue"><a href="#">2</a></div>
+
+	<div class="selectedPage">3</div>
+
+	<div class="numberPageBlue"><a href="#">4</a></div>
+
+                  <div class="float-left margin-top-4">&nbsp;&nbsp;</div>
+
+                  <div class="numberPageBlue"><a href="#">5</a></div>
+
+                  <a href="#"><div class="nextBlue"></div></a>
+
+</div> 
+
+<!--paginacion-->  
+
+    <div class="float-right margin-topm5">
+
+    
+
+    <div id="flechaLinks" class="float-right margin-left10">
+
+								<span class="flechaGris float-left">&nbsp;</span>
+
+								<a href="#">Exportar</a>
+
+						</div>
+
+    
+
+    <div id="flechaLinks" class="float-right margin-left10">
+
+								<span class="flechaGris float-left">&nbsp;</span>
+
+								<a href="#">Imprimir</a>
+
+						</div>
+
+    <div class="float-right filtrar">
+
+								<span class="float-left">&nbsp;</span>
+
+								<a href="#">Filtrar movimientos</a>
+
+						</div>
+
+                        
+
+ 	
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="ancho100p floatLI margin-topmie20">
+
+<table width="100%">
+
+<tr>
+
+<td width="2%" class="strong borderLabels"></td>
+
+<td width="13%" class="strong borderLabels"><div class="float-left">Fecha de solicitud</div> <div class="sort_black "></div>
+
+</td>
+
+<td width="16%" class="strong borderLabels"><div class="float-left">Descripci&oacute;n</div><div class="sort_grey"></div></td>
+
+<td width="19%" class="strong borderLabels"><div class="float-left">#Autorizaci&oacute;n / Instrucci&oacute;n</div><div class="sort_grey"></div></td>
+
+<td width="19%" class="strong borderLabels"><div class="float-left">Estatus</div><div class="sort_grey"></div></td>
+
+<td width="20%" class="strong borderLabels paddingL120"><div class="float-left">Importe</div><div class="sort_grey"></div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td class="first"><div class="minus">&nbsp;</div></td>
+
+<td class="first">01 Ago 2012 - 19:55</td>
+
+<td class="first">PAG.IMP.CAR.CHS</td>
+
+<td class="first">308651</td>
+
+<td class="first">Cancelada por rechazo</td>
+
+<td class="first"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td colspan="6" class="borderBottomLabels">
+
+		<div class="div_descripcion">
+
+                                          <table class="tabla_descripcion" border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                        <td class="strong">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                      <td width="16%">&nbsp;</td>
+
+                                                        <td width="188" class="strong">Origen</td>
+
+                                                        <td class="strong">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2" class="f12">Jos&eacute; Francisco Fern&aacute;ndez Mart&iacute;n del Campo<br /><br /></td>
+
+                                                        <td width="167" class="strong">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="strong">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218" class="f12">2447411</td>
+
+                                                     
+
+                                                        <td class="strong">Sucursal:</td>
+
+                                                       
+
+                                                        <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="strong">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2012 - 09:34</td>
+
+                                                        <td class="strong">Cuenta:</td>
+
+                                                        <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="strong">Tipo de cambio:</td>
+
+                                                      <td>10,000,000,000,000</td>
+
+                                                        <td class="strong">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="strong">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="strong">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+          </table>
+
+      </div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderTopLabels border9A last"><div class="plus">&nbsp;</div></td>
+
+<td class="borderTopLabels border9A last">01 Ago 2012 - 19:55</td>
+
+<td class="borderTopLabels border9A last">PAG.IMP.CAR.CHS</td>
+
+<td class="borderTopLabels border9A last">308651</td>
+
+<td class="borderTopLabels border9A last">Cancelada por rechazo</td>
+
+<td class="borderTopLabels border9A last"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div class="clear margin-bottom10">&nbsp;</div>
+
+<div class="ancho100p">
+
+<!--paginacion-->  
+
+<div class="containerPag paddingB10 margin-top2"> 
+
+	<a href="#"><div class="prevBlue"></div></a> 
+
+	<div class="numberPageBlue"><a href="#">1</a></div>
+
+                  <div class="float-left margin-top-4">&nbsp;&nbsp;</div>
+
+                  <div class="numberPageBlue"><a href="#">2</a></div>
+
+	<div class="selectedPage">3</div>
+
+	<div class="numberPageBlue"><a href="#">4</a></div>
+
+                  <div class="float-left margin-top-4">&nbsp;&nbsp;</div>
+
+                  <div class="numberPageBlue"><a href="#">5</a></div>
+
+                  <a href="#"><div class="nextBlue"></div></a>
+
+</div> 
+
+<!--paginacion-->  
+
+    <div class="float-right margin-top-4">
+
+    
+
+    <div id="flechaLinks" class="float-right margin-left10">
+
+								<span class="flechaGris float-left">&nbsp;</span>
+
+								<a href="#">Exportar</a>
+
+						</div>
+
+    
+
+    <div id="flechaLinks" class="float-right margin-left10">
+
+								<span class="flechaGris float-left">&nbsp;</span>
+
+								<a href="#">Imprimir</a>
+
+						</div>
+
+    <div class="float-right filtrar">
+
+								<span class="float-left">&nbsp;</span>
+
+								<a href="#">Filtrar movimientos</a>
+
+						</div>
+
+                        
+
+ 	
+
+  </div>
+
+</div>
+
+  <br><br><br><br><br><br>
+
+  <div class="clear margin-bottom25">&nbsp;</div>
+
+				  </div>
+
+				</div>
+
+                    
+
+               
+
+		  </div>
+
+			<div class="overlays-bk"></div>
+
+
+
+        	<div class="clear"></div>
+
+             <div id="footer">
+
+            	
+
+              <div class="options">
+
+                <a id="citibankcom" href="#" class="align-left float-left">CITI.COM</a>
+
+              
+
+              	<div class="float-right">
+
+                    <a href="#" class="float-left">TERMS & CONDITIONS</a>
+
+                    <a href="#" class="float-left">PRIVACY</a>
+
+                    <a href="#" class="float-left">SECURITY</a>
+
+                    <a href="#" class="float-left">CAREERS</a>
+
+                    <a href="#" class="float-left">ABOUT US</a>
+
+                    <a href="#" class="float-left">CONTACT US</a>
+
+                    <a href="#" class="float-left">SITE MAP</a>
+
+                </div> 
+
+              </div>
+
+
+
+              <div class="float-left logo" style="width:50%; padding-top:1px;">
+
+              	<p class="float-left margin-top4">My Citi gives you access to accounts and services provided by Citibank, N.A., and its affiliates.<BR />
+
+Bank deposit products and Checking Plus® are offered by Citibank, N.A.<BR />
+
+Citibank Credit Cards are issued by Citibank (South Dakota), N.A.<BR />
+
+Home Equity Loans and Lines of Credit are offered by Citibank, N.A., an Equal Housing Lender.</p>
+
+              </div>
+
+
+
+              <div align="right" class="float-right copy">
+
+              	
+
+                <div class="clear"></div>
+
+              	<span>Copyright &copy; 2011 Citigroup Inc<BR />jfp/prap2-usgcb1/jfp.</span>
+
+              </div>
+
+            </div>
+
+
+
+    	</div> <!--Fin main-content-->
+
+	</div><!--Fin wrap-->
+
+	
+
+</body>
+
+</html>
+

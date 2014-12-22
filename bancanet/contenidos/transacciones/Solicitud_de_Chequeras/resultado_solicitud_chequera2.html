@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"   NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="40953949-cd7b-469f-9bb5-a06791debbc9" ><input type=hidden name="EWF_SYS_1" value="9ZBRQ8I4SWFEG9P4V1XGK9JA6PF0UOTGVDUNAGH5" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZSCH-PAG APLICACION SOL TAL"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="cheque02.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="10"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
+
+    
+
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    	<title>Banamex</title>
+
+        <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+        
+
+    	<script type="text/javascript">
+
+			
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+			
+
+			$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();
+
+			slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+			
+
+			
+
+function Initialize(){
+
+	document.getElementById('tipoDchequera').style.display = "none";
+
+	if('1' == "1"){
+
+		document.getElementById('tipoDchequera').style.display = "";
+
+		$("#reg1").removeClass("bgF1F2F2");
+
+		$("#reg3").removeClass("bgF1F2F2");
+
+		}
+
+	else{
+
+		document.getElementById('tipoDchequera').style.display = "none";
+
+		$("#reg2").removeClass("bgF1F2F2");
+
+	}
+
+	if("SPANISH"=="ENGLISH"){
+
+
+
+		es=["Your request has been received with","Request Data","Account","Number of requested checkbooks","Checksbook type requested",
+
+		"Initial Folio number","Final folio Number","Number of checks per checkbook",
+
+		"From the 5th working day you can go to the branch where you opened your account to pick up your checkbooks","instruction","number","Checkbooks management"];
+
+		swap();
+
+	}
+
+	else{
+
+
+
+	}
+
+}
+
+			
+
+		</script>
+
+<script>parent.setFecha("13/04/12    13:40:38  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="134038  ";b$Cont="134038  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+		   
+
+    
+
+        <div id="t11" class="panelIzEnca3_text2 ">Administraci&oacute;n de chequeras</div>
+
+        
+
+        
+
+        <div class="saldos_bloque3_verde paddingL20  marginT17" ><label id="t0"> Tu solicitud ha sido recibida con</label> <span id="t9" class="negrita font_13">n&uacute;mero</span> <label id="t10"> de instrucci&oacute;n</label>  <span class="negrita font_13">&nbsp;270479</span>.</div>
+
+        
+
+        <div class=" borderBSolid  borderRSolid borderTSolid borderLSolid   marginT20">
+
+        	<table width="100%" border="" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p  paddingL20 paddingT18" valign="top"><p id="t1" class="f12">Datos de la <br/> solicitud</p></td>
+
+                    <td valign="top" class=" paddingL20 paddingT20 paddingR20  paddingB13">
+
+                    
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                        	
+
+                        	<tr>
+
+                            	<td id="t2" class="ancho50p bgF1F2F2"><span>Cuenta</span></td>
+
+                                <td class="ancho50p bgF1F2F2">Cheques M.N 002 Cheques</td>
+
+                            </tr>
+
+                            <tr>
+
+                            	<td id="t3" class="ancho50p"><span>Cantidad de chequeras solicitadas</span></td>
+
+                                <td class="ancho50p">2</td>
+
+                            </tr>
+
+							
+
+							
+
+                            <tr id="tipoDchequera">
+
+                            	<td id="t4"class="ancho50p bgF1F2F2"><span>Tipo de chequera solicitada</span></td>
+
+                                <td class="ancho50p bgF1F2F2">Credichequera</td>
+
+                            </tr>
+
+							
+
+							
+
+							<tr id="reg1" class="bgF1F2F2">
+
+                            	<td id="t5" class="ancho50p "><span>N&uacute;mero de folio inicial</span></td>
+
+                                <td class="ancho50p ">1</td>
+
+                            </tr>
+
+                            <tr id="reg2" class="bgF1F2F2">
+
+                            	<td id="t6" class="ancho50p"><span>N&uacute;mero de folio final</span></td>
+
+                                <td class="ancho50p">1</td>
+
+                            </tr>
+
+                            <tr id="reg3" class="bgF1F2F2">
+
+                            	<td id="t7" class="ancho50p "><span>N&uacute;mero de cheques por chequera</span></td>
+
+                                <td class="ancho50p ">50</td>
+
+                            </tr>
+
+                            
+
+                        </table>
+
+                        </td>
+
+                </tr>
+
+                <tr>
+
+					
+
+					<td align="center" colspan="2" class="  ">
+
+
+
+                           <div id="t8" class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB6  paddingT2  ">
+
+           	A partir del 5  <label class="font_8 superindice">o</label>   d&iacute;a h&aacute;bil podr&aacute;s acudir a la sucursal donde abriste tu cuenta para recoger tus cheques	
+
+            </div> 
+
+          
+
+                        
+
+                        
+
+					</td>
+
+				</tr>
+
+            </table>        	
+
+        </div>
+
+    
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Solicitud de Chequeras|cheque02.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

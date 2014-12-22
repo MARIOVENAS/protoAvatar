@@ -1,0 +1,2554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="V4WRHJE@9T2UMSTCUF5YX33EO2S6LAWS9J478BBP" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZDOA-BusquedaInicio"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="dbusq01.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="8"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<link rel="stylesheet" href="../../bbAvatar/css/skin2.css" type="text/css" />
+
+<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery.jcarousel.min.js"></script>
+
+
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui.js"></script>
+
+
+
+
+
+<script language="javascript">
+
+
+
+var autoSuggests;
+
+var es=new Array('Direct-bill-payment registration ','Search','Select the bill you want to register.','or enter the business name','Search','Result of the search', 'Direct Debit');
+
+function Initialize()
+
+{
+
+	var busca_la= "";
+
+
+
+/*	
+
+	var autocompletado= new Array("");
+
+	var busca_palabra= myArr;
+
+	var indice=autocompletado.length;
+
+	var autocompletado_new= new Array();
+
+
+
+	if("FALSE"=="OK")
+
+		{
+
+		parent.rellenaArray(myArr);
+
+		parent.document.forms[0].SEQUENCE_NUMBER.value = document.forms[0].SEQUENCE_NUMBER.value;
+
+	
+
+		}
+
+	else
+
+		{
+
+			if("FALSE"=="PALABRA")
+
+			{
+
+			parent.busqueda_servicios(busca_palabra);
+
+			parent.document.forms[0].SEQUENCE_NUMBER.value = document.forms[0].SEQUENCE_NUMBER.value;
+
+			}
+
+			else
+
+			{
+
+			autoSuggests= new AutoSuggest(document.getElementById('saldBloq2Inp2'),myArr);
+
+			}
+
+		}
+
+	*/	
+
+	top.Expandir();
+
+ top.ajustar();
+
+}
+
+		
+
+
+
+
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/
+
+  var valMail = $("#"+idCampo, contexto ).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"", contexto ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function curpValido( idTxt ) {
+
+  var regexCurp;
+
+  var valCurp = $( "#"+idTxt+"" ).val();
+
+  regexCurp = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[0-9]{2}$/;
+
+  return regexCurp.test( valCurp );
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+
+
+		var msg1 = "Favor de capturar el nombre del servicio.";
+
+		var msg2 = "Existen caracteres invalidos en este campo.\n\tFavor de verificar";
+
+		var msg3 = "Por Politica de la Empresa, debera efectuar sus pagos a traves de la sucursal Banamex de su preferencia";
+
+
+
+
+
+
+
+
+
+
+
+function showError( idElem, msgErr ) {
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $('#'+idElem+'').after( $divErr );
+
+}
+
+
+
+
+
+function hideErrors() {
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display').remove();
+
+}
+
+
+
+var hasError = false;
+
+
+
+function validaBusqueda(){
+
+	hideErrors();
+
+
+
+ if( campoVacio( "saldBloq2Inp2" ))
+
+	{
+
+    showError( "saldBloq2Inp2", msg1 );
+
+	}
+
+	else if( !validaAlfanumerico( "saldBloq2Inp2","'()ñÑ@.-, " ))
+
+	{
+
+		showError( "saldBloq2Inp2", msg2 );
+
+	}
+
+	
+
+ top.ajustar();		
+
+  if( !hasError ) 
+
+  {
+
+	enviaDatos('','','PALABRA');
+
+  }
+
+	
+
+	 
+
+}
+
+
+
+function validaEspacio()
+
+{
+
+
+
+   var cadena = document.forms[0].DATA2.value;
+
+   var cen0=/X X/g; 
+
+   var cen1=/ X/g;
+
+   var cen2=/X /g;
+
+   var aux= new String("");   
+
+ for(i=0;i<cadena.length;i++)
+
+ {
+
+ if(cadena.charAt(i)==" ")aux = aux + " ";
+
+ else aux=aux+"X";
+
+ }
+
+ 		if(cen0.test(aux)==true ||cen1.test(aux)==true||cen2.test(aux)==true) 
+
+		validaBusqueda();
+
+		else 
+
+		validaBusqueda();
+
+		
+
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FUNCIONNES SPRINT_6*/
+
+
+
+
+
+function AutoSuggest(elem, suggestions)	{
+
+	var me = this;
+
+	this.value = "";
+
+	var mostrarSug = false;
+
+	var FlagEdify= false; // bandera para indicar que al tercer caracter ir&aacute; a ejecutar el storeProcedure.
+
+	var aux="";
+
+	this.msg = ( "SPANISH"=="SPANISH" ) ? ".                                                " : ".                                            ";
+
+	this.elem = elem;
+
+	this.suggestions = suggestions;
+
+	this.eligible = new Array();
+
+	this.eligible2 = new Array();
+
+
+
+	this.inputText = null;
+
+	this.highlighted = -1;
+
+	//alert(this);
+
+	this.div = document.getElementById("autosuggest");
+
+
+
+	var TAB = 9;
+
+	var ESC = 27;
+
+	var KEYUP = 38;
+
+	var KEYDN = 40;
+
+	var BACKSP = 8;
+
+	var SPACE = 32;
+
+	var ENTER = 13;
+
+
+
+
+
+	elem.setAttribute("saldBloq2Inp2","off");
+
+
+
+	if(!elem.id)
+
+	{
+
+		var id = "autosuggest" + idCounter;
+
+		idCounter++;
+
+		elem.id = id;
+
+	}
+
+
+
+	elem.onkeydown = function(ev)
+
+	{
+
+		longitud = this.value.length+1;
+
+		var key = me.getKeyCode(ev);
+
+		var b=0;
+
+		if(key == BACKSP){
+
+		
+
+			if(longitud != 0){
+
+			--longitud;}
+
+			if(longitud == 1){
+
+			b=1;
+
+			}
+
+		    var expresion = /^[a-zA-Z0-9\-]+$/;	
+
+			}
+
+		if(longitud >= 1)
+
+		     if(b==1){
+
+			mostrarSug = false;
+
+			}else{
+
+			mostrarSug = true;
+
+			}
+
+			
+
+		else
+
+			mostrarSug = false;
+
+				
+
+		switch(key)
+
+		{
+
+			case TAB:
+
+			me.useSuggestion();
+
+			break;
+
+
+
+			case ESC:
+
+			me.hideDiv();
+
+			break;
+
+
+
+			case KEYUP:
+
+			if (me.highlighted > 0)
+
+			{
+
+				me.highlighted--;
+
+			}
+
+			me.changeHighlight(key);
+
+			break;
+
+
+
+			case KEYDN:
+
+			if (me.highlighted < (me.eligible.length - 1))
+
+			{
+
+				me.highlighted++;
+
+			}
+
+			me.changeHighlight(key);
+
+			break;
+
+			
+
+			case ENTER:
+
+			
+
+			$("#t4").trigger('click');
+
+			
+
+			break;
+
+			
+
+		}
+
+		
+
+	};
+
+
+
+	elem.onkeyup = function(ev) 
+
+	{
+
+	longitud2 = this.value.length;
+
+		var key = me.getKeyCode(ev);
+
+		var anula = false;
+
+		switch(key)
+
+		{
+
+			case TAB:
+
+			case ESC:
+
+			case KEYUP:
+
+			case KEYDN:
+
+			return;
+
+			case ENTER:
+
+			break;
+
+			default:
+
+				
+
+				if(!mostrarSug)
+
+				{
+
+					me.hideDiv();
+
+				}
+
+					
+
+				else
+
+				{	
+
+				
+
+					if(aux==this.value)
+
+					{
+
+						FlagEdify=false;
+
+					}
+
+						if(this.value.length==3 && FlagEdify==true)
+
+						{
+
+							
+
+							aux=this.value;
+
+							enviaDatosAutocomplete("AJAX_BUSQUEDA");
+
+							FlagEdify=false;
+
+						}else if(this.value.length>0 && this.value.length<3){
+
+							me.showMsg();
+
+							me.positionDiv();
+
+							me.showDiv();
+
+							top.ajustar();
+
+							FlagEdify= true;
+
+						} else {
+
+							me.inputText = this.value;
+
+							me.getEligible();
+
+							me.createDiv();
+
+							me.positionDiv();
+
+							me.showDiv();
+
+							anula = true;
+
+							FlagEdify= true;
+
+						}
+
+	
+
+				}
+
+			
+
+		}
+
+	};
+
+
+
+	this.useSuggestion = function()
+
+	{
+
+		
+
+		if (this.highlighted > -1)
+
+		{
+
+			this.elem.value = this.eligible[this.highlighted].replace(/&nbsp;/g," ");
+
+			this.hideDiv();
+
+			setTimeout("document.getElementById('" + this.elem.id + "').focus",0); 
+
+		}
+
+	};
+
+
+
+	this.showDiv = function()
+
+	{
+
+		this.div.style.display = 'block';
+
+	};
+
+
+
+	this.hideDiv = function()
+
+	{
+
+		this.div.style.display = 'none';
+
+		this.highlighted = -1;
+
+	};
+
+
+
+	this.changeHighlight = function()
+
+	{
+
+		var lis = this.div.getElementsByTagName('LI');  
+
+		for (i in lis)
+
+		{
+
+			var li = lis[i];
+
+
+
+			if (this.highlighted == i)
+
+			{
+
+				li.className = "selected";
+
+			}
+
+			else
+
+			{
+
+				li.className = "";
+
+			}
+
+		}
+
+	};
+
+
+
+	this.positionDiv = function()
+
+	{
+
+		var el = this.elem;
+
+		var x = 0;
+
+		var y = el.offsetHeight;
+
+
+
+		while (el.offsetParent && el.tagName.toUpperCase() != 'BODY')
+
+		{
+
+			x += el.offsetLeft;
+
+			y += el.offsetTop;
+
+			el = el.offsetParent;
+
+		}
+
+
+
+		x += el.offsetLeft;
+
+		y += el.offsetTop;
+
+
+
+		this.div.style.left = x + 'px';
+
+		this.div.style.top = y + 'px';
+
+	
+
+	};
+
+	
+
+	this.showMsg = function()
+
+	{
+
+		var ul = document.createElement('ul');
+
+		var li = document.createElement('li');
+
+		var a = document.createElement('a');
+
+		a.href="#";
+
+		a.innerHTML = this.msg;
+
+		a.style.cursor = 'default';
+
+		li.appendChild(a);
+
+		ul.appendChild(li);
+
+		this.div.replaceChild(ul,this.div.childNodes[0]);
+
+		this.div.className="suggestion_listdom";
+
+		this.div.style.position = 'absolute';
+
+	};
+
+
+
+	this.createDiv = function()
+
+	{
+
+		var ul = document.createElement('ul');
+
+	
+
+		//Create an array of LI's for the words.
+
+		for (i in this.eligible)
+
+		{
+
+			
+
+			var word = this.eligible[i];
+
+			var salida= this.eligible2[i];
+
+				/*
+
+				<li>AFORE BANAMEX SA DE - AFORE BANAMEX  SA DE CV<li>
+
+				<li>CFE - PAGO DE ENERGIA ELECTRICA (CFE)<li>
+
+				<li>GMAC - GMAC MEXICANA S.A DE C.V<li>
+
+				<li>TELCEL - RADIOMOVIL DIPSA SA DE CV(TELCEL)<li>
+
+				<li>TELMEX - PAGO A SERVICIO TELEFONICO TELMEX<li>
+
+	      */  
+
+			var li = document.createElement('li');
+
+			var a = document.createElement('a');
+
+			a.href="javascript:enviaDatos('"+salida+"','','POLITICAS')";
+
+			a.innerHTML = word;
+
+			li.appendChild(a);
+
+	
+
+			if (me.highlighted == i)
+
+			{
+
+				li.className = "selected";
+
+			}
+
+	
+
+			ul.appendChild(li);
+
+		}
+
+	
+
+		this.div.replaceChild(ul,this.div.childNodes[0]);
+
+	
+
+		ul.onmouseover = function(ev)
+
+		{
+
+			//Walk up from target until you find the LI.
+
+			var target = me.getEventSource(ev);
+
+			while (target.parentNode && target.tagName.toUpperCase() != 'LI')
+
+			{
+
+				target = target.parentNode;
+
+			}
+
+		
+
+			var lis = me.div.getElementsByTagName('LI');
+
+			
+
+	
+
+			for (i in lis)
+
+			{
+
+				var li = lis[i];
+
+				if(li == target)
+
+				{
+
+					me.highlighted = i;
+
+					break;
+
+				}
+
+			}
+
+			me.changeHighlight();
+
+		};
+
+
+
+		this.div.className="suggestion_listdom";
+
+		this.div.style.position = 'absolute';
+
+	
+
+	};
+
+
+
+	this.getEligible = function()
+
+	{/*
+
+		this.eligible = new Array();
+
+		this.eligible2 = new Array();
+
+		
+
+		
+
+		for (i in this.suggestions) 
+
+		{
+
+			
+
+			var suggestion = this.suggestions[i];
+
+			var suggestion2 = this.suggestions[i];
+
+			
+
+			var out= suggestion.split("_");
+
+			
+
+
+
+			if(i==this.suggestions.length-1)
+
+			{
+
+				break;
+
+			}
+
+			
+
+			if(out[0].toLowerCase().indexOf(this.inputText.toLowerCase()) == "0"||out[1].toLowerCase().indexOf(this.inputText.toLowerCase()) == "0"||out[2].toLowerCase().indexOf(this.inputText.toLowerCase()) == "0")
+
+			{
+
+				var a= "  "+ out[0]+"   -   "+out[1] + "    ";
+
+				var a2= out[3]+"|"+out[2];
+
+				var espacios="";
+
+				
+
+				var b= "N&uacute;mero de establecimiento:"+ out[2];
+
+				
+
+				var l= a.length;
+
+				var l2= b.length;
+
+				var ancho= 110;
+
+				ancho= ancho-(l+l2);
+
+				//alert(ancho);
+
+						
+
+				for(var blancos=0; blancos<ancho; blancos++)
+
+				{
+
+					espacios = espacios + "&nbsp;";
+
+				}
+
+				 //a= a+espacios+b;}
+
+				 a=ComboAutomplete(a,b);
+
+				 suggestion= a;
+
+				 suggestion2= a2;
+
+				 
+
+				
+
+				//suggestion= out[1]+"-"+out[0]+"    "+ "N&uacute;mero de establecimiento: "+ out[2];
+
+				//suggestion= suggestion.replace(/_/g, ' ');
+
+				this.eligible[this.eligible.length]=suggestion;
+
+				this.eligible2[this.eligible2.length]=suggestion2;
+
+			}
+
+		}*/
+
+	};
+
+
+
+	this.getKeyCode = function(ev)
+
+	{/*
+
+		if(ev)			//Moz
+
+		{
+
+			return ev.keyCode;
+
+		}
+
+		if(window.event)	//IE
+
+		{
+
+			return window.event.keyCode;
+
+		}*/
+
+	};
+
+
+
+	this.getEventSource = function(ev)
+
+	{/*
+
+		if(ev)			//Moz
+
+		{
+
+			return ev.target;
+
+		}
+
+	
+
+		if(window.event)	//IE
+
+		{
+
+			return window.event.srcElement;
+
+		}*/
+
+	};
+
+
+
+	this.cancelEvent = function(ev)
+
+	{/*
+
+		if(ev)			//Moz
+
+		{
+
+			ev.preventDefault();
+
+			ev.stopPropagation();
+
+		}
+
+		if(window.event)	//IE
+
+		{
+
+			window.event.returnValue = false;
+
+		}
+
+*/
+
+	}
+
+this.setSuggestions = function(suggestions)
+
+		{
+
+		this.suggestions= suggestions;
+
+		}
+
+	var idCounter = 0;
+
+		}
+
+
+
+
+
+function busqueda_servicios(busca_palabra)
+
+	{
+
+		
+
+	/*	
+
+		document.getElementById('busqueda_avanzada').style.display='block';
+
+	    document.getElementById('buscar').innerHTML=busca_palabra;
+
+		*/
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********+ combo */
+
+
+
+function ComboAutomplete(desc, Numero){
+
+				d = Arma_DescripcionAutocomplete(desc , 58);
+
+				
+
+			  return d;	
+
+			}
+
+
+
+
+
+
+
+function Arma_DescripcionAutocomplete(nom, lon){
+
+				var i,totp=0,numb=0,aux="", f = 3;
+
+				if(lon == 20){if(nom.length>20)nom=nom.substring(0,20);f=2;}
+
+				for(i=0; i!=nom.length; i++ )
+
+				{
+
+					totp += ValorAutocomplete(nom.charAt(i));
+
+				}
+
+				numb = ((lon * f)-totp);
+
+
+
+				if(nom.indexOf("IT")!=-1 && (navigator.userAgent.indexOf('MSIE')>0)){ numb += 3;}	
+
+				if(navigator.userAgent.indexOf('Firefox')>0){
+
+					if(nom.indexOf("ON")!=-1)numb += 2;
+
+					if(nom.indexOf("SI")!=-1)numb -= 2;
+
+				}
+
+				if(navigator.userAgent.indexOf('Chrome')>0){
+
+					if(nom.indexOf("IL")!=-1 || nom.indexOf("TR")!=-1)numb += 2;
+
+					if(nom.indexOf("IT")!=-1 || nom.indexOf("SC")!=-1)numb -= 2;
+
+					if(nom.indexOf("IN")!=-1)numb += 3;
+
+				}
+
+				if(navigator.userAgent.indexOf('Safari')>0 && navigator.userAgent.indexOf('Windows')>0){
+
+					if(nom.indexOf("ON")!=-1 || nom.indexOf("EA")!=-1)numb += 1;
+
+				}
+
+				for(i=0; i !=numb + 10; i++ )
+
+						aux += '&nbsp;';			
+
+				return nom + aux;
+
+			}
+
+		
+
+			
+
+			function ValorAutocomplete(caracter)
+
+			{
+
+				if(navigator.userAgent.indexOf('Safari')>0 && navigator.userAgent.indexOf('Mac')>0)
+
+				{
+
+					var string1 ="IJfijlrt";
+
+					var string2 ="ABCDEFGHKLNOPQRSTUVXYZ1234567890_-abcdeghkn–opqsuvwxyz";
+
+					var string3 ="MWm"; 
+
+				}else if(navigator.userAgent.indexOf('Firefox')>0)
+
+				{
+
+					var string1 ="-Ifijlrt";
+
+					var string2 ="ABCDEFJKLPSTVXZ1234567890_abcdeghknñopqsuvxyz";
+
+					var string3 ="GHMNOQRUWYmw";
+
+					var string4 ="W";	
+
+					if(string4.indexOf(caracter)!= -1) return 4;					
+
+				}else if(navigator.userAgent.indexOf('Chrome')>0)
+
+				{
+
+					var string1 ="-Iijlt";
+
+					var string2 ="BCDEFHJKLNÑPRTUXZ1234567890_abcdefghknñopqrsuvxyz";
+
+					var string3 ="ASGMOQVWYwm";				
+
+				}else if(navigator.userAgent.indexOf('Safari')>0 && navigator.userAgent.indexOf('Windows')>0 ){
+
+					var string1 ="-Ifijlrt";
+
+					var string2 ="ABCDEFJKLPSTVXZ1234567890_abcdeghknñopqsuvxyz";
+
+					var string3 ="GHMNOQRUWYmw";
+
+					var string4 ="W";	
+
+					if(string4.indexOf(caracter)!= -1) return 4;
+
+				}else{
+
+					var string1 = "IU-ijtl";
+
+					var string2 = "BCDEFHJKLNÑPRSXZ_1234567890abcdefghknñopqrsuvxyz";
+
+					var string3 = "AGMOQVWYTmw";
+
+				}
+
+				if(caracter == ' ') return 1;
+
+				if(string1.indexOf(caracter)!= -1) return 1;
+
+				if(string2.indexOf(caracter)!= -1) return 2;
+
+				if(string3.indexOf(caracter)!= -1) return 3;
+
+				return 0;	
+
+			}
+
+
+
+
+
+
+
+function enviaDatos(datos, operacionBancanet, evento) {
+
+
+
+
+
+if (operacionBancanet == 0 && evento == "") {
+
+	
+
+    alert(msg1);    
+
+} 
+
+
+
+document.forms[0].DATA1.value = datos; 
+
+if (evento == ""){ 
+
+
+
+ evento ="OK";
+
+     
+
+  
+
+}
+
+if(evento=="PALABRA"){	
+
+pm(evento);
+
+$('#autosuggest').hide();
+
+ChecaVacio();
+
+
+
+
+
+}
+
+
+
+else
+
+{
+
+	if(evento=="GIRO")
+
+	{
+
+		pm(evento);
+
+	}
+
+			else
+
+			{
+
+				DoSubmit(evento);
+
+			}
+
+}
+
+}
+
+
+
+
+
+/*FUNCION PARA EL AUTOCOMPLETADO*/
+
+function enviaDatosAutocomplete(evento) {
+
+
+
+    mensaje1 = "Por Politica de la Empresa, debera efectuar sus pagos a traves de la sucursal Banamex de su preferencia";
+
+//pm(evento);
+
+}
+
+
+
+
+
+function ChecaVacio(){
+
+
+
+if($('#buscar').text=""){
+
+	$('#busqueda_avanzada').hide();
+
+	
+
+}
+
+}
+
+$(document).ready(
+
+	function(){
+
+		setTimeout(function(){top.tamano3();},800);
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "")
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	
+
+	$(document).bind('keydown.enter keyup.enter',
+
+		function(event){
+
+			if(event.keyCode==13)
+
+				event.preventDefault();
+
+		}
+
+	);
+
+	
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+function llenaopcion(lista){
+
+/*
+
+this.div = document.getElementById("autosuggest");
+
+this.div.document.createElement('a');
+
+a.innerHTML = lista;
+
+*/
+
+}
+
+ </script>
+
+ 
+
+
+
+
+
+
+
+<script>
+
+try
+
+{
+
+parent.setFecha("04/04/12    15:57:22  ");
+
+}
+
+
+
+catch(e){parent.parent.setFecha("04/04/12    15:57:22  ");}
+
+
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina.\n\n Esta Transacci&oacute;n no se efectuar&aacute;, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="155717  ";b$Cont="155722  "
+
+	if (a$Cont==b$Cont)
+
+	{
+
+		try{
+
+			parent.scd();
+
+		}
+
+		catch(e)
+
+		{
+
+			parent.parent.scd();
+
+		}
+
+	}
+
+	
+
+</script> 
+
+<script type="text/javascript">
+
+
+
+	
+
+	$(document).ready(function(){
+
+
+
+var myArr = [];
+
+var myArr2 = [];		
+
+	/*$.ajax({
+
+	
+
+			type: "GET",
+
+			url: "../../../xml/B43_D_Detalle.xml", 
+
+			dataType: "xml",
+
+			success: parseXml,
+
+			complete: setupAC,
+
+			failure: function(data) {
+
+				alert("XML File could not be found");
+
+				}
+
+		});*/
+
+
+
+function parseXml(xml)
+
+	{
+
+	 var indice = 0;
+
+	 //find every query value
+
+	  $(xml).find("RECORD").each(function()
+
+	  {
+
+	 var guion=" - "; 
+
+	 var corto = $(this).attr('b43_nomb_corto');
+
+     var nombre = $(this).attr('b43_nomb_largo');
+
+	 myArr.push(corto+guion+nombre);
+
+	 //myArr2.push(corto+guion+nombre);
+
+	 //busca_la=myArr2.pop(corto+guion+nombre);
+
+	//alert(corto); 
+
+	 $("ul","#autosuggest").append("<li class=''>"+corto+guion+nombre+"</li>");
+
+	 //llenaopcion(busca_la);
+
+	 //alert(busca_la);
+
+     
+
+		});
+
+		//$("#autosuggest").style.display = 'block';
+
+	
+
+	$("#autosuggest").addClass('suggestion_listdom');
+
+
+
+	}
+
+	
+
+	function setupAC() {
+
+	 $("#saldBloq2Inp2").autocomplete({
+
+	     source: myArr,
+
+	     minLength: 3,
+
+	     select: function(event, ui) {
+
+
+
+		 $("input#saldBloq2Inp2").val(ui.item.value);
+
+
+
+				$("#saldBloq2Inp2").each(function(){
+
+
+
+					if($("#saldBloq2Inp2").val()=="TELMEX - PAGO A SERVICIO TELEFONICO TELMEX"){
+
+						parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_telmex.html');}
+
+
+
+					if($("#saldBloq2Inp2").val()=="CFE - PAGO DE ENERGIA ELECTRICA (CFE)"){
+
+						parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_CFE.html');}
+
+
+
+					if($("#saldBloq2Inp2").val()=="TELCEL - RADIOMOVIL DIPSA SA DE CV(TELCEL)"){
+
+						parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_telcel.html');}
+
+
+
+					if($("#saldBloq2Inp2").val()=="GMAC - GMAC MEXICANA S.A DE C.V"){
+
+						parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_GMAC.html');}
+
+
+
+					if($("#saldBloq2Inp2").val()=="AFORE BANAMEX SA DE - AFORE BANAMEX  SA DE CV"){
+
+						parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_afore_banamex.html');}
+
+					});	       
+
+				}
+
+			});
+
+		}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	var autocompletado= new Array("");
+
+	var busca_palabra= new Array("[MT_Busqueda_Serv]");
+
+	var indice=autocompletado.length;
+
+	var autocompletado_new= new Array();
+
+
+
+	if("FALSE"=="OK")
+
+		{
+
+		parent.rellenaArray(myArr);
+
+		parent.document.forms[0].SEQUENCE_NUMBER.value = document.forms[0].SEQUENCE_NUMBER.value;
+
+	
+
+		}
+
+	else
+
+		{
+
+			if("FALSE"=="PALABRA")
+
+			{
+
+			parent.busqueda_servicios(busca_palabra);
+
+			parent.document.forms[0].SEQUENCE_NUMBER.value = document.forms[0].SEQUENCE_NUMBER.value;
+
+			}
+
+			else
+
+			{
+
+			autoSuggests= new AutoSuggest(document.getElementById('saldBloq2Inp2'),myArr);
+
+			}
+
+		}
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+$('#mycarousel').jcarousel({
+
+			auto: 5,
+
+			scroll: 2,
+
+			wrap: 'circular',
+
+			start: 9
+
+
+
+		});
+
+					 
+
+
+
+
+
+	
+
+	if(""=="E"){
+
+	$("#mensajeError_contenido_div", window.parent.document).html($("#idErr").html());	
+
+		parent.$.modal({
+
+	opacity:60, 
+
+	overlayClose:false, 
+
+	flagDiv:true,
+
+	widthDivIfrm:600});
+
+	 }
+
+
+
+
+
+
+
+
+
+
+
+	});
+
+			
+
+</script> 
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+
+function BorraTxt()
+
+{	
+
+
+
+if($("#saldBloq2Inp2").val()!=""){
+
+document.getElementById('saldBloq2Inp2').onkeydown();
+
+document.getElementById('saldBloq2Inp2').onkeyup();
+
+
+
+			if($("#saldBloq2Inp2").val()=="TELMEX - PAGO A SERVICIO TELEFONICO TELMEX"){
+
+				parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_telmex.html');}
+
+
+
+			if($("#saldBloq2Inp2").val()=="CFE - PAGO DE ENERGIA ELECTRICA (CFE)"){
+
+				parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_CFE.html');}
+
+
+
+			if($("#saldBloq2Inp2").val()=="TELCEL - RADIOMOVIL DIPSA SA DE CV(TELCEL)"){
+
+				parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_telcel.html');}
+
+
+
+			if($("#saldBloq2Inp2").val()=="GMAC - GMAC MEXICANA S.A DE C.V"){
+
+				parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_GMAC.html');}
+
+
+
+			if($("#saldBloq2Inp2").val()=="AFORE BANAMEX SA DE - AFORE BANAMEX  SA DE CV"){
+
+				parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_afore_banamex.html');}
+
+
+
+}
+
+
+
+document.getElementById('saldBloq2Inp2').value="";
+
+
+
+$('#autosuggest').hide();
+
+}
+
+
+
+function rellenaArray(myArr)
+
+{
+
+	autoSuggests.setSuggestions(myArr);
+
+	document.getElementById('saldBloq2Inp2').onkeydown();
+
+	document.getElementById('saldBloq2Inp2').onkeyup();
+
+}
+
+
+
+function pm(ev)
+
+{
+
+
+
+}	
+
+
+
+function buscar(){
+
+
+
+//debugger;
+
+var buscatexto = $("#saldBloq2Inp2").val();
+
+
+
+
+
+var opcion = "";
+
+var opcion1 = "../Domiciliacion_Consulta_Baja_Instrucciones/contrato_CFE.html";
+
+var opcion2 = "../Domiciliacion_Consulta_Baja_Instrucciones/contrato_telmex.html";
+
+var opcion3 = "../Domiciliacion_Consulta_Baja_Instrucciones/contrato_telcel.html";
+
+var opcion4 = "../Domiciliacion_Consulta_Baja_Instrucciones/contrato_GMAC.html";
+
+var opcion5 = "../Domiciliacion_Consulta_Baja_Instrucciones/contrato_afore_banamex.html";
+
+
+
+
+
+if(buscatexto == ""){
+
+			document.getElementById('busqueda_avanzada').style.display='none';
+
+}
+
+
+
+if(buscatexto == "cf"||buscatexto == "CF"||buscatexto == "cfe"||buscatexto == "CFE"||buscatexto == "com"||buscatexto == "COM"||buscatexto == "Com"||buscatexto == "c"||buscatexto == "C"){
+
+buscatexto="CFE";
+
+opcion = opcion1;
+
+document.getElementById('busqueda_avanzada').style.display='block';
+
+}
+
+if(buscatexto == "telm"||buscatexto == "TELM"||buscatexto == "Tel"||buscatexto == "Te"||buscatexto == "TMX"||buscatexto == "telmex"||buscatexto == "telme"||buscatexto == "TELME"||buscatexto == "tel"||buscatexto == "t"||buscatexto == "T"||buscatexto == "te"||buscatexto == "TE"){
+
+buscatexto="TELMEX";
+
+opcion = opcion2;
+
+document.getElementById('busqueda_avanzada').style.display='block';
+
+}
+
+if(buscatexto == "telc"||buscatexto == "TELC"||buscatexto == "Cel"||buscatexto == "Telcel"||buscatexto == "TELCE"||buscatexto == "telce"||buscatexto == "telcel"||buscatexto == "TELCEL"){
+
+buscatexto="TELCEL";
+
+opcion = opcion3;
+
+document.getElementById('busqueda_avanzada').style.display='block';
+
+}
+
+if(buscatexto == "g"||buscatexto == "G"||buscatexto == "gm"||buscatexto == "gma"||buscatexto == "gmac"||buscatexto == "Gm"||buscatexto == "Gma"||buscatexto == "Gmac"||buscatexto == "GM"||buscatexto == "GMA"||buscatexto == "GMAC"){
+
+buscatexto="GMAC";
+
+opcion = opcion4;
+
+document.getElementById('busqueda_avanzada').style.display='block';
+
+}
+
+if(buscatexto == "B"||buscatexto == "b"||buscatexto == "ba"||buscatexto == "BA"||buscatexto == "Ba"||buscatexto == "BAN"||buscatexto == "ban"||buscatexto == "Ban"||buscatexto == "bana"||buscatexto == "BANA"||buscatexto == "baname"||buscatexto == "banamex"||buscatexto == "BANAM"||buscatexto == "BANAME"||buscatexto == "BANAMEX"||buscatexto == "banam"||buscatexto == "afore"||buscatexto == "AFORE"||buscatexto == "Afore"||buscatexto == "afo"||buscatexto == "af"||buscatexto == "AFO"||buscatexto == "A"||buscatexto == "a"||buscatexto == "AF"){
+
+buscatexto="AFORE BANAMEX SA DE";
+
+opcion = opcion5;
+
+document.getElementById('busqueda_avanzada').style.display='block';
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//alert(buscatexto);
+
+var contenidos = "<table cellspacing='0' cellpadding='0' border='0' width='100%' class='tablaSaldos3'>"+
+
+	"<tr><td class='tablaSaldos2_bordeR'><span class='floatL'>Nombre comercial</span>"+
+
+	"<div class='saldos_btn6 floatR'></div></td><td class='borderRSolid'><span class='floatL'>Raz&oacute;n social</span></td><td>&nbsp;</td></tr>";
+
+	
+
+		/*$.ajax({
+
+			type: "GET",
+
+			url: "../../../xml/B43_D_Detalle.xml", // change to full path of file on server
+
+			dataType: "xml",
+
+			success: parseXml1,
+
+			failure: function(data) {
+
+				alert("XML File could not be found");
+
+				}
+
+		});*/
+
+
+
+	function parseXml1(xml)
+
+			{
+
+
+
+				//find every query value
+
+		$(xml).find("RECORD[b43_nomb_corto='"+buscatexto+"']").each(function(){
+
+		    var nombrec = $(this).attr('b43_nomb_corto');
+
+			var nombrel = $(this).attr('b43_nomb_largo');
+
+			contenidos += "<tr> <td class='borderRSolid bgF1F2F2'>"+ nombrec +"</td> <td class='borderRSolid bgF1F2F2'>"+ nombrel +"</td> <td class='bgF1F2F2'><a href="+ opcion +">seleccionar</a> </td> </tr>";
+
+			contenidos += "</table>";
+
+			document.getElementById('buscar').innerHTML = contenidos;
+
+//			contenido += "<tr> <td class='borderRSolid bgF1F2F2'>"+ nombrec +"</td> <td class='borderRSolid bgF1F2F2'>"+ nombrel +"</td> <td class='bgF1F2F2'><a href="+ opcion +">seleccionar</a> </td> </tr>";
+
+//			alert(contenidos);
+
+				}); 
+
+			}
+
+			//contenidos += pruebas;
+
+//		    contenidos += "</table>";
+
+//			document.getElementById('buscar').innerHTML = contenidos;
+
+			document.getElementById('saldBloq2Inp2').value="";
+
+			$('#autosuggest').hide();
+
+
+
+	}
+
+
+
+
+
+</script>
+
+
+
+
+
+<iframe id="ndw" src="../../spanishdir/if.htm" style="display:none; width:500px; height:500px;">
+
+</iframe>
+
+<div class="float-left fonttit" id="t6">Domiciliaci&oacute;n</div>
+
+<div class="panelIzEnca3_text2 paddingB12" id="t0">
+
+	Alta de pagos domiciliados
+
+</div>
+
+<div class="saldos_bloque2 padding0 marginT18">
+
+
+
+	<div class="padding10 overflow clear">
+
+		<div class="saldos_bloque2_f1">
+
+			<div class="paddingL10 negrita f14" id="t1">B&uacute;squeda</div>
+
+		</div>
+
+		<div class="ancho100p floatL">
+
+			<div class="f11 paddingL10 color666" id="t2">Seleccione el servicio que desea dar de alta.</div>
+
+		</div>
+
+
+
+	</div>
+
+  <div class="ancho100p" >
+
+	  <div class="contenido_carrusel" id="carousel" style="width: auto;">
+
+		  <ul id="mycarousel" class="jcarousel-skin-tango">
+
+
+
+				
+
+			<li> <a onclick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_telmex.html')"><img src="../../spanishdir/bankicon/000115.gif" alt="000115.gif" width="60" height="40" /></a></li>
+
+			  	
+
+			<li> <a onclick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_CFE.html')"><img src="../../spanishdir/bankicon/000201.gif" alt="000201.gif" width="60" height="40" /></a></li>
+
+			  	
+
+			<li> <a onclick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_telcel.html')"><img src="../../spanishdir/bankicon/i0203.gif" alt="i0203.gif" width="60" height="40" /></a></li>
+
+
+
+			  	
+
+			<li> <a onclick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_GMAC.html')"><img src="../../spanishdir/bankicon/000015.gif" alt="000015.gif" width="60" height="40" /></a></li>
+
+			  	
+
+			<li> <a onclick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/contrato_afore_banamex.html')"><img src="../../spanishdir/bankicon/000014.gif" alt="000014.gif" width="60" height="40" /></a></li>
+
+			  
+
+		  </ul>
+
+	</div>
+
+  </div>
+
+	
+
+	
+
+	<div class="padding10 paddingT0 overflow clear">
+
+		<div class="saldos_bloque2_f3">
+
+			<div class=" floatL ancho550 paddingL10">
+
+
+
+				<div class="saldos_bloque2_f4_txt ancho100p" id="t3">o ingrese el nombre comercial o raz&oacute;n social</div>
+
+				<div class="floatL ancho550">
+
+				<div id="autosuggest"><ul>
+
+
+
+	    
+
+				</ul></div>
+
+				 <input type="text" class="input ancho550"  autocomplete="off" id="saldBloq2Inp2" value="" name="DATA2" onclick="javascript:BorraTxt()" />
+
+				</div>
+
+				
+
+			</div>
+
+	   
+
+			<div class="saldos_bloque2_f6">
+
+				<div class="saldos_bloque2_f4_txt">&nbsp;&nbsp;</div>
+
+
+
+				<div class="saldos_bloque2_f6_inp">
+
+					<input type="button"  id="t4" value="Buscar" class="btnAZ86" onclick="buscar();"/>
+
+				</div>
+
+			</div>
+
+		</div>  
+
+	</div>     	
+
+</div>
+
+
+
+
+
+ <div class="saldos_bloque3" id="busqueda_avanzada" style="display:none;">
+
+	<div class="panelIzEnca3_text2 paddingB20 overflow">
+
+
+
+		<div class="panelIzEnca3_text2" id="t5">Resultados de la b&uacute;squeda</div>
+
+	</div>
+
+	<div id="buscar"></div>	
+
+</div> 
+
+	
+
+	
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+<INPUT TYPE=HIDDEN NAME="DATA1" VALUE="">
+
+<INPUT TYPE=HIDDEN NAME="DATA50" VALUE="SPANISH">
+
+
+
+
+
+<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Causa:&nbsp;</div>
+
+
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Domiciliacion Alta|dbusq01.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

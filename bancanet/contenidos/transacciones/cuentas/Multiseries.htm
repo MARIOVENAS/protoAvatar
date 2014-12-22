@@ -1,0 +1,1256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<meta http-equiv="pragma" content="no-cache"/>
+
+	<meta http-equiv="cache-control" content="no-cache"/>
+
+	<meta http-equiv="expires" content="-1"/>
+
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+	<link href="../../bbAvatar/css/estilosmulti.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/plugins.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/script.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery.tablesorter.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	optieneAlturas();parent.ajustar();window.parent.$('.panelDerecho').hide();$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	
+
+	var es=new Array('Mutual Fund / Serie',
+
+	'Stocks',
+
+	'Price',
+
+	'Balance',
+
+	'Balance Date:',
+
+	'Total Balance:',
+
+	'Next',
+
+	'What do you want to do?',
+
+	'Invest my money',
+
+	'Check investment schedules',
+
+	'TRANSACTIONS',
+
+	'Apply filter',
+
+	'Remove filter',
+
+	'Export',
+
+	'Date',
+
+	'Transaction',
+
+	'Issue',
+
+	'Stocks',
+
+	'Net amount',
+
+	'Next',
+
+	'Apply filter',
+
+	'Remove filter',
+
+	'Export',
+
+	'Previous',
+
+	"See account summary",
+
+	"ACCOUNT DETAIL",
+
+	"Wait a moment please ...",
+
+	"Current Period",
+
+    "Previous Period",
+
+	" - Select an option -"
+
+		);
+
+	
+
+function Layuda1(){
+
+	window.open(rutaAyudaAv +'Estados-de-cuenta-y-Movimientos.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+}
+
+	
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+
+
+function verSaldos1(){
+
+		$("#divCargando").show();
+
+		setTimeout("parent.DoSubmit('Mul_TodasCtas/01b-MultiSaldos_REAL.htm');",1000);
+
+	}
+
+function filtrar(){
+
+	parent.$.modal(			
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:244,
+
+			srcIfrm:'bbAvatar/modal/filtraMovimientos.html'
+
+		}
+
+	);
+
+}
+
+function exportar(){
+
+	parent.$.modal({
+
+		closeHTML: '',
+
+		opacity:60,
+
+		overlayClose:false,
+
+		flagDiv:false,
+
+		widthDivIfrm:308,
+
+		heightDivIfrm:210,
+
+		srcIfrm:'bbAvatar/modal/exportaResultados.html'
+
+	});	
+
+}
+
+$(document).ready(function(){
+
+	cargando_movimientos();
+
+	$.tablesorter.defaults.sortList = [[0,1]]; 
+
+	$.tablesorter.defaults.widgets = ['zebra']; 
+
+	$("table").tablesorter({
+
+        headers: {
+
+			4: { sorter: false },
+
+			0: { sorter: 'DD-MMM-YY' },
+
+			3: { sorter: 'currency' }
+
+        }
+
+    });
+
+	labelTooltip();
+
+	$("#fech1").click(function(){
+
+		if ( $(this).hasClass("headerSortDown") )
+
+			$("#fldown").addClass("flechaabajong")
+
+		.removeClass("flechaarriba")
+
+	});
+
+	$("#fech1").click(function(){
+
+		if ( $(this).hasClass("headerSortUp") )
+
+			$("#fldown").addClass("flechaarriba")
+
+		.removeClass("flechaabajong")
+
+	});
+
+	$("#versaldos1").click(function() {
+
+   		var sorting = [[0,1]];     
+
+		$("table").trigger("sorton",[sorting]);
+
+		return false; 
+
+	});	
+
+});
+
+	</script>
+
+   <title></title>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="resumen_enca ancho100p">
+
+<div class="floatR marginT7 paddingR7 ancho40p">
+
+  <div class="saldos_btn1 showtooltip margin_menosT3" id="btn_ayuda" onclick="Javascript:Layuda1();"></div>
+
+ <div class="saldos_btn2 showtooltip margin_menosT3"  id="btn_imp" onclick="imprimirMain();"></div>
+
+
+
+   
+
+   <div class="floatR">
+
+  <div class="resumen_flecha"></div>
+
+   <a href="javascript:top.dash();"id="t24">Ver resumen de cuentas</a></div>
+
+  </div>
+
+ <div class="floatL">
+
+     <div class="floatL"><h1 id="t25">DETALLE DE LA CUENTA</h1> </div>
+
+      <div class="floatL marginL10 marginT2">
+
+      <select name="select" id="cboCritReg" class="select" onchange="valor1=this.value;Cta1();">
+
+	<option class="0" value="PS"id="t29">&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>
+
+    <option value="1" value="1" >Cheques&nbsp;-&nbsp;002&nbsp;-&nbsp;MXN</option>
+
+    <option class="2"  value="2" >Cuenta Maestra - 490 - MXN</option>
+
+    <option class="3"  value="3">D&eacute;bito - 678 - MXN</option>
+
+    <option class="4" value="4" >Cheques- 888 - USD</option>
+
+    <option class="5" value="5">Tarjeta Cr&eacute;dito -  796 - MXN</option>
+
+    <option class="6" value="6"  > Tarj. Premia Pre - 245 - MXN</option>
+
+    <option class="7"  value="7">Mi cr&eacute;dito - 3014 - MXN</option>
+
+    <option class="8" value="8" >Credicheque Perfiles Banamex - 502 - MXN</option>
+
+    <option class="9"  value="9" >Cr&eacute;dito Casa - 9014 - MXN</option>
+
+    <option class="10" value="10"  >Inversi&oacute;n Perfiles - 502 - MXN</option>
+
+    <option class="11"  value="11">Inversi&oacute;n Plazo - 010 - MXN</option>
+
+    <option class="12"  value="12">HORZONT - 746 - MXN</option>
+
+    <option class="13" selected="selected" >Multiseries - 378 - MXN</option>
+
+    <option class="14" value="14" >Mi afore NSS - 424 - MXN</option>
+
+</select>
+
+    </div>
+
+   </div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+
+<div class="floatL ancho70p marginT15">
+
+  <div class="floatR">
+
+<select class="ancho150" name="select" id="select" onchange="valor1=this.value;Cta1();">
+
+  <option selected="selected" id="t27">Periodo actual</option>
+
+  <option value="13"id="t28">Periodo anterior</option>
+
+    </select>
+
+  </div>
+
+  <div class="boldText f14 floatL paddingT4">Banca Inversión-M.N-016-Multiseries</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="floatL ancho70p marginT24" >
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td width="26%" class="boldText borderBSolid paddingB1 paddingT1 " id="t0">Fondo / Serie</td>
+
+    <td width="18%" align="right" class="boldText borderBSolid paddingB1 paddingT1"id="t1">T&iacute;tulos</td>
+
+    <td width="18%" align="right" class="boldText borderBSolid paddingB1 paddingT1 "id="t2">Precio</td>
+
+    <td width="18%" class="boldText borderBSolid paddingB1 paddingT1 ">&nbsp;</td>
+
+    <td width="20%" align="right" class="boldText borderBSolid paddingB1 paddingT1" id="t3">Saldo MXN</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT8 paddingB1 color8f borderBDotted">HORIZONT+ B0D</td>
+
+    <td align="right" class=" paddingT8 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class=" paddingT8 paddingB1 color8f borderBDotted">11.7742</td>
+
+    <td class="  paddingT8 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class=" paddingT8 paddingB1 color8f borderBDotted"> $11,774.20</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B1A</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> 11.6164 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> $11,616.40</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B1B </td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">11.4743 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$11,474.30</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B1C</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">11.3184 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$11,318.40</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B1D </td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">11.1646 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> $11,164.60</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B2A </td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> 11.0128 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$11,012.80</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B2C </td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.7931 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> $10,793.10</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B3A</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.5806</td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$10,580.60</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B3C</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.4093</td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> $10,409.30</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B4A</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.2528</td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$10,252.80</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B4B</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.229</td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$10,229.00</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB7 color8f">HORZNT+ B4C</td>
+
+    <td align="right" class="paddingT2 paddingB7 color8f">1,000</td>
+
+    <td align="right" class=" paddingT2 paddingB7 color8f">10.1694 </td>
+
+    <td class=" paddingT2 paddingB7 color8f">&nbsp;</td>
+
+    <td align="right" class=" paddingT2 paddingB7 color8f"> $10,169.40</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="borderTSolid paddingT8"id="t4">Fecha de saldo</td>
+
+    <td class="borderTSolid paddingT8 color8f" align="right">11 Feb </td>
+
+    <td class="borderTSolid paddingT8"  align="right"id="t5">Saldo Total:</td>
+
+    <td class="borderTSolid paddingT8">&nbsp;</td>
+
+    <td class="borderTSolid paddingT8  color8f" align="right">$ 119,020.70</td>
+
+  </tr>
+
+</table>
+
+<div class="floatL paddingT5"></div>
+
+    <div class="floatL"></div>
+
+      <!--<div class="floatL"><a href="#">1</a></div>
+
+    <div class="floatL marginL8">Siguiente</div>
+
+    <div class="resumen_flecha">&nbsp;</div>-->
+
+   </div>
+
+</div>
+
+<div class="floatL marginL30 paddingL25 ancho20p borderlSolid9 marginT5">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tr> 
+
+  <td class=" f14 boldText paddingB10" id="t7">&iquest;QU&Eacute; DESEAS HACER?</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingT3 paddingB3 "><div class="resumen_flecha"></div>
+
+     <a href="javascript:void(0)" onclick="javascript:saltoInversiones()"id="t8">Invertir mi dinero</a></td>
+
+    </tr>
+
+    
+
+  </table>
+
+</div>
+
+<div class="clear"></div>
+
+
+
+<div class="panelIzEnca3_text2 marginT24"id="t10">MOVIMIENTOS</div>
+
+<div id="movimientos_cargados">
+
+<div class=" paddingT15">
+
+  <div class="floatL marginT5">
+
+  <!--<div class="resumen_flecha1 displayN" id="pre1"></div>
+
+  <div class="floatL">
+
+  <div class="floatL displayN" onclick="javascript:prevpage();" id="pre2"><a href="javascript:void(0);">Anterior </a></div>
+
+    <div class="floatL marginL8 boldText" id="p1" onclick="javascript:page1();"><a href="javascript:void(0);">1</a></div>
+
+    <div class="floatL marginL8" id="p2" onclick="javascript:page2();"><a href="javascript:void(0);">2</a></div>
+
+    <div class="floatL marginL8" id="p3" onclick="javascript:page3();"><a href="javascript:void(0);">3</a></div>
+
+    <div class="floatL marginL8" id="p4" onclick="javascript:page4();"><a href="javascript:void(0);">4</a> </div>
+
+    <div class="floatL marginL8" onclick="javascript:nextpage();" id="sig1"><a href="#">Siguiente</a></div>
+
+    </div>
+
+  <div class="resumen_flecha" id="sig2">&nbsp;</div>-->
+
+   </div>
+
+<div class="floatR">
+
+<div class="floatL marginR1 bm"></div>
+
+<a class="floatL marginR10 paddingT5 boldText" href="javascript:void(0);" onclick="javascript:filtrar();"id="t11">Filtrar movimientos</a>
+
+<div class="resumen_flecha marginT7"></div><a class="floatL marginR10 paddingT5" href="#" onclick="javascript:exportar()" id="t13">Exportar</a>
+
+  </div>
+
+ 
+
+ <div class="clear"></div>
+
+</div>
+
+
+
+<div>
+
+
+
+<table class="tablesorter" border="0" cellpadding="0" cellspacing="0">
+
+  <thead>
+
+  <tr>
+
+  <th id="fle" width="18%" align="left" class="paddingL20 borderBSolid borderTSolid9" onclick="javascript:ocultasaldos();">
+
+   <span id="t14"> Fecha </span>
+
+    
+
+   </th>
+
+  <th id="op"  width="18%" align="left" class="borderBSolid borderTSolid9" onclick="javascript:ocultasaldos();"> <span id="t15">Operaci&oacute;n </span>
+
+   </th>
+
+  <th id="em"  width="20%" align="left" class="borderBSolid borderTSolid9" onclick="javascript:ocultasaldos();"> <span id="t16">Emisi&oacute;n</span>
+
+    </th>
+
+  <th id="dep"  width="10%" align="right" class="borderBSolid borderTSolid9 paddingR10" onclick="javascript:ocultasaldos();"> 
+
+ <span id="t17">
+
+ T&iacute;tulos
+
+ </span>
+
+    </th>
+
+ <th id="imp"  class="borderBSolid borderTSolid9 paddingR35" width="34%" align="right" onclick="javascript:ocultasaldos();"><span id="t18">Importe neto MXN</span></th>
+
+ </tr>
+
+  </thead>
+
+ <tfoot>    
+
+  <tr>
+
+    <td class="paddingT10 paddingB5 borderBSolid9 borderTSolid">&nbsp;</td>
+
+  <th class="borderBSolid9 borderTSolid"   width="18%" align="right">&nbsp;</th>
+
+  <td align="left" class="borderBSolid9 borderTSolid">&nbsp;</td>
+
+  <td align="right" class="borderBSolid9 borderTSolid">&nbsp;</td>
+
+  <td align="right" class="borderBSolid9 borderTSolid">&nbsp;</td>
+
+  </tr>
+
+     </tfoot>
+
+  <tbody>
+
+    <tr>
+
+      <td width="20%" class="paddingL20">16 Ene </td>
+
+      <td width="20%">COMPRA FONDO</td>
+
+      <td width="20%" align="left">HORZNT+ B0D</td>
+
+      <td width="10%" align="right"> 742</td>
+
+      <td class="paddingR35" width="30%" align="right"> $11,774.20</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">16 Ene </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B1A</td>
+
+      <td align="right"> 164</td>
+
+      <td class="paddingR35" align="right">$11,616.40</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">10 Ene </td>
+
+      <td>VENTA FONDO</td>
+
+      <td align="left">HORZNT+ B1B</td>
+
+      <td align="right">43</td>
+
+      <td class="paddingR35" align="right">$11,474.30</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">08 Ene </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B1C</td>
+
+      <td align="right">184</td>
+
+      <td class="paddingR35" align="right">$11,318.40</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">08 Ene </td>
+
+      <td>VENTA  FONDO</td>
+
+      <td align="left">HORZNT+ B1D</td>
+
+      <td align="right">46</td>
+
+      <td class="paddingR35" align="right"> $11,164.60</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">05 Ene </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B2A</td>
+
+      <td align="right">128</td>
+
+      <td class="paddingR35" align="right">$11,012.80</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">24 Dic </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B2C</td>
+
+      <td align="right">931</td>
+
+      <td class="paddingR35" align="right"> $10,793.10</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">24 Dic  </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B3A</td>
+
+      <td align="right">806</td>
+
+      <td class="paddingR35" align="right">$10,580.60</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">23 Dic </td>
+
+      <td>VENTA  FONDO</td>
+
+      <td align="left">HORZNT+ B3C</td>
+
+      <td align="right">93</td>
+
+      <td class="paddingR35" align="right">$10,409.30</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">21 Dic </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B4A</td>
+
+      <td align="right">528</td>
+
+      <td class="paddingR35" align="right">$10,252.80</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">21 Dic </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B4B</td>
+
+      <td align="right">229</td>
+
+      <td class="paddingR35" align="right">$10,229.00</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">20 Dic </td>
+
+      <td>VENTA  FONDO</td>
+
+      <td align="left">HORZNT+ B0D</td>
+
+      <td align="right"> 742</td>
+
+      <td class="paddingR35" align="right">$11,774.20</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">11 Dic </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B1A</td>
+
+      <td align="right">164 </td>
+
+      <td class="paddingR35" align="right">$11,616.40</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">11 Dic </td>
+
+      <td>VENTA  FONDO</td>
+
+      <td align="left">HORZNT+ B1B</td>
+
+      <td align="right">743</td>
+
+      <td class="paddingR35" align="right">$11,474.30</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">03 Dic </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B1C</td>
+
+      <td align="right">184</td>
+
+      <td class="paddingR35" align="right"> $11,318.40</td>
+
+      </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<div class="marginB5 borderTSolid paddingT10">
+
+  <div class="floatL marginT5">
+
+  <!--<div class="resumen_flecha1 displayN" id="pre1_2">&nbsp;</div>
+
+  <div class="floatL">
+
+  <div class="floatL displayN" onclick="javascript:prevpage();" id="pre2_2"><a href="javascript:void(0);">Anterior </a></div>
+
+    <div class="floatL marginL8 boldText" id="p1_2" onclick="javascript:page1();"><a href="javascript:void(0);">1</a></div>
+
+    <div class="floatL marginL8" id="p2_2" onclick="javascript:page2();"><a href="javascript:void(0);">2</a></div>
+
+    <div class="floatL marginL8" id="p3_2" onclick="javascript:page3();"><a href="javascript:void(0);">3 </a></div>
+
+    <div class="floatL marginL8" id="p4_2" onclick="javascript:page4();"><a href="javascript:void(0);">4</a> </div>
+
+    <div class="floatL marginL8" onclick="javascript:nextpage();" id="sig1_2"><a href="#">Siguiente</a></div>
+
+    </div>
+
+  <div class="resumen_flecha" id="sig2_2"></div>-->
+
+   </div>
+
+<div class="floatR">
+
+<div class="floatL marginR1 bm"></div>
+
+<a class="floatL marginR10 paddingT5 boldText" href="javascript:void(0);" onclick="javascript:filtrar();" id="t20">Filtrar movimientos</a>
+
+<div class="resumen_flecha marginT7"></div><a class="floatL marginR10 paddingT5" href="#" onclick="javascript:exportar();" id="t22">Exportar</a>
+
+  </div>
+
+ <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div class="clear">&nbsp;</div>
+
+   <div class="div_cargando" id="movimientos_cargando">
+
+                       	  <img src="../../bbAvatar/images/loader.gif" alt="Cargando" /><br />
+
+                           <span id="t26"> Un momento por favor ...</span>
+
+</div>
+
+<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	
+
+	$(document).ready(function(){
+
+	optieneAlturas();top.window.scrollTo(0,0);$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+
+
+var valor1=0;   
+
+function Cta1(){
+
+	$("#divCargando").show();
+
+	setTimeout(function() {
+
+	
+
+	if(valor1==1){
+
+		window.location="14-Cheques_mes_actual_real.htm";
+
+	}
+
+	if(valor1==2){
+
+		window.location="maestra_mes_actual.htm";
+
+	}   
+
+	if(valor1==3){
+
+		window.location="26-TDD-MesActual-REAL.htm";
+
+	}   
+
+	if(valor1==4){
+
+		window.location="ChequesUSD_mes_actual.htm";
+
+	}   
+
+	if(valor1==5){
+
+		window.location="04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm";
+
+	}   
+
+	if(valor1==6){
+
+		window.location="premia_mes_actual.htm";
+
+	}   
+
+	
+
+	if(valor1==7){
+
+		window.location="credito_infonavit.html";
+
+	}   
+
+	
+
+	if(valor1==8){
+
+		window.location="credicheques_perfiles_actual.htm";
+
+	}   
+
+	
+
+	if(valor1==9){
+
+		window.location="credito_hipotecario.htm";
+
+	}   
+
+	
+
+	if(valor1==10){
+
+		window.location="inversion_perfiles.htm";
+
+	}   
+
+	
+
+	if(valor1==11){
+
+		window.location="Resumen-de-inversiones_6.htm";
+
+	}   
+
+	
+
+	if(valor1==12){
+
+		window.location="inversionesdetalle_horizonte.htm";
+
+	}   
+
+	
+
+	if(valor1==13){
+
+		window.location="Multiseries.htm";
+
+	}   
+
+	
+
+	
+
+	if(valor1==14){
+
+		window.location="Afore.htm";
+
+	} 
+
+if(valor1==15){
+
+		window.location="20-Cheques_mes_anterior_real.htm";
+
+	}
+
+	}, 2000);
+
+}
+
+		valor2=0;
+
+        function cambiopage2(){
+
+   
+
+    if(valor2==1)
+
+       {    
+
+             
+
+       window.parent.cargaDoc('Multiseries.htm');
+
+     
+
+       }
+
+    if(valor2==2)
+
+       {    
+
+             
+
+       window.parent.cargaDoc('Multiseries.htm');
+
+     
+
+       }
+
+	   
+
+   }
+
+	
+
+function imprimirMain(){
+
+	parent.document.getElementById("iframeConte").contentWindow.focus();
+
+	parent.document.getElementById("iframeConte").contentWindow.print();
+
+}
+
+
+
+function saltoInversiones(){
+
+		top.open('../../31-Inversiones.html?ifrContenedor=6&link=t26' , '_self')
+
+		
+
+	}
+
+	
+
+</script><div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayN">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src='../../bbAvatar/images/loader.gif'/></div>
+
+    <div style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'><span id="t26">Espere un momento por favor ...</span></div>
+
+</div>
+
+
+
+<div id="divExportar" class="displayN">	
+
+	<div class="mensajeError_contenidoInb">
+
+		<div id="f4" class="panelIzEnca3_text2">Exportar resultados</div>
+
+		<br />
+
+
+
+		<div class="color666 clear">
+
+			<div><input type="radio" name="radio_formato" value="Excel" /><img src="bbAvatar/images/xls.gif" /> <span id="f5">Excel</span></div>
+
+			<div>
+
+				<input type="radio" name="radio_formato" value="Texto"/><img src="bbAvatar/images/txt.gif" /> <span id="f6" class="marginR10">Texto</span>
+
+				<select class="select1" id="combo_separador" disabled="disabled">
+
+					<option value="">Separado por</option>
+
+
+
+					<option value="1">Coma</option>
+
+					<option value="2">Pipe</option>
+
+					<option value="3">Tab</option>
+
+				</select>
+
+			</div>
+
+		</div>
+
+		<div class="saldos_bloque2_f4_error combo_separador_div_error clear"><span id="f7">Seleccione un separador</span></div>
+
+
+
+		<div class="mensajeError_Fila3 clear">			
+
+			<div class="floatL"><input type="button" id="f8" value="Cancelar" class="btnRJ86 CerrarVentanaEmergente"/></div>
+
+			<div class="floatR"><input type="button" id="f9" value="Descargar" class="btnAZ86" onclick="JavaScript:frames.main.exportarResultados();" /></div>
+
+		</div><br>
+
+		<div class="f11" id="f10" style="background-color:#FAE5E5; color:#333">Es responsabilidad del usuario el resguardo de toda la información que sea exportada.</div>
+
+	</div>
+
+</div>
+
+</body>
+
+</html>
+

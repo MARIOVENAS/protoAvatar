@@ -1,0 +1,857 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>Layout Avatar</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+
+	<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+	<script type="text/javascript" src="../JFP/js/script3.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/script.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="../bancanet/contenidos/bbAvatar/js/swap.js"></script>
+
+</head>
+
+
+
+<style>
+
+.displayN{display: none;}
+
+.espacioie {*left:177px !important; left:177px\0/ !important; left:220px;}
+
+@-moz-document url-prefix(){.espacioFX {left:177px;}}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {.espacioWebK{left:177px !important;}}
+
+</style>
+
+
+
+<body onload="completa();">
+
+<!--inicia contenedor principal-->
+
+<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+	<div id="header">
+
+		<div class="utilities_nav" id="navegacionPrincipal"></div>
+
+		<div class="citibank-containerImg">
+
+			<a href="#"><div id="citibank-logo"></div></a>
+
+			<div id="citibank-imageb"></div>
+
+		</div>
+
+<!--termina header-->
+
+	</div>
+
+	<div class="cS-structBodyContainer">
+
+		<div id="title-section" class="cH-appPageHead height20">
+
+			<div class="float-left"><h1 id="t24">CAMBIO DE CLAVES DE ACCESO</h1></div>
+
+			<div class="margin-top6 titulo ancho50 margin-left10" id="flechaLinksOpcoes">
+
+				<span class="flechaGris float-left">&nbsp;</span>
+
+				<a id="t37"href="javascript:void(0);" onclick="Layuda()" class="float-left">&nbsp;Ayuda</a>
+
+			</div>
+
+		</div>
+
+        <div class="bg_demo">
+
+		    <div id="content">
+
+				<div id="subapp-box" class="noleftmenu float-left">
+
+					<div class="ancho100p height380">
+
+                    
+
+                    <div class="float-left" style="width:52%;">
+
+
+
+	<p class="margin-bottom20">Para ingresar a BancaNet y Audiomático es necesario cambiar tus claves de acceso<br />para realizar tus operaciones bancarias con mayor seguridad.</p>
+
+				
+
+	<h4 class="margin-bottom20">Para BancaNet</h4>
+
+    
+
+    <p class="margin-bottom15">Crea una nueva clave alfanumérica (8 caracteres)</p>
+
+    <div class="inputs-alf-password">
+
+    	<input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box1" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box2" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box3" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box4" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box5" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box6" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box7" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box8" />
+
+	    <div class="displayN greenCheck margin-left5"></div>
+
+	    <div class="displayN error-x margin-top3 margin-left5"></div>
+
+    </div>
+
+    <br />
+
+   <div class="overflow height20 ancho100p clearL"> </div>
+
+   
+
+   <div class="margin-bottom15">Confirma tu nueva clave alfanumérica (8 caracteres)</div>
+
+    <div class="inputs-alf-confirm">
+
+    	<input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box1_2"  />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box2_2" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box3_2" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box4_2" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box5_2" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box6_2" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box7_2" />
+
+	    <span class="float-left margin-right3 margin-top2">-</span>
+
+	    <input type="password" class="float-left width30 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box8_2" />
+
+	    <div class="displayN greenCheck margin-left5"></div>
+
+	    <div class="displayN error-x margin-top3 margin-left5"></div>
+
+		<div class="clear"></div>
+
+    </div>
+
+    
+
+
+
+</div>
+
+                    
+
+					  <div class="float-left" style="width:48%;">
+
+						  <div class="paddingL7">
+
+								<div class="boxInstructions">
+
+	<p class="margin-bottom15"><span class="strong">Para crear tus claves de acceso utiliza el teclado virtual que se presenta en tu pantalla,</span> este te habilitará las letras o números disponibles para cada casilla en base al cumplimiento de las reglas que abajo se indican.</p>
+
+	<p class="margin-bottom15">Posiciona el cursor de tu mouse en cada una de las casillas y selecciona uno a uno el caracter deseado.</p>
+
+	<ul class="bulletList">
+
+    	<li class="instruccion-1">Debe contener tanto números como letras, y ser de 8 posiciones</li>
+
+        <li class="instruccion-2">Se permite el uso de letras 
+
+        	<a href="#" class="border-dotted-link tooltip" title="ej. 'hola1357' <br>es diferente <br>que 'HOLA1357'">mayúsculas y minúsculas</a>
+
+        </li> <!-- Agregar clase "tooltip" y contenido dentro de title="" -->
+
+        <li class="instruccion-3">El primer caracter, debe ser una letra</li>
+
+        <li class="instruccion-4">No se permite el uso de letras acentuadas ni <a href="#" class="border-dotted-link tooltip" title="ej. &quot;&ntilde;&quot;, &quot;$&quot;, <br>comas, etc.">caracteres especiales</a></li>
+
+        <li class="instruccion-5">El Número de Cliente no debe estar contenido en el Password</li>
+
+        <li class="instruccion-6">No debe contener más de <a href="#" class="border-dotted-link tooltip" title="ej. &quot;12223445&quot;,<br>&quot;abbbcd&quot;">2 número o letras iguales o consecutivos</a></li>
+
+        <li class="instruccion-7 sinMarginBottom">No debe contener el nombre de la institución (Banamex)</li>
+
+    </ul>
+
+</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="border-solid margin-top12 ancho100p floatLI margin-top24ie"></div>
+
+                    
+
+                    <div class="cF-sideBySide paddingT1 paddingB18 ancho100p">
+
+                        <ul class="cN-primaryNav">
+
+                            <li class="cM-spriteBase cN-primaryNavButton " id="loginAceptar"><a href="javascript:void(0);">Aceptar</a></li>
+
+                            <li class="cN-primaryNav">
+
+                                <div id="flechaLinks">
+
+                                    <span class="flechaGris float-left"></span>
+
+                                    <a class="sinBold" href="#">Cancelar</a>
+
+                                </div></li>	
+
+                        </ul>
+
+                    </div>
+
+                    
+
+					<div class="width50p floatL">
+
+					  <div class="paddingL45"></div>
+
+					</div>
+
+					<ul class="cN-primaryNav  margin-top10">
+
+						<li></li>
+
+					</ul>
+
+				</div>
+
+            </div>
+
+			<div class="clear"></div>
+
+        </div>
+
+		<div id="footer"></div>
+
+	</div>
+
+</div>
+
+<div class="tt-char teclado-virt espacioie espacioFX espacioWebK">
+
+	<div class="tt-box">
+
+		<h4>Caracteres disponibles</h4>
+
+        <div class="char-row margin-bottom20">
+
+        	<a class="char-virt" data-char="a" href="javascript:void(0);">A</a>
+
+        	<a class="char-virt" data-char="b" href="javascript:void(0);">B</a>
+
+        	<a class="char-virt" data-char="c" href="javascript:void(0);">C</a>
+
+        	<a class="char-virt" data-char="d" href="javascript:void(0);">D</a>
+
+        	<a class="char-virt" data-char="e" href="javascript:void(0);">E</a>
+
+        	<a class="char-virt" data-char="f" href="javascript:void(0);">F</a>
+
+        	<a class="char-virt" data-char="g" href="javascript:void(0);">G</a>
+
+        	<a class="char-virt" data-char="h" href="javascript:void(0);">H</a>
+
+        	<a class="char-virt" data-char="i" href="javascript:void(0);">I</a>
+
+        	<a class="char-virt" data-char="j" href="javascript:void(0);">J</a>
+
+        	<a class="char-virt" data-char="k" href="javascript:void(0);">K</a>
+
+        	<a class="char-virt" data-char="l" href="javascript:void(0);">L</a>
+
+        	<a class="char-virt" data-char="m" href="javascript:void(0);">M</a>
+
+        	<a class="char-virt" data-char="n" href="javascript:void(0);">N</a>
+
+        	<a class="char-virt" data-char="o" href="javascript:void(0);">O</a>
+
+        	<a class="char-virt" data-char="p" href="javascript:void(0);">P</a>
+
+        	<a class="char-virt" data-char="q" href="javascript:void(0);">Q</a>
+
+        	<a class="char-virt" data-char="r" href="javascript:void(0);">R</a>
+
+        	<a class="char-virt" data-char="s" href="javascript:void(0);">S</a>
+
+        	<a class="char-virt" data-char="t" href="javascript:void(0);">T</a>
+
+        	<a class="char-virt" data-char="u" href="javascript:void(0);">U</a>
+
+        	<a class="char-virt" data-char="v" href="javascript:void(0);">V</a>
+
+        	<a class="char-virt" data-char="w" href="javascript:void(0);">W</a>
+
+        	<a class="char-virt" data-char="x" href="javascript:void(0);">X</a>
+
+        	<a class="char-virt" data-char="y" href="javascript:void(0);">Y</a>
+
+        	<a class="char-virt sinMarginRight" data-char="z" href="javascript:void(0);">Z</a>
+
+            <div class="clear"></div>
+
+        </div>
+
+        <div class="char-row margin-bottom20 minuscula">
+
+        	<a class="char-virt" data-char="a" href="javascript:void(0);">a</a>
+
+        	<a class="char-virt" data-char="b" href="javascript:void(0);">b</a>
+
+        	<a class="char-virt" data-char="c" href="javascript:void(0);">c</a>
+
+        	<a class="char-virt" data-char="d" href="javascript:void(0);">d</a>
+
+        	<a class="char-virt" data-char="e" href="javascript:void(0);">e</a>
+
+        	<a class="char-virt" data-char="f" href="javascript:void(0);">f</a>
+
+        	<a class="char-virt" data-char="g" href="javascript:void(0);">g</a>
+
+        	<a class="char-virt" data-char="h" href="javascript:void(0);">h</a>
+
+        	<a class="char-virt" data-char="i" href="javascript:void(0);">i</a>
+
+        	<a class="char-virt" data-char="j" href="javascript:void(0);">j</a>
+
+        	<a class="char-virt" data-char="k" href="javascript:void(0);">k</a>
+
+        	<a class="char-virt" data-char="l" href="javascript:void(0);">l</a>
+
+        	<a class="char-virt" data-char="m" href="javascript:void(0);">m</a>
+
+        	<a class="char-virt" data-char="n" href="javascript:void(0);">n</a>
+
+        	<a class="char-virt" data-char="o" href="javascript:void(0);">o</a>
+
+        	<a class="char-virt" data-char="p" href="javascript:void(0);">p</a>
+
+        	<a class="char-virt" data-char="q" href="javascript:void(0);">q</a>
+
+        	<a class="char-virt" data-char="r" href="javascript:void(0);">r</a>
+
+        	<a class="char-virt" data-char="s" href="javascript:void(0);">s</a>
+
+        	<a class="char-virt" data-char="t" href="javascript:void(0);">t</a>
+
+        	<a class="char-virt" data-char="u" href="javascript:void(0);">u</a>
+
+        	<a class="char-virt" data-char="v" href="javascript:void(0);">v</a>
+
+        	<a class="char-virt" data-char="w" href="javascript:void(0);">w</a>
+
+        	<a class="char-virt" data-char="x" href="javascript:void(0);">x</a>
+
+        	<a class="char-virt" data-char="y" href="javascript:void(0);">y</a>
+
+        	<a class="char-virt sinMarginRight" data-char="z" href="javascript:void(0);">z</a>
+
+            <div class="clear"></div>
+
+        </div>
+
+        <div class="char-row" style="margin-left:150px">
+
+        	<a class="char-virt char-num" data-char="1" href="javascript:void(0);">1</a>
+
+        	<a class="char-virt char-num" data-char="2" href="javascript:void(0);">2</a>
+
+        	<a class="char-virt char-num" data-char="3" href="javascript:void(0);">3</a>
+
+        	<a class="char-virt char-num" data-char="4" href="javascript:void(0);">4</a>
+
+        	<a class="char-virt char-num" data-char="5" href="javascript:void(0);">5</a>
+
+        	<a class="char-virt char-num" data-char="6" href="javascript:void(0);">6</a>
+
+        	<a class="char-virt char-num" data-char="7" href="javascript:void(0);">7</a>
+
+        	<a class="char-virt char-num" data-char="8" href="javascript:void(0);">8</a>
+
+        	<a class="char-virt char-num" data-char="9" href="javascript:void(0);">9</a>
+
+        	<a class="char-virt char-num" data-char="0" href="javascript:void(0);">0</a>
+
+            <div class="clear"></div>
+
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="tt-char-arrow" style="left:0px; bottom:-23px"></div>
+
+	</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	var es = new Array('ESPAÑOL','BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My <strong>Banca</strong>Net','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+
+
+
+	es.push('ACCESS CODE CHANGE',
+
+		'To log into <b>Banca</b>Net it is necessary  to change your secret<br/> number for an alphanumeric password to carry out your banking transactions whit higher security',
+
+		'For Banca<span class="normal">Net</span>',
+
+		'Create a new alphanumeric code<br/> (8 characters)',
+
+		'Confirm your new alphanumeric code <br/> (8 characters)',
+
+		'Alphanumeric access code:',
+
+		'Must have letters and numbers, and be 8 positions long',
+
+		'The use of <a href="javascript:void(0);" class="border-bot tool_left" id="mayusculas">all caps and small caps</a> is allowed',
+
+		'The first  character must be a letter',
+
+		'<a href="javascript:void(0);" class="border-bot tool_left" id="caracteres">Special characters</a> or accents are not allowed',
+
+		'The Customer number must not be included in the Password',
+
+		'Must not include more than <a href="javascript:void(0);" class="border-bot tool_left" id="consecutivos">2 repeated or consecutive numbers or letters</a>',
+
+		'Must not include the name of the institution (Banamex)',
+
+		'Help','ACCEPT','Cancel',
+
+		'Example: "hello 1357" is different from "HELLO 1357"',
+
+		'Example: "ñ", "$", comas, etc.',
+
+		'Example: "12223445", "abbbcd"'
+
+	);
+
+
+
+	$( document ).ajaxStop( function(){
+
+		$( '#t0' ).hide();
+
+		if( isEnglishSel ) {
+
+			tooltip_left();
+
+		}
+
+	});
+
+
+
+	$(document).ready(function(){
+
+		ajustarOverlay();
+
+		ajusta_tooltpis();
+
+		funciones_loginP();
+
+	});
+
+
+
+	function Layuda(){
+
+		window.open(rutaAyudaAv+'CambiodeClavesdeAcceso.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+</script>
+
+
+
+<script type="text/javascript">				
+
+	$(document).ready(function(){
+
+		addTooltip();
+
+
+
+		var cliente = '13579';
+
+		teclado_virtual( cliente );	
+
+		
+
+		var cliente2 = '13579';
+
+		teclado_virtual2( cliente2 );	
+
+		
+
+	});
+
+				
+
+	function posicionarTooltip(link, tooltip){
+
+		var posLink = link.offset();
+
+		//If tooltip's position is bigger than body's width
+
+		if(posLink.left + link.outerWidth() + tooltip.outerWidth() + 15 < $("body").outerWidth()){
+
+			tooltip.css({
+
+				'left': posLink.left + link.outerWidth() + 15,
+
+				'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+
+			});
+
+		}else{
+
+		tooltip.css({
+
+			'left': posLink.left - link.outerWidth() - 225,
+
+			'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+
+		})
+
+			.find(".tt_arrow")
+
+			.addClass("tt_arrow_right");
+
+		}
+
+	}
+
+
+
+	function addTooltip(){
+
+		$('.tooltip').click(function(e){
+
+					
+
+			e.preventDefault();
+
+			
+
+			var tt_container = $('<div id="tt_container" class="medium2"></div>'),
+
+			flecha = $('<div class="tt_arrow"></div>'),
+
+			actions = $('<div class="tt_actions"></div>'),
+
+			title_content = $(this).attr("title");
+
+					
+
+			//Si ya había un tooltip lo elimino
+
+			if($('body').find('#tt_container')){
+
+				$('#tt_container').remove(); 
+
+			}
+
+			
+
+			//Agrego la flechita
+
+			flecha.appendTo(tt_container);
+
+			//Agrego el boton de cerrar
+
+			$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container);
+
+			
+
+			//Agrego el texto indicativo
+
+			$('<p class="p_tooltip"></p>').appendTo(tt_container);
+
+
+
+			//Agrego el tooltip
+
+			tt_container.appendTo('body');
+
+			$('.p_tooltip').html(title_content);
+
+			
+
+			//Acomodo la fecha a la mitad del tooltip
+
+			flecha.css({
+
+				'top' : (tt_container.outerHeight() - flecha.outerHeight())/2
+
+			})
+
+			
+
+			posicionarTooltip($(this), tt_container);
+
+				
+
+			$('#tt_container .tt_cancel, #tt_container .tt_close, #tt_container .tt_continue').click(function(){
+
+				$('#tt_container').remove();
+
+			});
+
+		});
+
+	}
+
+
+
+	function completa(){
+
+		
+
+	 var espera=300;
+
+	
+
+	if(location.href.indexOf('10a-Log-in-CambioClaves-Pass-Pass.html')!=-1 )
+
+    $.doTimeout(espera+800, function(){  // llenado en 01-Log-in.html
+
+		   llenarValores('input','#box1','a');
+
+		   llenarValores('input','#box2','c');
+
+		   llenarValores('input','#box3','e'); 
+
+		   llenarValores('input','#box4','g'); 
+
+		   llenarValores('input','#box5','i');
+
+		   llenarValores('input','#box6','k'); 
+
+		   llenarValores('input','#box7','m'); 
+
+		   llenarValores('input','#box8','2');
+
+		   $('#box8').focus();
+
+			   $.doTimeout(espera+800, function(){ 
+
+			   $('#box8').blur();
+
+			   setTimeout(function(){completa2();},800);
+
+			});
+
+     });
+
+	 
+
+	}
+
+	 /// Confirmacion
+
+	function completa2(){ 
+
+	var espera=300;
+
+	
+
+	if(location.href.indexOf('10a-Log-in-CambioClaves-Pass-Pass.html')!=-1 )
+
+	
+
+	$.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+
+           $('#box1_2').focus();
+
+           $.doTimeout(espera+800, function(){ 
+
+                   llenarValores('input','#box1_2','a');
+
+				   $.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+
+				   $('#box2_2').focus();
+
+				   $.doTimeout(espera+800, function(){ 	   
+
+				   llenarValores('input','#box2_2','c');
+
+				   $.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+
+						   $('#box3_2').focus();
+
+						   $.doTimeout(espera+800, function(){ 
+
+						   llenarValores('input','#box3_2','e');
+
+						   $.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+
+							   $('#box4_2').focus();
+
+							   $.doTimeout(espera+800, function(){ 
+
+							   llenarValores('input','#box4_2','g');
+
+							   $.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+
+									   $('#box5_2').focus();
+
+									   $.doTimeout(espera+800, function(){ 
+
+									   llenarValores('input','#box5_2','i');
+
+									   $.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+
+											   $('#box6_2').focus();
+
+											   $.doTimeout(espera+800, function(){ 
+
+											   llenarValores('input','#box6_2','k');
+
+											    $.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+
+													   $('#box7_2').focus();
+
+													   $.doTimeout(espera+800, function(){ 
+
+													   llenarValores('input','#box7_2','m');
+
+													   $.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+
+															   $('#box8_2').focus();
+
+															   $.doTimeout(espera+800, function(){ 
+
+																	  llenarValores('input','#box8_2','2');
+
+																	  $('#box8_2').blur();
+
+																	  $("#loginAceptar").click(function(){location.href='10-Log-in-CambioClaves.html'});
+
+																});
+
+														 
+
+														 });
+
+														});
+
+												 
+
+												 });
+
+												});
+
+										 
+
+										 });
+
+										});
+
+								 
+
+								 });
+
+								});
+
+						 });
+
+						});
+
+					 
+
+					  });
+
+				   
+
+				   });
+
+				});
+
+            });
+
+     
+
+     });
+
+	}
+
+
+
+</script>
+
+
+
+</body>
+
+<!--termina contenedor principal-->
+
+</html>

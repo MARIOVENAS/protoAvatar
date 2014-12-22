@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Layout Avatar</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+	<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+	<script type="text/javascript" src="../JFP/js/script3.js"></script>
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../JFP/js/langManagement.js"></script>
+</head>
+
+<body>
+<div class="overlay"></div>
+	<div class="overlay_trans"></div>
+<!--inicia contenedor principal-->
+	<div id="wrap" class="cS-structMainContainer">
+<!--inicia header-->
+		<div id="header">
+			<div class="utilities_nav" id="navegacionPrincipal"></div>
+			<div class="citibank-containerImg">
+				<a href="#"><div id="citibank-logo"></div></a>
+				<div id="citibank-imageb"></div>
+			</div>
+<!--termina header-->
+		</div>
+		<div class="cS-structBodyContainer">
+			<div id="title-section" class="cH-appPageHead height20">
+				<div class="float-left"><h1 id="t63">CONTRATO DE BANCA ELECTR&Oacute;NICA</h1></div>
+				<div class="margin-top6 titulo ancho50" id="flechaLinksOpcoes">      
+					<span class="flechaGris float-left">&nbsp;</span>
+					<a id="t64" href="javascript:void(0);" onclick="Layuda()" class="float-left">&nbsp;Ayuda</a>            
+				</div> 
+				<div class="margin-top6 titulo ancho10" id="flechaLinksOpcoes">&nbsp;</div>
+				<div class="margin-top6 titulo ancho50" id="flechaLinksOpcoes">
+					<span class="flechaGris float-left">&nbsp;</span>
+					<a id="t65" href="javascript:void(0);" onclick="javascript:window.print();" class="float-left">&nbsp;Imprimir</a>
+				</div>
+			</div>
+			<div class="bg_demo">
+				<div id="content">
+					<div id="subapp-box" class="noleftmenu float-left">
+						<p id="t66">
+							En <b>Banca</b>Net queremos brindarte el mejor servicio, por ello, constantemente desarrollamos nuevas funcionalidades para que tu experiencia en nuestra banca electr&oacute;nica sea satisfactoria.<br /><br />
+							Haz todas tus operaciones bancarias sin costo*, adem&aacute;s de estar mejor informado de tus movimientos y nuestras promociones proporcionanos tus datos para estar en contacto contigo.
+						</p>
+						<div class="form_conten">
+							<div class="form_label marginT6"><span id="t67">Correo electr&oacute;nico </span><input id="contratoModificatorioCorreo" type="text" readonly /></div>
+							<div class="form_label marginT6"><span id="t68">Confirma tu correo electr&oacute;nico</span><input id="contratoModificatorioCorreo2" type="text" /></div>
+							<div class="form_label marginT6">
+								<span id="t69">N&uacute;mero Celular&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(044/045)</span>
+								<input type="text" id="contratoModificatorioCelular" readonly />
+								<span class="select">
+									<select id="comp" class="width160 marginT2">
+										<option id="t70">Compa&ntilde;&iacute;a</option>
+										<option>Telcel</option>
+									</select>
+								</span>
+							</div>
+						</div>
+						<p class="paddingT12">
+							<span id="t71"> Si deseas dejar de recibir informaci&oacute;n, puedes cancelar los env&iacute;os en el momento que lo decidas.<br /><br />
+							Adicionalmente te pedimos aceptar nuestro</span>
+							<a href="https://bancanet.boveda.banamex.com.mx/spanishdir/contrato_marzo_2011.pdf" target="new" class="underline"><span id="t72">Clausulado del Contrato de Prestaci&oacute;n de Servicios</span></a>
+							<span id="t73">con el cual nos permites seguirte ofreciendo nuestros servicios.<br /><br />
+							*Personas F&iacute;sicas con Actividad Empresarial y/o Personas Morales contin&uacute;an con el esquema de comisiones del servicio contratado.</span>
+						</p>
+						<div class="border-solid margin-top20"></div>
+						<ul class="cN-primaryNav float-left margin-top5">
+							<li class="cM-spriteBase cN-primaryNavButton" id="contratoModificatorioAceptar"><a id="t74" href="#">ACEPTAR</a></li>
+							<li>
+								<div id="flechaLinks">
+									<span class="flechaazul float-left"></span>
+                                    <a href="01-Log-in.html" class="sinBold" id="t75">Cancelar</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div id="footer"></div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		ajustarOverlay();
+		ajusta_tooltpis();
+		funciones_loginP();
+	});
+
+	$( document ).ajaxStop( function(){
+		$( '#t0' ).hide();
+	});
+
+	function Layuda(){
+		window.open(rutaAyudaContra,'','height='+(screen.height-70)+',width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+</script>
+
+
+   <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+            google.load('search', '1', {language : 'es'});
+            
+        </script>
+
+</body>
+<!--termina contenedor principal-->
+</html>

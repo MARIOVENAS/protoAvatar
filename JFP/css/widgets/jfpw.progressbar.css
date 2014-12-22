@@ -1,0 +1,24 @@
+.jfpw-progressbar-label-min {float: left; text-align: left;}
+
+.jfpw-progressbar-label-max {float: right; text-align: right;}
+
+
+
+/* Blue Default Progressbar
+
+ **********************/
+
+.ui-progressbar.jfpw-progressbar { height:15px; background-color: #115395; background-image: none; border: none;}
+
+.ui-progressbar.jfpw-progressbar .ui-progressbar-value {background-color: #7FA7E2; background-image: none; border: none;}
+
+
+
+/* White and blue Progressbar
+
+***********************/
+
+.ui-progressbar.jfpw-progressbar-white { height:5px; background-color: white; background-image: none; border: solid 1px #E1E1E1;}
+
+.ui-progressbar.jfpw-progressbar-white .ui-progressbar-value {background-color: #AADBF1; background-image: none; border: none; height: 7px;}
+

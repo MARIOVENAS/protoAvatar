@@ -1,0 +1,1362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="aa0cf85a-af21-4344-bce4-e56fe7dca4ea" ><input type=hidden name="EWF_SYS_1" value="00EP26K9UFNMNHTWBOIQ31JC42@@DDXYQ3Q8L333" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZARL-PAG_RETIROS"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="rxley02.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="11"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script language="javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script language="javascript" src="../../bbAvatar/js/Cboformat.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script language="javascript">
+
+	var LeyendasRechazo;
+
+	var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+	var es = new Array("By law contributions withdrawals","Select a deposit account. Enter the withdrawal data and click &quot;Continue&quot;","Accounts",
+
+							"Withdrawal account","Deposit account","Withdrawal data","By law withdrawals","Amount","Continue","Rejection reason",
+
+							"To make a bylaw withdrawal is necessary to verify the status of your request","WITHDRAWAL");
+
+	
+
+		rutaAyuda = rutaAyuda+"Retiros.htm";
+
+	
+
+		var MensajeE;
+
+	
+
+	function formatImporte(id,Msg_Error){
+
+	$("#"+id+"_error").css("display","none");
+
+	var patt = /^\d+\.?\d*$/;
+
+	if(!patt.test($("#"+id).val())){
+
+				$("#"+id+"_error").css("display","block").html(Msg_Error);
+
+		return false;
+
+	}
+
+	return (true);
+
+}
+
+
+
+	var Mensaje1;
+
+	var Mensaje2;
+
+
+
+function Valida(){  
+
+	var flag = true;
+
+
+
+	if(!Combo_Vacio("DATA5", Mensaje2))
+
+		flag = false;
+
+	$("#DATA1").val(($("#ComboCtasDetalle").attr("selectedIndex")+1));
+
+	$("#DATA2").val($("#DATA5 option:selected").val());
+
+	if(!formatImporte("DATA4",Mensaje1))
+
+		flag = false;
+
+	$("#DATA3").val($("#DATA5").attr("selectedIndex"));
+
+	if(flag != false)
+
+		parent.cargaDocN('Retiro_Afore/confirma_retiro_por_ley.html');
+
+	else
+
+		parent.Expandir();
+
+}
+
+	
+
+	function DoSubmit( value ){
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+	function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+	function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+	var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+			
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+									
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+	
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+	
+
+	$(document).ready(function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace(){
+
+
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+	
+
+	$(document).ready(function(){
+
+		
+
+	 MensajeE = (language == 'eng') ? "Rejected":"Rechazada";
+
+	 Mensaje1 = (language == 'eng') ? "Only numeric data is accepted, Please verify":"Solo se permiten datos numericos en este campo. Favor de verificar";
+
+	 Mensaje2 = (language == 'eng') ? "Select an account number.":"Es necesario seleccionar la cuenta destino. Favor de verificar.";
+
+		
+
+		creaCombos();
+
+		llenaArray();
+
+		ValidaStatusCombo();
+
+		iniciaVariables();
+
+		$("#ComboCtasDetalle").change(function(){ValidaStatusCombo();});
+
+	});
+
+	
+
+	function creaCombos(){
+
+		var descripcion = "";
+
+		var getNuevoCombo = "";
+
+		
+
+		var cad = (language == 'eng') ? 'Select an option' : 'Selecciona una opci&oacute;n'; 
+
+		
+
+				if("PS" != "PS"){
+
+			var alias="";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "";
+
+			else
+
+				descripcion = "";
+
+			getNuevoCombo = "<option value='PS'>"+Combo_Propias(descripcion,cad,'')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='PS'>"+cad+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("2" != "PS"){
+
+			var alias="Cheques";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Cheques";
+
+			else
+
+				descripcion = "Cheques";
+
+			getNuevoCombo = "<option value='2'>"+Combo_Propias(descripcion,'002','MXN','40,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='2'>002</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("6" != "PS"){
+
+			var alias="Mi maestra.";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Cta. Maestra Opc.";
+
+			else
+
+				descripcion = "Mi maestra.";
+
+			getNuevoCombo = "<option value='6'>"+Combo_Propias(descripcion,'  501','MXN','45,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='6'>  501</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("9" != "PS"){
+
+			var alias="Tarjeta Cr&eacute;dito";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Tarjeta Cr&eacute;dito";
+
+			else
+
+				descripcion = "Tarjeta Cr&eacute;dito";
+
+			getNuevoCombo = "<option value='9'>"+Combo_Propias(descripcion,'  796','MXN','50,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='9'>  796</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("16" != "PS"){
+
+			var alias="Cheques";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Cheques";
+
+			else
+
+				descripcion = "Cheques";
+
+			getNuevoCombo = "<option value='16'>"+Combo_Propias(descripcion,'888','USD','54,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='16'>888</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("18" != "PS"){
+
+			var alias="Tarj Premia Pre";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Tarj Premia Pre";
+
+			else
+
+				descripcion = "Tarj Premia Pre";
+
+			getNuevoCombo = "<option value='18'>"+Combo_Propias(descripcion,'793','MXN','60,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='18'>793</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("19" != "PS"){
+
+			var alias="Cuenta Perfiles";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Cuenta Perfiles ";
+
+			else
+
+				descripcion = "Cuenta Perfiles";
+
+			getNuevoCombo = "<option value='19'>"+Combo_Propias(descripcion,'502','MXN','40,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='19'>502</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("21" != "PS"){
+
+			var alias="Credicheque Perfiles Banamex";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Credicheque Perfiles Banamex ";
+
+			else
+
+				descripcion = "Credicheque Perfiles Banamex";
+
+			getNuevoCombo = "<option value='21'>"+Combo_Propias(descripcion,'502','MXN','45,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='21'>502</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("22" != "PS"){
+
+			var alias="Cr&eacute;dito Personal Perfiles Banamex";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Cr&eacute;dito Personal Perfiles Banamex";
+
+			else
+
+				descripcion = "Cr&eacute;dito Personal Perfiles Banamex";
+
+			getNuevoCombo = "<option value='22'>"+Combo_Propias(descripcion,'502','MXN','50,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='22'>502</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("25" != "PS"){
+
+			var alias="Tarj Premia Pre";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Tarj Premia Pre";
+
+			else
+
+				descripcion = "Tarj Premia Pre";
+
+			getNuevoCombo = "<option value='25'>"+Combo_Propias(descripcion,'245','MXN','54,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='25'>245</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+				if("26" != "PS"){
+
+			var alias="Clasica";
+
+			var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+			if(aliasAux == "")
+
+				descripcion = "Clasica";
+
+			else
+
+				descripcion = "Clasica";
+
+			getNuevoCombo = "<option value='26'>"+Combo_Propias(descripcion,'199','MXN','60,000.00')+"</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}else{
+
+			getNuevoCombo = "<option value='26'>199</option>";
+
+			$("#DATA5").append(getNuevoCombo);
+
+		}
+
+		
+
+	}
+
+	function llenaArray(){
+
+	if(language == 'eng') 
+
+		LeyendasRechazo = new Array("","","Cta in process 43 bis","","","Cta in process 43 bis","","","Cta in process 43 bis","","","Cta in process 43 bis","","","Cta in process 43 bis","");
+
+		else
+
+		LeyendasRechazo = new Array("","","Cta en proceso 43 bis","","","Cta en proceso 43 bis","","","Cta en proceso 43 bis","","","Cta en proceso 43 bis","","","Cta en proceso 43 bis","")
+
+	}
+
+	function ValidaStatusCombo(){
+
+		$("#DATA4").val("1000");
+
+		var caddata1=$("#ComboCtasDetalle option:selected").val();
+
+		var arrdata1=caddata1.split("+");
+
+		var retstatus=arrdata1[3];
+
+		var lstatus=retstatus.length;
+
+		if(lstatus=="2" && retstatus!="01")
+
+			errorMensaje($("#ComboCtasDetalle").attr("selectedIndex"));
+
+		else if(lstatus=="1" && retstatus!="1")
+
+			errorMensaje($("#ComboCtasDetalle").attr("selectedIndex"));
+
+		else
+
+			abreModales();
+
+	}
+
+	function iniciaVariables(){
+
+		$("#DATA5").attr("selectedIndex",0);
+
+		$("#ComboCtasDetalle").attr("selectedIndex",0);
+
+		$("#DATA4").val("1000");
+
+	}
+
+	function errorMensaje(indice){
+
+		$(".errorCombo").css("display","none");
+
+		$(".errorComboActivo").css("display","");
+
+		if(LeyendasRechazo[indice] == "")
+
+			$("#ErrorLeyendaStatus").html(MensajeE);
+
+		else
+
+			$("#ErrorLeyendaStatus").html(LeyendasRechazo[indice]);
+
+	}
+
+	function abreModales(){
+
+		$(".errorCombo").css("display","");
+
+		$(".errorComboActivo").css("display","none");
+
+	}
+
+	function enviaDatos(datos, evento) {   
+
+		document.forms[0].DATA3.value = datos;    
+
+		DoSubmit(evento);
+
+	}
+
+</script>
+
+<script>parent.setFecha("09/04/12    17:21:59  ");</script>
+
+
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="172159  ";b$Cont="172159  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>
+
+<div id="t11"class="float-left fonttit">RETIROS</div>
+
+<div class="panelIzEnca3_text2 font_arial" id="t0">Retiro de aportaciones por ley</div>
+
+<div class="color666 paddingT5 f11 font_arial" id="t1">Selecciona una cuenta de dep&oacute;sito. Completa los datos del retiro y da clic en &quot;Continuar&quot;</div>
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t2">Cuentas</span></td>
+
+			<td valign="top" class="padding20152015">
+
+
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 ">
+
+					<tr>
+
+						<td valign="top" class="paddingL0 paddingR0 paddingT0">
+
+							<div class="titulo_tabla_at marginT0" id="t3">Cuenta retiro</div>
+
+							<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+								<tr>
+
+									<td class="ancho50p paddingT0 paddingL0">Mi afore NSS MXN - 424</td>
+
+									<td class="ancho50p paddingT0">&nbsp;</td>
+
+
+
+								</tr>
+
+							</table>
+
+							<div class="negrita color333 f11 paddingB5 paddingT20" id="t4">Cuenta dep&oacute;sito</div>
+
+							<select name="DATA5" id="DATA5" class="ancho100p selectp1" selected-by="VALUE" selected="PS">
+
+							</select>
+
+							<div id="DATA5_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+						</td>    
+
+					</tr>                                           
+
+				</table>
+
+
+
+			</td>
+
+		</tr>
+
+	</table>       	
+
+</div>
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t5">Datos del retiro</span></td>
+
+			<td valign="top" class="padding20152015">
+
+
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 ">
+
+					<tr>
+
+						<td colspan="2" valign="top" class="paddingL0 paddingR0 paddingT0">
+
+							<div class="negrita color333 f11 paddingB5" id="t6">Retiros por Ley</div>
+
+							<select id="ComboCtasDetalle" class="ancho100p selectp1">
+
+																<option value="000000007283+Matrimonio1+Afore NSS M.N 424  Mi afore NSS+01">Matrimonio1&nbsp;&nbsp;Status: Aceptado-Disponible</option>
+
+																<option value="000000089764+Desempleo1+Afore NSS M.N 424  Mi afore NSS+02">Desempleo1&nbsp;&nbsp;Status: Aceptado-No Disponible</option>
+
+
+
+																<option value="000000039471+Disposici&oacute;n1+Afore NSS M.N 424  Mi afore NSS+03">Disposici&oacute;n1&nbsp;&nbsp;Status: Rechazado</option>
+
+																<option value="000000007283+Matrimonio2+Afore NSS M.N 424  Mi afore NSS+01">Matrimonio2&nbsp;&nbsp;Status: Aceptado-Disponible</option>
+
+																<option value="000000089764+Desempleo2+Afore NSS M.N 424  Mi afore NSS+02">Desempleo2&nbsp;&nbsp;Status: Aceptado-No Disponible</option>
+
+																<option value="000000039471+Disposici&oacute;n2+Afore NSS M.N 424  Mi afore NSS+03">Disposici&oacute;n2&nbsp;&nbsp;Status: Rechazado</option>
+
+																<option value="000000007283+Matrimonio3+Afore NSS M.N 424  Mi afore NSS+01">Matrimonio3&nbsp;&nbsp;Status: Aceptado-Disponible</option>
+
+
+
+																<option value="000000089764+Desempleo3+Afore NSS M.N 424  Mi afore NSS+02">Desempleo3&nbsp;&nbsp;Status: Aceptado-No Disponible</option>
+
+																<option value="000000039471+Disposici&oacute;n3+Afore NSS M.N 424  Mi afore NSS+03">Disposici&oacute;n3&nbsp;&nbsp;Status: Rechazado</option>
+
+																<option value="000000007283+Matrimonio4+Afore NSS M.N 424  Mi afore NSS+01">Matrimonio4&nbsp;&nbsp;Status: Aceptado-Disponible</option>
+
+																<option value="000000089764+Desempleo4+Afore NSS M.N 424  Mi afore NSS+02">Desempleo4&nbsp;&nbsp;Status: Aceptado-No Disponible</option>
+
+																<option value="000000039471+Disposici&oacute;n4+Afore NSS M.N 424  Mi afore NSS+03">Disposici&oacute;n4&nbsp;&nbsp;Status: Rechazado</option>
+
+
+
+																<option value="000000007283+Matrimonio5+Afore NSS M.N 424  Mi afore NSS+01">Matrimonio5&nbsp;&nbsp;Status: Aceptado-Disponible</option>
+
+																<option value="000000089764+Desempleo5+Afore NSS M.N 424  Mi afore NSS+02">Desempleo5&nbsp;&nbsp;Status: Aceptado-No Disponible</option>
+
+																<option value="000000039471+Disposici&oacute;n5+Afore NSS M.N 424  Mi afore NSS+03">Disposici&oacute;n5&nbsp;&nbsp;Status: Rechazado</option>
+
+								
+
+							</select>
+
+							<div id="Error" class="errorComboActivo" style="display:none;">
+
+								<div class="titulo_tabla_at" id="t9">Motivo del rechazo</div>
+
+
+
+								<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 paddingB0">
+
+									<tr>
+
+										<td class="ancho50p paddingT0 paddingL0 coloree2e24 negrita" style="display:block;" id="ErrorLeyendaStatus"></td>
+
+										<td class="ancho50p paddingT0">&nbsp;</td>
+
+									</tr>
+
+								</table>
+
+							</div>
+
+						</td>    
+
+					</tr>
+
+
+
+					<tr class="errorCombo" id="Importe">
+
+						<td valign="top" class="padding0 ancho50p">
+
+							
+
+							<div class="negrita color333 f11 paddingB5 paddingT20" id="t7">Importe MXN</div>
+
+							<input type="hidden" maxlength="18" class="input" value="1000" name="DATA4" id="DATA4" />		<div class="color666 f11 paddingB5 clear">$ 1,000.00</div>
+
+							<div class="saldos_bloque2_f4_error_display_blanco" id="DATA4_error"></div>
+
+						</td>
+
+						<td valign="top" class="padding0L20 ancho50p">&nbsp;</td>                  
+
+					</tr>
+
+
+
+				</table>
+
+			</td>
+
+		</tr>
+
+	</table>
+
+	<div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5 errorComboActivo" style="display:none;" id="t10">
+
+		Para realizar un Retiro por Ley es necesario que verifiques el estatus de tu solicitud presentada previamente en sucursal.
+
+	</div>
+
+</div>
+
+<div class="marginT20 clear overflow errorCombo">
+
+	<input type="button" class="btnAZ86 floatR" value="Continuar" id="t8" onclick="Valida()"/>
+
+
+
+</div>
+
+<input type="hidden" name="DATA1" id="DATA1" value=""/>
+
+<input type="hidden" name="DATA2" id="DATA2" value=""/>
+
+<input type="hidden" name="DATA3" id="DATA3" value=""/>
+
+<input type="hidden" name="EWFBUTTON" id="EWFBUTTON" value=""/>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Retiros por Ley Afore|rxley02.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+
+
+

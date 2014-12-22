@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+ <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+		
+
+		
+
+    	<script type="text/javascript">
+
+		
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);
+
+setTimeout('window.parent.ajustarIframe()', 1000);});
+
+			
+
+			
+
+function Initialize(){
+
+	document.getElementById("che").style.display="none";
+
+	codigo="";
+
+	codigo=codigo.replace(/\s+/gi," ");
+
+	if("SPANISH"=="ENGLISH"){
+
+
+
+		es=["Your modification has been","Modification Data","Account","Check","Authorization number","Check new status","processed",
+
+		"with the corresponding instruction numbers","Checkbooks management","Modification not applied","Status Change","Message",
+
+		"Not Protected Checkbook. Contact branch. Pr","Has not yet Protected Checkbook, click <a href='#' class='underline fuente11'>here</a> for contract.",""];
+
+		swap();
+
+		estado1="Rejected";
+
+		estado2="Import error";
+
+	}
+
+	else{
+
+
+
+		estado1="Rechazado";
+
+		estado2="Error por Importe";
+
+	}
+
+	if(document.getElementsByName("checkbox").length=="1"){
+
+		if(document.getElementById("est"+document.forms[0].checkbox.value).innerHTML==estado1 || 
+
+		document.getElementById("est"+document.forms[0].checkbox.value).innerHTML==estado2 ){
+
+			document.getElementById("bueno"+document.forms[0].checkbox.value).style.display="none";
+
+			document.getElementById("buen"+document.forms[0].checkbox.value).style.display="none";
+
+			var band=1;
+
+			if(codigo=="0036 S127 0060 0036"){
+
+				document.getElementById("che").style.display="block";
+
+			}
+
+		}
+
+		else{
+
+			document.getElementById("error"+document.forms[0].checkbox.value).style.display="none";
+
+			document.getElementById("erro"+document.forms[0].checkbox.value).style.display="none";
+
+			document.getElementById("err"+document.forms[0].checkbox.value).style.display="none";
+
+		}
+
+	}
+
+	else{
+
+		for(i=0; i<document.getElementsByName("checkbox").length; i++){
+
+			if(document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML==estado1 || 
+
+			document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML==estado2 ){
+
+				document.getElementById("bueno"+document.forms[0].checkbox[i].value).style.display="none";
+
+				document.getElementById("buen"+document.forms[0].checkbox[i].value).style.display="none";
+
+				var band=1;
+
+			}
+
+			else{
+
+				document.getElementById("error"+document.forms[0].checkbox[i].value).style.display="none";
+
+				document.getElementById("erro"+document.forms[0].checkbox[i].value).style.display="none";
+
+				document.getElementById("err"+document.forms[0].checkbox[i].value).style.display="none";
+
+			}
+
+		}
+
+	}
+
+	if(band==1){
+
+		document.getElementById("mod").className="saldos_bloque3_rojo";
+
+		document.getElementById("t6").innerHTML="";
+
+		document.getElementById("t7").innerHTML="";
+
+		if("SPANISH"=="ENGLISH"){
+
+			document.getElementById("t0").innerHTML="One or more modifications were not applied. Please review the modification data.";
+
+		}
+
+		else{
+
+		document.getElementById("t0").innerHTML="Una o m&aacute;s modificaciones no fueron aplicadas. Favor de revisar los datos de la modificaci&oacute;n.";
+
+		}
+
+		if(codigo=="0036 S127 0060 0036"){
+
+			document.getElementById("che").style.display="block";
+
+		}
+
+	}
+
+}
+
+
+
+function manda_ICP(){
+
+	document.forms[0].DATA8.value="2";
+
+	document.forms[0].DATA9.value="3";
+
+	DoSubmit("CHE PRO");
+
+}
+
+
+
+function DoSubmit( value ){
+
+	document.forms[0].EWFBUTTON.value = value;
+
+	document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+	document.forms[0].submit();
+
+}
+
+
+
+		</script>
+
+<script>parent.setFecha("20/04/12    14:00:01  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="140001  ";b$Cont="140001  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"   NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="292a9cc4-56b7-4712-af5b-0bbb3bce8f52" ><input type=hidden name="EWF_SYS_1" value="YJ1UA8PY6N0A13SHOV47JD9C8JDZJ6LGEIW1QWQZ" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZSCH-PAG APLICACION MOD"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="21-Aplicacion_Modificacion_Estatus.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="14"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+
+
+   
+
+      
+
+        <div id="t8"class="panelIzEnca3_text2">Administraci&oacute;n de chequeras</div>
+
+        <div id="mod" class="saldos_bloque3_verde paddingL20 marginT17" ><label id="t0"> Tu modificaci&oacute;n ha sido</label> <span id="t6" class="negrita font_13">aplicada</span> <label id="t7">con los n&uacute;meros de autorizaci&oacute;n correspondientes.</label></div> 
+
+        
+
+<div class=" ">
+
+        
+
+        <div class=" borderBSolid  borderRSolid borderTSolid borderLSolid   marginT20">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p  paddingT18 paddingL20" valign="top"><p id="t1" class="f12">Datos de la<br>modificaci&oacute;n </p></td>
+
+                    <td valign="top" class=" paddingT20 paddingL20 paddingR20 paddingB13">
+
+                    
+
+                        <table id="tablas" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3" >
+
+							<thead>
+
+								<tr>
+
+									<td id="t2" class=" bgF1F2F2"><span>Cuenta</span></td>
+
+									<td class=" bgF1F2F2">Cheques M.N 002 Cheques</td>
+
+								</tr>
+
+							</thead>
+
+							
+
+							<tbody>
+
+															<tr>
+
+									<td colspan="2" class="  padding0">
+
+										<div class="overflow clear borderBSolid   marginT17  marginB10 paddingB5 " >
+
+											<span class="floatL negrita  f11 color000 "><label id="t3">Cheque</label> 1</span>
+
+										</div>
+
+									</td>
+
+								</tr>
+
+								<tr id="bueno1">
+
+										<td id="t4" class=" bgF1F2F2 "><span>N&uacute;mero de autorizaci&oacute;n</span></td>
+
+										<td class=" bgF1F2F2 ">122210</td>
+
+										<tr id="buen1">
+
+											<td id="t5" class=""><span>Nuevo estatus del cheque</span></td>
+
+											<td>
+
+												<div id="est1" value="Activado">Prevenir por robo o extravio</div>
+
+												<div><input name="checkbox" type="checkbox" value="1" style="display:none"/></div>
+
+											</td>
+
+										</tr>
+
+								</tr>
+
+								<tr id="error1">
+
+									<td colspan="2" class="ancho50p bgFeeded">
+
+										<div class="floatL paddingL0 paddingR10">
+
+											<img src="../../bbAvatar/images/icoError1.gif" alt="Error" />
+
+										</div><label id="t9">Modificaci&oacute;n no aplicada.</label>
+
+									</td>
+
+									<tr>
+
+										<td colspan="2" class=" padding0 margin0 "> <div class=" alto8 ancho100p" >  </div> </td>
+
+									</tr>
+
+									<tr id="erro1">
+
+										<td id="t10" class=" bgF1F2F2"><span>Estatus del cambio</span></td>
+
+										<td class=" bgF1F2F2 ">Prevenir por robo o extravio</td>
+
+									</tr>                            
+
+									<tr id="err1">
+
+										<td id="t11"><span>Mensaje</span></td>
+
+										<td id="t12">5</td>
+
+									</tr>
+
+								</tr>
+
+									
+
+								
+
+								
+
+									
+
+															<tr>
+
+									<td colspan="2" class="  padding0">
+
+										<div class="overflow clear borderBSolid   marginT17  marginB10 paddingB5 " >
+
+											<span class="floatL negrita  f11 color000 "><label id="t3">Cheque</label> 4</span>
+
+										</div>
+
+									</td>
+
+								</tr>
+
+								<tr id="bueno4">
+
+										<td id="t4" class=" bgF1F2F2 "><span>N&uacute;mero de autorizaci&oacute;n</span></td>
+
+										<td class=" bgF1F2F2 ">122210</td>
+
+										<tr id="buen4">
+
+											<td id="t5" class=""><span>Nuevo estatus del cheque</span></td>
+
+											<td>
+
+												<div id="est4" value="Activado">Prevenir por robo o extravio</div>
+
+												<div><input name="checkbox" type="checkbox" value="4" style="display:none"/></div>
+
+											</td>
+
+										</tr>
+
+								</tr>
+
+								<tr id="error4">
+
+									<td colspan="2" class="ancho50p bgFeeded">
+
+										<div class="floatL paddingL0 paddingR10">
+
+											<img src="../../bbAvatar/images/icoError1.gif" alt="Error" />
+
+										</div><label id="t9">Modificaci&oacute;n no aplicada.</label>
+
+									</td>
+
+									<tr>
+
+										<td colspan="2" class=" padding0 margin0 "> <div class=" alto8 ancho100p" >  </div> </td>
+
+									</tr>
+
+									<tr id="erro4">
+
+										<td id="t10" class=" bgF1F2F2"><span>Estatus del cambio</span></td>
+
+										<td class=" bgF1F2F2 ">Activado</td>
+
+									</tr>                            
+
+									<tr id="err4">
+
+										<td id="t11"><span>Mensaje</span></td>
+
+										<td id="t12">5</td>
+
+									</tr>
+
+								</tr>
+
+									
+
+								
+
+								
+
+									
+
+									
+
+								
+
+                            </tbody>
+
+                        </table>
+
+						
+
+					</td>
+
+                </tr>
+
+            </table>        	
+
+        </div>
+
+</div>
+
+
+
+      <tr>
+
+						
+
+	<div id="che" onclick="manda_ICP()" class="saldos_bloque3 f11 color000"><label id="t13">Aun no cuenta con Chequera Protegida, para contratarla d&eacute; clic</label> 
+
+		<a href="#" class="underline fuente11"><label id="t14">aqu&iacute;</label></a>
+
+    </div>					
+
+						
+
+							  
+
+        
+
+    
+
+	<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">   
+
+	<INPUT TYPE=HIDDEN NAME="DATA8" VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA9" VALUE="">
+
+	
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Solicitud de Chequeras|21-Aplicacion_Modificacion_Estatus.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

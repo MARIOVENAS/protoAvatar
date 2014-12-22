@@ -1,0 +1,50 @@
+@font-face {
+
+	font-family: 'citi-gothic';
+
+	src: url('/JFP/css/widgets/fonts/Century-Gothic.eot'); /* IE */  
+
+	src: local('citi-gothic'), url('/JFP/css/widgets/fonts/Century-Gothic.ttf') format('truetype');
+
+}
+
+@font-face {
+
+	font-family: 'citi-gothic';
+
+	font-weight: bold;
+
+	src: url('/JFP/css/widgets/fonts/Century-Gothic-Bold.eot'); /* IE */  
+
+	src: local('citi-gothic-bold'), url('/JFP/css/widgets/fonts/Century-Gothic-Bold.ttf') format('truetype');
+
+}
+
+
+
+@font-face {
+
+	font-family: 'citi-gothic';
+
+	font-style: italic;
+
+	src: url('/JFP/css/widgets/fonts/Century-Gothic-Italic.eot'); /* IE */  
+
+	src: local('citi-gothic-italic'), url('/JFP/css/widgets/fonts/Century-Gothic-Italic.ttf') format('truetype');
+
+}
+
+@font-face {
+
+	font-family: 'citi-gothic';
+
+	font-style: italic;
+
+	font-weight: bold;
+
+	src: url('/JFP/css/widgets/fonts/Century-Gothic-Bold-Italic.eot');/* IE */  
+
+	src: local('citi-gothic-bold-italic'), url('/JFP/css/widgets/fonts/Century-Gothic-Bold-Italic.ttf') format('truetype');
+
+}
+

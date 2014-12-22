@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="40953949-cd7b-469f-9bb5-a06791debbc9" ><input type=hidden name="EWF_SYS_1" value="V7UH1K@7W2LN02PPKV03IT9LPZQ7NB6PWTNJ171Z" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZARA-CONFIRM_AFORE_APORT"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="confirmRetAore.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="16"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><link href="/bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script language="javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script>
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+var es = new Array("Voluntary contributions withdrawals",
+
+"Confirm withdrawal data to be applied",
+
+"Accounts",
+
+"Withdrawal account",
+
+"Deposit account",
+
+"Balance ",
+
+"Withdrawal data",
+
+"Include ISR",
+
+"Return",
+
+"Accept",
+
+"WITHDRAWAL");
+
+		
+
+	
+
+	var TituloError = "Retiro de aportaciones voluntarias";
+
+		rutaAyuda = rutaAyuda+"Retiros.htm";
+
+	
+
+	function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+	
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+	$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+	var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+	$(document).ready(function(){
+
+		
+
+	
+
+		$(".CtaCampo").html(setLeyendaCta());
+
+		$(".Siefores:even").children("td").addClass("bgF1F2F2");
+
+		if(""=="ERRORRETAFOREAPOR"){
+
+			if("SPANISH"=="ENGLISH"){
+
+				$(".Espanol").css("display","none");
+
+				$(".Ingles").css("display","");
+
+			}else{
+
+				$(".Espanol").css("display","");
+
+				$(".Ingles").css("display","none");	
+
+			}
+
+			$("#Titulo").html(TituloError);
+
+			parent.$("#mensajeError_contenido_div").html($("#mensajeError_contenido").html());
+
+			parent.$.modal({opacity:60,overlayClose:false,flagDiv:true,widthDivIfrm:650,heightDivIfrm:"auto"});
+
+		}
+
+	});
+
+	function setLeyendaCta(){
+
+		var descripcion = "";
+
+		var alias="Cheques";
+
+		var ctacorta="002";
+
+		var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+		if(aliasAux == "")
+
+			descripcion = "Cheques";
+
+		else
+
+			descripcion = "Cheques";
+
+		return(descripcion + " MXN - ** "+ctacorta.replace(/^\s*|\s*$/g,""));
+
+	}
+
+</script>
+
+<script>parent.setFecha("09/04/12    17:54:09  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="175244  ";b$Cont="175409  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>
+
+<div id="t10"class="float-left fonttit">RETIROS</div>
+
+<div class="panelIzEnca3_text2 font_arial" id="t0">Retiro de aportaciones voluntarias</div>
+
+<div class="color666 paddingT5 f11 font_arial" id="t1">Confirma los datos del retiro para aplicar.</div>
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t2">Cuentas</span></td>
+
+			<td valign="top" class="padding20152015">
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+					<tr>
+
+
+
+						<td valign="top">
+
+							<div class="titulo_tabla_at marginT0" id="t3">Cuenta retiro</div>
+
+							<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+							<tr>
+
+								<td class="ancho50p paddingT0 paddingL0">Mi afore NSS MXN - 424</td>
+
+								<td class="ancho50p paddingT0">&nbsp;</td>
+
+							</tr>
+
+							</table>
+
+
+
+							
+
+							<div class="titulo_tabla_at" id="t4">Cuenta dep&oacute;sito</div>
+
+							<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+								<tr>
+
+									<td class="ancho50p paddingT0 paddingL0 CtaCampo"></td>
+
+									<td class="ancho50p paddingT0"><label id="t5">Saldo </label>MXN: $ 40,000.00</td>
+
+								</tr>
+
+							</table>
+
+
+
+						</td> 
+
+					</tr>                                           
+
+				</table>
+
+			</td>
+
+		</tr>
+
+	</table>    	
+
+</div>        
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t6">Datos del retiro</span></td>
+
+
+
+			<td valign="top" class="padding20152015">
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3" id="SieforesTable">
+
+									<tr class = "Siefores">
+
+						<td class="ancho50p"><span>SIEFORE 3</span></td>
+
+						<td class="ancho50p" align="left">$ 1,000</td>
+
+					</tr>
+
+									<tr class = "Siefores">
+
+						<td class="ancho50p"><span>SIEFORE 5</span></td>
+
+
+
+						<td class="ancho50p" align="left">$ 1,000</td>
+
+					</tr>
+
+									<tr class = "Siefores">
+
+						<td class="ancho50p"><span>SIEFORE 7</span></td>
+
+						<td class="ancho50p" align="left">$ 1,000</td>
+
+					</tr>
+
+				
+
+					<tr class = "Siefores">
+
+
+
+						<td class="ancho50p"><span class="ISR" id="t7">Incluir ISR</span></td>
+
+						<td class="ancho50p" align="left">SI</td>
+
+					</tr>				
+
+				</table>
+
+			</td>
+
+		</tr>
+
+	</table>
+
+</div>
+
+<div class="marginT20 clear overflow">
+
+
+
+	<input type="button" class="btnRJ86 floatL" value="Regresar" id="t8" onclick="parent.cargaDocN('Retiro_Afore/Retiros.html');"/>
+
+	<input type="button" class="btnAZ86 floatR" value="Aceptar" id="t9" onclick="parent.cargaDocN('Retiro_Afore/aplicada_retiro_de_aportaciones_voluntarias.html');"/>
+
+</div>
+
+<div id="mensajeError_contenido" style="display:none;">
+
+	<div class="mensajeError_contenidoIn">
+
+		<div class="mensajeError_Fila1">
+
+			<div class="mensajeError_titulo1 Espanol">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+			<div class="mensajeError_titulo1 Ingles">Sorry, the transaction could not be completed</div>
+
+
+
+			<div class="mensaje_btn1">
+
+				<div class="saldos_btn2 margin0" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+			</div>
+
+		</div>
+
+		<div class="mensajeError_Fila1_2  ">
+
+			<div class="color666 paddingT5 paddingL25 f11"> <span class="color666 paddingT5 f11" id="Titulo"></span>
+
+				
+
+					<label id="me"></label><br>
+
+				
+
+			</div>
+
+
+
+		</div>	
+
+		<div class="mensajeError_Fila2 color333 negrita paddingL25 Espanol">&iquest;Qu&eacute; puedo hacer?</div>
+
+		<div class="mensajeError_Fila2 color333 negrita paddingL25 Ingles">What can I do?</div>
+
+		<div class="mensajeError_Fila2 color666 paddingL25 Espanol">
+
+			<span class="color666 paddingT5 f11">Si deseas comun&iacute;cate a</span> <span  class="f11">servicio a clientes</span> 
+
+			<span class="color666 paddingT5 f11">al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br>
+
+
+
+			01 800 110 3990 (Del interior de la Rep&uacute;blica).<br></span> 
+
+		</div>
+
+		<div class="mensajeError_Fila2 color666 paddingL25 Ingles">
+
+			<span class="color666 paddingT5 f11">You can use online help or</span> <span  class="f11">contact the customer service</span> 
+
+			<span class="color666 paddingT5 f11">at 1226 3990 (D.F. and Metropolitan area) or<br>01 800 110 3990 (rest of the Republic).<br></span> 
+
+		</div>
+
+		<span class="mensajeError_Fila2 color666 paddingL25 Espanol">Es importante tener a la mano el siguiente c&oacute;digo:</span>
+
+
+
+		<span class="mensajeError_Fila2 color666 paddingL25 Ingles">It is important to have the following code:</span>
+
+		<span id="ne" class="coloree2e24 mensajeError_Fila2"></span>
+
+		<div class="mensajeError_Fila3"><div class="floatR"><input id="BotonModal" type="button" value="Aceptar" class="floatR btnAZ86 CerrarVentanaEmergente Espanol"/>
+
+		<input type="button" id="BotonModal" value="Accept" class="floatR btnAZ86 CerrarVentanaEmergente Ingles"/></div></div>
+
+	</div>
+
+</div>
+
+<INPUT type="hidden" name="EWFBUTTON" id="EWFBUTTON" value=""/>
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Retiros de Aportaciones Afore|confirmRetAore.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

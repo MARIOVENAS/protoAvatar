@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="pragma" content="no-cache"/>
+
+<meta http-equiv="cache-control" content="no-cache"/>
+
+<meta http-equiv="expires" content="-1"/>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+<link href="../../bbAvatar/css/estilosmulti.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+  <script type="text/javascript">
+
+	<!--
+
+	$(document).ready(function(){optieneAlturas();parent.ajustar();window.parent.$('.panelDerecho').hide();$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+	-->
+
+
+
+</script>
+
+   <title></title>
+
+</head>
+
+
+
+<body >
+
+
+
+<div class="resumen_enca ancho100p">
+
+<div class="floatR marginT7 paddingR7 ancho40p">
+
+ <div class="saldos_btn1 showtooltip margin_menosT3 Ayuda" onclick="Javascript:AbreAyuda(ruta);"></div>
+
+   <div class="saldos_btn2 showtooltip margin_menosT3 Imprimir" onclick="ocultaToolTip();imprimirMain();"></div>
+
+   
+
+   <div class="floatR">
+
+  <div class="resumen_flecha"></div>
+
+    <a href="javascript:void(0);" onclick="javascript:window.parent.cargaDoc('01b-MultiSaldos_REAL2.htm');">Ver resumen de cuentas</a></div>
+
+  </div>
+
+ <div class="floatL">
+
+     <div class="floatL"><h1>DETALLE DE LA CUENTA</h1> </div>
+
+      <div class="floatL marginL10 marginT2">
+
+      <select class="ancho270" name="select" onchange="valor=this.value;cambiopage();">
+
+
+
+<option value="1">Mi tarjeta - tarj. Oro - MXN - **678 - $ 9,166.76 </option>
+
+<option value="2">Mi chequera - Cheques - MXN - **680 - $ 617,130.05 </option>
+
+<option value="3">Mi pagomatico - PAGOMATICO - MXN - **678 - $ 724.08 </option>
+
+<option value="4">Mi retiro - AFORE NSS M.N. - MXN - **312 </option>
+
+<option value="5">Mi cr&eacute;dito automotriz - CRED PERS. AUT. - MXN - **312 </option>
+
+<option value="6">Mi horizonte - HORIZONTE BANAMEX UNO - MXN - **312 </option>
+
+<option value="7">Mi inv empresarial - CUENTA MAESTRA BANAMEX EMPRESA - MXN - **312 </option>
+
+<option value="8">Mi inversi&oacute;n integral - INVERSION INTEGRAL BANAMEX - MXN - **362</option>
+
+<option value="9">Mi pagare - PAGARE M.N. - MXN - **312 </option>
+
+<option value="10">Mi pagare - PAGARE M.N. - MXN - **312 </option>
+
+<option value="11">Mi maestra - Cta. Maestra - MXN - **681 - $ 7,840.64 </option>
+
+<option value="12" selected="selected">Mi Inversi&oacute;n - MXN - 392 - Multiseries </option>
+
+<option value="13">Ptos Premia - Tarj. Premia Pre - MXN - **678 - $ 853.82 </option>
+
+</select>
+
+    </div>
+
+   </div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+
+<div class="floatL ancho70p marginT15">
+
+  <div class="floatR"></div>
+
+  <div class="boldText f14 floatL paddingT4">Inv. Plazo -  MXN -   010 - Mi inversion</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="floatL ancho70p marginT24" >
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr class="boldText ">
+
+    <td class=" paddingL8 paddingT5 paddingB5 f11 borderBSolid borderTSolid9  " >Folio</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 borderBSolid borderTSolid9">Instrumento</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 borderBSolid borderTSolid9">Plazo</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 borderBSolid borderTSolid9">Fecha apertura / reinversi&oacute;n </td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11  borderBSolid borderTSolid9">Fecha vencimiento </td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11  borderBSolid borderTSolid9">Vence hoy </td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11  borderBSolid borderTSolid9">Saldo inicial </td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11  borderBSolid borderTSolid9">Instrucciones al vencimiento</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11  borderBSolid borderTSolid9">Cuentas de reembolso</td>
+
+  </tr>
+
+  <tr class="bgF1F2F2">
+
+    <td width="2%" class=" paddingL8 paddingT5 paddingB5 f11"><a class="f11" href="javascript:void(0);" onclick="window.parent.cargaDoc('inversionesdetalle_pagare312_num6.htm');">900001</a></td>
+
+    <td width="4%" class="paddingL8 paddingT5 paddingB5 f11">Pagar&eacute;</td>
+
+    <td width="2%" class="paddingL8 paddingT5 paddingB5 f11">150</td>
+
+    <td width="17%" align="left" class="paddingL8 paddingT5 paddingB5 f11">16 Ene 2011</td>
+
+    <td width="13%" class="paddingL8 paddingT5 paddingB5 f11 ">16 Ene 2012</td>
+
+    <td width="2%" align="left" class="paddingL8 paddingT5 paddingB5 f11">Si</td>
+
+    <td width="10%" align="left" class="paddingL8 paddingT5 paddingB5 f11 ">15,000.00</td>
+
+    <td width="26%" class="paddingL8 paddingT5 paddingB5 f11 ">Reembolso Total</td>
+
+    <td width="24%" class="paddingL8 paddingT5 paddingB5 f11 ">Cheques</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 "><a class="f11" href="javascript:void(0);" onclick="window.parent.cargaDoc('inversionesdetalle_pagare312_num6.htm');">700002</a></td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">Pagar&eacute;</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">10</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">16 Ene 2011</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">16 Ene 2012</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">Si</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11 ">1,000.00</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Reinversi&oacute;n de Capital</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Cheques</td>
+
+    </tr>
+
+  <tr class="bgF1F2F2">
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 "><a class="f11" href="javascript:void(0);" onclick="window.parent.cargaDoc('inversionesdetalle_pagare312_num6.htm');">500045</a></td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">Cedes</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">15</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">16 Ene 2011</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">16 Ene 2012</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">Si</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11 ">10,000.00</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Reembolso Total</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Contrato Cuenta Maestra</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 "><a class="f11" href="javascript:void(0);" onclick="window.parent.cargaDoc('inversionesdetalle_pagare312_num6.htm');">300051</a></td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">Cedes</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">10</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">16 Ene 2011</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">16 Ene 2012</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">Si</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11 ">17,000.00</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Reembolso Total</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Tarjeta</td>
+
+  </tr>
+
+  <tr class="bgF1F2F2">
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 "><a class="f11" href="javascript:void(0);" onclick="window.parent.cargaDoc('inversionesdetalle_pagare312_num6.htm');">200041</a></td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">Pagar&eacute;</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">20</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">16 Ene 2011</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">16 Ene 2012</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">No</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11 ">23,000.00</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Reembolso Total</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Tarjeta</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 "><a class="f11" href="javascript:void(0);" onclick="window.parent.cargaDoc('inversionesdetalle_pagare312_num6.htm');">000076</a></td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">Cedes</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">30</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">16 Ene 2011</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">16 Ene 2012</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">Si</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11 ">99,000.00</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Reembolso Total</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Contrato Cuenta Maestra</td>
+
+    </tr>
+
+  <tr class="bgF1F2F2">
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 "><a class="f11" href="javascript:void(0);" onclick="window.parent.cargaDoc('inversionesdetalle_pagare312_num6.htm');">000051</a></td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">Pagar&eacute;</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11">20</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">16 Ene 2011</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">16 Ene 2012</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11">No</td>
+
+    <td align="left" class="paddingL8 paddingT5 paddingB5 f11 ">45,000.00</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Reinversi&oacute;n de Capital</td>
+
+    <td class="paddingL8 paddingT5 paddingB5 f11 ">Cheques</td>
+
+    </tr>
+
+  <tr>
+
+    <td colspan="9" align="center" class="paddingL8 paddingT10 paddingB10 boldText borderBSolid borderTSolid">Su contrato ya no tiene m&aacute;s inversiones</td>
+
+    </tr>
+
+</table>
+
+</div>
+
+<div class="floatL marginL30 paddingL25 ancho20p borderlSolid9 marginT5">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tr> 
+
+       <td class=" f14 boldText paddingB10">&iquest;QU&Eacute; DESEAS HACER?</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingT3 paddingB3 "><div class="resumen_flecha"></div>
+
+        <a href="#">Invertir mi dinero</a></td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+<div class="clear"></div>
+
+<div></div>
+
+<div class="clear alto150">&nbsp;</div>
+
+ 
+
+
+
+	<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	<!--
+
+	$(document).ready(function(){optieneAlturas();top.window.scrollTo(0,0);$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+	-->
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+		
+
+		valor=0;
+
+		
+
+        function cambiopage(){
+
+				
+
+				
+
+				
+
+				
+
+				if(valor==1)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm');
+
+					
+
+							}
+
+				if(valor==2)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('14-Cheques_mes_actual_real.htm');
+
+					
+
+							}
+
+				if(valor==3)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('26-TDD-MesActual-REAL.htm');
+
+					
+
+							}
+
+				if(valor==4)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Afore.htm');
+
+					
+
+							}
+
+				if(valor==5)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-creditos.html');
+
+					
+
+							}
+
+							
+
+				if(valor==6)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_horizonte.htm');
+
+					
+
+							}
+
+				if(valor==7)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_inversionempresarial.htm');
+
+					
+
+							}
+
+			        if(valor==8)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_inversionintegral.htm');
+
+					
+
+							}
+
+				if(valor==9)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-inversiones_4.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==10)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-inversiones_6.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==11)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('maestra_mes_actual.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==12)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Multiseries.htm');
+
+					
+
+							}
+
+				if(valor==13)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('premia_mes_actual.htm');
+
+					
+
+							}
+
+			
+
+			}
+
+        </script>
+
+
+
+</body>
+
+</html>
+

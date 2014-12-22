@@ -1,0 +1,30 @@
+/***** Magnifier Widget Styles *****/
+
+.magnifier-magnified-wrap { position: absolute; display: block; }
+
+.magnifier-magnified-icon {cursor: pointer; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 1000;}
+
+
+
+.jfpw-magnified-icon-show {background: url('/JFP/images/widgets/jfpw-magnifier-zoom-out.gif') no-repeat scroll 50% 50% transparent; filter: alpha(opacity=100);}
+
+ 
+
+.jfpw-magnified-icon-hide {background: none transparent;}
+
+
+
+.jfpw-magnifier { cursor: pointer }
+
+.jfpw-magnifier.jfpw-state-disabled { opacity: 0.2 !important; cursor: default;}
+
+.jfpw-magnifier-wrap{ position: relative; display: inline-block; }
+
+.jfpw-magnifier-icon {cursor: pointer; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 9;}
+
+
+
+.jfpw-icon-hide {background: none transparent;}
+
+.jfpw-icon-show {background: url('/JFP/images/widgets/jfpw-magnifier-zoom-in.gif') no-repeat scroll 50% 50% transparent; }
+

@@ -1,0 +1,102 @@
+﻿<div class="graphite">
+
+	<ul class="accordion" id="accordion-1">
+
+		<span class="border-topDotted">&nbsp;</span>
+
+        <li>
+
+			<a class="dcjq-parent " href="javascript:void(0);" onclick="cambiaP1_s1();">NOTIFICACIONES BANAMEX <span class="dcjq-icon"></span></a>
+
+            <ul class="left_submenu">
+
+                <li> <a href="javascript:void(0);" onclick="cambiaP1_s1();" id="n1">Inscripci&oacute;n  y modificación de alertas</a></li>
+
+                <li> <a href="javascript:void(0);" onclick="cambiaP1_s3();">Estado de cuenta electr&oacute;nico</a></li>
+
+             
+
+            </ul>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+		<li>
+
+			<a class="dcjq-parent" href="javascript:void(0);" onclick="cambiaP2_s1();">MIS CUENTAS BANAMEX <span class="dcjq-icon"></span></a>
+
+            <ul class="left_submenu">
+
+                <li> 
+
+                    <a href="javascript:void(0);" onclick="cambiaP2_s1();">Personalizar mis cuentas</a>
+
+                </li>
+
+                <li> 
+
+                    <a href="javascript:void(0);" onclick="cambiaP2_s2();">Mis Tarjetas Banamex</a>
+
+                </li>
+
+                <li> 
+
+                    <a href="javascript:void(0);" class="flechas_sublevel" id="mischequeras" onclick="desactiva();" >Mis chequeras</a>
+
+                    <ul>
+
+                        <li><a href="javascript:void(0);"  onclick="nCons()" >Solicitud de chequeras</a></li>
+
+                        <li><a href="javascript:void(0);"  onclick="nCons()" >Consulta estatus de solicitudes previas</a></li>
+
+                        <li><a href="javascript:void(0);"  onclick="nCons()" >Modificar solicitud anterior de chequeras</a></li>
+
+                        <li><a href="javascript:void(0);"  onclick="nCons()" >Cancelar solicitud anterior de chequeras</a></li>
+
+                        <li><a href="javascript:void(0);"  onclick="nCons()">Consulta y modificación de estatus por cheques </a></li>
+
+                        <li><a href="javascript:void(0);"  onclick="cheq()" >Inscripción a chequera protegida</a></li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+        <li>
+
+			<a class="dcjq-parent" href="javascript:void(0);" onclick="cambiaP3_s1();">CONTRATACI&Oacute;N EN LINEA<span class="dcjq-icon"></span></a>
+
+            <ul class="left_submenu">
+
+                <li> <a href="javascript:void(0);" onclick="cambiaP3_s1();">Contrataci&oacute;n de Banamex M&oacute;vil</a></li>
+
+            </ul>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+	</ul>
+
+</div>
+
+<script type="text/javascript">
+
+	function desactiva(){
+
+		setTimeout(function(){$('#mischequeras').removeClass('active');},700);
+
+		setTimeout(function(){$('#mischequeras').addClass('strong');},750);	
+
+	}
+
+</script>
+
+
+

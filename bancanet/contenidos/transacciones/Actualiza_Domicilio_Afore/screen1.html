@@ -1,0 +1,272 @@
+<html>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/jscript">
+
+	es=new Array( 
+		'Capture', //t0
+		'Verify', //t1
+		'Response', //t2
+		
+		'Update address',
+		'Enter the address your Afore Banamex mail is to be sent and click "Continue".',
+		
+		'Main address',
+
+		'Street and Number<br>(External / Interior):',
+		'Neighborhood:',
+		'Municipality:',
+		'Zip Code:',
+		'State:',
+		'Select an opcion',
+		
+		'Additional address',
+
+		'Street and Number<br>(External / Interior):',
+		'Neighborhood:',
+		'Municipality:',
+		'Zip Code:',
+		'State:',
+		'Select an opcion',
+		
+		'Contact data',
+
+		'E-mail:',
+		'Phone (LADA):',
+		'Extension:',
+		
+		'Delivery data',
+		
+		'Select the address where you with to receive your Afore Banamex mail.',
+		
+		'Main address',
+		'Additional address',
+		
+		'CONTINUE',
+		'Cancel'
+	);
+
+     </script>
+</head>
+<body class="bg_demo">
+
+     <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">  
+     
+     <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura" class="selected"><strong class="f11">1</strong> <span id="t0" class="f11">Captura</span> </li>
+            <li id="opcVerifica"><strong class="f11">2</strong>  <span id="t1" class="f11">Verifica</span> </li>
+            <li id="opcRespuesta"><strong class="f11">3</strong>  <span id="t2" class="f11">Respuesta</span> </li>
+        </ul>
+        </div>
+
+                    <div class="cH-appPanelHead">
+
+                        <h3 id="t3">Actualizar domicilio</h3>
+
+                    </div>
+
+                    <div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%">
+
+					  <div class="width98">
+
+							 <p class="instructions" style="width:100%; margin-bottom:0px !important;" id="t4">Introduce tu domicilio al cual se enviar&aacute; tu correspondencia de Afore Banamex y da clic en "Continuar".</p>
+		
+  						 	<div class="form-row margin-top25">
+                            <label  class="for-table width139i margin-top4 bold" id="t5">Domicilio principal</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t6">
+                            Calle y N&uacute;mero<br>
+							(Exterior / Interior):
+                            </label>
+                            <input type="text" class="paddingL5 width285" value="Av. de los Insurgentes 12345 3er piso">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t7">Colonia:</label>
+                            <input type="text" class="paddingL5 width285" value="San Pedro de los Pinos">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t8">Delegaci&oacute;n o Municipio:</label>
+                            <input type="text" class="paddingL5 width285" value="Alvaro Obregon">
+                                <div class="clear"></div>
+                            </div>
+                            
+                             <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t9">C&oacute;digo Postal:</label>
+                            <input type="text" class="paddingL5 width70" value="12345">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom20">
+                            <label  class="for-table width139i margin-top4" id="t10">Estado:</label>
+                                <select class="width144 paddingL5">
+									<option id="t11">Selecciona una opci&oacute;n</option>
+									<option selected="selected">Distrito Federal</option>
+								</select>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="border-top clear"></div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4 bold" id="t12">Domicilio adicional</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t13">
+                            Calle y N&uacute;mero<br>
+							(Exterior / Interior):
+                            </label>
+                            <input type="text" class="paddingL5 width285" value="Calz. M&eacute;xico Tacuba 2341">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t14">Colonia:</label>
+                            <input type="text" class="paddingL5 width285" value="Pensil">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t15">Delegaci&oacute;n o Municipio:</label>
+                            <input type="text" class="paddingL5 width285" value="Benito Ju&aacute;rez">
+                                <div class="clear"></div>
+                            </div>
+                            
+                             <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t16">C&oacute;digo Postal:</label>
+                            <input type="text" class="paddingL5 width70" value="98231">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom20">
+                            <label  class="for-table width139i margin-top4" id="t17">Estado:</label>
+                                <select class="width144 paddingL5">
+									<option id="t18">Selecciona una opci&oacute;n</option>
+									<option selected="selected">Distrito Federal</option>
+								</select>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="border-top clear"></div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4 bold" id="t19">Datos de contacto</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t20">Correo electr&oacute;nico:</label>
+                            <input type="text" class="paddingL5 width285" value="**************@laempresa.com.mx">
+                                <div class="clear"></div>
+                            </div>
+                            
+                             <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t21">Tel&eacute;fono (con LADA):</label>
+                            <div class="floatLI padding-right10 margin-top2">044 / 045</div>
+                            <input type="text" class="paddingL5 width70" value="******5673">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="form-row margin-bottom20">
+                            <label  class="for-table width139i margin-top4" id="t22">Extensi&oacute;n:</label>
+                            <input type="text" class="paddingL5 width70" value="****5">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            
+                            <div class="border-top clear"></div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4 bold" id="t23">Datos de env&iacute;o</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom15">
+                            <label  class="for-table ancho100p margin-top4" id="t24">Selecciona el domicilio al que deseas se te env&iacute;e la correspondencia de Afore Banamex.</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+							<div class="form-row margin-bottom10">
+								<label class="marginsRadios for-table radioR">
+                                <input name="cuenta" type="radio" id="cuenta1" onClick="valor=this.value;" value="1"  />
+                                </label>
+								<div class="margin-top5" id="t25">Domicilio principal</div>
+                                <div class="clear"></div>
+                            </div>
+
+                      		<div class="form-row margin-bottom15">
+                                <label class="marginsRadios for-table radioR">
+                                <input name="cuenta" type="radio" id="cuenta2" onClick="valor=this.value;" value="2" checked="checked" />
+                                </label>
+                                <div class="float-left"id="t26">Domicilio adicional</div>
+                                <div class="clear"></div>
+                            </div>
+                    <!--  termina rango de cheques-->
+
+				</div><!--termina 98-->
+				
+                </div>	
+
+							
+
+                <div class="cF-sideBySide border-topSolid ancho100p margin-top5 paddingT2">
+                <div class="width139i floatLI">&nbsp;</div>
+
+                    <ul class="cN-primaryNav paddingT10 floatLI margin-left12">
+
+                        <li class="cM-spriteBase cN-primaryNavButton"><a onClick="continuar()" id="t27">Continuar</a></li>	
+                        <li class="cN-primaryNav">
+									<div id="flechaLinks">
+										<span class="flechaazul float-left"></span>
+										<a id="t28" href="javascript:cancelar();" class="sinBold">Cancelar</a>
+									</div>
+								</li>
+
+                    </ul>
+
+                 </div>
+               
+               </div>
+                 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	top.tamano9();
+	top.scrollTo(0,0);
+	
+	$.imageTick.logging = true;
+	$("input[name='cuenta']").imageTick({
+		tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+		no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+		image_tick_class: "radios"
+	});
+});
+
+	function continuar(){
+		top.cargaDocN('Actualiza_Domicilio_Afore/screen2.html');
+	}
+	
+	function cancelar(){
+		top.scrollTo(0,0);
+	}
+
+</script>                
+
+</body>
+</html>

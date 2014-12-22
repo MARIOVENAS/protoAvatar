@@ -1,0 +1,1606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="4f4659af-c9d7-4c5e-b3dc-9ef248f0a7e1" ><input type=hidden name="EWF_SYS_1" value="PESZNV39P8@JH0TG8Q1WY5QJBAAH0N0YABC4VIKF" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZPIA-PAGSOLICITUD"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="pagoimp1.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="10"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+        <script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/mando.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+				
+
+		<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+
+
+		
+
+
+
+<script>parent.setFecha("23/04/12    18:49:15  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="184915  ";b$Cont="184915  "
+
+	//
+
+    </script>
+
+    	<script type="text/javascript">
+
+			$(document).ready(function(){if(screen.width < 1152){$("#applet").css({"overflow-x":"auto","overflow-x":"scroll"})}optieneAlturas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+		
+
+		function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+			 function Combo_Vacio(Combo,Msg_Error)
+
+{
+
+	var Valor = "";
+
+	Num_Opcion = Combo.selectedIndex;
+
+	Valor = Combo.options[Num_Opcion].value;
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor =="")
+
+	{
+
+		Combo.focus();
+
+		return true;
+
+	}
+
+		else
+
+		{
+
+		return false;
+
+		}
+
+}
+
+
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error)
+
+{
+
+   var Numeros="0123456789";
+
+   var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+   var Validos="";
+
+   var Txt_MAY = Campo_Txt.value.toUpperCase();
+
+	var invalidos = 0;	
+
+
+
+if (Req == "SI" && Txt_MAY.length==0)
+
+    {
+
+    Campo_Txt.focus();
+
+    return false;
+
+    }	
+
+else
+
+   {
+
+   (Tipo_Validacion == 1) ?
+
+    	Validos = Numeros:
+
+
+
+   		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+
+
+   Validos = Validos + Caracteres_Extras;
+
+		
+
+   for (i=0; i < Txt_MAY.length; i++)
+
+	 for (j=0; j < Validos.length; j++)
+
+
+
+	   	if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+
+
+			if (j+1 < Validos.length)
+
+	 			continue;
+
+	 		else
+
+	 		    {
+
+			    Campo_Txt.focus();
+
+	 	            return false
+
+	 		    }
+
+		else 
+
+   			break;	
+
+   return true;
+
+   }
+
+}
+
+
+
+function Verifica_CampoVacio(Campo_Txt,Msg_Error, Requerido) { 
+
+    if (Campo_Txt.value.length == 0) {
+
+        if(Requerido == "SI") {
+
+          Campo_Txt.focus();
+
+        }
+
+        return false;
+
+    } else {
+
+        return true;
+
+      }
+
+    }
+
+			
+
+function EnviaSATEjercicio()
+
+{
+
+ 
+
+		 var mensaje1 = "Es necesario seleccionar la cuenta origen. Favor de verificar.";
+
+		 var mensaje2 = "Existen caracteres invalidos en este campo";
+
+		 var mensaje3 = "Favor de llenar los datos requeridos";
+
+	
+
+
+
+	
+
+
+
+	
+
+	if (Combo_Vacio(document.forms[0].DATA3, mensaje1, 'SI') == true) {
+
+	    document.forms[0].DATA3.focus();
+
+	    return;
+
+	}
+
+		
+
+	document.forms[0].DATA1.value = document.AppImpEjercicio.appEnviaDatos();
+
+	document.forms[0].DATA2.value = document.AppImpEjercicio.appEnviaImpresion();
+
+	val_applet=Replace(document.forms[0].DATA1.value,"|","");
+
+
+
+		
+
+	  if(val_applet == "*") { 
+
+				alert('Debe presionar el botón "Confirmar datos" antes de continuar con su operación.');
+
+				return;
+
+			}
+
+			
+
+		else {
+
+			
+
+			var datAppletcod = document.forms[0].DATA1.value;
+
+			var datAppletetq = document.forms[0].DATA2.value;
+
+
+
+			document.forms[0].DATA1.value = datAppletcod.replace(/\|/g,"!");
+
+			document.forms[0].DATA2.value = datAppletetq.replace(/\|/g,"!");
+
+
+
+			global++;
+
+			document.getElementById('AppImpEjercicio').style.visibility = 'hidden';
+
+			document.getElementById('combonCtas').style.visibility = 'hidden';
+
+
+
+
+
+
+
+			validaSegFactor("DATA15","OK");
+
+		}
+
+}
+
+		
+
+
+
+			function Replace(string,text,by) {
+
+
+
+
+
+    var strLength = string.length, txtLength = text.length;
+
+    if ((strLength == 0) || (txtLength == 0)) return string;
+
+
+
+    var i = string.indexOf(text);
+
+    if ((!i) && (text != string.substring(0,txtLength))) return string;
+
+    if (i == -1) return string;
+
+
+
+    var newstr = string.substring(0,i) + by;
+
+
+
+    if (i+txtLength < strLength)
+
+        newstr += Replace(string.substring(i+txtLength,strLength),text,by);
+
+
+
+    return newstr;
+
+}
+
+
+
+			function Campo_Vacio2 (Campo_Txt,Msg_Error){ 
+
+    if (Campo_Txt.length == 0){
+
+        if (Msg_Error != ""){
+
+        }
+
+	return true;
+
+    }
+
+    else
+
+    	return false;
+
+}
+
+
+
+
+
+
+
+
+
+			function pm(event){
+
+			$("#ndw").attr("src","challenge.htm");
+
+			$("#nextpage").val("Valida Impuestos Reg/aplica_impuestos_anuales.html");
+
+}
+
+			function validaSegFactor(data,eventOK) {
+
+    var dat=document.getElementsByName(data);
+
+	var sgf=document.getElementsByName('challenge');
+
+	dat[0].value=sgf[0].value;
+
+    if( dat[0].value=='' | /~CHR/.test(sgf[0].value) | /~PRO/.test(sgf[0].value) | /~ERROR/.test(sgf[0].value)){
+
+		if ( /~ERROR/.test(sgf[0].value)) {
+
+		    muestraModal();
+
+			document.getElementsByName('challenge')[0].value="";
+
+		} else
+
+			pm("CHECKSS");
+
+	}else{
+
+		if(dat[0].value=="NOTREQUIRED")
+
+			dat[0].value="";
+
+		DoSubmit(eventOK);
+
+ 	}
+
+}
+
+			$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+		   
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}	
+
+			var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}	
+
+			var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+		
+
+			var titulo="Pagos";
+
+			rutaAyuda=rutaAyuda+"Impuestos.htm";
+
+			
+
+			var es= new Array("Tax payments",
+
+						      "Enter payment data and click &quot;Continue&quot;",
+
+							  "Account",
+
+							  "Origin account",
+
+							  "Current amount MXN:",
+
+							  "Taxes",
+
+							  "Tax type ",
+
+							  "Continue",
+
+							  "The accuracy of the data to be processed, it is responsibility of the person providing it. If you have doubts about the information requested press the help button at the top of the page.",
+
+				              "Note:",
+
+							  "Return",
+
+							  "Sorry, the transaction could not be completed",
+
+					          "Taxes Payment",
+
+						      "Possible solution",
+
+			                  "Origin account: [descorta] [desc_moneda] - [ctacorta] - [alias]",
+
+					          "What can I do?",
+
+							  "You can use online help or contact the",
+
+							  "customer service",
+
+							  "at 1226 3990 (D.F. and Metropolitan area) or 01 800 110 3990 (rest of the Republic).",
+
+							  "It is important to have the following code:",
+
+							  "Cause",
+
+							  "Continue",
+
+							  "Taxes",
+
+							  "Annual");
+
+
+
+			
+
+		
+
+		function Initialize()
+
+			{
+
+				var alias="Cheques";
+
+				var numEspacio=alias.length;
+
+
+
+						 for(var ind=0; ind<numEspacio;)
+
+							{
+
+								if(alias.charAt(ind)==" ")
+
+									alias=alias.substring(ind+1, alias.length);
+
+								else
+
+									break;
+
+							}
+
+				if(alias=="")
+
+				{
+
+					var cadena= "Cheques&nbsp;MXN&nbsp;-&nbsp;**002";
+
+					document.getElementById('tipoCuenta').innerHTML=cadena;
+
+				}
+
+				else
+
+				{
+
+					var cadena= "Cheques&nbsp;MXN&nbsp;-&nbsp;**002";
+
+					document.getElementById('tipoCuenta').innerHTML=cadena;
+
+				}
+
+				
+
+				if(""=="error")
+
+				{	
+
+					muestraChallenge();
+
+				}
+
+								
+
+			}
+
+			
+
+			function muestraChallenge()
+
+			{
+
+				document.getElementById('applet').style.display='none';
+
+				parent.parent.$("#mensajeError_contenido_div").html($("#mensajeError_contenido").html());
+
+				parent.parent.$.modal(				
+
+				{
+
+					opacity:60, 
+
+					overlayClose:false, 
+
+					flagDiv:true,
+
+					widthDivIfrm:600,
+
+					heightDivIfrm:"auto"
+
+				}
+
+				);
+
+			}
+
+			
+
+			function RealizarPago()
+
+			{
+
+				funcion0();
+
+				EnviaSATEjercicio();
+
+			}
+
+		
+
+			function muestraModal()
+
+			{
+
+				parent.parent.$("#mensajeError_contenido_div").html($("#mensajeError_contenido").html());
+
+				parent.parent.$.modal(				
+
+				{
+
+					opacity:60, 
+
+					overlayClose:false, 
+
+					flagDiv:true,
+
+					widthDivIfrm:600,
+
+					heightDivIfrm:"auto"
+
+				}
+
+				);
+
+			}
+
+			
+
+		</script>
+
+		
+
+		<script LANGUAGE="javascript">
+
+			function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+			 function Combo_Vacio(Combo,Msg_Error)
+
+{
+
+	var Valor = "";
+
+	Num_Opcion = Combo.selectedIndex;
+
+	Valor = Combo.options[Num_Opcion].value;
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor =="")
+
+	{
+
+		Combo.focus();
+
+		return true;
+
+	}
+
+		else
+
+		{
+
+		return false;
+
+		}
+
+}
+
+
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error)
+
+{
+
+   var Numeros="0123456789";
+
+   var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+   var Validos="";
+
+   var Txt_MAY = Campo_Txt.value.toUpperCase();
+
+	var invalidos = 0;	
+
+
+
+if (Req == "SI" && Txt_MAY.length==0)
+
+    {
+
+    Campo_Txt.focus();
+
+    return false;
+
+    }	
+
+else
+
+   {
+
+   (Tipo_Validacion == 1) ?
+
+    	Validos = Numeros:
+
+
+
+   		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+
+
+   Validos = Validos + Caracteres_Extras;
+
+		
+
+   for (i=0; i < Txt_MAY.length; i++)
+
+	 for (j=0; j < Validos.length; j++)
+
+
+
+	   	if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+
+
+			if (j+1 < Validos.length)
+
+	 			continue;
+
+	 		else
+
+	 		    {
+
+			    Campo_Txt.focus();
+
+	 	            return false
+
+	 		    }
+
+		else 
+
+   			break;	
+
+   return true;
+
+   }
+
+}
+
+
+
+function Verifica_CampoVacio(Campo_Txt,Msg_Error, Requerido) { 
+
+    if (Campo_Txt.value.length == 0) {
+
+        if(Requerido == "SI") {
+
+          Campo_Txt.focus();
+
+        }
+
+        return false;
+
+    } else {
+
+        return true;
+
+      }
+
+    }
+
+			
+
+function EnviaSATEjercicio()
+
+{
+
+ 
+
+		 var mensaje1 = "Es necesario seleccionar la cuenta origen. Favor de verificar.";
+
+		 var mensaje2 = "Existen caracteres invalidos en este campo";
+
+		 var mensaje3 = "Favor de llenar los datos requeridos";
+
+
+
+	if (Combo_Vacio(document.forms[0].DATA3, mensaje1, 'SI') == true) {
+
+	    document.forms[0].DATA3.focus();
+
+	    return;
+
+	}
+
+		
+
+	document.forms[0].DATA1.value = document.AppImpEjercicio.appEnviaDatos();
+
+	document.forms[0].DATA2.value = document.AppImpEjercicio.appEnviaImpresion();
+
+	val_applet=Replace(document.forms[0].DATA1.value,"|","");
+
+
+
+		
+
+	  if(val_applet == "*") { 
+
+				alert('Debe presionar el bot\u00F3n "Confirmar datos" antes de continuar con su operaci\u00F3n.');
+
+				return;
+
+			}
+
+			
+
+		else {
+
+			
+
+			var datAppletcod = document.forms[0].DATA1.value;
+
+			var datAppletetq = document.forms[0].DATA2.value;
+
+
+
+			document.forms[0].DATA1.value = datAppletcod.replace(/\|/g,"!");
+
+			document.forms[0].DATA2.value = datAppletetq.replace(/\|/g,"!");
+
+
+
+			global++;
+
+			document.getElementById('AppImpEjercicio').style.visibility = 'hidden';
+
+			document.getElementById('combonCtas').style.visibility = 'hidden';
+
+
+
+
+
+
+
+			validaSegFactor("DATA15","OK");
+
+		}
+
+}
+
+		
+
+
+
+			function Replace(string,text,by) {
+
+
+
+
+
+    var strLength = string.length, txtLength = text.length;
+
+    if ((strLength == 0) || (txtLength == 0)) return string;
+
+
+
+    var i = string.indexOf(text);
+
+    if ((!i) && (text != string.substring(0,txtLength))) return string;
+
+    if (i == -1) return string;
+
+
+
+    var newstr = string.substring(0,i) + by;
+
+
+
+    if (i+txtLength < strLength)
+
+        newstr += Replace(string.substring(i+txtLength,strLength),text,by);
+
+
+
+    return newstr;
+
+}
+
+
+
+			function Campo_Vacio2 (Campo_Txt,Msg_Error){ 
+
+    if (Campo_Txt.length == 0){
+
+        if (Msg_Error != ""){
+
+        }
+
+	return true;
+
+    }
+
+    else
+
+    	return false;
+
+}
+
+
+
+
+
+
+
+
+
+			function pm(event){
+
+			$("#ndw").attr("src","challenge.htm");
+
+			$("#nextpage").val("Valida Impuestos Reg/aplica_impuestos_anuales.html");	
+
+}
+
+			function validaSegFactor(data,eventOK) {
+
+    var dat=document.getElementsByName(data);
+
+	var sgf=document.getElementsByName('challenge');
+
+	dat[0].value=sgf[0].value;
+
+    if( dat[0].value=='' | /~CHR/.test(sgf[0].value) | /~PRO/.test(sgf[0].value) | /~ERROR/.test(sgf[0].value)){
+
+		if ( /~ERROR/.test(sgf[0].value)) {
+
+		    muestraModal();
+
+			document.getElementsByName('challenge')[0].value="";
+
+		} else
+
+			pm("CHECKSS");
+
+	}else{
+
+		if(dat[0].value=="NOTREQUIRED")
+
+			dat[0].value="";
+
+		DoSubmit(eventOK);
+
+ 	}
+
+}
+
+			$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+		    
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}	
+
+			var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}	
+
+			var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+	
+
+
+
+		
+
+			var global=1;
+
+			var temporizador;
+
+
+
+			function funcion0(){
+
+				temporizador = setInterval('funcion1()',1000);
+
+			}
+
+
+
+			function funcion1(){
+
+
+
+				if(document.getElementById('fade').style.display=="none"){
+
+					funcion2();
+
+				}
+
+			}
+
+
+
+			function funcion2(){
+
+
+
+				if( global%2==0 && document.getElementById('fade').style.display =="none" ){
+
+				global++;
+
+				document.getElementById('AppImpEjercicio').style.visibility = 'visible';
+
+				document.getElementById('fade').style.display="";
+
+				clearInterval(temporizador);
+
+				}
+
+				
+
+			}
+
+</script>
+
+ 	
+
+	
+
+<script language="JavaScript">
+
+
+
+function MM_openBrWindow(theURL,winName,features)
+
+{ 
+
+  var URL;
+
+  for (iCount=0; iCount<document.forms[0].length; iCount++)
+
+   {
+
+     if (document.forms[0].elements[iCount].name == theURL)
+
+       URL=document.forms[0].elements[iCount].value;
+
+   }
+
+
+
+  window.open(URL, winName, features);
+
+}
+
+
+
+</script>
+
+
+
+
+
+<div id="fade" class="gray_overlay"></div>
+
+
+
+<div class="float-left fonttit" id="t22">Impuestos</div>
+
+
+
+		
+
+		<div class="panelIzEnca3_text2" id="t0">
+
+            Pago de  Impuestos
+
+         </div>
+
+        
+
+		<div class="color666 paddingT5 f11" id="t1">Indica los datos del pago y da clic en "Continuar".</div>
+
+  
+
+        <div class="saldos_bloque3_2 paddingT3_pag">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+
+
+                   	<td class="borderRDotted ancho25p padding20152015" valign="top" ><span class="f12" id="t2">Cuentas</span></td>
+
+                    <td valign="top" class="padding20152015">
+
+                        <div class="titulo_tabla_at marginT0 paddingB5 marginB5 f11" id="t3">Cuenta retiro</div>
+
+                       	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                            <tr>
+
+                            	<td class="ancho50p paddingT0 paddingL0" id="tipoCuenta"></td>
+
+                                <td class="ancho50p paddingT0"><label id="t4" class="f11 color666">Saldo actual MXN:</label>&nbsp; $ 40,000.00</td>
+
+
+
+                            </tr>
+
+                        </table>
+
+										
+
+				     	<SELECT id="combonCtas" name="DATA3" style="display:none;">
+
+					      <OPTION VALUE="2" selected>Cheques&nbsp;MXN&nbsp;&nbsp;-002&nbsp;&nbsp;-Cheques&nbsp;&nbsp;-40,000.00</OPTION>
+
+					    </SELECT>
+
+					</td>
+
+
+
+               </tr>
+
+            </table>        	
+
+        </div>  
+
+
+
+		
+
+ <div class="saldos_bloque3_2">
+
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t5">Impuestos</span></td>
+
+                    <td valign="top" class="padding20152015">
+
+                        <div class="titulo_tabla_at paddingB5 marginB5 marginT0 f11" id="t6">Tipo de impuesto</div>
+
+
+
+						
+
+							<div class="f11" id="t23">Anuales</div>
+
+						
+
+                       
+
+                    </td>
+
+                </tr>
+
+        </table>  	       	
+
+ </div>                
+
+    
+
+<div class="saldos_bloque3 f11 color666">
+
+        	<span class="negrita f11" id="t9">Importante:</span> <span id="t8" class="f11">La veracidad de la informaci&oacute;n a procesar, es responsabilidad de quien la proporciona. Si tienes dudas sobre la informaci&oacute;n 
+
+            solicitada presiona el bot&oacute;n de ayuda que se encuentra en la parte superior de la p&aacute;gina.  </span>       	
+
+
+
+</div>                          
+
+        
+
+
+
+		<div class="saldos_bloque3" id="applet">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                <tr>
+
+					<td id="_SAT_APPLET_" height="18">
+
+					
+
+
+
+					
+
+						<APPLET id=AppImpEjercicio style="LEFT: 0px; TOP: 0px" name=AppImpEjercicio codebase="../../sat_anual" code=ejercicio.EjercicioAWT.class archive=Ejercicio.jar width=750 height=700 VIEWASTEXT >
+
+					
+
+					
+
+					<param Name="NUMERO_CONCEPTOS" value="5">
+
+					<param Name="FECHA_ACTUAL" value="23/04/2012">
+
+						</APPLET>
+
+					</td>		
+
+                </tr>
+
+
+
+                <tr> <td></td></tr>
+
+
+
+            </table>        	
+
+        </div>          
+
+        
+
+			
+
+        <div class="marginT20 overflow">
+
+			<input type="button" id="t10" class="btnRJ86 floatL" value="Regresar" onclick="parent.cargaDocN('Valida Impuestos Reg/Impuestos.html')" />        
+
+            <input type="button" id="t7" class="btnAZ86 floatR" value="Continuar" onclick="RealizarPago();"/>
+
+		</div>
+
+		
+
+		
+
+		<!--MODAL-->
+
+		
+
+		<div id="mensajeError_contenido" style="display:none;">
+
+
+
+		<div class="mensajeError_contenidoIn">
+
+            <div class="mensajeError_Fila1">
+
+                <div class="mensajeError_titulo1" id="t11">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+                <div class="mensaje_btn1">
+
+					<div class="saldos_btn2 margin0" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+				</div>
+
+            </div>
+
+            <div class="mensajeError_Fila1_2  ">
+
+
+
+                <div class="color666 paddingT5 paddingL25 f11"> <span class="color666 paddingT5 f11" id="t12">Pago de impuestos</span></br>
+
+				
+
+					&nbsp;&nbsp;<label id="me"></label><br/>
+
+							
+
+				
+
+				</div>
+
+            </div>
+
+			
+
+				<div class="mensajeError_Fila2 color333 negrita paddingL25" id="t14">Cuenta Origen: Cheques MXN - 002 - Cheques</div>
+
+			
+
+			<div class="mensajeError_Fila2 color333 negrita paddingL25" id="t15">&iquest;Qu&eacute; puedo hacer?</div>
+
+
+
+			
+
+				<div class="mensajeError_Fila2 color666 paddingL25" >
+
+				<span class="color666 paddingT5 f11" id="t16">Si deseas comun&iacute;cate a</span> <span  class="f11" id="t17">servicio a clientes</span> 
+
+				<span class="color666 paddingT5 f11" id="t18">al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br>
+
+				01 800 110 3990 (Del interior de la Rep&uacute;blica).<br></span> 
+
+				</div>
+
+
+
+				
+
+					<div class="mensajeError_Fila2 color666 paddingL25" id="t9">
+
+						Es importante tener a la mano el siguiente c&oacute;digo:
+
+					</div>
+
+					<div id="ne" class="coloree2e24 mensajeError_Fila2 paddingL25"></div>
+
+				
+
+			
+
+            <div class="mensajeError_Fila3">
+
+                <div class="floatR"><input type="button" id="t21" value="Continuar" class="floatR btnAZ86 CerrarVentanaEmergente" onclick="document.getElementById('main').contentWindow.document.getElementById('applet').style.display='block'; document.getElementById('main').contentWindow.document.getElementById('AppImpEjercicio').style.visibility = 'visible';  parent.Expandir();"/></div>
+
+            </div>
+
+		 </div>
+
+		</div>		
+
+	</div>
+
+
+
+	
+
+		<iframe id="ndw" src="../../spanishdir/if.htm" frameborder="0" allowtransparency="true" style="display:none;top:10;left:60;z-Index=1018;position:absolute;"></iframe>
+
+
+
+<input type="hidden" id="but" value="t7">
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+<INPUT TYPE=HIDDEN name="DATA1">
+
+<INPUT TYPE=HIDDEN name="DATA2">
+
+<input type="hidden" name="challenge" value=""> 
+
+<input type="hidden" id="cr" value="challenge">
+
+<input type="hidden" name="DATA15" value="">
+
+<INPUT TYPE=HIDDEN name="DATA4" VALUE="">
+
+<INPUT TYPE=HIDDEN id="nextpage" VALUE="">
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Pago Impuestos SAT Anual|pagoimp1.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

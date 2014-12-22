@@ -1,0 +1,1294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+	<title>Banamex</title>
+
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+	<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/estilos.css">
+
+	<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css">
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script> 
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="40@6ZLA0RK5M3IM4VHQOY75L5B0N3NZ2OGIMN8WZ" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZITS-CONS DETALLE GDF"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="DetallesGDF.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="10"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<script language="JavaScript">
+
+var es=new Array(	'GDF AND SAT RECEIPTS',
+
+					'Receipts',
+
+					'Operation Details',
+
+					'Payment Type',
+
+					'Concept',
+
+					'Date',
+
+					'Authorization Number 1',
+
+					'Authorization Number 2',
+
+					'Capture Line',
+
+					'Amount',
+
+					'Data for Treasury Receipt',
+
+					'Name',
+
+					'Address',
+
+					'Residential Development',
+
+					'Town council',
+
+					'Zip Code',
+
+					'State',
+
+					'Treasury Digital Certificate',
+
+					'Back',
+
+					'Print');
+
+
+
+function DoSubmit( value ) {
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+</script>
+
+<script type="text/javascript">
+
+var PaginaRecibo1="<!DOCTYPE html PUBLIC \'-//W3C//DTD XHTML 1.0 Strict//EN\' \'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\'><html xmlns=\'http://www.w3.org/1999/xhtml\'><head><script type=\'text/javascript\' languaje=\'javascript\'>function DoSubmit(value){document.forms[0].EWFBUTTON.value = value;document.forms[0].EWFBUTTON.name = \'EWF_BUTTON_\'+value;document.forms[0].submit();}<\/SCRIPT></head><body><form target=\'_self\' METHOD=\'POST\' ACTION=\'https://uattmp.boveda.banamex.com.mx/scripts/cgiclntcbbbnp1/K996GM6VPSVG0BQVI0K4CE7/ND001__\'><input type=hidden name=\'EWF_SYS_0\' value=\'61118042-ff0a-11d0-98df-006097b70359\'><input type=hidden name=\'EWF_SYS_1\' value=\'40@6ZLA0RK5M3IM4VHQOY75L5B0N3NZ2OGIMN8WZ\'><input type=\'hidden\' name=\'EWF_FORM_NAME\' value=\'LEV2 Main\'><input type=\'hidden\' size=\'10\' maxlength=\'100\' name=\'DISPLAYPAGE\' value=\'ZITS-CONS DETALLE GDF\'><input type=\'hidden\' size=\'10\' maxlength=\'100\' name=\'TEMPLATE_FILE\' value=\'detallesgdf.htm\'><input type=\'hidden\' size=\'10\' maxlength=\'100\' name=\'SEQUENCE_NUMBER\' value=\'";
+
+var PaginaRecibo2="\'><input type=\'hidden\' name=\'EWFBUTTON\' value=\'\'><input type=\'hidden\' name=\'DATA1\' value=\'PDF\'></form></body></html>";
+
+var ContadorSeq = -1;
+
+var SequenceTemp = 0;
+
+var newWin = null;
+
+var newWinIE9=null;
+
+var contadorRecibos=0;
+
+
+
+function cargarIframeIE9(){
+
+	newWinIE9 = window.open("","PDFWIE9","toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=750,height=500");
+
+	try{
+
+		if(newWinIE9 == undefined || newWinIE9.document == undefined){
+
+			return;
+
+		}
+
+		ContadorSeq += 1; 
+
+		contadorRecibos++; 
+
+		SequenceTemp = ContadorSeq + eval(document.forms[0].SEQUENCE_NUMBER.value); 
+
+		document.getElementById("iframePDF").contentWindow.document.body.innerHTML = PaginaRecibo1 + SequenceTemp + PaginaRecibo2;
+
+		document.getElementById("iframePDF").contentWindow.document.forms[0].setAttribute('target','PDFWIE9');
+
+		document.getElementById("iframePDF").contentWindow.document.forms[0].EWFBUTTON.value = "PRINTGDF"; 
+
+		document.getElementById("iframePDF").contentWindow.document.forms[0].EWFBUTTON.name = "EWF_BUTTON_" + "PRINTGDF";
+
+		document.getElementById("iframePDF").contentWindow.document.forms[0].submit();
+
+	}catch(exp){};
+
+}
+
+
+
+function LanzaRecibo(){
+
+	if(navigator.userAgent.indexOf("MSIE") > 0 ){
+
+		winImp=window.open("../../bbAvatar/impresion/servicios_GDF.pdf","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+	}else{
+
+		winImp=window.open("bbAvatar/impresion/servicios_GDF.pdf","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");		
+
+	}
+
+	winImp.moveTo(0,0);
+
+	
+
+	/*var navegador = identificaNavegador();
+
+	if(navegador == "MSIE-9"){
+
+		if(newWinIE9 != null && newWinIE9.closed){
+
+			newWinIE9 = null;
+
+			$("#iframePDF").remove();
+
+		}
+
+		if(newWinIE9 == null){
+
+			$('<iframe />',{name:'iframePDF', id:'iframePDF', src:'../../if.htm', style:'display:none'}).appendTo('body');	
+
+			setTimeout("cargarIframeIE9()", 1000);
+
+		}
+
+	}else{
+
+		if (newWin != null && newWin.closed){
+
+			newWin = null;
+
+		}			
+
+		if (newWin == null){
+
+			newWin = window.open("","PDFW","toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=750,height=500");
+
+			try{
+
+				if (newWin == undefined || newWin.document == undefined){
+
+					return;
+
+				}
+
+				ContadorSeq += 1;
+
+				contadorRecibos++;
+
+				SequenceTemp = ContadorSeq + eval(document.forms[0].SEQUENCE_NUMBER.value);
+
+				newWin.document.write(PaginaRecibo1 + SequenceTemp + PaginaRecibo2);
+
+				newWin.DoSubmit('PRINTGDF');
+
+			}catch(e){}
+
+		}
+
+	}*/
+
+}
+
+
+
+function PreSubmit( value ){
+
+	if (ContadorSeq != -1)ContadorSeq += 1;
+
+	if(contadorRecibos>0){
+
+    document.forms[0].SEQUENCE_NUMBER.value = eval(document.forms[0].SEQUENCE_NUMBER.value) + contadorRecibos;
+
+	DoSubmit(value);}
+
+	else DoSubmit(value);
+
+}
+
+
+
+function identificaNavegador(){	var navegadorVersion = "";	$.each($.browser, function(bro, val) { if( bro == "msie" && val == true ){ navegadorVersion = "MSIE-"+parseInt($.browser.version, 10);	return; }}); return navegadorVersion; }
+
+
+
+$(document).ready( function(){
+
+	top.impayuda2();
+
+	bindBackSpace()		
+
+	$("input:text, input:password, textarea").focus(function(){
+
+		if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+			$(document).unbind('.backspace');
+
+	});
+
+	$("input:text, input:password, textarea").blur(function(){
+
+		if($(this).attr("readonly") == "")
+
+			bindBackSpace();
+
+	});
+
+});
+
+
+
+function bindBackSpace() {
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+function AbreAyuda(fn) {
+
+	window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function GotoTXN(value) {
+
+	parent.parent.DoSubmit(value);
+
+}
+
+
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+var mesesFecha_BB;
+
+
+
+$(document).ready( function () {
+
+		mesesFecha_BB = ( language=='eng' ) ? ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'] : ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+					catch(e)
+
+					{
+
+					}
+
+			}
+
+		)	
+
+	}
+
+)
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+	var hora = fecha.substring(10);
+
+	var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+	return fechaformateada + hora;
+
+}
+
+
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+	fecha = fecha.replace(/\-/gi," ");
+
+	var conversion = (fecha.substring(4,6)).toLowerCase();
+
+	var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+	return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha){
+
+	var mesIngles="";
+
+	var fechaFormateada="";
+
+	var fec="5 de Abril de 2003";
+
+	var splitFecha=fec.split(' ');
+
+	var Idioma=language;
+
+
+
+	if(splitFecha[0].length==1) {
+
+		splitFecha[0]="0"+splitFecha[0];
+
+	}
+
+
+
+	if( Idioma!="eng" ) {
+
+		fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+	} else {
+
+		if(splitFecha[2]=="Enero")
+
+			{mesIngles="Jan";}
+
+		if(splitFecha[2]=="Febrero")
+
+			{mesIngles="Feb";}
+
+		if(splitFecha[2]=="Marzo")
+
+			{mesIngles="Mar";}
+
+		if(splitFecha[2]=="Abril")
+
+			{mesIngles="Apr";}
+
+		if(splitFecha[2]=="Mayo")
+
+			{mesIngles="May";}
+
+		if(splitFecha[2]=="Junio")
+
+			{mesIngles="Jun";}
+
+		if(splitFecha[2]=="Julio")
+
+			{mesIngles="Jul";}
+
+		if(splitFecha[2]=="Agosto")
+
+			{mesIngles="Aug";}
+
+		if(splitFecha[2]=="Septiembre")
+
+			{mesIngles="Sep";}
+
+		if(splitFecha[2]=="Octubre")
+
+			{mesIngles="Oct";}
+
+		if(splitFecha[2]=="Noviembre")
+
+			{mesIngles="Nov";}
+
+		if(splitFecha[2]=="Diciembre")
+
+			{mesIngles="Dec";}
+
+				
+
+			fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+function formato_dddemesdeaaaa(Fecha){
+
+	var mesIngles="";
+
+	var fechaFormateada="";
+
+	var fec="[Fecha]";
+
+	var splitFecha=fec.split(' ');
+
+	var Idioma=language;
+
+
+
+	if( Idioma!="eng" ) {
+
+		fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+	} else {
+
+		if(splitFecha[2]=="Enero")
+
+			{mesIngles="Jan";}
+
+		if(splitFecha[2]=="Febrero")
+
+			{mesIngles="Feb";}
+
+		if(splitFecha[2]=="Marzo")
+
+			{mesIngles="Mar";}
+
+		if(splitFecha[2]=="Abril")
+
+			{mesIngles="Apr";}
+
+		if(splitFecha[2]=="Mayo")
+
+			{mesIngles="May";}
+
+		if(splitFecha[2]=="Junio")
+
+			{mesIngles="Jun";}
+
+		if(splitFecha[2]=="Julio")
+
+			{mesIngles="Jul";}
+
+		if(splitFecha[2]=="Agosto")
+
+			{mesIngles="Aug";}
+
+		if(splitFecha[2]=="Septiembre")
+
+			{mesIngles="Sep";}
+
+		if(splitFecha[2]=="Octubre")
+
+			{mesIngles="Oct";}
+
+		if(splitFecha[2]=="Noviembre")
+
+			{mesIngles="Nov";}
+
+		if(splitFecha[2]=="Diciembre")
+
+			{mesIngles="Dec";}
+
+
+
+			fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+	}
+
+	return fechaFormateada;
+
+}
+
+	
+
+	
+
+function formato_ddmmaaaaEBSJS(fecha) {
+
+	var indice;
+
+	var fechaAux;
+
+	var IdiomaAux=language;
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+
+
+	if(indice!=-1) {
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if( IdiomaAux!="eng" ) {
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		} else {
+
+			mesFecha=fechaAux.substring(0,2);
+
+				if(mesFecha=="01")
+
+					{mesFecha1="Jan";}
+
+				if(mesFecha=="02")
+
+					{mesFecha1="Feb";}
+
+				if(mesFecha=="03")
+
+					{mesFecha1="Mar";}
+
+				if(mesFecha=="04")
+
+					{mesFecha1="Apr";}
+
+				if(mesFecha=="05")
+
+					{mesFecha1="May";}
+
+				if(mesFecha=="06")
+
+					{mesFecha1="Jun";}
+
+				if(mesFecha=="07")
+
+					{mesFecha1="Jul";}
+
+				if(mesFecha=="08")
+
+					{mesFecha1="Aug";}
+
+				if(mesFecha=="09")
+
+					{mesFecha1="Sep";}
+
+				if(mesFecha=="10")
+
+					{mesFecha1="Oct";}
+
+				if(mesFecha=="11")
+
+					{mesFecha1="Nov";}
+
+				if(mesFecha=="12")
+
+					{mesFecha1="Dec";}
+
+				
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+function formateaFechaBB(formato, fecha) {
+
+	
+
+	fechaFormateada="";
+
+	
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+		
+
+	if(fecha != '' &&  fecha != '&nbsp;'){
+
+		
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if( language=='eng' )
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(3,5) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(0,2), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+</script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){optieneAlturas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+</script>
+
+<script type="text/javascript">
+
+var newWin = null;
+
+var printed = false;
+
+var ContadorSeq = -1;
+
+
+
+function Initialize() {				
+
+	var titulo="Pagos";
+
+	rutaAyuda=rutaAyuda+"Comprobantes.htm";
+
+
+
+	LlenarTablaDetalle('ID_Tb_DetalleGDF1');
+
+	
+
+	if(""=="ERROR")
+
+	{					
+
+		$("#causa").css("height","auto");
+
+		$("#mensajeError_contenido_div", window.parent.document).html(
+
+			$("#idErr").html()
+
+		);
+
+		
+
+		parent.$.modal
+
+		(				
+
+			{
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:true,
+
+			widthDivIfrm:600
+
+			}
+
+		);
+
+	}
+
+}
+
+			
+
+function LlenarTablaDetalle(Id_Tabla){
+
+	var ColorLinea='Color';
+
+	
+
+		if(ColorLinea=='Color') {						
+
+			$('#ID_Tb_DetalleGDF1').append('<tr><td class="ancho50p"><span>Tipo</span></td><td class="ancho50p">A</td></tr>');
+
+			ColorLinea='Blanco';
+
+		} else {
+
+			$('#ID_Tb_DetalleGDF1').append('<tr><td class="ancho50p bgF1F2F2"><span>Tipo</span></td><td class="ancho50p bgF1F2F2">A</td></tr>');
+
+			ColorLinea='Color';
+
+		}
+
+		if(ColorLinea=='Color') {						
+
+			$('#ID_Tb_DetalleGDF1').append('<tr><td class="ancho50p"><span>Periodo</span></td><td class="ancho50p">1 Mes</td></tr>');
+
+			ColorLinea='Blanco';
+
+		} else {
+
+			$('#ID_Tb_DetalleGDF1').append('<tr><td class="ancho50p bgF1F2F2"><span>Periodo</span></td><td class="ancho50p bgF1F2F2">1 Mes</td></tr>');
+
+			ColorLinea='Color';
+
+		}
+
+		if(ColorLinea=='Color') {						
+
+			$('#ID_Tb_DetalleGDF1').append('<tr><td class="ancho50p"><span>Folio</span></td><td class="ancho50p">75042050</td></tr>');
+
+			ColorLinea='Blanco';
+
+		} else {
+
+			$('#ID_Tb_DetalleGDF1').append('<tr><td class="ancho50p bgF1F2F2"><span>Folio</span></td><td class="ancho50p bgF1F2F2">75042050</td></tr>');
+
+			ColorLinea='Color';
+
+		}
+
+	ColorLinea='Blanco';
+
+}
+
+
+
+function onClick_Imprimir() {	
+
+	winImp=window.open("../../bbAvatar/impresion/servicios_GDF.pdf","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+}
+
+
+
+function onClick_Imprimir2() {
+
+	window.document.getElementById('t18').click();
+
+}
+
+
+
+function onClick_Regresar() {
+
+	var obj_Data1 = document.getElementById("ID_Data1");
+
+	var obj_Data2 = document.getElementById("ID_Data2");
+
+	obj_Data1.value="RECIBO GDF";
+
+	obj_Data2.value="11/04/2012";
+
+	
+
+	 if(obj_Data2.value=="")
+
+		obj_Data2.value="PS";
+
+		
+
+	if(printed) {
+
+		document.getElementsByName('SEQUENCE_NUMBER')[0].value = parseInt(document.getElementsByName('SEQUENCE_NUMBER')[0].value) + 1;
+
+	}
+
+	parent.cargaDocN('Comprobantes GDF e Impuestos/Tipo_de_pago_GDF.html');
+
+}
+
+</script>
+
+
+
+<div class="saldos_bloque1">
+
+	<div id="t0" class="float-left fonttit">COMPROBANTES GDF y SAT</div>
+
+	<div id="t1" class="panelIzEnca3_text2">Comprobantes</div>
+
+	<div class="color666 paddingT5 f11">
+
+		Consulta de Operaciones por Transacción GDF
+
+	</div>
+
+</div>
+
+<div class="saldos_bloque3">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">						
+
+		<tr>
+
+			<td class="borderRPunteado ancho25p padding0" valign="top"><span id="t2" class="f12">Detalle de su Operaci&oacute;n</span></td>
+
+			<td valign="top" class="padding0L20">
+
+				<table id="ID_Tb_DetalleGDF1" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+					<tr>
+
+						<td class="ancho50p bgF1F2F2"><span id="t3">Tipo de Pago:</span></td>
+
+						<td class="ancho50p bgF1F2F2">Licencias de Conducir</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p"><span id="t4">Concepto</span></td>
+
+						<td class="ancho50p">Licencia Tipo A Renovacion</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p bgF1F2F2"><span id="t5">Fecha</span></td>
+
+						<td class="ancho50p bgF1F2F2" name="FECHA_BNP_ddemesdeaaaa">5 de Abril de 2003</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p"><span id="t6">No. de Autorizaci&oacute;n 1</span></td>
+
+						<td class="ancho50p">123456</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p bgF1F2F2"><span id="t7">No. de Autorizaci&oacute;n 2</span></td>
+
+						<td class="ancho50p bgF1F2F2">12345678</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p"><span id="t8">L&iacute;nea de Captura</span></td>
+
+						<td class="ancho50p">01XCARJ761010KN80127</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p bgF1F2F2"><span id="t9">Importe Prueba</span></td>
+
+						<td class="ancho50p bgF1F2F2">$123,456</td>
+
+					</tr>												
+
+				</table>										
+
+			</td>
+
+		</tr>
+
+	</table>
+
+</div>
+
+<div class="saldos_bloque3">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">						
+
+		<tr>
+
+			<td class="negrita color333 f11 paddingB5" id="ID_Tb_DetalleGDF2" valign="top"><span id="t10" class="f12">Datos para el Recibo<br/>de la Tesorer&iacute;a</span></td>
+
+			<td valign="top" class="padding0L20">
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+					<tr>
+
+						<td class="ancho50p bgF1F2F2"><span id="t11">Nombre</span></td>
+
+						<td class="ancho50p bgF1F2F2">Chucho Perez</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p"><span id="t12">Domicilio</span></td>
+
+						<td class="ancho50p">Calle de la Nada No. 1</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p bgF1F2F2"><span id="t13">Colonia</span></td>
+
+						<td class="ancho50p bgF1F2F2">Lomas de Sotelo</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p"><span id="t14">Delegaci&oacute;n/ Municipio</span></td>
+
+						<td class="ancho50p">Alvaro Obregon</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p bgF1F2F2"><span id="t15">CP</span></td>
+
+						<td class="ancho50p bgF1F2F2">01020</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="ancho50p"><span id="t16">Estado</span></td>
+
+						<td class="ancho50p">Mexico</td>
+
+					</tr>											
+
+				</table>
+
+				<br /><br /><br /></br />
+
+			</td>
+
+		</tr>
+
+		<tr>
+
+			<td class="borderRPunteado ancho25p padding0" id="ID_Tb_DetalleGDF3" valign="top">
+
+				<span id="t17" class="f12">Certificado Digital<br />de la Tesorer&iacute;a</span>
+
+			</td>
+
+			<td valign="top" class="padding0L20">
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+					<tr>
+
+						<td class="ancho50p bgF1F2F2">1234567890123456789012</td>												
+
+					</tr>                                  
+
+				</table>
+
+			</td>
+
+		</tr>								
+
+	</table>
+
+</div> 
+
+<div class="marginT20 overflow">			
+
+	<input id="t18" type="button" class="btnRJ86 floatL" value="Regresar" onclick="JavaScript:onClick_Regresar()" />			
+
+	<input id="t19" type="button" class="btnAZ86 floatR" value="Imprimir" onclick="JavaScript:onClick_Imprimir()" />
+
+</div>
+
+<br /><br /><br /><br />
+
+<!--Aqui van todos los hidden -->
+
+<input type="hidden" name="EWFBUTTON"/>
+
+<INPUT TYPE=HIDDEN id="ID_Data1" NAME=DATA1 VALUE="">
+
+<INPUT TYPE=HIDDEN id="ID_Data2" NAME=DATA2 VALUE="">		
+
+<INPUT TYPE=HIDDEN ID ="ID_AYUDA" NAME=AYUDA_SPANISH VALUE="../../spanishdir/ayudas/Comprobantes.htm">
+
+<INPUT TYPE=HIDDEN ID ="ID_HELP" NAME=AYUDA_ENGLISH VALUE="../../englishdir/ayudas/Comprobantes.htm">
+
+<!--MODAL-->
+
+<div id="idErr" class="displayN">
+
+	<div class="mensajeError_contenidoIn">
+
+		<div class="mensajeError_Fila1">
+
+			<div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+			<div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+		</div>
+
+		<div class="mensajeError_Fila1_2">
+
+			<div class="color666 paddingT5 paddingL25 f11"><br/>
+
+				<div id="me">Causa:&nbsp;</div>
+
+			</div>
+
+		</div>
+
+		<div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+		<div class="mensajeError_Fila2 color666 paddingL25"><br/>
+
+			Si deseas comun&iacute;cate a servicio a clientes
+
+			al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+			01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+			Es importante tener a la mano el siguiente c&oacute;digo:
+
+			<span id="ne" class="coloree2e24"></span>
+
+		</div>
+
+		<div class="mensajeError_Fila3">
+
+			<div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<script>
+
+parent.setFecha("11/04/12    10:44:28  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	a$Cont="104428  ";b$Cont="104428  "
+
+</script>
+
+<input id="omtmodalvalue" type="hidden" value="Comprobantes GDF e Impuestos|DetallesGDF.htm" />
+
+</div>
+
+<p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

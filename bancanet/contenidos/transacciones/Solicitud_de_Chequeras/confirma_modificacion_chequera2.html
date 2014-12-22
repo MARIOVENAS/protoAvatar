@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+    	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    	<title>Banamex</title>
+
+        <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+        
+
+
+
+        
+
+        
+
+    	<script type="text/javascript">
+
+			
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+			
+
+			$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+			
+
+			
+
+function Initialize(){
+
+	document.getElementById('tipoDchequera').style.display = "none"
+
+	if('1'== "1"){
+
+		document.getElementById('tipoDchequera').style.display = ""}
+
+		else{
+
+		document.getElementById('tipoDchequera').style.display = "none"}
+
+	if("SPANISH"=="ENGLISH"){
+
+	
+
+		es=["Confirm modification data","Modification Data","Account","Number of requested checkbooks","Checksbook type requested","Checkbooks management",
+
+		"Sorry the transaction could not be completed","Checkbooks modification","Cause:","Possible solution","What can I do?",
+
+		"You can use online help or contact the customer service at 1226 3990 (D.F. and Metropolitan area) or<br> 01 800 110 3990 (rest of the Republic)",
+
+		"Is important to have on hand the following code:"];
+
+		swap();
+
+		document.getElementById("aceptar").value="Accept";
+
+		document.getElementById("regresar").value="Return";
+
+		$("#btn_continuar_modal").val("Continue");
+
+	}
+
+	else{
+
+	
+
+	}
+
+	if("0" == "1"){
+
+		$("#causa").css("height","auto");
+
+		$("#mensajeError_contenido_div", window.parent.document).html(
+
+		$("#divError").html());
+
+		parent.$.modal({
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:true,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:'auto'
+
+			});
+
+	}
+
+}
+
+			
+
+function DoSubmit( value ){
+
+	document.forms[0].EWFBUTTON.value = value;
+
+	document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+	document.forms[0].submit();
+
+}
+
+
+
+function continua(){
+
+	document.forms[0].DATA1.value="02";
+
+	document.forms[0].DATA2.value="2";
+
+	document.forms[0].DATA3.value="2";
+
+	document.forms[0].DATA4.value="";
+
+	document.forms[0].DATA5.value="";
+
+	document.forms[0].DATA6.value="00";
+
+	DoSubmit("APLICACION");
+
+}
+
+
+
+function regresa(){
+
+	DoSubmit("REGRESAR");
+
+}
+
+		</script>
+
+<script>parent.setFecha("13/04/12    13:55:26  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="135526  ";b$Cont="135526  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+    </head>
+
+    <body>
+
+        <div id="t5"class="panelIzEnca3_text2">Administraci&oacute;n de chequeras</div>
+
+        <div id="t0" class="color666  paddingT4 f11">Confirma los datos de la modificaci&oacute;n.</div>
+
+        
+
+        <div class="">
+
+        
+
+        
+
+        <div class=" borderBSolid  borderRSolid borderTSolid borderLSolid  marginT22">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p  paddingL20 paddingT18" valign="top"><p id="t1" class="f12">Datos de la<br>modificaci&oacute;n </p></td>
+
+                    <td valign="top" class="padding20">
+
+                    
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                        	<tr>
+
+                            	<td class="ancho50p bgF1F2F2"><span id="t2">Cuenta</span></td>
+
+                                <td class="ancho50p bgF1F2F2">Cheques M.N 002 Cheques</td>
+
+                            </tr>
+
+                            <tr>
+
+                            	<td class="ancho50p"><span id="t3">Cantidad de chequeras solicitadas</span></td>
+
+                                <td class="ancho50p">2</td>
+
+                            </tr>
+
+                            <tr id="tipoDchequera">
+
+                            	<td class="ancho50p bgF1F2F2"><span id="t4">Tipo de chequera solicitada</span></td>
+
+                                <td class="ancho50p bgF1F2F2">Credichequera</td>
+
+                            </tr>
+
+                            
+
+                        </table></td>
+
+                </tr>
+
+            </table>        	
+
+        </div>
+
+        <div class="marginT20 overflow">
+
+        	<input id="regresar" type="button" class="btnRJ86 floatL" value="Regresar" onclick="parent.DoSubmit('Solicitud_de_Chequeras/Chequeras.html')"/>
+
+            <input id="aceptar" type="button" class="btnAZ86 floatR" value="Aceptar" onclick="parent.DoSubmit('Solicitud_de_Chequeras/resultado_modificacion_chequera2.html');"/>
+
+        </div>
+
+        
+
+        </div>
+
+    </body>
+
+	
+
+
+
+
+
+<div id="divError" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div id="t6" class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    Cancelación de Solicitud<br/>
+
+		<div id="causa"><label id="t8" class="f11 color666">Causa:</label>&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+    <div id="t10" class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      <label id="t11">Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).</label><br/>
+
+	  <label id="t12">Es importante tener a la mano el siguiente c&oacute;digo:</label>
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+	
+
+	
+
+	
+
+	<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+	<input type=hidden name="DATA1" value="">
+
+		<input type=hidden name="DATA2" value="">
+
+		<input type=hidden name="DATA3" value="">
+
+		<input type=hidden name="DATA4" value="">
+
+		<input type=hidden name="DATA5" value="">
+
+		<input type=hidden name="DATA6" value="">
+
+</html>
+
+
+
+
+

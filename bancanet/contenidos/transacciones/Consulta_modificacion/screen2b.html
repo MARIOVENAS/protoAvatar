@@ -1,0 +1,353 @@
+       <html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+     <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	 <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+     <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function(){
+
+        
+
+        $.imageTick.logging = true;
+
+        
+
+        $("input[type='checkbox']").imageTick({ 
+
+            tick_image_path: "../../../../JFP/regional/images/img_form/check_1.png", 
+
+            no_tick_image_path: "../../../../JFP/regional/images/img_form/no_check_1.png"
+
+        });
+
+        
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+    
+
+    });
+
+    </script>
+
+              <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important " >  
+
+                    <div class="cH-appPanelHead">
+
+                        <h3 id ="t0">Consulta de Estatus Cheques</h3>
+
+                    </div>
+
+
+
+						<div class="width109 ">
+
+							 <p class="strong topNotes"id ="t1">Detalle de la cuenta</p>
+
+                             <div class="form-row">
+
+                                <label class="for-table"id ="t2">Cuenta:</label>
+
+                                <span>Cheques M.N 002 Cheques</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							<div class="form-row">
+
+                                <label class="for-table" id ="t3">Cheque solicitado:</label>
+
+                                <span>1 a 15</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+						
+
+                            <div class="border-top"></div>
+
+                            <p class="strong " id ="t4">Detalle de cheques</p>
+
+                            <p class="margin-top5 topNotes" id ="t5">Selecciona uno o varios cheques, indique el estatus deseado para cada uno y d&eacute; click en "Continuar".</p>
+
+                            <table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top10">
+
+                               <tbody>
+
+                                  <tr>
+
+                                    <th width="1%" valign="middle" class="borderLabels pad15"><input type="checkbox" id="ch1" /></th>
+
+                                    <th width="25%" valign="middle" class="borderLabels">
+
+                                        <span class="strong float-left" id ="t6">N&uacute;mero de cheque</span>
+
+                                        <a href="#"><div class="descendente active2d float-left">&nbsp;</div></a>
+
+                                    </th>
+
+                                    <th width="25%" valign="middle" scope="col" class="borderLabels" id ="t7">Estatus del cheque</th>
+
+                                    <th width="25%" valign="middle" scope="col" class="alignRight borderLabels" id ="t8">Importe</th>
+
+                                    <!--<th width="25%" valign="middle" class="borderLabels alignRight">Fecha</th>-->
+
+                                  </tr>
+
+                                  <tr class="degrade">
+
+                                    <td valign="middle" class="pad15"><input type="checkbox" checked="checked" id="ch2" /></td>
+
+                                    <td valign="middle">1</td>
+
+                                    <td valign="middle"id ="t9">LIBERADO CR</td>
+
+                                    <td class="alignRight" valign="middle">$14.201,00</td>
+
+                                   <!-- <td class="alignRight" valign="middle">15/11/2011</td>-->
+
+                                  </tr>
+
+                                  
+
+                                   <tr class="greyBack">
+
+                                    <td valign="middle" class="pad15"><input type="checkbox" id="ch3" /></td>
+
+                                    <td valign="middle">2</td>
+
+                                    <td valign="middle" id ="t10">CANCELADO CR</td>
+
+                                    <td class="alignRight" valign="middle">$1.420,00</td>
+
+                                   <!-- <td class="alignRight" valign="middle">19/11/2011</td>-->
+
+                                  </tr>
+
+                                   
+
+                                   <tr class="solid">
+
+                                    <td valign="middle" class="pad15"><input type="checkbox" id="ch4" /></td>
+
+                                    <td valign="middle">3</td>
+
+                                    <td valign="middle" id ="t11">ROBADO CR</td>
+
+                                    <td class="alignRight" valign="middle">$4.000,00</td>
+
+                                   <!-- <td class="alignRight" valign="middle">15/11/2011</td>-->
+
+                                  </tr>
+
+                                   
+
+                                   <tr class="greyBack">
+
+                                    <td valign="middle" class="pad15"><input type="checkbox" id="ch4" /></td>
+
+                                    <td valign="middle">4</td>
+
+                                    <td valign="middle" id ="t12">LIBERADO CON IMPORTE</td>
+
+                                    <td class="alignRight" valign="middle">$100,00</td>
+
+                                    <!--<td class="alignRight" valign="middle">15/11/2011</td>-->
+
+                                  </tr>
+
+                                   
+
+                                   <tr class="solid">
+
+                                    <td valign="middle" class="pad15 border9A last"><input type="checkbox" id="ch5" /></td>
+
+                                    <td valign="middle" class="border9A last">5</td>
+
+                                    <td valign="middle" class="border9A last" id ="t13">PAGADO CR</td>
+
+                                    <td class="alignRight border9A last" valign="middle">$750,00</td>
+
+                                    <!--<td class="alignRight border9A" valign="middle">19/11/2011</td>-->
+
+                                  </tr>
+
+                                 
+
+                                </tbody>
+
+                            </table>
+
+							<div class="clear"></div>
+
+                            <div class="form-row">
+
+                                <label class="for-table" >&nbsp;</label>
+
+                                <select class="float-left" style="*margin-top:-6px !important;margin-top:-6px !important\0/;">
+
+									<option id="t14">Cambiar estatus</option>
+
+                                    <option id="t15">Desactivar (No liberados)</option>
+
+                                </select>
+
+                                <input type="text" class="margin-left15 margin-top-2 text float-left" style="height: 18px;">
+
+                             
+
+                            </div>
+
+                        </div>	
+
+				
+
+					
+
+						
+
+						<div class="cF-sideBySide cF-bottomNav margin-topm10">
+
+							<div class="width124">&nbsp;</div>
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton"><a onClick="cheqp()"id="t16">CONTINUAR</a></li>	
+
+								<li class="cN-primaryNav">
+
+								<div id="flechaLinks">
+
+									<span class="flechaazul float-left"></span>
+
+									<a class="sinBold" href="javascript:regresa();" id="t17">Regresar</a>
+
+								</div></li>	
+
+							</ul>
+
+						 </div>	
+
+						<div class="clear"></div>
+
+				</div>
+
+                
+
+                <script>
+
+                function cheqp(){
+
+					
+
+					top.Consultam10()
+
+					}
+
+					
+
+					
+
+					function regresa(){
+
+					
+
+					top.Consultam()
+
+					}
+
+					
+
+					es=new Array( 'Check status inquiry',
+
+						  'Account Detail',
+
+						  'Account:',
+
+						  'Requested check:',
+
+						  'Check details',
+
+						  'Select one or more checks, indicate the status desired for each check, and click &quot;Continue&quot;.',
+
+						  'Check number:',
+
+						  'Check status',
+
+						  'Amount',
+
+						  'ACTIVATED',
+
+						  'DESACTIVATED',
+
+						  'STOLEN',
+
+						  'ACTIVATED',
+
+						  'ACTIVATED',
+
+						  'Change the selection status',
+
+						  'Activate (Released with Amount)',
+
+						  'CONTINUE',
+
+						  'Return'
+
+						  
+
+	);
+
+                </script>
+
+						</body>
+
+                    </html>
+
+                    
+
+                    

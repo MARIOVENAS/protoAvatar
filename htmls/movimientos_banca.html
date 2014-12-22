@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<title>Banamex</title>
+
+		
+
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css"/>      
+
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css"/>
+
+	
+
+   <!-- <script type="text/javascript" src="../JFP/js/jquery/jquery-1.6.4.min.js"></script>-->
+
+    <script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    
+
+	<script src="../JFP/js/widgets/jquery.dcjqaccordion.2.7.min.js" type="text/javascript"></script>
+
+    <script src="../JFP/js/widgets/jquery.cookie.js" type="text/javascript"></script>
+
+    <script type="text/javascript"  src="../JFP/js/jquery/plugins/left_menu_multilevel.js"></script>
+
+	<script type="text/javascript" src="../JFP/js/script.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+
+
+   <!--<script type="text/javascript" src="../bancanet_demo/contenidos/bbAvatar/js/mando.js"></script>-->
+
+   <script type="text/javascript" src="../bancanet/contenidos/bbAvatar/js/menuSpanish.js"></script>
+
+	
+
+
+
+    
+
+
+
+</head>
+
+<body>
+
+<!--inicia contenedor principal-->
+
+	<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+		<div id="header">
+
+<div class="utilities_nav" id="navegacionPrincipal">
+
+ 
+
+</div>
+
+
+
+<div class="citibank-containerImg">
+
+    <a href="#"><div id="citibank-logo"></div></a>
+
+    <div id="citibank-image"></div>
+
+</div>
+
+
+
+<div class="main_nav" id="menuw">
+
+</div>
+
+
+
+<div id="user-info">
+
+    <div class="userInfo-content" id="msj_bienvenido">
+
+       
+
+        
+
+    </div>
+
+</div>
+
+<!--termina header-->
+
+  </div>
+
+  
+
+  <div class="cS-structBodyContainer"> 				
+
+			<div id="title-section" class="cH-appPageHead height20">
+
+				<div class="float-left">
+
+				  <h1>MOVIMIENTOS EN BANCA ELECTRONICA</h1></div>
+
+                    
+
+       <div id="ayuda">         
+
+       <div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="javascript:void(0);" onclick="Layuda()" class="float-left" >&nbsp;Ayuda</a>
+
+		</div></div>   
+
+     
+
+     <div id="imp" class="displayNone">
+
+       <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+
+		</div>
+
+        </div>
+
+        </div>
+
+		    <div id="content">		
+
+            
+
+		        <!-- The left menu divs are inserted by javascript if it is necessary -->
+
+		        
+
+			  <!-- Cuando no lleva menu izquierdo  <div id="subapp-box" class="noleftmenu float-left margin-top1"> -->
+
+              <div id="subapp-box" class="float-left">
+
+                  <iframe id="iframeConte" name="main" class="ifrContenedor" scrolling="no" frameborder="0" src="../bancanet/contenidos/transacciones/Consulta de operaciones/historial.htm" height="1040" width="920"></iframe>
+
+                  
+
+                </div>  
+
+                
+
+                
+
+                </div>
+
+                
+
+               
+
+			  </div>
+
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="footer"></div>				
+
+		</div>
+
+
+
+  
+
+  </div>
+
+   <script type="text/javascript">
+
+            $(document).ready(function(){
+
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #miBancaNet").addClass('selected')} ,true)
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+				account_summary();
+
+				setTimeout(function(){$('#MiBancaNet').addClass('active')},900);
+
+            });
+
+        </script>
+
+       
+
+               <script type="text/javascript">
+
+
+
+	function banca(){
+
+open('../../30-Transferencias_pagos.html' , "_self")
+
+tamano1();
+
+cargaDocN('Transferencias_y_Pagos_Otras_Cuentas/Otras_Cuentas.html')
+
+ayuda();
+
+}
+
+	
+
+	
+
+	function cambiaP2_s2(){
+
+	tamano1();
+
+cargaDocN('Transferencias_y_Pagos_Otras_Cuentas/Otras_Cuentas.html')
+
+	ayuda();
+
+	}
+
+	
+
+	
+
+	
+
+	function cambiaP2(){
+
+	alert('En construcción')
+
+	ayuda();
+
+	}		
+
+	
+
+	function detalles(){
+
+	
+
+cargaDocN('Consulta de operaciones/historial_detalles.html')
+
+
+
+	}	
+
+	
+
+function todas(){
+
+	
+
+cargaDocN('Consulta de operaciones/historial_todas.html')
+
+
+
+	}	
+
+	
+
+	
+
+	function Layuda(){
+
+window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	
+
+	function Limprimir(){
+
+		window.print();
+
+		}
+
+	
+
+</script>
+
+<!--<IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="../bancanet_demo/contenidos/menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>-->
+
+    <input type="hidden" id="objs" value="1"/>
+
+    <INPUT TYPE="HIDDEN" ID="TIMEOUT" VALUE="">
+
+    <INPUT TYPE="HIDDEN" NAME="LASTRESET" VALUE="">
+
+    <INPUT TYPE="hidden" id="segRestan" VALUE="">		
+
+    <input type="button" name="exit" style = "display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');">
+
+    <INPUT TYPE=HIDDEN ID=DATAAUX  NAME=DATAAUX VALUE="">
+
+	<INPUT TYPE=HIDDEN ID=DATADEMO NAME=DATADEMO VALUE=""/>
+
+	<INPUT TYPE=HIDDEN ID=REGRESADEMO NAME=REGRESADEMO VALUE=""/>
+
+	<INPUT TYPE=HIDDEN ID=CONTINUADEMO NAME=CONTINUADEMO VALUE=""/>
+
+    <input type="hidden" id="titHdn" name="titHdn" value="" />
+
+
+
+<!--termina contenedor principal-->
+
+<div id="cortinaOverlay" class="cerrarOverlay" style="display: none;"></div>
+
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+
+			<tbody><tr><td>
+
+						<div id="mensajeError_contenido_div">
+
+						</div>
+
+						<iframe id="mensajeError_contenido_ifrm" src="../bancanet/contenidos/if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+
+			</td></tr></tbody>
+
+			</table>
+
+		</div>
+
+	</div>
+
+<iframe id="nwd" src="../bancanet/contenidos/if.htm" name="ndw" style="display:none"></iframe>    
+
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+
+		<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+
+			<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+
+				<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+
+					<tbody>
+
+						<tr>
+
+							<td>
+
+								<div id="mensajeError_contenido_divEspecial"></div>
+
+								<iframe id="mensajeError_contenido_ifrmEspecial" src="../bancanet/contenidos/if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>                        
+
+							</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</div>
+
+        
+
+        </body>
+
+</html>

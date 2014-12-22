@@ -1,0 +1,237 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+     <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	 <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+     <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+<div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%" >
+
+  				<div class="cH-appPanelHead ffmtop5">
+
+                	<h3 class="float-left" id="t0">Modificar Solicitud Anterior de Chequeras</h3>
+
+					<div id="flechaLinks" class="float-right">
+
+						<span class="flechaGris float-left">&nbsp;</span>
+
+						<a onClick="window.open('screen5.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" id="t1">Versi&oacute;n para impresi&oacute;n</a>
+
+					</div>
+
+					<div class="clear"></div>
+
+                </div>
+
+		
+
+				<div class="border-top margin-topm10"></div>
+
+				<p class="strong topNotes" id="t2">Datos de la solicitud</p>
+
+				<div class="width200">
+
+					<div class="form-row">
+
+						<label class="for-table" id="t3">Cuenta:</label>
+
+						<span>Cheques M.N  002 Cheques</span>
+
+						<div class="clear"></div>
+
+					</div>
+
+					<div class="form-row">
+
+						<label class="for-table" id="t4">Cantidad de chequeras solicitadas:</label>
+
+						<span>5</span>
+
+						<div class="clear"></div>
+
+					</div>
+
+
+
+					<div class="form-row">
+
+						<label class="for-table" id="t5">N&uacute;mero de folio inicial:</label>
+
+						<span>1</span>
+
+						<div class="clear"></div>
+
+					</div>
+
+					<div class="form-row">
+
+						<label class="for-table" id="t6">N&uacute;mero de folio final:</label>
+
+						<span>1</span>
+
+						<div class="clear"></div>
+
+					</div>
+
+					<div class="form-row margin-bottom20">
+
+						<label class="for-table" id="t7">N&uacute;mero de cheques por chequera:</label>
+
+						<span>50</span>
+
+						<div class="clear"></div>
+
+					</div>
+
+					<div class="border-top"></div> 
+
+					<div class="form-row">
+
+						<label class="for-table" id="t8" >Estatus:</label>
+
+						<span id="t9">Recibida</span>
+
+						<div class="clear"></div>
+
+					</div>
+
+					<div class="form-row">
+
+						<label class="for-table" id="t10">N&uacute;mero de instrucci&oacute;n:</label>
+
+						<span>270479</span>
+
+						<div class="clear"></div>
+
+					</div>
+
+				</div>
+
+				<div class="border-top"></div> 
+
+				<p class="bottomNotes" id="t11">A partir del 5° d&iacute;a h&aacute;bil podr&aacute;s acudir a la sucursal donde abriste tu cuenta para recoger tus cheques.</p>
+
+				
+
+			   <div class="cF-sideBySide cF-bottomNav">
+
+			   		
+
+					<ul class="cN-primaryNav">
+
+						<!--<li class="cM-spriteBase cN-primaryNavButton"><a href="#">ENVIAR POR EMAIL</a></li>	-->
+
+						<li class="cM-spriteBase cN-primaryNavButton"><a href="javascript:cheqp();" id="t12">Regresar</a></li>	
+
+					</ul>
+
+				 </div>
+
+				<div class="clear"></div>
+
+				<!--<div id="contentOpcoes">
+
+					<div class="border-top"></div> 
+
+					
+
+					<div class="strong margin-bottom10">Other options</div>
+
+					<div id="flechaLinksOpcoes">
+
+							<span class="flechaGris float-left">&nbsp;</span>
+
+							<a href="#">Option A</a>
+
+					</div>
+
+					<div id="flechaLinksOpcoes">
+
+							<span class="flechaGris float-left">&nbsp;</span>
+
+							<a href="#">Option B</a>
+
+					</div>
+
+				</div>-->
+
+      </div>
+
+      <script>
+
+      function cheqp(){
+
+		  top.ModSol3();
+
+		  }
+
+		  
+
+		  es=new Array('Modify prior checkbook request',
+
+				 'Print',
+
+				 'Modification Data',
+
+				 'Checking account',
+
+				 'Number of checkbooks',
+
+				 'Initial Folio number',
+
+				 'Final Folio number',
+
+				 'Number of checks per checkbook',
+
+				 'Status',
+
+				 'Received',
+
+				 'Authorization number',
+
+				 'From the 5th working day you can go to the branch where you opened your account to pick up your checkbooks',
+
+				 'Return'
+
+	);
+
+	  </script>
+
+				</body>
+
+</html>

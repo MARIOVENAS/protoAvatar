@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+		<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+		<script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+		<script type="text/jscript">
+		es=new Array(
+		'Capture',
+		'Verify',
+		'Response',
+		'Notificaciones Banamex',
+		'Confirm your new password.',
+		'New password:',
+		'Confirm new password:',
+		'ACCEPT',
+		'Back'
+		);
+		</script>
+	</head>
+	<body class="bg_demo">
+		<div class="width100p overflow margin-bottom5">
+			<ul class="pagos_opc">
+				<li id="opcCaptura"><strong>1</strong> <span id="t0">Captura</span> </li>
+				<li id="opcVerifica" class="selected"><strong>2</strong>  <span id="t1">Verifica</span> </li>
+				<li id="opcRespuesta"><strong>3</strong>  <span id="t2">Respuesta</span> </li>
+			</ul>
+		</div>
+		<div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">
+			<div class="cH-appPanelHead">
+				<h3 id="t3">Notificaciones Banamex</h3>
+			</div>
+			<div class="width100p">
+				<div class="clear"></div>
+				<p class="instructions margin-bottom24" id="t4">Confirma los datos de tu contrase&ntilde;a nueva.</p>
+<!--<span class="strong">Instruç&otilde;es</span>-->
+<div class="width141">
+	<div class="form-row margin-bottom10 ancho100p">
+		<label class="for-table" id="t5">Nueva contrase&ntilde;a:</label>
+		<p class="float-left"/>********</p>
+		<div class="clear"></div>
+	</div>
+	<div class="form-row margin-bottom20 ancho100p">
+		<label class="for-table" id="t6">Confirma la nueva contrase&ntilde;a:</label>
+		<p class="float-left"/>********</p>
+		<div class="clear"></div>
+	</div>
+	<div class="cF-sideBySide border-topSolid ancho100p margin-top1 paddingT3">
+		<!-- div class="width210 float-left">&nbsp;</div -->
+		<ul class="cN-primaryNav paddingT10">
+			<li class="cM-spriteBase cN-primaryNavButton"><a href="javascript:void(0)" onclick="aceptar();" id="t7">Aceptar</a></li>
+			<li class="cN-primaryNav">
+				<div id="flechaLinks">
+					<span class="flechaazul float-left"></span>
+					<a href="javascript:void(0)" class="sinBold" id="t8" onclick="regresar();">Regresar</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+				
+				<br><br><br>
+				<br>
+				<br>
+
+				<script type="text/javascript">
+					$(document).ready(function() {
+					    top.tamano1_3();
+					    top.ligaNotificaciones();
+					    $.imageTick.logging = true;
+					    $("input[name='cuenta']").imageTick({
+					        tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png",
+					        no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+					        image_tick_class: "radios"
+					    });
+					    $("input[name='cuenta2']").imageTick({
+					        tick_image_path: "../../../../JFP/regional/images/check_1.png",
+					        no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+					    });
+					});
+
+					function aceptar() {
+					    top.cargaDocN('Notificaciones_Banamex/screenR4.html');
+					}
+
+					function regresar() {
+					    top.cargaDocN('Notificaciones_Banamex/screenC4.html');
+					}
+				</script>
+			</body>
+		</html>

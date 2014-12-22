@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="pragma" content="no-cache"/>
+
+<meta http-equiv="cache-control" content="no-cache"/>
+
+<meta http-equiv="expires" content="-1"/>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+<link href="../../bbAvatar/css/estilosmulti.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+  <script type="text/javascript">
+
+  
+
+	$(document).ready(function(){optieneAlturas();parent.ajustar();window.parent.$('.panelDerecho').hide();$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+
+
+function verSaldos1(){
+
+		$("#divCargando").show();
+
+		setTimeout("parent.DoSubmit('Mul_TodasCtas/01b-MultiSaldos_REAL.htm');",1000);
+
+	}
+
+</script>
+
+   <title></title>
+
+</head>
+
+
+
+<body >
+
+
+
+<div class="resumen_enca ancho100p">
+
+<div class="floatR marginT7 paddingR7 ancho40p">
+
+  <div class="saldos_btn1 showtooltip margin_menosT3 Ayuda" onclick="Javascript:AbreAyuda('https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/Estados-de-cuenta-y-Movimientos.htm');"></div>
+
+ <div class="saldos_btn2 showtooltip margin_menosT3 Imprimir" onclick="imprimirMain();"></div>
+
+
+
+   
+
+   <div class="floatR">
+
+  <div class="resumen_flecha"></div>
+
+   <a href="javascript:void(0);" onclick="javascript:verSaldos1()">Ver resumen de cuentas</a></div>
+
+  </div>
+
+ <div class="floatL">
+
+     <div class="floatL"><h1>DETALLE DE LA CUENTA</h1> </div>
+
+      <div class="floatL marginL10 marginT2">
+
+      <select name="select" id="comboCuentas" onchange="javascript:seleccionaCuenta(value);">
+
+	<option class="0" value="PS">&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>
+
+    <option class="1" value="1|CH">Cheques&nbsp;-&nbsp;002&nbsp;-&nbsp;MXN</option>
+
+    <option class="2" value="2|IN">Mi inversion&nbsp;-&nbsp;010&nbsp;-&nbsp;MXN</option>
+
+    <option class="6" value="6|MA">Mi maestra.&nbsp;-&nbsp;490&nbsp;-&nbsp;MXN</option>
+
+    <option class="3" value="3|TC">Tarjeta Cr&eacute;dito&nbsp;-&nbsp;796&nbsp;-&nbsp;MXN</option>
+
+    <option class="7" value="7|CD">Cr&eacute;dito&nbsp;-&nbsp;256&nbsp;-&nbsp;MXN</option>
+
+    <option class="4" value="4|IN">HORZONT&nbsp;-&nbsp;746&nbsp;-&nbsp;MXN</option>
+
+    <option class="6" value="6|PE">Cuenta Perfiles&nbsp;-&nbsp;502&nbsp;-&nbsp;MXN</option>
+
+    <option class="4" value="4|PE">Inversion Perfiles&nbsp;-&nbsp;502&nbsp;-&nbsp;MXN</option>
+
+    <option class="5" value="5|AF">Mi afore NSS&nbsp;-&nbsp;424&nbsp;-&nbsp;MXN</option>
+
+    <option class="3" value="3|TP">Tarj Premia Pre&nbsp;-&nbsp;245&nbsp;-&nbsp;MXN</option>
+
+    <option class="8" value="8|IN">Multiseries&nbsp;-&nbsp;378&nbsp;-&nbsp;MXN</option>
+
+</select>
+
+    </div>
+
+   </div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+
+<div class="floatL ancho70p marginT15">
+
+  <div class="boldText f14 floatL paddingT4">Mi inversi&oacute;n integral - INVERSION INTEGRAL BANAMEX - MXN - **362</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="floatL ancho70p marginT37 paddingT3" >
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td class="paddingB3 paddingT3" width="25%"><span id="t7">Instrumento</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3" width="22%">HORZCOB</td>
+
+    <td class="paddingB3 paddingT3" width="8%">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3" width="30%"><span id="t10">&Oacute;rdenes pendientes</span></td>
+
+    <td width="15%" class="alignRight color8f paddingB3 paddingT3">0</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB3 paddingT3"><span id="t8">Fecha del saldo</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">13 Oct 2000</td>
+
+    <td class="paddingB3 paddingT3">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3"><span id="t11">Fecha del &uacute;ltimo movimiento</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">15 Oct 2000</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB3 paddingT3"><span id="t9">Saldo</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">$ 12,000.00</td>
+
+    <td class="paddingB3 paddingT3">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3"><span id="t12">Estatus del contrato</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">ACTIVO</td>
+
+    </tr>
+
+</table>
+
+</div>
+
+<div class="floatL marginL30 paddingL25 ancho20p borderlSolid9 marginT5">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tr> 
+
+      <td class=" f14 boldText paddingB10">&iquest;QU&Eacute; DESEAS HACER?</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingT3 paddingB3 ">  
+
+   
+
+        <div class="resumen_flecha"></div> 
+
+        <a href="#" onclick="javascript:saltoInversiones()">Invertir mi dinero</a>
+
+    </td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+<div class="clear alto200"></div>
+
+<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	<!--
+
+	$(document).ready(function(){optieneAlturas();top.window.scrollTo(0,0);$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+	-->
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+		
+
+		valor=0;
+
+		
+
+        function cambiopage(){
+
+				
+
+				
+
+				
+
+				
+
+				if(valor==1)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm');
+
+					
+
+							}
+
+				if(valor==2)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('14-Cheques_mes_actual_real.htm');
+
+					
+
+							}
+
+				if(valor==3)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('26-TDD-MesActual-REAL.htm');
+
+					
+
+							}
+
+				if(valor==4)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Afore.htm');
+
+					
+
+							}
+
+				if(valor==5)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-creditos.html');
+
+					
+
+							}
+
+							
+
+				if(valor==6)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_horizonte.htm');
+
+					
+
+							}
+
+				if(valor==7)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_inversionempresarial.htm');
+
+					
+
+							}
+
+			        if(valor==8)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_inversionintegral.htm');
+
+					
+
+							}
+
+				if(valor==9)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-inversiones_4.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==10)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-inversiones_6.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==11)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('maestra_mes_actual.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==12)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Multiseries.htm');
+
+					
+
+							}
+
+				if(valor==13)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('premia_mes_actual.htm');
+
+					
+
+							}
+
+			
+
+			}
+
+        </script>
+
+<script type="text/javascript">
+
+        function seleccionaCuenta(valor){
+
+			var sigtmp;
+
+		var data = new Array();
+
+		data = valor.split("|");
+
+		if(data[0] == "1"){
+
+			sigtmp = "Mul_TodasCtas/14-Cheques_mes_actual_real.htm";
+
+		}else if(data[0] == "2"){
+
+			sigtmp = "Mul_TodasCtas/Resumen-de-inversiones_4.htm";
+
+		}else if(data[0] == "3"){
+
+			if(data[1] == "TC"){
+
+				sigtmp = "Mul_TodasCtas/04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/premia_mes_actual.htm";
+
+			}
+
+		}else if(data[0] == "4"){
+
+			if(data[1] == "IN"){
+
+				sigtmp = "Mul_TodasCtas/inversionesdetalle_horizonte.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/inversionesdetalle_inversionintegral.htm";
+
+			}
+
+		}else if(data[0] == "5"){
+
+			sigtmp = "Mul_TodasCtas/Afore.htm";
+
+		}else if(data[0] == "6"){
+
+			if(data[1] == "PE"){
+
+				sigtmp = "Mul_TodasCtas/cuenta_perfiles_periodo_actual.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/maestra_mes_actual.htm";	
+
+			}
+
+		}else if(data[0] == "7"){
+
+			sigtmp = "Mul_TodasCtas/Resumen-de-creditos.html";
+
+		}else{
+
+			sigtmp = "Mul_TodasCtas/Multiseries.htm";
+
+		}
+
+		$("#divCargando").show();
+
+		setTimeout("parent.DoSubmit('"+sigtmp+"');",1000);
+
+	}
+
+	function imprimirMain(){
+
+		parent.document.getElementById("main").contentWindow.focus();
+
+		parent.document.getElementById("main").contentWindow.print();
+
+	}
+
+	
+
+	function AbreAyuda(fn){
+
+	window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+	}
+
+	
+
+	function adminTarjetas(expansor){
+
+	top.SaltoTransaccion(4,1,1);
+
+	window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+}
+
+	
+
+	function comprobantes(){
+
+	top.SaltoTransaccion(1,2,5);
+
+	window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	function activarMovil(){
+
+		parent.submitFuera('Actualiza Datos Cliente', 'Mis Productos - Contrataci&oacute;n en l&iacute;nea');
+
+	}
+
+	function domiciliarServicio(){
+
+		top.SaltoTransaccion(1,2,4);
+
+		window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	
+
+	
+
+	function transferencias(){
+
+		var indice = $("#comboCuentas").find("option:selected").val();
+
+		$("#DATAAUX", window.parent.document).val(indice);
+
+		top.SaltoTransaccion(1,1,0);
+
+		window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	
+
+	function pagoServicios(){
+
+		var indice = $("#comboCuentas").find("option:selected").val();
+
+		$("#DATAAUX", window.parent.document).val(indice);
+
+		top.SaltoTransaccion(1,2,1);
+
+		window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	
+
+	function pagoTarjetas(){
+
+		$("#DATAAUX", window.parent.document).val("25");
+
+		top.SaltoTransaccion(1,2,0);
+
+		window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	
+
+	function saltoInversiones(){
+
+		top.SaltoTransaccion(2,0);
+
+		window.parent.setBanner(parent.menus[2][3], parent.menus[2][4]);
+
+	}
+
+	
+
+	function saltoMultiseries(){
+
+		top.SaltoTransaccion(2,3);
+
+		window.parent.setBanner(parent.menus[2][3], parent.menus[2][4]);
+
+	}
+
+	
+
+	function saltoChequera(expansor){
+
+		top.SaltoTransaccion(4,1,2);
+
+		window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	}
+
+	
+
+	function activarNotificaciones(){
+
+		top.SaltoTransaccion(4,3);
+
+		window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	}
+
+	
+
+	function adminTarjetas(expansor){
+
+		top.SaltoTransaccion(4,1,1);
+
+		window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	}
+
+	
+
+	function cambioNIP(){
+
+		top.SaltoTransaccion(4,0,1);
+
+		window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	}
+
+	
+
+	function LinkTransaccionSaldos(primerN, segundoN, tercerN, tPago){
+
+		var aux="";
+
+		if(tPago!="") aux = "|"+tPago;
+
+		$("#DATAAUX", window.parent.document).val("25"+ aux);
+
+			if(tercerN!="")
+
+				window.parent.SaltoTransaccion(primerN,segundoN,tercerN);
+
+			else
+
+				window.parent.SaltoTransaccion(primerN,segundoN);
+
+}
+
+
+
+
+
+	
+
+</script><div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayN">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src='../../bbAvatar/images/loader.gif'/></div>
+
+    <div style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'>Espere un momento por favor ...</div>
+
+</div>
+
+</body>
+
+</html>
+

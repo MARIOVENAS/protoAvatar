@@ -1,0 +1,40 @@
+<html>
+
+<head><title></title>
+
+<script>window.history.forward(1);</script>
+
+<script>P=parent;ccc=P.CURRENT_MODULE;var nav$=navigator.userAgent.indexOf("MSIE");$lan_=P.v_idioma</script>
+
+<script>
+
+
+
+if((nav$<0&&ccc!="Z2CS"&&ccc!="ZBIE"&&ccc!="ZMTC"&&ccc!="ZPIB"&&ccc!="Z2TT"&&ccc!="Z3OP") || (nav$>0&&ccc!="Z2CS"&&ccc!="ZBIE"&&ccc!="ZMTC"&&ccc!="ZPIB"&&ccc!="Z2TT"&&ccc!="Z3OP") )
+
+{
+
+    aContent = parent.mainFunc();
+
+    document.write(aContent)
+
+}
+
+else if(typeof(P.menu.DoSubmit)!="undefined")
+
+    if(ccc=="Z2CS")P.menu.DoSubmit("Consulta de Saldos");
+
+    else if(ccc=="ZMTC")P.menu.DoSubmit("Mul_TodasCtas");
+
+    else if(ccc=="ZBIE")P.menu.DoSubmit("BIENVENIDO");
+
+    else if(ccc=="ZPIB")P.menu.DoSubmit("Pagos Interbancarios");
+
+    else if(ccc=="Z2TT")P.menu.DoSubmit("Traspaso a Terceros");
+
+    else if(ccc=="Z3OP")P.menu.DoSubmit("Ordenes de pago");
+
+</script>
+
+</head><body><div id="wrapper_div"></div></body></html>
+

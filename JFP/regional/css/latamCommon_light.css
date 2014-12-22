@@ -1,0 +1,1753 @@
+
+
+
+
+body{
+
+    margin: 0px;
+
+    padding: 0px;
+
+	line-height: 1.2 !important;
+
+}
+
+
+
+a { text-decoration:none;}
+
+
+
+body, a {
+
+    color: #000000;
+
+}
+
+#wrap {
+
+    margin: 0 auto;
+
+    width: 984px;
+
+    position: relative;
+
+}
+
+
+
+.main-content {
+
+    padding-left:28px;
+
+    width: 928px;
+
+	
+
+}
+
+#title {
+
+    background: none repeat scroll 0 0 transparent;
+
+    height:auto;
+
+    width: 100%;
+
+	margin-bottom:0px;
+
+}
+
+#title h3 {
+
+    color: #333333;
+
+    font-size: 20px;
+
+    font-weight: normal;
+
+    margin: 0px 0px;
+
+    border-bottom: 2px solid #CCCCCC;
+
+    padding:20px 0 10px;
+
+}
+
+
+
+img{ border:none;}
+
+
+
+
+
+/* LEFT MENU MULTILEVEL */
+
+
+
+.right-column{
+
+    float:right;
+
+    margin-top: 22px}
+
+#top-menu .queNec{
+
+	#line-height:22px !important;
+
+}
+
+
+
+#top-menu a {
+
+	color: #FFFFFF;
+
+	font-size: 10px !important;
+
+	margin-right: 20px;
+
+	text-decoration: none;
+
+}
+
+.citibank-containerImg{
+
+	height: 86px;
+
+	display: block}
+
+	
+
+#citibank-logo {
+
+	background: url("../images/layout/logo_banamex.png") no-repeat scroll 0 0 transparent;
+
+	height:86px;
+
+	width:388px;
+
+	float:left;
+
+}
+
+#citibank-image {
+
+	background: url("../images/layout/imageHeaderCiti.png") no-repeat scroll 0 0 transparent;
+
+	height:86px;
+
+	width:596px;
+
+	float:left
+
+}
+
+#user-info {
+
+    	background:none;
+
+    	padding-top: 15px;	
+
+}
+
+
+
+#user-info .userInfo-content{
+
+	border-bottom: 1px solid #CCCCCC;
+
+    height: 25px;
+
+    margin: 0 auto;
+
+    width: 926px;
+
+}
+
+
+
+ #user-info .userInfo-content span, #user-info .userInfo-content #flechaLinks a:hover{
+
+	font-size:12px !important;
+
+}
+
+
+
+ #user-info .userInfo-content #flechaLinks a{
+
+	font-size:12px !important;
+
+	color: #000;
+
+}
+
+
+
+.numberMessage{
+
+	padding:1px; 
+
+	border: 1px solid #ccc;
+
+	float:left;
+
+	margin-left: 5px;
+
+   	background: linear-gradient(top, rgb(255,255,255) 47%, rgb(237,237,237) 100%);
+
+	background: -o-linear-gradient(top, rgb(255,255,255) 47%, rgb(237,237,237) 100%);
+
+	background: -moz-linear-gradient(top, rgb(255,255,255) 47%, rgb(237,237,237) 100%);
+
+	background: -webkit-linear-gradient(top, rgb(255,255,255) 47%, rgb(237,237,237) 100%);
+
+	background: -ms-linear-gradient(top, rgb(255,255,255) 47%, rgb(237,237,237) 100%);
+
+	background: -webkit-gradient(linear, top, color-stop(0.47, rgb(255,255,255)), color-stop(1.0, rgb(237,237,237)));
+
+	-pie-background: linear-gradient(top, rgb(255,255,255) 47%, rgb(237,237,237) 100%);
+
+  	behavior: url(JFP/regional/PIE.htc); /* url tiene que ser relativa a layout.html*/
+
+}
+
+
+
+
+
+/****** END HEADER *****/
+
+
+
+/****** BEGIN FOOTER *****/
+
+
+
+#footer {
+
+    	background:none;
+
+	padding:40px 0 0 0;
+
+}
+
+
+
+#footer p{
+
+	color:#999999;
+
+	margin-top:-2px;
+
+	font-size:11px !important;
+
+}
+
+#footer .options  {
+
+	border-bottom: 2px solid #CCCCCC;
+
+	display: table;
+
+	padding-bottom: 5px;
+
+	padding-top: 5px;
+
+	width: 100%;
+
+	text-align:right;
+
+}
+
+
+
+#footer .options  a.prelogin{ color:#666666 !important;}
+
+
+
+#footer .options a, #footer .options  a.prelogin{
+
+	display:block;
+
+	text-align: right;
+
+    	text-decoration: none;
+
+	font-size:11px !important;
+
+}
+
+
+
+#footer .options a:hover, #footer .options  a.prelogin:hover{ color:#3399CC !important;}
+
+#footer .options #citibankcom{ margin-left:0px;}
+
+
+
+#footer .options a.float-left{ margin-left:0px;}
+
+
+
+#footer .options a.float-right{ margin-left:23px;}
+
+
+
+#footer .options a.align-left{ text-align:left;}
+
+#footer .logo {
+
+    	background: url("../images/layout/footer-logo.jpg") no-repeat scroll 0 0 transparent;
+
+    	height: 20px;
+
+    	margin-top: 10px;
+
+    	width: 25px;
+
+	padding-left:41px;
+
+}
+
+
+
+#footer .copy {
+
+	color: #999;
+
+	margin-top: 14px;
+
+	font-size: 11px;
+
+}
+
+
+
+/****** END FOOTER *****/
+
+#screenPrint h3 {
+
+    font-size: 12px !important;
+
+    font-weight: bold;
+
+    margin-bottom: 22px;
+
+	margin-left:17px;
+
+}
+
+
+
+.anchoPopup .solid-bottom {
+
+border-bottom: 1px solid #CCCCCC;
+
+margin-bottom:22px;
+
+}
+
+
+
+
+
+
+
+.blackline{
+
+	border-bottom: 2px solid #777777;
+
+	height: 5px;}
+
+
+
+#appNavTbl tr td{
+
+	text-align:left !important;
+
+	height:auto !important;
+
+	padding-left:0px !important
+
+}
+
+table tr.degrade{
+
+	background:url("../images/layout/gradient_tabla.jpg") repeat-x;
+
+	}
+
+
+
+table tr.greyBack{
+
+	background:#f3f3f3;
+
+	}
+
+
+
+.ascendente, .descendente {
+
+    height: 11px;
+
+    margin-left: 2px !important;
+
+    margin-top: 3px !important;
+
+	*margin-top: 2px !important;
+
+    width: 12px;
+
+}
+
+
+
+.descendente {
+
+    background: url("../images/layout/sortDown.png") no-repeat scroll 0 0 transparent;
+
+}
+
+
+
+.ascendente {
+
+    background: url("../images/layout/sortUp.png") no-repeat scroll 0 0 transparent;
+
+}
+
+
+
+.descendente.active{
+
+   background: url("../images/layout/sortDown_act.png") no-repeat scroll 0 0 transparent;
+
+}
+
+
+
+
+
+/*** No left menu css ***/
+
+
+
+/* Paginacion */
+
+
+
+.containerPag{
+
+float:left;
+
+width:500px;
+
+color:#666666;
+
+}
+
+
+
+
+
+.prevGrey, .prevBlue{
+
+width:8px;
+
+height:10px;
+
+margin-right:10px;
+
+margin-top:-1px;
+
+*margin-top:-2px;
+
+margin-top:-2px\0/ !important;
+
+float:left}
+
+
+
+.prevGrey{ background: url("../images/paginadorV1.5/prev_gr.png") no-repeat scroll 0 0 transparent;}
+
+.prevBlue{ background: url("../images/paginadorV1.5/prev_az.png") no-repeat scroll 0 0 transparent;}
+
+
+
+
+
+.nextGrey, .nextBlue{
+
+width:8px;
+
+height:10px;
+
+margin-left:10px;
+
+margin-top:-1px;
+
+*margin-top:-2px;
+
+margin-top:-2px\0/ !important;
+
+float:left}
+
+
+
+
+
+
+
+.numberPageBlue{
+
+color:#05589d !important;
+
+margin-top:-4px;
+
+float:left
+
+}
+
+
+
+.numberPageGrey{
+
+color:#666666 !important;
+
+margin-top:-4px;
+
+float:left
+
+}
+
+
+
+.numberPageBlue a{
+
+color:#05589d !important;}
+
+
+
+
+
+.selectedPage{
+
+	border: 1px solid #666666;
+
+    float: left;
+
+    height: 14px;
+
+    margin-left: 5px;
+
+    margin-right: 5px;
+
+    margin-top: -6px;
+
+    padding: 1px;
+
+	*padding-left:0px;
+
+	padding-left:0px \0/ !important;
+
+    text-align: center;
+
+    width: 17px;
+
+	}
+
+	
+
+	
+
+.numberPageBlue a:hover, .numberPageBlue a:hover{
+
+text-decoration:underline !important}
+
+
+
+/* Iframe */
+
+
+
+.termosCondiciones {
+
+	height:165px;
+
+	overflow:auto;
+
+}
+
+
+
+/* Cajas con flechas */
+
+
+
+.containerArrows {
+
+width: 20px;
+
+height: 0px;
+
+text-align: center;
+
+padding-top: 45px !important;
+
+float: left;
+
+}
+
+
+
+@-moz-document url-prefix() {
+
+.containerArrows {
+
+width: 20px;
+
+height: 0px;
+
+text-align: center;
+
+padding-top: 45px !important;
+
+float: left;
+
+}
+
+}
+
+
+
+.containerArrowUp {
+
+	background: url("../images/layout/flecha_ar.gif") no-repeat;
+
+	width: 17px;
+
+	height: 16px;
+
+	float: left;
+
+}
+
+
+
+.containerArrowDown {
+
+	background: url("../images/layout/flecha_ab.gif") no-repeat;
+
+	width: 17px;
+
+	height: 16px;
+
+	float: left;
+
+}
+
+
+
+.containerArrowLeft {
+
+	background: url("../images/layout/flecha_izq.gif") no-repeat;
+
+	width: 17px;
+
+	height: 16px;
+
+	float: left;
+
+}
+
+
+
+.containerArrowRight {
+
+	background: url("../images/layout/flecha_der.gif") no-repeat;
+
+	width: 17px;
+
+	height: 16px;
+
+	float: left;
+
+}
+
+
+
+    
+
+
+
+
+
+/****************** ESTILOS DE FUNCIONES REGIONAL************************/
+
+
+
+
+
+.padding-top1IE{
+
+    padding-top:1px\9 !important}
+
+
+
+
+
+/***************************FIN ESTILOS DE FUNCIONES REGIONAL*****************************/
+
+
+
+/***************************ESTILOS PANTALLA PRINT DE FUNCIONES REGIONAL*****************************/
+
+
+
+
+
+#screenPrint * {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 9px;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+
+#screenPrint p {
+
+    font-size: 12px
+
+}
+
+
+
+#screenPrint p.instructions{
+
+       margin-bottom:36px;
+
+}
+
+	
+
+#screenPrint p.topNotes{
+
+    margin-bottom: 20px;
+
+	margin-left:17px;}
+
+		
+
+#screenPrint div.bottomNotes{
+
+    margin-bottom: 20px;
+
+	margin-left:17px;
+
+	margin-right: 24px !important;}
+
+
+
+	
+
+#screenPrint .form-row {
+
+    margin: 0 0px 19px 17px;
+
+}
+
+
+
+#screenPrint .greenCheck {
+
+    background: url("../images/layout/green-check.png") no-repeat scroll 0 0 transparent;
+
+    float: left;
+
+    height: 15px;
+
+    margin-right: 5px;
+
+    margin-top: -1px;
+
+	margin-left:17px;
+
+    width: 15px;
+
+}
+
+
+
+#screenPrint .form-row label.for-table {
+
+    display: block;
+
+    width: 158px;
+
+    float: left;
+
+    margin-right:15px;
+
+}
+
+
+
+.contentLogo{
+
+       background: url("../images/logoCitiBank.jpg") no-repeat;
+
+       width:99px;
+
+       height:27px;
+
+       float:left;
+
+       margin-top:-13px;
+
+       margin-left:17px;
+
+       margin-bottom:14px !important;
+
+}
+
+
+
+.anchoPopup{
+
+    width:600px;
+
+    margin-left:100px;
+
+    margin-right:100px;
+
+    margin-top:50px;
+
+}
+
+
+
+.anchoPopup #footer{
+
+    clear: both;
+
+    font-family: arial;
+
+    height: 50px;
+
+    margin: 0;
+
+    padding: 0;
+
+    width: auto;
+
+	margin-left:17px;
+
+}
+
+
+
+
+
+.titulo{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    margin-left:15px;
+
+}
+
+
+
+
+
+.marginPrint{
+
+    margin-right:25px;
+
+}
+
+
+
+.paddingPrint15{
+
+    padding-left:15px !important;
+
+    padding-right:15px !important;
+
+}
+
+/***************************ESTILOS PANTALLA PRINT DE FUNCIONES REGIONAL*****************************/
+
+                            
+
+                        
+
+
+
+
+
+/*** ESTILOS FOOTER ***/
+
+
+
+#footer{
+
+    font-family: arial;
+
+    width: 926px;
+
+    height: 95px;
+
+    margin:20px auto;
+
+    clear:both;
+
+    padding:0 0 60px 0;
+
+}
+
+
+
+
+
+#footer p.disclaimer{
+
+    color: #999999;
+
+    font-size: 11px;
+
+} 
+
+
+
+#footer .footer_links{
+
+    border-bottom: 2px solid #CCCCCC;
+
+    padding: 0 0 5px 0;
+
+    margin: 0 0 12px 0;
+
+    height:16px;
+
+}
+
+
+
+#footer .footer_links a#citibank_com{
+
+    text-transform: uppercase;
+
+    color: #666666; 
+
+    float:left; 
+
+}
+
+
+
+#footer .footer_links .right_link{
+
+    display:inline-block;
+
+    float:right;
+
+}
+
+
+
+#footer .footer_links .right_link a{
+
+    color: #666666;
+
+    margin-left: 24px;    
+
+    text-transform: uppercase;
+
+}
+
+
+
+#footer .foot{
+
+    background: transparent url("../images/home/footer/citi_logo_small.gif") scroll no-repeat left top;
+
+    position: relative;
+
+    text-align: right;
+
+}
+
+#footer .foot,
+
+#footer .foot .l{
+
+    height: 55px;
+
+}
+
+
+
+#footer .foot .l{
+
+    display: inline-block;
+
+    *display: inline;
+
+    *float:left;
+
+}
+
+
+
+#footer .foot .l p{
+
+    display: inline-block;
+
+    color: #999999;
+
+    *display: inline;
+
+    *float:left;
+
+}
+
+
+
+#footer .foot span{
+
+    color: #999;
+
+    font-size: 12px;
+
+    display: inline-block;
+
+    margin-top: 3px;
+
+    vertical-align: top;
+
+}
+
+
+
+#footer .foot a{
+
+    margin-left: 5px;
+
+    width: 22px;
+
+    height:22px;
+
+    display: inline-block;
+
+}
+
+
+
+#footer .foot a#fb{
+
+    background: url("../images/home/footer/socials_icons.jpg") no-repeat;
+
+}
+
+
+
+#footer .foot a#tw{
+
+    background: url("../images/home/footer/socials_icons.jpg") no-repeat -30px;
+
+}
+
+
+
+#footer .foot a#yt{
+
+    background: url("../images/home/footer/socials_icons.jpg") no-repeat -60px;
+
+}
+
+
+
+#footer .foot a#wp{
+
+    background: url("../images/home/footer/socials_icons.jpg") no-repeat -90px;
+
+}
+
+
+
+#footer .foot a#fs{
+
+    background: url("../images/home/footer/socials_icons.jpg") no-repeat -120px;
+
+}
+
+
+
+#footer .foot p.copyright{
+
+    color: #666666;
+
+    font-size: 10px;
+
+    
+
+    bottom: 0;
+
+    right: 0;
+
+    text-align:right;
+
+}
+
+
+
+/*** Fixes Header/Home ***/
+
+
+
+/**/
+
+.iblock,
+
+#tabs-home .tabs-foot li,
+
+#tabs-home .tabs-foot li a,
+
+#header .utilities_nav #nav_home a,
+
+#header .dropdown li a,
+
+#header #mega-menu .mega-container .mega-col{
+
+    display: inline-block;
+
+    zoom: 1;
+
+    float: left;
+
+    *display: inline;
+
+}
+
+
+
+
+
+
+
+
+
+.lock {
+
+    background: url("../images/layout/lock.jpg") no-repeat scroll 0 0 transparent;
+
+    float: left;
+
+    height: 27px;
+
+    width: 22px;
+
+}
+
+
+
+/**
+
+* Menu de Navegacion de Utilidades
+
+*/
+
+
+
+#header span{
+
+	font-size: 11px;
+
+	line-height: 18px;}
+
+
+
+#header .utilities_nav li.pipe, span.pipe{
+
+	line-height: 17px;
+
+}
+
+
+
+#header .utilities_nav{
+
+    background: url("../images/home/header/bg_nav_utilities.jpg") repeat-x;
+
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+
+    padding: 0 29px;
+
+    
+
+}
+
+
+
+#header .utilities_nav #nav_home{
+
+    float: right;
+
+   *z-index: 10;
+
+    *position: relative;
+
+}
+
+
+
+#header .utilities_nav{
+
+    height: 22px;
+
+}
+
+
+
+#header .utilities_nav a{
+
+    color: #FFF;
+
+    font-size: 10px;
+
+    line-height: 18px;
+
+}
+
+#header .utilities_nav #nav_home > li > a{
+
+    float: left;
+
+    height: 100%;
+
+    margin: 0 8px;
+
+    padding: 0 8px;
+
+}
+
+
+
+
+
+#header .utilities_nav #nav_home a.arrow{
+
+    background: transparent url("../images/home/header/arrow_down_utilities.png") scroll no-repeat 8px 7px;
+
+    padding-left: 21px;
+
+    margin-top: 0px;
+
+    height: 20px;
+
+    margin-left: 7px;    
+
+}
+
+
+
+#header .utilities_nav #nav_home a.arrow{
+
+	background: transparent url("../images/home/header/arrow_down_utilities.png") scroll no-repeat 8px 6px\9
+
+}
+
+
+
+#header .utilities_nav #nav_home a.arrow{
+
+	*background: transparent url("../images/home/header/arrow_down_utilities.png") scroll no-repeat 8px 7px;
+
+}
+
+
+
+#header .utilities_nav #nav_home a.arrow.active{
+
+    background: #707070 url('../images/home/header/close_utilities.jpg') scroll no-repeat 5px 3px;
+
+    
+
+    
+
+}
+
+
+
+#header .utilities_nav #nav_home > li{
+
+    float: left;
+
+    position: relative;
+
+    margin-top: 1px;
+
+}
+
+
+
+/**
+
+* Buscador
+
+*/
+
+#header .utilities_nav #nav_home .search_wrapper{
+
+    background: url("../images/home/header/bg_searchwrapper.png") no-repeat;
+
+    margin: 3px 0 0 0;
+
+    width: 191px;
+
+}
+
+
+
+#header .utilities_nav #nav_home .search_wrapper,
+
+#header .utilities_nav #nav_home .search_wrapper form,
+
+#header .utilities_nav #nav_home .search_wrapper a.iblock{
+
+    height: 16px;
+
+}
+
+
+
+#header .utilities_nav #nav_home .search_wrapper form{
+
+    margin: 0 0 0 29px;
+
+}
+
+
+
+#header .utilities_nav #nav_home .search_wrapper form a.iblock{
+
+    color: #666;
+
+    font-size: 10px;
+
+    line-height: 16px;
+
+    padding: 0;
+
+}
+
+
+
+
+
+#header .utilities_nav #nav_home .search_wrapper form div.pipe{
+
+	color: #666666;
+
+	line-height: 13px;
+
+	
+
+	width: 1px;
+
+	float: right;
+
+}
+
+
+
+#header .utilities_nav #nav_home .search_wrapper form input{
+
+    background: none;
+
+    border: none;
+
+    color: #000;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    height: 15px;
+
+    line-height: 15px;
+
+    width: 132px;
+
+}
+
+
+
+/**
+
+* Banner con Logo Citi 200 anios
+
+*/
+
+#header #banner{
+
+    background: url("../images/home/header/bg_banner.jpg") repeat-x;
+
+    height: 85px;
+
+}
+
+
+
+#header #banner .logo_header a{
+
+    background: url("../images/home/header/logo_citi.png") no-repeat bottom right;
+
+    height: 34px;
+
+    width: 191px;
+
+    display: block;
+
+    padding: 20px 0 0 29px;
+
+}
+
+
+
+#header .main_nav{
+
+    background: url("../images/home/header/bg_main_nav.jpg") repeat-x;
+
+    height: 27px;
+
+    padding: 0 29px 0 21px;
+
+    position: relative;
+
+    z-index: 10;
+
+    *z-index: 1;
+
+}
+
+
+
+#header #nav_marketing li{
+
+    display: inline;
+
+    float: left;
+
+    list-style: none;
+
+    font-family: arial;
+
+}
+
+
+
+#header .main_nav a#loginLogout, #header #nav_marketing > li> a, #header .main_nav #irBanamex{
+
+     padding: 0 9px;
+
+    line-height: 25px;
+
+    font-weight: bold;
+
+    font-size: 12px !important;
+
+    color: #FFF;
+
+    display: inline-block;
+
+    text-decoration: none;
+
+}
+
+
+
+#header #logButton{
+
+background:url("../images/layout/backLock.jpg") repeat-x;
+
+	margin-top:0px;
+
+	margin-left:9px;
+
+	padding-left:0px;
+
+	float: right;}
+
+
+
+#header .main_nav a#loginLogout{
+
+	padding: 0 16px 0 5px;
+
+}
+
+
+
+#header #nav_marketing > li,
+
+#header #nav_marketing > li a{
+
+    height: 27px;
+
+    z-index: 50;
+
+}
+
+
+
+#header #nav_marketing li a:hover,
+
+#header #nav_marketing li a.active{
+
+    text-decoration: none !important;
+
+    background: url("../images/home/header/bg_hover_mainnav.jpg") repeat-x scroll transparent;
+
+    display: inline-block;
+
+}
+
+
+
+#header .main_nav > div.last{
+
+    float: right;
+
+    font-size: 0;
+
+    position: relative;
+
+}
+
+
+
+#header #nav_marketing{
+
+    width: auto;
+
+    float: left;
+
+}
+
+
+
+#header .main_nav #signOnTool{
+
+    float:right;
+
+    margin-right: 25px;
+
+}
+
+
+
+#header .main_nav #signOnTool li{
+
+    background: url("../images/home/header/bg_singOnTool.jpg") repeat-x scroll transparent !important;
+
+    height: 26px;
+
+    position: relative;
+
+    margin-top: 1px;
+
+    float: left;
+
+}
+
+#header .main_nav #signOnTool li a{
+
+    background: url("../images/home/header/candado_singTool.png") no-repeat 12px center;
+
+    padding-left: 27px;
+
+}
+
+
+
+
+
+#header .main_nav #signOnTool li a span {
+
+    background: url("../images/home/header/singOnToolArrowDown.png") no-repeat transparent !important;
+
+    width: 24px;
+
+    float:right;
+
+    display: block;
+
+    margin-top: 3px;
+
+    margin-left: 16px;
+
+    height: 15px;
+
+}
+
+
+
+#header #nav_home .dropdown{
+
+    top: 22px;
+
+    width: 155px;
+
+}
+
+
+
+#header #nav_home .dropdown > li > a{
+
+    width: 125px;
+
+}
+
+
+
+#header div.last .dropdown{
+
+    top: 27px;
+
+    left: -13px;
+
+    width: 142px;
+
+}
+
+#header div.last .dropdown > li > a{
+
+    width: 112px;
+
+}
+
+
+
+#header .dropdown{
+
+    /*-moz-box-shadow: 2px 2px 24px -7px #3D3D3D;
+
+    -webkit-box-shadow: 2px 2px 24px -7px #3D3D3D;
+
+    box-shadow: 2px 2px 24px -7px #3D3D3D;
+
+    -webkit-border-radius: 0px 0px 10px 10px;
+
+    border-radius: 0px 0px 10px 10px;*/
+
+   
+
+    background-color: #FFF;
+
+    display: none;
+
+    left: 8px;
+
+    padding: 10px 0 0 0;
+
+    position: absolute;
+
+    z-index: 50;
+
+    /*behavior: url(resources/css/PIE.htc);*/
+
+}
+
+
+
+#header .bottomRadio{
+
+     background: url("../images/header/bottom_bg_dropdown.png") no-repeat 0 bottom;
+
+     width: 100%;
+
+     height: 11px;
+
+     position: absolute;
+
+     top:100%;
+
+     left: 0;
+
+}
+
+#header .dropdown > li{
+
+    border-bottom: 1px dotted #a2a2a2;
+
+    width: 100%;
+
+    float: left;
+
+    list-style: none;
+
+}
+
+#header .dropdown > li.last{
+
+    border-bottom: none !important;
+
+}
+
+
+
+#header .dropdown > li > a{
+
+    color: #000 !important;
+
+    border-right: none !important;
+
+    font-size: 12px;
+
+    font-weight: normal !important;
+
+    height: 100%;
+
+    padding: 5px 15px !important;
+
+    text-transform: none !important;    
+
+}
+
+#header .dropdown li a:hover{
+
+    background-color: #F7F7F7 !important;
+
+    background-image: none !important;
+
+}
+
+
+
+#header .dropdown > li.last a:hover{
+
+    /*  -webkit-border-radius: 0px 0px 5px 5px;
+
+      border-radius: 0px 0px 5px 5px;
+
+      behavior: url(resources/css/PIE.htc);    */
+
+}

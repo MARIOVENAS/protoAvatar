@@ -1,0 +1,173 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+       
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+    <script type="text/javascript">
+			<!--
+			
+			var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+			
+	es.push('Select the investment number and click "Continue".','Investment','Product','Amount','Term','Due date','Available','Yes','Agu','Apr','CONTINUE','Cancel');
+			
+			$(document).ready(function(){
+				
+			//setTimeout(function(){top.ajustarP();},1000);
+			setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},1000);
+			
+			
+			});
+			-->
+</script>
+	<script type="text/javascript">
+			
+	$(document).ready(function() {
+		$.imageTick.logging = true;
+		
+		//Radios Investment - Overlay Sceene7
+		$("input[name='investment']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios3" 
+		});
+		
+		//En el caso de los checkboxs se cambiará la imagen teniendo en cuenta el tipo de input, sin especificar su name.
+		//setTimeout("$('.scroll_y').tinyscrollbar({scroll:true,sizethumb:'auto',size:auto });",100);
+	 	$('#scrollbar').tinyscrollbar({ size: 'auto' });
+		$('#scrollbar').tinyscrollbar({ sizeThumb: 'auto' });
+		var autoHeight = $('#thumb').css("height");
+		$('#grip').css("height",autoHeight);
+	});
+	</script>
+</head>
+<body>  
+            <!-- style="width:500px !important; padding:0px !important; margin:0px !important; height:200px;" -->
+			<div class="error-content2" style="width:453px !important;">
+										<!-- SCROLL BAR -->
+										<div id="scrollbar" class="float-left height228b ancho453IE">
+											<div class="scroll_y width100p height228b ">
+												<div class="scrollbar">
+													<div class="track">
+														<div class="thumb" id="thumb">
+															<div class="end"></div>
+															<div id="grip" class="grip"></div>
+														</div>
+													</div>
+												</div>
+												<div class="viewport" style="height:225px !important;">
+													<div class="overview margin-top-2" id="subapp-box">
+														<div class="width431">
+															<!-- CONTENIDO -->
+                                                            
+															<p class="sinMarginTop padding-top0 margin-bottom20" id="t23">Selecciona el n&uacute;mero de inversi&oacute;n y da clic en "Continuar".</p>
+															<table cellspacing="0" cellpadding="0" border="0" class="widthOverlay" style="width:431px !important;">
+																<tbody>
+																	<tr>
+																		<th class="borderLabels pad15" scope="col"></th>
+																		<th class="borderLabels" id="t24">Inversi&oacute;n</th>
+																		<th class="borderLabels alignRight" scope="col" id="t25">Producto</th>
+																		<th class="borderLabels alignRight" scope="col" id="t26">Monto</th>
+																		<th class="borderLabels alignRight" scope="col" id="t27">Plazo</th>
+																		<th class="borderLabels" scope="col" id="t28">Vencimiento</th>
+																		<th class="borderLabels" scope="col" id="t29">Disponible</th>
+																	</tr>
+																	<tr class="degrade">
+																		<td class="center pad15">
+																			<input type="radio" checked="checked" name="investment" id="investment1" />
+																		</td>
+																		<td>900001</td>
+																		<td class="alignRight">Pagar&eacute; M.N.</td>
+																		<td class="alignRight">15,000.00</td>
+																		<td class="alignRight">150</td>
+																		<td>20 Agu 2012</td>
+																		<td class="alignRight paddinRight10">Yes</td>
+																	</tr>
+																	<tr class="greyBack">
+																		<td class="center pad15"><input type="radio" name="investment" id="investment2" /></td>
+																		<td>700002</td>
+																		<td class="alignRight">Pagar&eacute; M.N.</td>
+																		<td class="alignRight">5,000.00</td>
+																		<td class="alignRight">10</td>
+																		<td>01 Apr 2012</td>
+																		<td class="alignRight paddinRight10">Yes</td>
+																	</tr>
+																	<tr>
+																		<td class="center pad15" ><input type="radio" name="investment" id="investment3" /></td>
+																		<td>500045</td>
+																		<td class="alignRight">Pagar&eacute; M.N.</td>
+																		<td class="alignRight">10,000.00</td>
+																		<td class="alignRight">15</td>
+																		<td>06 Apr 2012</td>
+																		<td class="alignRight paddinRight10">Yes</td>
+																	</tr>
+																	<tr class="greyBack">
+																		<td class="center pad15" ><input type="radio" name="investment" id="investment4" /></td>
+																		<td>300051</td>
+																		<td class="alignRight">Pagar&eacute; M.N.</td>
+																		<td class="alignRight">17,000.00</td>
+																		<td class="alignRight">10</td>
+																		<td>01 Apr 2012</td>
+																		<td class="alignRight paddinRight10">Yes</td>
+																	</tr>
+																	<tr>
+																		<td class="center pad15" ><input type="radio" name="investment" id="investment5" /></td>
+																		<td>200041</td>
+																		<td class="alignRight">Pagar&eacute; M.N.</td>
+																		<td class="alignRight">23,000.00</td>
+																		<td class="alignRight">20</td>
+																		<td>11 Apr 2012</td>
+																		<td class="alignRight paddinRight10">No</td>
+																	</tr>
+																	<tr class="greyBack">
+																		<td class="center pad15" ><input type="radio" name="investment" id="investment6" /></td>
+																		<td>000076</td>
+																		<td class="alignRight">Pagar&eacute; M.N.</td>
+																		<td class="alignRight">99,000.00</td>
+																		<td class="alignRight">30</td>
+																		<td>21 Apr 2012</td>
+																		<td class="alignRight paddinRight10">Yes</td>
+																	</tr>
+																	<tr>
+																		<td class="center border9A pad15"><input type="radio" name="investment" id="investment7" /></td>
+																		<td class="border9A">000051</td>
+																		<td class="border9A alignRight">Pagar&eacute; M.N.</td>
+																		<td class="border9A alignRight">45,000.00</td>
+																		<td class="border9A alignRight">20</td>
+																		<td class="border9A">11 Apr 2012</td>
+																		<td class="alignRight paddinRight10 border9A">No</td>
+
+																	</tr>
+																</tbody>
+															</table>
+															<!-- CONTENIDO -->
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- SCROLL BAR -->
+                                        <br />
+										<div class="cF-sideBySide cF-bottomNav sinMarginBottom sinMarginTop ancho453IE paddingR20IE78" style="background:none !important;">
+											<ul class="cN-primaryNav floatRI">
+												<li class="cM-spriteBase cN-primaryNavButton"><a href="javascript:top.MOtra();" id="t33">CONTINUAR</a></li>	
+												<li class="">
+													<div id="flechaLinks">
+														<span class="flechaazul float-left"></span>
+														<a class="sinBold" href="javascript:top.$.modal.close();" id="t34">Cancelar</a>
+													</div>
+												</li>
+											</ul>
+										</div>
+                                        
+	</div>
+		
+         <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+</body>
+</html>

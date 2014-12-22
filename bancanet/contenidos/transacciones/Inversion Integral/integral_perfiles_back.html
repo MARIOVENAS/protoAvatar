@@ -1,0 +1,5835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="16344a72-93f7-4c59-93b4-695d3488e253" ><input type=hidden name="EWF_SYS_1" value="YM9OXGKUE3FB0UTJP59LZH7YLDY9M8@QY66PJYBW" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="Z3II-PAG INVERSION INTEGRAL"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="inv01.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="6"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+    	<script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+        <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+		<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+		<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+		<style type="text/css">
+
+			.msgtc { padding:10px 0px 0px 20px; border-top:1px dotted #CCCCCC; }
+
+		</style>
+
+		
+
+<script type="text/javascript">
+
+var regresatransaccion = parent.document.getElementById("REGRESADEMO").value;
+
+	var auxdemo = new Array();
+
+	var combosdemo = new Array();
+
+	var datademo = new Array();
+
+	function leerDatosDemo(){
+
+		if(regresatransaccion=="true"){
+
+			parent.document.getElementById("REGRESADEMO").value = "";	
+
+			auxdemo = parent.document.getElementById("DATADEMO").value.split("|");
+
+			
+
+			combosdemo = auxdemo[0].split(",");
+
+			if(combosdemo[0]=="true"){
+
+				datademo = auxdemo[1].split(",");
+
+				$("#yearpicker1").val(datademo[0]);	
+
+				
+
+				$("#checkCalendario").attr('checked','checked');
+
+				activaCheck('checkCalendario','Programar');
+
+				toggleChecks('checkCalendario','FREC');
+
+			}else{
+
+				$("#yearpicker1").val("");
+
+			}
+
+			if(combosdemo[1]=="true"){
+
+				$("#FREC").attr("checked", true);
+
+				toggleChecks('FREC','checkCalendario');
+
+			}else{
+
+				$("#FREC").attr("checked", false);
+
+			}
+
+		}
+
+	}		
+
+</script>
+
+
+
+<script>
+
+/*parent.setFecha("09/04/12    17:49:52  ");*/
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="174947  ";b$Cont="174952  "
+
+	//
+
+    </script>
+
+         <script language="JavaScript">
+
+            function MakeInvisibles(invisibles){
+
+	numtags=invisibles.length + '';		
+
+	if (numtags == 'undefined'){
+
+		invisibles.style.display='none';
+
+	}else{
+
+		for (i=0;i<invisibles.length;i++)
+
+			invisibles[i].style.display='none';
+
+	}
+
+}
+
+
+
+function MakeVisibles(visibles){
+
+	numtags=visibles.length + '';		
+
+	if (numtags == 'undefined'){
+
+		visibles.style.display='';
+
+	}else{
+
+		for (i=0;i<visibles.length;i++)
+
+			visibles[i].style.display='';
+
+	}
+
+}
+
+
+
+function HabilitaCF( objeto ) {
+
+  if ( objeto == document.forms[0].checkrf ) {
+
+	if ( objeto.checked == false ){
+
+		MakeInvisibles(document.getElementById("rfc"));
+
+		document.forms[0].bandcf.value = "0" ;
+
+/*DNBF		document.forms[0].rfc4.value = "" ;
+
+		document.forms[0].rfc6.value = "" ;
+
+		document.forms[0].rfc3.value = "" ;
+
+		document.forms[0].iva.value = "" ;  
+
+DNBF*/
+
+		document.forms[0].rfc4.disabled = true ;
+
+		document.forms[0].rfc6.disabled = true ;
+
+		document.forms[0].rfc3.disabled = true ;
+
+		document.forms[0].iva.disabled = true ;
+
+	}else{
+
+		MakeVisibles(document.getElementById("rfc"));
+
+		document.forms[0].bandcf.value = "1" ;
+
+		document.forms[0].rfc4.disabled = false ;
+
+		document.forms[0].rfc6.disabled = false ;
+
+		document.forms[0].rfc3.disabled = false ;
+
+		document.forms[0].iva.disabled = false ;
+
+		document.forms[0].rfc4.focus() ;
+
+	}
+
+  }
+
+  if ( objeto == document.forms[0].checkfp ) {
+
+	if ( objeto.checked == false ){
+
+/*DNBF			MakeInvisibles ( document.getElementById("fechaprog") );
+
+			document.forms[0].DIA.value = "0" ;
+
+			document.forms[0].MES.value = "0" ;
+
+			document.forms[0].HRS.value = "0" ;
+
+			document.forms[0].MIN.value = "0" ;
+
+			document.forms[0].AMPM[0].checked = false;
+
+		    document.forms[0].AMPM[1].checked = false;
+
+DNBF*/		    
+
+	}
+
+	else { 
+
+			MakeVisibles ( document.getElementById("fechaprog") );
+
+	}
+
+  }
+
+  if ( objeto == document.forms[0].checkfps ) {
+
+	if ( objeto.checked == false ){
+
+/*DNBF			MakeInvisibles ( document.getElementById("fechaprog") );
+
+			document.forms[0].DIA.value = "0" ;
+
+			document.forms[0].MES.value = "0" ;
+
+DNBF*/			
+
+	}
+
+	else { 
+
+			MakeVisibles ( document.getElementById("fechaprog") );
+
+	}
+
+  }
+
+  if ( objeto == document.forms[0].checkpf ) {
+
+	if ( objeto.checked == false ){
+
+			MakeInvisibles ( document.getElementById("frec") );
+
+			//document.forms[0].FREC.value = "" ;
+
+	}
+
+	else { 
+
+			MakeVisibles ( document.getElementById("frec") );
+
+	} 
+
+   }
+
+
+
+if ( objeto == document.forms[0].checknf ) {
+
+ 	if ( objeto.checked == false ){
+
+			MakeInvisibles ( document.getElementById("camposMail") );
+
+	}
+
+	else { 
+
+			MakeVisibles ( document.getElementById("camposMail") );
+
+			//document.forms[0].TEL.value = "Telcel" ;
+
+	}
+
+ }
+
+
+
+}
+
+            /* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+
+
+
+
+
+
+/* Funcion que verifica si el campo tiene los caracteres validos
+
+ * Parametros
+
+ * @Campo_Txt: Id del campo que se pretende validar
+
+ * @Caracteres_Extras: Permitir otros caracteres como validos
+
+ * @Tipo_Validacion: El tipo de validacion 1=Numerico 2=Alfanumerico
+
+ * @Req: Cadena que nos valida si debe de ser requerido
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+
+
+/* Funcion que verifica si el combo esta vacio
+
+ * Parametros
+
+ * @Combo: Id del Combo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es diferente a "NO", lo omite
+
+**/
+
+
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+
+
+/* Funcion que verifica si el campo tenga la longitud requerida
+
+ * Parametros
+
+ * @Campo: Id del campo que se pretende validar
+
+ * @Longitud: Longitud a evaluar
+
+ * @TipoRel: Indice del tipo de comparacion 1(<=) 2(<) 3(>=) 4(>) 5(!=)
+
+ * @Msg: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function ValidaLongitud (Campo,Longitud,TipoRel,Msg){ 
+
+	$("#"+Campo+"_error").css("display","none");
+
+	var Error = 0;
+
+	switch(TipoRel){
+
+		case 1: if($("#"+Campo).val().length <= Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 2: if($("#"+Campo).val().length < Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 3: if($("#"+Campo).val().length >= Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 4: if($("#"+Campo).val().length > Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 5: if($("#"+Campo).val().length != Longitud)
+
+			Error = 1;
+
+			break;
+
+		default: Error = 1;
+
+	}
+
+	if(Error == 1){
+
+		$("#"+Campo+"_error").css("display","block").html(Msg);
+
+		$("#"+Campo).focus();
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+
+
+/* Funcion que verifica si el campo esta activo
+
+ * Parametros
+
+ * @Objeto: Id del campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function RdioChk_Vacio (Objeto,Msg_Error){
+
+	$("#"+Objeto+"_error").css("display","none");
+
+	var Seleccionado = false;
+
+	$("input[name='"+Objeto+"']").each(function(){
+
+		if(Seleccionado != true){
+
+			if(this.checked)
+
+			Seleccionado = true;
+
+			else
+
+			Seleccionado = false;
+
+		}
+
+	});
+
+	if(Seleccionado != true){
+
+		$("#"+Objeto+"_error").css("display","block").html(Msg_Error);
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+function Verifica_Combos_Vacios (combo1, combo2, msg1, msg2) {
+
+    var valor1 = "";	// Inicializa campo1
+
+    var valor2 = "";	// Inicializa campo1
+
+
+
+    num_Opcion1 = combo1.selectedIndex;		// Numero de seleccion
+
+						// del Combo 1
+
+    valor1 = combo1.options[num_Opcion1].value;	//Valor del Combo 1
+
+    num_Opcion2 = combo2.selectedIndex;		// Numero de seleccion
+
+						// del Combo 2
+
+    valor2 = combo2.options[num_Opcion2].value; //Valor del Combo 2
+
+
+
+    if (valor1 == "PS" || valor1 == "AC" || valor1 == "0") {
+
+        if (valor2 == "PS" || valor2 == "AC" || valor2 == "0") {
+
+           return false;
+
+        } else {
+
+           combo1.focus();
+
+   	   return true; 
+
+          }          
+
+    } else {
+
+        if (valor2 == "PS" || valor2 == "AC" || valor2 == "0") {
+
+           combo2.focus();
+
+           return true;
+
+        } else {
+
+   	   return false;
+
+          }
+
+        }
+
+      } 
+
+            function Valida_CSS2 (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg)
+
+{
+
+   var Numeros="";
+
+   var Letras="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzñÑ@-_$., ";
+
+   var Validos="";
+
+   var Txt_MAY = Campo_Txt.value;
+
+   var invalidos = 0;	
+
+
+
+if (Req == "SI" && Txt_MAY.length==0)
+
+    {
+
+    //alert ("Msg");
+
+    Campo_Txt.focus();
+
+    return false;
+
+    }	
+
+else
+
+   {
+
+   (Tipo_Validacion == 1) ?
+
+    	Validos = Numeros:
+
+
+
+   		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+
+
+   Validos = Validos + Caracteres_Extras;
+
+		
+
+   for (i=0; i < Txt_MAY.length; i++)
+
+	 for (j=0; j < Validos.length; j++)
+
+
+
+	   	if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+			if (j+1 < Validos.length)
+
+	 			continue;
+
+	 		else
+
+	 		    {
+
+	                        //alert (Msg);
+
+				document.forms[0].DATA1.focus();
+
+	 			return true
+
+	 		    }
+
+		else 
+
+   			break;	
+
+   return false;
+
+   }
+
+}
+
+
+
+var LengConf;
+
+function Conf_Msg(id_msg)
+
+{
+
+  var msg;
+
+
+
+  
+
+    switch(id_msg)
+
+    {
+
+      case 1: msg='Cuenta Origen: ';
+
+	      break;
+
+      case 2: msg='Cuenta Destino: ';
+
+	      break;
+
+      case 3: msg='Importe: $';
+
+	      break;
+
+      case 4: msg='Solicito comprobante fiscal:SI ';
+
+	      break;
+
+      case 5: msg='RFC: ';
+
+	      break;
+
+      case 6: msg='IVA: $';
+
+	      break;
+
+      case 7: msg='Su operaci\u00F3n fu\u00E9 programada para: ';
+
+	      break;
+
+      case 8: msg='Fecha: ';
+
+	      break;
+
+      case 9: msg='Hora: ';
+
+	      break;
+
+      case 10: msg='Compraventa: ';
+
+	      break;
+
+      case 11: msg='Tipo de Pago: ';
+
+	      break;
+
+      case 12: msg='Folio: ';
+
+	      break;
+
+      case 13: msg='Nombre del Cliente/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 14: msg='Formulario: ';
+
+	      break;
+
+      case 15: msg='N\u00FAmero de Tarjeta: ';
+
+	      break;
+
+      case 16: msg='N\u00FAmero de cuenta: ';
+
+	      break;
+
+      case 17: msg='Referencia Alfan\u00FAmerica: ';
+
+	      break;
+
+      case 18: msg='Referencia N\u00FAmerica: ';
+
+	      break;
+
+      case 19: msg='N\u00FAmero de Chequeras: ';
+
+	      break;
+
+      case 20: msg='Su operaci\u00F3n: ';
+
+	      break;
+
+      case 21: msg='La siguiente p\u00E1gina le mostrar\u00E1 los datos de su operaci\u00F3n, verifique que est\u00E9n correctos y haga clic en el bot\u00F3n aceptar para que se aplique su operaci\u00F3n.';
+
+	      break;
+
+      case 22: msg='Tipo de Persona: ';
+
+	      break;
+
+      case 23: msg='Su envi\u00F3 ser\u00E1 en: ';
+
+	      break;
+
+      case 24: msg='Mismo d\u00EDa. ';
+
+	      break;
+
+      case 25: msg='24 horas. ';
+
+	      break;
+
+      case 26: msg='48 horas. ';
+
+	      break;
+
+      case 27: msg='No. Contrato: ';
+
+	      break;
+
+      case 28: msg='Sucursal Destino: ';
+
+              break;
+
+      case 29: msg='Tipo de Inversi\u00F3n: ';
+
+              break;
+
+      case 30: msg='Tipo de Operaci\u00F3n: ';
+
+              break;
+
+      case 31: msg='Importe en D\u00F3lares: ';
+
+              break;
+
+      case 32: msg='Cheque inicial: ';
+
+              break;
+
+      case 33: msg='Cheque final: ';
+
+              break;
+
+      case 34: msg='No. de Contrato de Inversi\u00F3n: ';
+
+              break;
+
+      case 35: msg='No. Klick Card Cr\u00E9dito: ';
+
+              break;
+
+      case 36: msg='No. Klick Card D\u00E9bito: ';
+
+              break;
+
+      case 37: msg='L\u00EDnea de Consumo: ';//hay que revisarla
+
+              break;
+
+      case 38: msg='Tipo de Entrega: '
+
+	      break;
+
+      case 39: msg='Acciones: ';
+
+              break;
+
+      case 40: msg='Fecha de Alta: ';
+
+              break;
+
+      case 41: msg='Tipo de Inversi\u00F3n / No. de Contrato: ';
+
+              break;
+
+      case 42: msg='No. de Inversi\u00F3n: ';
+
+              break;
+
+      case 43: msg='Plazo: ';
+
+              break;
+
+      case 44: msg='Instrucciones al Vencimiento: ';
+
+              break;
+
+      case 45: msg='Cuenta de Rembolso: ';
+
+              break;
+
+      case 46: msg='Traspaso a: ';
+
+              break;
+
+      case 47: msg='Abono a:';
+
+	      break;
+
+      case 48: msg='El tipo de cambio que se aplique, ser\u00E1 el vigente en el d\u00EDa y hora en que se realice la operaci\u00F3n.';
+
+	      break;
+
+      case 49: msg='Importe en d\u00F3lares:';
+
+	      break;
+
+	      
+
+      case 50: msg='Tarjeta: ';   							
+
+	      break;
+
+      case 51: msg='Importe a Parcializar: $';  
+
+	      break;
+
+      case 52: msg='Interes: $';  							
+
+	      break;
+
+      case 53: msg='Interes Diferido: $';  			
+
+	      break;
+
+      case 54: msg='Monto Diferido: $';  				
+
+	      break;
+
+      case 55: msg='Pago Mensual: $';  				
+
+	      break;
+
+      case 56: msg='Tarjeta Premia:  ';
+
+	      break;
+
+      case 57: msg='Cuenta a Incorporar:  ';
+
+	      break;
+
+      case 58: msg='Tarjeta de Credito Titular:  ';
+
+	      break;	      
+
+      case 59: msg='No. de Tarjeta: ';
+
+	      break;	
+
+      case 60: msg='Límite a Asignar: ';
+
+	      break;	
+
+      case 61: msg='Tipo de Retiro: ';
+
+	      break;	
+
+      case 62: msg='Monto a Retirar: ';
+
+	      break;
+
+		case 63: msg='Afore NSS: ';
+
+	      break;
+
+	  case 64: msg='Beneficiario: ';
+
+	      break;
+
+	  case 65: msg='RFC/CURP: ';
+
+	      break;
+
+	  case 66: msg='Sector Económico: ';
+
+	      break;
+
+	  case 67: msg='Nombre/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 150: msg='Una vez aceptada no podr\u00E1 cancelar su operaci\u00F3n.';
+
+              break;
+
+      case 151: msg='Una vez recibida su instrucci\u00F3n no podr\u00E1 cancelar su operaci\u00F3n.';
+
+	      break;
+
+      case 152: msg='Correo Electr\u00F3nico del Beneficiario: ';
+
+	      break;
+
+	    case 200: msg="Verifica los datos de tu operación."; 
+
+	    	break;
+
+	    case 201: msg="Paso 2 de 3"; 
+
+	    	break;
+
+	    case 202: msg="Paso 3 de 3"; 
+
+	    	break;	    	
+
+	    case 203: msg="Paso 3 de 4";  /*YA NO SE UTILIZA*/ 
+
+	    	break;
+
+	    case 204: msg="Paso 2 de 2"; 
+
+	    	break;
+
+	    case 205: msg="Número Celular del Beneficiario: "; 
+
+	    	break;
+
+	    case 206: msg="Compañía Celular: "; 
+
+	    	break;	    	
+
+	    default: msg='Verifique que sus datos est\u00E9n correctos antes de enviar su operaci\u00F3n.';
+
+    }
+
+ 
+
+  return(msg);
+
+}
+
+
+
+var z=new Array();
+
+var answ;
+
+var myDate=new Date();
+
+
+
+function Conf_Main(id_tran)
+
+{
+
+  var mensaje='';
+
+  var programada;
+
+  programada=Conf_VP(z[6],z[7],z[8],z[9],z[10]);
+
+  if(programada=='') mensaje=Conf_Msg(200) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+  else mensaje=Conf_Msg(200) + '\n' + Conf_Msg(151) + '\n\n' ;
+
+  
+
+  switch(id_tran)
+
+  {
+
+	case 'TPT'://traspaso pago a terceros
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(67) + z[16] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12]  + '\n' + Conf_Msg(152) + z[13] + '\n' + Conf_Msg(205) + z[14] + '\n' + Conf_Msg(206) + z[15] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      break;
+
+    case 'TCVDP': //traspaso compraventa de divisas cuentas propias 
+
+      if(programada=='') mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(2) + z[3] + '\n' + Conf_Msg(31) + z[4] + '\n' + programada;
+
+      break;
+
+    case 'TCVDT': //traspaso compraventa de divisas terceros
+
+      if(programada=='') mensaje=Conf_Msg(200) + '\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + '\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(2) + z[3] + '\n' + Conf_Msg(31) + z[4] + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12] + '\n' + programada;
+
+      break;
+
+    case 'CCB': //pago tarjeta CCB
+
+      if(programada=='') mensaje=Conf_Msg(200) +"\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + "\t\t" + Conf_Msg(201)+'\n\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(49) + z[3] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      break;
+
+    case 'PI': //pago interbancario cheques y tarjeta de debito
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n';
+
+      if (z[21]==true)//cheques
+
+      {
+
+        mensaje=mensaje + Conf_Msg(16) ;
+
+      }
+
+      else
+
+      {
+
+        mensaje=mensaje + Conf_Msg(15); 
+
+      }
+
+      mensaje=mensaje + z[3] + '\n' +  Conf_Msg(22);
+
+      if (z[7]=="Fisica")
+
+      {
+
+	
+
+		z[7]="Fisica";
+
+	
+
+	
+
+	mensaje=mensaje + z[7] + '\n' + Conf_Msg(13) + z[8] + '\n';
+
+      }
+
+      else
+
+      {
+
+	
+
+		z[7]="Moral";
+
+	
+
+	
+
+	mensaje=mensaje + z[7] + '\n' + Conf_Msg(13) + z[9] + '\n';
+
+      }
+
+
+
+      mensaje=mensaje + Conf_Msg(17) + z[10] + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(3) + FormatCurrency(z[12]) + '\n' + Conf_Msg(152) + z[14] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + Conf_ValidaPlazo(z[13]);
+
+      break;
+
+    //case 'PS': //pago de servicios
+
+      //mensaje=Conf_Msg(21);
+
+      break;
+
+    case 'FRECC': //operaciones frecuentes
+
+      break;
+
+    case 'PC': //pago de creditos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(27) + z[2] + '\n' + Conf_Msg(11) + z[3] + '\n' + Conf_Msg(12) + z[4] + '\n' + Conf_Msg(3) + FormatCurrency(z[5]);
+
+      break;
+
+    case 'POP': //pago ordenes de pago
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + z[2] + '\n' + Conf_Msg(64) + z[12] + '\n' + Conf_Msg(28) + z[3] + '\n' + Conf_Msg(66) + z[16] + '\n' + Conf_Msg(3) + FormatCurrency(z[4]) + '\n' + Conf_Msg(65) + z[17] + '\n' + Conf_Msg(152) + z[13] + '\n' + Conf_Msg(205) + z[14] + '\n' + Conf_Msg(206) + z[15];
+
+      break;
+
+    case 'PIMP': //pago de impuestos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(11) + z[2] + '\n' + Conf_Msg(14) + z[3] + '\n' + Conf_Msg(38) + z[4] + '\n' + z[5] + '\n' + z[12] + '\n' + Conf_Msg(13) + z[13] + '\n' + Conf_Msg(5) + z[14] + '\n' + Conf_Msg(3) + FormatCurrency(z[15]);
+
+      break;
+
+    case 'PA': //pago Accitrade
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12] + '\n' + programada;
+
+      break;
+
+    case 'PDB': //pago domiciliacion baja
+
+    case 'PDA': //pago domiciliacion activacion
+
+      mensaje=mensaje + z[3] +'\n' + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(47) + z[2] + '\n' + Conf_Msg(40) + z[4];
+
+      break;
+
+    case 'II': //inversion integral
+
+      if( /*DNBF*/ (document.getElementById("checkCalendario").checked==true) && z[4].value != "0" && z[5].value.length != 0) 
+
+      { 
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(29) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[4].value + '/' + z[5].value + '/' + myDate.getFullYear();
+
+			}
+
+      else
+
+      {  
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + z[1] + '\n' + Conf_Msg(29) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      } 
+
+      break;
+
+      
+
+    case 'IFI': //fondo inversion horizontes cobertura
+
+
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) &&  z[11].value != "0" && z[12].value != "0") 
+
+      { 
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + '\n\n' ;
+
+      }
+
+
+
+      if(z[3].value.length!=0 && z[3].value.length!=0)
+
+      {
+
+        //mensaje=mensaje + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3].value);
+
+      }
+
+      else
+
+      {
+
+        //mensaje=mensaje + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(39) + z[4].value;
+
+      }
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value!="0" && z[12].value!="0") 
+
+      { 
+
+       // mensaje=mensaje + '\n' + '\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[11].value + '/' + z[12].value + '/' + myDate.getFullYear();
+
+      }
+
+      break;
+
+    case 'IFH': //fondo inversion horizontes banamex
+
+      if(z[3].value.length!=0 && z[3].value.length!=0)
+
+      {
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3].value);
+
+      }
+
+      else
+
+      {
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(39) + z[4].value;
+
+      }
+
+      break;
+
+    case 'IE': //inversion empresarial
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value == "0" && z[12].value == "0") 
+
+      { 
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' ;
+
+      }
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value != "0" && z[12].value != "0") 
+
+      { 
+
+        mensaje=mensaje + '\n\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[11].value + '/' + z[12].value + '/' + myDate.getFullYear();
+
+      }
+
+      break;
+
+    case 'IPAIN': //inversion a plazo A/I
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(34) + z[3] + '\n' + Conf_Msg(42) + z[5] + '\n' + Conf_Msg(29) + z[4] + '\n' + Conf_Msg(43) + z[11] + '\n' + Conf_Msg(44)  + z[12] + '\n' + Conf_Msg(3) + FormatCurrency(z[13]) + '\n' + Conf_Msg(45) + z[14];
+
+      break;
+
+    case 'IPDC': //inversion a plazo D/C
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(34) + z[2] + '\n' + Conf_Msg(42) + z[3] + '\n' + Conf_Msg(29) + z[4] + '\n' + Conf_Msg(2) + z[5] + '\n' + Conf_Msg(3) + FormatCurrency(z[11]) + '\n' + Conf_Msg(44) + z[12] + '\n' + Conf_Msg(43)  + z[13] + '\n' + Conf_Msg(45) + z[14];
+
+      break;
+
+    case 'SCH': //solicitud chequera
+
+      if(z[1]=="01" || z[1]=="03")
+
+      {
+
+        mensaje=mensaje + z[2] + '\n' + Conf_Msg(1) + z[3];
+
+      }
+
+      else
+
+      {
+
+        mensaje=mensaje + z[2] + '\n' + Conf_Msg(1) + z[3] + '\n' + Conf_Msg(19) + z[4];
+
+      }
+
+      break;
+
+    case 'KCTLC': //klic card traspaso de linea de consumo credito y debito
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(20) + '\n' ;
+
+      if (z[11]=='credito')
+
+      {
+
+	mensaje=mensaje + Conf_Msg(35) + z[1] + '\n' + Conf_Msg(37) + z[2];
+
+      }
+
+      else
+
+      {
+
+	mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(46) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      }
+
+      break;
+
+    case 'PT':// Pago tarjetas Banamex
+
+    	if (programada=="")
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+"\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]);
+
+      }
+
+      else
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+"\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      } 
+
+    	break;
+
+    	
+
+     case 'AUT':// Activación o Ubicación de Plástico
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+"\n" + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1];
+
+    	break;
+
+
+
+    case 'LIT':// Limite de crédito Titular
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+"\n" + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1] + '\n\n' + Conf_Msg(3) + z[2];
+
+    	break;
+
+    	
+
+    case 'ROBO': // Robo o Extravio
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1];
+
+      break;
+
+    case 'IPRE': // Inscripcion Premia
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(1)+ z[1] + '\n';
+
+      break;
+
+
+
+    case 'INCPRE': // Incorporacion Premia
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(56)+ z[1] + '\n\n' + Conf_Msg(57) + z[2];
+
+      break;
+
+    
+
+    case 'INSLIB': // Inscripcion Libra Arsa
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(58)+ z[1] + '\n';
+
+      break;
+
+
+
+    case 'PPP':		//Plan Personal de Pagos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(50) + z[1] + '\n' + Conf_Msg(51) + z[2] + '\n' + Conf_Msg(43) + z[3] + '\n' + Conf_Msg(52) + z[4] + '\n' + Conf_Msg(53) + z[5]  + '\n' + Conf_Msg(54) + z[11] + '\n' + Conf_Msg(55) + z[12] + '\n';
+
+      break;
+
+
+
+    case 'LTA':	//Limite de Tarjetas Adicionales Modificar
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n";
+
+			for(k=0,j=10; k<CtasModif; k++) { 
+
+				mensaje=mensaje + Conf_Msg(59) + z[++j] + '\t\t' + Conf_Msg(60) + z[++j] + '\n' ;
+
+      	} 
+
+      break;
+
+      
+
+    case 'LTAr':	//Limite de Tarjetas Adicionales Reestablecer
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n";
+
+				mensaje=mensaje + Conf_Msg(59) + z[1] + '\n' ;
+
+      break;      
+
+    
+
+		case 'ZAAP': //Aportaciones Afore 
+
+      mensaje=Conf_Msg(21);
+
+      break;
+
+
+
+    case 'ARL': // Retiro por Ley Afore
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(203)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(63)+ z[1]+'\n'+ Conf_Msg(2)+ z[2]+ '\n'+ Conf_Msg(61)+ z[3]+ '\n'+ Conf_Msg(62)+ z[4]+ '\n';
+
+	  break;
+
+	  
+
+    default: //
+
+      if (programada=="")
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]);
+
+      }
+
+      else
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      }
+
+  }
+
+  answ=confirm(mensaje);
+
+}
+
+
+
+function Conf_AV(objeto,tipo)
+
+{
+
+  var Num_Opcion;
+
+  var Valor=99;
+
+
+
+  if ((typeof objeto)=='undefined')
+
+  {
+
+    return Valor;
+
+  }
+
+  else if (tipo==1)
+
+  {
+
+    Num_Opcion = objeto.selectedIndex;
+
+    Valor = objeto.options[Num_Opcion].text;
+
+    return Valor;
+
+  }
+
+  else if (tipo==2)
+
+  {
+
+    Num_Opcion = objeto.selectedIndex;
+
+    Valor = objeto.value;
+
+    return Valor;
+
+  }
+
+  else
+
+  {
+
+    var numradios=objeto.length;
+
+    for(var i=0; i<numradios; i++)
+
+     {
+
+       if (objeto[i].checked)
+
+	{
+
+	  Valor=objeto[i].value;	
+
+	}
+
+      }
+
+      return Valor;
+
+   }
+
+}
+
+
+
+function Conf_Comprobante(bcom,rfc,iva)
+
+{
+
+  var msgcom='';
+
+  if(bcom==true)
+
+  {
+
+    msgcom='\n' + Conf_Msg(4) + '\n' + Conf_Msg(5) + rfc + '\n' + Conf_Msg(6) + iva;
+
+  }
+
+  return msgcom;
+
+
+
+}
+
+
+
+function Conf_VP(dia,mes,hora,minuto,ampm)
+
+{
+
+  if((typeof dia)=='undefined')
+
+  {
+
+    return("");
+
+  }
+
+  /*BFDN*/
+
+  minuto.value = (minuto.value.length=1 ? document.getElementById('MINS').options[document.getElementById('MINS').selectedIndex].value : minuto.value);
+
+  hora.options[hora.selectedIndex].value = (hora.options[hora.selectedIndex].value.length > 2) ? hora.options[hora.selectedIndex].value.substring(0,2) : hora.options[hora.selectedIndex].value;
+
+  if(document.getElementById("checkCalendario").checked==false)
+
+   { /* DNBF*/
+
+      return ("");
+
+  }
+
+
+
+  var msgprog='';
+
+  
+
+  if (dia.value != "0"  
+
+     &&   mes.value != "0"  
+
+     &&   (hora.options[hora.selectedIndex].value != "0"  /*hora.selectedIndex > 0  DNBF*/ 
+
+     ||   minuto.value != "0"))
+
+  {
+
+   
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + dia.value + '/' + mes.value + '/' + myDate.getFullYear() + '\n' + Conf_Msg(9) + hora.value + ':' + minuto.value + ' ' + ampm.value;
+
+   
+
+   
+
+  }
+
+  else if( dia.value != "0"  
+
+     &&   mes.value != "0")
+
+  {
+
+   
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + dia.value + '/' + mes.value + '/' + myDate.getFullYear() ;
+
+
+
+  }
+
+  else if (hora.options[hora.selectedIndex].value != "0"  /*DNBF*/ 
+
+     &&   minuto.value != "0" )
+
+  {
+
+   
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + getFechaActual((language== 'esp')? "DDMMYY" : "MMDDYY") +'\n' + Conf_Msg(9) + hora.value + ':' + minuto.value + ' ' + Conf_AV(ampm,3);
+
+    
+
+  }
+
+
+
+  return msgprog;
+
+}
+
+
+
+function Conf_ValidaPlazo(valor)
+
+{
+
+  var plaz='';
+
+  
+
+  if(valor==99)
+
+  {
+
+    return plaz;
+
+  }
+
+
+
+  if(valor=="0")
+
+  {
+
+    plaz=Conf_Msg(23) + '\n' + Conf_Msg(24);
+
+  }
+
+  else if (valor=="24")
+
+  {
+
+   plaz=Conf_Msg(23) + '\n' + Conf_Msg(25);
+
+  }
+
+  else
+
+  {
+
+   plaz=Conf_Msg(23) + '\n' + Conf_Msg(26);
+
+  }
+
+  return plaz;
+
+}
+
+
+
+function getFechaActual(mode)
+
+{
+
+   var now = new Date();
+
+   var dayNr = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+
+   if (mode=="DDMMYY")
+
+      var MonthDayYear =(dayNr+"/"+(now.getMonth()+1)+"/"+now.getFullYear());
+
+   else
+
+      var MonthDayYear =((now.getMonth()+1)+"/"+dayNr+"/"+now.getFullYear());
+
+
+
+   return MonthDayYear;
+
+}
+
+
+
+function FormatClean(num)
+
+{
+
+     var sVal='';
+
+     var nVal = num.length;
+
+     var sChar='';
+
+     var sPoint='.';
+
+
+
+   try
+
+   {
+
+       for(i=0;i<nVal;i++)
+
+      {
+
+         sChar = num.charAt(i);
+
+         nChar = sChar.charCodeAt(0);
+
+         if (((nChar >=48) && (nChar <=57)) || (nChar == sPoint.charCodeAt(0)) ) { sVal += num.charAt(i);   }
+
+      }
+
+   }
+
+    catch (exception) { AlertError("Format Clean",e); }
+
+    return sVal;
+
+}
+
+function FormatCurrency(num)
+
+{
+
+        var sVal='';
+
+        var minus='';
+
+        var Decimal='.';
+
+		
+
+        if (num.lastIndexOf("-") == 0) { minus='-'; }
+
+   		num = FormatClean(num);
+
+        sVal = minus + FormatDollar(num,',') + '.' + FormatCents(num);
+
+        return sVal;
+
+}
+
+
+
+function FormatCents(amount)
+
+{
+
+	var cents = '';
+
+
+
+	try
+
+	{
+
+		amount = parseFloat(amount);
+
+        	if (isNaN(amount)) amount = 0;
+
+
+
+		var samount = new String(amount);
+
+		var pos;
+
+
+
+		pos = samount.lastIndexOf('.') + 1;
+
+
+
+		if (pos == 0 || pos == -1)
+
+				cents = '';
+
+		else	cents =  samount.substring(pos);
+
+
+
+		if (cents.length == 0) { return '00'; }
+
+		if (cents.length == 1) { return cents + '0'; }
+
+		if (cents.length == 2) { return cents; }
+
+
+
+	}
+
+	catch (exception) { AlertError("Format Cents",e); }
+
+	return cents;
+
+}
+
+
+
+function FormatDollar(amount,CommaDelimiter)
+
+{
+
+   try
+
+   {
+
+        amount = parseInt(amount, 10);
+
+        
+
+        if (isNaN(amount)) amount = 0;
+
+
+
+        var samount = new String(amount);
+
+
+
+        if (samount.length <= 0) { return 0; }
+
+
+
+        samount =  samount.substring(0,samount.length);
+
+
+
+        for (var i = 0; i < Math.floor((samount.length-(1+i))/3); i++)
+
+        {
+
+           samount = samount.substring(0,samount.length-(4*i+3)) + CommaDelimiter + samount.substring(samount.length-(4*i+3));
+
+         }
+
+
+
+   }
+
+    catch (exception) { AlertError("Format Comma",e); }
+
+    return samount;
+
+}
+
+
+
+function AlertError(MethodName,e)
+
+{
+
+    if (e.description == null) { alert(MethodName + " Exception: " + e.message); }
+
+    else {  alert(MethodName + " Exception: " + e.description); }
+
+}
+
+
+
+var aplicar, continuar, diaIndex, mesIndex, horaIndex, minIndex;
+
+
+
+function validaCalendario()
+
+{
+
+	if (document.getElementById("checkCalendario").checked)
+
+	{
+
+		
+
+		asignaIndices();
+
+		mesNumerico();
+
+		validaMes();
+
+		if (aplicar == true)
+
+			validaDia();
+
+	}
+
+	else
+
+	{
+
+		aplicar = true;
+
+	}
+
+}
+
+
+
+function validaVacios()
+
+{
+
+	asignaIndices();
+
+	
+
+	if (document.getElementById("checkCalendario").checked==true)
+
+	{
+
+		if (z[diaIndex].value=="" || z[mesIndex].value=="")
+
+		{
+
+			continuar=false;
+
+			if ('SPANISH' == 'SPANISH')
+
+				alert ("Si desea programar su transacción es necesario que introduzca el día y el mes");
+
+			else
+
+				alert ("If you wish to schedule your transaction you should enter all the day and month fields");
+
+			
+
+			if (continuar==false && z[mesIndex].value != "")
+
+			{
+
+			continuar=false;
+
+			}
+
+		}
+
+		else
+
+			continuar=true;
+
+	}
+
+	
+
+	else
+
+		continuar=true;
+
+}
+
+
+
+function asignaIndices()
+
+{
+
+	if ("Z3II"== 'Z3II')
+
+	{ 
+
+		diaIndex = 4;
+
+		mesIndex = 5;
+
+		z[diaIndex] = document.getElementById("DIA");
+
+		z[mesIndex] = document.getElementById("MES");
+
+	}
+
+	
+
+	if ("Z3II" == 'Z3IE')
+
+	{
+
+		diaIndex = 4;
+
+		mesIndex = 5;
+
+		
+
+		z[diaIndex] = document.getElementById("DIA");
+
+		z[mesIndex] = document.getElementById("MES");
+
+	}
+
+	
+
+	if ("Z3II" == "ZSI3")
+
+	{
+
+		diaIndex = 11;
+
+		mesIndex = 12;
+
+		var a=document.forms[0].DIA;
+
+		var b=document.forms[0].MES;
+
+		z[diaIndex] = document.forms[0].DIA;
+
+		z[mesIndex] = document.forms[0].MES;
+
+	}
+
+}
+
+
+
+function mesNumerico()
+
+{
+
+	var mesNum = z[mesIndex].value.toUpperCase();
+
+				
+
+	if (mesNum=="ENERO " || mesNum=="JANUARY " || mesNum=="ENERO" || mesNum=="JANUARY")
+
+		z[mesIndex].value="01";        		
+
+	if (mesNum=="FEBRERO " || mesNum=="FEBRUARY " || mesNum=="FEBRERO" || mesNum=="FEBRUARY")
+
+		z[mesIndex].value="02";        
+
+	if (mesNum=="MARZO " || mesNum=="MARCH " || mesNum=="MARZO" || mesNum=="MARCH")
+
+		z[mesIndex].value="03"         
+
+	if (mesNum=="ABRIL " || mesNum=="APRIL " || mesNum=="ABRIL" || mesNum=="APRIL")
+
+		z[mesIndex].value="04";        
+
+	if (mesNum=="MAYO " || mesNum=="MAY " || mesNum=="MAYO" || mesNum=="MAY")
+
+		z[mesIndex].value="05";        
+
+	if (mesNum=="JUNIO " || mesNum=="JUNE " || mesNum=="JUNIO" || mesNum=="JUNE")
+
+		z[mesIndex].value="06";        
+
+	if (mesNum=="JULIO " || mesNum=="JULY " || mesNum=="JULIO" || mesNum=="JULY")
+
+		z[mesIndex].value="07";        		
+
+	if (mesNum=="AGOSTO " || mesNum=="AUGUST "  || mesNum=="AGOSTO" || mesNum=="AUGUST")
+
+		z[mesIndex].value="08";
+
+	if (mesNum=="SEPTIEMBRE " || mesNum=="SEPTEMBER " || mesNum=="SEPTIEMBRE" || mesNum=="SEPTEMBER")
+
+		z[mesIndex].value="09";
+
+	if (mesNum=="OCTUBRE " || mesNum=="OCTOBER " || mesNum=="OCTUBRE" || mesNum=="OCTOBER")
+
+		z[mesIndex].value="10";
+
+	if (mesNum=="NOVIEMBRE " || mesNum=="NOVEMBER " || mesNum=="NOVIEMBRE" || mesNum=="NOVEMBER")
+
+		z[mesIndex].value="11";           
+
+	if (mesNum=="DICIEMBRE " || mesNum=="DECEMBER " || mesNum=="DICIEMBRE" || mesNum=="DECEMBER")
+
+		z[mesIndex].value="12";
+
+}
+
+
+
+function validaMes()
+
+{
+
+	if (z[mesIndex].value == "01" || z[mesIndex].value == "02" || z[mesIndex].value == "03" || z[mesIndex].value == "04" || z[mesIndex].value == "05" || z[mesIndex].value == "06" || z[mesIndex].value == "07" || z[mesIndex].value == "08" || z[mesIndex].value == "09" || z[mesIndex].value == "10" || z[mesIndex].value == "11" || z[mesIndex].value == "12")
+
+		aplicar = true;
+
+	else
+
+	{
+
+		aplicar = false;
+
+		document.getElementById("MES").value="";
+
+	}
+
+}
+
+
+
+function validaDia()
+
+{
+
+	var diaNum = parseInt (z[diaIndex].value);
+
+	
+
+	switch (z[mesIndex].value)
+
+	{
+
+		case "01":
+
+		case "03":
+
+		case "05":
+
+		case "07":
+
+		case "08":
+
+		case "10":
+
+		case "12":
+
+			if (diaNum > 31)
+
+			{
+
+				aplicar = false;
+
+				document.getElementById("DIA").value="";
+
+			}
+
+			break;
+
+		
+
+		case "04":
+
+		case "06":
+
+		case "09":
+
+		case "11":
+
+			if (diaNum > 30)
+
+			{
+
+				aplicar = false;
+
+				document.getElementById("DIA").value="";
+
+			}
+
+			break;
+
+		
+
+		case "02":
+
+			if (y % 4 != 0 && diaNum > 28)
+
+			{
+
+				aplicar = false;
+
+				document.getElementById("DIA").value="";
+
+			}
+
+			if (y % 4 == 0 && diaNum > 29)
+
+			{
+
+				aplicar = false;
+
+				document.getElementById("DIA").value="";
+
+			}
+
+			break;
+
+		
+
+		default:
+
+			aplicar = false;
+
+	}
+
+}
+
+
+
+var mensaje1="Seleccione alguna de las opciones disponibles";
+
+var mensaje2= (language!="eng") ? "Es necesario seleccionar una inversi&oacute;n. Favor de verificar" : "You must select a investment. Please check";
+
+var mensaje3= (language!="eng") ? "Digite un valor en el campo importe" : "Enter a value in the amount field";
+
+var mensaje4="Informaci&oacute;n de importe inv&aacute;lida";
+
+var mensaje5= (language!="eng") ? "Seleccione una fecha" : "Please, select a date";
+
+var mensaje6="Importe debe ser mayor a cero";
+
+    z[1]="Retiro";
+
+	if(Conf_AV(document.forms[0].DATA1,3)=="Deposito-Compra")
+
+	{
+
+		z[1]="Deposito";
+
+	}
+
+
+
+/* Funcion que verifica si el campo esta activo
+
+ * Parametros
+
+ * @Objeto: Id del campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function RdioChk_Vacio (Objeto,Msg_Error){
+
+	$("#"+Objeto+"_error").css("display","none");
+
+	var Seleccionado = false;
+
+	$("input[name='"+Objeto+"']").each(function(){
+
+		if(Seleccionado != true){
+
+			if(this.checked)
+
+			Seleccionado = true;
+
+			else
+
+			Seleccionado = false;
+
+		}
+
+	});
+
+	if(Seleccionado != true){
+
+		$("#"+Objeto+"_error").css("display","block").html(Msg_Error);
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+function Inversion()
+
+{
+
+		var flag= true;
+
+		var flagAux=true;
+
+		
+
+		if(RdioChk_Vacio ("DATA1",(language=="esp") ? "Seleccione una opci&oacute;n" : "Select an option")!=true)
+
+		{
+
+			flag= false;
+
+			parent.Expandir();
+
+		}
+
+
+
+		if(Combo_Vacio("combonCtas",mensaje2,"SI")!=true)
+
+			{
+
+				flag = false;
+
+				flagAux=flag;
+
+				parent.Expandir();
+
+			}
+
+			
+
+		if(Campo_Vacio("DATA3",mensaje3,"SI")!=true)
+
+					{
+
+						flag = false;
+
+						document.getElementById('saldoTot').innerHTML="";
+
+						parent.Expandir();
+
+					}
+
+						
+
+					else
+
+					{
+
+						
+
+						if(Valida_Caracteres ("DATA3",".,",1,"SI",mensaje4)!=true)
+
+							{   
+
+								flag = false;
+
+								document.getElementById('saldoTot').innerHTML="";
+
+								parent.Expandir();
+
+							}
+
+							else
+
+							{
+
+								var InporteDec=$('#DATA3').val();
+
+								var Dec=InporteDec.split('.');
+
+								var DecLong=Dec[1].length;
+
+								if(DecLong>2)
+
+								{
+
+										$("#DATA3_error").html("Solamente 2 decimales en el monto");
+
+									
+
+										$("#DATA3_error").show();
+
+										flag = false;
+
+								}
+
+									else
+
+									{
+
+											$("#DATA3_error").hide();
+
+											flag = true;
+
+									}
+
+							}
+
+							
+
+							if(document.getElementById('DATA3').value=="0")
+
+							{
+
+									
+
+									flag = false;
+
+									document.getElementById('DATA3_error').style.display='block';
+
+									document.getElementById('DATA3_error').innerHTML=mensaje6;
+
+									document.getElementById('saldoTot').innerHTML="";
+
+									parent.Expandir();
+
+							}
+
+							var valImport=document.getElementById('DATA3').value;
+
+							var resultado=valImport.split(',');
+
+							var longitudImpor=resultado.length;	
+
+							if(longitudImpor>1)
+
+							{
+
+								if(longitudImpor==2)
+
+								{
+
+									var decAux=resultado[longitudImpor-1].split('.');
+
+									var resultado2=decAux[0].length;			
+
+									if(resultado2<3)
+
+									{
+
+										document.getElementById('DATA3_error').style.display='block';
+
+										document.getElementById('DATA3_error').innerHTML=mensaje4;
+
+										document.getElementById('saldoTot').innerHTML="";
+
+										parent.Expandir();
+
+										flag = false;
+
+									}
+
+									
+
+									else
+
+									{
+
+										flag = true;
+
+									}
+
+								}
+
+								
+
+								else
+
+								{
+
+									if(longitudImpor==3)
+
+									{	
+
+										if(resultado[longitudImpor-1].length<6||resultado[longitudImpor-2].length<3)
+
+										{
+
+											document.getElementById('DATA3_error').style.display='block';
+
+											document.getElementById('DATA3_error').innerHTML=mensaje4;
+
+											document.getElementById('saldoTot').innerHTML="";
+
+											parent.Expandir();
+
+											flag = false;
+
+										}
+
+										
+
+										else
+
+										{
+
+											flag = true;
+
+										}
+
+									}
+
+									
+
+									else
+
+									{
+
+										if(longitudImpor==4)
+
+										{		
+
+											if(resultado[longitudImpor-1].length<6||resultado[longitudImpor-2].length<3||resultado[longitudImpor-3].length<3)
+
+											{
+
+												document.getElementById('DATA3_error').style.display='block';
+
+												document.getElementById('DATA3_error').innerHTML=mensaje4;
+
+												document.getElementById('saldoTot').innerHTML="";
+
+												parent.Expandir();
+
+												flag = false;
+
+											}
+
+											
+
+											else
+
+											{
+
+												flag = true;
+
+											}
+
+										}
+
+										else
+
+										{
+
+											if(resultado[longitudImpor-1].length<6||resultado[longitudImpor-2].length<3||resultado[longitudImpor-3].length<3||resultado[longitudImpor-4].length<3)
+
+											{
+
+												document.getElementById('DATA3_error').style.display='block';
+
+												document.getElementById('DATA3_error').innerHTML=mensaje4;
+
+												document.getElementById('saldoTot').innerHTML="";
+
+												parent.Expandir();
+
+												flag = false;
+
+											}
+
+											
+
+											else
+
+											{
+
+												flag = true;
+
+											}
+
+										}
+
+									}
+
+								}
+
+								
+
+							}
+
+					}
+
+		
+
+		if (document.getElementById("checkCalendario").checked==true)
+
+		{
+
+			if(Campo_Vacio("yearpicker1",mensaje5,"SI")!=true)
+
+					{
+
+						flag = false;
+
+					}
+
+			if(Campo_Vacio("yearpicker1",mensaje5,"SI")==true)
+
+					{
+
+						var fecha=document.getElementById('yearpicker1').value.split("/");
+
+						if("SPANISH"=="SPANISH")
+
+						{
+
+							document.getElementById('DIA').value=fecha[0];
+
+							document.getElementById('MES').value=fecha[1];
+
+							y=fecha[2];
+
+							document.getElementById('DATA22').value=y;
+
+							document.getElementById('DATA23').value="1";
+
+							validaCalendario();
+
+						}
+
+							else
+
+							{
+
+								document.getElementById('DIA').value=fecha[1];
+
+								document.getElementById('MES').value=fecha[0];
+
+								y=fecha[2];
+
+								document.getElementById('DATA22').value=y;
+
+								document.getElementById('DATA23').value="1";
+
+								validaCalendario();
+
+							}
+
+							parent.Expandir();
+
+						
+
+					}
+
+		}
+
+		
+
+		if(document.getElementById("checkCalendario").checked==false)
+
+		{
+
+					document.forms[0].DIA.value="0";
+
+					document.forms[0].MES.value="0";
+
+					document.getElementById('DATA23').value="0";
+
+					aplicar=true;
+
+					parent.Expandir();
+
+		}
+
+		
+
+		document.getElementById('DATA5').value=document.getElementById('DIA').value;
+
+		document.getElementById('DATA6').value=document.getElementById('MES').value;
+
+		
+
+		if(document.getElementById("FREC").checked==true)
+
+		{
+
+			document.getElementById('DATA14').value="on";
+
+			parent.Expandir();
+
+		}
+
+		
+
+		else
+
+		{
+
+			document.getElementById('DATA14').value="off";
+
+			parent.Expandir();
+
+		}
+
+		if(flag==true && flagAux==true)
+
+		{
+
+		document.getElementById('DATA12').value=document.getElementById('combonCtas').selectedIndex;
+
+		parent.document.getElementById("DATADEMO").value=$("#checkCalendario").is(":checked") + "," + $("#FREC").is(":checked") + "|" + 
+
+		$("#yearpicker1").val();
+
+  
+
+			if($("input:radio[id=compra]").is(':checked')==true){
+
+				parent.cargaDocN('Inversion Integral/realizar_deposito_a_tu_inversion.html');
+
+			}else{
+
+				parent.cargaDocN('Inversion Integral/realizar_un_retiro_de_tu_inversion.html');
+
+			}
+
+		}
+
+} 
+
+            function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+			function showError( idElem, msgErr, contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'', contexto ).after( $divErr );
+
+}
+
+
+
+function hideErrors( contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display', contexto).remove();
+
+}
+
+
+
+function toggleChecks( idChecken, idCheckdis ) {
+
+  var flag =  $('#'+idChecken).is(':checked');
+
+  $('#'+idChecken).attr('disabled', false);
+
+  $('#'+idCheckdis).attr('disabled', flag);
+
+  $('#'+idCheckdis).attr('checked', false);
+
+  $('#msgFrec').show();
+
+  window.parent.ajustarIframe();
+
+}
+
+			var txtNom = ( language=="esp" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( language=="esp" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+var es= new Array("Investment at sight with availability and daily interests",
+
+							  "Select the transaction type, the investment type with which you want to invest, enter the data and click &quot;Continue&quot;",
+
+							  "Transaction type of",
+
+							  "Make a deposit into your investment",
+
+							  "Make withdrawal from your investment ",
+
+							  "Accounts",
+
+							  "Withdrawal account",
+
+							  "Deposit account (investment)",
+
+							  "Deposit data",
+
+							  "Investment total balance",
+
+							  "Additionals",
+
+							  "options",
+
+							  "Schedule for future",
+
+							  "Date",
+
+							  "Save as frequent transaction",
+
+							  "*Scheduled transactions can not be saved as frequent",
+
+							  "What can I do? ",
+
+							  "View Amounts",
+
+							  "Continue",
+
+							  "Sorry, the transaction could not be completed",
+
+					          "Investment at sight with availability and daily interests",
+
+						      "Possible solution",
+
+			                  "[MensajesFrecuentes]",
+
+					          "What can I do?",
+
+							  "You can use online help or contact the",
+
+							  "customer service",
+
+							  "at 1226 3990 (D.F. and Metropolitan area) or 01 800 110 3990 (rest of the Republic).",
+
+							  "It is important to have the following code:",
+
+							  "Cause",
+
+							  "Accept",
+
+							  "OVERNIGHT DEPOSITS");
+
+
+
+$(document).ready(function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	});
+
+	
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+} 
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+			var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+			var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+			var cadenaInversiones=""; 
+
+			var aw="";
+
+			var event="";
+
+			var miprueba="";
+
+			var countCuentasCargo=0; 
+
+			var countCuentasAbono=0; 
+
+			var flagletras= true;
+
+
+
+			var msg="Informaci&oacute;n de importe inv&aacute;lida";
+
+
+
+			var titulo="Integral/Perfiles";
+
+			rutaAyuda=rutaAyuda+"Integral-Perfiles.htm";
+
+			
+
+			$(document).ready(function ()
+
+			{
+
+				$("#DATA3").click(function() {
+
+                 $(this).val('1000').attr("readonly", "readonly");
+
+					});
+
+				
+
+				leerDatosDemo();
+
+				
+
+					var cadenaCuentas="";
+
+					var counts;
+
+					var invertir;
+
+											cadenaInversiones="PS-Selecciona una opci&oacute;n----6-7-8-9";
+
+						countCuentasCargo=countCuentasCargo+1;
+
+											cadenaInversiones="5-872-Inv. Integral-Inv. Integral-MXN-4-84-19-40,000.00";
+
+						/*countCuentasCargo=countCuentasCargo+1;
+
+											cadenaInversiones="11-  299-Inv Integral A-Inv Integral A-MXN-4-84-18-45,000.00";
+
+						countCuentasCargo=countCuentasCargo+1;
+
+											cadenaInversiones="20-502-Inversion Perfiles -Inversion Perfiles-MXN-4-84-26-50,000.00";
+
+						countCuentasCargo=countCuentasCargo+1;*/
+
+					
+
+										
+
+											cadenaCuentas="PS-Selecciona una opci&oacute;n----6-7";
+
+						countCuentasAbono=countCuentasAbono+1;
+
+											cadenaCuentas="2-002-Cheques-Cheques-MXN-1-1";
+
+						countCuentasAbono=countCuentasAbono+1;
+
+											cadenaCuentas="6-  501-Cta. Maestra Opc.-Mi maestra.-MXN-6-66";
+
+						countCuentasAbono=countCuentasAbono+1;
+
+											cadenaCuentas="19-502-Cuenta Perfiles -Cuenta Perfiles-MXN-6-66";
+
+						countCuentasAbono=countCuentasAbono+1;
+
+					
+
+					
+
+					counts=cadenaCuentas.split('-');
+
+					invertir=cadenaInversiones.split('-');
+
+					
+
+					counts[3]=counts[3].replace(/^\s*|\s*$/g,"");
+
+					invertir[0]=invertir[0].replace(/^\s*|\s*$/g,"");
+
+					document.getElementById('data2').style.display='block';
+
+					document.getElementById('valor').value=invertir[0];
+
+					document.getElementById('data2').style.display='none';
+
+					invertir[3]=invertir[3].replace(/^\s*|\s*$/g,"");
+
+
+
+					 if(countCuentasCargo==2)
+
+					 {
+
+						if(countCuentasAbono==2||countCuentasAbono==1)
+
+						{			
+
+							if(counts[3]!="")
+
+							   {
+
+					
+
+					document.getElementById('ctaPerfiles').innerHTML=counts[3]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + counts[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + counts[4];
+
+					document.getElementById('saldoPerfiles').innerHTML="Saldo("+ counts[4] +"): $ "+ counts[6];
+
+								
+
+					document.getElementById('ctaPerfiles3').innerHTML=counts[3]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + counts[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + counts[4];
+
+					document.getElementById('saldoPerfiles3').innerHTML="Saldo("+ counts[4] +"): $ "+ counts[6];
+
+
+
+								 }
+
+							 else
+
+								{
+
+									
+
+					document.getElementById('ctaPerfiles').innerHTML=counts[2]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + counts[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + counts[4];
+
+					document.getElementById('saldoPerfiles').innerHTML="Saldo("+ counts[4] +"): $ "+ counts[6];
+
+
+
+					document.getElementById('ctaPerfiles3').innerHTML=counts[2]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + counts[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + counts[4];
+
+					document.getElementById('saldoPerfiles3').innerHTML="Saldo("+ counts[4] +"): $ "+ counts[6];
+
+
+
+								}
+
+																
+
+							if(invertir[3]!="")	
+
+								{
+
+									
+
+document.getElementById('ctaPerfiles2').innerHTML=invertir[3]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + invertir[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + invertir[4];
+
+							            document.getElementById('saldoPerfiles2').innerHTML="Saldo("+ invertir[4] +"): $ "+ invertir[8];
+
+
+
+								        document.getElementById('ctaPerfiles4').innerHTML=invertir[3]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + invertir[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + invertir[4];
+
+							            document.getElementById('saldoPerfiles4').innerHTML="Saldo("+ invertir[4] +"): $ "+ invertir[8];
+
+
+
+							    }
+
+							   
+
+							   else
+
+							   {
+
+									
+
+										document.getElementById('ctaPerfiles2').innerHTML=invertir[2]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + invertir[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + invertir[4];
+
+										document.getElementById('saldoPerfiles2').innerHTML="Saldo("+ invertir[4] +"): $ "+ invertir[8];
+
+
+
+										document.getElementById('ctaPerfiles4').innerHTML=invertir[2]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + invertir[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + invertir[4];
+
+										document.getElementById('saldoPerfiles4').innerHTML="Saldo("+ invertir[4] +"): $ "+ invertir[8];
+
+
+
+								   
+
+							   }
+
+							
+
+						}
+
+												
+
+						else
+
+						{
+
+							if(countCuentasAbono>2)
+
+							{		
+
+									document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+									document.getElementById('caso_2_deposito-retiro').style.display='block';
+
+									
+
+									if(invertir[3]!="")
+
+									{
+
+										
+
+											document.getElementById('invPerfiles3').innerHTML=invertir[3]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + invertir[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + invertir[4];
+
+											document.getElementById('saldosPerfiles3').innerHTML="Saldo("+ invertir[4] +"): $ "+ invertir[8];
+
+
+
+									}
+
+									  else
+
+									  {
+
+										
+
+											 document.getElementById('invPerfiles3').innerHTML=invertir[2]+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + "**" + invertir[1].replace(/^\s*|\s*$/g,"")+ "&nbsp;&nbsp;-&nbsp;&nbsp;" + invertir[4];
+
+											 document.getElementById('saldosPerfiles3').innerHTML="Saldo("+ invertir[4] +"): $ "+ invertir[8];
+
+										
+
+									  }  
+
+							}
+
+						}
+
+					 }	 
+
+					 
+
+					 else
+
+					{
+
+						if(countCuentasAbono>2)
+
+						{
+
+								LlenaCombo();
+
+								document.getElementById('caso_3_deposito-retiro').style.display='block';
+
+						}	
+
+							else
+
+							{	
+
+									document.getElementById('caso_3_deposito-retiro').style.display='block';
+
+							
+
+							}
+
+					 }
+
+				
+
+				if(language== "eng"){
+
+					var Formato = "mm/dd/yy";
+
+					var diasSemana = ['Sun','Mon','Tue','Wed','Thu','Fry','Sat'];
+
+					var Meses = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+				}else{
+
+					var Formato = "dd/mm/yy";
+
+					var diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+					var Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+				}
+
+				var fechaSer= new Date();
+
+				var anio = fechaSer.getFullYear();
+
+				var mes = fechaSer.getMonth();
+
+				var dia = fechaSer.getDate();
+
+				fechaIni = new Date(anio, mes, dia);
+
+				
+
+				CrearCal("#yearpicker1", Formato, diasSemana, Meses, fechaIni, fechaIni,30, '275', 'A');
+
+				$("#yearpicker1").focus(function(){$("#yearpicker1").val("");});
+
+				parent.Expandir();
+
+				
+
+				if(""=="error")
+
+				{
+
+					parent.$("#mensajeError_contenido_div").html($("#mensajeError_contenido").html());
+
+					parent.$.modal(				
+
+					{
+
+					opacity:60, 
+
+					overlayClose:false, 
+
+					flagDiv:true,
+
+					widthDivIfrm:600,
+
+					heightDivIfrm:"auto"
+
+					}
+
+					);	
+
+				}
+
+
+
+					if("[Flag_Horario]"=="fuera")
+
+				{
+
+					parent.$.modal(
+
+						{
+
+						opacity:60, 
+
+						overlayClose:false, 
+
+						flagDiv:false,
+
+						widthDivIfrm:600,
+
+						heightDivIfrm:100,
+
+						srcIfrm:"/spanishdir/if.htm"
+
+						}
+
+						);
+
+						aw=parent.document.getElementById('mensajeError_contenido_ifrm').contentWindow;
+
+						miprueba="PRUEBA";
+
+						setTimeout("checkdom()",100);
+
+				}
+
+
+
+					if(""=="regreso")
+
+					{	
+
+						if("MULPROBB_CBS"=="Deposito")
+
+						{
+
+							if((countCuentasCargo==2 && countCuentasAbono==1)||(countCuentasCargo==2 && countCuentasAbono==2))
+
+							{
+
+								document.getElementById('caso_1_deposito-retiro').style.display='block';
+
+								document.getElementById('caso_2_deposito-retiro').style.display='none';
+
+								document.getElementById('caso_3_deposito-retiro').style.display='none';
+
+							}
+
+							else
+
+							{
+
+								document.getElementById('combonCtas').selectedIndex=[IndiceSelect];
+
+							}
+
+							
+
+							document.getElementById('compra').checked=true;
+
+							cambioLeyendaDeposito();
+
+							document.getElementById('DATA3').value="[Importe_Conf]";
+
+							var return_page="[Saldo_Inv]";
+
+							return_page=return_page.replace(/^\s*|\s*$/gi,"");
+
+								
+
+								if(return_page=="No disponible" || return_page=="Not available")
+
+								{
+
+									
+
+										document.getElementById('saldoTot').innerHTML="No disponible";
+
+									
+
+								}
+
+
+
+								else
+
+								{
+
+									var suma_return="[SaldoTotal_Inv]";
+
+									document.getElementById('saldoTot').innerHTML=suma_return;
+
+									
+
+								}
+
+
+
+							if("[Dia_Conf]"!="0")
+
+							{
+
+								document.getElementById('checkCalendario').checked=true;
+
+								activaCheck('checkCalendario','Programar'); 
+
+								toggleChecks('checkCalendario','FREC');
+
+								if("SPANISH"=="SPANISH")
+
+								{
+
+									document.getElementById('yearpicker1').value="[Dia_Conf]/[Mes_Conf]/[Año]";
+
+								}
+
+									 else
+
+									 {
+
+										document.getElementById('yearpicker1').value="[Mes_Conf]/[Dia_Conf]/[Año]";
+
+									 }
+
+								
+
+							}
+
+							if("[FrecuenteStatus]"!="off")
+
+							{
+
+								document.getElementById('FREC').checked=true;
+
+								toggleChecks('FREC','checkCalendario');
+
+								document.getElementById('Programar').style.display='none';
+
+							}
+
+							else
+
+							{
+
+								document.getElementById('FREC').checked=false;
+
+							}
+
+																					
+
+						}
+
+							else
+
+							{
+
+									if((countCuentasCargo==2 && countCuentasAbono==1)||(countCuentasCargo==2 && countCuentasAbono==2))
+
+								{
+
+									document.getElementById('caso_1_deposito-retiro').style.display='block';
+
+									document.getElementById('caso_2_deposito-retiro').style.display='none';
+
+									document.getElementById('caso_3_deposito-retiro').style.display='none';
+
+								}
+
+								else
+
+								{
+
+									document.getElementById('combonCtas').selectedIndex=[IndiceSelect];
+
+								}
+
+								document.getElementById('venta').checked=true;
+
+								cambioLeyendaRetiro();
+
+								document.getElementById('DATA3').value="[Importe_Conf]";
+
+
+
+								var return_page="[Saldo_Inv]";
+
+								return_page=return_page.replace(/^\s*|\s*$/gi,"");
+
+								
+
+								if(return_page=="No disponible" || return_page=="Not available")
+
+								{
+
+									
+
+										document.getElementById('saldoTot').innerHTML="No disponible";
+
+									
+
+								}
+
+
+
+								else
+
+								{
+
+									var suma_return="[SaldoTotal_Inv]";
+
+									document.getElementById('saldoTot').innerHTML=suma_return;
+
+								
+
+								}
+
+
+
+								if("[Dia_Conf]"!="0")
+
+								{
+
+									document.getElementById('checkCalendario').checked=true;
+
+									activaCheck('checkCalendario','Programar'); 
+
+									toggleChecks('checkCalendario','FREC');
+
+									if("[Dia_Conf]"!="0");
+
+									{
+
+										document.getElementById('checkCalendario').checked=true;
+
+										activaCheck('checkCalendario','Programar'); 
+
+										toggleChecks('checkCalendario','FREC');
+
+										if("SPANISH"=="SPANISH")
+
+										{
+
+											document.getElementById('yearpicker1').value="[Dia_Conf]/[Mes_Conf]/[Año]";
+
+										}
+
+											else
+
+											{
+
+												document.getElementById('yearpicker1').value="[Mes_Conf]/[Dia_Conf]/[Año]";
+
+											}
+
+									}
+
+									
+
+									if("[FrecuenteStatus]"!="off")
+
+									{
+
+										document.getElementById('FREC').checked=true;
+
+										toggleChecks('FREC','checkCalendario');
+
+										document.getElementById('Programar').style.display='none';
+
+									}
+
+									else
+
+									{
+
+										document.getElementById('FREC').checked=false;
+
+									}
+
+								}
+
+								 
+
+							}
+
+							
+
+					}
+
+
+
+					var DATAAUX = $("#DATAAUX", window.parent.document).val();
+
+					if(DATAAUX!="")
+
+					{
+
+						if(isNaN(DATAAUX))
+
+						{
+
+							var resumen=DATAAUX.split('~');
+
+							if(resumen[0]=="retiro")
+
+							{
+
+								$("#venta").attr("checked","checked");
+
+								cambioLeyendaRetiro();
+
+							}
+
+							
+
+							else
+
+							{
+
+								$("#compra").attr("checked","checked");
+
+								cambioLeyendaDeposito();
+
+							}
+
+								
+
+							if(document.getElementById('caso_3_deposito-retiro').style.display=='block')
+
+							{
+
+								document.getElementById('combonCtas').value=resumen[1];
+
+							}
+
+						}
+
+						
+
+						else
+
+						{
+
+							if(document.getElementById('caso_3_deposito-retiro').style.display=='block')
+
+							{
+
+								$("#combonCtas").find("option[value='"+DATAAUX+"']").attr("selected","selected");
+
+							}
+
+						}	
+
+							$("#DATAAUX", window.parent.document).val("");
+
+					}
+
+			});
+
+
+
+	function checkdom()
+
+	{
+
+		if(aw.document.forms[0]+''==undefined)
+
+		setTimeout("checkdom()",100);
+
+			else
+
+			{
+
+				var d=aw.document.forms[0];
+
+				var o=document.forms[0];
+
+				d.action=o.action;
+
+				d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+				d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+				d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+				d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+				d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+				d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+				d.EWFBUTTON.value=miprueba;
+
+				d.EWFBUTTON.name='EWF_BUTTON_'+miprueba;
+
+				d.submit();	
+
+			}
+
+	}
+
+			function mouseOut()
+
+			{
+
+				var Imp_aux_tot=document.getElementById('DATA3').value;
+
+					
+
+					if(Imp_aux_tot!="")
+
+					{
+
+						if(Valida_Caracteres ("DATA3",".,",1,"SI",msg)!=true)
+
+						{   
+
+							flagletras = false;
+
+							document.getElementById('saldoTot').innerHTML="";
+
+							parent.Expandir();
+
+						}
+
+						
+
+						else
+
+						{
+
+							if(document.getElementById('caso_2_deposito-retiro').style.display=='block'||
+
+							   document.getElementById('caso_1_deposito-retiro').style.display=='block')
+
+								{
+
+									var imp= document.getElementById('DATA3').value;
+
+									var monto=cadenaInversiones.split('-');
+
+									var nueva=monto[8].replace(/^\s*|\s*$/gi,"");
+
+									if(nueva=="No disponible" || nueva=="Not available")
+
+									{
+
+										
+
+										document.getElementById('saldoTot').innerHTML="No disponible";
+
+										
+
+									}
+
+
+
+									else
+
+									{
+
+										if(document.getElementById('compra').checked==true)
+
+										{
+
+											var suma=parseFloat(nueva.replace(/,/g, ""));
+
+											suma=suma+ parseFloat(imp.replace(/,/g, ""));
+
+											suma=Math.round(suma*Math.pow(10,2))/Math.pow(10,2);
+
+											suma=formatNumber(suma);
+
+											document.getElementById('saldoTot').innerHTML=suma;
+
+										}
+
+										else
+
+										{
+
+											var suma=parseFloat(nueva.replace(/,/g, ""));
+
+											suma=suma-parseFloat(imp.replace(/,/g, ""));
+
+											suma=Math.round(suma*Math.pow(10,2))/Math.pow(10,2);
+
+											suma=formatNumber(suma);
+
+											document.getElementById('saldoTot').innerHTML=suma;
+
+										}
+
+									}
+
+									
+
+									if(document.getElementById('DATA3').value=="")
+
+									{
+
+										document.getElementById('saldoTot').innerHTML="";
+
+									}
+
+								}
+
+						
+
+							else
+
+							{
+
+								var imp= document.getElementById('DATA3').value;
+
+								var indice_combo= document.getElementById('combonCtas').selectedIndex;
+
+								if(indice_combo=="0")
+
+								{
+
+									document.getElementById('saldoTot').innerHTML="";
+
+								}
+
+									else
+
+									{
+
+										var valor_combo= document.getElementById('combonCtas').options[indice_combo].value;
+
+										var valor_combo= document.getElementById('combonCtas').options[indice_combo].text;
+
+										var saldo_cuenta = valor_combo.split('$');
+
+										var nueva=saldo_cuenta[1];
+
+										nueva=nueva.replace(/^\s*|\s*$/gi,"");
+
+														
+
+										if(nueva=="No disponible" || nueva=="Not available")
+
+										{
+
+
+
+												document.getElementById('saldoTot').innerHTML="No disponible";
+
+
+
+										}
+
+
+
+											else
+
+											{
+
+												if(document.getElementById('compra').checked==true)
+
+												{
+
+													var suma=parseFloat(nueva.replace(/,/g, ""));
+
+													suma=suma+parseFloat(imp.replace(/,/g, ""));
+
+													suma=Math.round(suma*Math.pow(10,2))/Math.pow(10,2);
+
+													suma=formatNumber(suma);
+
+													document.getElementById('saldoTot').innerHTML=suma;
+
+												}
+
+													else
+
+													{
+
+														var suma=parseFloat(nueva.replace(/,/g, ""));
+
+														suma=suma-parseFloat(imp.replace(/,/g, ""));														
+
+														suma=Math.round(suma*Math.pow(10,2))/Math.pow(10,2);
+
+														suma=formatNumber(suma);
+
+														document.getElementById('saldoTot').innerHTML=suma;
+
+													}	
+
+											}
+
+
+
+											if(document.getElementById('DATA3').value=="")
+
+											{
+
+												document.getElementById('saldoTot').innerHTML="";
+
+											}
+
+									}
+
+							}
+
+							
+
+							if(document.getElementById('combonCtas').selectedIndex=="0")
+
+							{
+
+								document.getElementById('saldoTot').innerHTML="";
+
+							}	
+
+							
+
+							if(document.getElementById('combonCtas').selectedIndex!="0")
+
+							{
+
+								if(nueva=="No disponible" || nueva=="Not available")
+
+								{
+
+									document.getElementById('saldoTot').innerHTML=nueva;
+
+								}
+
+								else
+
+								{
+
+									var suma=parseFloat(nueva.replace(/,/g, ""));
+
+									var converter=suma.toString();
+
+									var err=converter.split('.');
+
+									if(err[0]=="NaN")
+
+									{
+
+										document.getElementById('saldoTot').innerHTML=nueva;
+
+									}
+
+								}
+
+								
+
+							}	
+
+
+
+							var cambio_Imp=document.getElementById('DATA3').value;
+
+							var verif=cambio_Imp.indexOf(".");
+
+							if(verif==-1 && document.getElementById('DATA3').value!="")
+
+							{
+
+								cambio_Imp=cambio_Imp+".00";
+
+								document.getElementById('DATA3').value=cambio_Imp;
+
+							}
+
+							else
+
+							{
+
+								var LongDecimales=Imp_aux_tot.split(".");
+
+								var DecimalesL=LongDecimales[1].length;
+
+								if(DecimalesL>2)
+
+								{
+
+
+
+										$("#DATA3_error").html("Solamente 2 decimales en el monto");
+
+
+
+									$("#DATA3_error").show();
+
+								}
+
+								
+
+								else
+
+								{
+
+									$("#DATA3_error").hide();
+
+								}
+
+									
+
+								parent.Expandir();
+
+							}
+
+						}
+
+
+
+					}
+
+					else
+
+					{
+
+						if(document.getElementById('caso_2_deposito-retiro').style.display=='block'||
+
+						   document.getElementById('caso_1_deposito-retiro').style.display=='block')
+
+						{
+
+							var montoaux=cadenaInversiones.split('-');
+
+							var nuevaaux=montoaux[8].replace(/^\s*|\s*$/gi,"");
+
+							if(nuevaaux=="No disponible" || nuevaaux=="Not available")
+
+							{
+
+								
+
+								document.getElementById('saldoTot').innerHTML="No disponible";
+
+								
+
+							}
+
+							
+
+							else
+
+							{
+
+								document.getElementById('saldoTot').innerHTML=nuevaaux;
+
+							}
+
+						}
+
+						
+
+						else
+
+						{
+
+							var indice_comboaux= document.getElementById('combonCtas').selectedIndex;
+
+							if(indice_comboaux=="0")
+
+							{
+
+								document.getElementById('saldoTot').innerHTML="";
+
+							}
+
+							
+
+							else
+
+							{
+
+								var valor_comboaux= document.getElementById('combonCtas').options[indice_comboaux].value;
+
+								var valor_comboaux= document.getElementById('combonCtas').options[indice_comboaux].text;
+
+								var saldo_cuentaaux = valor_comboaux.split('$');
+
+								var nuevaaux1=saldo_cuentaaux[1];
+
+								nuevaaux1=nuevaaux1.replace(/^\s*|\s*$/gi,"");
+
+												
+
+									if(nuevaaux1=="No disponible" || nuevaaux1=="Not available")
+
+									{
+
+										
+
+											document.getElementById('saldoTot').innerHTML="No disponible";
+
+										
+
+									}
+
+									else
+
+									{
+
+											document.getElementById('saldoTot').innerHTML=nuevaaux1;
+
+									}
+
+									parent.Expandir();
+
+							}
+
+						}
+
+						
+
+					}
+
+			}
+
+
+
+			function formatNumber(num,prefix){
+
+				prefix = prefix || '';
+
+				num += '';
+
+				var splitStr = num.split('.');
+
+				var splitLeft = splitStr[0];
+
+				var splitRight = splitStr.length > 1 ? '.' + splitStr[1] : '';
+
+					if(splitRight=="")
+
+					{
+
+						splitRight=".00";
+
+					}
+
+				var regx = /(\d+)(\d{3})/;
+
+				while (regx.test(splitLeft)) {
+
+				splitLeft = splitLeft.replace(regx, '$1' + ',' + '$2');
+
+				}
+
+				return prefix + splitLeft + splitRight;
+
+				} 
+
+
+
+		function cambioLeyendaRetiro()
+
+			{
+
+				  if(""=="regreso")
+
+				{
+
+					if(countCuentasCargo==2 && countCuentasAbono==1)
+
+					{
+
+						document.getElementById('caso_1_deposito-retiro').style.display='block';
+
+						document.getElementById('caso_2_deposito-retiro').style.display='none';
+
+						document.getElementById('caso_3_deposito-retiro').style.display='none';
+
+					}
+
+				}
+
+				else
+
+				{
+
+					if(countCuentasCargo==2 && countCuentasAbono==2)
+
+					{
+
+						document.getElementById('caso_1_deposito-retiro').style.display='block';
+
+						document.getElementById('caso_2_deposito-retiro').style.display='none';
+
+						document.getElementById('caso_3_deposito-retiro').style.display='none';
+
+					}
+
+					else
+
+					{
+
+						if(countCuentasCargo==2 && countCuentasAbono>2)
+
+						{	
+
+							document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+							document.getElementById('caso_2_deposito-retiro').style.display='block';
+
+							document.getElementById('caso_3_deposito-retiro').style.display='none';
+
+						}
+
+						else
+
+						{
+
+							document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+							document.getElementById('caso_2_deposito-retiro').style.display='none';
+
+							document.getElementById('caso_3_deposito-retiro').style.display='block';
+
+						}
+
+					}
+
+				}
+
+				  
+
+				document.getElementById('datos_pago').style.display='block';
+
+				  document.getElementById('leyendaInformativa3').style.display='block';
+
+				 	
+
+				if(document.getElementById('caso_1_deposito-retiro').style.display=='block')
+
+				{	
+
+					document.getElementById('caso_1_deposito-retiro').style.display='block';
+
+					document.getElementById('ctaAsociada').style.display='block';
+
+					document.getElementById('ctaPerfiles').style.display='none';
+
+					document.getElementById('saldoPerfiles').style.display='none';
+
+					document.getElementById('ctaPerfiles2').style.display='block';
+
+					document.getElementById('saldoPerfiles2').style.display='block';
+
+					document.getElementById('ctaAsociada1').style.display='block';
+
+					document.getElementById('ctaPerfiles3').style.display='block';
+
+					document.getElementById('saldoPerfiles3').style.display='none';
+
+					document.getElementById('ctaPerfiles4').style.display='none';
+
+					document.getElementById('saldoPerfiles4').style.display='none';
+
+
+
+					document.getElementById('aux1').innerHTML=(language=='eng')? 'Withdrawal account (investment)' : 'Cuenta retiro (Inversi&oacute;n)';
+
+					document.getElementById('aux2').innerHTML= (language=='eng')? 'Deposit account' : 'Cuenta dep&oacute;sito';
+
+					document.getElementById('datos1').innerHTML= (language=='eng')? 'Withdrawal data' : 'Datos del retiro';
+
+					document.getElementById('aux4').innerHTML= (language=='eng')? 'Withdrawal amount MXN' : 'Importe a retirar MXN';
+
+				}
+
+			
+
+					else
+
+					{
+
+						if(document.getElementById('caso_2_deposito-retiro').style.display=='block')
+
+						{
+
+							document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+							
+
+							document.getElementById('aux3').innerHTML=(language=='eng')? 'Withdrawal account (investment)' : 'Cuenta retiro (Inversi&oacute;n)';"";
+
+							document.getElementById('leyendaInformativa').style.display='block';
+
+							document.getElementById('leyendaInformativa').innerHTML= (language=='eng')? 'The withdrawal will be paid to the collection account linked to the investment' : 'El retiro ser&aacute; abonado de la cuenta eje a la que est&aacute; ligada la inversi&oacute;n';
+
+							document.getElementById('datos1').innerHTML= (language=='eng')? 'Withdrawal data' : 'Datos del retiro';
+
+							document.getElementById('aux4').innerHTML= (language=='eng')? 'Withdrawal amount MXN' : 'Importe a retirar MXN';
+
+						}
+
+						
+
+						else
+
+						{
+
+							
+
+							if(document.getElementById('caso_3_deposito-retiro').style.display=='block')
+
+								{
+
+									document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+									
+
+									document.getElementById('leyenda').innerHTML=(language=='eng')? 'Withdrawal account (investment)' : 'Cuenta retiro (Inversi&oacute;n)';"";
+
+									document.getElementById('leyendaInformativa3').style.display='block';
+
+									document.getElementById('leyendaInformativa3').innerHTML= (language=='eng')? 'The withdrawal will be paid to the collection account linked to the investment' : 'El retiro ser&aacute; abonado de la cuenta eje a la que est&aacute; ligada la inversi&oacute;n';
+
+									document.getElementById('datos1').innerHTML= (language=='eng')? 'Withdrawal data' : 'Datos del retiro';
+
+									document.getElementById('aux4').innerHTML=(language=='eng')? 'Withdrawal amount MXN' : 'Importe a retirar MXN';
+
+								}
+
+						}
+
+					}
+
+				parent.Expandir();
+
+			}
+
+			
+
+		function cambioLeyendaDeposito()
+
+			{
+
+				if(""=="regreso")
+
+				{
+
+					if(countCuentasCargo==2 && countCuentasAbono==1)
+
+					{
+
+						document.getElementById('caso_1_deposito-retiro').style.display='block';
+
+						document.getElementById('caso_2_deposito-retiro').style.display='none';
+
+						document.getElementById('caso_3_deposito-retiro').style.display='none';
+
+						
+
+					}
+
+				}
+
+				
+
+				else
+
+				{
+
+					if(countCuentasCargo==2 && countCuentasAbono==2)
+
+					{
+
+						document.getElementById('caso_1_deposito-retiro').style.display='block';
+
+						document.getElementById('caso_2_deposito-retiro').style.display='none';
+
+						document.getElementById('caso_3_deposito-retiro').style.display='none';
+
+					}
+
+					else
+
+					{
+
+						if(countCuentasCargo==2 && countCuentasAbono>2)
+
+						{	
+
+							document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+							document.getElementById('caso_2_deposito-retiro').style.display='block';
+
+							document.getElementById('caso_3_deposito-retiro').style.display='none';
+
+						}
+
+						else
+
+						{
+
+							document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+							document.getElementById('caso_2_deposito-retiro').style.display='none';
+
+							document.getElementById('caso_3_deposito-retiro').style.display='block';
+
+						}
+
+					}
+
+				}
+
+				
+
+				document.getElementById('datos_pago').style.display='block';
+
+				document.getElementById('leyendaInformativa3').style.display='block';
+
+				document.getElementById('ctaPerfiles').style.display='block';
+
+				document.getElementById('saldoPerfiles').style.display='none';
+
+				document.getElementById('ctaPerfiles3').style.display='block';
+
+				document.getElementById('saldoPerfiles3').style.display='block';
+
+
+
+				if(document.getElementById('caso_1_deposito-retiro').style.display=='block')
+
+				{
+
+					document.getElementById('caso_1_deposito-retiro').style.display='block';
+
+					document.getElementById('ctaAsociada').style.display='block';
+
+					document.getElementById('ctaPerfiles').style.display='block';
+
+					document.getElementById('saldoPerfiles').style.display='none';
+
+					document.getElementById('ctaPerfiles2').style.display='none';
+
+					document.getElementById('saldoPerfiles2').style.display='none';
+
+					document.getElementById('ctaAsociada1').style.display='block';
+
+					document.getElementById('ctaPerfiles3').style.display='none';
+
+					document.getElementById('saldoPerfiles3').style.display='none';
+
+					document.getElementById('ctaPerfiles4').style.display='block';
+
+					document.getElementById('saldoPerfiles4').style.display='block';
+
+
+
+					document.getElementById('aux1').innerHTML="Cuenta retiro";
+
+					document.getElementById('aux2').innerHTML= (language=='eng')? 'Deposit account (Investment)' : 'Cuenta dep&oacute;sito (Inversi&oacute;n)';
+
+					document.getElementById('datos1').innerHTML= (language=='eng')? 'Deposit data' : 'Datos del dep&oacute;sito';
+
+					document.getElementById('aux4').innerHTML= (language=='eng')? 'Deposit amount MXN' : 'Importe a depositar MXN';
+
+				}
+
+					else
+
+					{
+
+						if(document.getElementById('caso_2_deposito-retiro').style.display=='block')
+
+						{
+
+						document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+							
+
+							document.getElementById('aux3').innerHTML=(language=='eng')? 'Deposit account (Investment)' : 'Cuenta dep&oacute;sito (Inversi&oacute;n)';
+
+							document.getElementById('leyendaInformativa').style.display='block';
+
+							document.getElementById('leyendaInformativa').innerHTML=(language=='eng')? 'The deposit will be charged from the collection account linked to the investment' : 'El dep&oacute;sito ser&aacute; cargado de la cuenta eje a la que est&aacute; ligada la inversi&oacute;n';
+
+							document.getElementById('datos1').innerHTML= (language=='eng')? 'Deposit data' : 'Datos del dep&oacute;sito';
+
+							document.getElementById('aux4').innerHTML= (language=='eng')? 'Deposit amount MXN' : 'Importe a depositar MXN';
+
+							
+
+						}
+
+						
+
+						else
+
+						{
+
+							if(document.getElementById('caso_3_deposito-retiro').style.display=='block')
+
+								{
+
+								document.getElementById('caso_1_deposito-retiro').style.display='none';
+
+									
+
+									document.getElementById('leyenda').innerHTML=(language=='eng')? 'Deposit account (Investment)' : 'Cuenta dep&oacute;sito (Inversi&oacute;n)';
+
+									document.getElementById('leyendaInformativa3').style.display='block';
+
+									document.getElementById('leyendaInformativa3').innerHTML=(language=='eng')? 'The deposit will be charged from the collection account linked to the investment' : 'El dep&oacute;sito ser&aacute; cargado de la cuenta eje a la que est&aacute; ligada la inversi&oacute;n';
+
+									document.getElementById('datos1').innerHTML= (language=='eng')? 'Deposit data' : 'Datos del dep&oacute;sito';
+
+									document.getElementById('aux4').innerHTML= (language=='eng')? 'Deposit amount MXN' : 'Importe a depositar MXN';
+
+									
+
+								}
+
+						}
+
+					}
+
+				parent.Expandir();
+
+			}
+
+
+
+		function LlenaCombo()
+
+			{	var i=0;
+
+				var cuentas= document.getElementById('combonCtas');
+
+				
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","PS");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="".replace(/^\s*|\s*$/gi,"");
+
+					var desc;
+
+					var comboPS= (language=='eng') ? 'Select an option' : 'Selecciona una opci&oacute;n';
+
+						if(alias=="")
+
+						{
+
+						 desc="";
+
+						}
+
+						else
+
+						{
+
+						 desc=alias;
+
+						}
+
+					if("PS"=="PS")
+
+					{
+
+						document.getElementById("opc" + i + "").innerHTML = comboPS;		
+
+					
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, comboPS , "" ,"9");		
+
+					}
+
+					i++;
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","5");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="Inv. Integral".replace(/^\s*|\s*$/gi,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+						 desc="Inv. Integral";
+
+						}
+
+						else
+
+						{
+
+						 desc=alias;
+
+						}
+
+					if("5"=="PS")
+
+					{
+
+						document.getElementById("opc" + i + "").innerHTML = "872";		
+
+					
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, "872" , "MXN" ,"40,000.00");		
+
+					}
+
+					i++;
+
+			}
+
+			parent.Expandir();
+
+			
+
+			function borraInput()
+
+			{
+
+				document.getElementById("DATA3").value="";
+
+				if(document.getElementById('caso_2_deposito-retiro').style.display=='block'||
+
+				   document.getElementById('caso_1_deposito-retiro').style.display=='block')
+
+					{
+
+						var montoaux2=cadenaInversiones.split('-');
+
+						var nuevaaux2=montoaux2[8].replace(/^\s*|\s*$/gi,"");
+
+						if(nuevaaux2=="No disponible" || nuevaaux2=="Not available")
+
+						{
+
+							
+
+							document.getElementById('saldoTot').innerHTML="No disponible";
+
+							
+
+						}
+
+						
+
+						else
+
+						{
+
+							document.getElementById('saldoTot').innerHTML=nuevaaux2;
+
+						}
+
+					}
+
+					
+
+					else
+
+					{
+
+						var indice_comboaux2= document.getElementById('combonCtas').selectedIndex;
+
+						if(indice_comboaux2=="0")
+
+						{
+
+							document.getElementById('saldoTot').innerHTML="";
+
+						}
+
+						
+
+						else
+
+						{
+
+							var valor_comboaux2= document.getElementById('combonCtas').options[indice_comboaux2].value;
+
+							var valor_comboaux2= document.getElementById('combonCtas').options[indice_comboaux2].text;
+
+							var saldo_cuentaaux2 = valor_comboaux2.split('$');
+
+							var nuevaaux2=saldo_cuentaaux2[1];
+
+							nuevaaux2=nuevaaux2.replace(/^\s*|\s*$/gi,"");
+
+											
+
+								if(nuevaaux2=="No disponible" || nuevaaux2=="Not available")
+
+								{
+
+									
+
+										document.getElementById('saldoTot').innerHTML="No disponible";
+
+									
+
+								}
+
+								else
+
+								{
+
+										document.getElementById('saldoTot').innerHTML=nuevaaux2;
+
+								}
+
+						}
+
+					}
+
+			}
+
+			parent.Expandir();
+
+        </script>
+
+		<div class="float-left fonttit" id="t30">A LA VISTA</div>
+
+        <div class="panelIzEnca3_text2" id="t0">
+
+			Inversiones a la vista con disponibilidad e intereses diarios
+
+		</div>
+
+       
+
+        <div class="color666 paddingT5 f11" id="t1">
+
+            Selecciona el tipo de operaci&oacute;n, el tipo de inversi&oacute;n con la que deseas invertir, completa los datos y da clic en "Continuar". 
+
+        </div>
+
+                
+
+        <div class="saldos_bloque3_2">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p  padding20" valign="top"><span class="f12" id="t2">Tipo de operaci&oacute;n</span></td>
+
+					<td valign="top" class=" paddingL0  paddingT18   paddingB13 padding20 ">
+
+                        <div class="floatL paddingL2 negrita color333 f11 paddingB5  ancho45p">
+
+							<table cellpadding="0" cellspacing="0" border="0">
+
+								<tr>
+
+									<td class="paddingL15">
+
+										<input type="radio" id="compra" name="DATA1" value="Deposito-Compra" class="radio_contenido_acordeon" onclick="javascript:cambioLeyendaDeposito();"/>
+
+									</td>
+
+									<td class="">
+
+										<div class=" normal color333 f11 paddingT2 " id="t3">Realizar un dep&oacute;sito a tu inversi&oacute;n</div> 
+
+									</td>
+
+								</tr>
+
+							</table>
+
+							<table>
+
+								<tr>
+
+									<td class="paddingL15">
+
+										<div id="DATA1_error" class="saldos_bloque2_f4_error_display_blanco" style="font-weight:normal;"></div>
+
+									</td>
+
+								</tr>
+
+							</table>
+
+                        </div>
+
+                       <div class=" borderLSolid floatL paddingL2 negrita color333 f11 paddingB5 ancho45p">
+
+                        <table cellpadding="0" cellspacing="0" border="0">
+
+                            <tr>
+
+                                <td class="paddingL15"><input type="radio" id="venta" name="DATA1" value="Retiro-Venta" class="radio_contenido_acordeon" onclick="javascript:cambioLeyendaRetiro();" /></td>
+
+                                <td class="">
+
+									<div class=" normal color333 f11 paddingT2 " id="t4">Realizar un retiro de tu inversi&oacute;n
+
+										<input type="hidden" name="ETQ000" value="1">
+
+									</div> 
+
+								</td>
+
+                            </tr>
+
+                        </table>
+
+                      </div>
+
+                    </td>
+
+				</tr>
+
+            </table>    
+
+        </div>
+
+
+
+			
+
+        
+
+		<div class="saldos_bloque3_2" id="caso_1_deposito-retiro" style="display:none;">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20" valign="top"><span class="f12" id="t5">Cuentas</span></td>
+
+                    <td valign="top" class="padding20 paddingL15 paddingR15">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                        <tr>
+
+                            <td class=" ancho33p">
+
+                                
+
+                        <div class=" paddingB5 borderBSolid">
+
+                          <div class="negrita color333 f12b" id="aux1"><span id="t6">Cuenta retiro</span></div>
+
+						</div>
+
+                        <div class="ancho100p clear overflow paddingT15"  id="ctaAsociada">
+
+                        	<div class="floatL ancho40p f11" id="ctaPerfiles" style="display:none;"></div>
+
+                            <div class="floatR ancho50p f11 " id="saldoPerfiles" style="display:none;"></div>
+
+							<div class="floatL ancho40p f11" id="ctaPerfiles2" style="display:none;"></div>
+
+                            <div class="floatR ancho50p f11 " id="saldoPerfiles2" style="display:none;"></div>
+
+                        </div>
+
+                        <div class=" paddingB5 borderBSolid marginT20">
+
+							<select name="DATA2" style="display:none;" id="data2">
+
+								<option id="valor"></option>
+
+							</select>
+
+                          <div class="negrita color333 f12b" id="aux2" ><span id="t7">Cuenta dep&oacute;sito (Inversi&oacute;n)</span></div></div>
+
+                        <div class="ancho100p clear overflow paddingT15"   id="ctaAsociada1">
+
+							<div class="floatL ancho40p f11" id="ctaPerfiles3" style="display:none;"></div>
+
+                            <div class="floatR ancho50p f11 " id="saldoPerfiles3" style="display:none;"></div>
+
+							<div class="floatL ancho40p f11" id="ctaPerfiles4" style="display:none;"></div>
+
+                            <div class="floatR ancho50p f11 " id="saldoPerfiles4" style="display:none;"></div>
+
+                        </div>
+
+                            </td>
+
+                            
+
+                        </tr>
+
+                    </table>
+
+                    </td>
+
+                </tr>
+
+            </table>      	
+
+        </div>
+
+		
+
+	 <div class="saldos_bloque3_2" id="caso_2_deposito-retiro" style="display:none;">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20" valign="top"><span class="f12" id="t5">Cuentas</span></td>
+
+                    <td valign="top" class="padding20 paddingL15 paddingR15">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                        <tr>
+
+                            <td class="ancho33p">
+
+                                
+
+                                <div class=" paddingB5 borderBSolid">
+
+								<select name="DATA2" style="display:none;" id="data2">
+
+									<option id="valor"></option>
+
+								</select>
+
+                          <div class="negrita color333 f11" id="aux3"><span class="negrita color333 f11" id="t7">Cuenta dep&oacute;sito (Inversi&oacute;n)</span></div></div>
+
+                        <div class="ancho100p clear overflow paddingT15">
+
+						
+
+                        	<div class="floatL ancho40p f11" id="invPerfiles3"></div>
+
+                            <div class="floatR ancho50p f11 " id="saldosPerfiles3"></div>
+
+						
+
+                        </div>
+
+                        
+
+                          </td> 
+
+                        </tr>
+
+                    </table>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+            <div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="leyendaInformativa" style="display:none;"></div>      	
+
+        </div>
+
+		
+
+        <div class="saldos_bloque3_2" id="caso_3_deposito-retiro" style="display:none;">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20" valign="top"><span class="f12" id="t5">Cuentas</span></td>
+
+                    <td valign="top" class="padding20">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                        <tr>
+
+                            <td class="ancho33p">
+
+                                
+
+                                 <div class="negrita color333 f11 paddingB5" id="leyenda"> <span id="t7">Cuenta dep&oacute;sito (Inversi&oacute;n)</span></div>
+
+                                <div class="">
+
+                                    
+
+									<select class="ancho100p" name="DATA2" SELECTED-BY="VALUE" id="combonCtas">
+
+					                </select>
+
+									<div id="combonCtas_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+						
+
+                                </div>
+
+                        
+
+                          </td> 
+
+                        </tr>
+
+                    </table>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+            <div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="leyendaInformativa3" style="display:none;">
+
+			</div>      	
+
+        </div>
+
+        
+
+		<div class="saldos_bloque3_2" id="datos_pago" style="display:none;">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+				<tr>
+
+                    <td class="borderRDotted ancho25p padding20" valign="top"><span class="f12" id="datos1"><span id="t8">Datos del dep&oacute;sito</span></td>
+
+                    <td valign="top" class="padding20">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td class="ancho33p">
+
+								   <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+									<tr>
+
+										<td class="ancho33p padding0  borderRSolid">
+
+											<div class="negrita color333 f11 paddingB5" id="aux4"></div>
+
+											<input type="text" class="input ancho150_inversiones " value="" name="DATA3" id="DATA3" onmouseout="mouseOut()"  onblur="mouseOut()" onclick="borraInput();" maxlength="18"/>
+
+											<div id="DATA3_error" class="saldos_bloque2_f4_error_display_blanco"></div>  
+
+										</td>
+
+									   <td class="ancho33p">
+
+											
+
+											<div class="negrita color333 f11 paddingB5" id="t9">Saldo total a invertir</div>
+
+											<div class="f11" id="saldoTot"></div>
+
+									   </td>
+
+									</tr>
+
+								   </table>
+
+								</td>
+
+							</tr>
+
+						</table>
+
+                    </td>
+
+				</tr>
+
+            </table> 
+
+        </div>
+
+        
+
+        <div class="saldos_bloque3_2 bgF1F2F2">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20" valign="top"><span class="f12"><span id="t10">Opciones</span><br /><span id="t11">adicionales</span></span></td>
+
+                  <td valign="top" class=" paddingT0 paddingB17 padding20">
+
+					<div class="ancho100p overflow paddingB10  marginT19" id="Programar2">
+
+						<div class="floatL paddingT2" id="Programar1">
+
+							<input type="checkbox" id="checkCalendario" name="checkCalendario" onclick="activaCheck('checkCalendario','Programar'); toggleChecks('checkCalendario','FREC');" />
+
+						</div> 
+
+						<div class="floatL paddingT5 f11" id="t12">Programar a fecha futura</div>
+
+					</div>
+
+						<div id="Programar" class="displayN">
+
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                                <tr>
+
+                                    <td valign="top" class="ancho50p  calendario">
+
+                                        <div class="negrita color333 f11" id="t13">Fecha</div>
+
+                                        <input type="text" class="yearpicker" id="yearpicker1" readonly="readonly"/>
+
+										<div id="yearpicker1_error" class="saldos_bloque2_f4_error_display_azul"></div>
+
+								   </td>
+
+                                </tr>
+
+                            </table>
+
+						</div>
+
+                 
+
+                      <div class=" marginT10  alto18  ancho300">
+
+                            <div class="floatL paddingT2">
+
+								<input type="checkbox" name="FREC" id="FREC" onclick="toggleChecks('FREC','checkCalendario');"/>
+
+							</div>
+
+                            <div class="floatL paddingT5 f11" id="t14"> Guardar como operaci&oacute;n frecuente</div>
+
+                        </div>
+
+
+
+                    
+
+                    </td>
+
+                </tr>
+
+				
+
+            </table>  
+
+			<div id="msgFrec" class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5">
+
+				<span id="t15" class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5">*Las operaciones programadas no pueden ser almacenadas como frecuentes</span>
+
+			</div>
+
+        </div> 
+
+        <div class="marginT20 overflow">
+
+        	
+
+            <input type="button" id="t18" class="btnAZ86 floatR" value="Continuar" onclick="JavaScript:Inversion()"/>
+
+        </div>
+
+	
+
+
+
+	<div id="mensajeError_contenido" style="display:none;">
+
+		<div class="mensajeError_contenidoIn">
+
+            <div class="mensajeError_Fila1">
+
+                <div class="mensajeError_titulo1" id="t21">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+                <div class="mensaje_btn1">
+
+					<div class="saldos_btn2 margin0" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+				</div>
+
+            </div>
+
+			
+
+            <div class="mensajeError_Fila1_2  ">
+
+                <div class="color666 paddingT5 paddingL25 f11"> 
+
+					<span class="color666 paddingT5 f11" id="t22">Inversiones a la vista con disponibilidad e intereses diarios</span><br>
+
+				
+
+				
+
+				</div>
+
+            </div>
+
+				
+
+			<div class="mensajeError_Fila2 color333 negrita paddingL25" id="t25">&iquest;Qu&eacute; puedo hacer?</div>
+
+			
+
+				<div class="mensajeError_Fila2 color666 paddingL25" >
+
+				<span class="color666 paddingT5 f11" id="t26">Si deseas comun&iacute;cate a</span> <span id="t27">servicio a clientes</span> 
+
+				<span class="color666 paddingT5 f11" id="t28">al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br>
+
+				01 800 110 3990 (Del interior de la Rep&uacute;blica).<br></span> 
+
+				</div>
+
+				
+
+					<div class="mensajeError_Fila2 color666 paddingL25" id="t29">
+
+						Es importante tener a la mano el siguiente c&oacute;digo:
+
+						<div class="coloree2e24 mensajeError_Fila2"></div>
+
+
+
+            <div class="mensajeError_Fila3">
+
+                <div class="floatR"><input type="button" id="t31" value="Aceptar" class="floatR btnAZ86 CerrarVentanaEmergente"/></div>
+
+            </div>
+
+		 </div>
+
+		</div>		
+
+	</div>
+
+	
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+<input TYPE=HIDDEN NAME="DIA"  id="DIA" VALUE="0"> 
+
+<input TYPE=HIDDEN NAME="MES" id="MES"  VALUE="0">
+
+<input TYPE=HIDDEN NAME="DATA5" id="DATA5" VALUE="">
+
+<input TYPE=HIDDEN NAME="DATA6" id="DATA6" VALUE="">
+
+<input TYPE=HIDDEN NAME="DATA14" id="DATA14" VALUE="">
+
+<input TYPE=HIDDEN NAME="DATA7" id="DATA7" VALUE="0">
+
+<input TYPE=HIDDEN NAME="DATA8" id="DATA8" VALUE="0">
+
+<input TYPE=HIDDEN NAME="DATA9" id="DATA9" VALUE="0">
+
+<input TYPE=HIDDEN NAME="DATA13" id="DATA13"  VALUE="0">
+
+<input TYPE=HIDDEN NAME="DATA12" id="DATA12"  VALUE="0">
+
+<input TYPE=HIDDEN NAME="DATA19" id="DATA19" VALUE="0">
+
+<input TYPE=HIDDEN NAME="DATA20" id="DATA20" VALUE="">
+
+<input TYPE=HIDDEN NAME="DATA21" id="DATA21" VALUE="">
+
+<input TYPE=HIDDEN NAME="DATA22" id="DATA22" VALUE="0">
+
+<input TYPE=HIDDEN NAME="DATA23" id="DATA23" VALUE="0">
+
+		
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Inversion Integral|inv01.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

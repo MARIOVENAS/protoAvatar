@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Layout Avatar</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+		<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+		<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+		<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+		<link rel="stylesheet" type="text/css" href="../JFP/regional/css/apps/regional_overlay.css"/>
+		<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+		<script type="text/javascript" src="../JFP/js/script3.js"></script>
+		<script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+		<script type="text/javascript" src="../JFP/js/langManagement.js"></script>
+	</head>
+	<body>
+		
+		<!--inicia contenedor principal-->
+		<div id="wrap" class="cS-structMainContainer">
+			<!--inicia header-->
+			<div id="header">
+				<div class="utilities_nav" id="navegacionPrincipal"></div>
+				<div class="citibank-containerImg">
+					<a href="#"><div id="citibank-logo"></div></a>
+					<div id="citibank-imageb"></div>
+				</div>
+				<!--termina header-->
+			</div>
+			<div class="cS-structBodyContainer">
+				<div id="title-section" class="cH-appPageHead height20">
+					<div class="float-left"><h1 id="t117">SOLICITUD DE DESBLOQUEO DE CLAVES</h1></div>
+					<div class="margin-top6 titulo ancho50" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a id="t64" href="javascript:void(0);" onclick="Layuda()" class="float-left">&nbsp;Ayuda</a>
+					</div>
+					<div class="margin-top6 titulo ancho10" id="flechaLinksOpcoes">&nbsp;</div>
+				</div>
+				<div class="bg_demo">
+					<div id="content">
+						<div id="subapp-box" class="noleftmenu float-left">
+							<div id="t118">Nota: Esta operaci&oacute;n se puede realizar &uacute;nicamente si cuentas con tu NetKey Banamex con Challenge</div>
+							<div id="t119" style="margin-top:16px;">
+							Selecciona el medio que deseas desbloquear:
+							</div>
+							<div class="form-row sinMarginRight sinMarginBottom marginT18">
+								<div style="*padding-top:0px; *padding-left:0px; *padding-bottom:0px; *padding-right:0px; *height:13px;">
+									<label class="for-table radioR"><input type="radio" name="radios" id="typeOperation1"/></label>
+									<span id="t120">Clave alfanum&eacute;rica</span>
+									<div class="clear"></div>
+								</div>
+								<div class="paddingT12 clear">
+									<label class="for-table radioR"><input type="radio"  name="radios" id="typeOperation2" /></label>
+									<span class="" id="t121">Clave num&eacute;rica</span>
+								</div>
+								<div class="clear"></div>
+							</div>
+                            
+                            <div class="clear overflow">
+                                <div class="float-left paddingT13" id="t122">Digita tu no. de cliente: </div>
+                                <div class="float-left paddingL27" style="padding-top:8px;">
+                                	<input class="width70" type="password" id="noCliente" />
+                                </div>
+                           </div>
+                            
+                            
+                            
+							<div class="cF-sideBySide cF-bottomNav bottomNav-Border" style="background:none !important; border-top: 1px solid #c5c5c5 !important;">
+                            <div class="form-row floatLI">
+                            	<label class="for-table width90">&nbsp;</label>
+                            </div>
+                            
+								<ul class="cN-primaryNav floatLI">
+									<li class="cM-spriteBase cN-primaryNavButton"><a onclick="javascript:continuar();" id="t123">Continuar</a></li>
+									<li class="">
+										<div id="flechaLinks">
+											<span class="flechaazul float-left"></span>
+											<a class="sinBold" href="01-Log-in.html" id="t124">Cancelar</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+							<!--
+							<div class="border-solid margin-top20"></div>
+							<ul class="cN-primaryNav float-left margin-top5">
+								<li class="cM-spriteBase cN-primaryNavButton" id="contratoModificatorioAceptar"><a id="t74" href="#">ACEPTAR</a></li>
+								<li>
+									<div id="flechaLinks">
+										<span class="flechaazul float-left"></span>
+										<a href="01-Log-in.html" class="sinBold" id="t75">Cancelar</a>
+									</div>
+								</li>
+							</ul>-->
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="footer"></div>
+			</div>
+		</div>
+	</div>
+
+	<!--contenido modal-->
+	<div id="cortinaOverlay" class="cerrarOverlay" style="display: none;"></div>
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+				<tbody><tr><td>
+					<div id="mensajeError_contenido_div">
+					</div>
+					<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+				</td></tr></tbody>
+			</table>
+		</div>
+	</div>
+	<iframe id="nwd" src="if.htm" name="ndw" style="display:none"></iframe>
+    <div class="modal" id="divAutenticacion">
+		<div class="overlay-error">
+			<div class="overlay-content">
+				<div class="external-tranfer2">
+					<div class="external-tranfer-content" style="left:-18px !important; top:20px; position:relative;">
+						<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+						<div class="content-top">
+							<div class="center">
+								<div class="dot-bottom">
+									<div class="left"><span class="title" id="t136">AUTENTICACI&Oacute;N</span></div>                                   
+								</div>
+								<div class="error-content">
+									<div id="scrollbar">
+                                        <div class="clear"></div>
+										<div class="viewport">
+											<div class="overview">
+												 <p class="instructions margin-bottom15 strong" id="t137">Por tu seguridad, esta operación debe ser autenticada con tu NetKey.</p>
+                                                 <div class="clear border-dotted_top margin-bottom20"></div>
+									             <div class="width103">
+													<p class="margin-bottom20" id="t138">Ingresa en tu dispositivo la clave que a continuación se muestra y presiona "ENT". Se generará una clave dinámica que debes ingresar en el espacio en blanco. Da clic en "CONTINUAR".</p>
+													<p class="textBig margin-bottom20 margin-left130">CHALLENGE: <span class="colorBlue">24018778</span></p>
+									                <div class="form-row margin-bottom0 margin-left130">
+									                    <div class="for-table margin-bottom5 float-left margin-top2 margin-right10">
+									                    	<span class="strong" id="t139">Clave din&aacute;mica:</span>
+									                    </div>
+									                    <input type="password" class="width70 float-left challenge_input" />
+									                    <div class="clear"></div>
+									                </div>
+									            </div>
+											</div>
+										</div>
+									</div>
+									<div class="clear margin-bottom30"></div>		
+									<div class="cF-sideBySide cF-bottomNav">
+										<ul class="cN-primaryNav">
+											<li style="float:right;" class="cM-spriteBase cN-primaryNavButton margin-left10">
+										<!--<a href="javascript:cargaDocN('ZADT/screen2.html'); $.modal.close();" class="displayNi" id="t53">Continuar</a>-->
+                                        <a onclick="javascript:modContinuar();" class="" id="t140">Continuar</a>
+											</li>
+											<li style="float:right;">
+												<div id="flechaLinksOpcoes">
+													<span class="flechaGris float-left"></span>
+													<a class="sinBold" href="javascript:$.modal.close();" id="t141">Cancelar</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    ajustarOverlay();
+		    ajusta_tooltpis();
+		    funciones_loginP();
+
+		    setTimeout(function() {
+		        $('#tick_img_typeOperation1').trigger('click');
+		    }, 800);
+		    setTimeout(function() {
+		        llenarValores('input', '#noCliente', '123456789123');
+		    }, 1000);
+		    /*setTimeout(function() {
+		$('#t7').trigger('click');
+		}, 1200);*/
+		});
+		$(document).ajaxStop(function() {
+		    $('#t0').hide();
+		});
+
+		$(function(){
+    
+		$.imageTick.logging = true;
+		
+		$("input[name='radios']").imageTick({
+		  tick_image_path: "../JFP/regional/images/radio_check.png", 
+		  no_tick_image_path: "../JFP/regional/images/radio_empty.png",
+		  image_tick_class: "radios"
+		});
+
+  	});
+
+		function Layuda() {
+		    window.open(rutaAyudaCC, '', 'height=' + (screen.height - 70) + ',width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+		}
+
+		function continuar() {
+		    //alert('Modal');
+		    challengeAire2();
+		    $('.ventanaEmergente').css({
+		        'top': 80,
+		        'height': 500
+
+		    }, 600);
+		}
+
+		function challengeAire2() {
+		    $('#mensajeError_contenido_div', window.document).html(
+		        $("#divAutenticacion").html()
+		    );
+		    $.modal({
+		        closeHTML: '',
+		        opacity: 60,
+		        overlayClose: false,
+		        flagDiv: true,
+		        widthDivIfrm: 570,
+		        heightDivIfrm: 'auto'
+		    });
+		    $('#box1').blur();
+		    $('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		    $('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');
+		    setTimeout(function() {
+		        llenarValores('input', '.challenge_input', '12345678');
+		    }, 1000);
+		}
+
+
+
+
+		/*******/
+		/*** proto */
+		// ponerlo en el jquery
+		/* jQuery doTimeout: Like setTimeout, but better! - v1.0 - 3/3/2010*/
+		(function($) {
+		    var a = {},
+		        c = "doTimeout",
+		        d = Array.prototype.slice;
+		    $[c] = function() {
+		        return b.apply(window, [0].concat(d.call(arguments)))
+		    };
+		    $.fn[c] = function() {
+		        var f = d.call(arguments),
+		            e = b.apply(this, [c + f[0]].concat(f));
+		        return typeof f[0] === "number" || typeof f[1] === "number" ? this : e
+		    };
+
+		    function b(l) {
+		        var m = this,
+		            h, k = {},
+		            g = l ? $.fn : $,
+		            n = arguments,
+		            i = 4,
+		            f = n[1],
+		            j = n[2],
+		            p = n[3];
+		        if (typeof f !== "string") {
+		            i--;
+		            f = l = 0;
+		            j = n[1];
+		            p = n[2]
+		        }
+		        if (l) {
+		            h = m.eq(0);
+		            h.data(l, k = h.data(l) || {})
+		        } else {
+		            if (f) {
+		                k = a[f] || (a[f] = {})
+		            }
+		        }
+		        k.id && clearTimeout(k.id);
+		        delete k.id;
+
+		        function e() {
+		            if (l) {
+		                h.removeData(l)
+		            } else {
+		                if (f) {
+		                    delete a[f]
+		                }
+		            }
+		        }
+
+		        function o() {
+		            k.id = setTimeout(function() {
+		                k.fn()
+		            }, j)
+		        }
+		        if (p) {
+		            k.fn = function(q) {
+		                if (typeof p === "string") {
+		                    p = g[p]
+		                }
+		                p.apply(m, d.call(n, i)) === true && !q ? o() : e()
+		            };
+		            o()
+		        } else {
+		            if (k.fn) {
+		                j === undefined ? e() : k.fn(j === false);
+		                return true
+		            } else {
+		                e()
+		            }
+		        }
+		    }
+		})(jQuery);
+
+		function cronometroMinutos(idTime, segundosCronometro, id, callback) {
+		    var cadMinutos = "";
+		    var minutos = 0;
+		    var segundos = 0;
+
+		    $.doTimeout(idTime, 1000, function() {
+		        segundosCronometro--
+		        if (segundosCronometro == 0) {
+		            try {
+		                eval('(' + callback + ')();')
+		            } catch (e) {}
+		            return false;
+		        }
+
+		        minutos = segundosCronometro / 60;
+		        cadMinutos = minutos.toString();
+		        if (cadMinutos.indexOf('.'))
+		            minutos = cadMinutos.split(".")[0];
+
+		        segundos = segundosCronometro % 60;
+
+		        if (minutos <= 9)
+		            minutos = '0' + minutos;
+
+		        if (segundos <= 9)
+		            segundos = '0' + segundos;
+
+		        $(id).html(minutos + ":" + segundos + " (mm:ss)");
+		        return true;
+
+		    });
+
+
+		}
+
+
+		/* fecha y hora*/
+		function fechaHora() {
+		    var dias = {
+		        esp: ['Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles', 'Jueves', 'Viernes', 'Sabado'],
+		        eng: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+		    };
+		    var meses = {
+		        esp: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Juilio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+		        eng: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+		    };
+
+		    var fecha = new Date();
+		    var diaTexto = dias[language][fecha.getDay()];
+		    var dia = fecha.getDate();
+		    var mesTexto = meses[language][fecha.getMonth()];
+		    var year = fecha.getFullYear();
+		    var hora = fecha.getHours();
+		    var minuto = fecha.getMinutes();
+		    var segundo = fecha.getSeconds();
+
+		    if (hora <= 1)
+		        hora = '0' + hora;
+		    if (minuto <= 9)
+		        minuto = '0' + minuto;
+		    if (segundo <= 9)
+		        segundo = '0' + segundo;
+
+		    if (isEnglishSel) {
+		        var stgDate = diaTexto + ", " + mesTexto + " " + dia + ", " + year + ", " + hora + ":" + minuto + ":" + segundo + " Mexico City";
+		    } else {
+		        var stgDate = " " + diaTexto + " " + dia + " de " + mesTexto + " de " + year + ", " + hora + ":" + minuto + ":" + segundo + " Centro de M&eacute;xico"
+		    }
+		    return stgDate;
+		}
+
+
+
+
+		function llenarValores(obj, id, cadena) {
+		    var textAux = "";
+		    var fin = cadena.length - 1;
+		    var contador = 0;
+
+
+
+		    if (obj == 'input')
+		        if ($(id).val() != '')
+		            return false;
+		    $.doTimeout(80, function() {
+		        textAux = $(id).val();
+
+		        $(id).val(textAux + cadena.charAt(contador))
+		        if (contador <= fin) {
+		            contador++;
+		            return true;
+		        }
+
+		        return false;
+		    });
+
+		}
+
+		function modContinuar() {
+		    window.location.href = "../htmls/17-Desbloqueo_confirmacion.html";
+		}
+	</script>
+	<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript">
+	google.load('search', '1', {language : 'es'});
+	</script>
+</body>
+<!--termina contenedor principal-->
+</html>

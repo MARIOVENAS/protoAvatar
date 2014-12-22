@@ -1,0 +1,164 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+       
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+     <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+     <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+     <script type="text/javascript">
+	 
+	 		var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('Confirm the investment data to be applied.','Transaction type:','Withdrawal','Withdrawal account (investment):','Amount MXN:','Withdrawal type:','Withdrawal MXN:','Scheduled date:','11-nov-13','Investment total balance:','Frequent operation:','ACCEPT','Return','Overnight deposits with daily availability<br>and interests','Help');
+	 
+			<!--
+			$(document).ready(function(){
+			setTimeout(function(){top.ajustarP();},800);
+			
+			});
+			-->
+</script>
+</head>
+
+<body>
+<div class="bg_demo cont_demo">
+<div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%" >
+  				<div class="cH-appPanelHead ">
+                	<h3 class="float-left" id="t36">Inversiones a la vista con disponibilidad e<br /> intereses diarios</h3>
+                    <!--<div id="flechaLinks" class="float-right">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a href="javascript:void(0);" onClick="Layuda()" class="float-left" >Ayuda</a>
+					</div>-->
+                    <div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="liga"><a href="javascript:void(0);" onClick="Layuda()" class="float-left" id="t37">&nbsp;Ayuda</a></div>
+					</div>
+                    
+					<div class="clear"></div>
+                </div>
+		
+				<div class="clear"></div>
+		   <p class="topNotes" id="t23">Confirma los datos de la inversi&oacute;n para su aplicaci&oacute;n.</p>
+           <div class="clear"></div>
+				<div class="width200">
+                     
+				  <div class="form-row">
+						<label class="for-table" id="t24">Tipo de operaci&oacute;n:</label>
+						<span id="t25">Retiro</span>
+						<div class="clear"></div>
+					</div>
+                    <div class="form-row">
+						<label class="for-table" id="t26">Cuenta retiro (inversi&oacute;n):</label>
+						Mi inversi&oacute;n Perfiles - Inv. Integral - 00872
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table " id="t27">Saldo MXN:</label>
+						$ 0.00
+						<div class="clear"></div>
+					</div>
+					
+					<div class="form-row">
+						<label class="for-table" id="t28">Tipo de retiro:</label>
+						<span>Total</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t29">Importe MXN:</label>
+						<span>$ 40,000.00</span>
+						<div class="clear"></div>
+					</div>
+                    <div class="form-row">
+						<label class="for-table" id="t30">Fecha programada:</label>
+						<span>11 Nov 2013</span>
+						<div class="clear"></div>
+					</div>
+                    <div class="form-row">
+						<label class="for-table" id="t32">Saldo total de la inversi&oacute;n:</label>
+						<span>$ 0.00</span>
+						<div class="clear"></div>
+					</div>
+                    <div class="form-row">
+						<label class="for-table" id="t33">Operaci&oacute;n frecuente:</label>
+						<span>No</span>
+						<div class="clear"></div>
+					</div>
+				</div>
+				
+                <div class="overflow" >
+                            <div class="cF-sideBySide floatL marginT15 marginB15"    >
+                                <ul class="cN-primaryNav floatLI">
+                                    <li class="cM-spriteBase cN-primaryNavButton" >
+                                        <a href="#" onClick="aceptar();" id="t34">aceptar</a>
+                                    </li>
+                                </ul>
+                                <div id="flechaLinksOpcoes" class="titulo float-left">
+                <span class="flechaGris float-left">&nbsp;</span>
+                <a class="float-left" onClick="regresar();" href="#" id="t35">&nbsp;Regresar</a>
+            </div>
+                     		</div>
+                            
+                 </div>
+			   
+				<div class="clear"></div>
+				
+      </div>
+      <script>
+      function cheqp(){
+		  top.ModSol3();
+		  }
+	  </script>
+      <script>
+		function cambia1(){
+			$('#filtrar_modal1').show();
+			$('#filtrar_modal2').hide();
+		}
+		function cambia2(){
+			$('#filtrar_modal1').hide();
+			$('#filtrar_modal2').show();
+		}
+		</script>
+        <script type="text/javascript">
+
+	$(function(){
+		
+		$.imageTick.logging = true;
+		
+		$("input[name='chequeraPers2']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios"
+		});
+
+
+	$("input[type='checkbox']").imageTick({ 
+			tick_image_path: "../../../../JFP/regional/images/img_form/check_1.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/no_check_1.png"
+		});
+        
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+	});
+	</script>
+    
+    <script>
+	
+		function aceptar(){
+		open('Alavista_retiro4.html' , "_self");
+		}
+		
+		function regresar(){
+		open('integral_perfiles.html' , "_self");
+		}
+		
+		function Layuda(){
+window.open('https://bancanet.banamex.com/ayudas/es/inversiones/Integral-Perfiles.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+	
+	</script>
+    
+      </div>
+	</body>
+</html>

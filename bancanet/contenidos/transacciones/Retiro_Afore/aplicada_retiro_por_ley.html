@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="40953949-cd7b-469f-9bb5-a06791debbc9" ><input type=hidden name="EWF_SYS_1" value="RSD9A1QN93KP8WHVXO63P0ZFUZSOGWXTGOLQYO22" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZARL-PAG_APLICADA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="rxley03.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="17"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><link href="/bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script language="javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script language="javascript">
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+var es = new Array("By law contributions withdrawals",
+
+"Your instruction has been <span class='negrita'>applied</span> with authorization number <span class='negrita'>001234</span>.",
+
+"Accounts",
+
+"Withdrawal account",
+
+"Deposit account",
+
+"Withdrawal data",
+
+"Amount MXN",
+
+"Withdrawal type",
+
+"WITHDRAWAL");
+
+			
+
+
+
+rutaAyuda = rutaAyuda+"Retiros.htm";
+
+	
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+	$(document).ready(
+
+	function(){
+
+		 top.impayuda();
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+	var winImp;
+
+var fecha;
+
+var lugar;
+
+
+
+function Impresion() {
+
+  var fechaComp = $("#fecha",window.parent.document).html().split(',');
+
+  var lugarComp = $("#fecha2",window.parent.document).html().split('|');
+
+  fecha = ( "SPANISH"=="ENGLISH" ) ? fechaComp[0]+', '+fechaComp[1]+', '+fechaComp[2] : fechaComp[0];
+
+  lugar = lugarComp[0];
+
+  winImp = window.open("../../bbAvatar/impresion/ImpresionRecibo.html","","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+  winImp.moveTo(0,0);
+
+}
+
+
+
+function llenar(){
+
+  var txtCtaret="";
+
+  var txtCtadep="";
+
+  var dCtar, dCtad, aCtar, aCtad, nCtar, nCtad;
+
+
+
+    dCtad = "Cheques".replace(/^\s*|\s*$/g,"");
+
+	aCtad = "Cheques".replace(/^\s*|\s*$/g,"");
+
+	nCtad = "002".replace(/^\s*|\s*$/g,"");
+
+    txtCtadep = dCtad+" - "+aCtad+" - **"+nCtad;
+
+  
+
+  $('#divCom', winImp.document).html( $('#impComp').html() );
+
+  if( txtCtaret!="" ) { $('#lblRet', winImp.document).html( txtCtaret ); }
+
+  if( txtCtadep!="" ) { $('#lblDep', winImp.document).html( txtCtadep ); }
+
+  $('.nosimp', winImp.document).html('');
+
+  $('.nosimp', winImp.document).hide();
+
+  $('#lblNom', winImp.document).html( "Jose Rivera Lopez" );
+
+  $('#lblFec', winImp.document).html( fecha );
+
+  $('#lblHor', winImp.document).html( "7:11:43 PM"+lugar );
+
+}
+
+	$(document).ready(function(){
+
+		top.impayuda();
+
+		$("#lblDep").html(setLeyenda());
+
+	});
+
+	function setLeyenda(){
+
+		var descripcion = "";
+
+		var alias="Cheques";
+
+		var ctacorta="002";
+
+		var aliasAux = alias.replace(/^\s*|\s*$/g,"");
+
+		if(aliasAux == "")
+
+			descripcion = "Cheques";
+
+		else
+
+			descripcion = "Cheques";
+
+		return ( descripcion + " MXN - ** "+ctacorta.replace(/^\s*|\s*$/g,""));
+
+	}
+
+</script>
+
+<script>parent.setFecha("09/04/12    19:11:43  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="191143  ";b$Cont="191143  ";
+
+//if(a$Cont==b$Cont)parent.scd();</script>
+
+<div id="t8"class="float-left fonttit">RETIROS</div>
+
+<div id="impComp">
+
+	<div class="panelIzEnca3_text2 font_arial" id="t0">Retiro de aportaciones por ley</div>
+
+	<div class="saldos_bloque3_verde" id="t1">
+
+		Tu instrucci&oacute;n ha sido <span class="negrita">aplicada</span> con n&uacute;mero de autorizaci&oacute;n <span class="negrita">001234</span>.        	
+
+	</div>
+
+
+
+	<div class="saldos_bloque3_2">
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+			<tr>
+
+				<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t2">Cuentas</span></td>
+
+				<td valign="top" class="padding20152015">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 paddingB0 ">
+
+						<tr>
+
+							<td valign="top" class="paddingL0 paddingB0 paddingR0 paddingT0">
+
+
+
+								<div class="titulo_tabla_at marginT0" id="t3">Cuenta retiro</div>
+
+								<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+									<tr>
+
+										<td class="ancho50p paddingT0 paddingL0">Mi afore NSS MXN - 424</td>
+
+										<td class="ancho50p paddingT0">&nbsp;</td>
+
+									</tr>
+
+								</table>
+
+								<div class="titulo_tabla_at" id="t4">Cuenta dep&oacute;sito</div>
+
+
+
+								<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 paddingB0">
+
+									<tr>
+
+										<td class="ancho50p paddingT0 paddingL0" id="lblDep"></td>
+
+										<td class="ancho50p paddingT0">&nbsp;</td>
+
+									</tr>
+
+								</table>
+
+							</td>    
+
+						</tr>                                           
+
+					</table>
+
+				</td>
+
+
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<div class="saldos_bloque3_2">
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+			<tr>
+
+				<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t5">Datos del retiro</span></td>
+
+				<td valign="top" class="padding20152015">
+
+
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="ancho50p bgF1F2F2"><span id="t6">Importe MXN</span></td>
+
+							<td class="ancho50p bgF1F2F2" align="left">$ 1,000</td>
+
+						</tr>
+
+						<tr>
+
+							<td class="ancho50p"><span id="t7">Tipo de retiro</span></td>
+
+
+
+							<td class="ancho50p" align="left">Matrimonio1</td>
+
+						</tr>
+
+					</table>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+</div>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Retiros por Ley Afore|rxley03.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

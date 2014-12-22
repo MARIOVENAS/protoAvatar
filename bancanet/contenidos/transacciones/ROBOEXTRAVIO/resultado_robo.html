@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="292a9cc4-56b7-4712-af5b-0bbb3bce8f52" ><input type=hidden name="EWF_SYS_1" value="QIXMNU8FKPYCXAC8FUN8VPL3Q8T1ZZKFCEQ5SKUN" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZADT-PAG APLICA ROE"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="apliroe.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="14"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script>parent.setFecha("12/04/12    12:34:10  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="123410  ";b$Cont="123410  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(
+
+	function(){
+
+		 top.impayuda();
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+var es = new Array("Card managment", "[NoCuentas]" == "1" ? 'Your report has been <span class="negrita">processed</span> with authorization number <span class="negrita">[numauto]</span>.' : 'Your report has been <span class="negrita">processed</span> with the corresponding authorization numbers' , "Data Report", "Report Type" , "By stolen", "Reported Card", "Last numbers of the new card", "From this moment on your reported card can not be used", "Data Report", "Report Type" , "By [TipoReporte]", "From this moment on your reported card can not be used" );
+
+	
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+
+
+	//function swap(){}
+
+
+
+
+
+	function Initialize(){
+
+		//swap();
+
+		
+
+		rutaAyuda=rutaAyuda+"CuentasPropiasBanamex-Tarjetas.htm";
+
+		
+
+		
+
+		if ( "1" == "1" ){
+
+			$("#ctsn").detach();
+
+		} else {
+
+			$("#cts1").detach();
+
+		}
+
+	}
+
+</script>
+
+
+
+<div class="panelIzEnca3_text2 font_arial" id="t0">Administraci&oacute;n de tarjetas</div>
+
+<div class="saldos_bloque3_verde" id="t1">
+
+	
+
+		Tu reporte ha sido <span class="negrita">efectuado</span> con n&uacute;mero de autorizaci&oacute;n <span class="negrita">098344</span>.
+
+	
+
+</div>	
+
+	<div id="cts1">
+
+    <div class="saldos_bloque3_2">
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+			<tr>
+
+				<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t2">Datos del reporte</span></td>
+
+				<td valign="top" class="padding20152015">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="ancho50p bgF1F2F2"><span id="t3">Tipo de reporte</span></td>
+
+							<td class="ancho50p bgF1F2F2" id="t4">Por robo</td>
+
+						</tr>
+
+						<tr>
+
+							<td><span id="t5">Tarjeta reportada</span></td>
+
+							<td>Tarjeta Cr&eacute;dito M.N - **  796</td>
+
+						</tr>
+
+						<tr>
+
+							<td class="ancho50p bgF1F2F2"><span id="t6">Terminaci&oacute;n de la nueva tarjeta</span></td>
+
+							<td class="ancho50p bgF1F2F2" align="left">**502</td>
+
+						</tr>
+
+                    </table>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+		<div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="t7">
+
+			A partir de este momento no se podr&aacute; usar la tarjeta reportada
+
+		</div>
+
+	</div>
+
+	</div>
+
+	<div id="ctsn">
+
+    <div class="saldos_bloque3_2">
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+			<tr>
+
+				<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t8">Datos del reporte</span></td>
+
+				<td valign="top" class="padding20152015">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="ancho50p bgF1F2F2"><span id="t9">Tipo de reporte</span></td>
+
+							<td class="ancho50p bgF1F2F2" align="left" id="t10">Por robo</td>
+
+						</tr>
+
+					</table>
+
+					<div id="tablaVariasCuentas"></div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+		<div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="t11">
+
+            A partir de este momento no se podr&aacute;n usar las tarjetas reportadas.
+
+		</div>
+
+    </div>
+
+	</div>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Administracion de Tarjetas|apliroe.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

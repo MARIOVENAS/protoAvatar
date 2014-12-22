@@ -1,0 +1,38 @@
+<div class="float-left">
+	<ul id="nav_marketing">
+		<li id="MiBancaNet"><a id="t13" href="48-dashboard-extended.html">Mi BancaNet</a></li>
+		<li id="TransferenciasyPagos"><a id="t14" href="30-Transferencias_pagos.html" onclick="activatrans()">Transferencias y Pagos</a></li>
+		<li id="Inversiones"><a id="t15" href="31-Inversiones.html" onclick="activatrans()">Inversiones</a></li>
+		<!--<li id="AcciTrade"><a id="t16" href="32-Accitrade.html">AcciTrade</a></li>-->
+        <li id="AFOREBanamex"><a id="t17" href="33-Afore_banamex.html" onclick="activatrans()">AFORE Banamex</a></li>
+		<li id="Servicios"><a id="t18" href="34-Servicios.html" onclick="bloqueX1()">Servicios</a></li>
+	</ul>
+</div>
+<div class="float-right">
+	<div id="logButton" class="float-right">
+		<div class="lock">&nbsp;</div><a id="loginLogout" href="https://bancanet.banamex.com/MXGCB/JPS/portal/Index.do"><span id="t20" style="line-height: 25px; font-size:12px;">Salir</span></a>
+	</div>
+	<div class="float-right">
+	   <a id="irBanamex" href="https://www.banamex.com/"><div class="flechaBackWhite">&nbsp;</div><span id="t19" style="line-height: 25px; font-size:12px;">Ir a Banamex.com</span></a>
+	</div>
+</div>
+<script>
+	function bloqueX1(){
+		$('#bloque1').show();
+		cambiaP1_s1();
+		setTimeout(function(){$('ul#accordion-1 li:eq(1) a:eq(0)').addClass('active');},700);
+		setTimeout(function(){$('ul#accordion-1 li:eq(1) a:eq(0)').trigger('click');},800);
+	}
+    function activatrans(){
+		$('#link1').trigger('click');
+	}
+	function activaser(){
+		$('#bloque1').show();
+		cambiaP1_s1();
+		setTimeout(function(){$('ul#accordion-1 li:eq(1) a:eq(0)').addClass('active');},700);
+		setTimeout(function(){$('ul#accordion-1 li:eq(1) a:eq(0)').trigger('click');},800);
+	}
+	function activainv(){
+		$('#link1').trigger('click');
+	}
+</script>

@@ -1,0 +1,101 @@
+<p class="fecha float-left paddingT3"></p>
+
+<ul class="right" id="nav_home">
+
+	<li><a id="t0" href="javascript:void(0);" onclick="cambiasuc();">SUCURSALES</a></li>
+
+	<li class="float-left pipe">|</li>
+
+	<li>
+
+		<a class="arrow" id="contactanos" href="javascript:void(0);" onclick="menucon();"><span id="t1" style="font-size:10px;">CONTÁCTANOS</span></a>
+
+		<div class="clear"></div>
+
+		<div id="flyoutContact" class="flyout">
+
+			<div class="opciones"><a id="t2" class="email" href="javascript:void(0);" onclick="cambiampcon1()">Enviar un mensaje</a></div>
+
+			<div class="opciones"><a id="t3" href="popup-a.html" class="llamar popup_menu telefono">Llámanos</a></div>
+
+			<div class="opciones"><a id="t4" href="popup-b.html" class="chat escucharte last popup_menu">Queremos escucharte</a></div>
+
+			<div class="box_bottom"></div>
+
+		</div>
+
+	</li>
+
+	<li class="float-left pipe">|</li>
+
+	<li><a id="t5" href="javascript:void(0);" onclick="cambiampcon4()">AYUDA</a>
+
+	<li class="noborder search_tool">
+
+		<div style="width: 166px;">&nbsp;</div>
+
+		<div class="search_wrapper displayNone">
+
+			<form id="search-form" action="" method="get" enctype="multipart/form-data">
+
+				<input type="text" class="float-left" id="buscar" onclick="limpia()" value="Buscar..." name="buscar" />
+
+				<div class="float-right">
+
+					<a class="iblock" href="#">IR</a>
+
+					<div class="pipe">|</div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+	</li>
+
+</ul>
+
+
+
+<script type="text/javascript">
+
+	function limpia(){
+
+		$('#buscar').val('');
+
+	}
+
+	$('.flyout').hide();
+
+	$('.contactanos2').hide();
+
+</script>
+
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		buscar();
+
+	});
+
+	$('.enviar').popupWindow({
+
+		height:500,
+
+		width:760,
+
+		resizable:'yes',
+
+		scrollbars:'yes',
+
+		windowName:'popup',
+
+		centerBrowser:1
+
+	});
+
+</script>

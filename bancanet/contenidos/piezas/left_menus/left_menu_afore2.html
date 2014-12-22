@@ -1,0 +1,60 @@
+﻿<div class="graphite">
+
+	<ul class="accordion" id="accordion-1">
+
+		<span class="border-topDotted">&nbsp;</span>
+
+        <li>
+
+			<a id="t25" class="dcjq-parent 2n" href="javascript:cambiaEC();">ESTADO DE CUENTA</a>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+        <li>
+
+			<a id="t26" class="dcjq-parent 2n" href="javascript:cambiaP3();">APORTACIONES AHORRO VOLUNTARIO</a>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+        <li>
+
+			<a id="t27" class="dcjq-parent 2n" href="javascript:cambiaP4();">RETIROS</a>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+        <li>
+
+			<a id="t28" class="dcjq-parent 2n" href="javascript:cambiaP5();">ACTUALIZAR DOMICILIO</a>
+
+		</li>
+
+        <span class="border-topDotted">&nbsp;</span>
+
+	</ul>
+
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		left_menu_fun();
+
+		link_click = getURLParameter('link');
+
+		$('#t25').click();
+
+		$('#'+link_click).click();
+
+	});
+
+</script>
+
+
+

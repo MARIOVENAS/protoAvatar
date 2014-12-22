@@ -1,0 +1,639 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>Banamex</title>
+    <link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+	
+   <!-- <script type="text/javascript" src="../JFP/js/jquery/jquery-1.6.4.min.js"></script>-->
+    <script type="text/javascript" src="../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    
+	<script src="../../JFP/js/widgets/jquery.dcjqaccordion.2.7.min.js" type="text/javascript"></script>
+    <script src="../../JFP/js/widgets/jquery.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript"  src="../../JFP/js/jquery/plugins/left_menu_multilevel.js"></script>
+	<script type="text/javascript" src="../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+
+   <!--<script type="text/javascript" src="../bancanet_demo/contenidos/bbAvatar/js/mando.js"></script>-->
+   <script type="text/javascript" src="bbAvatar/js/swap.js"></script>
+   <script type="text/javascript" src="bbAvatar/js/menuSpanish.js"></script>
+	
+	<script type="text/javascript">
+	
+    function toma_datos1(){
+				 
+				 var iframeEl = window.parent.document.getElementById("mensajeError_contenido_ifrm");
+				 if ( iframeEl.contentDocument ) { // DOM
+   				
+				 var dato1 = iframeEl.contentDocument.getElementById('fecInicio').value;
+				 var dato3 = iframeEl.contentWindow.document.getElementById('tpcta').value;
+				 var dato4 = iframeEl.contentWindow.document.getElementById('combo').value;
+				 
+				} else if ( iframeEl.contentWindow ) { // IE win
+    			
+				var dato1 = iframeEl.contentWindow.document.getElementById('fecInicio').value;
+				var dato3 = iframeEl.contentWindow.document.getElementById('tpcta').value;
+				var dato4 = iframeEl.contentWindow.document.getElementById('combo').value;
+				
+				}
+				$('#campo1').val(dato1)
+				$('#combo1').val(dato3)
+				$('#combo2').val(dato4)
+				//alert(dato1)
+			}
+		
+		function actualiza_datos1(){
+			
+				var datoTomado = $('#campo1').val(); 
+				var datoTomado3 = $('#combo1').val(); 
+				var datoTomado4 = $('#combo2').val(); 
+				
+				 var iframeEl = window.parent.document.getElementById("mensajeError_contenido_ifrm");
+					if ( iframeEl.contentDocument ) { // DOM
+   				
+				 var dato1 = iframeEl.contentDocument.getElementById('fecha1').innerHTML = datoTomado;
+				 var dato3 = iframeEl.contentDocument.getElementById('ttarjeta').innerHTML = datoTomado3;
+				 var dato4 = iframeEl.contentDocument.getElementById('cuenta1').innerHTML = datoTomado4;
+				 
+				} else if ( iframeEl.contentWindow ) { // IE win
+    			
+				var dato1 = iframeEl.contentDocument.getElementById('fecha1').innerHTML = datoTomado;
+				var dato3 = iframeEl.contentDocument.getElementById('ttarjeta').innerHTML = datoTomado3;
+				var dato4 = iframeEl.contentDocument.getElementById('cuenta1').innerHTML = datoTomado4;
+				
+				}
+			}
+			
+		
+		/********* Toma de datos dos  **********/
+		
+		
+		function toma_datos2(){
+				 
+				 var iframeEl = window.parent.document.getElementById("mensajeError_contenido_ifrm");
+					if ( iframeEl.contentDocument ) { // DOM
+   				
+				 var dato1 = iframeEl.contentDocument.getElementById('fecInicio').value;
+				 var dato2 = iframeEl.contentWindow.document.getElementById('otraCantidad').value;
+				 var dato3 = iframeEl.contentWindow.document.getElementById('tpcta').value;
+				 var dato4 = iframeEl.contentWindow.document.getElementById('combo').value;
+				 
+				} else if ( iframeEl.contentWindow ) { // IE win
+    			
+				var dato1 = iframeEl.contentWindow.document.getElementById('fecInicio').value;
+				var dato2 = iframeEl.contentWindow.document.getElementById('otraCantidad').value;
+				var dato3 = iframeEl.contentWindow.document.getElementById('tpcta').value;
+				var dato4 = iframeEl.contentWindow.document.getElementById('combo').value;
+				
+				}
+				$('#campo1').val(dato1)
+				$('#campo2').val(dato2)
+				$('#combo1').val(dato3)
+				$('#combo2').val(dato4)
+			}
+		
+		function actualiza_datos2(){
+			
+				var datoTomado = $('#campo1').val();
+				var datoTomado2 = $('#campo2').val();
+				var datoTomado3 = $('#combo1').val(); 
+				var datoTomado4 = $('#combo2').val(); 
+				 
+				 var iframeEl = window.parent.document.getElementById("mensajeError_contenido_ifrm");
+					if ( iframeEl.contentDocument ) { // DOM
+   				
+				 var dato1 = iframeEl.contentDocument.getElementById('fecha1').innerHTML = datoTomado;
+				 var dato2 = iframeEl.contentDocument.getElementById('importe1').innerHTML = datoTomado2;
+				 var dato3 = iframeEl.contentDocument.getElementById('ttarjeta').innerHTML = datoTomado3;
+				 var dato4 = iframeEl.contentDocument.getElementById('cuenta1').innerHTML = datoTomado4;
+				 
+				} else if ( iframeEl.contentWindow ) { // IE win
+    			
+				var dato1 = iframeEl.contentDocument.getElementById('fecha1').innerHTML = datoTomado;
+				var dato2 = iframeEl.contentDocument.getElementById('importe1').innerHTML = datoTomado2;
+				var dato3 = iframeEl.contentDocument.getElementById('ttarjeta').innerHTML = datoTomado3;
+				var dato4 = iframeEl.contentDocument.getElementById('cuenta1').innerHTML = datoTomado4;
+				
+				}
+			}
+		
+	</script>
+    
+
+</head>
+<body>
+
+
+
+<input type="hidden" id="combo1" value="hola">
+<input type="hidden" id="combo2" value="hola">
+<input type="hidden" id="campo1" value="hola">
+<input type="hidden" id="campo2" value="hola">
+
+<!--inicia contenedor principal-->
+	<div id="wrap" class="cS-structMainContainer">
+    
+    
+    <div class="div_cargando displayNone" id="movimientos_cargando" style="padding-top:400px;">
+    
+              <div class="loader"><img src="../../JFP/regional/images/loader.gif" alt="Cargando" /><br />
+              <span id="t57">Un momento por favor ...</span></div>
+        </div>
+    <!--inicia header-->
+		<div id="header">
+<div class="utilities_nav" id="navegacionPrincipal">
+ 
+</div>
+
+<div class="citibank-containerImg">
+    <a href="#"><div id="citibank-logo"></div></a>
+    <div id="citibank-image"></div>
+</div>
+
+<div class="main_nav" id="menuw">
+</div>
+
+<div id="user-info">
+    <div class="userInfo-content" id="msj_bienvenido">
+       
+        
+    </div>
+</div>
+<!--termina header-->
+
+  </div>
+  
+  
+  
+  <div class="cS-structBodyContainer"> 				
+			<div class="bg_demo">
+		    <div id="content">		
+            
+            
+		        <!-- The left menu divs are inserted by javascript if it is necessary -->
+		        
+			  <!-- Cuando no lleva menu izquierdo  <div id="subapp-box" class="noleftmenu float-left margin-top1"> -->
+              <div id="subapp-box" class="float-left">
+                  <iframe id="iframeConte" name="main" class="ifrContenedor" scrolling="no" frameborder="0" src="" height="auto" width="950"></iframe>
+                  
+              </div>
+			</div>
+			<div class="clear"></div>
+            </div>
+			<div id="footer"></div>				
+		</div>
+
+  
+  </div>
+   <script type="text/javascript">
+	var x=0;
+	function radioHijo1(){
+		x=x+1;
+		if(x==1){
+		//alert('entra')
+		$.imageTick.logging = true;
+		
+		$("input[name='chequeraPers2']").imageTick({
+			tick_image_path: "../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios"
+		});
+
+
+	$("input[type='checkbox']").imageTick({ 
+			tick_image_path: "JFP/regional/images/img_form/check_1.png", 
+			no_tick_image_path: "JFP/regional/images/img_form/no_check_1.png"
+		});
+		}else{}
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+	}
+	</script>
+   <script type="text/javascript">
+   
+   var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+   es.push('PAY MY CARD','Step 1 of 3: Capture','Withdrawal account','Select an account','Credit card','Select a card','Your payment due date is: 20 Aug 2013','Amount','Minimum payment due','Payment to avoid interest','Another amount','CONTINUE','CONTACT US','MESSAGES','CALL US','PAY MY CARD','Step 2 of 3: Verify','Confirm payment information to apply','Withdrawal account:','Credit card:','Amount:','Return','ACCEPT','CONTACT US','MESSAGES','CALL US','PAY MY CARD','Step 3 of 3: Response','Your payment has been applied with instruction number 091101','Withdrawal account:','Credit card:','Amount:','Print','CLOSE','Wait a moment please...');
+   
+            $(document).ready(function(){
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #miBancaNet").addClass('selected')} ,true)
+				ajustarOverlay();
+				ajusta_tooltpis();
+				funciones_login();
+				account_summary();
+				cuentasif();
+				//radioHijo1();
+				$("#divCargando").show('slow');
+				setTimeout(function(){$('#MiBancaNet').addClass('active')},900);
+            });
+        </script>
+       
+               <script type="text/javascript">
+
+	function cambiaP1(){
+cargaDocN('ACCITRADE/Otras_Cuentas.html')
+	ayuda();
+	}
+	function cambiaP2(){
+	alert('En construcción')
+	ayuda();
+	}		
+	
+	function Layuda(){
+window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	
+	function Limprimir(){
+		window.print();
+		}
+	
+	
+	
+			function dash(){
+open('../../48-dashboard-extended.html' , "_self")
+}
+
+			function invertir(){
+			open('../../31-Inversiones.html' , "_self")
+			}
+			
+			function Transferencias_pagos_tarjetas(){
+			open('../../30-Transferencias_pagos_tarjetas.html' , "_self")
+			}
+			
+			function Transferencias_pagos_transferencias(){
+			open('../../30-Transferencias_pagos_transferencias.html' , "_self")
+			}
+			
+			function Transferencias_pagos_servicios(){
+			open('../../30-Transferencias_pagos_servicios.html' , "_self")
+			}
+			
+			function Servicios_cuentas_chequeras(){
+			open('../../34-Servicios_cuentas_chequeras.html' , "_self")
+			}
+			
+			function Servicios_cuentas_limite(){
+			open('../../34-Servicios_cuentas_limite.html' , "_self")
+			}
+			
+			function Servicios_cuentas(){
+			open('../../34-Servicios_cuentas.html' , "_self")
+			}
+			
+			function Servicios_cuentas_libra(){
+			open('../../34-Servicios_cuentas_libra.html' , "_self")
+			}
+			
+			function Miperfil_PIN(){
+			open('../../35-Miperfil_PIN.html' , "_self")
+			}
+			
+			function Transferencias_pagos_domiciliacion(){
+			open('../../30-Transferencias_pagos_domiciliacion.html' , "_self")
+			}
+			
+			function Transferencias_pagos_creditos(){
+			open('../../30-Transferencias_pagos.html?ifrContenedor=3&link=t36' , "_self")
+			}
+			
+			function afore_cuenta(){
+			open('../../33-Afore_banamex.html' , "_self")
+			}
+			
+			function afore_cuenta_ahorro(){
+			open('../../33-Afore_banamex_ahorro.html' , "_self")
+			}
+			
+			function afore_cuenta_retiros(){
+			open('../../33-Afore_banamex_retiros.html' , "_self")
+			}
+			
+			function afore_cuenta_domicilio(){
+			open('../../33-Afore_banamex_domicilio.html' , "_self")
+			}
+</script>
+<!--<IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="../bancanet_demo/contenidos/menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>-->
+    <input type="hidden" id="objs" value="1" />
+    <input type="hidden" id="TIMEOUT" value="" />
+    <input type="hidden" name="LASTRESET" value="" />
+    <input type="hidden" id="segRestan" value="" />
+    <input type="button" name="exit" style="display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');" />
+    <input type="hidden" id="DATAAUX"  name="DATAAUX" value="" />
+    <input type="hidden" id="DATADEMO" name="DATADEMO" value="" />
+    <input type="hidden" id="REGRESADEMO" name="REGRESADEMO" value="" />
+    <input type="hidden" id="REGRESACUENTAS" name="REGRESACUENTAS" value="" />
+    <input type="hidden" id="CONTINUADEMO" name="CONTINUADEMO" value="" />
+    <input type="hidden" id="titHdn" name="titHdn" value="" />
+
+<!--termina contenedor principal-->
+<div id="cortinaOverlay" class="cerrarOverlay" style="display: none;"></div>
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+			<tbody><tr><td>
+						<div id="mensajeError_contenido_div">
+						</div>
+						<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+			</td></tr></tbody>
+			</table>
+		</div>
+	</div>
+<iframe id="nwd" src="if.htm" name="ndw" style="display:none"></iframe>    
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+		<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+			<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+				<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+					<tbody>
+						<tr>
+							<td>
+								<div id="mensajeError_contenido_divEspecial"></div>
+								<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>                        
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+        
+        <!-- Pagar NEW-->
+                            
+                         <div class="modal" id="divPagar" >
+                         <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+                         
+                         <div class="overlay-error">
+							<div class="overlay-content">
+                           
+								<div class="external-tranfer">
+									<div class="external-tranfer-content" style="left:-38px !important; top:-15px; position:relative;">
+										<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+                                        
+                                        <div class="content-top">
+											<div class="center">
+											<div class="dot-bottom">
+												<div class="left"><span class="title" id="t23">PAGAR MI TARJETA</span></div>
+                                                <div class="float-right margin-top10 font-size11px" id="t24">Paso 1 de 3: Captura</div>
+											</div>
+                                        
+                                        <iframe scrolling="no" frameborder="0" width="495" height="285" src="piezas/pagar_1.html"></iframe>
+                                        
+                                        <div class="content-footer" style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important; top:352px !important; *top:352px !important;">
+												<div class="title" id="t35">Cont&aacute;ctanos</div>
+												<div class="telefono"><a href="popup-a.html" class="telefono" id="t37">Ll&aacute;manos</a></div>
+												<div class="lineaDivisoria">&nbsp;</div>
+												<div class="email"><a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="email" id="t36">Mensajes</a></div>
+											</div>
+											</div>
+										</div>
+
+									</div><!-- Se queda -->
+								</div>
+							</div>
+						</div>
+                         
+                        
+                     </div>
+                     
+                            
+                            <!-- Pagar NEW-->
+        
+        <!-- Pagar 2 NEW-->
+                            
+                         <div class="modal" id="divPagar2" >
+                         <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+                            
+                        <div class="overlay-error">
+							<div class="overlay-content">
+                           
+								<div class="external-tranfer">
+									<div class="external-tranfer-content" style="left:-38px !important; top:-15px; position:relative;">
+										<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+										<div class="content-top">
+											<div class="center">
+											<div class="dot-bottom">
+												<div class="left"><span class="title" id="t38">PAGAR MI TARJETA</span></div>
+												<div class="float-right margin-top10 font-size11px" id="t39">Paso 2 de 3: Verifica </div>                                   
+											</div>
+											<div class="error-content">
+                                            
+                                            <div class="strong" id="t40">Confirma los datos del pago para aplicar:</div>
+                                            <div class="border-top margin-top15 height15" ></div>
+                                         
+	<div class="width141">
+<div class="form-row margin-right0">
+<label class="for-table width100" id="t41">Cuenta de retiro:</label>
+
+<label class="for-table width-240">Cheques - 12002<br />
+  Saldo (MXN) $ 62,944.10
+</label>
+<div class="clear"></div>
+</div>
+
+
+<div class="form-row margin-right0">
+<label class="for-table width100" id="t42">Tarjeta de cr&eacute;dito:</label>
+<label class="for-table width-240">Banamex - Tarjeta de Cr&eacute;dito - 12780<br />
+  Saldo (MXN) $ 15,987.00
+</label>
+<div class="clear"></div>
+
+</div>
+
+<div class="form-row margin-right0">
+<label class="for-table width100" id="t43">Importe:</label>
+<label class="for-table width-240">$ 3,000.00</label>
+<div class="clear"></div>
+
+</div>
+	</div>											
+	
+    <div class=" height15"></div>		
+    <div class="border-top2"></div>	
+            
+													<ul class="cN-primaryNav">
+														<li class="cM-spriteBase cN-primaryNavButton"><a href="javascript:void(0);" id="t45" onclick="pagar3();" >Aceptar</a></li>		
+													</ul>
+                                                    
+                                                    <div id="flechaLinks" class="float-right margin-right4
+                                               ">
+             <span class="flechaazul float-left"></span>
+             <a href="javascript:void(0);" onclick="pagar();" class="sinBold" id="t44">Regresar</a>
+</div>
+												 </div>
+												
+											
+											<div class="content-footer " style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important;">
+												<div class="title" id="t46">Contáctanos</div>
+												<div class="telefono"><a href="#" class="telefono" id="t48">Llámanos</a></div>
+												<div class="lineaDivisoria">&nbsp;</div>
+												<div class="email"><a href="#" class="email" id="t47">Mensajes</a></div>
+											</div>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                     </div>
+                            
+                            <!-- Pagar2 NEW-->
+                            
+                            <!-- Pagar 3 NEW-->
+                            
+                         <div class="modal" id="divPagar3">
+                         <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+                            
+                        <div class="overlay-error">
+							<div class="overlay-content">
+                           
+								<div class="external-tranfer">
+									<div class="external-tranfer-content" style="left:-38px !important; top:-15px; position:relative;">
+										<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+										<div class="content-top">
+											<div class="center">
+											<div class="dot-bottom">
+												<div class="left"><span class="title" id="t49">PAGAR MI TARJETA</span></div>
+												<div class="float-right margin-top10 font-size11px" id="t50">Paso 3 de 3: Respuesta</div>                                   
+											</div>
+											<div class="error-content">
+                                            
+                                            <div class="greenCheck"></div><div class="strong" id="t51">Tu pago ha sido aplicado con n&uacute;mero de autorizaci&oacute;n 091101.</div>
+                                            <div class="border-top margin-top15 height15"></div>
+                                         
+	<div class="width141">
+<div class="form-row margin-right0">
+<label class="for-table width100" id="t52">Cuenta de retiro:</label>
+
+<label class="for-table width-240">Cheques - 12002<br />
+  Saldo (MXN) $ 62,944.10
+</label>
+<div class="clear"></div>
+</div>
+
+
+<div class="form-row margin-right0">
+<label class="for-table width100" id="t53">Tarjeta de cr&eacute;dito:</label>
+<label class="for-table width-240">Banamex - Tarjeta de Cr&eacute;dito - 12780<br />
+  Saldo (MXN) $ 15,987.00
+</label>
+<div class="clear"></div>
+
+</div>
+
+<div class="form-row margin-right0">
+<label class="for-table width100" id="t54">Importe:</label>
+<label class="for-table width-240">$ 3,000.00</label>
+<div class="clear"></div>
+
+</div>
+	</div>											
+		
+    <div class=" height15"></div>		
+    <div class="border-top2"></div>
+    
+													<ul class="cN-primaryNav">
+														<li class="cM-spriteBase cN-primaryNavButton"><a href="#" onClick="$.modal.close();" id="t56">Cerrar</a></li>		
+													</ul>
+                                                    
+                                                    <div id="flechaLinks" class="float-left margin-left0
+                                               ">
+             <span class="flechaazul float-left"></span>
+             <a class="float-left" onClick="window.open('print2.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" id="t55">Imprimir</a>
+</div>
+												
+												
+											</div>
+											<div class="content-footer" style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important;">
+												<div class="title" id="t46">Contáctanos</div>
+												<div class="telefono"><a href="popup-a.html" class="telefono" id="t48">Llámanos</a></div>
+														<div class="lineaDivisoria">&nbsp;</div>
+														<div class="email"><a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="email" id="t47">Mensajes</a></div>
+											</div>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                     </div>
+                            
+                            <!-- Pagar3 NEW-->
+        
+        
+        <script>
+		
+		function pagar(){
+	$('#mensajeError_contenido_div', window.parent.document).html(
+		$("#divPagar").html()
+	);			
+	parent.$.modal(				
+			{
+				closeHTML: '',
+				opacity:60,
+				overlayClose:false,
+				flagDiv:true,
+				widthDivIfrm:570,
+				heightDivIfrm:'auto'
+			}
+		);
+		
+		top.$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		top.$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');
+		top.radioHijo1();
+}
+		
+		function pagar2(){
+	$('#mensajeError_contenido_div', window.parent.document).html(
+		$("#divPagar2").html()
+	);			
+	parent.$.modal(				
+			{
+				closeHTML: '',
+				opacity:60,
+				overlayClose:false,
+				flagDiv:true,
+				widthDivIfrm:570,
+				heightDivIfrm:'auto'
+			}
+		);
+		
+		top.$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		top.$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');
+		//top.radioHijo1();
+}
+
+function pagar3(){
+	$('#mensajeError_contenido_div', window.parent.document).html(
+		$("#divPagar3").html()
+	);			
+	parent.$.modal(				
+			{
+				closeHTML: '',
+				opacity:60,
+				overlayClose:false,
+				flagDiv:true,
+				widthDivIfrm:570,
+				heightDivIfrm:'auto'
+			}
+		);
+		
+		top.$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		top.$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');
+		//top.radioHijo1();
+}
+		
+		</script>
+         
+       
+        </body>
+</html>

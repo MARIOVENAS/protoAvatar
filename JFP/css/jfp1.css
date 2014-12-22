@@ -1,0 +1,279 @@
+/* JFP CSS Document Standard */
+
+
+
+/* Standard HTML (JFP CSS Style Guide - section:3) */
+
+TD		{ font-size: 12px; }
+
+a 		{ font-size: 12px; }
+
+P 		{ font-size: 11px; }
+
+
+
+/* --------- JFP Header ----------- */
+
+/* Header side links (JFP CSS Style Guide - section:5.1) */
+
+.MItmStyl	{ font-size: 11px; } 
+
+
+
+/* Nav Level One (JFP CSS Style Guide - section:5.1.1) */
+
+.NavLA, .NavLAOn 	{ font-size: 11px; }
+
+
+
+/* Level 2 nav (JFP CSS Style Guide - section:5.2.1) */
+
+.NavLB, .NavLBOn	{ font-size: 11px; }
+
+
+
+/* Level 3 nav (JFP CSS Style Guide - section:5.2.2) */
+
+.NavLCTitle 		{ font-size: 12px; }
+
+.NavLC, .NavLCOn 	{ font-size: 11px; }
+
+
+
+/* Level 4 nav (JFP CSS Style Guide - section:5.2.3) */
+
+.NavLD, .NavLDOn	{ font-size: 11px; }
+
+
+
+/* --------- Portal Layout ---- */
+
+/* Page Title (JFP CSS Style Guide - section:5.3) */
+
+.pageHD 	{ font-size: 18px; }
+
+
+
+/* Nav Tile (JFP CSS Style Guide - section:5.4) */
+
+.NavLink	{ font-size: 11px; }
+
+.mItmSBlk	{ font-size: 11px; }
+
+
+
+/* Ad Tile (JFP CSS Style Guide - section:5.5) */
+
+.dropdown	{ font-size: 11px; }
+
+.golddpdown	{ font-size: 11px; }
+
+
+
+/* Footer Tile (JFP CSS Style Guide - section:5.6) */
+
+.gfooter	{ font-size: 10px; }
+
+.footcopy	{ font-size: 11px; }
+
+.footlink	{ font-size: 11px; }
+
+.link		{ font-size: 11px; }
+
+.hdbottom	{ font-size: 11px; }
+
+
+
+/* --------- Body Tile ---- */
+
+/* Standard Application Style Classes (JFP CSS Style Guide - section:6.1.1) */
+
+.apptxtlg 		{ font-size: 12px; }
+
+.apptxtlgAlt	{ font-size: 12px; }
+
+.apptxtlgbold 	{ font-size: 12px; }
+
+.apptxtlgboldAlt{ font-size: 12px; }
+
+.apptxtlgboldBlu{ font-size: 12px; }
+
+.apptxtsm 		{ font-size: 11px; }
+
+.apperror		{ font-size: 11px; }
+
+.linksm			{ font-size: 11px; }
+
+.linkNon		{ font-size: 11px; }
+
+.linkSearch		{ font-size: 11px; }
+
+.linkFind		{ font-size: 11px; }
+
+
+
+/* Login (JFP CSS Style Guide - section:6.1.2) */
+
+.soInput	{ font-size: 9px; }
+
+.soInputB	{ font-size: 9px; }
+
+.son, .soff { font-size: 12px; }
+
+.plnTxt		{ font-size: 12px; }
+
+.BSmlAncr	{ font-size: 11px; }
+
+
+
+/* Dynamic PinPad (JFP CSS Style Guide - section:6.1.3) */
+
+input.sodpp { font-size: 12px; }
+
+input.sodppB{ font-size: 12px; }
+
+td.sodppHD 	{ font-size: 12px; }
+
+td.sodppHDB { font-size: 12px; }
+
+
+
+/* Application Header (JFP CSS Style Guide - section:6.1.4) */
+
+.appHdTitle { font-size: 12px; }
+
+.appHdPrint { font-size: 12px; }
+
+
+
+/* Account Selector (JFP CSS Style Guide - section:6.1.5) */
+
+td.appAs 	{ font-size: 11px; }
+
+select.appAs{ font-size: 11px; }
+
+
+
+/* Account Details (JFP CSS Style Guide - section:6.1.6) */
+
+.appDtL		{ font-size: 11px; }
+
+.appDtV 	{ font-size: 11px; }
+
+
+
+/*	TJs and Lists (JFP CSS Style Guide - section:6.1.7) */
+
+.sortlinks 	{ font-size: 10px; }
+
+.appLsDate 	{ font-size: 12px; }
+
+.appLsDateA { font-size: 12px; }
+
+.appLsDesc 	{ font-size: 12px; }
+
+.appLsCred 	{ font-size: 12px; }
+
+.appLsDeb 	{ font-size: 12px; }
+
+.appLsRun 	{ font-size: 12px; }
+
+.appLsTo 	{ font-size: 12px; }
+
+.appLsFrom 	{ font-size: 12px; }
+
+.appLsSm 	{ font-size: 11px; }
+
+.appLsAmount{ font-size: 12px; }
+
+a.appLsLink	{ font-size: 11px; }
+
+.appLsAct 	{ font-size: 12px; }
+
+.appLsInAct	{ font-size: 12px; }
+
+
+
+/* Bulleted and Single-Column Lists (JFP CSS Style Guide - section:6.1.8) */
+
+.appBl 		{ font-size: 12px; }
+
+
+
+/* Input Screen (JFP CSS Style Guide - section:6.1.9) */
+
+.applabelF 		{ font-size: 11px; }
+
+.applabelFalt 	{ font-size: 11px; }
+
+.appfldF 		{ font-size: 11px; } 
+
+.appfldFR 		{ font-size: 11px; }
+
+.appfld 		{ font-size: 11px; }
+
+.apptxthi 		{ font-size: 11px; }
+
+
+
+/*	Money Mover (JFP CSS Style Guide - section:6.1.10) */
+
+.appMMW		{ font-size: 12px; }
+
+.appMMWon 	{ font-size: 12px; }
+
+
+
+/* Recaps and Confirmation Screen (JFP CSS Style Guide - section:6.1.11) */
+
+.applabelR 		{ font-size: 11px; }
+
+.applabelRalt 	{ font-size: 11px; }
+
+.apptxtR 		{ font-size: 11px; }
+
+
+
+/* Re-Entry Pin (JFP CSS Style Guide - section:6.1.12) */
+
+.appPin 	{ font-size: 11px; }
+
+
+
+
+
+/* Application Workflow Navigation (JFP CSS Style Guide - section:6.1.13) */
+
+.appNavBack, .appNavCncl, .appNavNext, .appNavAdd, .appNavView, .appNavGen, .appNavYes, .appNavNo, .appNavOk 	
+
+{ font-size: 10px; }
+
+
+
+/* Disclosure (JFP CSS Style Guide - section:6.1.14) */
+
+.appDs 		{ font-size: 12px; }
+
+
+
+/* Standard Portal Classes */
+
+.IntLnkSy 	{ font-size:8pt; }
+
+.loginDt	{ font-size: 8pt; }
+
+
+
+/* Added for Help link*/
+
+.content        { font-size: 8pt; }
+
+ 
+
+/* Added for Help HTML files */
+
+.txt            { font-size: 11px; }
+
+.HD             { font-size: 11px; }
+
+.subHD          { font-size: 11px; }

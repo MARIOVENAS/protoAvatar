@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../JFP/regional/css/localStyles.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    <script type="text/javascript" src="../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/javascript" src="../../../JFP/js/script.js"></script>
+	<script type="text/javascript" src="../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../JFP/js/jquery/plugins/plugins.js"></script>
+<title>Untitled Document</title>
+</head>
+
+<body>								
+		
+
+										
+											<div class="error-content">
+												<div class="width141">
+													<div class="form-row margin-right0" style="margin-bottom:10px !important; *margin-bottom:11px !important;">
+														<label class="for-table width120" id="t25">Cuenta de retiro:</label>
+    														<select class="  width300" id="selector1" onchange="valSelect();">
+																<option selected="selected" id="t26">Selecciona una cuenta</option>
+                                    							<option value="GT">Cheques - 12002 - MXN - $ 62,294.10</option>
+															</select>
+														<div class="clear"></div>
+													</div>
+
+													<div class="form-row margin-right0" style="margin-bottom:10px !important; *margin-bottom:6px !important;">
+														<label class="for-table width120" id="t27">Tarjeta de cr&eacute;dito:</label>
+                                                            <select class=" width300" id="selector2" onchange="valSelect();">
+                                                              	  <option value="0" >Mi Chequera - Cheques - MXN - 12680</option>
+                                                                  <option value="1">Cta Maestra - Mi maestra - MXN - 12681</option>
+                                                                  <option value="2">Pagom&aacute;tico - BNM - Mi d&eacute;bito - MXN - 12680</option>
+                                                                  <option value="3">Mi Chequera - Cheques - USD - 12680</option>
+                                                                  <option selected="selected" >Tarj. Oro - Mi tarjeta - MXN - 12680</option>
+                                                                  <option value="5">Tarj. Premia - Ptos Premia - MXN 12244</option>
+                                                                  <option value="6">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                                                                  <option value="7">Credicheques - Mi cr&eacute;dito - MXN - 12300</option>
+                                                                  <option value="8">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                                                                  <option value="9">Mi inversi&oacute;n - Inv. Integral - MXN - 12299</option>
+                                                                  <option value="10">Mi plazo - Inv. Plazo - MXN - 12282</option>
+                                                                  <option value="11">Horzcob - MXN - 123456 - Horzcob</option>
+                                                                  <option value="12">Banca Inversi&oacute;n - MXN - 123456 - Multiseries</option>
+                                                              <option value="13">Mi retiro - AFORE NSS - MXN - 12312</option>
+                                							</select>
+														<div class="clear"></div>
+													</div>
+                                                    <!--<div class="form-row sinMarginBottom margin-right0 " style="margin-bottom:15px !important;" id="space">&nbsp;
+                                                    </div>-->
+                                                    <div class="form-row margin-right0  " style="margin-left:130px !important; margin-bottom:15px !important;" id="divMensaje"><span id="t29">Tu fecha de l&iacute;mite de pago es: 20 Ago 2013</span>
+                                                    </div>
+													<div class="form-row margin-bottom10 margin-right0">
+                                						<label class="for-table width120" id="t30">Importe:</label>
+														<label class="marginsRadios2 for-table radioR2 float-left">
+                                							<input type="radio" name="chequeraPers2" id="rdchequeraPers1" onclick="cambia1();" class="float-left" checked="checked" />
+                                                        </label>
+ 														<div class="float-left "> <span id="t31">M&iacute;nimo a pagar:</span> $ 1,780.00</div>
+                                						<div class="clear"></div>
+                                					</div>
+													<div class="form-row margin-bottom10 margin-right0">
+                                                        <label class="for-table width120">&nbsp;</label>
+                                                        <label class="marginsRadios2 for-table radioR2 float-left">
+                                                        	<input type="radio" name="chequeraPers2" id="rdchequeraPers2"  onclick="cambia1();" class="float-left" />
+                                                        </label>
+ 													<div class="float-left"><span id="t32">Pago para no generar intereses:</span> $ 7,804.64</div>
+                                                    	<div class="clear"></div>
+                                                    </div>
+													<div class="form-row margin-bottom20 margin-right0">
+                                                        <label class="for-table width120">&nbsp;</label>
+                                                        <label class="marginsRadios2 for-table radioR2 float-left">
+                                                        	<input name="chequeraPers2" id="rdchequeraPers3" type="radio"  onclick="cambia2();"  />
+                                                        </label>
+														<div class="float-left"><span id="t33">Otra cantidad:</span> $</div>
+														<div class="margin-left10 float-left width107">
+															<input type="text" class=" width100 margin-topm5IE text float-left paddingr3  float-left " title="Importe mayor al permitido" style="width:100px !important;" id="porpalabra" onclick="limpia();" value="" onkeypress="return soloNumeros(event)" /> 
+                                                            
+                                                                             
+                                                                             <span style="left: 310px ! important; *left:310px !important; top: 173px; *top:173px !important;" id="error_porpalabra" class="errorB3 displayNone">
+                                
+                                                                            <span class="content_big" id="t38">Por favor sólo ingresa números en importe
+                                                                             </span>
+                                                                             <span class="flecha3"></span>
+                                                                             </span> 
+														                    <div class="clear"></div>
+														</div>
+                                                        
+                               						  <div class="clear"></div>
+                            						</div>
+                                                    <div class="form-row margin-right0" style="*margin-bottom:12px !important;">
+													  <label class="for-table width120" id="t25">Fecha de Pago:</label>
+                                                      <input type="text" class=" width100 margin-topm5IE text float-left paddingr3  float-left " style="width:100px !important;" id="fecha" value=""/><div class="icon-calendar ui-datepicker-calendar"></div>
+                                                      <select class="width100" id="selectorFecha">
+                                                            <option selected="ahora" id="t26">Ahora</option>                                                            
+                                                        </select>
+														<div class="clear"></div>
+													</div>
+
+											  </div>											
+												<!--<div  style="height:15px !important;"></div>-->		
+    											<div class="border-top2"></div>
+            								  		<ul class="cN-primaryNav">
+														<li class="cM-spriteBase cN-primaryNavButton">
+                                                        <a href="#" value="FILTRAR"  onclick="validador_filtrar1();" id="filtrar_modal1"><span id="t34">Continuar</span></a>
+                                                        <a href="#" value="FILTRAR"  onclick="validador_filtrar2();" class="displayNone" id="filtrar_modal2"><span id="t34">Continuar</span></a></li>		
+													</ul>
+											</div>
+                                            
+    <script type="text/javascript">
+   
+   var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My <strong>Banca</strong>Net','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('PAY MY CARD','Step 1 of 3:Capture','Withdrawal account:','Select an account','Credit card:','Select a card','Your payment due date is: 20 Aug 2013','Amount:','Minimum payment due:','Payment to avoid interest:','Another amount:','CONTINUE','CONTACT US','MESSAGES','CALL US','Please enter only numbers amount');
+	
+</script>
+                                            
+                                            <script>
+											function cambia1(){
+												$('#filtrar_modal1').show();
+												$('#filtrar_modal2').hide();
+											}
+											function cambia2(){
+												$('#filtrar_modal1').hide();
+												$('#filtrar_modal2').show();
+											}
+											</script>
+                                            
+                                            
+											
+									
+                        <script type="text/javascript">
+
+	$(function(){
+		
+		$.imageTick.logging = true;
+		
+		$("input[name='chequeraPers2']").imageTick({
+			tick_image_path: "../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios"
+		});
+
+
+	$("input[type='checkbox']").imageTick({ 
+			tick_image_path: "JFP/regional/images/img_form/check_1.png", 
+			no_tick_image_path: "JFP/regional/images/img_form/no_check_1.png"
+		});
+        
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+	});
+	</script>
+    <script>
+	function validador_filtrar1(){
+		
+		$('#error_porpalabra').hide();
+		$('#modal_filtrar').hide();
+		$('.overlay').hide();
+		//top.cargando_movimientos();
+		top.pagar2();
+	}
+	function validador_filtrar2(){
+	
+	//$('#error_porpalabra').hide();
+	
+	if($("#porpalabra").val().length < 1){
+		
+		$('#porpalabra').addClass('revisar2');
+		$('#error_porpalabra').show();
+		
+		}else{
+		$('#error_porpalabra').hide();
+		$('#porpalabra').removeClass('revisar2');
+			//top.cargando_movimientos();
+			top.pagar2();
+	
+		
+				}
+		}
+	function limpia(){
+		$('#error_porpalabra').hide();
+		$('#porpalabra').removeClass('revisar2');	
+	}
+	
+	function valSelect(){
+	 if(document.getElementById('selector1').selectedIndex==1 && document.getElementById('selector2').selectedIndex==1){
+		 
+		 //alert('los dos seleccionaron')
+		 $('#divMensaje').show()
+		 $('#space').hide()
+		 
+		 }
+		 else{ 
+		 //alert('no pasa')
+		 $('#divMensaje').hide()
+		 $('#space').show()
+		 }
+	}
+	</script>
+    <script type="text/javascript">
+           $(document).ready(function(){
+                               ajustarOverlay();
+                               ajusta_tooltpis();
+                   funciones_loginP()
+                     
+           });
+function Layuda(){
+window.open('https://bancanet.banamex.com/ayudas/es/Movimientos-en-Banca-Electronica.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+       </script>
+       
+       
+
+       
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body  TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION="https://uattmp.boveda.banamex.com.mx/scripts/cgiclntcbbbnp1/2UWLCDTVKV06P5L9TBW6HT3GXM/ND001__"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="3R0US9ECVMEQBAYJTFNKHTC8MK6ZMAYJ1UA8PY6N" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZABC-PAG APLIC MODIF "><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="modaplicada.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="21"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><script src="../../../../bbAvatar/js/motor.js"></script>
+
+<script src="../../../../bbAvatar/js/opciones.js"></script>
+
+<script src="../../../../bbAvatar/js/swap.js"></script>
+
+<link href="../../../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+
+
+<script language="JavaScript">
+
+var es= new Array("Account Management","Your modification has been <span class='negrita'>applied</span> with approval number","Bank Accounts","Department and credit cards","Services","Payment Orders","Card Type","Bank",
+
+			"Issuer","Name","Company Name","Account Type","Economic Sector","Branch Number","Number of establishment","Account Number","Card Number","Interbank CLABE",
+
+			"Nickname of account","Maximum payment amount","Payee’s RFC or CURP","Payee’s E-mail","Payee’s Cell Number","Payee’s Cell Number Company","applied","with approval number","Mobile Number","Modify other accounts");
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+} 
+
+$(document).ready(
+
+	function(){
+
+		top.impayuda();
+
+
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+} 
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+ 
+
+</script>
+
+
+
+
+
+
+
+<script>parent.setFecha("25/04/12    19:39:15  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina.\n\n Esta Transacci&oacute;n no se efectuar&aacute;, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="193915  ";b$Cont="193915  "
+
+	</script> 
+
+
+
+
+
+<script> 
+
+
+
+
+
+	$(document).ready(function(){
+
+			
+
+			top.impayuda();
+
+			var clabe = "CLABE Interbancaria";
+
+			//clabe.trim();
+
+			if(clabe == "Interbancario Clabe" || clabe == "CLABE Interbancaria"){
+
+				$("#clabe").html((language=="eng") ? "CLABE Account" : "Cuenta CLABE");
+
+			}else if(clabe == "Interbank Payment Clabe"){
+
+				$("#clabe").html((language=="eng") ? "CLABE Account" : "Cuenta CLABE");
+
+			}else if("SPANISH"=="ENGLISH"){
+
+				$("#clabe").html("Debit Card");
+
+			}else if("SPANISH"!="ENGLISH"){
+
+				$("#clabe").html("Tarjeta de D&eacute;bito");
+
+			}
+
+				
+
+					
+
+			var rfc = "AAA010101000";
+
+			//rfc.trim();
+
+			var correo = "intpm1modif@banamex.com";
+
+			//correo.trim();
+
+			var celular = "";
+
+			//celular.trim();
+
+			var compania = "";
+
+			//compania.trim();
+
+			if(rfc == "" || rfc == null){
+
+				$("#trrfc").remove();
+
+			}
+
+			if(correo == "" || correo == null){
+
+				$("#trcorreo").remove();
+
+			}
+
+			/*if(celular == "" || celular == null){
+
+				$("#trcelular").remove();
+
+			}
+
+			if(compania == "" || compania == null){
+
+				$("#trcompania").remove();
+
+			}*/
+
+				
+
+	});
+
+
+
+	
+
+	function Initialize(){ 
+
+		pintaTablas();
+
+	}
+
+</script>
+
+		<div class="float-left fonttit" id="t27">Modificaci&oacute;n de cuentas</div>
+
+        <div class="panelIzEnca3_text2" id="t0">Administraci&oacute;n de otras cuentas</div>
+
+        <div class="saldos_bloque3_verde paddingL20"><label id="t1">Tu modificaci&oacute;n ha sido  <span class="negrita"> aplicada </span>con el n&uacute;mero de autorizaci&oacute;n</label><span class="negrita"> 10040586</span>.</div>
+
+
+
+        <div class="saldos_bloque3_2">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>					
+
+							
+
+									
+
+					
+
+                    <td class="borderRDotted ancho25p padding20" valign="top"><span class="f12" id="t2">Cuentas bancarias</span></td>
+
+                    <td valign="top" class="padding20">
+
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 pinta1">
+
+							
+
+							<tr>
+
+                            	<td class="ancho50p"><span id="t7">Banco</span></td>
+
+
+
+                                <td class="ancho50p">BANORTE</td>
+
+                            </tr>
+
+							<tr>
+
+                            	<td class="ancho50p"><script>if("02"=="01")document.write("<span id='t9'>Nombre</span>");else document.write("<span id='t10'>Raz&oacute;n Social</span>");</script></td>
+
+                                <td class="ancho50p">ALMACENES ALIANZA</td>
+
+                            </tr>
+
+							<tr>
+
+
+
+                            	<td class="ancho50p"><span id="t11">Tipo de cuenta</span></td>
+
+                                <td class="ancho50p" id="clabe"></td>
+
+                            </tr>
+
+							<tr>
+
+                            	<td class="ancho50p"><script>if("CLABE Interbancaria" == "Interbancario Clabe" || "CLABE Interbancaria" == "CLABE Interbancaria" || "CLABE Interbancaria" == "Interbank Payment Clabe")document.write("<span id='t17'>CLABE Interbancaria</span>");else document.write("<span id='t16'>N&uacute;mero de Tarjeta</span>");</script></span></td>
+
+                                <td class="ancho50p">***318</td>
+
+                            </tr>
+
+
+
+							<tr>
+
+                            	<td class="ancho50p "><span id="t18">Alias de la cuenta</span></td>
+
+                                <td class="ancho50p ">IntPMmodif</td>
+
+                            </tr>
+
+							<tr>
+
+                            	<td class="ancho50p"><span id="t19">Importe m&aacute;ximo por pago</span></td>
+
+                                <td class="ancho50p">$1,000.00</td>
+
+
+
+                            </tr>
+
+							<tr id="trrfc">
+
+                            	<td class="ancho50p"><span id="t20">RFC &oacute; CURP del Beneficiario</span></td>
+
+                                <td class="ancho50p">AAA010101000</td>
+
+                            </tr>
+
+							<tr id="trcorreo">
+
+                            	<td class="ancho50p "><span id="t21">Correo electr&oacute;nico del beneficiario</span></td>
+
+
+
+                                <td class="ancho50p ">intpm1modif@banamex.com</td>
+
+                            </tr>
+
+                            <tr id="trcelular">
+
+                            	<td class="ancho50p"><span id="t22">N&uacute;mero celular del beneficiario</span></td>
+
+                                <td class="ancho50p">044/045 5540506080</td>
+
+                            </tr>
+
+                            <tr id="trcompania">
+
+
+
+                            	<td class="ancho50p "><span id="t23">Telefon&iacute;a celular</span></td>
+
+                                <td class="ancho50p ">TELCEL</td>
+
+                            </tr>
+
+					</table>
+
+					</td>					
+
+							
+
+					
+
+						
+
+					
+
+						
+
+					
+
+					
+
+					
+
+					
+
+					
+
+
+
+                </tr>
+
+            </table>        	
+
+        </div>
+
+		
+
+
+
+<script>
+
+ if(navigator.userAgent.indexOf('Mobile')>0){
+
+	document.write('<iframe id="chr_mobile" src="" style="display:none;position:relative; margin-left:100px" width="500" height="300" frameborder="1"></iframe>');
+
+ }
+
+</script>
+
+
+
+        
+
+        
+
+
+
+<script type="text/javascript" language="javascript" src="https://www.banamex.com/recursos/js/mx_citi_s_code.js"></script>
+
+<script type="text/javascript" language="javascript">
+
+String.prototype.trimomt = function(){return this.replace(/^\s+|\s+$/g,"")};
+
+try{ var moduleeval = "ZABC"; if(!parent.document.getElementById("main") && (moduleeval == "ZLOG" || moduleeval == "["+"CURRENT MODULE"+"]")){ OmnitureBNP2(); } if(parent.document.getElementById("main") && moduleeval != "["+"CURRENT MODULE"+"]" && moduleeval != "ZRUT"){ OmnitureBNP2();} }catch(exp){}
+
+function OmnitureBNP2(){ try{s.eVar21 = "BNP2"; var idusuario_omt = "DEMO"; idusuario_omt.trimomt(); var idusuariomemoria_omt = "["+"USERID"+"]"; if(idusuario_omt != "" && idusuario_omt != idusuariomemoria_omt){ s.prop5 = idusuario_omt; } var tipousuario_omt = "56"; tipousuario_omt.trimomt(); var tipousuariomemoria_omt = "["+"StatusToken"+"]"; if(tipousuario_omt == tipousuariomemoria_omt){ s.prop6 = "anon"; } else if(tipousuario_omt == "56"){ s.prop6 = "CHALLENGE"; }else if(tipousuario_omt == "06"){ s.prop6 = "PASSCODE"; } else{ s.prop6 = "LIGHT"; } var language_omt = "SPANISH"; if(language_omt == "SPANISH"){ s.prop10="ES"; }else if(language_omt == "ENGLISH"){ s.prop10="EN";} var pagenameomt = ""; var indicetable = "Consulta de Cuentas ABC|modaplicada.html"; indicetable.trimomt(); var valuehashtableOmt = hashtableOmtRim[indicetable]; if(valuehashtableOmt != null && valuehashtableOmt != ""){ pagenameomt = "MX|BNP2|" + valuehashtableOmt; }else{ pagenameomt="MX|BNP2|ZABC|Consulta de Cuentas ABC|modaplicada.html"; } s.pageName = pagenameomt; var s_code=s.t();if(s_code)document.write(s_code); }catch(exp){} }
+
+</script>
+
+<input id="omtmodalvalue" type="hidden" value="Consulta de Cuentas ABC|modaplicada.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

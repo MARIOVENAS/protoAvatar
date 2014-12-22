@@ -1,0 +1,3990 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize(); parent.ajustar();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="40953949-cd7b-469f-9bb5-a06791debbc9" ><input type=hidden name="EWF_SYS_1" value="SE@E44N84NWWILB6YHAGH2O3ZQ0CCQC@GSV0XD1T" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZRTP-Resumen Transferencias y Pagos"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="ResumenTrsyPgs.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="7"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+		<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+		<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />   
+
+		<script type="text/javascript" src="../../bbAvatar/js/mando.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+		
+
+       <style type="text/css">
+
+        .ancho41p{
+
+	    width:41%;
+
+        }    
+
+       </style>
+
+
+
+        <style type="text/css">
+
+		.ancho2p{
+
+	    width:2%;	
+
+        }    
+
+       </style>
+
+    <style type="text/css">
+
+		.rojo{
+
+	    	color:#ee2e24;
+
+		font-size:11px;
+
+		font-weight: bold;	
+
+        }    
+
+       </style>
+
+        
+
+        
+
+        <script type="text/javascript">
+
+
+
+
+
+		
+
+		function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+		function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/
+
+  var valMail = $("#"+idCampo, contexto ).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"", contexto ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function curpValido( idTxt ) {
+
+  var regexCurp;
+
+  var valCurp = $( "#"+idTxt+"" ).val();
+
+  regexCurp = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[0-9]{2}$/;
+
+  return regexCurp.test( valCurp );
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+		// JavaScript Document
+
+
+
+function EscribeNombre() {
+
+	
+
+	var ServAct="Servicios Activos";
+
+    var ServCan="Servicios Cancelados";
+
+	
+
+	$('#ServAct').text(ServAct);
+
+	$('#ServCan').text(ServCan);
+
+		
+
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function TipocuentaActivos() {
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrglo = new Array();
+
+	      
+
+	
+
+	if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+
+
+
+
+if(TiposCuentasArrglo.length==0){
+
+	$('#activos').hide();
+
+	
+
+}
+
+
+
+$('.TipoCuentaA').each(function(i){
+
+							   $(this).text(TiposCuentasArrglo[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+if(language=="eng"){
+
+$('.Tipodecuenta').each(function(i){
+
+							   $(this).text('Account type');
+
+							   });
+
+$('.Cuentaretiro').each(function(i){
+
+							   $(this).text('Withdrawal Account');
+
+							   });
+
+$('.Pagoa').each(function(i){
+
+							   $(this).text('Payment up to');
+
+							   });
+
+$('.Fechadealta').each(function(i){
+
+							   $(this).text('Registration date');
+
+							   });
+
+$('.FechadeModificacion').each(function(i){
+
+							   $(this).text('Last modification');
+
+							   });
+
+
+
+$('.Verhistorial').each(function(i){
+
+							   $(this).html(' &raquo; See History');
+
+							   });
+
+$('.Modificar').each(function(i){
+
+							   $(this).html(' &raquo; Modify');
+
+							   });
+
+$('.Dardebaja').each(function(i){
+
+							   $(this).html(' &raquo; Unsubscribe');
+
+							   });
+
+
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   
+
+							   });
+
+
+
+}
+
+	
+
+}
+
+
+
+function TipocuentaCancelados() {
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrgloC = new Array();
+
+	      
+
+
+
+
+
+	if(TiposCuentasArrgloC.length==0){
+
+		$('#cancelados').hide();
+
+	}
+
+
+
+$('.TipoCuentaC').each(function(i){
+
+							   $(this).text(TiposCuentasArrgloC[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   
+
+							   });
+
+
+
+
+
+
+
+if(language=="eng"){
+
+$('.TipodecuentaC').each(function(i){
+
+							   $(this).text('Account type');
+
+							   });
+
+$('.CuentaretiroC').each(function(i){
+
+							   $(this).text('Withdrawal Account');
+
+							   });
+
+$('.PagoaC').each(function(i){
+
+							   $(this).text('Payment up to');
+
+							   });
+
+$('.FechadealtaC').each(function(i){
+
+							   $(this).text('Registration date');
+
+							   });
+
+$('.FechadeModificacionC').each(function(i){
+
+							   $(this).text('Last modification');
+
+							   });
+
+
+
+$('.VerhistorialC').each(function(i){
+
+							   $(this).html(' &raquo; See History');
+
+							   });
+
+$('.ReactivarC').each(function(i){
+
+							   $(this).html(' &raquo; Reactivate');
+
+							   });
+
+$('.FechaFormatoC').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   
+
+							   });
+
+
+
+
+
+}
+
+	
+
+}
+
+function Tipocuentas() {
+
+	
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrglo = new Array();
+
+	
+
+	
+
+	
+
+	 
+
+
+
+$('.TipoCuentas').each(function(i){
+
+							   $(this).text(TiposCuentasArrglo[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+if(language=="eng"){
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+}else{
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+}
+
+
+
+	
+
+}
+
+
+
+
+
+
+
+function TipocuentaActivosOF() {
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrglo = new Array();
+
+	var SaldosDomiciliacion = new Array();
+
+	      
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	var Saldo=AgregaSaldoDomiciliacion('1');
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+	SaldosDomiciliacion.push('$ '+ Saldo); 
+
+
+
+
+
+
+
+
+
+
+
+	    if(TiposCuentasArrglo.length==0){		
+
+		  $('#Domiciliacion').hide();
+
+
+
+     }
+
+	 
+
+if(language=="eng"){
+
+	var sAct="Active Bill(";
+
+	$('#NoDomiciliacion').text(sAct+TiposCuentasArrglo.length+")");
+
+}else{
+
+	var sAct="Servicios activos (";
+
+	$('#NoDomiciliacion').text(sAct+TiposCuentasArrglo.length+")");
+
+}
+
+
+
+
+
+$('.TipoCuentaA').each(function(i){
+
+							   $(this).text(TiposCuentasArrglo[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+$('.SaldoDom').each(function(j){
+
+							   $(this).text(SaldosDomiciliacion[j]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+
+
+	if(language=="eng"){
+
+		
+
+		
+
+
+
+		$('.Historial').each(function(i){
+
+							   $(this).html('See History');
+
+							   });
+
+		$('.SaldoCR').each(function(i){
+
+							   $(this).html('Withdrawal account balance (MXN)');
+
+							   });
+
+		$('.TipoCuentaR').each(function(i){
+
+							   $(this).html('Withdrawal account type');
+
+							   });
+
+		$('.PagoA').each(function(i){
+
+							   $(this).html('Payment up to');
+
+							   });
+
+		$('.FechaMod').each(function(i){
+
+							   $(this).html('Last modification');
+
+							   });
+
+		$('.ModificarD').each(function(i){
+
+							   $(this).html('&raquo; Modify this direct bill payment');
+
+							   });
+
+		$('.BajaD').each(function(i){
+
+							   $(this).html('&raquo; Unsubscribe this direct bill paymen');
+
+							   });
+
+		$('.FechaFormatoA').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+	
+
+	
+
+	
+
+	}
+
+	
+
+}
+
+
+
+
+
+////saldo///
+
+
+
+function AgregaSaldoDomiciliacion(Indice) {
+
+
+
+	
+
+	var indiceSaldo = new Array();
+
+	var ValoresSaldo = new Array();	
+
+     
+
+	indiceSaldo.push( '1' );
+
+	var cad = ( language=='eng' ) ? 'Not available' : 'No disponible';
+
+	ValoresSaldo.push(cad);
+
+    
+
+
+
+			for(k=0; k<=indiceSaldo.length; k++){
+
+		          if(Indice==indiceSaldo[k]){
+
+			       return ValoresSaldo[k];
+
+				 		      
+
+				  
+
+				  }
+
+			
+
+		}
+
+}
+
+
+
+
+
+function Tipocuentas2() {
+
+	var TipoCuenta;
+
+	var TiposCuentasArrglo = new Array();
+
+if(TiposCuentasArrglo.length==0){	
+
+$('#paginas').hide();
+
+
+
+}
+
+
+
+$('.TipoCuentas').each(function(i){
+
+							   $(this).text(TiposCuentasArrglo[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+if(language=="eng"){
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+}else{
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+}
+
+
+
+
+
+	
+
+}
+
+
+
+
+
+		var txtNom = ( language=="eng" ) ? "Name:  " : "Nombre:  ";
+
+var txtSdo = ( language=="eng" ) ? "Balance" : "Saldo";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+			
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+									
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+		// JavaScript Document
+
+
+
+function AlternarColumnas(id) {
+
+	
+
+    if(document.getElementsByTagName){ 
+
+       var tabla = document.getElementById(id);  
+
+       var rows = tabla.getElementsByTagName("tr");
+
+          for(i = 1; i < rows.length; i++){        
+
+            if(i % 2 == 0){
+
+			  rows[i].className = "tablaSaldos2_bordeR";
+
+              }else{
+
+              rows[i].className = "tablaSaldos2_bordeR bgF0F4F9";
+
+              }       
+
+          }
+
+    }
+
+
+
+	
+
+	
+
+}
+
+function AlternarColumnasExp(){
+
+	
+
+	$('.TablaAlternar').each(function(){
+
+									 //$(this).find('.trExpan:odd').children('td').addClass('');
+
+									  $(this).find('.trExpan:even').children('td').addClass('bgF1F2F2');
+
+									  });
+
+
+
+	 
+
+	/*var fila=$('.trExpan');
+
+	$(fila).each(function(i){
+
+						
+
+				if(i>0)
+
+				{
+
+					if( $(this).is(':odd') )
+
+						$(this).addClass('tablaSaldos2_bordeR bgF0F4F9');
+
+					else if( $(this).is(':even') )
+
+						$(this).addClass('tablaSaldos2_bordeR');
+
+				}
+
+											   
+
+				});*/
+
+						  
+
+						  
+
+}
+
+
+
+
+
+
+
+
+
+function AlternarColumnasExp1(id) {
+
+	
+
+   	
+
+	
+
+    if(document.getElementsByTagName){ 
+
+       var tabla = document.getElementById(id);  
+
+       var rows = tabla.getElementsByTagName("trExpan");
+
+          for(i = 0; i < rows.length; i++){        
+
+            if(i % 2 == 0){
+
+			  rows[i].className = "tablaSaldos2_bordeR bgF0F4F9";
+
+              }else{
+
+              rows[i].className = "tablaSaldos2_bordeR";
+
+              }       
+
+          }
+
+    }
+
+
+
+	
+
+	
+
+}
+
+		
+
+function Combo_PropiasResumen(desc, cta, moneda, saldo){
+
+	var ventana_ancho = $(window).width();
+
+	if(ventana_ancho<=1024){
+
+		var espacio=35;
+
+	}else{
+
+		var espacio=45;
+
+	}
+
+	
+
+	var c,d,s;
+
+	c = "**" + cta;
+
+	d = Arma_Descripcion(desc + '&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;' +  c, espacio);
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + s;	
+
+}
+
+
+
+
+
+function CreaCombos(){
+
+
+
+	
+
+  var ctaVal;
+
+  var ctaDes;
+
+  var ctaAls;
+
+  var ctaNum;
+
+  var ctaTip;
+
+  var ctaSal;
+
+  var ctaSelecionado;
+
+  var tipoPersona;
+
+  var ValoresCombo = new Array();
+
+  var tipoPersona;
+
+  
+
+  var ATipPers = new Array();
+
+  var ABeneficiario = new Array();
+
+  var ComboS=	new Array();
+
+
+
+   var NumeroId = new Array();
+
+  
+
+  for(i=0; i<ValoresCombo.length; i++)
+
+  {
+
+	  
+
+	  var ValoresCombo2=ValoresCombo[i];
+
+	
+
+	  var Filas=ValoresCombo2.split('$');
+
+	  
+
+	  
+
+	  for(j=0; j<(Filas.length-1); j++)
+
+	  {
+
+		   var DatosCbo= new Array(); 
+
+		   DatosCbo= Filas[j].split('~');
+
+		   ctaVal=DatosCbo[0];
+
+           ctaDes = ChecaAliasVacio(DatosCbo[2], DatosCbo[3]);
+
+           ctaNum = DatosCbo[1];
+
+           ctaTip = DatosCbo[4];
+
+           ctaSal = AgregaSaldo(DatosCbo[0]);
+
+           ctaSelecionado = DatosCbo[6];
+
+		   
+
+		   var selCta = document.getElementById("cboCtsOF"+NumeroId[i]);
+
+	  
+
+		   	var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","" + ctaVal + "");
+
+					//opcion.setAttribute("ctaNum","" + CtaNum+ "");
+
+					//opcion.setAttribute("id","opc" + i + (j) + "");
+
+					selCta.appendChild(opcion);
+
+					if( isNaN( parseInt( ctaVal ) ) )
+
+	            opcion.innerHTML = ctaNum;
+
+	                else {						
+
+				opcion.innerHTML = Combo_PropiasInv(ctaDes.replace(/^\s*|\s*$/g,""), ctaNum.replace(/^\s*|\s*$/g,"") , ctaTip.replace(/^\s*|\s*$/g,"") ,ctaSal.replace(/^\s*|\s*$/g,""))
+
+	                }
+
+					
+
+					var combo=ComboS[i].split('~');
+
+					if(ctaSelecionado == "T"){
+
+						
+
+						opcion.setAttribute("selected","selected");
+
+						
+
+					}
+
+		   
+
+		    
+
+			  
+
+	  }
+
+	  
+
+	  $('.TipPers').each(function(i){
+
+							   $(this).text(ATipPers[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+      $('.Beneficiario').each(function(i){
+
+							   $(this).text(ABeneficiario[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+	  
+
+	  
+
+  }
+
+  
+
+	  if(ValoresCombo.length==0){
+
+	desplegable('btnTransferenciasOF', 'ConteTransferenciasOF', 1);
+
+	$('#ConteTransferenciasOFInterno').hide();
+
+	$('#NoTransferenciasOF').text("Transferencias (0)");	
+
+    }else{	
+
+	$('#NoTransferenciasOF').text("Transferencias ("+ValoresCombo.length+")");	
+
+    }
+
+	if(language=="eng"){
+
+		if(ValoresCombo.length==0){
+
+			desplegable('btnTransferenciasOF', 'ConteTransferenciasOF', 1);
+
+	           $('#ConteTransferenciasOFInterno').hide();
+
+			$('#NoTransferenciasOF').text("Transfers (0)");	
+
+    	}else{	
+
+			$('#NoTransferenciasOF').text("Transfers ("+ValoresCombo.length+")");	
+
+    	}
+
+		
+
+         $('.AplicarT').each(function(i){
+
+							   $(this).text('Apply');
+
+							   });
+
+		 
+
+		  $('.BajaT').each(function(i){
+
+				      $(this).html('&raquo; Unsubscribe this transaction ');
+
+							   });
+
+		
+
+	}
+
+
+
+}
+
+	
+
+function CreaCombosPagos(){
+
+	
+
+  var ctaVal;
+
+  var ctaDes;
+
+  var ctaAls;
+
+  var ctaNum;
+
+  var ctaTip;
+
+  var ctaSal;
+
+  var ctaSelecionado;
+
+  var tipoPersona;
+
+  var ValoresCombo = new Array();
+
+   var tipoPersona;
+
+  
+
+  var ATipPers = new Array();
+
+  var ABeneficiario = new Array();
+
+  var ComboS=	new Array();
+
+
+
+   var NumeroId = new Array();
+
+  for(i=0; i<ValoresCombo.length; i++)
+
+  {
+
+	  
+
+	  var ValoresCombo2=ValoresCombo[i];
+
+	
+
+	  var Filas=ValoresCombo2.split('$');
+
+	  
+
+	  
+
+	  for(j=0; j<(Filas.length-1); j++)
+
+	  {
+
+		   var DatosCbo= new Array(); 
+
+		   DatosCbo= Filas[j].split('~');
+
+		   ctaVal=DatosCbo[0];
+
+           ctaDes = ChecaAliasVacio(DatosCbo[2], DatosCbo[3]);
+
+           ctaNum = DatosCbo[1];
+
+           ctaTip = DatosCbo[4];
+
+           ctaSal = AgregaSaldo(DatosCbo[0]);
+
+           ctaSelecionado = DatosCbo[6];
+
+		   
+
+		   var selCta = document.getElementById("cboCtsOF"+NumeroId[i]);
+
+	  
+
+		   	var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","" + ctaVal + "");
+
+					//opcion.setAttribute("id","opc" + i + (j) + "");
+
+					selCta.appendChild(opcion);
+
+					if( isNaN( parseInt( ctaVal ) ) )
+
+	            opcion.innerHTML = ctaNum;
+
+	                else {
+
+				opcion.innerHTML = Combo_PropiasInv(ctaDes.replace(/^\s*|\s*$/g,""), ctaNum.replace(/^\s*|\s*$/g,"") , ctaTip.replace(/^\s*|\s*$/g,"") ,ctaSal.replace(/^\s*|\s*$/g,""))
+
+	                }
+
+						var combo=ComboS[i].split('~');
+
+					
+
+					if(ctaSelecionado == "T"){
+
+						opcion.setAttribute("selected","selected");
+
+						
+
+					}
+
+	  }
+
+  
+
+	  $('.TipPersPag').each(function(i){
+
+							   $(this).text(ATipPers[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+      $('.BeneficiarioPag').each(function(i){
+
+							   $(this).text(ABeneficiario[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+	  
+
+	  
+
+  }
+
+
+
+	    if(ValoresCombo.length==0){		 
+
+		desplegable('btnPagosOF', 'ContePagosOF', 1);
+
+	$('#ContePagosOFInterno').hide();	
+
+	$('#NoPagosOF').text("Pagos (0)");
+
+     }else{	
+
+	$('#NoPagosOF').text("Pagos ("+ValoresCombo.length+")");
+
+      } 
+
+	  
+
+	  	if(language=="eng"){
+
+		if(ValoresCombo.length==0){
+
+			desplegable('btnPagosOF', 'ContePagosOF', 1);
+
+			$('#ContePagosOFInterno').hide();
+
+			$('#NoPagosOF').text("Payments (0)");	
+
+    	}else{	
+
+			$('#NoPagosOF').text("Payments ("+ValoresCombo.length+")");	
+
+    	}
+
+		
+
+         $('.AplicarP').each(function(i){
+
+							   $(this).text('Apply');
+
+							  
+
+							   });
+
+		 
+
+		  $('.BajaP').each(function(i){
+
+				      $(this).html('&raquo; Unsubscribe this transaction');
+
+					  
+
+							   });
+
+
+
+   		
+
+	}
+
+}
+
+
+
+
+
+
+
+function AgregaSaldo(Indice) {	
+
+	var indiceSaldo = new Array();
+
+	var ValoresSaldo = new Array();
+
+	
+
+		if( isNaN( parseInt( Indice ) ) )
+
+	         return "No Disponible";  
+
+	    else {
+
+			
+
+			for(k=0; k<=indiceSaldo.length; k++){
+
+		          if(Indice==indiceSaldo[k]){
+
+			       return ValoresSaldo[k];
+
+				  }
+
+			}
+
+			return ' No Disponible';
+
+		}
+
+}
+
+
+
+	
+
+
+
+	
+
+	
+
+	
+
+function ChecaAliasVacio( NombreCorto, Alias ) {
+
+	var ValorAlias=Alias.replace(/^\s*|\s*$/g,"");
+
+      if( ValorAlias!="" ){
+
+	    return Alias;
+
+	  }else{
+
+       return NombreCorto;
+
+       }
+
+	}
+
+	
+
+
+
+function ArmaCtaDestino(Ctacorta,NombreCta,Alias,Mon){
+
+	
+
+	if(NombreCta && Alias ){
+
+	var Nombre=ChecaAliasVacio(NombreCta,Alias);	
+
+	}else{
+
+	Nombre='';	
+
+	}
+
+	
+
+	if(Ctacorta){
+
+	var Ctacorta1=Ctacorta.replace(/^\s*|\s*$/g,"");	
+
+	}else{
+
+	Ctacorta1='';	
+
+		
+
+	}
+
+	
+
+	if(Nombre=="" && Ctacorta1==""){
+
+		return '';
+
+	}else{
+
+		var CtaDestino= Nombre + ' - **'+Ctacorta1;
+
+		return CtaDestino;
+
+	}
+
+	
+
+}
+
+
+
+
+
+
+
+		
+
+var  msg1="Debe seleccionar una operaci\u00F3n";
+
+var  msg2 = "Solo se permiten datos numericos en este campo.";
+
+var  msg3 = "Digite un valor en el campo Importe";
+
+var  msg4 = "Existen caracteres invalidos en este campo";
+
+var  msg5 = "Es necesario seleccionar la cuenta Retiro. Favor de verificar.";
+
+var  msg6 = "Â¿Esta seguro que desea dar de baja su operaci\u00F3n frecuente?";
+
+
+
+
+
+
+
+
+
+
+
+function showError( idElem, msgErr ) {
+
+  hasError = true;
+
+  
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display rojo">' + msgErr + '</div><div class="saldos_bloque2_f4_error_display1"></br></br></div>');
+
+  $('#'+idElem+'').after( $divErr );
+
+}
+
+
+
+
+
+
+
+function hideErrors() {
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display').remove();
+
+   $('div.saldos_bloque2_f4_error_display1').remove();
+
+}
+
+
+
+
+
+var hasError = false;
+
+
+
+
+
+function validacionOperacionesFrecuentes(id,tipo,indice) {
+
+	 hideErrors();
+
+	 
+
+	
+
+	 
+
+	 if( comboVacio( "cboCtsOF"+id ))
+
+    showError( "cboCtsOF"+id , msg1 );
+
+
+
+	
+
+	if( campoVacio( "txtImpOF"+id  ))
+
+	{
+
+    showError( "txtImpOF"+id , msg3 );
+
+	}
+
+	else if( !importeValido( "txtImpOF"+id  ))
+
+	{
+
+	showError( "txtImpOF"+id, msg2 );
+
+	}
+
+	 
+
+	 
+
+	 
+
+if( !hasError ){
+
+	  var ValorCombo=$("#" + "cboCtsOF"+id + " option:selected").val();
+
+	  var ValorImporte=$("#" + "txtImpOF"+id + "" ).val();
+
+	  var SaldoOrigen=$("#" + "cboCtsOF"+id+ " option:selected").text();
+
+	  var arregloSaldoOrigen=SaldoOrigen.split('$');
+
+	  var SaldoCtaOrigen=arregloSaldoOrigen[1];	
+
+			
+
+	  SaldoCtaDestino=AgregaSaldo(indice);
+
+	  document.forms[0].DATA1.value= id;
+
+	  document.forms[0].DATA2.value= ValorCombo;
+
+	  document.forms[0].DATA3.value= ValorImporte;
+
+	  document.forms[0].DATA4.value= SaldoCtaOrigen;
+
+	  document.forms[0].DATA5.value= SaldoCtaDestino;
+
+  
+
+	  if(tipo==2 ||tipo==4){
+
+		  top.SaltoTransaccion(1,1,0,'');
+
+	   }else if(tipo==3 || tipo==5 ||tipo==9 || tipo==10 || tipo==18){
+
+		 top.SaltoTransaccion(1,1,1,'');
+
+	  }else if(tipo==6){
+
+		   top.SaltoTransaccion(1,2,0,'');
+
+	  }else if(tipo==11){
+
+		  if(language=="eng"){   
+
+	 		top.SaltoTransaccion(1,2,2,'');
+
+		 }else{
+
+			top.SaltoTransaccion(1,2,3,''); 
+
+	 	 }
+
+		   
+
+	  }else{
+
+		  
+
+	  }
+
+	  DoSubmit( 'OK' );
+
+  } 
+
+}
+
+
+
+function EventosDomiciliacion(data1,data2,data3,data4){
+
+	document.forms[0].DATA1.value= data1;
+
+	document.forms[0].DATA2.value= data2;
+
+	document.forms[0].DATA3.value= data3;
+
+	document.forms[0].DATA4.value= data4;
+
+	if(language=="eng"){   
+
+		top.SaltoTransaccion(1,2,3,'');
+
+	}else{
+
+		top.SaltoTransaccion(1,2,4,''); 
+
+	}
+
+	parent.cargaDocN("Consulta de operaciones/historial.htm");
+
+	
+
+}
+
+ 
+
+ 
+
+function BajasFrecuentes(id) {
+
+	  document.forms[0].DATA1.value= id;	   	  
+
+	   DoSubmit( DATA2 );
+
+}
+
+function AltaDomiciliacion() {
+
+	top.SaltoTransaccion(1,2,4,'Domiciliacion_Consulta_Baja_Instrucciones/domiciliar_Pago.html');
+
+	}
+
+function verHistorial(){
+
+		 top.SaltoTransaccion(1,2,4,'Resumen_Transferencias_y_Pagos/ver_Historial.html');
+
+}
+
+function modificarDomiciliacion(){
+
+		top.SaltoTransaccion(1,2,4,'Resumen_Transferencias_y_Pagos/modificar.html');
+
+}
+
+function bajaDomiciliacion(){
+
+	top.SaltoTransaccion(1,2,4,'Resumen_Transferencias_y_Pagos/dar_de_Baja.html');
+
+}
+
+ 
+
+ var es=new Array('Summary','Frequent transactions','Transaction type','Withdrawal Account','Deposit Account','Amount','Transaction type ','Withdrawal Account','Deposit Account','Amount','Payment by direct bill','Register a new direct bill payment service','Withdrawal Account','Service','Payment up to','Registration date ','Schedule','Transfers and payments','Service','Day','Schedule','Transfers to:','Own Banamex  accounts ','Monday to Sunday','Different currency own Banamex  accounts','Monday to Friday','From 9:00 to 13:30 hrs','Different Banamex accounts','Monday to Sunday','Different currency other accounts','Monday to Friday','From 9:00 to 13:30 hrs','CLABE (standardized bank code) other accounts','Same day','Monday to Friday','From 6:00 to 17:30 hrs','Next day','Monday to Friday','From 8:30 to 18:30 hrs','Debit card other accounts','Same day','Monday to Friday','From 6:00 to 17:30 hrs','Next day','Monday to Friday','From 8:30 to 18:30 hrs','Other accounts payment referenced orders', 'Monday to Friday', 'From 9:00 to 15:00 hrs', 'Payments to:', 'Banamex credit card USA y AMEX DLLS', 'Monday to Friday', 'From 9:00 to 20:00 hrs', 'Other banks credit cards', 'Monday to Sunday', 'From 6:00 to 20:00 hrs', 'Department store cards', 'Monday to Sunday', 'From 6:00 to 20:00 hrs', 'Services lines A ,B', 'Monday to Friday', 'From 6:00 to 20:00 hrs', 'GDF treasury', 'Monday to Friday', 'From 6:00 to 20:00 hrs', 'Loans', 'Monday to Friday', 'From 9:00 to 20:00 hrs', 'Direct billing', 'Monday to Friday', 'From 8:00 to 20:00 hrs', 'Payable federal tax receipts', 'Monday to Sunday', '24 hrs', 'Tax payment with reference number receipts', 'Monday to Sunday', '24 hrs', 'GDF receipts', 'Monday to Friday', 'From 9:00 to 20:00 hrs',' ',' ',' ',' ',' ',' ','Note: ','Remember that you can schedule future payments 24 hours a day.','What do you want to do?','See Electronic Banking Transactions','FREQUENT OPERATIONS')
+
+ 
+
+		$(document).ready(
+
+		
+
+	function(){
+
+		
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+});
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+		
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+		var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+			var mesesFecha_BB;
+
+
+
+
+
+$(document).ready
+
+
+
+(
+
+		function ()
+
+	{
+
+	    if(language=="eng")
+
+		{
+
+			mesesFecha_BB = ['Jan','Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+			$('#pago').hide();
+
+			$('#comprobante').hide();
+
+	    }
+
+  else{
+
+	 mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+	 }
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+					catch(e)
+
+					{
+
+					}
+
+			}
+
+		)	
+
+	}
+
+)
+
+
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+	
+
+	
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+				var hora = fecha.substring(10);
+
+				var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+				return fechaformateada + hora;
+
+}
+
+
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+			fecha = fecha.replace(/\-/gi," ");
+
+			var conversion = (fecha.substring(4,6)).toLowerCase();
+
+			var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+			return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[fecha8]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+			
+
+		if(splitFecha[0].length==1)
+
+		{
+
+			splitFecha[0]="0"+splitFecha[0];
+
+		}
+
+								
+
+		if(language=="esp")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+function formato_dddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[Fecha]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+								
+
+		if(language=="esp")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+	
+
+	
+
+function formato_ddmmaaaaEBSJS(fecha)
+
+{
+
+	var indice;
+
+	var fechaAux;
+
+	var IdiomaAux="SPANISH";
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+	
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+	
+
+	if(indice!=-1)
+
+	{
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if(IdiomaAux=="SPANISH")
+
+		{
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+				
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+			else
+
+			{
+
+				mesFecha=fechaAux.substring(0,2);
+
+					if(mesFecha=="01")
+
+						{mesFecha1="Jan";}
+
+					if(mesFecha=="02")
+
+						{mesFecha1="Feb";}
+
+					if(mesFecha=="03")
+
+						{mesFecha1="Mar";}
+
+					if(mesFecha=="04")
+
+						{mesFecha1="Apr";}
+
+					if(mesFecha=="05")
+
+						{mesFecha1="May";}
+
+					if(mesFecha=="06")
+
+						{mesFecha1="Jun";}
+
+					if(mesFecha=="07")
+
+						{mesFecha1="Jul";}
+
+					if(mesFecha=="08")
+
+						{mesFecha1="Aug";}
+
+					if(mesFecha=="09")
+
+						{mesFecha1="Sep";}
+
+					if(mesFecha=="10")
+
+						{mesFecha1="Oct";}
+
+					if(mesFecha=="11")
+
+						{mesFecha1="Nov";}
+
+					if(mesFecha=="12")
+
+						{mesFecha1="Dec";}
+
+					
+
+				fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+				fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+			}
+
+		
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+
+
+function formateaFechaBB(formato, fecha)
+
+{	
+
+	fechaFormateada="";
+
+	
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+		
+
+	if(fecha != '' &&  fecha != '&nbsp;'){
+
+		
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if(language=="eng")
+
+							fechaFormateada = fecha.substring(3,5) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+
+
+
+
+		</script>  	
+
+ <div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Causa:&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+ 
+
+    
+
+        <script type="text/javascript">
+
+			function despliega_menu(img_Flecha,ContenidoHorario)
+
+			{
+
+				$("#"+img_Flecha).fadeOut('fast',function(){
+
+					$("#"+img_Flecha).toggleClass("saldos_bloque2_f1_btnH").toggleClass("saldos_bloque2_f1_btn");
+
+					$("#"+img_Flecha).fadeIn('fast');
+
+					if($("#"+ContenidoHorario).css("display")=="none")
+
+					{
+
+						$("#"+ContenidoHorario).slideDown();
+
+						setTimeout( function(){window.parent.ajustarIframe()}, 600);
+
+	
+
+					}
+
+						
+
+						else
+
+						{
+
+							$("#"+ContenidoHorario).slideUp();
+
+							setTimeout( function(){window.parent.ajustarIframe()}, 600);
+
+	
+
+						}	
+
+					parent.Expandir();
+
+					});
+
+			}
+
+			
+
+			function div_depliegaHr()	{
+
+			despliega_menu('saldosbtn20','saldosConte20');
+
+			window.parent.ajustarP();
+
+			}
+
+				
+
+			$(document).ready(function(){
+
+			     //top.soloConteIfr();
+
+                       window.parent.ajustarP();
+
+					if(""=="E"){
+
+			$("#mensajeError_contenido_div", window.parent.document).html($("#idErr").html());	
+
+	       parent.$.modal({
+
+			opacity:60, 
+
+			overlayClose:false, 
+
+			flagDiv:true,
+
+			widthDivIfrm:600});
+
+		     }
+
+			
+
+			
+
+			
+
+						
+
+			AlternarColumnasExp();
+
+					  if('TRUE'=='TRUE'){	
+
+	                   
+
+					   		desplegable('btnPagosOF', 'ContePagosOF', 1);
+
+					  		desplegable('btnTransferenciasOF', 'ConteTransferenciasOF', 1);
+
+						    $('#OperacionesFrecuentes').hide();
+
+						   $('#DomiciliacionAlto').removeClass('saldos_bloque1b marginT19');
+
+                                                   $('#DomiciliacionAlto2').addClass('paddingB3 paddingT1 overflow');
+
+						
+
+
+
+                    }else{	
+
+				      CreaCombos();
+
+			          CreaCombosPagos();
+
+                    }  
+
+			       if('F'=='T'){
+
+				   $('#Domiciliacion').hide();
+
+                    }else{
+
+	             TipocuentaActivosOF();
+
+				    }
+
+			
+
+
+
+
+
+
+
+top.ajustar();
+
+					 
+
+			});
+
+			
+
+		</script> 
+
+        	      
+
+        <!-- bloque1 tabla » Operaciones programadas -->
+
+         <div id="t90" class="float-left fonttit">OPERACIONES FRECUENTES</div>
+
+ <div id="OperacionesFrecuentes"> 
+
+
+
+    <div class="paddingB5"> 
+
+       	<div class="panelIzEnca4 paddingB3 paddingT1 overflow">
+
+
+
+                <div class="activaflecha">
+
+                	<div class="flecha3"></div>
+
+                </div>
+
+<div class="panelIzEnca3_text"><span id="t0">Operaciones frecuentes</span></div>
+
+                
+
+            </div>
+
+        	
+
+     
+
+       </div> 
+
+        
+
+        <div class="saldos_bloque4 bordeInfContrae">
+
+        	<div class="saldos_bloque4_f1">
+
+                <div class="saldos_bloque4_f1_btn" id="btnTransferenciasOF" onClick="desplegable('btnTransferenciasOF', 'ConteTransferenciasOF', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+                <div id="NoTransferenciasOF" class="saldos_bloque4_f1_txt">Transferencias ()</div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="saldos_bloque5 expand" id="ConteTransferenciasOF">			
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            	<tr>
+
+                	<td>
+
+                    
+
+                    
+
+                    
+
+                    
+
+               <div class="saldos_bloque3 marginT0 borderBNone borderTNone overflow" id="ConteTransferenciasOFInterno" ><table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 TablaAlternar">
+
+        	  <tr>
+
+        	    <td class="borderRSolid ancho2p">&nbsp;</td>
+
+        	    <td class="borderRSolid ancho20p"><span id="t2">Tipo de operaci&oacute;n</span></td>
+
+        	    <td class="borderRSolid ancho40p"><span id="t3">Cuenta retiro</span></td>
+
+        	    <td class="borderRSolid anchop15p"><span id="t4">Cuenta dep&oacute;sito</span></td>
+
+        	    <td class="borderRSolid ancho16p"><span id="t5">Importe</span></td>
+
+        	    <td class="ancho8p">&nbsp;</td>
+
+      	    </tr>
+
+      	  </table></div>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+     
+
+        <!-- bloque2 tabla » Inversiones -->
+
+        <div class="saldos_bloque4 esquiInfContrae">
+
+			<div class="saldos_bloque4b">
+
+
+
+                <div class="saldos_bloque4_f1">
+
+                    <div class="saldos_bloque4_f1_btn" id="btnPagosOF" onClick="desplegable('btnPagosOF', 'ContePagosOF', 1);">
+
+                    	<div class="cortinabtnSaldos bge2f2fe"></div>
+
+                    </div>
+
+                    <div id="NoPagosOF"class="saldos_bloque4_f1_txt">Pagos&nbsp;()</div>
+
+                </div>
+
+			</div>
+
+        </div>
+
+
+
+        <div class="saldos_bloque5 expand" id="ContePagosOF">			
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            	<tr>
+
+                	<td colspan="3">              	  	
+
+                        
+
+                     <div class="saldos_bloque3 marginT0 borderTNone overflow" id="ContePagosOFInterno">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 TablaAlternar">
+
+                         <tr>
+
+                                <td class="borderRSolid ancho2p">&nbsp;</td>
+
+                                <td class="borderRSolid ancho20p"><span id="t6">Tipo de operaci&oacute;n</span></td>
+
+
+
+                                <td class="borderRSolid ancho40p"><span id="t7">Cuenta retiro</span></td>
+
+                                <td class="borderRSolid anchop15p"><span id="t8">Cuenta dep&oacute;sito</span></td>
+
+                                <td class="borderRSolid ancho16p"><span id="t9">Importe</span></td>
+
+                                <td class="ancho8p">&nbsp;</td>	                        
+
+                            </tr>
+
+                        
+
+                          
+
+                        </table>
+
+                      	</div>
+
+
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+
+</div>
+
+        
+
+        <!-- bloque2 tabla » Domiciliación -->
+
+<div id="Domiciliacion"> 
+
+       <div id="DomiciliacionAlto" class="saldos_bloque1b marginT19">
+
+        	<div id="DomiciliacionAlto2" class="panelIzEnca4">
+
+                <div class="activaflecha"><div class="flecha3"></div></div>
+
+
+
+                <div class="panelIzEnca3_text"><span id="t10">Domiciliaci&oacute;n</span></div>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="saldos_bloque4 ">
+
+			<div class="saldos_bloque4b">
+
+                <div class="saldos_bloque4_f1">
+
+                    <div class="saldos_bloque4_f1_btn" id="btnDomiliacion" onClick="desplegable('btnDomiliacion', 'ConteDomiliacion', 1);"><div class="cortinabtnSaldos  bge2f2fe"></div></div>
+
+                    <div  id="NoDomiciliacion" class="saldos_bloque4_f1_txt">Servicios&nbsp;activos&nbsp;()</div>
+
+
+
+                </div>                
+
+                <div class="floatR">	
+
+                <div class="saldos_bloque4_f2_2">&raquo;&nbsp;<a href="javascript:parent.cambiaP3_s5_2()" class="fuente11" id="t11">Dar de alta una domiciliaci&oacute;n</a></div> 
+
+                </div>                
+
+            </div>
+
+        </div>
+
+        
+
+        
+
+        <div class="saldos_bloque5 expand" id="ConteDomiliacion">		
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            	<tr>
+
+                	<td colspan="3">
+
+
+
+                   	 	<div class="saldos_bloque3 marginT0 borderTNone overflow">
+
+                   	   <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 TablaAlternar">
+
+                          <tr>
+
+                            <td class="borderRSolid ancho2p">&nbsp;</td>
+
+                            <td class="borderRSolid ancho25p"><span id="t12">Cuenta retiro</span></td>
+
+                            <td class="borderRSolid"><span id="t13">Servicio</span></td>
+
+                            <td class="borderRSolid"><span id="t14">Pago a</span></td>
+
+
+
+                            <td class="borderRSolid  ancho20p"><span id="t15">Fecha de alta</span></td>
+
+                            <td class="ancho8p">&nbsp;</td>
+
+                          </tr>
+
+                   	                         	      
+
+                   	      <tr class="trExpan">
+
+                        <td class="borderRSolid" align="center"><div class="saldos_btn6" id="btnDomiciliacion1" onClick="desplegable('btnDomiciliacion1', 'ConteDomiciliacion1', 2);">
+
+                          <div class="saldos_btnCortina2"></div>
+
+                        </div></td>
+
+                   	        <td class="borderRSolid">Cheques Dolares - **155</td>
+
+
+
+                   	        <td class="borderRSolid">TELMEX</td>
+
+                   	        <td class="borderRSolid">5548291004</td>
+
+                   	        <td class="borderRSolid ancho20p" name="FECHA_BNP_ddmmaaaa">15/03/2001</td>
+
+                   	        <td class="ancho8p"><a  class="Historial" href="javascript:parent.cambiaH()">Ver historial</a></td>
+
+                   	        <!--<td class="ancho8p"><a  class="Historial" href="javascript:EventosDomiciliacion('1','TELMEX','5548291004','Historial')">Ver historial</a></td>-->
+
+               	          </tr>
+
+                      <tr id="ConteDomiciliacion1" class="expand displayN">
+
+                        <td colspan="5">
+
+
+
+                        <table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                            <tr>
+
+                              <td class="ancho50p" valign="top"><table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                  <tr>
+
+                                    <td class="borderBDotted ancho25p SaldoCR">Saldo de cuenta retiro (MXN)</td>
+
+                                    <td class="borderBDotted ancho25p"><div  class="SaldoDom"></div></td>
+
+                                    <td class="paddingL40"><a  class="ModificarD" href="javascript:modificarDomiciliacion()">&raquo; Modificar esta domiciliaci&oacute;n</a></td>
+
+
+
+                                  </tr>
+
+                                  <tr>
+
+                                    <td id="t94" class="borderBDotted TipoCuentaR">Tipo de cuenta retiro</td>
+
+                                    <td class="borderBDotted"><div class="TipoCuentaA"></div></td>
+
+                                    <td class="paddingL40"><a class="BajaD" onclick="bajaDomiciliacion();">&raquo; Dar de baja esta domiciliaci&oacute;n</a></td>
+
+                                  </tr>
+
+                                  <tr>
+
+
+
+                                    <td class="borderBDotted PagoA">Pago a</td>
+
+                                    <td class="borderBDotted">5548291004</td>
+
+                                    <td class="paddingL40">&nbsp;</td>
+
+                                  </tr>
+
+                                  <tr>
+
+                                    <td class="borderBDotted FechaMod">Fecha de &uacute;ltima modificaci&oacute;n</td>
+
+
+
+                                    <td class="borderBDotted" name="FECHA_BNP_ddmmaaaa">15/03/2001</td>
+
+                                    <td class="paddingL40">&nbsp;</td>
+
+                                  </tr>
+
+                              </table></td>
+
+                            </tr>
+
+                        </table></td>
+
+                      </tr>
+
+                   	       
+
+                 	       </table>
+
+
+
+                      	</div>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+</div>
+
+
+
+                <!-- bloque2 tabla » Horarios -->
+
+        <div class="saldos_bloque1b marginT19">
+
+        	<div class="panelIzEnca4">
+
+
+
+                <div class="activaflecha"><div class="flecha3"></div></div>
+
+                <div class="panelIzEnca3_text"><span id="t16">Horarios</span></div>
+
+            </div>
+
+        </div>        
+
+        <div class="saldos_bloque4 esquiInfContrae">
+
+			<div class="saldos_bloque4b">
+
+                <div class="saldos_bloque4_f1">
+
+                    <div class="saldos_bloque2_f1_btn" id="saldosbtn20" onClick="div_depliegaHr();"><div class="cortinabtnSaldos  bge2f2fe"></div></div>
+
+                    <div class="saldos_bloque4_f1_txt" id="t17">Transferencias&nbsp;y&nbsp;pagos</div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+							<div class="saldos_bloque3 marginT0 borderTNone overflow" id="saldosConte20">			
+
+								<table width="100%" border="1" cellpadding="0" cellspacing="0" class="tablaSaldos4">
+
+                                    <tr>
+
+                                        <td class="tablaSaldos2_celdaBtn1 ancho60p borderRSolid" align='center' ><span id="t18">Servicios</span></td>
+
+                                        <td align='center' class="borderRSolid"><span id="t19" style="width: 90px;">D&iacute;as</span></td>	                        
+
+										<td align='center'><span id="t20" >Horarios</span></td>	                        
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td class=" bgF1F2F2" colspan="3"><span id="t21">Transferencias a:</span></td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td class="borderRSolid" id="t22" >Cuentas propias Banamex Misma Moneda</td>
+
+										<td class="borderRSolid center" id="t23">Lunes a Domingo</td>
+
+                                        <td class=" center">24 hrs</td>
+
+
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td class="borderRSolid bgF1F2F2" id="t24" >Cuentas propias Banamex Diferente Moneda</td>
+
+										<td class="borderRSolid bgF1F2F2 center" id="t25">Lunes a Viernes</td>
+
+                                        <td class="bgF1F2F2 center" id="t26">de 9 : 00 a 13 : 30 hrs</td>
+
+                                    </tr>
+
+                                     <tr>
+
+
+
+                                        <td class="borderRSolid" id="t27">Otras cuentas Banamex</td>
+
+										<td class="borderRSolid center" id="t28">Lunes a Domingo</td>
+
+                                        <td class=" center">24 hrs</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td class="borderRSolid bgF1F2F2" id="t29">Otras cuentas Diferente Moneda</td>
+
+										<td class="borderRSolid bgF1F2F2 center" id="t30">Lunes a Viernes</td>
+
+
+
+                                        <td class="bgF1F2F2 center" id="t31">de 9 : 00 a 13 : 30 hrs</td>
+
+                                    </tr>
+
+                                      <tr>
+
+                                        <td class="borderRSolid"><span class="f11 normal color666" id="t32" >Otras cuentas CLABE</span>&nbsp;<span class="f11 normal color666 ancho10p" id="t33" >Mismo D&iacute;a</span></td>
+
+										<td class="borderRSolid center" id="t34">Lunes a Viernes</td>
+
+                                        <td class=" center" id="t35">de 8 : 00 a 17 : 30 hrs</td>
+
+
+
+                                    </tr>
+
+                                     <tr>
+
+										<td class="borderRSolid bgF1F2F2"><span class="f11 normal color666" id="t32">Otras cuentas CLABE</span>&nbsp;<span class="f11 normal color666" id="t36">D&iacute;a siguiente</span></td>
+
+										<td class="borderRSolid center bgF1F2F2" id="t37">Lunes a Viernes</td>
+
+                                        <td class=" center bgF1F2F2" id="t38">de 8 : 00 a 18 : 30 hrs</td>
+
+                                    </tr>
+
+
+
+                                      <tr>
+
+                                        <td class="borderRSolid "><span class="f11 normal color666"id="t39">Otras cuentas Tarjeta D&eacute;bito</span>&nbsp;<span  class="f11 normal color666" id="t40">Mismo D&iacute;a</span></td>
+
+										<td class="borderRSolid center" id="t41">Lunes a Viernes</td>
+
+                                        <td class="center" id="t42">de 8 : 00 a 17 : 30 hrs</td>
+
+                                    </tr>
+
+                                      <tr>
+
+
+
+									  <td class="borderRSolid bgF1F2F2"><span class="f11 normal color666" id="t39">Otras cuentas Tarjeta D&eacute;bito</span>&nbsp;<span class="f11 normal color666" id="t43">D&iacute;a siguiente</span></td>
+
+										<td class="borderRSolid bgF1F2F2 center" id="t44">Lunes a Viernes</td>
+
+                                        <td class="bgF1F2F2 center" id="t45">de 8 : 00 a 18 : 30 hrs</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td class="borderRSolid" id="t46">Otras cuentas &Oacute;rdenes de pago</td>
+
+
+
+										<td class="borderRSolid center" id="t47">Lunes a Viernes</td>
+
+                                        <td class="center" id="t48">de 9 : 00 a 15 : 00 hrs</td>
+
+                                    </tr>
+
+                                    <tr>
+
+									    <td class="bgF1F2F2" colspan="3"><span id="t49">Pagos a:</span></td>
+
+                                    </tr>
+
+                                     <tr>
+
+
+
+                                        <td class="borderRSolid" id="t50">Tarjetas de cr&eacute;dito Banamex USA y AMEX DLLS</td>
+
+                                        <td class="borderRSolid center" id="t51">Lunes a Viernes</td>
+
+                                        <td class=" center" id="t52">de 9 : 00 a 20 : 00 hrs</td>
+
+                                    </tr>
+
+                                     <tr>
+
+                                        <td class="borderRSolid bgF1F2F2" id="t53">Tarjetas de cr&eacute;dito Otros Bancos</td>
+
+
+
+                                        <td class="borderRSolid bgF1F2F2 center" id="t54">Lunes a Domingo</td>
+
+                                        <td class="bgF1F2F2 center" id="t55">de 6 : 00 a 20 : 00 hrs</td>
+
+                                    </tr>
+
+                                       <tr>
+
+                                        <td class="borderRSolid" id="t56">Tarjetas de tiendas Departamentales</td>
+
+                                        <td class="borderRSolid center" id="t57">Lunes a Domingo</td>
+
+                                        <td class=" center" id="t58">de 6 : 00 a 20 : 00 hrs</td>
+
+
+
+                                    </tr>
+
+                                                                  
+
+                                    <tr>
+
+                                        <td class="borderRSolid bgF1F2F2" id="t59">Servicios L&iacute;nea A y B</td>
+
+                                        <td class="borderRSolid bgF1F2F2 center" id="t60">Lunes a Viernes</td>
+
+                                        <td class="bgF1F2F2 center" id="t61">de 6 : 00 a  20 : 00 hrs</td>
+
+                                    </tr>
+
+                                    <tr>
+
+
+
+                                        <td class="borderRSolid" id="t62">Servicios GDF</td>
+
+                                        <td class="borderRSolid center" id="t63">Lunes a Viernes</td>
+
+                                        <td class=" center" id="t64">de 9 : 00 a 20 : 00 hrs</td>
+
+                                    </tr>
+
+                                      <tr>
+
+                                        <td class="borderRSolid bgF1F2F2" id="t65">Impuestos Federales Por Concepto</td>
+
+                                        <td class="borderRSolid bgF1F2F2 center" id="t66">Lunes a Domingo</td>
+
+                                        <td class="bgF1F2F2 center" id='t67'>de 00 : 00 a 23 : 45 hrs</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td class="borderRSolid" id="t68">Impuesto Pago Referenciado</td>
+
+                                        <td class="borderRSolid center" id="t69">Lunes a Domingo</td>
+
+                                        <td class=" center" id="t70">de 00 : 00 a 22 : 00 hrs</td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+
+                                        <td class="borderRSolid  bgF1F2F2" id="t71">Cr&eacute;ditos</td>
+
+                                        <td class="borderRSolid bgF1F2F2 center" id="t72">Lunes a Viernes</td>
+
+                                        <td class="bgF1F2F2 center" id="t73">de 9 : 00 a 20 : 00 hrs</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td class="borderRSolid" id="t74">Domiciliaci&oacute;n</td>
+
+
+
+                                        <td class="borderRSolid center" id="t75">Lunes a Viernes</td>
+
+                                        <td class=" center" id="t76">de 8 : 00 a 20 : 00 hrs</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td class="borderRSolid  bgF1F2F2" id="t77" >Comprobantes Impuestos Federales por Concepto</td>
+
+                                        <td class="borderRSolid bgF1F2F2 center" id="t78">Lunes a Domingo</td>
+
+                                        <td class="bgF1F2F2 center" id='t79'>24 hrs</td>
+
+
+
+                                    </tr>
+
+                                    <tr id="pago">
+
+                                        <td class="borderRSolid" id="t80">Comprobantes Pago Referenciado</td>
+
+                                        <td class="borderRSolid center" id="t81">Lunes a Domingo</td>
+
+                                        <td class=" center" id="t82">de 9 : 00 a 20 : 00 hrs</td>
+
+                                    </tr>
+
+									<tr id="comprobante">
+
+                                        <td class="borderRSolid  bgF1F2F2" id="t83">Comprobantes GDF</td>
+
+                                        <td class="borderRSolid bgF1F2F2 center" id="t84">Lunes a Viernes</td>
+
+                                        <td class="bgF1F2F2 center" id="t85">de 9 : 00 a 20 : 00 hrs</td>
+
+                                    </tr>
+
+                                </table>
+
+								
+
+							</div>
+
+                        	<div class="bgF1F2F2 borderTDotted f11 paddingB5 paddingT5 center">
+
+
+
+                            	<span class="f11 negrita" id="t86">Nota:</span><label Class="f11" id="t87"> Recuerda que puedes programar a fecha futura cualquier pago las 24 horas del d&iacute;a.</label>
+
+                            </div>                             
+
+                      	</div>
+
+                        
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        
+
+        <div class="marginT40 bloqueQueHacer">
+
+
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaQueHacer">
+
+            	<tr>
+
+                	<td class=" ancho25p"><p id="t88">&iquest;Qu&eacute; deseas hacer?</p></td>
+
+                    <td><div class="fuente11"><span>&raquo;&nbsp;</span><a class="fuente11" href="javascript:void(0)"; onclick="parent.banca()" id="t89">Ver historial de Banca Electr&oacute;nica</a></div></td>
+
+                    <td>&nbsp;</td>
+
+                    <td>&nbsp;</td>
+
+
+
+                </tr>
+
+            </table>        	
+
+        </div>
+
+        
+
+      
+
+        <INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+            <input type="hidden" name="DATA1"> 
+
+            <input type="hidden" name="DATA2"> 
+
+            <input type="hidden" name="DATA3">
+
+            <input type="hidden" name="DATA4">
+
+            <input type="hidden" name="DATA5">
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Resumen Transferencias y Pagos|ResumenTrsyPgs.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

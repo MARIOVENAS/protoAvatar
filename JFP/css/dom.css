@@ -1,0 +1,212 @@
+BODY
+
+{
+
+    BACKGROUND: #ffffff;
+
+    COLOR: #000000;
+
+    FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+
+    FONT-WEIGHT: normal
+
+}
+
+TD
+
+{
+
+    COLOR: #000000;
+
+    FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+
+    FONT-SIZE: 7.5pt;
+
+    FONT-WEIGHT: normal
+
+}
+
+B
+
+{
+
+    FONT-WEIGHT: bold
+
+}
+
+BIG
+
+{
+
+    FONT-SIZE: 10pt
+
+}
+
+SMALL
+
+{
+
+    FONT-SIZE: 7.5pt
+
+}
+
+PRE
+
+{
+
+		FONT-SIZE: 10pt;
+
+		FONT-FAMILY: courier new, courier;
+
+}
+
+.smallText
+
+{
+
+    COLOR: #000000;
+
+    FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+
+    FONT-SIZE: 7.5pt;
+
+    FONT-WEIGHT: normal
+
+}
+
+.pageHeader
+
+{
+
+    COLOR: #cc0000;
+
+    FONT-FAMILY: Arial, sans-serif;
+
+    FONT-SIZE: 13.5pt;
+
+    FONT-WEIGHT: bold
+
+}
+
+.pageSubheader
+
+{
+
+    COLOR: #cc0000;
+
+    FONT-FAMILY: Arial, sans-serif;
+
+    FONT-SIZE: 12pt;
+
+    FONT-WEIGHT: bold
+
+}
+
+.worksheetHeader
+
+{
+
+    COLOR: #cc0000;
+
+    FONT-FAMILY: Arial, sans-serif;
+
+    FONT-SIZE: 12pt;
+
+    FONT-WEIGHT: bold
+
+}
+
+.facilityHeader
+
+{
+
+    COLOR: #cc0000;
+
+    FONT-FAMILY: verdana, arial, sans-serif;
+
+    FONT-SIZE: 7.5pt;
+
+    FONT-WEIGHT: bold;
+
+}
+
+.moduleHeader
+
+{
+
+    COLOR: #003399;
+
+    FONT-FAMILY: verdana, arial, sans-serif;
+
+    FONT-SIZE: 10pt;
+
+    FONT-WEIGHT: bold;
+
+}
+
+.toiHeader
+
+{
+
+    COLOR: #cc0000;
+
+    FONT-FAMILY: verdana, arial, sans-serif;
+
+    FONT-SIZE: 10pt;
+
+    FONT-WEIGHT: bold
+
+}
+
+.footerName
+
+{
+
+    COLOR: #cc0000;
+
+    FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+
+    FONT-SIZE: 7.5pt;
+
+    FONT-WEIGHT: bold
+
+}
+
+.footer
+
+{
+
+    FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+
+    FONT-SIZE: 7.5pt
+
+}
+
+.sm
+
+{
+
+    FONT-FAMILY: Verdana, Arial, helvetica, san-serif;
+
+    FONT-SIZE: 6pt;
+
+    FONT-WEIGHT: normal
+
+}
+
+.tiny
+
+{
+
+    FONT-FAMILY: Verdana, Arial, helvetica, san-serif;
+
+    FONT-SIZE: 6.5pt;
+
+    FONT-WEIGHT: normal
+
+}
+
+.utilOff { color: #003399; text-decoration: none; }
+
+.utilOn{ color: #cc0000; text-decoration: none; }
+

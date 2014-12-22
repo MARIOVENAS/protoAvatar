@@ -1,0 +1,727 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>Banamex</title>
+		
+<link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css"/>      
+<link rel="stylesheet" type="text/css" href="../../JFP/css/widgets/jquery.qtipW3.css"/>
+<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css"/>
+<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css"/>
+<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+
+<!-- <script type="text/javascript" src="../JFP/js/jquery/jquery-1.6.4.min.js"></script>-->
+<script type="text/javascript" src="../../JFP/js/jquery/jquery-1.5.1.js"></script>
+<script src="../../JFP/js/widgets/jquery.cookie.js" type="text/javascript"></script>
+<script type="text/javascript"  src="../../JFP/js/jquery/plugins/left_menu_multilevel.js"></script>
+<script type="text/javascript" src="../../JFP/js/script.js"></script>
+<script type="text/javascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+
+<!--<script type="text/javascript" src="../bancanet_demo/contenidos/bbAvatar/js/mando.js"></script>-->
+<script type="text/javascript" src="bbAvatar/js/swap.js"></script>
+<script type="text/javascript" src="bbAvatar/js/menuSpanish.js"></script>
+</head>
+<body>
+	<!--inicia contenedor principal-->
+	<div id="wrap" class="cS-structMainContainer">
+    	<!--inicia header-->
+		<div id="header">
+			<div class="utilities_nav" id="navegacionPrincipal"></div>
+
+			<div class="citibank-containerImg">
+			    <a href="#"><div id="citibank-logo"></div></a>
+			    <div id="citibank-image"></div>
+			</div>
+
+			<div class="main_nav" id="menuw"></div>
+
+			<div id="user-info">
+			    <div class="userInfo-content" id="msj_bienvenido"></div>
+			</div>
+  		</div><!--termina header-->
+
+  		<div class="cS-structBodyContainer"> 				
+			<div id="title-section" class="cH-appPageHead height20">
+				<div class="float-left"><h1>SERVICIOS</h1></div>
+        
+		        <div id="ayuda" class="displayNone">            
+					<div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="liga"><a href="javascript:void(0);" onclick="Layuda1()" class="float-left">&nbsp;Ayuda</a></div>
+					</div>
+		        </div>
+     			<div id="guardar" class="displayNone">
+					<div class="margin-top6 titulo" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a id="t54" href="javascript:void(0);" onclick="" class="float-left">&nbsp;Guardar</a>
+					</div>
+				</div>
+				<div id="imp" class="displayNone">
+					<div class="margin-top6 titulo" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+					</div>
+				</div>
+			</div>
+            
+            <div id="imp2" class="displayNone">
+					<div class="margin-top6 titulo margin-right15" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a id="t25" href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+					</div>
+				</div>
+            <div class="bg_demo">
+		    <div id="content">		
+            
+		        <!-- The left menu divs are inserted by javascript if it is necessary -->
+				<div id="left-menu" class="float-left margin-top25"></div>
+		        <div id="shadow" class="width14">&nbsp;</div>
+			  	<!-- Cuando no lleva menu izquierdo  <div id="subapp-box" class="noleftmenu float-left margin-top1"> -->
+              	<div id="subapp-box" class="float-left">
+                	<iframe id="iframeConte" name="main" class="ifrContenedor ancho765 altoAuto" scrolling="no" frameborder="0" src="transacciones/EDeliveryEdoCta/notificaciones_banamex.html"></iframe>
+                </div>
+			</div>
+			<div class="clear"></div>
+            </div>
+			<div id="footer"></div>				
+		</div>
+
+  
+  </div>
+
+  	<script type="text/javascript">
+	
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+		
+		es.push('SERVICES','&nbsp;Help','&nbsp;Print','BANAMEX NOTIFICATIONS<span class="dcjq-icon">','Sign up and modify alerts','Electronic statements','MY BANAMEX ACCOUNTS <span class="dcjq-icon"></span>','Personalize my accounts','My Banamex Cards<span class="dcjq-icon"></span>','Change PIN on credit or debit cards','Report lost or stolen cards','Activate or locate cards','Request supplementary cards','Modify spending limit','Enroll to Banamex Premia','Enroll to Libra Plus','My Checkbooks<span class="dcjq-icon"></span>','Request Checkbooks','View previous <br/> requests status','Modify last checkbook request','Cancel last checkbook request','View and modify <br/> check status','Sign up to <br/> Chequera Protegida','ONLINE ENROLLMENT <span class="dcjq-icon"></span>','Enroll to Banamex Movil');
+		
+		/*Comienza en t48*/		
+		es.push(
+		'AUTHENTICATION',//t48
+		'For your security, this operation needs to be authenticated with your NetKey.',//t49
+		'Enter the code in your device and press "ENT". A dynamic code will be generated, which you must enter in the textbox. Click on "CONTINUE".',//t50
+		'Dynamic code:',//t51
+		'Cancel',//t52
+		'CONTINUE',//t53
+		'Save',//t54
+		'CONTINUE',//t55
+		'Locate cards',//t56
+		'Incorporate to Banamex Premia',//t57 (Texto Menu)
+		'ACCOUNTS MULTIPLE SELECTION',//t58 (Modal)
+		'CONTACT US',//t59
+		'CALL US',//t60
+		'MESSAGES'//t61
+		);
+	
+        $(document).ready(function(){
+			transl();
+			ajustarOverlay();
+			ajusta_tooltpis();
+			funciones_loginML6();
+			account_summary();
+			setTimeout(function(){$('#Servicios').addClass('active');},800);
+			setTimeout(function(){Servicios_cuentas3();},900);
+			
+			
+        });
+		
+		function cambiaP1_s1(){
+			tamano1()
+			ayuda()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('EDeliveryEdoCta/notificaciones_banamex.html');
+			setTimeout('liga1();', 880);
+		}
+		function cambiaP1_s3(){
+			tamano1()
+			ayuda()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('EDeliveryEdoCta2/notificaciones_banamex.html');
+			setTimeout('liga1();', 880);
+		}
+		function cambiaP1_s2(){
+			tamano1()
+			ayuda()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('ZADT/adm_de_tarjetas.html')
+			setTimeout('liga3();', 880);
+		}
+		function cambiaP2_s1(){
+			tamano1()
+			ayuda()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Ocultar Mostrar Cuentas/cuentas_propias.html');
+			setTimeout('liga2();', 880);
+		}
+		function cambiaP2_s2(){
+			tamano1()
+			ayuda()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('ZADT/adm_de_tarjetas.html')
+			setTimeout('liga3();', 880);
+		}
+		function cambiaP3_s1(){
+			$('#t47').click();
+			tamano4()
+			ayuda()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Actualiza_Datos_Cliente/Mis_Productos.html')
+			setTimeout('liga1();', 880);
+		}	
+		function nCons(){alert('En construcción') ;}
+		function principio(){
+			tamano1()
+			ayuda()
+			$('#iframeConte').removeClass('heightcons')
+			window.location="../../48-dashboard-extended.html"
+		}
+		function cheq(){
+			tamano2();
+			hideyuda();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('chequera_protegida/Chequera_protegida.html');
+		}	 
+		function cheq2(){
+			tamano2()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('chequera_protegida/Chequera_protegida_clausula_error.html');
+		}
+		function cheq3(){
+			tamano2()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('chequera_protegida/Chequera_protegida_aplicada.html');
+		}	
+		function cancheq1(){
+			hideAyuda();
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Cancelar_chequera/screen1.html');
+		}		
+
+		function cancheq2(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Cancelar_chequera/screen2.html');
+		}	
+		function cancheq3(){
+			tamano2()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Cancelar_chequera/screen3.html');
+		}		
+		function cancheq4(){
+			tamano2()
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Cancelar_chequera/screen4.html');
+		}		
+		function inscribir(){
+			tamano2()
+			ayuda()
+			$('#iframeConte').removeClass('heightcons')
+			$('#miscuentas').trigger('click');
+			$('#mischequeras').trigger('click');
+			setTimeout(function(){$('ul#accordion-1 li:eq(8) a:eq(0)').removeClass('active');},800);
+			setTimeout(function(){$('#inscripcion').trigger('click');},900);
+		}		
+
+		function ligaNotificaciones(){ayuda();setTimeout(function(){liga1();},800);}
+
+		function Layuda(){
+			window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+		}
+		
+		function Layuda1(){
+window.open('https://bancanet.banamex.com/ayudas/es/servicios/Notificaciones-Banamex.htm','','height='+(screen.height-70)+',width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+function Layuda2(){
+window.open('https://bancanet.banamex.com/ayudas/es/servicios/CuentasPropiasBanamex-Cuentas.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+function Layuda3(){
+window.open('https://bancanet.banamex.com/ayudas/es/servicios/CuentasPropiasBanamex-Tarjetas.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+function Layuda4(){
+window.open('https://bancanet.banamex.com/ayudas/es/servicios/CuentasPropiasBanamex-Chequeras.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+
+		function Limprimir(){
+			window.print();
+		}
+		function mhasM(){
+			document.getElementById("iframeConte").contentWindow.mhasM2();
+		}
+		function Solcheqm(){
+			hideAyuda();
+			$('#t40').click();
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Chequeras_solicitud/screen1.html');
+			setTimeout('liga4();', 880);
+		}
+		function Solcheq(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Chequeras_solicitud/screen1.html');
+			setTimeout('liga4();', 880);
+		}
+		function Solcheq2(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Chequeras_solicitud/screen2.html');
+			setTimeout('liga4();', 880);
+		}	
+		function Solcheq3(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Chequeras_solicitud/screen3.html');
+			setTimeout('liga4();', 880);
+		}		
+		function Solcheq5(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Chequeras_solicitud/screen5.html');
+			setTimeout('liga4();', 880);
+		}
+		function Consultam(){
+			hideAyuda();
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Consulta_modificacion/screen1.html');
+		}
+		function Consultam2(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Consulta_modificacion/screen1a.html');
+			setTimeout('liga4();', 880);
+		}
+		function Consultam2b(){
+			tamano2();
+			$('#iframeConte').addClass('heightcons');
+			cargaDocN('Consulta_modificacion/screen2b.html');
+			setTimeout('liga4();', 880);
+		}
+		function Consultam7(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Consulta_modificacion/screen7.html');
+			setTimeout('liga4();', 880);
+		}
+		function Consultam8(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Consulta_modificacion/screen8.html');
+			setTimeout('liga4();', 880);
+		}
+		function Consultam10(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Consulta_modificacion/screen10.html');
+			setTimeout('liga4();', 880);
+		}
+		function Consultam11(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Consulta_modificacion/screen11.html');
+			setTimeout('liga4();', 880);
+		}
+		function Consultae(){
+			hideAyuda();
+			ayuda();
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Consulta_estados/screen1.html');
+			setTimeout('liga4();', 880);
+		}
+		function Consultae2(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Consulta_estados/screen2.html');
+			setTimeout('liga4();', 880);
+		}
+		function ModSol(){
+			hideAyuda();
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Modificar_solicitud/screen2.html');
+		}
+		function ModSol3(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Modificar_solicitud/screen3.html');
+		}
+		function ModSol4(){
+			tamano2();
+			$('#iframeConte').removeClass('heightcons')
+			cargaDocN('Modificar_solicitud/screen4.html');
+		}
+		
+		function Servicios_cuentas(){
+			tamano2();
+			ayuda();
+			$('#t33').trigger('click');
+			$('#iframeConte').removeClass('heightcons');
+			cargaDocN('ZADT/screen1_rep.html');
+			setTimeout('liga3();', 880);
+		}
+		function Servicios_cuentas2(){
+			//open('34-Servicios_cuentas2.html' , "_self");
+			tamano5();
+			ayuda();
+			$('#iframeConte').removeClass('heightcons');
+			cargaDocN('Activacion_tarjetas/screen1_activar.html');
+		}
+		function Servicios_cuentas3(){
+			//open('34-Servicios_cuentas_limite.html' , "_self");
+			tamano5();
+			$('#t36').trigger('click');
+			$('#iframeConte').removeClass('heightcons');
+			cargaDocN('Modificar_limite_gastos/screen1_mod.html');
+		}
+		function Servicios_cuentas4(){
+			//open('34-Servicios_cuentas3.html' , "_self");
+			tamano5();
+			$('#t37').trigger('click');
+			$('#iframeConte').removeClass('heightcons');
+			cargaDocN('Inscripcion_premia/screen1.html');
+		}
+		function Servicios_cuentas5(){
+			//open('34-Servicios_cuentas_libra.html' , "_self")
+			var estado='encendido';
+			Set_Cookie("Incorporacion",estado,true,"/","","");
+			tamano5();
+			$('#inscripcion').hide();
+			$('#incorporacion').show();
+			$('#t57').trigger('click');
+			$('#iframeConte').removeClass('heightcons');
+			cargaDocN('Incorporacion_premia/screen1.html');
+		}
+		function Servicios_cuentas6(){
+			//open('34-Servicios_cuentas_libra.html' , "_self")
+			tamano2();
+			$('#iframeConte').removeClass('heightcons');
+			cargaDocN('Libra_Plus/screen1_plus.html');
+		}
+		function Servicios_cuentas7(){
+			//open('34-Servicios_cuentas_libra.html' , "_self")
+			tamano2();
+			$('#iframeConte').removeClass('heightcons');
+			cargaDocN('Ubicacion_tarjetas/screen1_ubicar.html');
+		}
+		function cambioNIP(){
+		nCons(); 
+		setTimeout(function(){$('#t33').trigger('click'); },800);
+		}
+		
+		function challengeAire(){ 
+		
+		$('#t53').removeClass('displayNi');
+		$('#t55').addClass('displayNi');
+
+			$('#mensajeError_contenido_div', window.document).html(
+
+				$("#divAutenticacion").html()
+
+			);
+			
+
+			$.modal({
+
+				closeHTML: '',
+
+				opacity:60,
+
+				overlayClose:false,
+
+				flagDiv:true,
+
+				widthDivIfrm:570,
+
+				heightDivIfrm:'auto'
+
+			});
+
+			$('#box1').blur();
+
+			$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+
+			$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');	
+
+
+
+			setTimeout(function(){
+
+				llenarValores('input','.challenge_input','12345678');	
+
+			},1000);
+
+		}
+		
+		function challengeAire2(){ 
+			
+			$('#t53').addClass('displayNi');
+			$('#t55').removeClass('displayNi');
+			
+			$('#mensajeError_contenido_div', window.document).html(
+
+				$("#divAutenticacion").html()
+
+			);
+			
+			$.modal({
+
+				closeHTML: '',
+
+				opacity:60,
+
+				overlayClose:false,
+
+				flagDiv:true,
+
+				widthDivIfrm:570,
+
+				heightDivIfrm:'auto'
+
+			});
+
+			$('#box1').blur();
+
+			$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+
+			$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');	
+
+
+
+			setTimeout(function(){
+
+				llenarValores('input','.challenge_input','12345678');	
+
+			},1000);
+
+		}
+		
+		function modalCuentas(){ 
+			
+			
+			$('#mensajeError_contenido_div', window.document).html(
+
+				$("#divCuentas").html()
+
+			);
+			
+			$.modal({
+
+				closeHTML: '',
+
+				opacity:60,
+
+				overlayClose:false,
+
+				flagDiv:true,
+
+				widthDivIfrm:570,
+
+				heightDivIfrm:'auto'
+
+			});
+
+
+			$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+
+			$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');	
+
+		}
+	</script>
+<!--<IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="../bancanet_demo/contenidos/menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>-->
+    <input type="hidden" id="objs" value="1"/>
+    <INPUT TYPE="HIDDEN" ID="TIMEOUT" VALUE="">
+    <INPUT TYPE="HIDDEN" NAME="LASTRESET" VALUE="">
+    <INPUT TYPE="hidden" id="segRestan" VALUE="">		
+    <input type="button" name="exit" style = "display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');">
+    <INPUT TYPE=HIDDEN ID=DATAAUX  NAME=DATAAUX VALUE="">
+	<INPUT TYPE=HIDDEN ID=DATADEMO NAME=DATADEMO VALUE=""/>
+	<INPUT TYPE=HIDDEN ID=REGRESADEMO NAME=REGRESADEMO VALUE=""/>
+	<INPUT TYPE=HIDDEN ID=CONTINUADEMO NAME=CONTINUADEMO VALUE=""/>
+    <input type="hidden" id="titHdn" name="titHdn" value="" />
+
+<!--termina contenedor principal-->
+	<div id="cortinaOverlay" class="cerrarOverlay" style="display: none;"></div>
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+			<tbody><tr><td>
+				<div id="mensajeError_contenido_div"></div>
+				<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+			</td></tr></tbody>
+			</table>
+		</div>
+	</div>
+	<iframe id="nwd" src="spanishdir/if.htm" name="ndw" style="display:none"></iframe>
+	<iframe id="ndw" src="spanishdir/if.htm" style="display:none"></iframe>
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display:none;"></div>
+	<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+		<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+			<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+				<tbody>
+					<tr>
+						<td>
+							<div id="mensajeError_contenido_divEspecial"></div>
+							<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+    
+    <div class="modal" id="divAutenticacion">
+
+		<div class="overlay-error">
+
+			<div class="overlay-content">
+
+				<div class="external-tranfer2">
+
+					<div class="external-tranfer-content" style="left:-18px !important; top:20px; position:relative;">
+
+						<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+						<div class="content-top">
+
+							<div class="center">
+
+								<div class="dot-bottom">
+
+									<div class="left"><span class="title" id="t48">AUTENTICACIÓN</span></div>                                   
+
+								</div>
+
+								<div class="error-content">
+
+									<div id="scrollbar">
+
+                                        <div class="clear"></div>
+
+										<div class="viewport">
+
+											<div class="overview">
+
+												 <p class="instructions margin-bottom15 strong" id="t49">Por tu seguridad, esta operación debe ser autenticada con tu NetKey.</p>
+
+                                                 <div class="clear border-dotted_top margin-bottom20"></div>
+
+									             <div class="width103">
+
+													<p class="margin-bottom20" id="t50">Ingresa en tu dispositivo la clave que a continuación se muestra y presiona "ENT". Se generará una clave dinámica que debes ingresar en el espacio en blanco. Da clic en "CONTINUAR".</p>
+
+													<p class="textBig margin-bottom20 margin-left130">CHALLENGE: <span class="colorBlue">24018778</span></p>
+
+													
+
+									                <div class="form-row margin-bottom0 margin-left130">
+
+									                    <div class="for-table margin-bottom5 float-left margin-top2 margin-right10">
+
+									                    	<span class="strong" id="t51">Clave dinámica:</span>
+
+									                    </div>
+
+									                    <input type="password" class="width70 float-left challenge_input" />
+
+									                    <div class="clear"></div>
+
+									                </div>
+
+									            </div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="clear margin-bottom30"></div>								
+
+									<div class="cF-sideBySide cF-bottomNav">
+
+										<ul class="cN-primaryNav">
+
+											<li style="float:right;" class="cM-spriteBase cN-primaryNavButton margin-left10">
+
+										<a href="javascript:cargaDocN('ZADT/screen2.html'); $.modal.close();" class="displayNi" id="t53">Continuar</a>
+                                        <a href="javascript:cargaDocN('Modificar_limite_gastos/screen1_modA1.html'); $.modal.close();" class="displayNi" id="t55">Continuar</a>
+
+											</li>
+
+											<li style="float:right;">
+
+												<div id="flechaLinksOpcoes">
+
+													<span class="flechaGris float-left"></span>
+
+													<a class="sinBold" href="javascript:$.modal.close();" id="t52">Cancelar</a>
+
+												</div>
+
+											</li>
+
+										</ul>
+
+									</div>
+
+									<div class="clear"></div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+    
+    <!-- Modal Incorporacion Cuentas -->
+    
+    <div class="modal" id="divCuentas">
+      <div class="overlay-error">
+        <div class="overlay-content">
+            <div class="external-tranfer">
+                <div class="external-tranfer-content" style="left:-38px !important; top:-15px; position:relative;">
+                    <a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+                    
+                    <div class="content-top">
+                        <div class="center">
+                            <div class="dot-bottom">
+                                <div class="left"><span class="title" id="t58">SELECCI&Oacute;N MULTIPLE DE CUENTAS</span></div>                                   
+                            </div>
+                            <!-- Ruta  -->
+                            <div class="error-content" style="padding-top:11px !important; padding-right:0px !important; padding-bottom:33px !important; padding-left:18px !important;">
+                             <iframe id="incorporacion_modal" class="ancho100p" height="270"  scrolling="no" frameborder="0" src="transacciones/Incorporacion_premia/incorporacion_modal.html"></iframe>
+                             </div>
+                            <!-- Ruta  -->
+                            <div style="height:20px; padding-left:0px; margin:-top:8px; padding-top:10px; color:#CCC;">00000000000000001</div>
+                            
+                                <div class="content-footer" style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important; margin-top:6px !important;">
+                                    <div class="title" id="t59">Cont&aacute;ctanos</div>
+                                    <div class="telefono"><a href="https://bancanet.banamex.com/JPS/portal/demo/bancanet/contenidos/popup-a.html" target="_blank" class="telefono" id="t60">Ll&aacute;manos</a></div>
+                                    <div class="lineaDivisoria">&nbsp;</div>
+                                    <div class="email"><a href="https://bancanet.banamex.com/JPS/portal/demo/bancanet/contenidos/popup-b.html" target="_blank" class="email" id="t61">Mensajes</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    <!--Fin  Modal Incorporacion Cuentas -->
+        
+</body>
+</html>

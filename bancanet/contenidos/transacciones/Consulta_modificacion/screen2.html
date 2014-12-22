@@ -1,0 +1,223 @@
+       <html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+     <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+     <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+
+
+<script type="text/javascript">
+
+
+
+    $(function(){
+
+        
+
+        $.imageTick.logging = true;
+
+        
+
+        $("input[name='chequeRango']").imageTick({
+
+            tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+
+            no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+
+            image_tick_class: "radios"
+
+        });
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+    });
+
+    </script>
+
+    
+
+        <div id="subapp-box"style="margin:0px !important; min-height:0px !important" >
+
+                    <div class="cH-appPanelHead">
+
+                        <h3>Consulta y Modificaci&oacute;n de Estatus de Cheques</h3>
+
+                    </div>
+
+                    
+
+						<div class="width98">
+
+                         
+
+							 <p class="instructions">Selecciona una cuenta, indica el n&uacute;mero del cheque que deseas consultar y da clic en "Continuar".</p>
+
+							 
+
+                             <!--<div class="form-row">
+
+                                <label class="for-table sinBold">Pa&iacute;s de la cuenta:</label>
+
+                                <select>
+
+									<option>Selecci&oacute;n de pa&iacute;s...</option>
+
+								</select>
+
+                                <div class="clear"></div>
+
+                            </div>-->
+
+                            <div class="form-row">
+
+                                <label class="for-table sinBold">Cuenta:</label>
+
+                                <select>
+
+									<option>Cheques - MXN - 12002 - Cheques</option>
+
+								</select>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                           	
+
+                            <div class="form-row margin-bottom10">
+
+                                <label class="for-table sinBold">Seleccione:</label>
+
+								<label class="marginsRadios for-table radioR"><input name="chequeRango" id="rdchequeraPers1" type="radio" class="float-left" /></label>
+
+								<div class="float-left">Por cheque</div>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                                <div class="form-row margin-bottom10">
+
+                                <label class="for-table">&nbsp;</label>
+
+                                <label class="marginsRadios for-table radioR"><input name="chequeRango" id="rdchequeraPers2" type="radio" checked="checked" /></label>
+
+                                <div class="float-left">Por rango de cheques</div>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                            
+
+                                <div class="form-row sinMarginBottom">
+
+                                    <label class="for-table">&nbsp;</label>
+
+                                    <span class="float-left sinBold width82">Cheque inicial:</span>
+
+                                    <input class="text short float-left margin-left5" type="text" value="1"/>
+
+                                    <span class="float-left sinBold width72 margin-left10">Cheque final:</span>
+
+                                    <input class="text short float-left margin-left5" type="text" value="15"/>
+
+                                    <div class="clear"></div>
+
+                                </div>
+
+                            
+
+						</div>	
+
+						<div class="cF-sideBySide cF-bottomNav">
+
+							<div class="width113">&nbsp;</div>
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton"><a href="layout_a.htm?subapps/Pack2/SeeCancelBlockCheckStatus/screen2a&SER&header_postlogin&footer_postlogin&left_menu_services">CONTINUAR</a></li>	
+
+								<!--<li class="cN-primaryNav">
+
+								<div id="flechaLinks">
+
+									<span class="flechaazul float-left"></span>
+
+									<a href="#" class="sinBold">Cancelar</a>
+
+								</div></li>-->
+
+							</ul>
+
+						 </div>	
+
+						<div class="clear"></div>
+
+						<!--<div id="contentOpcoes">
+
+                            <div class="border-top"></div> 
+
+                            
+
+							<div class="strong margin-bottom10">Other options</div>
+
+							<div id="flechaLinksOpcoes">
+
+									<span class="flechaGris float-left">&nbsp;</span>
+
+									<a href="#">Option A</a>
+
+							</div>
+
+							<div id="flechaLinksOpcoes">
+
+									<span class="flechaGris float-left">&nbsp;</span>
+
+									<a href="#">Option B</a>
+
+							</div>
+
+                            
+
+                        </div>-->	</div>
+
+                        </body>
+
+                    </html>

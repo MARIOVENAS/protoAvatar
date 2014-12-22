@@ -1,0 +1,114 @@
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/jscript">
+
+	es=new Array( 
+	'Account statement',
+	'Consult your balance report online or request your statement home delivery within a period not exceeding 5 days.',
+	'Select the statement type request and click "Continue"',
+	'Select an option',
+	'Online balances report',
+	'Home delivery',
+	'CONTINUE',
+	'Afore account:'
+	);
+
+     </script>
+</head>
+<body class="bg_demo">
+
+     <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">  
+
+                    <div class="cH-appPanelHead">
+
+                        <h3 id="t0">Estado de cuenta</h3>
+
+                    </div>
+
+                    <div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%">
+
+					  <div class="width98">
+
+							 <p class="instructions" style="width:100%; margin-bottom:0px !important;" id="t1">Consulta tu informe de saldos en l&iacute;nea o solicita el env&iacute;o de tu estado de cuenta a tu domicilio en un plazo no mayor a 5 d&iacute;as.</p>
+                             <p class="instructions" style="width:100%; margin-bottom:10px !important;" id="t2">Selecciona el tipo de solicitud del estado de cuenta y da clic en "Continuar".
+                             </p>
+
+                            
+                            <div class="form-row margin-top25">
+                            <label  class="for-table width139i margin-top4" id="t7">Cuenta Afore:</label>
+                                <select class="width315">
+									<option id="t3">Selecciona una opci&oacute;n</option>
+									<option selected="selected">Mi retiro - AFORE NSS - MXN - 12345</option>
+								</select>
+                                <div class="clear"></div>
+                            </div>
+                            
+							<div class="form-row margin-bottom10">
+								<label class="marginsRadios for-table radioR">
+                                <input name="cuenta" type="radio" id="cuenta1" onClick="valor=this.value;" value="1"  />
+                                </label>
+								<div class="margin-top5" id="t4">Informe de saldos en l&iacute;nea</div>
+                                <div class="clear"></div>
+                            </div>
+
+                      		<div class="form-row margin-bottom10">
+                                <label class="marginsRadios for-table radioR">
+                                <input name="cuenta" type="radio" id="cuenta2" checked="checked" onClick="valor=this.value;" value="2" />
+                                </label>
+                                <div class="float-left"id="t5">Env&iacute;o a domicilio</div>
+                                <div class="clear"></div>
+                            </div>
+                    <!--  termina rango de cheques-->
+
+				</div><!--termina 98-->
+				
+                </div>	
+
+							
+
+                <div class="cF-sideBySide border-topSolid ancho100p margin-top5 paddingT3">
+                <div class="width139i floatLI">&nbsp;</div>
+
+                    <ul class="cN-primaryNav paddingT10 floatLI margin-left12">
+
+                        <li class="cM-spriteBase cN-primaryNavButton"><a onClick="continuar()" id="t6">CONTINUAR</a></li>	
+
+                    </ul>
+
+                 </div>
+               
+               </div>
+                 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$.imageTick.logging = true;
+	$("input[name='cuenta']").imageTick({
+		tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+		no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+		image_tick_class: "radios"
+	});
+});
+
+var valor=2;
+	function continuar(){
+		if(valor==1){
+		top.cargaDocN('Edo_Cta_Afore/screenA1.html');
+		}
+		if(valor==2){
+		top.cargaDocN('Edo_Cta_Afore/screenA2.html');
+		}
+	}
+
+</script>                
+
+</body>
+</html>

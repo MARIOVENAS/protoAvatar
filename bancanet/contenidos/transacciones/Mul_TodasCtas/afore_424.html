@@ -1,0 +1,2961 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body  TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"   NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="16344a72-93f7-4c59-93b4-695d3488e253" ><input type=hidden name="EWF_SYS_1" value="FRNLFBIEV58F659ZC4USGADRK09SESTZVAFSMWIR" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZMVS-PAG RPTA AFORE"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="AforeConsulta.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="22"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<script>parent.setFecha("25/04/12    19:52:45  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="195245  ";b$Cont="195245  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+
+
+<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/motor.js"></script>
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../bbAvatar/css/estilos.css">
+
+<script language="JavaScript" src="../../bbAvatar/js/opciones.js"></script>
+
+<style type="text/css">
+
+.fondoBlanco{
+
+	background:#FFFFFF!important;
+
+}
+
+</style>
+
+<script language="JavaScript">
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+function EPagingGotoPage(form, table, pageNum){
+
+	value = "SYS PAGING GOTO PAGE " + table+ ":" + pageNum;
+
+	return (ESubmitForm(form, value))
+
+}
+
+function ESubmitForm(form, value){
+
+	form.PAGEBUTTON.value = value;
+
+	form.PAGEBUTTON.name = "EWF_BUTTON_" + value;
+
+	form.submit()
+
+}
+
+function EPagingPrevious(form, table)
+
+{
+
+value = "SYS PAGING PREVIOUS " + table;
+
+return (ESubmitForm(form, value));
+
+} 
+
+
+
+function EPagingNext(form, table)
+
+{
+
+value = "SYS PAGING NEXT " + table;
+
+return (ESubmitForm(form, value));
+
+} 
+
+
+
+
+
+function validaVacio(objetoNum, x)
+
+{  
+
+
+
+numOpcion = objetoNum.selectedIndex;
+
+valorNum = objetoNum.options[numOpcion].value;
+
+if(valorNum == 99)   {  
+
+    alert(x);  
+
+    return false;
+
+} else  {
+
+    return true;
+
+}
+
+
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+var criterioActual = "CICLOACTUAL";
+
+var altoCalendarioMovs = 100;
+
+var margenCalendarioMovs = -165;
+
+
+
+
+
+var movimientos = [
+
+	[
+
+		"<option value='TODO'>Dep&oacute;sitos y Retiros</option>",
+
+		"<option value='DEPOSITOS'>Dep&oacute;sitos</option>",
+
+		"<option value='RETIROS'>Retiros</option>",
+
+		"<option value='SBC'>Salvo Buen Cobro</option>",
+
+		"<option value='IDE'>Dep&oacute;sitos en Efectivo</option>"
+
+	],
+
+	[
+
+		"<option value='TODO'>Dep&oacute;sitos y Retiros</option>",
+
+		"<option value='DEPOSITOS'>Dep&oacute;sitos</option>",
+
+		"<option value='RETIROS'>Retiros</option>",
+
+		"<option value='DOMICILIAR'>Domiciliaci&oacute;n</option>"
+
+	]
+
+];
+
+var Formato = "dd/mm/yy";
+
+var diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+var Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+var mesesLargos = ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+var msjNoDisp = "No disponible";
+
+
+
+
+
+var consultaCuenta = "0";
+
+var diaActual = new Date(2012,4-1, 25);
+
+
+
+
+
+function crearComboCuentas(){
+
+	var cuentasCombo = new Array();
+
+	var stringCuentas = '';
+
+			stringCuentas += '6-PS--Selecciona una opci&oacute;n--|';
+
+			stringCuentas += '1-2-Cheques-002-Cheques-MXN|';
+
+			stringCuentas += '2-4-Mi inversion-  010-Inv. Plazo-MXN|';
+
+			stringCuentas += '4-5-Inv. Integral-872-Inv. Integral-MXN|';
+
+			stringCuentas += '6-6-Mi maestra.-  501-Cta. Maestra Opc.-MXN|';
+
+			stringCuentas += '3-9-Tarjeta Cr&eacute;dito-  796-Tarjeta Cr&eacute;dito-MXN|';
+
+			stringCuentas += '7-10-Cr&eacute;dito-  256-Cr&eacute;dito-MXN|';
+
+			stringCuentas += '4-11-Inv Integral A-  299-Inv Integral A-MXN|';
+
+			stringCuentas += '4-12-Inv Emp Banamex-  699-Inv Emp Banamex-MXN|';
+
+			stringCuentas += '4-13-Cta Maestra Emp-  899-Cta Maestra Emp-MXN|';
+
+			stringCuentas += '4-14-HORZCOB-  999-HORZCOB-MXN|';
+
+			stringCuentas += '1-16-Cheques-888-Cheques-USD|';
+
+			stringCuentas += '4-17-HORZONT-  746-HORZONT-MXN|';
+
+			stringCuentas += '3-18-Tarj Premia Pre-793-Tarj Premia Pre-MXN|';
+
+			stringCuentas += '6-19-Cuenta Perfiles-502-Cuenta Perfiles -MXN|';
+
+			stringCuentas += '4-20-Inversion Perfiles-502-Inversion Perfiles -MXN|';
+
+			stringCuentas += '3-21-Credicheque Perfiles Banamex-502-Credicheque Perfiles Banamex -MXN|';
+
+			stringCuentas += '3-22-Cr&eacute;dito Personal Perfiles Banamex-502-Cr&eacute;dito Personal Perfiles Banamex-MXN|';
+
+			stringCuentas += '5-24- Mi afore NSS-424-Afore NSS-MXN|';
+
+			stringCuentas += '3-25-Tarj Premia Pre-245-Tarj Premia Pre-MXN|';
+
+			stringCuentas += '3-26-Clasica-199-Clasica-MXN|';
+
+			stringCuentas += '8-27-Multiseries-378-Banca Inversi&oacute;n-MXN|';
+
+	
+
+	cuentasCombo = stringCuentas.split('|');
+
+	var option = '';
+
+	var alpha = /[A-Za-a0-9]/;
+
+	for(i=1;i<cuentasCombo.length-1;i++){
+
+		cuentaTemp = cuentasCombo[i].split('-');
+
+		if(alpha.test(cuentaTemp[2]))
+
+			nombreCuenta = Combo_Cuentas(cuentaTemp[2].replace(/^\s*|\s*$/g,""),cuentaTemp[3].replace(/^\s*|\s*$/g,""),cuentaTemp[5].replace(/^\s*|\s*$/g,""));
+
+		else
+
+			nombreCuenta = Combo_Cuentas(cuentaTemp[4].replace(/^\s*|\s*$/g,""),cuentaTemp[3].replace(/^\s*|\s*$/g,""),cuentaTemp[5].replace(/^\s*|\s*$/g,""));
+
+			
+
+		
+
+		option += "<option class='"+cuentaTemp[0]+"' value='"+cuentaTemp[1]+"'>"+nombreCuenta+"</option>";
+
+	}
+
+	$("#comboCuentas").html('');
+
+	$("#comboCuentas").append(option);
+
+	
+
+	
+
+	$("#comboCuentas option[value="+24+"]").attr('selected','selected');
+
+	
+
+}
+
+
+
+function crearComboCriterios(){
+
+	var tipo = $("#comboCuentas").find("option:selected").attr("class");
+
+	var option = "";
+
+	
+
+	if(tipo == 1 || tipo == 3 || tipo == 6 || tipo == 8){
+
+		
+
+		option += "<option value='CICLOACTUAL'>Periodo actual</option>";
+
+		option += "<option value='CICLOANTERIOR'>Periodo anterior</option>";
+
+		
+
+		
+
+		if(tipo == 1){
+
+			
+
+			option += "<option value='DIA'>Por d&iacute;a</option><option value='RANGO'>Rango de d&iacute;as</option>"
+
+			
+
+		}		
+
+		$("#divCriterios").show();
+
+	}else{
+
+		$("#divCriterios").hide();
+
+	}
+
+	
+
+	$("#criterio").html("");
+
+	$("#criterio").append(option);
+
+	if(consultaCuenta != 0)
+
+		$("#criterio option[value='CICLOACTUAL']").attr("selected","selected");
+
+		
+
+}
+
+
+
+function mostrarCriterios(){
+
+	var tipo = $("#comboCuentas").find("option:selected").attr("class");
+
+	var criterio = $("#criterio").find("option:selected").val();
+
+	
+
+	$("#comboDiaInicio").hide();
+
+	$("#comboDiaFin").hide();
+
+	
+
+	
+
+	switch(criterio){
+
+	case "DIA":
+
+		$("#comboDiaInicio").show();
+
+		break;
+
+		
+
+	case "RANGO":
+
+		$("#comboDiaInicio").show();
+
+		$("#comboDiaFin").show();
+
+		break;
+
+		
+
+	default:
+
+		break;
+
+	}
+
+}
+
+
+
+function formateaTabla(){
+
+	
+
+	$(".pinta3").find("tr:odd td").css("background-color", "#F1F2F2");
+
+	$(".pinta3").find("tr:even td").css("background-color", "#FFF");
+
+	
+
+	$(".pinta2 tr.trPrinc:even").css("background-color", "#F1F2F2");
+
+	$(".pinta2 tr.trPrinc:even td").css("background-color", "#F1F2F2");
+
+	$(".pinta2 tr.trPrinc:odd td").css("background-color", "#FFF");
+
+	
+
+	$(".trFooter td").addClass("fondoBlanco");
+
+	/*
+
+	$(".descTd").parent().prev().css("width","45%");
+
+	*/
+
+}
+
+
+
+function crearCalendarios(){
+
+	var fecInicio = $("#fecInicio").val();
+
+	var fecFin = $("#fecFin").val();
+
+	EliminarCal("#fecFin");
+
+	EliminarCal("#fecInicio");
+
+	
+
+	if(consultaCuenta != 0){
+
+		if($("#criterio").val() == 'RANGO'){
+
+			diaInicial = operarDias(fecInicio, '+', 1);
+
+			diaFinal = operarDias(diaActual, '-', 1);
+
+			CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaFinal, altoCalendarioMovs, '', margenCalendarioMovs);
+
+			CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, diaInicial, diaFinal, altoCalendarioMovs, '', margenCalendarioMovs);
+
+			deshabilitaDiaActual();
+
+			$("#fecFin").datepicker("enable");
+
+			
+
+		}else if($("#criterio").val() == 'DIA'){
+
+			CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaActual, altoCalendarioMovs, '', margenCalendarioMovs);
+
+			CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, 30, diaActual, altoCalendarioMovs, '', margenCalendarioMovs);
+
+			$("#fecFin").datepicker("disable");
+
+		}
+
+		
+
+		$("#fecInicio").val(fecInicio);
+
+		$("#fecFin").val(fecFin);
+
+		
+
+	}else{
+
+		CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaActual, altoCalendarioMovs, '', margenCalendarioMovs);
+
+		CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, 30, diaActual, altoCalendarioMovs, '', margenCalendarioMovs);
+
+		deshabilitaDiaActual();
+
+		$("#fecFin").datepicker("disable");
+
+	}
+
+	consultaCuenta = 0;
+
+	
+
+}
+
+
+
+function operarDias(fecha, signo, dias){
+
+	if(typeof(fecha) == 'string'){
+
+		var stringDiaInicio = fecha.split('/');
+
+		if(Formato == 'dd/mm/yy'){
+
+			var dia = parseFloat(stringDiaInicio[0]);
+
+			var mes = parseFloat(stringDiaInicio[1])-1;
+
+			var anio = parseFloat(stringDiaInicio[2]);
+
+		}else{
+
+			var dia = parseFloat(stringDiaInicio[1]);
+
+			var mes = parseFloat(stringDiaInicio[0])-1;
+
+			var anio = parseFloat(stringDiaInicio[2]);
+
+		}
+
+	}else{
+
+		var dia = fecha.getDate();
+
+		var mes = fecha.getMonth();
+
+		var anio = fecha.getFullYear();
+
+	}
+
+
+
+	if(signo == '+')
+
+		var diaInicio = new Date(anio,mes,dia + dias);
+
+	else
+
+		var diaInicio = new Date(anio,mes,dia - dias);
+
+	return diaInicio;
+
+}
+
+
+
+function deshabilitaDiaActual(){
+
+	$(".ui-datepicker-trigger, .yearpicker").click(function(){
+
+		$(".ui-datepicker-today span").css({"background":"#c0c0c0", "color":"#f1f2f2", "border":"1px solid #c0c0c0", "font-size":"10px", "text-aling":"center"});
+
+	});
+
+}
+
+
+
+function cargando(){
+
+	$("#divCargando").show();
+
+}
+
+
+
+function consultaSaldo(){
+
+	cargando();
+
+	setTimeout(function(){
+
+		var indice = $("#comboCuentas").find("option:selected").val();
+
+		var tipoCuenta = $("#comboCuentas").find("option:selected").attr("class");
+
+		var event = 'CON SALDOS';
+
+		
+
+		if(tipoCuenta == 1 || tipoCuenta == 3 || tipoCuenta == 6){
+
+			var d=document.getElementById('ndw').contentWindow.document.forms[0];
+
+			var o=document.forms[0];
+
+			d.action=o.action;
+
+			d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+			d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+			d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+			d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+			d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+			d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+			d.DATA1.value = indice;
+
+			d.DATA2.value = "PERIODO";
+
+			d.DATA5.value = "CICLOACTUAL";
+
+			d.DATA6.value = "TODO";
+
+			d.DATA8.value = tipoCuenta;
+
+			d.DATA10.value = indice;
+
+			d.EWFBUTTON.value = event;
+
+			d.EWFBUTTON.name = 'EWF_BUTTON_'+event;
+
+			d.submit();
+
+		}else{
+
+			$("#DATA1").val(indice);
+
+			
+
+			if( tipoCuenta == 8 ){
+
+				$("#DATA2").val("PERIODO");
+
+				$("#DATA5").val("MESACTUAL");
+
+				$("#DATA6").val("TODO");
+
+				$("#DATA8").val(tipoCuenta);
+
+				$("#DATA10").val(indice);
+
+			}else{
+
+				$("#DATA2").val("");
+
+			}
+
+			
+
+			DoSubmit(event);
+
+		}
+
+		
+
+	},1000);
+
+}
+
+
+
+function inParm(){
+
+	var strInparm = "";
+
+	var i;
+
+	
+
+	for(i=1;i<=22;i++){
+
+		strInparm += $("input[name='DATA"+i+"']").val() + "|";
+
+	}
+
+	
+
+	alert(strInparm);
+
+}
+
+
+
+function validar(){
+
+	var indice = $("#comboCuentas").find("option:selected").val();
+
+	var fecInicio = "";
+
+	var fecFin = "";
+
+	var periodo = "";
+
+	var filtro = "TODO";
+
+	var tipoCuenta = $("#comboCuentas").find("option:selected").attr("class");
+
+	var event = "";
+
+	var flagCorrecto = true;
+
+	
+
+	var criterio = $("#criterio").find("option:selected").val();		
+
+	switch(criterio){
+
+		case "DIA":
+
+			event = "MOVS";
+
+			fecInicio = $("#fecInicio").val();
+
+			flagCorrecto = ( fecInicio != "");
+
+			break;
+
+		case "RANGO":
+
+			event = "MOVS";
+
+			fecInicio = $("#fecInicio").val();
+
+			flagCorrecto = ( fecInicio != "");
+
+			if(flagCorrecto){
+
+				fecFin = $("#fecFin").val();
+
+				flagCorrecto = ( fecFin != "");
+
+			}
+
+			break;
+
+		default:
+
+			if($("#comboCuentas option:selected").attr('class') == '8'){
+
+				if(criterio == "CICLOACTUAL"){
+
+					periodo = "MESACTUAL";
+
+				}else{
+
+					periodo = "MESANTERIOR";
+
+				}
+
+				event = "MULTISERIES";
+
+			}else{
+
+				$("#fecInicio").val($("#periodo option:selected").index());
+
+				periodo = criterio;
+
+				event = "EDOSCTA";
+
+			}
+
+			criterio = "PERIODO";
+
+			
+
+			break;
+
+			
+
+	}
+
+	
+
+	if(flagCorrecto){
+
+		cargando();
+
+		
+
+		setTimeout(function(){
+
+			
+
+			if(event == "MOVS" || event == "MULTISERIES"){
+
+				var nuevoInParm = indice+"|"+criterio+"|"+fecInicio+"|"+fecFin+"|"+periodo+"|"+filtro+"||"+tipoCuenta+"||"+indice+"||||||";
+
+				consultaMovimientos(nuevoInParm);
+
+				//inParm();
+
+				DoSubmit(event);
+
+			}else{
+
+			
+
+				consultaAjax(event, indice, criterio, fecInicio, fecFin, periodo, filtro, tipoCuenta );
+
+				
+
+			}
+
+		
+
+			
+
+		},1000);
+
+	}
+
+	
+
+}
+
+
+
+function domiciliacion(indice, periodo, tipoMovimiento){
+
+	cargando();
+
+	var evento;
+
+	setTimeout(function(){
+
+		var tipoCuenta = $("#comboCuentas").find("option[value='"+indice+"']").attr("class");
+
+		if(periodo == "DIA" || periodo == "RANGO"){
+
+			var nuevoInParm = indice+"|"+periodo+"|[FInicio]|[FFin]|"+periodo+"|"+tipoMovimiento+"||||"+tipoCuenta+"||||||";
+
+			evento = "MOVS";
+
+			consultaMovimientos(nuevoInParm);
+
+			DoSubmit(evento);
+
+		}else{
+
+			if(tipoMovimiento == "DOMICILIAR"){
+
+				var nuevoInParm = indice+"|PERIODO|0||"+periodo+"|"+tipoMovimiento+"||||"+tipoCuenta+"||||||";
+
+				evento = "EDOSCTA";
+
+				consultaMovimientos(nuevoInParm);
+
+				DoSubmit(evento);
+
+			}else{
+
+				consultaAjax("EDOSCTA", indice, "PERIODO", "0", "", periodo, tipoMovimiento, tipoCuenta )
+
+			}
+
+		}
+
+		
+
+		
+
+	});	
+
+}
+
+
+
+function consultaPeriodo(indice, periodo, tipoMovimiento){
+
+	cargando();
+
+	var evento;
+
+	setTimeout(function(){
+
+		var tipoCuenta = $("#comboCuentas").find("option[value='"+indice+"']").attr("class");
+
+		
+
+		var nuevoInParm = indice+"|PERIODO|0||"+periodo+"|"+tipoMovimiento+"||"+tipoCuenta+"||"+indice+"||||||";
+
+		evento = "EDOSCTA"
+
+		
+
+		consultaMovimientos(nuevoInParm);
+
+		DoSubmit(evento);
+
+		//alert(nuevoInParm);
+
+	});	
+
+}
+
+
+
+function consultaMovimientos(nuevoInParm){
+
+	nuevoInParm = nuevoInParm.split("|");
+
+	var i;
+
+	
+
+	for(i=1;i<=nuevoInParm.length;i++){
+
+		$("input[name='DATA"+i+"']").val(nuevoInParm[i-1])
+
+	}
+
+	
+
+}
+
+
+
+function consultaAjax(event, indice, criterio, fecInicio, fecFin, periodo, filtro, tipoCuenta ){
+
+	var d=document.getElementById('ndw').contentWindow.document.forms[0];
+
+	var o=document.forms[0];
+
+	d.action=o.action;
+
+	d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+	d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+	d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+	d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+	d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+	d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+	d.DATA1.value = indice;
+
+	d.DATA2.value = criterio;
+
+	d.DATA3.value = fecInicio;
+
+	d.DATA4.value = fecFin;
+
+	d.DATA5.value = periodo;
+
+	d.DATA6.value = filtro;
+
+	d.DATA8.value = tipoCuenta;
+
+	d.DATA10.value = indice;
+
+	d.EWFBUTTON.value = event;
+
+	d.EWFBUTTON.name = 'EWF_BUTTON_'+event;
+
+	d.submit();
+
+}
+
+
+
+function ocultaToolTip(){
+
+	$("#tooltip").hide();
+
+}
+
+
+
+$(document).ready(function(){
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+	parent.$("#tituloSeccion").hide();
+
+	top.hidePanelDerecho();
+
+	top.hidePanelIzquierdo();
+
+	optieneAlturas();
+
+	$(window).bind('resize', function(){optieneAlturas()});
+
+	activaHoverIcos();
+
+	
+
+	crearComboCuentas();
+
+	crearComboCriterios();
+
+	
+
+	$("#rutaAyuda").val(rutaAyuda);
+
+	
+
+	var DATAAUX = $("#DATAAUX", window.parent.document).val();
+
+	
+
+	$("#diaActual").val(diaActual.getDate()+'|'+diaActual.getMonth()+'|'+diaActual.getYear());
+
+	$("#idioma").val("SPANISH");
+
+	
+
+	formateaTabla();
+
+	
+
+	mostrarCriterios();
+
+	
+
+	crearCalendarios();
+
+	
+
+	$("#comboCuentas").change(function(){
+
+		$("#fecInicio").val("");
+
+		$("#fecFin").val("");
+
+		//crearComboCriterios();
+
+		consultaSaldo();
+
+	});
+
+	
+
+	$("#criterio").change(function(){
+
+		crearCalendarios();
+
+		mostrarCriterios();
+
+		validar();
+
+	});
+
+	
+
+	$("#TipoMovimiento").change(function(){
+
+		validar();
+
+	});
+
+	
+
+	$("#fecInicio").click(function(){ocultaToolTip();});
+
+	$("#fecFin").click(function(){ocultaToolTip();});
+
+	
+
+	$("#fecInicio").change(function(){
+
+		var criterioValida = $("#criterio").val();
+
+		if(criterioValida == 'DIA'){
+
+			validar();
+
+		}else{
+
+			EliminarCal("#fecFin");
+
+			diaInicial2 = operarDias($(this).val(), '+', 1);
+
+			if(diaInicial2.getMonth() == diaActual.getMonth() && diaInicial2.getDate() == diaActual.getDate())
+
+				diaInicial = operarDias($(this).val(), '+', 0);
+
+			else
+
+				diaInicial = operarDias($(this).val(), '+', 1);
+
+			
+
+			diaFinal = operarDias(diaActual, '-', 1);
+
+			CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, diaInicial, diaFinal, altoCalendarioMovs, '', margenCalendarioMovs);
+
+			deshabilitaDiaActual();
+
+			$("#fecFin").datepicker("enable");
+
+		}
+
+	});
+
+	
+
+	$("#fecFin").change(function(){
+
+		validar();
+
+	});
+
+	
+
+	if($("#wrapper_div").height() < 450){
+
+		$("#wrapper_div").height(450);
+
+	}
+
+	
+
+	setTimeout(function(){showtooltip2();},400);
+
+	
+
+});
+
+
+
+
+
+function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/
+
+  var valMail = $("#"+idCampo, contexto ).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"", contexto ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function curpValido( idTxt ) {
+
+  var regexCurp;
+
+  var valCurp = $( "#"+idTxt+"" ).val();
+
+  regexCurp = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[0-9]{2}$/;
+
+  return regexCurp.test( valCurp );
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function showError( idElem, msgErr, contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'', contexto ).after( $divErr );
+
+}
+
+
+
+function hideErrors( contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display', contexto).remove();
+
+}
+
+
+
+function toggleChecks( idChecken, idCheckdis ) {
+
+  var flag =  $('#'+idChecken).is(':checked');
+
+  $('#'+idChecken).attr('disabled', false);
+
+  $('#'+idCheckdis).attr('disabled', flag);
+
+  $('#'+idCheckdis).attr('checked', false);
+
+  $('#msgFrec').show();
+
+  window.parent.ajustarIframe();
+
+}
+
+function Settitulo(texto,botones,print,help,exp)
+
+{
+
+	var obj = parent.parent;
+
+	obj.mostrarBotonesTitulo(botones);	
+
+	obj.procesarTituloNiv2(texto);
+
+	if(print != "" && obj.document.getElementById("btn_imp")) obj.document.getElementById("btn_imp").onclick = function(){return eval("obj.main." + print + "");};
+
+	if(help != "" && obj.document.getElementById("btn_ayuda")) obj.document.getElementById("btn_ayuda").onclick = function(){return AbreAyuda(help);};
+
+	if(exp != "" && obj.document.getElementById("btn_exp"))obj.document.getElementById("btn_exp").onclick = function(){return eval("obj.main." + exp + "");};
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+			
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+									
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+rutaAyuda += 'Estados-de-cuenta-y-Movimientos.htm';
+
+
+
+function AbreAyuda(){
+
+	window.open(rutaAyuda,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function mostrarReferencias(theElement, camposDeReferencia){
+
+   if (theElement.checked==true){
+
+	  	document.getElementById(camposDeReferencia).style.display='block';
+
+	  }
+
+   else{
+
+	  	document.getElementById(camposDeReferencia).style.display='none';
+
+	  }
+
+}
+
+
+
+function saltoMultisaldos(){
+
+	cargando();
+
+	$("#DATAAUX", window.parent.document).val("EXPANDIDO");
+
+	top.SaltoTransaccion(0,0);
+
+	window.parent.setBanner(parent.menus[0][3], parent.menus[0][4]);
+
+}
+
+
+
+
+
+function comprobantes(){
+
+	top.SaltoTransaccion(1,2,5);
+
+	window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+}
+
+function activarMovil(){
+
+	parent.submitFuera('Actualiza Datos Cliente', 'Mis Productos - Contrataci&oacute;n en l&iacute;nea');
+
+}
+
+function domiciliarServicio(){
+
+	top.SaltoTransaccion(1,2,4);
+
+	window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+}
+
+
+
+
+
+function transferencias(){
+
+	var indice = $("#comboCuentas").find("option:selected").val();
+
+	$("#DATAAUX", window.parent.document).val(indice);
+
+	top.SaltoTransaccion(1,1,0);
+
+	window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+}
+
+
+
+function pagoServicios(){
+
+	var indice = $("#comboCuentas").find("option:selected").val();
+
+	$("#DATAAUX", window.parent.document).val(indice);
+
+	top.SaltoTransaccion(1,2,1);
+
+	window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+}
+
+
+
+function pagoTarjetas(){
+
+	$("#DATAAUX", window.parent.document).val("24");
+
+	top.SaltoTransaccion(1,2,0);
+
+	window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+}
+
+
+
+function saltoInversiones(){
+
+	top.SaltoTransaccion(2,0);
+
+	window.parent.setBanner(parent.menus[2][3], parent.menus[2][4]);
+
+}
+
+
+
+function saltoMultiseries(){
+
+	top.SaltoTransaccion(2,3);
+
+	window.parent.setBanner(parent.menus[2][3], parent.menus[2][4]);
+
+}
+
+
+
+function saltoChequera(expansor){
+
+	top.SaltoTransaccion(4,1,2);
+
+	window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+}
+
+
+
+function activarNotificaciones(){
+
+	top.SaltoTransaccion(4,3);
+
+	window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+}
+
+
+
+function adminTarjetas(expansor){
+
+	top.SaltoTransaccion(4,1,1);
+
+	window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+}
+
+
+
+function cambioNIP(){
+
+	top.SaltoTransaccion(4,0,1);
+
+	window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+}
+
+
+
+function LinkTransaccionSaldos(primerN, segundoN, tercerN, tPago){
+
+    var aux="";
+
+    if(tPago!="") aux = "|"+tPago;
+
+    $("#DATAAUX", window.parent.document).val("24"+ aux);
+
+        if(tercerN!="")
+
+            window.parent.SaltoTransaccion(primerN,segundoN,tercerN);
+
+        else
+
+            window.parent.SaltoTransaccion(primerN,segundoN);
+
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+<script>parent.setFecha("25/04/12    19:52:45  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del menú la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la página.\n\n Esta Transacci&oacute;n no se efectuará, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la página. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="195245  ";b$Cont="195245  "
+
+	</script>
+
+
+
+<div class="resumen_enca">
+
+<div class="floatR marginT7 ancho25p paddingR7">
+
+	
+
+	<div class="saldos_btn1 showtooltip margin_menosT3 Ayuda" onclick="Javascript:AbreAyuda();"></div>
+
+    <div class="saldos_btn2 showtooltip margin_menosT3 Imprimir" onclick="imprimirMain();"></div>
+
+	
+
+	<div class="floatR">
+
+	<div class="resumen_flecha"></div>
+
+    <a href="javascript:saltoMultisaldos()">
+
+		
+
+		Ver resumen de cuentas
+
+		
+
+	</a>
+
+	</div>
+
+  </div>
+
+ <div class="floatL">
+
+     <div class="floatL"><h1>
+
+	
+
+	DETALLE DE LA CUENTA
+
+	
+
+	 </h1> </div>
+
+      <div class="floatL marginL10 marginT2">
+
+		<select name="select" id="comboCuentas">
+
+    </select></div>
+
+   </div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+
+<div class="ancho100p marginT15">
+
+<div class="paddingT2 floatL" style="width:50%"><span class="boldText f14">Afore NSS MXN **424 -  Mi afore NSS</span><span id="saldoEnPuntos" class="boldText f14"></span></div>
+
+
+
+<div class="floatL" id="divCriterios">
+
+<div class="marginR10 floatL">
+
+	<select name="select2" class="ancho155" id="criterio">
+
+	</select>
+
+</div>
+
+<div id="divFechas" class="floatL">
+
+	<div id="comboDiaInicio" class="ancho150 floatL" style="display:block">
+
+		<div class=" calendario">
+
+			<input type="text" id="fecInicio" class="yearpicker" readonly="readonly" />
+
+			<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" />
+
+		</div>
+
+	</div>
+
+	
+
+	<div id="comboDiaFin" class=" floatL" style="display:block">
+
+		<div class="floatL marginT5 marginR5">A:</div>
+
+		<div class=" calendario floatL">
+
+			<input type="text" id="fecFin" class="yearpicker" readonly="readonly" />
+
+			<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" />
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+function creaRegistro(Descripcion,Valor){
+
+		tr = document.createElement("tr");
+
+		tdDescripcion = document.createElement("td");
+
+		tdValor = document.createElement("td");
+
+		tdDescripcion.innerText = tdDescripcion.textContent=Descripcion;
+
+		tdValor.innerText = tdValor.textContent = Valor;
+
+		tdDescripcion.className="paddingB3 paddingT3 ancho25p";
+
+		tdValor.className="color8f paddingB3 paddingT3 alignRight ancho22p"
+
+		tr.appendChild(tdDescripcion);
+
+		tr.appendChild(tdValor);
+
+		return tr;
+
+	} 	
+
+function Initialize(){
+
+	var Tabla = [''
+
+			
+
+				,["Seguro Retiro:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["Cesantia y Vejez:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["Cuota Social:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["Aportaci&oacute;n Vol:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["ACR:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["SAR 92:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["Ret-ISSSTE:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["SUBTOTAL:","+$123,456,789.00"]
+
+		
+
+			
+
+			
+
+				,["Vivienda:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["Vivienda 92:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["FOVISSSTE:","+$123,456,789.00"]
+
+		
+
+			
+
+				,["SUBTOTAL:","+$123,456,789.00"]
+
+		
+
+		
+
+	]
+
+	var totalTablaLeft=0, totalTablaRight=0;
+
+	totalTablaLeft = parseInt((Tabla.length+1)/2);
+
+	if(totalTablaLeft<0){totalTablaLeft=0;}
+
+	var tabla1=document.getElementById("tablaLeft");
+
+	var tabla2=document.getElementById("tablaRight");
+
+	for(i=1;i<totalTablaLeft;i++){
+
+		tr=creaRegistro(Tabla[i][0],Tabla[i][1]);
+
+		tabla1.appendChild(tr);
+
+	}
+
+	for(i=totalTablaLeft;i<Tabla.length;i++){
+
+		tr=creaRegistro(Tabla[i][0],Tabla[i][1]);
+
+		tabla2.appendChild(tr);
+
+	} 
+
+	
+
+}
+
+
+
+</script>
+
+
+
+<script>
+
+function enviaDatos(datos, evento) {
+
+	document.forms[0].DATA3.value = datos;
+
+	DoSubmit(evento);
+
+}
+
+function Paging(pageNum){
+
+	document.forms[0].DATA4.value = pageNum;
+
+	DoSubmit('RPTA AFORE');
+
+}
+
+function GetDetailafore(acctID){
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"0px 0px 0px 0px"});
+
+	document.forms[0].DATA1.value = acctID;
+
+	document.forms[0].DATA2.value = 'EDOCTALINEA';
+
+	window.parent.SaltoTransaccion(3,0,0,'');
+
+	window.parent.setBanner(parent.menus[3][3], parent.menus[3][4]);
+
+	DoSubmit('CONVEDO');
+
+}	
+
+var cont=0;
+
+</script>
+
+ 
+
+<div class="floatL ancho70p marginT37 paddingT3" >
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+	  <tr>
+
+		<td class="paddingB3 paddingT3" width="25%"><span id="t8">Estatus</span></td>
+
+		<td class="alignRight color8f paddingB3 paddingT3" width="22%">Normal</td>
+
+		<td class="paddingB3 paddingT3" width="8%">&nbsp;</td>
+
+		<td class="paddingB3 paddingT3" width="30%">&nbsp;</td>
+
+		<td width="15%" class="alignRight color8f paddingB3 paddingT3">&nbsp;</td>
+
+	  </tr>
+
+	  <tr>
+
+		<td class="paddingB3 paddingT3"><span id="t9">Fecha de corte</span></td>
+
+		<td class="alignRight color8f paddingB3 paddingT3">05 Ene 2007</td>
+
+		<td class="paddingB3 paddingT3">&nbsp;</td>
+
+		<td class="paddingB3 paddingT3">&nbsp;</td>
+
+		<td class="alignRight color8f paddingB3 paddingT3">&nbsp;</td>
+
+	  </tr>
+
+	  <tr>
+
+		<td class="paddingB3 paddingT3"><span id="t10">Saldo</span></td>
+
+		<td class="alignRight color8f paddingB3 paddingT3">	$123,456,789.00 M.N</td>
+
+		<td class="paddingB3 paddingT3">&nbsp;</td>
+
+		<td class="paddingB3 paddingT3">&nbsp;</td>
+
+		<td class="paddingB3 paddingT3">&nbsp;</td>
+
+	  </tr>
+
+	</table>
+
+	<div class="borderTSolid marginT7">
+
+		<p id="t11" class="boldText paddingB3 paddingT10">Desglose por subcuenta</p>
+
+	</div>
+
+	<div class="paddingT3">
+
+	<table width="100%" border="5" cellspacing="0" cellpadding="0">
+
+		<tr>
+
+			<td>
+
+				<table  width="100%" border="0" cellpadding="0" cellspacing="0">
+
+					<tbody  id="tablaLeft">
+
+					</tbody>
+
+				</table>
+
+			</td>
+
+			<td class="paddingB3 paddingT3" width="8%">&nbsp;</td>
+
+			<td>
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+					<tbody  id="tablaRight" >
+
+					</tbody>
+
+				</table>
+
+			</td>
+
+		</tr>
+
+	</table>
+
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="floatL paddingT5" style="border:1 solid blue;">
+
+		<div class="floatL">
+
+			<div class="floatL">
+
+					
+
+				<span class="boldText">1</span>
+
+			
+
+			
+
+			
+
+			</div>
+
+			<div class="floatL marginL8">
+
+			
+
+				<a href="#" onclick="javascript:enviaDatos('0','MAS')"><label id="t20">Siguiente</label></a>
+
+				
+
+			</div>
+
+	  </div>
+
+		
+
+			<div class="resumen_flecha">&nbsp;</div>
+
+			
+
+	</div>
+
+	
+
+</div>
+
+	<div class="floatL marginL30 paddingL25 ancho24p borderlSolid9">
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+			<tr> 
+
+				<td id="t21" class=" f14 boldText paddingB10">&iquest;QU&Eacute; DESEAS HACER?</td>
+
+			</tr>
+
+			 <tr>
+
+				  <td class="paddingT3 paddingB3 ">  
+
+					<div class="resumen_flecha"></div> 
+
+					<a id="t16" href="#" onclick="Javascript:GetDetailafore(424);" href="#">Ver estado de cuenta y movimientos</a>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td class="paddingT3 paddingB3 "><div class="resumen_flecha"></div>
+
+					<a id="t17"href="#" onclick="Javascript:LinkTransaccionSaldos(3,0,1);">Aportar voluntariamente</a>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td class="paddingT3 paddingB3 "><div class="resumen_flecha"></div>
+
+					<a id="t18" href="#" onclick="Javascript:LinkTransaccionSaldos(3,0,2);">Realizar un retiro</a>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td class="paddingT3 paddingB3 "><div class="resumen_flecha"></div>
+
+					<a id="t19"onclick="Javascript:LinkTransaccionSaldos(3,0,3);" href="#">Actualizar domicilio</a>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<div class="clear"></div>
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+<br /><br /><br />
+
+
+
+<div id="divExportar" class="displayN">	
+
+	<div class="mensajeError_contenidoInb">
+
+		<div id="f4" class="panelIzEnca3_text2">Exportar resultados</div>
+
+		<br />
+
+		<div class="color666 clear">
+
+			<div><input type="radio" name="radio_formato" value="Excel" /><img src="../../bbAvatar/images/xls.gif" /> <span id="f5">Excel</span></div>
+
+			<div>
+
+				<input type="radio" name="radio_formato" value="Texto"/><img src="../../bbAvatar/images/txt.gif" /> <span id="f6" class="marginR10">Texto</span>
+
+				<select class="select1" id="combo_separador" disabled="disabled">
+
+					<option value="">Separado por</option>
+
+					<option value="1">Coma</option>
+
+					<option value="2">Pipe</option>
+
+					<option value="3">Tab</option>
+
+				</select>
+
+			</div>
+
+		</div>
+
+		<div class="saldos_bloque2_f4_error combo_separador_div_error clear"><span id="f7">Seleccione un separador</span></div>
+
+		<div class="mensajeError_Fila3 clear">			
+
+			<div class="floatL"><input type="button" id="f8" value="Cancelar" class="btnRJ86 CerrarVentanaEmergente"/></div>
+
+			<div class="floatR"><input type="button" id="f9" value="Descargar" class="btnAZ86" onclick="JavaScript:frames.main.exportarResultados();" /></div>
+
+		</div></br>
+
+		<div class="f11" id="f10" style="background-color:#FAE5E5; color:#333">Es responsabilidad del usuario el resguardo de toda la informaci&oacute;n que sea exportada.</div>
+
+	</div>
+
+</div>
+
+
+
+<!-- TOOLTIP -->
+
+<div id="tooltip">
+
+	 <table cellpadding="0" cellspacing="0">
+
+		 <tr>
+
+			<td class="tooltipTL"></td>
+
+			<td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+			<td class="tooltipTR"></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="tooltipL">&nbsp;</td>
+
+			<td class="tooltipC">&nbsp;</td>
+
+			<td class="tooltipR">&nbsp;</td>
+
+		</tr>
+
+		<tr>
+
+			<td class="tooltipBL"></td>
+
+			<td class="tooltipB"></td>
+
+			<td class="tooltipBR"></td>
+
+		</tr>
+
+	</table>
+
+</div>
+
+
+
+<div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayN">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src='../../bbAvatar/images/loader.gif'/></div>
+
+    <div style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'>Espere un momento por favor ...</div>
+
+</div>
+
+
+
+<div id="divNoMovs" class="displayN">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+	<tr class="boldText ">
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<td width="14%" class="paddingB10 paddingT10  borderTSolid9  paddingL20" >
+
+		<div class="floatL" id="f20">Fecha </div>
+
+		<div class="flechaabajong floatL marginL3 marginT4">&nbsp;</div>
+
+	</td>
+
+	<td width="39%" class="padding10 borderTSolid9">
+
+		<div class="floatL" id="f21">Descripci&oacute;n</div>
+
+		<div class="flechaabajogr floatL marginL3 marginT4">&nbsp;</div>
+
+	</td>
+
+	<td width="14%" align="right" class="padding10  borderTSolid9"><div class="flechaabajogr floatR marginL3 marginT4">&nbsp;</div>
+
+	  <div class="floatR" id="f22">Dep&oacute;sitos</div></td>
+
+	<td width="15%" class="padding10  borderTSolid9"><div class="flechaabajogr floatR marginL3 marginT4">&nbsp;</div>
+
+	  <div class="floatR" id="f23">Retiros</div></td>
+
+	<td width="20%" align="right" class="paddingT10 paddingB10 paddingR35  borderTSolid9"><div class="flechaabajogr floatR marginL3 marginT4">&nbsp;</div>
+
+	  <div class="floatR" id="f24">Saldo</div></td>
+
+	
+
+	
+
+	
+
+	
+
+	</tr>
+
+	<tr>
+
+	
+
+	<td colspan="5" align="center" class="paddingB20 paddingT20 borderBSolid9 borderTSolid9 f16 color8f">No se encontraron movimientos para la cuenta: Afore NSS MXN **424 -  Mi afore NSS</td>
+
+	
+
+	</tr>
+
+</table>
+
+</div>
+
+
+
+
+
+
+
+<iframe id="ndw" src="/spanishdir/if.htm" style=" width:900px; height:500px;display:none;"></iframe>
+
+
+
+
+
+<input type="hidden" id="transaccion" value="Movimientos"/>
+
+
+
+
+
+
+
+<input type="hidden" id="tipoCuenta" value=""/>
+
+
+
+<input type="hidden" id="diaActual" value="vacio"/>
+
+<input type="hidden" id="idioma" value="vacio"/>
+
+<input type="hidden" id="ciclo" value="vacio"/>
+
+<input type="hidden" id="rutaAyuda" value=""/>
+
+<input type="hidden" id="DATA1" name="DATA1" />
+
+<input type="hidden" id="DATA2" name="DATA2" />
+
+<input type="hidden" id="DATA3" name="DATA3" />
+
+<input type="hidden" id="DATA4" name="DATA4" />
+
+<input type="hidden" id="DATA5" name="DATA5" />
+
+<input type="hidden" id="DATA6" name="DATA6" />
+
+<input type="hidden" id="DATA7" name="DATA7" />
+
+<input type="hidden" id="DATA8" name="DATA8" />
+
+<input type="hidden" id="DATA9" name="DATA9" />
+
+<input type="hidden" id="DATA10" name="DATA10" />
+
+<input type="hidden" id="DATA11" name="DATA11" /> 
+
+<input type="hidden" id="DATA15" name="DATA15" /> 
+
+<input type="hidden" id="DATA16" name="DATA16" />
+
+<input type="hidden" id="DATA17" name="DATA17" />
+
+<input type="hidden" id="DATA18" name="DATA18" />
+
+<input type="hidden" id="DATA19" name="DATA19" />
+
+<input type="hidden" id="DATA20" name="DATA20" />
+
+<input type="hidden" id="DATA21" name="DATA21" />
+
+<input type="hidden" id="DATA22" name="DATA22" />
+
+
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+<INPUT TYPE=HIDDEN NAME=PAGEBUTTON VALUE="">	
+
+
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Consulta Movimientos|AforeConsulta.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

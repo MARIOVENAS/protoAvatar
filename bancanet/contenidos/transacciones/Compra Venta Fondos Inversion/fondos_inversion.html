@@ -1,0 +1,2495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" style="background:#FFF">
+
+<form  METHOD="POST" NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="562aa956-1822-448a-94b3-280691f8e264" ><input type=hidden name="EWF_SYS_1" value="JFAN0G1OMTV53K5FW@OSR2CFUJKHRSF6BB8B279K" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZCVI-PAG SELEC TRANS CONTRATO"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="PagInicio.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="34"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+
+
+<!-- <link href="../../bbAvatar/css/mando.css" rel="stylesheet" type="text/css" /> -->
+
+<link href="../../bbAvatar/css/skin.css" rel="stylesheet" type="text/css" />
+
+<link href="../../bbAvatar/css/skin2.css" rel="stylesheet" type="text/css" />
+
+
+
+<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/motor.js"></script>
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+
+
+
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../bbAvatar/css/estilos.css">
+
+
+
+<style type="text/css">
+
+body{
+
+background: transparent;
+
+}
+
+</style>
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script language="JavaScript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+<script language="JavaScript">
+
+function RdioChk_Vacio (Objeto,Msg_Error){
+
+	$("#"+Objeto+"_error").css("display","none");
+
+	var Seleccionado = false;
+
+	$("input[name='"+Objeto+"']").each(function(){
+
+		if(Seleccionado != true){
+
+			if(this.checked)
+
+			Seleccionado = true;
+
+			else
+
+			Seleccionado = false;
+
+		}
+
+	});
+
+	if(Seleccionado != true){
+
+		$("#"+Objeto+"_error").css("display","block").html(Msg_Error);
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+function Verifica_CampoVacio(Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if ($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}
+
+		return true;
+
+}
+
+
+
+function Verifica_Combos_Vacios (Combo1, Combo2)
+
+{
+
+var Valor1 = "";
+
+var Valor2 = "";
+
+Num_Opcion1 = Combo1.selectedIndex;
+
+Valor1 = Combo1.options[Num_Opcion1].value;
+
+Num_Opcion2 = Combo2.selectedIndex;
+
+Valor2 = Combo2.options[Num_Opcion2].value;
+
+
+
+if (Valor1 == "PS" || Valor1 == "AC" || Valor1 == "NS")
+
+	{
+
+       if (Valor2 == "PS" || Valor2 == "AC" || Valor2 == "NS")
+
+	   {
+
+	      return false;
+
+	   }
+
+       else
+
+           {
+
+             Combo1.focus();
+
+	     alert("Seleccione el d\u00eda");	
+
+   	     return true;
+
+           }          
+
+        }
+
+   else
+
+     {
+
+       if (Valor2 == "PS" || Valor2 == "AC" || Valor2 == "NS")
+
+	   {
+
+	       Combo2.focus();
+
+	       alert("Seleccione el mes");	
+
+               return true;
+
+           }
+
+       else
+
+           {
+
+   	     return false;
+
+           }
+
+     }
+
+}
+
+
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+
+
+var criterio;
+
+var inParm = "";
+
+var regresaMultiseries = "";
+
+var numeroSeries;
+
+var eventoSeries
+
+var tamanioPagina = 10;
+
+var paginaSeleccionada = 1;
+
+var msj1; 
+
+var msj2;
+
+var msj3; 
+
+var msj4; 
+
+var msj5; 
+
+var msj6; 
+
+var msj7; 
+
+var msj8; 
+
+var msj9; 
+
+var msj10;
+
+
+
+var es=new Array('Investment Funds',
+
+				'Select the type of transaction and the withdrawal account, enter the investment data and click "Continue"',
+
+				'Transaction type',
+
+				'Security purchase',
+
+				'Security Sell',
+
+				'Accounts',
+
+				'Contract Number:',
+
+				'Investment </br> data',
+
+				'Loading series',
+
+				'&nbsp;&nbsp;&nbsp;This transaction will be process according your instructions without any Banamex Officer advisory',
+
+				'Additionals',
+
+				'options',
+
+				'Schedule for future',
+
+				'Date',
+
+				'Continue',
+
+				'INVESTMENT FUNDS',
+
+				'Same Day',
+
+				'Investment series',
+
+				'Select the series from which you want to buy securities  and enter the desired amount.',
+
+				'Fund / Series',
+
+				'Minimum amount to operate',
+
+				'Market price',
+
+				'Liquidation');
+
+
+
+jQuery(document).ready(function(){
+
+
+
+	criterio = "COMPRA"
+
+	msj1 = (language=='eng') ? "Choose the Contract Number." : "Es necesario seleccionar el No. de Contrato.";
+
+	if(criterio == "VENTA"){
+
+		msj2 = (language=='eng') ? "Enter a value in the field Securities." : "Digite un valor en el campo T&iacute;tulos";
+
+	}else{
+
+		msj2 = (language=='eng') ? "Enter a value in the field Amount." : "Digite un valor en el campo Importe.";
+
+	}
+
+	msj3 = (language=='eng') ? "It is necessary to select one Mutual Fund" : "Es necesario seleccionar un Fondo / Serie";
+
+	msj4 = "S\u00f3lo se permiten datos num\u00e9ricos en este campo. Favor de verificar";
+
+	msj5 = "Es necesario seleccionar Compra o Venta";
+
+	msj6 = (language=='eng') ? "Amount" : "Importe";
+
+	msj7 = (language=='eng') ? "Number of Securities" : "N&uacute;mero de T&iacute;tulos"; "";
+
+	msj8 = (language=='eng') ? 'The purchase will be charged from the collection account linked to the investment' : 'La compra ser&aacute; cargada de la cuenta eje a la que est&aacute; ligada la inversi&oacute;n';
+
+	msj9 = (language=='eng') ? "The sale's amount will be deposited into the collection account linked to the investment" : "El importe de la venta ser&aacute; depositado a la cuenta eje que esta ligada a la inversi&oacute;n";
+
+	msj10= (language=='eng') ? "Please, select a date." : "Seleccione una fecha";
+
+
+
+	crearCombo();
+
+	cambiarMensaje();
+
+	formaTituloImporte();	
+
+	$("#DATAAUX", window.parent.document).val("");	
+
+	if("" == "SI"){
+
+		var inParmMultiseries = ("").split("|");
+
+		$("[name='compraVenta']").attr("checked","");
+
+		$("[name='compraVenta'][value='"+inParmMultiseries[9]+"']").attr("checked","checked");
+
+		criterio = inParmMultiseries[9];
+
+		paginaSeleccionada = inParmMultiseries[8];
+
+		var IndiceOrigen = '[IndRetiro]';
+
+		$("#comboContratos").find("option[value='"+IndiceOrigen+"']").attr("selected","selected");
+
+		paginarTabla("tablaSeries", tamanioPagina,paginaSeleccionada);
+
+		$("input[name='radioSerie'][value='"+inParmMultiseries[2]+"']").attr("checked","checked");
+
+		$("#importe").val(inParmMultiseries[3]);
+
+		$("#divCargando").hide();
+
+		$("#divSeries").show();
+
+		$("#tablaImporte").addClass("marginT20");
+
+		var aux = $("#tablaCaptura").length;
+
+
+
+		var aux2 = inParmMultiseries[4];
+
+		
+
+		if(aux!=0 && isProgramada(aux2) ){
+
+			$('#checkCalendario').attr("checked","checked");
+
+			$("#divInputFecha").removeClass("displayN");
+
+			parent.ajustarIframe();
+
+			if(language== "eng"){
+
+				var dia= inParmMultiseries[4];
+
+				var mes = inParmMultiseries[5];
+
+				var fecha = dia +"/"+ mes + "/" + "[Anio_Calendario]";
+
+				$("#inputFecha").val(fecha);
+
+			}else{
+
+				var dia= inParmMultiseries[4];
+
+				var mes = inParmMultiseries[5];
+
+				var fecha = mes +"/"+ dia + "/" + "[Anio_Calendario]";
+
+				$("#inputFecha").val(fecha);	
+
+			}
+
+			inciaCalendario();
+
+			$("#inputFecha").focus(function(){$("#inputFecha").val("");});
+
+		}
+
+		if("" == "ERROR"){
+
+			
+
+			$("#causa").css("height","auto");
+
+			$("#mensajeError_contenido_div", window.parent.document).html(
+
+				$("#divError").html()
+
+			);
+
+			
+
+			setTimeout(function(){
+
+				parent.$.modal(				
+
+						{
+
+							closeHTML: '',
+
+							opacity:60,
+
+							overlayClose:false,
+
+							flagDiv:true,
+
+							widthDivIfrm:600,
+
+							heightDivIfrm:'auto'
+
+						}
+
+					);
+
+			},600);
+
+		}
+
+	}
+
+	$("input[name='compraVenta']").click(function(){
+
+		$("#comboContratos").find("option:eq(0)").attr("selected","selected");
+
+		$("#divCargando").hide();
+
+		$("#divSeries").hide();
+
+		$("#tablaImporte").removeClass("marginT20");
+
+		$("#importe").val('');
+
+		criterio = $(this).val();
+
+		cambiarMensaje();
+
+		formaTituloImporte();
+
+		ocultaErrores();
+
+		reiniciarCalendario();
+
+	});
+
+	$("#comboContratos").change(function(){
+
+		var indice = $(this).find("option:selected").val();
+
+		var event;
+
+		ocultaErrores();
+
+		
+
+		event = criterio == "COMPRA" ? "TRAE SERIES COMPRA" : "TRAE SERIES VENTA";
+
+		if(indice != "PS"){
+
+			$("#divSeries").hide();
+
+			$("#divNoSeries").hide();
+
+			$("#divSeries").css("display", "block");
+
+			parent.ajustarIframe();
+
+		}else{
+
+			$("#divSeries").hide();
+
+			$("#divNoSeries").hide();
+
+			$("#tablaImporte").removeClass("marginT20");
+
+			$("#divSeries").css("display", "none");
+
+			parent.ajustarIframe();
+
+			reiniciarCalendario();
+
+		}
+
+	});
+
+	$("#checkCalendario").change(function(){
+
+		var mostrarInputFecha = $('#checkCalendario').attr("checked");
+
+		if(mostrarInputFecha){
+
+			$("#divInputFecha").removeClass("displayN");
+
+			inciaCalendario();
+
+			$("#inputFecha").focus(function(){$("#inputFecha").val("");});
+
+		}
+
+		else{
+
+			$("#divInputFecha").addClass("displayN");
+
+			EliminarCal("#inputFecha");
+
+		}
+
+		parent.ajustarIframe();
+
+	});
+
+});
+
+
+
+function crearCombo(){
+
+	var cuentasCombo = new Array();
+
+	var stringCuentas = '';
+
+		if(language== "eng"){
+
+			stringCuentas += '6-PS--Select an option---7|';
+
+			stringCuentas += '8-27-Multiseries-378-Banca Inversi&oacute;n-MXN-40,000.00|';
+
+		}else{
+
+			stringCuentas += '6-PS--Selecciona una opci&oacute;n---7|';
+
+			stringCuentas += '8-27-Multiseries-378-Banca Inversi&oacute;n-MXN-40,000.00|';
+
+		}
+
+	cuentasCombo = stringCuentas.split('|');
+
+	
+
+	if(language== "eng"){
+
+		var option = "<option value='PS'>Select an option</option>";
+
+	}else{
+
+		var option = "<option value='PS'>Selecciona una opci&oacute;n</option>";
+
+	}
+
+
+
+	var alpha = /[A-Za-a0-9]/;
+
+	for(i=1;i<cuentasCombo.length-1;i++){
+
+		cuentaTemp = cuentasCombo[i].split('-');
+
+		if(alpha.test(cuentaTemp[2]))
+
+			nombreCuenta = cuentaTemp[2].replace(/^\s*|\s*$/g,"") + '&nbsp;&nbsp;-&nbsp;&nbsp;**' + cuentaTemp[3].replace(/^\s*|\s*$/g,"") + "&nbsp;&nbsp;-&nbsp;&nbsp;" + cuentaTemp[5].replace(/^\s*|\s*$/g,"");
+
+		else
+
+			nombreCuenta = cuentaTemp[4].replace(/^\s*|\s*$/g,"") + '&nbsp;&nbsp;-&nbsp;&nbsp;**' + cuentaTemp[3].replace(/^\s*|\s*$/g,"") + "&nbsp;&nbsp;-&nbsp;&nbsp;" + cuentaTemp[5].replace(/^\s*|\s*$/g,"");
+
+		option += "<option class='"+cuentaTemp[0]+"' value='"+cuentaTemp[1]+"'>"+nombreCuenta+"</option>";
+
+	}
+
+	
+
+	$("#comboContratos").html('');
+
+	$("#comboContratos").append(option);
+
+}
+
+
+
+
+
+
+
+function traeFolios(compraVenta, indice,event){
+
+	$("#divSeries").css("display", "block");
+
+}
+
+
+
+function muestraSeries(){
+
+
+
+	eventoSeries = $("#EventoSeries").val();
+
+	
+
+	if(eventoSeries == "OK"){
+
+		var links = '';
+
+		
+
+		paginarTabla("tablaSeries", tamanioPagina,1);
+
+		
+
+		$("#divCargando").hide();
+
+		$("#divSeries").show();
+
+		$("#tablaImporte").addClass("marginT20");	
+
+	}else if(eventoSeries == "NOSERIES"){
+
+		$("#divCargando").hide();
+
+		$("#divNoSeries").show();
+
+		$("#tablaImporte").addClass("marginT20");
+
+	}else{
+
+		var contexto = document.getElementById('ndw').contentWindow.document;
+
+		
+
+		$('#divError').html(
+
+			$("#divError", contexto).html()
+
+		);
+
+
+
+		$('#mensajeError_contenido_div', window.parent.document).html(
+
+			$("#divError").html()
+
+		);
+
+		
+
+		$("#divCargando").hide();
+
+		
+
+		setTimeout(function(){
+
+			parent.$.modal(				
+
+					{
+
+						closeHTML: '',
+
+						opacity:60,
+
+						overlayClose:false,
+
+						flagDiv:true,
+
+						widthDivIfrm:600,
+
+						heightDivIfrm:'auto'
+
+					}
+
+				);
+
+		},200);
+
+
+
+	}
+
+	parent.ajustarIframe();
+
+	reiniciarCalendario();
+
+}
+
+
+
+function ocultaErrores(){
+
+	$("div[id$='error']").hide();
+
+	parent.ajustarIframe();
+
+}
+
+
+
+function formaTituloImporte(){
+
+	var tituloImporte = criterio == "COMPRA" ? msj6 : msj7;
+
+	$("#tituloImporte").html(tituloImporte);
+
+}
+
+
+
+function cambiarMensaje(){
+
+	var mensaje = criterio == "COMPRA" ? msj8 : msj9;
+
+	$("#mensajeCompra").html(mensaje);
+
+}
+
+
+
+function inciaCalendario(){
+
+
+
+	if(language== "eng"){
+
+		var Formato = "mm/dd/yy";
+
+		var diasSemana = ['Sun','Mon','Tue','Wed','Thu','Fry','Sat'];
+
+		var Meses = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+	}else{
+
+		var Formato = "dd/mm/yy";
+
+		var diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+		var Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+	}
+
+	var fechaSer= new Date();
+
+	var anio = fechaSer.getFullYear();
+
+	var mes = fechaSer.getMonth();
+
+	var dia = fechaSer.getDate();
+
+	fechaIni = new Date(anio, mes, dia);
+
+	var p = $("#divInputFecha");
+
+	var position = p.position();
+
+	CrearCal("#inputFecha", Formato, diasSemana, Meses, fechaIni,  fechaIni,30,position.top-120 , 'A',position.left-275);
+
+}
+
+
+
+function reiniciarCalendario(){
+
+	var mostrarInputFecha = $('#checkCalendario').attr("checked");
+
+	if(mostrarInputFecha){
+
+			EliminarCal("#inputFecha");
+
+			inciaCalendario();
+
+			}
+
+}
+
+
+
+function isProgramada(dato){
+
+if(dato=="" ||dato=="0")
+
+	return false;
+
+return true;
+
+}
+
+
+
+function paginarTabla(tabla, tamanio, pagina){
+
+	var numeroSeries = $("#"+ tabla + " TBODY").find("tr").length;
+
+	var paginas = Math.round( (numeroSeries / tamanio) + .5 );
+
+	var links = "";
+
+	paginaSeleccionada = pagina;	
+
+	if(numeroSeries > tamanio){		
+
+		$("#"+tabla+" TBODY").find("tr").css("display","none");
+
+		
+
+		for(i=1;i<=paginas;i++){
+
+			links += '<a id="linkPagina'+i+'" class="num" onclick="paginarTabla(\''+tabla+'\','+tamanio+','+i+')" style="cursor:pointer;">'+i+'</a>';			
+
+		}
+
+		$("#"+tabla+"_bloque").html(links);
+
+		
+
+		var min = (pagina*tamanio)-tamanio;
+
+		var max = (pagina*tamanio)-1;
+
+		
+
+		$("#"+tabla+" TBODY").find("tr").each(function(index){		
+
+			if(index >= min && index <= max){
+
+				$(this).show();
+
+			}
+
+		});
+
+		$("#divSeries :radio").attr("checked","");
+
+		$("#"+tabla+"_Paginacion a").removeClass().addClass("num");
+
+		$("#linkPagina"+pagina).removeClass("num").addClass("sel_num");
+
+		$("#"+tabla+"_Paginacion").show();
+
+	}
+
+	$("#"+ tabla +" tr:odd td").addClass("bgF1F2F2");
+
+	parent.ajustarIframe();
+
+}
+
+
+
+function Radio_Vacio(Radio,Msg_Error,Req){
+
+	var seleccionado = false;
+
+	$("#"+Radio+"_error").css("display","none");
+
+	$("input[name='"+Radio+"']:radio").each(function(){
+
+		if($(this).is(":checked"))
+
+			seleccionado = true;
+
+	});
+
+	if(!seleccionado && Req != "NO"){
+
+		$("#"+Radio+"_error").css("display","block").html(Msg_Error);
+
+		$("input[name='"+Radio+"']:eq(0)").focus();
+
+	}
+
+	return seleccionado;
+
+}
+
+
+
+function valida(){
+
+	var flagCorrecto = true;
+
+	if(!Combo_Vacio("comboContratos",msj1,"SI"))
+
+		flagCorrecto = false;
+
+	if(!Radio_Vacio("radioSerie",msj3,""))
+
+		flagCorrecto = false;
+
+		
+
+	if(criterio == "COMPRA"){
+
+		if(!Valida_Caracteres("importe",".,",1,"SI",msj2))
+
+		flagCorrecto = false;
+
+	}else{
+
+		if(!Valida_Caracteres("importe","",1,"SI",msj2))
+
+		flagCorrecto = false;
+
+	}
+
+	var fechaProg = $('#checkCalendario').attr("checked");
+
+	if(fechaProg){
+
+		if(!Campo_Vacio("inputFecha",msj10,"SI"))
+
+		flagCorrecto = false;
+
+	}
+
+	if(flagCorrecto){
+
+		var serie = $("input[name='radioSerie']:checked").val();
+
+		var importe = $("#importe").val();
+
+		var fecha = $("#inputFecha").val();
+
+		var  arreglo = fecha.split("/");
+
+			var dia = arreglo[0];
+
+			var mes = arreglo[1];
+
+		
+
+			var anio = arreglo[2];
+
+		$("input[name='DATA3']").val(serie);
+
+		$("input[name='DATA4']").val(importe);
+
+		if(fechaProg){
+
+			$("input[name='DATA5']").val(dia);
+
+			$("input[name='DATA6']").val(mes);
+
+			$("input[name='DATA11']").val(anio);
+
+		}
+
+		else{
+
+			$("input[name='DATA5']").val("0");
+
+			$("input[name='DATA6']").val("0");
+
+			$("input[name='DATA11']").val("");
+
+		}
+
+		$("input[name='DATA9']").val(paginaSeleccionada);
+
+		$("input[name='DATA10']").val(criterio);
+
+		
+
+		if(fechaProg){
+
+			$("#DATAAUX", window.parent.document).val(fecha);
+
+		}
+
+		
+
+		if($("#radCompra").is(':checked')){
+
+			parent.cargaDocN('Compra Venta Fondos Inversion/conf_fondo_inversion_compra.html');
+
+		}
+
+		if($("#radVenta").is(':checked')){
+
+			parent.cargaDocN('Compra Venta Fondos Inversion/conf_fondo_inversion_venta.html');
+
+		}
+
+	}
+
+	parent.ajustarIframe();
+
+}
+
+
+
+var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+}
+
+
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+var iframe = "";
+
+var banderaBoton = "";
+
+
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+
+
+</script>
+
+
+
+<script language="JavaScript">
+
+
+
+function MM_openBrWindow(theURL,winName,features)
+
+{ 
+
+  var URL;
+
+  for (iCount=0; iCount<document.forms[0].length; iCount++)
+
+   {
+
+     if (document.forms[0].elements[iCount].name == theURL)
+
+       URL=document.forms[0].elements[iCount].value;
+
+   }
+
+  window.open(URL, winName, features);
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>parent.setFecha("10/04/12    16:21:05  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit\u00f3 la funci\u00f3n de back, para poder continuar operando elija del men\u00fa la opci\u00f3n deseada u oprima el bot\u00f3n(es) al final de la p\u00e1gina.\n\n Esta Transacci\u00f3n no se efectuar\u00e1, recuerde imprimir el comprobante de la transacci\u00f3n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del men\u00fa la opci\u00f3n deseada u oprima el bot\u00f3n(es) al final de la p\u00e1gina. Recuerde imprimir el comprobante de la transacci\u00f3n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="161708  ";b$Cont="162105  "
+
+	//
+
+    </script>
+
+
+
+
+
+
+
+<script language="javascript">
+
+	function Initialize(){
+
+		var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+		rutaAyuda += 'Multiseries.htm';
+
+		theForm=document.forms[0];
+
+	}
+
+</script>
+
+
+
+<script language="javascript">
+
+
+
+var radioItemChecked;
+
+function Continuar(Event){
+
+	var ms1, ms2;
+
+		ms1 = "Es necesario seleccionar Compra o Venta";
+
+		ms2 = (language=='eng') ? "Choose the Contract Number." : "Es necesario seleccionar el No. de Contrato.";
+
+	
+
+	
+
+	var radioB = document.getElementsByName('DATA1');
+
+
+
+	if(!RdioChk_Vacio(radioB, ms1, 'SI')){
+
+		
+
+		var combo = document.getElementById('contratos');
+
+		if(!Combo_Vacio(combo,ms2)){
+
+			if(radioItemChecked != null && radioItemChecked == 'VENTA')
+
+				parent.cargaDocN('Compra Venta Fondos Inversion/compra_de_titulos_multiseries.html');
+
+				
+
+			else
+
+				DoSubmit('COK');
+
+		}
+
+	}
+
+}
+
+function muestrContrato(){
+
+	$("#divSeries").show();
+
+}
+
+</script> 
+
+
+
+<STYLE TYPE="text/css" MEDIA=screen>
+
+  body{
+
+	overflow-x: hidden;
+
+  }
+
+</STYLE>
+
+ 
+
+ <div class="float-left fonttit" id="t15">FONDOS DE INVERSI&Oacute;N</div>
+
+<div class="panelIzEnca3_text2" id="t0">
+
+	Fondos de Inversi&oacute;n Horizonte Multiseries
+
+</div>
+
+       
+
+<div class="color666 paddingT5 f11" id="t1">
+
+	Selecciona el tipo de operaci&oacute;n y la cuenta retiro, completa los datos de la inversi&oacute;n y da clic en "Continuar". 
+
+</div>
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p  padding20 paddingL15" valign="top">
+
+				<span class="f12" id="t2">
+
+					Tipo de operaci&oacute;n
+
+				</span>
+
+			</td>
+
+			<td valign="top" class=" paddingL0  paddingT18   paddingB13 padding20 ">
+
+				<div class="floatL paddingL10 negrita color333 f11 paddingB5  ancho40p">
+
+					<table  cellpadding="0" cellspacing="0" border="0">
+
+						<tr>
+
+							<td class=""><input  name="compraVenta" type="radio" class="radio_contenido_acordeon" value="COMPRA" checked="checked" id="radCompra"/></td>
+
+							<td class=""><div class="normal color333 f11 paddingT2 " id="t3">Compra de t&iacute;tulos</div> </td>
+
+						</tr>
+
+					</table>
+
+				</div>
+
+				
+
+				<div class=" borderLSolid floatL paddingL2 negrita color333 f11 paddingB5 ancho40p">
+
+					<table  cellpadding="0" cellspacing="0" border="0">
+
+						<tr>
+
+							<td class=" paddingL8"><input  name="compraVenta" type="radio" class="radio_contenido_acordeon" value="VENTA" id="radVenta"/></td>
+
+							<td><div class="normal color333 f11 paddingT2" id="t4">Venta de t&iacute;tulos</div></td>						  
+
+						</tr>
+
+					</table>
+
+				</div>
+
+				<div id="compraVenta_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+			</td>
+
+		</tr>
+
+	</table> 
+
+</div>
+
+
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20 paddingL15" valign="top"><span class="f12" id="t5">Cuentas</span></td>
+
+			<td valign="top" class="padding20 paddingL15 paddingR15">
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+					<tr>
+
+						<td class="ancho33p">
+
+							<div class="negrita color333 f11 paddingB5" id="t6">Contrato de inversi&oacute;n</div>
+
+							<div class="">
+
+								<select id="comboContratos" class="ancho100p" onchange="muestrContrato()">
+
+									
+
+								</select>
+
+								<div id="comboContratos_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+							</div>
+
+					  </td> 
+
+					</tr>
+
+				</table>
+
+			</td>
+
+		</tr>
+
+	</table>
+
+	<div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="mensajeCompra">
+
+	</div>
+
+</div>
+
+
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20 paddingL15" valign="top"><span class="f12" id="t7">Datos de <br />la inversi&oacute;n</span></td>
+
+			<td valign="top" class="padding20 paddingL15 paddingR15">
+
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+					<tbody><tr>
+
+						<td class="ancho33p">
+
+							<div class="display" id="divSeries" style="display: none;">
+
+
+
+		<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tablaSaldos3">
+
+			<tbody><tr>
+
+				<td class="ancho33p padding0"><div class="negrita color333 f12 " id="t17">Series de inversi&oacute;n</div>
+
+					<div class="f11 paddingT8" id="t18">
+
+						Selecciona la serie de la que deseas comprar t&iacute;tulos e ingresa el importe deseado.
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</tbody></table>
+
+								
+
+		<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tablaSaldos3 marginT20 marginL0" id="tablaSeries">
+
+			<thead>
+
+				<tr align="center">
+
+				  <td colspan="2" class="borderRSolid"><span class="center" id="t19">Fondo / Serie</span></td>
+
+				  <td class="borderRSolid"><span class="center" id="t20">Importe m&iacute;nimo</span></td>
+
+				  <td class="borderRSolid"><span class="center" id="t21">Precio de mercado</span></td>
+
+				  <td><span class="center" id="t22">Liquidaci&oacute;n</span></td>
+
+				</tr>
+
+			</thead>
+
+		   
+
+		  <tbody>
+
+				<tr style="">
+
+					<td class="bgF1F2F2"><input type="radio" value="1" name="radioSerie"></td>
+
+					<td class="borderRSolid center bgF1F2F2">HZDIA M2-C</td>
+
+					<td class="borderRSolid center bgF1F2F2">150,000.00</td>
+
+					<td class="borderRSolid center bgF1F2F2">9.2557</td>
+
+					<td class="center bgF1F2F2" id="t16">Mismo d&iacute;a</td>
+
+				</tr><tr style="">
+
+					<td class=""><input type="radio" value="2" name="radioSerie"></td>
+
+					<td class="borderRSolid center">HZDIA M3-C</td>
+
+					<td class=" borderRSolid center">140,000.00</td>
+
+					<td class="borderRSolid center">9.2777</td>
+
+					<td class="center">24 hrs</td>
+
+				</tr><tr style="">
+
+					<td class="bgF1F2F2"><input type="radio" value="3" name="radioSerie"></td>
+
+					<td class="borderRSolid center bgF1F2F2">HZDIA M3-C</td>
+
+					<td class="borderRSolid center bgF1F2F2">178,000.00</td>
+
+					<td class="borderRSolid center bgF1F2F2">5.2777</td>
+
+					<td class="center bgF1F2F2" id="t16">Mismo d&iacute;a</td>
+
+				</tr><tr style="">
+
+					<td class=""><input type="radio" value="4" name="radioSerie"></td>
+
+					<td class="borderRSolid center">HZDIA M1-A</td>
+
+					<td class=" borderRSolid center">140,000.00</td>
+
+					<td class="borderRSolid center">6.2578</td>
+
+					<td class="center">72 hrs</td>
+
+				</tr><tr style="">
+
+					<td class="bgF1F2F2"><input type="radio" value="5" name="radioSerie"></td>
+
+					<td class="borderRSolid center bgF1F2F2">HZDIA M3-B</td>
+
+					<td class="borderRSolid center bgF1F2F2">200,000.00</td>
+
+					<td class="borderRSolid center bgF1F2F2">6.3134</td>
+
+					<td class="center bgF1F2F2">48 hrs</td>
+
+				</tr><tr style="">
+
+					<td class=""><input type="radio" value="6" name="radioSerie"></td>
+
+					<td class="borderRSolid center">HZGUB M4-A</td>
+
+					<td class=" borderRSolid center">132,000.00</td>
+
+					<td class="borderRSolid center">4.1789</td>
+
+					<td class="center">96 hrs</td>
+
+				</tr><tr style="">
+
+					<td class="bgF1F2F2"><input type="radio" value="7" name="radioSerie"></td>
+
+					<td class="borderRSolid center bgF1F2F2">HZGUB M3-C</td>
+
+					<td class="borderRSolid center bgF1F2F2">161,000.00</td>
+
+					<td class="borderRSolid center bgF1F2F2">9.2197</td>
+
+					<td class="center bgF1F2F2">96 hrs</td>
+
+				</tr><tr style="">
+
+					<td class=""><input type="radio" value="8" name="radioSerie"></td>
+
+					<td class="borderRSolid center">HZGUB M1-B</td>
+
+					<td class=" borderRSolid center">143,000.00</td>
+
+					<td class="borderRSolid center">9.2117</td>
+
+					<td class="center">24 hrs</td>
+
+				</tr><tr style="">
+
+					<td class="bgF1F2F2"><input type="radio" value="9" name="radioSerie"></td>
+
+					<td class="borderRSolid center bgF1F2F2">HZGUB M1-A</td>
+
+					<td class="borderRSolid center bgF1F2F2">121,000.00</td>
+
+					<td class="borderRSolid center bgF1F2F2">4.2777</td>
+
+					<td class="center bgF1F2F2">24 hrs</td>
+
+				</tr><tr style="">
+
+					<td class=""><input type="radio" value="10" name="radioSerie"></td>
+
+					<td class="borderRSolid center">HZGUB M2-A</td>
+
+					<td class=" borderRSolid center">136,000.00</td>
+
+					<td class="borderRSolid center">1.2578</td>
+
+					<td class="center">48 hrs</td>
+
+				</tr><tr style="display: none;">
+
+					<td class="bgF1F2F2"><input type="radio" value="11" name="radioSerie"></td>
+
+					<td class="borderRSolid center bgF1F2F2">HZGUB M2-B</td>
+
+					<td class="borderRSolid center bgF1F2F2">205,000.00</td>
+
+					<td class="borderRSolid center bgF1F2F2">6.5566</td>
+
+					<td class="center bgF1F2F2">48 hrs</td>
+
+				</tr><tr style="display: none;">
+
+					<td class=""><input type="radio" value="12" name="radioSerie"></td>
+
+					<td class="borderRSolid center">HZGUB M2-A</td>
+
+					<td class=" borderRSolid center">112,000.00</td>
+
+					<td class="borderRSolid center">2.1739</td>
+
+					<td class="center">24 hrs</td>
+
+				</tr>   
+
+		   </tbody></table>
+
+
+
+		<div class="saldos_bloque2_f4_error_display_blanco" id="radioSerie_error"></div>
+
+		<div class="alto15">&nbsp;</div>
+
+		
+
+		<div style="padding-right: 10px; display: block;" class="marginT0 padding0 saldos_bloque3_2  bordeN clear displayN" id="tablaSeries_Paginacion">
+
+			<div class="bgF1F2F2 ancho100p clear overflow">
+
+				<div style="padding-left:10px;" class="paddingT10 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL">&nbsp;</div>
+
+				<div id="tablaSeries_bloque" class="paddingT10 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL paginacion"><a style="cursor:pointer;" onclick="paginarTabla('tablaSeries',10,1)" class="sel_num" id="linkPagina1">1</a><a style="cursor:pointer;" onclick="paginarTabla('tablaSeries',10,2)" class="num" id="linkPagina2">2</a></div>
+
+			</div>
+
+		</div>
+
+		
+
+</div>
+
+							<div class="displayN" id="divNoSeries" style="display: none;">
+
+								<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tablaSaldos3 ">
+
+									<tbody><tr>
+
+										<td class="ancho50p bgfae5e5">
+
+										
+
+										No tienes series disponibles
+
+										
+
+										</td>
+
+									</tr>
+
+								</tbody></table>  
+
+							</div>
+
+							
+
+							<div id="divCargando" class="center marginT20 displayN">
+
+								<img alt="preloader" src="../../bbAvatar/images/preloader4.gif"><br><br>
+
+								<span id="t8" class="f12C">Cargando series...</span>
+
+							</div>
+
+						   
+
+							<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tablaSaldos3 marginT20" id="tablaImporte">
+
+								<tbody><tr>
+
+									<td class="ancho33p padding0">
+
+										<div id="tituloImporte" class="negrita color333 f11 paddingB5">Importe</div>
+
+										<input type="text" id="importe" value="" class="input ancho137">
+
+										<div class="saldos_bloque2_f4_error_display_blanco" id="importe_error" style="display: none;"></div>
+
+									</td>
+
+									<td class="ancho33p">
+
+										<div class="negrita color333 f11 paddingB5">&nbsp;</div>
+
+										<div class="f11">&nbsp;</div>
+
+									</td>
+
+									<td class="ancho33p">
+
+										<div class="negrita color333 f11 paddingB5">&nbsp;</div>
+
+										<div class="f11">&nbsp;</div>
+
+									</td>
+
+								</tr>
+
+							</tbody></table>
+
+						</td>
+
+					</tr>
+
+				</tbody></table>
+
+			</td>
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+					<tr>
+
+						<td class="ancho33p">
+
+							
+
+							<div id="divSeries" class="displayN">
+
+									
+
+							</div>
+
+							
+
+							<div id="divNoSeries" class="displayN">
+
+								<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 ">
+
+									<tr>
+
+										<td class="ancho50p bgfae5e5">
+
+										
+
+										No tienes series disponibles
+
+										
+
+										</td>
+
+									</tr>
+
+								</table>  
+
+							</div>
+
+							
+
+							<div class="center marginT20 displayN" id="divCargando">
+
+								<img src="../../bbAvatar/images/preloader4.gif"  alt="preloader" /><br /><br />
+
+								<span class="f12C" id="t8">Cargando series...</span>
+
+							</div>
+
+						</td>
+
+					</tr>
+
+				</table>
+
+			</td>
+
+		</tr>
+
+	</table> 
+
+	
+
+	<div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="t9">
+
+		Esta operaci&oacute;n es realizada bajo tus instrucciones, sin la asesor&iacute;a de un Ejecutivo Banamex
+
+	</div>
+
+	
+
+</div>
+
+
+
+<div class="saldos_bloque3_2 bgF1F2F2">
+
+	<table id="tablaCaptura" width="100%" cellspacing="0" cellpadding="0" border="0" class="tablaSaldos2">
+
+		<tbody>
+
+			<tr>
+
+				<td class="borderRDotted ancho25p padding20" valign="top">
+
+					<div class="f12">
+
+						<span id="t10">Opciones</span><br><span id="t11">adicionales</span>
+
+					</div>
+
+				</td>
+
+                <td class=" paddingT0 paddingB17 padding20" valign="top">
+
+					<div class="ancho100p overflow paddingB10  marginT19" id="divProgFecha">
+
+						<div class="floatL paddingT2" id="divCheckCalendario">
+
+							<input type="checkbox" id="checkCalendario" name="checkCalendario"/>
+
+						</div>
+
+						<div class="floatL paddingT5 f11" id="t12">Programar a fecha futura</div>
+
+					</div>
+
+					<div id="divInputFecha"class="displayN">
+
+						<table class="tablaSaldos3" width="100%" cellspacing="0" cellpadding="0" border="0">
+
+							<tbody>
+
+								<tr>
+
+									<td valign="top" class="ancho50p  calendario">
+
+										<div id="t13" class="negrita color333 f11">Fecha</div>
+
+										<input id="inputFecha" class="yearpicker" type="text" readonly="readonly"/>
+
+										<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" />
+
+										<div id="inputFecha_error" class="saldos_bloque2_f4_error_display_azul" style="display:none"></div>
+
+								   </td>
+
+								</tr>
+
+                            </tbody>
+
+						</table>
+
+					</div>
+
+                </td>
+
+            </tr>				
+
+        </tbody>
+
+	</table>  
+
+</div>
+
+	<div class="marginT20 overflow">
+
+		<input type="button" class="btnAZ86 floatR" value="Continuar" onclick="valida()" id="t14"/>
+
+	</div>
+
+ 
+
+<a href="JavaScript:MM_openBrWindow('HORARIOS','Ayuda','toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=580,height=300')" class="generallinks displayN" id="t5"> Horarios de operaci&oacute;n </A>
+
+ 
+
+ <div id="divError" class="displayN">
+
+	<div class="mensajeError_contenidoIn">
+
+        <div class="mensajeError_Fila1">
+
+            <div class="mensajeError_titulo1" id="m0">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+			<div class="mensaje_btn1">
+
+				<div class="saldos_btn2" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+			</div>
+
+        </div>
+
+        <div class="mensajeError_Fila1_2">
+
+            <div id="causa" class="color666 paddingT5 paddingL25 f11"><span class="color666 paddingT5 f11" id="m1">Fondos de Inversi&oacute;n</span><br />
+
+            <span class="color666 paddingT5 f11" id="m2">Causa: </span>
+
+        </div>
+
+        </div>
+
+        <div class="mensajeError_Fila2 color333 negrita paddingL25" id="m3">&iquest;Qu&eacute; puedo hacer?</div>
+
+        <div class="mensajeError_Fila2 color666 paddingL25" id="m4">Si lo deseas, comun&iacute;cate a servicio a clientes al 1226 3990 (D.F. y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+        01 800 110 3990 (Del interior de la Rep&uacute;blica).</div><br/>
+
+        <div class="mensajeError_Fila2 color666 paddingL25 floatL" id="m5">Es importante tener a la mano el siguiente c&oacute;digo:&nbsp;&nbsp; </div><span class="coloree2e24 floatL paddingT5 f11"></span>
+
+        <div class="mensajeError_Fila3">
+
+                <div class="floatR"><input id="m6"type="button" value="Continuar" class="floatR btnAZ86 CerrarVentanaEmergente" /></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<iframe id="ndw" src="../../spanishdir/if.htm" style=" width:800px; height:500px; display:none;"></iframe>
+
+
+
+<INPUT TYPE=HIDDEN NAME="EWFBUTTON" VALUE="" />
+
+
+
+	<INPUT TYPE=HIDDEN NAME=AYUDA VALUE="../../spanishdir/ayudas/afondmul00.htm" />
+
+	<INPUT TYPE=HIDDEN NAME=HORARIOS VALUE="../../spanishdir/ayudas/horafondos.htm" />
+
+
+
+<INPUT TYPE=HIDDEN ID="EventoSeries">
+
+<INPUT TYPE=HIDDEN ID="NumeroSeries">
+
+<INPUT TYPE=HIDDEN NAME="DATA3">
+
+<INPUT TYPE=HIDDEN NAME="DATA4">
+
+<INPUT TYPE=HIDDEN NAME="DATA5"value="0">
+
+<INPUT TYPE=HIDDEN NAME="DATA6"value="0">
+
+<INPUT TYPE=HIDDEN NAME="DATA7" value="0">
+
+<INPUT TYPE=HIDDEN NAME="DATA8" value="0">
+
+<INPUT TYPE=HIDDEN NAME="DATA9">
+
+<INPUT TYPE=HIDDEN NAME="DATA10">
+
+<INPUT TYPE=HIDDEN NAME="DATA11">
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Compra Venta Fondos Inversion|PagInicio.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

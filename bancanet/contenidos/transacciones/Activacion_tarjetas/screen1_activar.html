@@ -1,0 +1,247 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Capture', 
+			'Verify', 
+			'Response',
+			
+			'Activate cards',
+			'Select a card to be activated and click "Continue".',
+			
+			'Select',
+			'Alias',
+			'Product name',
+			'Number card',
+			
+			'My card',
+			'Purchase card',
+			'My mom&acute;s',
+			'My wife&acute;s',
+			'Karina&acute;s',
+			'My ideal card',
+			'My favorite card',
+			
+			'CONTINUE',
+			'CONTINUE'
+			);
+    </script>
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+	
+	setTimeout(function(){top.$('#iframeConte').removeClass('alto610').removeClass('alto525').addClass('alto550');},800);
+	top.ayuda();
+		
+	});
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+<div class="width691 floatL">
+        
+        <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t23">Captura</span> </li>
+            <li id="opcVerifica"><strong>2</strong>  <span id="t24">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t25">Respuesta</span> </li>
+        </ul>
+        </div>  
+        
+        <!-- <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+          	<td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsqB" id="t23">Captura</td>
+              </tr>
+               <tr>
+                <td class="esq_LB">&nbsp;</td>
+                <td class="esq_B"></td>
+                <td class="esq_RB">&nbsp;</td>
+              </tr>
+              </table>
+          </td>
+          <td class="width20">&nbsp;</td>
+          <td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t24">Confirmaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+            <td class="width20">&nbsp;</td>
+            <td width="32%">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t25">Verificaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+          </tr>
+          </table>-->
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t26">Activaci&oacute;n de tarjetas</h3>
+
+            </div>
+
+			<p class="instructions margin-botom0" id="t27"  style="margin-bottom:18px !important; *margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Selecciona una tarjeta para activarla y da clic en "Continuar".</p>
+
+            <div class="width141 clear">
+            	<div id="subapp-box" class="ancho100p" style="min-height:315px !important;">
+            
+                <table cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top5 back_white ancho100p">
+                   <tbody>
+                      <tr class="ada">
+                        <th width="20%" valign="middle" scope="col" class="borderLabels pad15 height20 alignCenter">
+                            <span class="strong" id="t28">Seleccionar</span>
+                        </th> 
+                        <th width="30%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t29">Alias</span>
+                            <a href="#"><div class="descendente2 float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="28%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t30">Nombre del producto</span>
+                            <a href="#"><div class="descendente2 float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="22%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t31">N&uacute;mero de tarjetas</span>
+                            <a href="#"><div class="descendente2 float-left">&nbsp;</div></a>
+                        </th>                   
+                      </tr>
+                      <tr class="degrade">
+                        <td class="pad15 borderB1solidCCC alignCenter"><input type="radio" onClick="javascript:cambiaC();" name="radios" id="r1"/></td>
+                        <td class="borderB1solidCCC" id="t32">Mi tarjeta</td>
+                        <td class="paddingR15 borderB1solidCCC">Tarjeta Cl&aacute;sica Banamex</td>
+                        <td class="paddingR15 borderB1solidCCC">12345</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC alignCenter"><input type="radio" onClick="javascript:cambiaC();" name="radios" id="r2"/></td>
+                        <td class="borderB1solidCCC" id="t33">La de las compras</td>
+                        <td class="paddingR15 borderB1solidCCC">Tarjeta Travel Pass</td>
+                        <td class="paddingR15 borderB1solidCCC">98210</td>
+                      </tr>
+                      <tr>
+                        <td class="pad15 borderB1solidCCC alignCenter"><input type="radio" onClick="javascript:cambiaC();" name="radios" id="r3"/></td>
+                        <td class="borderB1solidCCC" id="t34">La de mi Mam&aacute;</td>
+                        <td class="paddingR15 borderB1solidCCC">Tarjeta Travel Pass</td>
+                        <td class="paddingR15 borderB1solidCCC">19823</td>
+                      </tr> 
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC alignCenter"><input type="radio" onClick="javascript:cambiaC();" name="radios" id="r4"/></td>
+                        <td class="borderB1solidCCC" id="t35">La de mi esposa</td>
+                        <td class="paddingR15 borderB1solidCCC">Tarjeta Cl&aacute;sica</td>
+                        <td class="paddingR15 borderB1solidCCC">01982</td>
+                      </tr>
+                      <tr>
+                        <td class="pad15 borderB1solidCCC alignCenter"><input type="radio" onClick="javascript:cambiaC();" name="radios" id="r5"/></td>
+                        <td class="borderB1solidCCC" id="t36">La de Karina</td>
+                        <td class="paddingR15 borderB1solidCCC">Tarjeta Bsmart</td>
+                        <td class="paddingR15 borderB1solidCCC">16284</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="pad15 borderB1solidCCC alignCenter"><input type="radio" onClick="javascript:cambiaC();" name="radios" id="r6"/></td>
+                        <td class="borderB1solidCCC" id="t37">Mi tarjeta ideal</td>
+                        <td class="paddingR15 borderB1solidCCC">Tarjeta Oro Banamex</td>
+                        <td class="paddingR15 borderB1solidCCC">51394</td>
+                      </tr>
+                      <tr>
+                        <td class="pad15 borderB1solidCCC alignCenter last"><input type="radio" onClick="javascript:cambiaC();" name="radios" id="r7"/></td>
+                        <td class="borderB1solidCCC last" id="t38">Mi tarjeta preferida</td>
+                        <td class="paddingR15 borderB1solidCCC last">Tarjeta Platinum</td>
+                        <td class="paddingR15 borderB1solidCCC last">91084</td>
+                      </tr>
+                      <!--<tr>
+                        <td class="border9A height36" colspan="5">&nbsp;
+                        </td>
+                      </tr>-->
+                    </tbody>
+                </table>
+                </div><!-- id="subapp-box"  -->
+            </div><!-- Fin width141 -->
+
+						
+            <div id="btns"> <!-- Botones -->
+            
+            <div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT5">
+
+                <ul class="cN-primaryNav">
+
+                    <li class="cM-spriteBase cN-primaryNavButtonDes" id="btn1">
+                        <a href="javascript:void(0);" id="t39">CONTINUAR</a>
+                    </li>
+                    <li class="cM-spriteBase cN-primaryNavButton displayNi" id="btn2">
+                        <a href="javascript:void(0);" onClick="javascript:continuar();" id="t40">CONTINUAR</a>
+                    </li>
+                </ul>
+
+             </div>	
+             
+             </div><!-- BTN -->
+
+	  <div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript" src="prototipo_BancaNetAvatar/js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="prototipo_BancaNetAvatar/js/plugins.js"></script>
+
+	<script type="text/javascript">
+	
+	$(function(){
+    
+		$.imageTick.logging = true;
+		
+		$("input[name='radios']").imageTick({
+		  tick_image_path: "../../../../JFP/regional/images/radio_check.png", 
+		  no_tick_image_path: "../../../../JFP/regional/images/radio_empty.png",
+		  image_tick_class: "radios"
+		});
+
+  	});
+	
+	function cambiaC(){
+	$('#btn2').removeClass('displayNi');
+	$('#btn1').addClass('displayNi');
+	}
+	function cancelar(){
+	$("#tick_img_r8").trigger('click');
+	$('#btn2').addClass('displayNi');
+	$('#btn1').removeClass('displayNi');
+	}
+	function continuar(){
+		top.cargaDocN('Activacion_tarjetas/screen1_activarC1.html');
+	}
+	
+	
+	</script>
+</body>
+</html>

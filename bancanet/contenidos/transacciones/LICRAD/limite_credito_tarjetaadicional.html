@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="4f4659af-c9d7-4c5e-b3dc-9ef248f0a7e1" ><input type=hidden name="EWF_SYS_1" value="HZRG3RRTGPG2XQ4Z06B1OKRL6V38K6FO0NDJGT88" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZADT-PAG ESTABLECE LCA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="estliad.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="8"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script>parent.setFecha("12/04/12    15:38:28  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="153828  ";b$Cont="153828  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>
+
+<script type="text/javascript">
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+var es = new Array("Card managment", "Complete the modification data and click &quot;Continue&quot;", "Card data", "Holder Card", "Credit Limit assigned", "Current Limit", "Modification data", "Additional cards", "Select the account you want to change the credit limit and enter the desired amount", "Account", "Name", "Current Limit", "New Limit", "Return", "Continue");
+
+	
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+
+
+
+
+	//function swap(){}
+
+
+
+
+
+
+
+
+
+var suma = 0;
+
+var envia = "";
+
+
+
+function IsNumeric(sText){
+
+	var ValidChars = "0123456789.";
+
+	var IsNumber=true;
+
+	var Char;
+
+	for (i = 0; i < sText.length && IsNumber == true; i++) { 
+
+		Char = sText.charAt(i); 
+
+		if (ValidChars.indexOf(Char) == -1){
+
+			IsNumber = false;
+
+        }
+
+    }
+
+	return IsNumber;
+
+}
+
+
+
+$(document).ready(function () {
+
+
+
+		$("input[id^=checkcta]").click(
+
+			function() {
+
+				if ( $(this).attr("checked") == true ){
+
+					$("#ctacorta" + $(this).attr("id").replace("checkcta","")).slideDown("slow",function(){window.parent.ajustarIframe();});
+
+				} else {
+
+					$("#ctacorta" + $(this).attr("id").replace("checkcta","")).slideUp("slow",function(){window.parent.ajustarIframe();});
+
+				}
+
+			}
+
+		);
+
+		
+
+		$("#t14").click(
+
+			function() {
+
+				suma = 0;
+
+				var bandera = true;
+
+				if ( $("input[id^=checkcta]:checked").length != 0 ){
+
+					$("input[id^=checkcta]:checked").each(
+
+						function () {
+
+							if ( $("#ctacorta" + $(this).attr("id").replace("checkcta","")).attr("value") != "" ){
+
+								if ( IsNumeric($("#ctacorta" + $(this).attr("id").replace("checkcta","")).attr("value")) == true ){
+
+									suma += parseInt($("#ctacorta" + $(this).attr("id").replace("checkcta","")).attr("value"));
+
+								} else {
+
+									$("#Error").html('<div class="saldos_bloque2_f4_error_display_blanco" style="display:block;">' + Msg2 + '</div>');
+
+									suma = 0;
+
+									bandera = false;
+
+								}
+
+							} else {
+
+								$("#Error").html('<div class="saldos_bloque2_f4_error_display_blanco" style="display:block;">' + Msg2 + '</div>');
+
+								suma = 0;
+
+								bandera = false;
+
+							}
+
+						}
+
+					);
+
+				if ( bandera == false ){
+
+					window.parent.ajustarIframe();
+
+					return false;
+
+				}
+
+				} else {
+
+					$("#Error").html('<div class="saldos_bloque2_f4_error_display_blanco" style="display:block;">' + Msg1 + '</div>');
+
+					suma = 0;
+
+					window.parent.ajustarIframe();
+
+					return false;
+
+				}
+
+				if ( suma > parseFloat("6".replace(/,/g,"")) ){
+
+					$("#Error").html('<div class="saldos_bloque2_f4_error_display_blanco" style="display:block;">' + Msg4 + '</div>');
+
+					suma = 0;
+
+					window.parent.ajustarIframe();
+
+					return false;
+
+				}
+
+				$("#DATA1").attr("value", $("input[id^=checkcta]:checked").length);
+
+				envia= '';
+
+				$("input[id^=checkcta]:checked").each(
+
+					function () {
+
+						envia += $(this).attr("value") + "|" + $("#ctacorta" + $(this).attr("id").replace("checkcta","")).attr("value") + "|";
+
+					}
+
+				);
+
+				$("#DATA2").attr("value", envia);
+
+				$("#Error").html("");
+
+				DoSubmit('ACEPTAR');
+
+			}
+
+		);
+
+		
+
+		$('#limiAd tr:odd > td').addClass('bgF0F4F9');
+
+	
+
+		//swap();
+
+		
+
+			rutaAyuda=rutaAyuda+"CuentasPropiasBanamex-Tarjetas.htm";
+
+			
+
+			 if (language == 'eng'){
+
+var Msg1 = "It is necessary to select one Card at least.";
+
+var Msg2 = "Enter a value in the field Limit to Assign.";
+
+var Msg3 = "The entered field must be numeric. Please verify.";
+
+var Msg4 = "Sus Tarjetas Adicionales tienen el Limite de la Titular. Es necesario que asigne un Limite para cada una de ellas.";
+
+}
+
+else{
+
+var Msg1 = "Es neceesario que seleccione al menos una Tarjeta.";
+
+var Msg2 = "Digite un valor en el campo Límite a Asignar.";
+
+var Msg3 = "Solo se permiten datos numéricos en este campo. Favor de Verificar.";
+
+var Msg4 = "Sus Tarjetas Adicionales tienen el Limite de la Titular. Es necesario que asigne un Limite para cada una de ellas.";
+
+}
+
+		
+
+	
+
+	});
+
+
+
+</script>
+
+	<div class="float-left fonttit">Mis tarjetas Banamex</div>
+
+    <div class="panelIzEnca3_text2 font_arial" id="t0">Administraci&oacute;n de tarjetas</div>
+
+    <div class="color666 paddingT5 f11 font_arial" id="t1">Completa los datos de la modificaci&oacute;n y da clic en &quot;Continuar&quot;.</div>
+
+		<div class="saldos_bloque3_2">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+					<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t2">Datos de<br />la tarjeta</span></td>
+
+					<td valign="top" class="padding20152015">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+							<tr>
+
+								<td class="ancho50p bgF1F2F2"><span id="t3">Tarjeta titular</span></td>
+
+								<td class="ancho50p bgF1F2F2" align="left">Tarjeta Crédito M.N - **  796</td>
+
+							</tr>
+
+							<tr>
+
+								<td class="ancho50p"><span id="t4">L&iacute;mite de cr&eacute;dito asignado M.N</span></td>
+
+								<td class="ancho50p" align="left">6</td>
+
+							</tr>
+
+							<tr>
+
+								<td class="ancho50p bgF1F2F2"><span id="t5">L&iacute;mite de cr&eacute;dito actual M.N</span></td>
+
+								<td class="ancho50p bgF1F2F2" align="left">50000</td>
+
+							</tr>
+
+						</table>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="saldos_bloque3_2">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                <tr>
+
+					<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t6">Datos de la<br />modificaci&oacute;n</span></td>
+
+					<td valign="top" class="padding20152015">
+
+						<div class=" marginT0 panelIzEnca3_text2 font_arial color333" id="t7">Tarjetas adicionales</div>
+
+						<div class="paddingB20">
+
+							<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+								<tr>
+
+									<td class="ancho100p paddingL0" id="t8">Selecciona la cuenta de la que deseas modificar el l&iacute;mite de cr&eacute;dito e ingresa el importe deseado.</td>
+
+								</tr>
+
+							</table>
+
+						</div>
+
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3"  id="limiAd">
+
+							<thead>
+
+								<tr>
+
+									<td class="ancho10p borderRSolid">&nbsp;</td>
+
+									  <td class="ancho10p borderRSolid"><span id="t9">Cuenta</span></td>
+
+									  <td class="ancho30p borderRSolid"><span id="t10">Nombre</span></td>
+
+									  <td class="ancho25p borderRSolid"><span id="t11">L&iacute;mite actual</span></td>
+
+									<td class="ancho25p" align="left"><span id="t12">L&iacute;mite nuevo</span></td>
+
+								</tr>
+
+							</thead>
+
+							<tbody>
+
+								<tr>
+
+									<td class="ancho10p borderRSolid"><input type="checkbox"  id="checkcta1000000000321451" value="1000000000321451"  /></td>
+
+									<td class="ancho10p borderRSolid">451</td>
+
+									<td class="ancho30p borderRSolid">Mama</td>
+
+									<td class="ancho25p borderRSolid">10000</td>
+
+									<td class="ancho25p" align="left"><input type="text" class="input" id="ctacorta1000000000321451" value="" style="display:none" /></td>
+
+								</tr><tr>
+
+									<td class="ancho10p borderRSolid"><input type="checkbox"  id="checkcta1000000000321452" value="1000000000321452"  /></td>
+
+									<td class="ancho10p borderRSolid">452</td>
+
+									<td class="ancho30p borderRSolid">Abuelo</td>
+
+									<td class="ancho25p borderRSolid">10000</td>
+
+									<td class="ancho25p" align="left"><input type="text" class="input" id="ctacorta1000000000321452" value="" style="display:none" /></td>
+
+								</tr><tr>
+
+									<td class="ancho10p borderRSolid"><input type="checkbox"  id="checkcta1000000000321453" value="1000000000321453"  /></td>
+
+									<td class="ancho10p borderRSolid">453</td>
+
+									<td class="ancho30p borderRSolid">Hijo</td>
+
+									<td class="ancho25p borderRSolid">2000</td>
+
+									<td class="ancho25p" align="left"><input type="text" class="input" id="ctacorta1000000000321453" value="" style="display:none" /></td>
+
+								</tr>
+
+							</tbody></table>
+
+						<div id="Error"></div>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="marginT20 overflow">
+
+        	<br />
+
+		<!--<input type="button" class="btnRJ86 floatL" value="Regresar" onclick="DoSubmit('CANCELAR')" id="t13" />-->
+
+        	<input type="button" class="btnRJ86 floatL" value="Regresar" onclick="Regresar();" id="t13" />
+
+            <input type="button" class="btnAZ86 floatR" value="Continuar" id="t14" />
+
+		</div> 
+
+		<input type="hidden" id="DATA1" name="DATA1">		
+
+		<input type="hidden" id="DATA2" name="DATA2">
+
+		<input type="HIDDEN" name="EWFBUTTON" value="" />
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Administracion de Tarjetas|estliad.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+		<script type="text/javascript">
+
+		function Regresar(){
+
+		top.cambiaP2_s2();
+
+		setTimeout(function(){document.getElementById('saldosbtn28').click();},1100);
+
+		}
+
+        </script>
+
+</body>
+
+</html>

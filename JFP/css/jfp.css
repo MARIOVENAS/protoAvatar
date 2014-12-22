@@ -1,0 +1,791 @@
+/* JFP CSS Document Standard */
+
+
+
+/* Standard HTML (JFP CSS Style Guide - section:3) */
+
+body	{ font-family: Century Gothic, Arial, Helvetica, sans-serif; background-color: #FFFFFF;}
+
+TD		{ font-family: Century Gothic, Arial, Helvetica, sans-serif; color: #000000;}
+
+a 		{ font-family: Century Gothic, Arial, Helvetica, sans-serif; color: #003399; }
+
+P 		{ font-family: Century Gothic, Arial, Helvetica, sans-serif;  }
+
+input, select	{ font-family: Century Gothic, Arial, Helvetica, sans-serif;}
+
+
+
+/* --------- Tiles Layout ---- */
+
+/* Default Application Layout (JFP CSS Style Guide - section:4) */
+
+div#portalFooter, div#portalAdBar, div#portalSubHeader, div#portalNavBar, div#portalBody, div#portalHeader	{ display: inline;}
+
+#portalHeader, .portalHeader { vertical-align:top; }
+
+.portalNavBar 	{ width: 1%; vertical-align:top; text-align: left; margin-left: 5px; padding-left: 5px; }
+
+.portalSubHeader{ vertical-align: top; }
+
+.portalAdBar 	{ width: 1%; vertical-align: top; text-align: right; padding-top: 27px; }
+
+#portalFooter, .portalFooter { vertical-align: bottom; text-align: center; width: 97%; padding-left: 10px; padding-right: 10px; }
+
+.portalBody 	{ vertical-align: top; }
+
+.tileAppBs, td.tileAppBs, img.tileAppBs { width: 4px; height: 400px; }
+
+
+
+/* --------- JFP Header ----------- */
+
+/* Header side links (JFP CSS Style Guide - section:5.1) */
+
+.MItmStyl	{ font-weight: bold; color: #333399; font-family: arial; text-decoration: none; text-align: right; } 
+
+
+
+/* Header divider (JFP CSS Style Guide - section:5.1) */ 
+
+.NavBG 		{ background-image:  url('/JPS/portal/images/tab_btm.gif'); background-repeat: repeat-x; background-position: bottom left; } 
+
+.LogoBG 	{ width: 155px; background-image:  url('/JPS/portal/images/tab_btm.gif'); background-repeat: repeat-x; background-position: bottom left; padding-bottom: 2px; } 
+
+
+
+/* Nav Level One (JFP CSS Style Guide - section:5.1.1) */
+
+.NavLA:hover{ color: #3399CC; }
+
+a.NavLA 	{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; text-align: center; color: #333399; font-weight: bold; padding-bottom: 2px; }
+
+a.NavLAOn 	{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; text-align: center; color: #CC0000; font-weight: bold; padding-bottom: 2px; }
+
+td.NavLA 	{ text-align: center; vertical-align: middle; padding-left: 2px; padding-right: 2px; }
+
+td.NavLAOn 	{ background-image:  url('/JPS/portal/images/tab_top.gif'); background-repeat: repeat-x; background-position: top left; background-color: #FFFFFF; text-align: center; vertical-align: middle; padding-left: 2px; padding-right: 2px; }
+
+td.NavLAOnR { background-image:  url('/JPS/portal/images/tab_bgr.gif'); background-color: #FFFFFF; vertical-align:top; }
+
+td.NavLAOnL { background-image:  url('/JPS/portal/images/tab_bgl.gif'); background-color: #FFFFFF; vertical-align:top; }
+
+
+
+/* Level 2 nav (JFP CSS Style Guide - section:5.2.1) */
+
+.NavLB 		{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; text-align: left; color: #3366CC; font-weight: bold; padding-left: 1px; padding-right: 5px; }
+
+.NavLBOn 	{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; text-align: left; color: #CC0000; font-weight: bold; padding-left: 1px; padding-right: 5px; }
+
+
+
+/* Level 3 nav (JFP CSS Style Guide - section:5.2.2) */
+
+.NavLCTitle { font-family: Arial, Helvetica, sans-serif; color: #333399; font-weight: bold; }
+
+.NavLCTbl 	{ width: 97%; }
+
+a.NavLC 	{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: #3366CC; font-weight: bold; }
+
+a.NavLCOn 	{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: #CC0000; font-weight: bold; white-space: nowrap; }
+
+td.NavLC 	{ text-align: center; background-color: #CCCCCC; border-top: 1px solid #999999; border-right: 1px none #999999; border-bottom: 1px solid #999999; border-left: 1px none #999999; width: 1%; white-space: nowrap; padding-left: 5px; padding-right: 5px; }
+
+td.NavLCOn 	{ text-align: center; background-color: #FFFFFF; border-top: 1px solid #999999; border-right: 1px solid #999999; border-left: 1px solid #999999; width: 1%; padding-left: 5px; padding-right: 5px; }
+
+td.NavLCL 	{ background-color: #CCCCCC; border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; width: 1%; }
+
+td.NavLCR 	{ background-color: #CCCCCC; border-top: 1px solid #999999; border-right: 1px solid #999999; border-bottom: 1px solid #999999; }
+
+
+
+/* Level 4 nav (JFP CSS Style Guide - section:5.2.3) */
+
+a.NavLD 	{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: #3366CC; font-weight: bold; }
+
+a.NavLDOn 	{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: #CC0000; font-weight: bold; 	white-space: nowrap; }
+
+td.NavLD, td.NavLDOn  { text-align: center; padding-left: 5px; padding-right: 5px; }
+
+td.NavLDFrame { border-right: 1px solid #999999; border-left: 1px solid #999999; border-bottom: 1px solid #999999; background-color: #FFFFFF; }
+
+td.NavLDBtm { height: 5px;}
+
+
+
+/* --------- Portal Layout ---- */
+
+/* Page Title (JFP CSS Style Guide - section:5.3) */
+
+.pageHD { font-weight: bold; color: #CC0000; }
+
+table.pageHD{ width: 97%; }
+
+.pageHDdiv { font-size: 3px;  background-position: center; }
+
+
+
+/* Nav Tile (JFP CSS Style Guide - section:5.4) */
+
+.NavLink	{ font-family: Arial, Helvetica, sans-serif; color: #333399; text-decoration: none; font-weight: bold; width: 140px; }
+
+.mItmSBlk	{ font-family:arial; font-weight:bold; color:#000000; text-decoration:none;}
+
+
+
+/* Ad Tile (JFP CSS Style Guide - section:5.5) */
+
+/*.dropdown	{ width: 175px; }*/
+
+/*.golddpdown	{ width: 215px; }*/
+
+
+
+/* Footer Tile (JFP CSS Style Guide - section:5.6) */
+
+.gfooter	{ color: #666666;}
+
+.footcopy	{ font-weight: normal; color: #000000; margin-top: 2px; margin-bottom: 2px; }
+
+.footlink	{ font-weight: normal; color: #003399; text-decoration: underline; }
+
+.link		{ font-weight: normal; color: #003399; text-decoration: underline; }
+
+.hdbottom	{ font-weight: bold; color: #cc0000; }
+
+.thindiv	{ background-color: #CCCCCC; }
+
+.gnav		{ }
+
+
+
+/* --------- Body Tile ---- */
+
+/* Standard Application Style Classes (JFP CSS Style Guide - section:6.1.1) */
+
+.appPhTbl 	{}
+
+.appBxTbl 	{ border: 1px solid #CECECE; margin-bottom: 20px; }
+
+.portalNavBar .appBxTbl 	{ border: 1px solid #D2D2D2; margin-bottom: 0; width: 140px;}
+
+.appIndent	{ padding-left: 20px; }
+
+.apptxtlg 	{  }
+
+.apptxtlgAlt{  color: #FF0000; }
+
+.apptxtlgbold 	{  font-weight: bold; }
+
+.apptxtlgboldAlt{  font-weight: bold; color: #FF0000; }
+
+.apptxtlgboldBlu{  font-weight: bold; color: #003399; }
+
+.apptxtsm 	{ font-size: 11px; }
+
+.apptxtsr	{ background-color: #FFF3CB; }
+
+.appbgG		{ background-color: #CECECE; }
+
+.apperror	{  font-weight: bold; color: #FF0000; }
+
+.linksm		{  }
+
+.linkNon	{  color: #000000; text-decoration: none; cursor:default; }
+
+.linkSearch	{  }
+
+.linkFind	{  }
+
+.appDivS 	{ border-bottom: 1px solid #000000; }
+
+
+
+/* Login (JFP CSS Style Guide - section:6.1.2) */
+
+.soTab 		{ width:75px; }
+
+select#username, input.soInput	{ width:180px; }
+
+.soInputB	{ width:100px; }
+
+.son, .soff { text-align: center; font-family: Century Gothic; font-style: normal; font-weight :bold; height:21px; color :#FFFFFF; text-decoration: none; background-color: #009A00; padding: 2.5px 10px; border-style: outset; border-color: #42B642; border-width: 2px; }
+
+td.DBS		{ background:#CCCCCC;}
+
+.plnTxt		{ color: #000000; }
+
+.BSmlAncr	{ font-family:arial; }
+
+
+
+/* Dynamic PinPad (JFP CSS Style Guide - section:6.1.3) */
+
+table.sodpp { text-align:center; border: 2px solid #000066; background-color: #CCCCFF; }
+
+td.sodpp 	{ }
+
+input.sodpp:hover {background-color: #000066;color:#FFFFFF;}
+
+input.sodpp:active {background-color: #FF0000;color:#FFFFFF;}
+
+input.sodpp { height:24px; width: 24px; text-align:center; font-weight:bold; color:#000066; border: 1px solid #000066; cursor:pointer; cursor:hand; background-color: #FFFFFF; }
+
+input.sodppB{ height:24px; text-align:center; font-weight:bold; color:#000066; border: 1px solid #000066; cursor:pointer; cursor:hand; background-color: #FFFFFF; }
+
+td.sodppHD 	{ font-weight: bold; color: #FFFFFF; background-color: #98A3D6; cursor: move; }
+
+td.sodppHDB { font-weight: bold; }
+
+.sodppTD	{ width: 30px; height: 30px; align:center; }
+
+
+
+/* Application Header (JFP CSS Style Guide - section:6.1.4) */
+
+.appHdTbl, #appHdTbl 	{ width: 100%; margin-top: 23px;}
+
+.appHdTbl td {padding-top: 3px; border-top: 3px solid #99CCFF;}
+
+tr#appHdDiv { display:none; visibility:hidden;}
+
+/*.appHdDiv 	{ background-color: #99CCFF; font-size: 3px; height: 3px; }*/
+
+.appHdTitle { padding-left: 3px; font-weight: bold; color: #003399; white-space: nowrap; }
+
+.appHdPrint { font-weight: bold; color: #003399; text-align: right;  }
+
+
+
+/* New Application Header Title */
+
+h2.appHd  	{ margin: 25px 0 0 0; color: #003399; width:100%; padding: 5px 0 10px 0; border-top: 3px solid #99CCFF;   }
+
+h2.appHd div.appHdTitle { float:left; }
+
+h2.appHd div.appHdPrint { float:right;}
+
+h2.appHd a { padding: 0 10px 0 0;}
+
+div.appHdImg {clear: both;}
+
+div.appHdImg img { margin: 5px 0 0 0; }
+
+
+
+/* Account Selector (JFP CSS Style Guide - section:6.1.5) */
+
+.appAsTbl, #appAsTbl 	{ }
+
+td.appAs 	{ color: #666666; font-weight: bold; }
+
+select.appAs{ font-weight: normal; }
+
+
+
+
+
+/* Account Details (JFP CSS Style Guide - section:6.1.6) */
+
+.appDtTbl 	{ background-color: #F1F1F1; border: 1px solid #CCCCCC; }
+
+.appDtL		{ color: #666666; font-weight: bold; text-decoration: none; text-align: right; white-space: nowrap; }
+
+.appDtV 	{ text-align: left; }
+
+
+
+/*	TJs and Lists (JFP CSS Style Guide - section:6.1.7) */
+
+.appLsTbl, #appLsTbl 	{ width: 100%; }
+
+.appaltbg 		{ background-color: #F1F1F1; }
+
+.appaltbgvivid 	{ background-color: #EEF3FF; }
+
+.appLsDiv 	{ font-size: 3px;  background-position: center; }
+
+.sortbg 	{ background-color: #C4D6FF; text-align: left; vertical-align: bottom; white-space: nowrap; }
+
+.sortbgW 	{ background-color: #C4D6FF; text-align: left; vertical-align: bottom; }
+
+.sortbgon 	{ background-color: #A8C2FF; text-align: left; vertical-align: bottom; white-space: nowrap; }
+
+.sortbgA 	{ background-color: #C4D6FF; text-align: right; vertical-align: bottom; white-space: nowrap; }
+
+.sortbgAW 	{ background-color: #C4D6FF; text-align: right; vertical-align: bottom; }
+
+.sortbgAon 	{ background-color: #A8C2FF; text-align: right; vertical-align: bottom; white-space: nowrap; }
+
+.sortlinks 	{ color: #666666; font-weight: bold; text-decoration: none; }
+
+.appLsDate 	{ text-align: left; vertical-align: top; }
+
+.appLsDateA { text-align: left; vertical-align: top;  }
+
+.appLsDesc 	{ text-align: left; vertical-align: top; }
+
+.appLsCred 	{ text-align: right; vertical-align: top; white-space: nowrap; }
+
+.appLsDeb 	{ text-align: right; vertical-align: top; white-space: nowrap; }
+
+.appLsRun 	{ text-align: right; vertical-align: top; white-space: nowrap; }
+
+.appLsTo 	{ text-align: left; vertical-align: top; }
+
+.appLsFrom 	{ text-align: left; vertical-align: top; }
+
+.appLsSm 	{ text-align: left; vertical-align: top; }
+
+.appLsAmount{ text-align: right; vertical-align: top; white-space: nowrap; }
+
+.appLsLink	{ text-align: left; vertical-align: top; white-space: nowrap; }
+
+a.appLsLink	{  }
+
+.appLsAct 	{ text-align: left; vertical-align: top; white-space: nowrap; color: #009900; }
+
+.appLsInAct	{ text-align: left; vertical-align: top; white-space: nowrap; color: #FF0000; }
+
+
+
+#aJPSINFRA_t_sHome td.appLsFrom a.appLsLink { white-space:normal; }
+
+#a_t1_s125 td.appLsDeb, #a_t1_s125 td.appLsRun, #a_t1_s125 td.appLsCred, #a_t1_s125 td.appLsAmount, #a_t1_s125 td.appLsDateA
+
+{ vertical-align: bottom; }
+
+#a_t1_s280 td.appLsDeb, #a_t1_s280 td.appLsRun, #a_t1_s280 td.appLsCred, #a_t1_s280 td.appLsAmount, #a_t1_s280 td.appLsDateA
+
+{ vertical-align: bottom; }
+
+
+
+/* Bulleted and Single-Column Lists (JFP CSS Style Guide - section:6.1.8) */
+
+.appBlTbl, #appBlTbl { }
+
+.appBl { text-align: left; }
+
+
+
+/* Input Screen (JFP CSS Style Guide - section:6.1.9) */
+
+.appFrmTbl, #appFrmTbl 	{ }
+
+.applabelF 		{ color: #666666; font-weight: bold; text-decoration: none; text-align: right; width: 1%; white-space: nowrap; }
+
+.applabelFalt 	{ color: #666666; font-weight: bold; text-decoration: none; text-align: left; width: 1%; white-space: nowrap; }
+
+.appfldF 	{ text-align: left; font-family: font-family: Arial, Helvetica, sans-serif;vertical-align: middle; } 
+
+.appfldFR 	{ text-align: left; font-family: Arial, Helvetica, sans-serif; vertical-align: middle; background-color: #CCCCCC;  }
+
+.appfld 	{  }
+
+.apptxthi 	{ font-weight: bold; color: #000066; }
+
+
+
+/*	Money Mover (JFP CSS Style Guide - section:6.1.10) */
+
+.appMMW		{ font-weight: bold; color: #000099; }
+
+.appMMWon 	{ font-weight: bold; color: #FF0000; }
+
+
+
+/* Recaps and Confirmation Screen (JFP CSS Style Guide - section:6.1.11) */
+
+.appRcpTbl, #appRcpTbl 	{ }
+
+.applabelR 		{ color: #666666; font-weight: bold; text-decoration: none; text-align: right; width: 1%; white-space: nowrap; }
+
+.applabelRalt 	{ color: #666666; font-weight: bold; text-decoration: none; text-align: left; width: 1%; white-space: nowrap; }
+
+.apptxtR 		{ text-align: left; }
+
+
+
+/* Re-Entry Pin (JFP CSS Style Guide - section:6.1.12) */
+
+.appPinTbl, #appPinTbl 	{ width: 1%; horizontal-align: left; }
+
+.appPin 	{ color: #666666; font-weight: bold; text-decoration: none; width: 1%; white-space: nowrap; }
+
+
+
+
+
+/* Application Workflow Navigation (JFP CSS Style Guide - section:6.1.13) */
+
+.appNavTbl, #appNavTbl 	{ width: 100%; }
+
+.appNavL, .appNavLC
+
+{ text-align: left; width: 20%; vertical-align: bottom; white-space: nowrap;}
+
+.appNavC 	{ text-align: center; width: 20%; vertical-align: bottom; white-space: nowrap;}
+
+.appNavRC, .appNavR 	
+
+{ text-align: right; width: 20%; vertical-align: bottom; white-space: nowrap;}
+
+.appNavBack, .appNavCncl, .appNavNext, .appNavAdd, .appNavView, .appNavGen, .appNavYes, .appNavNo, .appNavOk 	
+
+{ color: #003399;}
+
+
+
+/* Disclosure (JFP CSS Style Guide - section:6.1.14) */
+
+#appDsTbl 	{ width:100%; }
+
+.appDsTbl 	{ background-color: #FFF3CB; border: 1px solid #FB8C04; width:100%; }
+
+.appDs 		{  }
+
+
+
+/*----------- Child Window -------------*/
+
+/* Print/View Record (JFP CSS Style Guide - section:6.2.2) */
+
+.printBody 	{ text-align: left; padding: 2px; }
+
+.printBG 	{ background-image:  url('/JFP/images/print_bg.jpg'); background-repeat: no-repeat; background-position: center center; background-attachment: inherit; vertical-align: top; height: 200; }
+
+.printDate 	{ font-size: 10px; vertical-align: top; text-align: left; white-space: nowrap; padding-left: 10px;  }
+
+
+
+
+
+/* --------- Promos ---- */
+
+.adtxt {}
+
+.adlink {}
+
+.adtxtBold {}
+
+.protxt {}
+
+.protxtBold {}
+
+
+
+/* Standard Portal Classes */
+
+.hdTpBg		{ font-family: Arial, Helvetica, sans-serif; font-size: 24.0pt; font-weight: bold; text-transform: capitalize; color: #3399CC; }
+
+.hdTopA		{ font-size: 10pt; font-weight: bold; text-transform: capitalize; color: #003399; }
+
+.hdTop		{ font-family: Arial, Helvetica, sans-serif; font-size: 12.5pt; font-weight: bold; text-transform: capitalize; color: #cc0000; }
+
+.subhdAb	{ font-size: 8pt; font-weight: bold; color: #003399; vertical-align: top; }
+
+.subhdA		{ font-size: 10pt; font-weight: bold; color: #003399; vertical-align: top; }
+
+.apphdr		{ font-size: 7.5pt; font-weight: bold; color: #009900; }
+
+.prdlyr		{ width: 398px; border: 1px solid #CCCCCC; }
+
+.prdHd		{ font-family : Arial, Helvetica, sans-serif; font-size : 24px; color : #3399CC; text-decoration:none; }
+
+.bltcpy		{ font-size: 8pt; font-weight: normal; color: #000000; margin-top: 2px; margin-bottom: 2px; }
+
+.TYClassA	{ font-size: 9pt; font-weight: normal; color: #003399; }
+
+.TYClassB	{ font-size: 6.5pt; font-weight: normal; color: #000077; }
+
+.TYClassC	{ font-size: 6.5pt; font-weight: normal; color: #9E9E9E; }
+
+.errHd		{ font-size: 12pt; font-weight: bold; color: #003399; vertical-align: top; }
+
+.errTxt		{ font-size: 8pt; color: #003399; vertical-align: top; }
+
+.content	{ font-size: 8pt; color: #000000; }
+
+.contlink	{ font-size: 8pt; font-weight: normal; color: #003399; text-decoration: underline; }
+
+.clsCMOn	{ color: #ffffff; padding: 2px 2px; font-family:arial; font-weight:bold; font-size:9pt; }
+
+.clsCMOvr	{ color: #ffffff; padding: 2px 2px; font-family:arial; font-weight:bold; font-size:9pt; }
+
+.clsSubMO	{ color: #ffffff; padding: 2px 2px; font-family:arial; font-weight:bold; font-size:9pt; }
+
+.bdOrgTxt	{ font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FF6600; font-weight: bold; margin-bottom:0px; }
+
+.subPrdHd	{ font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #FF6600; font-weight: bold; }
+
+.txtHead	{ font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #3399CC; font-weight: bold; margin-bottom:0px; }
+
+.titleHd	{ font-family: Arial, Helvetica, sans-serif; font-size: 12.5pt; font-weight: bold; text-transform: capitalize; color: #3399CC; }
+
+.tHdWABig	{ font-family: Arial; font-size: 24pt; color: #3399CC; }
+
+.mItmStUL	{ font-family:arial; font-weight:bold; font-size:8pt; color:#333399; text-decoration:underline;}
+
+.ModVTAS	{ font-family:arial; font-size:10pt; font-weight:bold; color:#333366; }
+
+.ModVTBS	{ font-family:arial; font-size:10pt; font-weight:bold; color:#00699E; }
+
+.ModTxtSy	{ font-family:arial; font-style:regular; font-size:10pt; color:#000000;}
+
+.IntTxtSy	{ font-family:arial; font-style:regular; font-size:8pt; text-decoration:none; color:#3399CC;}
+
+.IntLnkSy	{ font-family:arial; font-style:regular; color:#3399CC;}
+
+.ModSecTS	{ font-family:arial; font-style:regular; font-size:24pt; color:#3399CC;}
+
+.ModVSTAS	{ font-family:arial; font-size:10pt; font-style:regular; color:#00699E;}
+
+.THdApp		{ font-family: Arial, Helvetica, sans-serif; font-size: 12.5pt; font-weight: bold; text-transform: capitalize; color: #3399CC; }
+
+.TblHdSy	{ font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #00699E; font-weight: bold; }
+
+.DiscStyl	{ font-family:arial; font-style:regular; font-size:8pt; color:#00699E;}
+
+.IntTxSys	{ font-family:arial; font-style:regular; font-size:8pt; text-decoration:none; color:#3399CC;}
+
+.LBandSys	{ background:#FFFFFF}
+
+.PPgFSty	{ font-family:arial; font-style:regular; font-size:8pt; color:#000066;}
+
+.FDLFStyl	{ font-family:arial; font-size:10pt; color:#000066;}
+
+.FDSFStyl	{ font-family:arial; font-style:regular; font-size:8pt; color:#333399;}
+
+.PosVCS		{ color:#339933}
+
+.NegVCS		{ color:#FF0000}
+
+.PosVCSS	{ font-family:arial; font-style:regular; font-size:8pt; color:#339933}
+
+.NegVCSS	{ font-family:arial; font-style:regular; font-size:8pt; color:#FF0000}
+
+.GryRlSyl	{ color:#CCCCCC;height:1pixel}
+
+.NoSymFS	{ font-family:arial; font-size:10pt; font-weight:bold; color:#FF0000;}
+
+.brandTD	{ font-family: arial, helvetica, Century Gothic, sans-serif; font-size: 1pt; }
+
+TD.Reg		{ font-family:arial; font-size:10pt; text-decoration:none; color:rgb(0,0,0);}
+
+TD.Yellow	{ background:#ffffcc;}
+
+TD.DkYellow	{ background:#CFAF2E;}
+
+TD.LBS		{ background:#FFFFFF;}
+
+TD.ModTxtSy	{ font-family:arial; font-style:regular; font-size:10pt; color:#000000;}
+
+TD.ModTSSy, TD.NarrTxtS	{ font-family:arial; font-size:8pt; font-style:regular; color:#000000;}
+
+TD.LoginPHS	{ font-family:arial; font-size:10pt; font-style:regular; color:#333366;}
+
+a.aplyhdr: visited {color: #cc0000; }
+
+a.aplyhdr: hover {color: #3399cc; }
+
+TD.Reg		{ font-family:arial; font-size:10pt; text-decoration:none; color:rgb(0,0,0);}
+
+.conRedBG	{ font-size: 8pt; font-weight: bold; color: #ffffff; Background-color: #CC0000; }
+
+.conDGyBG	{ font-size: 8pt; color: #000000; Background-color: #E5E5E5; }
+
+.conLGyBG	{ font-size: 8pt; color: #000000; Background-color: #F2F2F2; }
+
+.txtGren	{ color: #008000; }
+
+.tdDtBGIg	{ background-image:  url('/JPS/portal/images/m_dot.gif');}
+
+.tdHTBGIg	{ background-image:  url('/JPS/portal/images/hr_top.gif');}
+
+.tdGyBGCl	{ background-color: #CCCCCC; }
+
+.td			{ font-family: Arial, Helvetica, sans-serif; color: #000000; }
+
+.redFont	{ color: #ff0000; }
+
+.greyHR		{ color: #cccccc; }
+
+.targetMg	{ font-family: Century Gothic,Arial,sans-serif; font-size: 8.5pt; text-decoration: underline; color: #003399; }
+
+.loginDt	{ color: #666666; }
+
+.BLrgStl	{ font-family:arial; font-size:10pt; text-decoration:none; }
+
+.BRglrStl	{ font-family:arial; font-size:9pt; text-decoration:none; }
+
+.BSmlStl	{ font-family:arial; font-size:8pt; text-decoration:none; }
+
+.BAnchor	{ font-family:arial; font-size:9pt; }
+
+.BHeader	{ background-color:#CCCCCC; }
+
+.BBandA		{ background-color:#FFFFFF; }
+
+.BBandB		{ background-color:#F1F1F1; }
+
+.SubTitle	{ font-family:arial; font-size:10pt; font-weight:bold; text-decoration:none; color:rgb(0,0,0);}
+
+.MViewSub	{ font-family:arial; font-size:10pt; font-style:regular; color:#00699E;}
+
+.TCSmall	{ font-family:arial; font-style:regular; font-size:8pt; color:#000066;}
+
+.TLSmStl	{ font-family:arial; font-style:regular; font-size:8pt; color:#003366;}
+
+.THeader	{ font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #000000; font-weight: bold; }
+
+.ALBandSt	{ background: #FFFFFF; }
+
+.TCReg		{ font-family:arial; font-style:regular; font-size:10pt; color:#000066; }
+
+.MTxtBold	{ font-weight:bold; font-size:10pt; color:#000000; }
+
+
+
+/* --- JEA Begin --- */
+
+a.jea 		{ font-size: 9pt;  }
+
+a.jeacmdB 	{ font-family:Century Gothic,arial,helvetica; font-size:11px; color: darkblue; }
+
+a.jeacmdC 	{ text-align : center; font-family: Century Gothic; font-style : normal ; font-size : 10px; font-weight :bold; height:21px; color :#FFFFFF; text-decoration: none; background-color: #009A00; padding: 2.5px 10px; border-style: outset; border-color: #42B642; border-width: 2px; }
+
+a.jeacmd 	{ font-size: 9pt; color: #ffffff;  font-weight: bold; background-color: #3366cc; text-decoration: none; }
+
+a.jeanew 	{ font-size: 9pt; color: midnightblue;  cursor: hand; }
+
+a.jeagroup 	{ font-size: 9pt; color: midnightblue;  font-weight: normal; border-top: #3399cc 1pt solid; }
+
+a.jeaselected 	{ font-size: 9pt; color: goldenrod;  cursor: hand; text-decoration: underline; }
+
+div.jeamenuDefault, div#jeamenuDefault 			{ font-size: 12px; color: black;  font-weight: normal; background-color: white; text-decoration: none;	padding-bottom: 2px; padding-top: 2px; padding-right: 5px; padding-left: 5px; }
+
+div.jeamenuSelected, div#jeamenuSelected 		{ font-size: 12px; color: black;  font-weight: bold; background-color: white; text-decoration: none; padding-bottom: 2px; padding-top: 2px; padding-right: 5px; padding-left: 5px; }
+
+div.jeamenuDisabled, div#jeamenuDisabled 		{ font-size: 12px; color: GRAY;  font-weight: normal; background-color: white; text-decoration: none; padding-bottom: 2px; padding-top: 2px; padding-right: 5px; padding-left: 5px; }
+
+div.jeatreeMenuDefault, div#jeatreeMenuDefault 	{ font-size: 8pt; color: black;  font-weight: normal; background-color: white; text-decoration: none; vertical-align: middle;	padding-left: 5; height: 100%; }
+
+div.jeatreeMenuSelected, div#jeatreeMenuSelected{ font-size: 8pt; color: black;  font-weight: bold; background-color: silver; text-decoration: none; vertical-align: middle;	padding-left: 5; height: 100%; }
+
+hr.jea 				{ color: #c0c0c0; height: 1px; }
+
+hr.jeaseparator 	{ color: #ff0000; height: 1pt; }
+
+hr.jeaGroupSeparator{ color: #999999; height: 2pt solid; }
+
+input.jea 	{ font-size: 9pt; color: black; }
+
+li.jea 		{ font-size: 9pt; }
+
+li.jeaerrors{ font-size: 9pt; color: #cc0000; font-weight: bold; }
+
+ol.jea 		{ font-size: 9pt; }
+
+p.jea 		{ font-size: 9pt; color: #000000; }
+
+select.jea 	{ font-size: 9pt; color: black; }
+
+pre.jea 	{ font-size: 9pt; color: #000000; }
+
+pre.jeaformatted	{ font-size: 9pt; color: #000000; }
+
+pre.jeareadOnlyText { font-size: 9pt; color: #777777; vertical-align: top; font-weight: bold; }
+
+span.jeatreeItem	{ text-decoration: none; color: black; font-size: 8pt; font-style: normal; font-weight: normal; vertical-align: middle; }
+
+span.jeatreeItemInactive{ text-decoration: none; color: #777777; font-size: 8pt; font-style: normal; font-weight: normal; vertical-align: middle; }
+
+span.jeatreeItemPending { text-decoration: none; color: black; 	font-size: 8pt;	font-style: normal; font-weight: bold; vertical-align: middle; }
+
+span.jeatreeItemInactivePending { text-decoration: none; color: #777777; font-size: 8pt; font-style: normal;	font-weight: bold; vertical-align: middle; }
+
+table.jea, table#jea 	{ font-size: 9pt;  vertical-align: top; background-color: transparent; width:100%; }
+
+table.jeaB, table#jeaB 	{ font-size: 9pt;  vertical-align: top; background-color: transparent; }
+
+td.jea, td.jeaaccounts	{ font-size: 9pt; color: #000000; vertical-align: top;  }
+
+td.jeaalternatecolor{ font-size: 9pt; color: #000000; background-color: #e7f3ff; }
+
+td.jeabullet		{ font-size: 9pt; color: #000000; vertical-align: top; text-align: center; }
+
+td.jeabolder		{ font-size: 9pt; color: #191970; vertical-align: top; font-weight: 900; }
+
+td.jeaerrorText 	{ font-size: 9pt; color: #cc0000; vertical-align: top; font-weight: bold; }
+
+td.jeagroupheading 	{ font-size: 16pt; color: #000080; vertical-align: top; font-weight: bold; text-align: center; }
+
+td.jeaheading 		{ font-size: 9pt; color: black; vertical-align: top; font-weight: bold; background: white; border-bottom: #ffffff 1pt solid; }
+
+td.jeaheadingB { font-size: 9pt; color: #666666; vertical-align: top; font-weight: bold; }
+
+td.jeahelp 			{ font-size: 9pt; color: black; vertical-align: top; text-align: left; }
+
+td.jeainfo 			{ font-size: 8pt; color: #000000; vertical-align: top;   vertical-align: top; }
+
+td.jeaMISCentered 	{ font-size: 8pt; color: #000000; vertical-align: top; background: #ffffe0; text-align: center; }
+
+td.jeaMISHeading	{ font-size: 8pt; color: #000080; vertical-align: top; font-weight: bold; text-align: center; background: #dcdcdc; }
+
+td.jeaMISLeft 		{ font-size: 8pt; color: #000000; vertical-align: top; text-align: left; }
+
+td.jeaMISLeftAlternatecolor { font-size: 8pt; color: #000000;  vertical-align: top; background-color: #e7f3ff; text-align: left; }
+
+td.jeanotification 	{ font-size: 9pt; color: #000000; vertical-align: top; }
+
+td.jeareadOnlyText 	{ font-size: 9pt; color: #777777; vertical-align: top; font-weight: bold; }
+
+td.jeaseparator 	{ font-size: xx-small; color: #c0c0c0; border-top: #cccccc 1pt solid; }
+
+td.jeaTags 			{ font-size: 8pt; color: #000000; vertical-align: top; background-color: blanchedalmond; }
+
+td.jeatitle 		{ font-size: 13pt; color: #cc0000; vertical-align: top; font-weight: bold; border-bottom: #999999 1pt solid; }
+
+td.jeatreePropertyPending { font-size: 9pt; color: #000000; vertical-align: top;  font-weight: bold; }
+
+td.jeapromptName 	{ font-size: 10pt; color: #000000; vertical-align: top; }
+
+td.jeapromptNameA 	{ font-size: 9pt; color: #000000; vertical-align: top; font-weight: bold; }
+
+td.jeaPromptControl { font-size: 10pt; color: #000000;  vertical-align: top; }
+
+td.jeaServiceLevel 	{ font-size: 12pt; color: red; vertical-align: top; font-weight: bold; }
+
+td.jeaviewMode 		{ font-size: 10pt; color: black; vertical-align: top; font-weight: bold; text-align: center; background: #c0c0c0; }
+
+tr.jeaerrorText 	{ height: 0pt; }
+
+textarea.jea		{ font-size: 9pt; color: black;  }
+
+textarea.jeainfo	{ font-size: 9pt; color: black; background-color: #d3d3d3; }
+
+th.jea 				{ font-size: 10pt; color: midnightblue; font-weight: bold; text-align: left; }
+
+th.jeagroup 		{ font-size: 10pt; color: #003399; border-top: #3399cc 1pt solid; text-align: left; }
+
+th.jeagroupBullet 	{ font-size: 10pt; color: #003399; border-top: #3399cc 1pt solid; text-align: center; }
+
+th.jeagroupRight 	{ font-size: 10pt; color: #003399; border-top: #3399cc 1pt solid; text-align: right; }
+
+th.jeaMISgroup 		{ font-size: 8pt; color: #003399; font-weight: bold; background: #dcdcdc; text-align: left; }
+
+ul.jea 				{ font-size: 9pt; color: #000000; }
+
+ul.jeaerrors		{ font-size: 9pt; color: #cc0000; font-weight: bold; }
+
+
+
+/* Added for Help HTML files */
+
+.txt   { font-family: Century Gothic, Arial, Helvetica, sans-serif; color: #000000; }
+
+.HD    { font-family: Century Gothic, Arial, Helvetica, sans-serif; font-weight: bold; white-space: nowrap; color: #FF0000; }
+
+.subHD { font-family: Century Gothic, Arial, Helvetica, sans-serif; font-weight: bold; color: #003399; white-space: nowrap; color: #000099; }

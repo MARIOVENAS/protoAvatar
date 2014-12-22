@@ -1,0 +1,640 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="351ff9d2-3d6c-458a-9dad-06c2b78f8532" ><input type=hidden name="EWF_SYS_1" value="UG3EDWQKNVQHDHAUM8GBAPO0R@PQ@SWD6W91BPUI" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZADC-ALTA APLICADA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="conpro.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="7"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+    <link rel="stylesheet" href="../../bbAvatar/css/mando.css" type="text/css" />	
+
+    <script type="text/javascript" src="../../bbAvatar/js/mando.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>	
+
+		
+
+<script type="text/javascript">
+
+
+
+es=new Array('Product contracting - Banamex Mobile',
+
+'Your hiring has been ',
+
+'received',
+
+' with instruction number ',
+
+'The cell phone number ',
+
+' has been successfully registered',
+
+'Subscription code ',
+
+'Product Data',
+
+'Personal Data',
+
+'Contracting product',
+
+'Cell Phone (with city code)',
+
+'Banamex Mobile',
+
+'Remember that the subscription code is valid for 15 days',
+
+'Online Banamex Movil sing up',
+
+'Transaction Applied',
+
+'AUTHORIZATION NUMBER:',
+
+'',
+
+'The mobile  phone  number',
+
+'[CtaNumTel]',
+
+' has been successfully registered.',
+
+'',
+
+'To complete the service activation, finalize your BancaNet session by clicking exit and',
+
+' on your mobile locate the SIM Telcel Icon / Banca Mvil / Registro Banco / Banamex ',
+
+' and enter your costumer number followed by this ','<STRONG>subscription code:</STRONG>',
+
+'This code has a time validity of 15 days.',
+
+'Finish your contract',
+
+'To finish your contract you must complete the following steps.',
+
+'<b>1. Activation menu</b>',
+
+'Enter from your mobile phone to the card menu ',
+
+'SIM &gt; Mobile Banking &gt; Bank Register&gt; Banamex',
+
+'<b>2. Capture client data</b>',
+
+'Capture your client number and subscribe the following key:',
+
+'Key: 79728218',
+
+'Close'
+
+);
+
+			
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+
+
+
+
+//function swap(){return;}
+
+
+
+
+
+
+
+
+
+var ax=new Array('Mis Productos - Contrataci&oacute;n en l&iacute;nea','/ayudasbb/spanishdir/Banamex-Movil.htm');
+
+
+
+
+
+
+
+function Initialize(){
+
+//swap();
+
+
+
+}
+
+
+
+	$(document).ready(function(){
+
+	 top.impayuda();
+
+	$("#causa").css("height","auto");
+
+	$("#mensajeError_contenido_div", window.parent.document).html($("#vfinaliza").html());
+
+	//swap();
+
+
+
+	
+
+	parent.$.modal(				
+
+				{
+
+					closeHTML: '',
+
+					opacity:60,
+
+					overlayClose:false,
+
+					flagDiv:true,
+
+					widthDivIfrm:525,
+
+					heightDivIfrm:'260'
+
+				}
+
+			);
+
+	
+
+	})
+
+	
+
+	
+
+function AbrirVentana(Nom_Ventana)
+
+{
+
+   var hWin;
+
+     if (Nom_Ventana == "mov3esp"){
+
+         hWin=open("/spanishdir/ayudas/aconpro.htm","quees","toolbar=no,resizable=yes,directories=no,menubar=no,status=no,scrollbars=yes,width=533,height=350");
+
+       }
+
+	   else if (Nom_Ventana == "mov3ing"){
+
+         hWin=open("/englishdir/ayudas/aconpro.htm","quees","toolbar=no,resizable=yes,directories=no,menubar=no,status=no,scrollbars=yes,width=533,height=350");
+
+	   }
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+    
+
+
+
+		
+
+		
+
+		<div class="panelIzEnca3_text2 font_arial" id="t0">
+
+            Contrataci&oacute;n de productos - Banamex M&oacute;vil
+
+		</div>
+
+        
+
+        <div class="saldos_bloque3_verde">
+
+        	<label id="t1">Tu contrataci&oacute;n ha sido </label><span class="negrita" id="t2">recibida</span> <label id="t3">con n&uacute;mero de instrucci&oacute;n </label><span class="negrita">001141</span>.
+
+        </div>
+
+		
+
+		<div class=" saldos_bloque3_gris">
+
+        	 <label id="t4"> El tel&eacute;fono celular n&uacute;mero </label><span class="f11 color333 negrita">5555555555</span> <label id="t5">ha sido registrado con &eacute;xito.</label><br /><br />
+
+                   <label id="t6"> Para concluir la activaci&oacute;n del servicio, termina la sesi&oacute;n en BancaNet haciendo clic en salir e ingresa desde tu celular al men&uacute; de la tarjeta SIM &gt;Banca M&oacute;vil &gt;Registro Banco &gt;Banamex y captura tu n&uacute;mero de cliente y la siguiente clave de suscripci&oacute;n: </label><span class="f11 color333 negrita">79728218</span>
+
+        </div>        			   
+
+        
+
+	<div class=" borderDEDEDE marginT20">
+
+        	        	
+
+       	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            	
+
+                <tr>                	
+
+				
+
+                  <td class=" padding20152015">
+
+              <div class="titulo_tabla_at margin0 ancho100p color333 " id="t7">
+
+                        	Datos del producto
+
+                        </div>
+
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT10 ">
+
+                <tr>
+
+                    <td class="bgF1F2F2 ancho70p" ><span id="t9">Producto a contratar</span></td>
+
+                    <td class="bgF1F2F2" id="t11">Banamex M&oacute;vil</td>
+
+                    
+
+                </tr>
+
+                 <tr>
+
+                    <td ><span id="t6">Clave de suscripci&oacute;n</span></td>
+
+                    <td>79728218</td>
+
+                    
+
+                </tr>
+
+                 
+
+      </table>
+
+                  <div class="titulo_tabla_at margin0 ancho100p color333 paddingT20 " id="t8">
+
+                        	Datos personales
+
+                        </div>
+
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT10 ">
+
+                
+
+                 <tr>
+
+                    <td class="bgF1F2F2 ancho70p" ><span id="t10">Tel&eacute;fono celular (con clave de ciudad)</span></td>
+
+                    <td class="bgF1F2F2">5555555555</td>
+
+                    
+
+                </tr>
+
+                 
+
+                 
+
+                 
+
+                 
+
+      </table>
+
+                  
+
+                 </td>
+
+                </tr>
+
+            </table> 
+
+                <div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="t12">
+
+        	 Recuerda que la clave de suscripci&oacute;n tiene una vigencia de 15 d&iacute;as 
+
+            </div>
+
+                  
+
+                    	
+
+        </div>
+
+
+
+<div id="vfinaliza" style="display:none;">
+
+            <style type="text/css">
+
+							.saldos_btn2 {
+
+							background: url(../../JFP/images/marco.gif) no-repeat scroll -289px 0 #FFFFFF;
+
+							cursor: pointer;
+
+							float: right;
+
+							height: 21px;
+
+							margin-right: 10px;
+
+							width: 23px;
+
+							}
+
+							.saldos_btn2:hover {
+
+								background: url(../../JFP/images/marco.gif) no-repeat scroll -312px 0 #FFFFFF;
+
+							}
+
+							.btnRJ86 {
+
+							background: url(../../JFP/images/marco.gif) no-repeat scroll -390px -21px transparent;
+
+							border: 0 none;
+
+							color: #FFFFFF;
+
+							cursor: pointer;
+
+							height: 20px;
+
+							margin: 0;
+
+							padding: 0 0 2px;
+
+							width: 86px;
+
+							}
+
+							.btnRJ86:hover {
+
+								background: url(../../JFP/images/marco.gif) no-repeat scroll -476px -21px transparent;
+
+							}
+
+							.paddingL0{
+
+								padding-left:0 !important;
+
+							}
+
+							
+
+							.panelIzEnca3_text2 {
+
+								font-size: 14px;
+
+								font-weight: bold;
+
+								padding-top: 4px;
+
+							}
+
+							.marginT20 {
+
+								margin-top: 20px;
+
+							}
+
+							.tablaSaldos3 {
+
+							font-size: 11px;
+
+							color:#666;
+
+							}
+
+							.ancho640{ width:640px !important;}
+
+							
+
+							.ancho520{ width:520px !important;}
+
+							
+
+							.paddingT3 {
+
+    						padding-top: 3px !important;
+
+							}
+
+							.f11-2{font-size:11px !important;
+
+							color:#666 !important;}
+
+							.alto255{height:255px !important;}
+
+	
+
+							</style>
+
+                            <div class="mensajeError_contenidoIn ancho520 alto255 padding20">
+
+                                <div class="mensajeError_Fila1">
+
+                                	<div class="saldos_btn2" onclick="window.print();"></div>
+
+                                	<div class="saldos_btn7"></div>
+
+                                <div class="panelIzEnca3_text2 paddingL0 paddingT3" id="t26">Finaliza tu contrataci&oacute;n</div>
+
+                                </div>
+
+                                <div class="mensajeError_Fila1">
+
+                                    <div> </div>
+
+                                    <div style="margin-top:5px;"  class="f11-2 color666 paddingT2 floatL" id="t27">
+
+                                    	Para terminar tu contrataci&oacute;n debes completar los siguientes pasos.
+
+                                    </div>
+
+                                </div>
+
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT20">
+
+                                	<tr>
+
+                                    	<td valign="top" class="ancho100p paddingL0">
+
+                                                
+
+                                                <div class="color666 f11 paddingT3">
+
+                                                	<span id="t28"><b>1. Men&uacute; de Activaci&oacute;n</b></span><br />
+
+                                                    <label id="t29">Entra desde tu celular al men&uacute; de la tarjeta</label><br />
+
+                                                    <label id="t30">SIM &gt; Banca M&oacute;vil &gt; Registro Banco &gt; Banamex</label><br /><br />
+
+                                                    <span id="t31"><b>2. Captura de datos del cliente</b></span><br /> 
+
+                                                    <label id="t32">Captura tu n&uacute;mero de cliente y la siguiente clave de suscripci&oacute;n:</label>                                                   
+
+                                                    <br /><br /><br />
+
+                                                    <div class="panelIzEnca3_text2 color666" id="t33" >Clave: 79728218</div>
+
+                                                
+
+                                                </div>
+
+                                            </td>
+
+                                    </tr>
+
+                                </table>
+
+								
+
+                                <div class="mensajeError_Fila3">
+
+                               <div class="floatR"><input type="button" value="Cerrar" class="btnRJ86 CerrarVentanaEmergente" id="t34"/></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+           
+
+		
+
+</div>
+
+<input id="omtmodalvalue" type="hidden" value="Actualiza Datos Cliente|conpro.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

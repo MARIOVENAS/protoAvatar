@@ -1,0 +1,1235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />	
+
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+<script language="JavaScript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+<script language="JavaScript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script language="JavaScript" src="../../bbAvatar/js/swap.js"></script>
+
+<style type="text/css">
+
+body{
+
+	background: transparent;
+
+}
+
+</style>
+
+<script language="JavaScript">
+
+es=new Array('Specific search','To search the electronic banking operationtransactions, select a criterion, enter  the necessary data and click "Search"','Select a criterion','Date','Date','To','Period','Transaction status',"Authorization's number  / instruction",'Search','There are no transactions for:&nbsp;','Date','Description',"Authorization's number  / instruction",'Service / Medium','Status','Balance','Next &raquo;','*The transaction query is for information purposes only, not as legal or tax official recognition');
+
+var consultaCuenta = "0";
+
+var diaActual;
+
+var Ind_Criterio;
+
+var Formato;
+
+var diasSemana;
+
+var Meses;
+
+var formatoOrdena;
+
+jQuery(document).ready(function(){
+
+	if (language == "eng"){
+
+		var aux = new Array("What do you want to do?" , "Make tranfers", "Bill payments", "Print receipt");
+
+		for(var i=0; i<aux.length; i++){
+
+			$("[id=f"+i+"]").each(function(){
+
+				this.innerHTML = aux[i];});
+
+		}
+
+	}
+
+	var fechaSer = new Date();
+
+	var anio = fechaSer.getFullYear();
+
+	var mes = fechaSer.getMonth();
+
+	var dia = fechaSer.getDate();
+
+	diaActual = new Date( anio, mes, dia);
+
+	Ind_Criterio = (language != "eng") ? "0" : "1";
+
+	if(isNaN(Ind_Criterio))
+
+		Ind_Criterio = 0;
+
+	Formato = (language != "eng") ? "dd/mm/yy" : "mm/dd/yy";
+
+	diasSemana = (language != "eng") ? ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'] : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+	Meses = (language != "eng") ? ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'] : ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+	formatoOrdena = (language != "eng") ? "DI" : "D";
+
+	if (language == "eng"){
+
+		var option = '<option value="DIA">By Day</option><option value="RANGO">By range of days</option>';
+
+			option += '<option value="TRANSACCION">By transaction</option><option value="PERIODO">By period</option>';
+
+		var option1 = '<option value="00">All</option><option value="03">Applied</option><option value="09">Instructions received</option>';
+
+			option1 += '<option value="05">Rejected</option><option value="07">Rejection due to cancellation</option>';
+
+			option1 += '<option value="08">Cancelled without applying</option><option value="10">Cancelled by request</option>';
+
+		$("#comboCriterio").html('');
+
+		$("#comboCriterio").append(option);
+
+		$("#comboTransaccion").html('');
+
+		$("#comboTransaccion").append(option1);
+
+	}
+
+	$("#diaActual").val(diaActual.getDate()+'|'+diaActual.getMonth()+'|'+diaActual.getYear());
+
+	mostrarCriterios();
+
+	crearComboPeriodo();
+
+	crearCalendarios();
+
+	$("#comboCriterio").change(function(){
+
+		limpiarErrores();
+
+		mostrarCriterios();
+
+		crearComboPeriodo();
+
+		crearCalendarios();
+
+	});
+
+});
+
+$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+function mostrarCriterios(){
+
+	$("#comboDiaInicio").hide();
+
+	$("#comboDiaFin").hide();
+
+	$("#comboPeriodo").hide();
+
+	$("#comboEstatus").hide();
+
+	$("#comboAutorizacion").hide();
+
+	if (consultaCuenta != 0)
+
+		$("#comboCriterio option:eq("+Ind_Criterio+")").attr("selected","selected");
+
+	var criterio = $("#comboCriterio option:selected").val();
+
+	switch(criterio){
+
+		case "DIA":
+
+			$("#comboDiaInicio").show();
+
+			$("#comboEstatus").show();
+
+			break;
+
+		case "RANGO":
+
+			$("#comboDiaInicio").show();
+
+			$("#comboDiaFin").show();
+
+			$("#comboEstatus").show();
+
+			break;
+
+		case "TRANSACCION":
+
+			$("#comboDiaInicio").show();
+
+			$("#comboAutorizacion").show();
+
+			break;
+
+		case "PERIODO":
+
+			$("#comboPeriodo").show();
+
+			$("#comboEstatus").show();
+
+			break;
+
+	}
+
+}
+
+function crearComboPeriodo(){
+
+	var dia = new Date();
+
+	var mes = dia.getMonth() + 1;
+
+	var anio = dia.getFullYear();
+
+	var meses = (language != "eng") ? ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"] : ["","January","February","March","April","May","June","July","August","September","October","November","December"];
+
+	var periodoActual = meses[mes] + "  " + anio;
+
+	var periodoAnterior = meses[mes-1] + "  " + anio;
+
+	$("#periodo option:eq(0)").text(periodoActual);
+
+	$("#periodo option:eq(1)").text(periodoAnterior);
+
+	if(consultaCuenta != 0){
+
+		$("#periodo option[value='[Periodo]']").attr("selected","selected");
+
+		$("#comboTransaccion option[value='[EstatusSeleccionado]']").attr("selected","selected");
+
+		$("#inputAutorizacion").val("[autorizacion]");
+
+	}else{
+
+		$("#periodo option:eq(0)").attr("selected","selected");
+
+	}
+
+}
+
+function validarCriterios(){
+
+	msj1 = (language != "eng") ? "Selecciona una fecha" : "Select a date";
+
+	msj2 = (language != "eng") ? "El campo debe ser num&eacute;rico" : "The field must be numeric";
+
+	var criterio = $("#comboCriterio").val();
+
+	var flagCorrecto = true;
+
+	switch(criterio){
+
+		case "DIA":
+
+			if(!Campo_Vacio("fecInicio",msj1,"SI"))
+
+				flagCorrecto = false;
+
+			break;
+
+		
+
+		case "RANGO":
+
+			if(!Campo_Vacio("fecInicio",msj1,"SI"))
+
+				flagCorrecto = false;
+
+			if(flagCorrecto){
+
+				if(!Campo_Vacio("fecFin",msj1,"SI"))
+
+				flagCorrecto = false;
+
+			}
+
+			break;
+
+		case "TRANSACCION":
+
+			if(!Campo_Vacio("fecInicio",msj1,"SI"))
+
+				flagCorrecto = false;
+
+			if(!Valida_Caracteres ("inputAutorizacion","",1,"SI",msj2))
+
+				flagCorrecto = false;
+
+		case "PERIODO":
+
+			break;
+
+			
+
+	}
+
+	if(flagCorrecto){
+
+		$("#t9").attr("disabled","disabled");		
+
+		var estadoActual = $("#Estado").val();
+
+		var regresa = '';
+
+		switch(estadoActual){
+
+			case "INICIO":
+
+				regresa = "INICIO";
+
+				break;
+
+			case "GENERAL":
+
+				if($("#comboCriterio").val() == "TRANSACCION")
+
+					regresa = "INICIO";
+
+				else
+
+					regresa = "GENERAL";
+
+				break;
+
+		}
+
+		parent.document.getElementById("REGRESADEMO").value=$("#comboCriterio").val();
+
+		parent.document.getElementById("DATADEMO").value=$("#comboTransaccion").val()+"|"+$("#fecInicio").val()+"|"+$("#fecFin").val()+"|"+$("#periodo").val()+"|"+$("#inputAutorizacion").val();
+
+		parent.cargaDocN('Consulta de operaciones/historial_todas.html');
+
+	}else{
+
+		window.parent.ajustarIframe();
+
+	}
+
+}
+
+function validaCampoVacio(object){
+
+	if($(object).val() != ""){
+
+		$('.'+$(object).attr('id')+'_div_error span').hide();
+
+		$('.'+$(object).attr('id')+'_div_error').slideUp('fast');
+
+		return true;
+
+	}else{
+
+		$('.'+$(object).attr('id')+'_div_error').slideDown('fast', 
+
+			function(){
+
+				$('.'+$(object).attr('id')+'_div_error span').show();
+
+			}
+
+		)
+
+		return false;
+
+	}
+
+}
+
+function limpiarErrores(){
+
+	$("#fecFin").val('');
+
+	$("#fecInicio").val('');
+
+	$("#inputAutorizacion").val('');
+
+	$("div[id$='error']").hide();
+
+	$("div[class$='div_error']").each(function(){
+
+		$(this).find('span').hide();
+
+		$(this).slideUp('fast');
+
+	});
+
+}
+
+function ordenaTabla(tabla,columna){
+
+	var SortString;
+
+	if($("#btnFecha").hasClass("saldos_btn6")){
+
+		SortString = columna + '~' + tabla + '~D~'+formatoOrdena;
+
+	}else{
+
+		SortString = columna + '~' + tabla + '~A~'+formatoOrdena;
+
+	}
+
+}
+
+function crearCalendarios(){
+
+	var fecInicio = "[FecInicio1]";
+
+	var fecFin = "[FecFin1]";
+
+	EliminarCal("#fecFin");
+
+	EliminarCal("#fecInicio");
+
+	if(consultaCuenta != 0){
+
+		if($("#comboCriterio").val() == 'RANGO'){
+
+			diaInicial = operarDias(fecInicio, '+', 1);
+
+			diaFinal = operarDias(diaActual, '-', 0);
+
+			CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaFinal, 30, '', 0);
+
+			CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, diaInicial, diaFinal, 30, '', 0);
+
+			$("#fecFin").datepicker("enable");
+
+		}else if($("#comboCriterio").val() == 'DIA' || $("#comboCriterio").val() == 'TRANSACCION'){
+
+			CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaActual, 30, '', 0);
+
+			CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, 30, diaActual, 30, '', 0);
+
+			$("#fecFin").datepicker("disable");
+
+		}	
+
+		$("#fecInicio").val(fecInicio);
+
+		$("#fecFin").val(fecFin);
+
+		consultaCuenta = 0;
+
+	}else{
+
+		CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaActual, 30, '', 0);
+
+		CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, 30, diaActual, 30, '', 0);
+
+		$("#fecFin").datepicker("disable");
+
+	}	
+
+	$("#fecInicio").change(function(){
+
+		EliminarCal("#fecFin");
+
+		diaInicial2 = operarDias($(this).val(), '+', 1);
+
+		if(diaInicial2.getMonth() == diaActual.getMonth() && diaInicial2.getDate() == diaActual.getDate())
+
+			diaInicial = operarDias($(this).val(), '+', 0);
+
+		else
+
+			diaInicial = operarDias($(this).val(), '+', 0);
+
+		diaFinal = diaActual;		
+
+		CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, diaInicial, diaFinal, 30, '', 0);
+
+		$("#fecFin").datepicker("enable");
+
+	});
+
+}
+
+function HabilitarCal(Element){
+
+	$(Element).datepicker("enable");
+
+}
+
+function InhabilitarCal(){
+
+	$(Element).datepicker("disable");
+
+}
+
+function operarDias(fecha, signo, dias){
+
+	if(typeof(fecha) == 'string'){
+
+		var stringDiaInicio = fecha.split('/');
+
+		if(Formato == 'dd/mm/yy'){
+
+			var dia = parseFloat(stringDiaInicio[0]);
+
+			var mes = parseFloat(stringDiaInicio[1])-1;
+
+			var anio = parseFloat(stringDiaInicio[2]);
+
+		}else{
+
+			var dia = parseFloat(stringDiaInicio[1]);
+
+			var mes = parseFloat(stringDiaInicio[0])-1;
+
+			var anio = parseFloat(stringDiaInicio[2]);
+
+		}
+
+	}else{
+
+		var dia = fecha.getDate();
+
+		var mes = fecha.getMonth();
+
+		var anio = fecha.getFullYear();
+
+	}
+
+	if(signo == '+')
+
+		var diaInicio = new Date(anio,mes,dia + dias);
+
+	else
+
+		var diaInicio = new Date(anio,mes,dia - dias);
+
+	return diaInicio;
+
+}
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+function AnioActualValido(anio,mensaje){
+
+    hoy=new Date();
+
+    anioactual=hoy.getYear();
+
+    if(anio.value!=anioactual){
+
+        alert(mensaje);
+
+        anio.focus();
+
+        return false;
+
+    }else{
+
+        return true;
+
+    }
+
+}
+
+function ConsultaOperaciones(){
+
+    mens1 = (language != "eng") ? "Se requiere indicar tipo de consulta a realizar." : "The type of Inquiry to be performed must be indicated.";
+
+	mens2 = (language != "eng") ? "Para las opciones por d\u00EDa y por transacci\u00F3n se requiere capturar fecha." : "The date must be keyed in for the Per Day and Per Transaction Option."; 
+
+	mens5 = (language != "eng") ? "Para la opción Por D\u00EDa no se requiere n\u00FAmero de autorizaci\u00F3n." : "The authorization number is not required for the Per Day Option.";
+
+	mens6 = (language != "eng") ? "Se necesita indicar el estatus de la consulta." : "The status of the inquiry must be indicated.";
+
+	mens7 = (language != "eng") ? "Para la operaci\u00F3n por trasacción se requiere un n\u00FAmero de autorizaci\u00F3n." : "The authorization number, is required for the per transaction option.";
+
+	mens8 = (language != "eng") ? "Para la opci\u00F3n mes actual o mes anterior no se requiere capturar la fecha de aplicaci\u00F3n." : "There is not need to key in the Application Date for the Current Month or Prior Month option.";
+
+	mens9 = (language != "eng") ? "Para la opci\u00F3n mes actual o mes anterior no se requiere capturar el n\u00FAmero de autorizaci\u00F3n." : "There is not need to key in the Authorization Number for the Current Month or Prior Month option.";
+
+	mens10 = (language != "eng") ? "Si su consulta es por transacci\u00F3n no especifique el estatus." : "In your inquired per transaction, do not specify status.";
+
+	mens11 = (language != "eng") ? "Error en el N\u00FAmero de Autorizaci\u00F3n, los datos deben ser numericos." : "Error in the Authorization Number, the data must be numerical.";
+
+    if(Combo_Vacio(document.forms[0].DATA1,mens1,"SI") == true){
+
+        return;
+
+    }
+
+    if(document.forms[0].DATA1.value=="TRANSACCION" || document.forms[0].DATA1.value=="DIA"){
+
+        if(document.forms[0].DATA3.value=="PS" || document.forms[0].DATA4.value=="PS"){
+
+            document.forms[0].DATA3.focus();
+
+            return;
+
+         } 
+
+    }
+
+    if(document.forms[0].DATA1.value=="DIA" && document.forms[0].DATA6.value!=""){
+
+        alert(mens5);
+
+        document.forms[0].DATA6.value="";
+
+        document.forms[0].DATA6.focus();
+
+        document.forms[0].DATA6.select();
+
+        return;
+
+    }
+
+    if(document.forms[0].DATA1.value=="DIA" || document.forms[0].DATA1.value=="MES ACTUAL" || document.forms[0].DATA1.value=="MES ANTERIOR"){
+
+        if(document.forms[0].DATA2.value=="PS"){
+
+            alert(mens6);
+
+            document.forms[0].DATA2.focus();
+
+            return;
+
+        }
+
+        if(document.forms[0].DATA6.value!=""){
+
+            alert(mens9);
+
+            document.forms[0].DATA6.value="";
+
+            document.forms[0].DATA1.focus();
+
+            return;
+
+        }
+
+    }
+
+    if(document.forms[0].DATA1.value=="TRANSACCION"){
+
+        if(document.forms[0].DATA6.value==""){
+
+             alert(mens7);
+
+             document.forms[0].DATA6.focus();
+
+             document.forms[0].DATA6.select();
+
+             return;
+
+        }else{
+
+            if(Valida_Caracteres(document.forms[0].DATA6,"","1","SI",mens11) == false){   
+
+                 return;}
+
+        }
+
+        if(document.forms[0].DATA2.value!="PS"){
+
+             alert(mens10);
+
+             document.forms[0].DATA2[0].selected=true;      
+
+             document.forms[0].DATA1.focus();
+
+             return;
+
+        }
+
+    }
+
+    if((document.forms[0].DATA1.value=="MES ACTUAL" || document.forms[0].DATA1.value=="MES ANTERIOR") && (document.forms[0].DATA3.value!="PS" && document.forms[0].DATA4.value!=""))
+
+    {
+
+            alert(mens8);
+
+            document.forms[0].DATA3[0].selected=true;      
+
+            document.forms[0].DATA4[0].selected=true;      
+
+            document.forms[0].DATA1.focus();
+
+            return;
+
+    }
+
+}
+
+function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+		caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/
+
+  var valMail = $("#"+idCampo, contexto ).val();
+
+  return mailTest.test(valMail);
+
+}
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+function rfcValido( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"", contexto ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+function curpValido( idTxt ) {
+
+  var regexCurp;
+
+  var valCurp = $( "#"+idTxt+"" ).val();
+
+  regexCurp = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[0-9]{2}$/;
+
+  return regexCurp.test( valCurp );
+
+}
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+function showError( idElem, msgErr, contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'', contexto ).after( $divErr );
+
+}
+
+function hideErrors( contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display', contexto).remove();
+
+}
+
+function toggleChecks( idChecken, idCheckdis ) {
+
+  var flag =  $('#'+idChecken).is(':checked');
+
+  $('#'+idChecken).attr('disabled', false);
+
+  $('#'+idCheckdis).attr('disabled', flag);
+
+  $('#'+idCheckdis).attr('checked', false);
+
+  $('#msgFrec').show();
+
+  window.parent.ajustarIframe();
+
+}
+
+</script>
+
+<div class="saldos_bloque2">
+
+	<div class="saldos_bloque2_f1">
+
+		<div class="saldos_bloque2_f1_btn" id="saldosbtn1" onclick="desplegable('saldosbtn1', 'saldosConte1', 0);"><div class="cortinabtnSaldos bge2f2fe"></div></div>
+
+		<div id="t0" class="saldos_bloque2_f1_txt">B&uacute;squeda&nbsp;espec&iacute;fica</div>
+
+	</div>
+
+	<div class="expand floatL" id="saldosConte1">
+
+		<div class="saldos_bloque2_f2 floatL clear">
+
+			<div id="t1" class="saldos_bloque2_f2_txt">Para&nbsp;realizar&nbsp;una&nbsp;b&uacute;squeda&nbsp;de los movimientos por banca electr&oacute;nica, selecciona un criterio, indica los datos necesarios y da clic en &#8220;Buscar&#8221;</div>
+
+		</div>
+
+		<div class="saldos_bloque2_f3">
+
+			<div class="ancho100p overflow">
+
+				<div class="saldos_bloque2_f3in clear">       
+
+					<div class="saldos_bloque2_f4">
+
+						<div id="t2" class="saldos_bloque2_f4_txt">Selecciona un criterio</div>
+
+						<div class="saldos_bloque2_f4_inp">
+
+							<select name="DATA1" id="comboCriterio" class="ancho170">
+
+								<option value="DIA">Por d&iacute;a</option>
+
+								<option value="RANGO">Por rango de d&iacute;as</option>
+
+								<option value="TRANSACCION">Por movimiento</option>
+
+								<option value="PERIODO">Por periodo</option>
+
+							</select>
+
+						</div>
+
+					</div>					
+
+					<div class="saldos_bloque2_f5_2 ancho140" id="comboDiaInicio" style="display:none;">
+
+						<div id="t3" class="saldos_bloque2_f4_txt">Fecha</div>
+
+						<div class="saldos_bloque2_f4_inp2 calendario">
+
+							<input name="DATA2" type="text" id="fecInicio" class="yearpicker" readonly="readonly" />
+
+							<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" />
+
+							<div id="fecInicio_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+						</div>
+
+					</div>
+
+					<div class="saldos_bloque2_f5_2" id="comboDiaFin" style="display:none;">
+
+						<div id="t4" class="saldos_bloque2_f4_txt" style="margin-left:22px;">Fecha</div>
+
+						<div class="saldos_bloque2_f4_inp2 calendario"><span id="t5" class="marginR10 color666 floatL">Al</span>
+
+							<input name="DATA3" type="text" id="fecFin" class="yearpicker" readonly="readonly" />
+
+							<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" />
+
+							<div id="fecFin_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+						</div>
+
+					</div>
+
+					<div class="saldos_bloque2_f5_2" id="comboPeriodo">
+
+						<div id="t6" class="saldos_bloque2_f4_txt">Periodo</div>
+
+						<div class="saldos_bloque2_f4_inp">
+
+							<select id="periodo" name="DATA4" class="ancho170">
+
+								<option value="MES ACTUAL"></option>
+
+								<option value="MES ANTERIOR"></option>
+
+							</select>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="saldos_bloque2_f3in clear">
+
+				<div class="saldos_bloque2_f4" id="comboEstatus">
+
+					<div id="t7" class="saldos_bloque2_f4_txt">Estatus del movimiento</div>
+
+					<div class="saldos_bloque2_f4_inp">
+
+						<select id="comboTransaccion" name="DATA5" class="ancho170">
+
+							<option value="00">Todas</option>
+
+							<option value="03">Aplicadas</option>
+
+							<option value="09">Instrucciones Recibidas</option>
+
+							<option value="05">Rechazadas</option>
+
+							<option value="07">Canceladas por Rechazo</option>
+
+							<option value="08">Canceladas sin Aplicar</option>
+
+							<option value="10">Canceladas por Petici&oacute;n</option>
+
+						</select>
+
+					</div>
+
+				</div>
+
+				<div class="saldos_bloque2_f4" id="comboAutorizacion">
+
+					<div id="t8" class="saldos_bloque2_f4_txt clear">N&uacute;mero de autorizaci&oacute;n o instrucci&oacute;n</div>
+
+					<div class="saldos_bloque2_f4_inp clear">
+
+						<input class="input ancho238" type="text" id="inputAutorizacion" maxlength="16" name="DATA6"/>
+
+					</div>
+
+					<div id="inputAutorizacion_error" class="saldos_bloque2_f4_error_display_blanco  clear"><span>Introduce n&uacute;mero de autorizaci&oacute;n</span></div>
+
+				</div>
+
+			</div>
+
+			<div class="saldos_bloque2_f6">
+
+				<div class="saldos_bloque2_f4_txt">&nbsp;&nbsp;</div>
+
+				<div class="saldos_bloque2_f6_inp">
+
+					<input id="t9" type="button" name="btnBuscar" value="Buscar" class="btnAZ86" onclick="validarCriterios()" />
+
+				</div>
+
+			</div>	
+
+		</div>
+
+	</div>        
+
+</div>
+
+<div id="divNoMovs" class="saldos_bloque3_rojo alto16 displayN">
+
+	<div id="t10" class="floatL">No se encontraron movimientos para:&nbsp;</div><div id="mensaje" class="floatL"></div>
+
+</div>
+
+<input type="hidden" id="Estado" value="INICIO" />
+
+<div class="marginT37 bloqueQueHacer">
+
+	<table cellspacing="0" cellpadding="0" border="0" width="100%" class="tablaQueHacer">
+
+		<tbody><tr>
+
+			<td class=" ancho20p"><p id="f0">&iquest;Qu&eacute; deseas hacer?</p></td>
+
+			<td class="ancho26p"><span>&raquo;&nbsp;</span><a id="f1" href="#" onClick="javascript:top.open('../../30-Transferencias_pagos.html?ifrContenedor=1&link=t27' , '_self')" >Realizar transferencias</a></td>
+
+			<td class="ancho26p"><span>&raquo;&nbsp;</span><a id="f2" href="#" onClick="javascript:top.open('../../30-Transferencias_pagos.html?ifrContenedor=3&link=t34' , '_self')">Hacer pago de servicios</a></td>
+
+			<td class="ancho26p"><span>&raquo;&nbsp;</span><a id="f3" href="#" onClick="javascript:top.banca()">Imprimir comprobantes</a></td>
+
+		</tr>
+
+	</tbody></table>        	
+
+</div>
+
+<input type="hidden" id="diaActual" value="vacio"/>
+
+</body>
+
+</html>

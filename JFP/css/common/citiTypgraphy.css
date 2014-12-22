@@ -1,0 +1,150 @@
+/*Section 1 - Typography
+
+This section is where all font realated sytles will be written*/
+
+
+
+
+
+
+
+/* 1.1 Font Family - All font family's reside with in this section. Custom fonts reside in seperate CSS file and
+
+override the base */
+
+
+
+body {
+
+	font-family:Arial, Verdana, sans-serif !important; 
+
+	font-weight:normal;
+
+}
+
+
+
+/* End Font Family */
+
+
+
+/* 1.2 Font size - all font sizes reside with in this section  */
+
+
+
+/* Body tag is the base font size, all other sizes will overide. */
+
+body {
+
+	font-size:11px; 
+
+}
+
+/* Font size used for disclaimer text */
+
+.fontSize8px, .disclaimerBodyFntSize {
+
+	font-size:8px;
+
+}
+
+
+
+/* Font size used for all inline links  */
+
+.inlineLinkTxtFntSize {
+
+	font-size:9px;
+
+}
+
+
+
+/* Font size used for secondary buttons and optional for top nav branding. Current top nav font size is coming from branding_dashboard.css */
+
+.fontSize10px, ul li.appNavNeg a, .topBarNavFntSize {
+
+	font-size:10px;
+
+}
+
+
+
+/* Font size used for primary buttons, application form feild labels, and optional for base body copy font size. Current base body copy font size is used in the body element */
+
+.fontSize11px, li.appNavPos a, .appLabel, .appLabelAlt, .secondaryBodyFntSize {
+
+	font-size:11px;
+
+}
+
+
+
+/* Font size used for table headers, optional for welcome branding font size, main navigation font size, and footer disclaimer body text. */
+
+.fontSize12px, .tableHeaderFntSize, .welcomeTxtFntSize, .mainNavTxtSize, .disclaimerBodyFntSizeLrg, .baseBodyFntSize {
+
+	font-size:12px;
+
+}
+
+
+
+/* Font size used for dashboard panel titles  */
+
+.fontSize13px, .tertiaryHeaderFntSize  {
+
+	font-size:13px;
+
+}
+
+
+
+/* not currently used.*/
+
+.fontSize14px {
+
+	font-size:14px;
+
+}
+
+
+
+/* Font size used for larger font sized table headers */
+
+.fontSize15px, .secondaryHeaderFntSize  {
+
+	font-size:15px;
+
+}
+
+
+
+/* Font size used for form headers */
+
+.formHeaderFntSize {
+
+	font-size:17px;
+
+}
+
+
+
+/* Font size used for overlays titles and other panel titles */
+
+.fontSize20px, .primaryHeaderFntSize {
+
+	font-size:20px;
+
+}
+
+
+
+/* End font size */
+
+
+
+/* End Typography section */
+
+
+

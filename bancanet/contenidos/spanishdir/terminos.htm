@@ -1,0 +1,775 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">	
+
+	<title>T&eacute;rminos y Condiciones</title>	
+
+	<link href="../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+
+	.contenedorTitulo{
+
+	min-width:925px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	margin-top: -20px;
+
+	height:35px;
+
+	width:auto;
+
+	}	
+
+	.contenedorTitulo_tit1 {
+
+	font-size:30px;
+
+	color:#09347a;
+
+	line-height:24px;
+
+	float:left;
+
+	padding-top:0px;
+
+	font-weight:bold;
+
+	}
+
+	.contenedorTitulo_tit1_btnBox {
+
+		float:left;
+
+		width:22px;
+
+		padding-left:2px;
+
+		height:19px;
+
+		cursor:default;
+
+		padding-top:5px;
+
+	}
+
+	.contenedorTitulo_tit1_btn {
+
+		background:#FFFFFF url(../bbAvatar/images/marco.gif) right -29px no-repeat;
+
+		width:13px;
+
+		height:14px;
+
+		cursor:default;
+
+		margin-top:2px;
+
+	}
+
+	.contenedorTitulo_tit1_txt {
+
+		float:left;
+
+		cursor:default;
+
+	}
+
+	.contenedorTitulo_tit1_txt span {
+
+		font-size:24px;
+
+		color:#000000;
+
+		line-height:27px;
+
+		padding:0;
+
+		cursor:default;
+
+		font-weight:bold;
+
+	}
+
+	.contenedorTitulo_tit1_txt p {
+
+		font-size:11px;
+
+		color:#09347a;
+
+		cursor:default;
+
+	}
+
+	.contenedorTitulo_box1 {
+
+		float:right;
+
+		width:180px;
+
+		height:21px;
+
+	}
+
+    </style>	
+
+	<script type="text/javascript" src="../bbAvatar/js/motor.js"></script>    
+
+    <script type="text/javascript" src="../bbAvatar/js/opciones.js"></script>    
+
+	<script type="text/javascript" language="javascript">
+
+		function makeArray(n){
+
+		  this.length = n;
+
+		  for (i=1;i<=n;i++){
+
+			this[i]=0;
+
+		  }
+
+		  return this;
+
+		}		
+
+		function obtenerHora() {
+
+		  var this_month = new makeArray(12);
+
+		  this_month[0]  = "Enero";
+
+		  this_month[1]  = "Febrero";
+
+		  this_month[2]  = "Marzo";
+
+		  this_month[3]  = "Abril";
+
+		  this_month[4]  = "Mayo";
+
+		  this_month[5]  = "Junio";
+
+		  this_month[6]  = "Julio";
+
+		  this_month[7]  = "Agosto";
+
+		  this_month[8]  = "Septiembre";
+
+		  this_month[9]  = "Octubre";
+
+		  this_month[10] = "Noviembre";
+
+		  this_month[11] = "Diciembre";
+
+		  var this_day_e = new makeArray(7);
+
+		  this_day_e[0]  = "Domingo";
+
+		  this_day_e[1]  = "Lunes";
+
+		  this_day_e[2]  = "Martes";
+
+		  this_day_e[3]  = "Mi&eacute;rcoles";
+
+		  this_day_e[4]  = "Jueves";
+
+		  this_day_e[5]  = "Viernes";
+
+		  this_day_e[6]  = "S&aacute;bado";
+
+		  var today = new Date();
+
+		  var day   = today.getDate();
+
+		  var month = today.getMonth();
+
+		  var year  = today.getYear();
+
+		  var dia = today.getDay();
+
+			if (year < 1000) {
+
+			   year += 1900; }
+
+			var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+
+			var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+
+			var seconds = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+
+			  return( " " + this_day_e[dia] + " " + day + " de " + this_month[month] + " de " + year + ", " + hour + ":" + minute  + ":" + seconds + " Centro de M&eacute;xico" );
+
+		}
+
+		function slide(navegacion_id, pad_out, pad_in){
+
+			var listaElementos = $(navegacion_id + ' div');
+
+			var claseTexto = $(navegacion_id).parent().find('div:eq(2)').attr('class');
+
+			$(listaElementos).each(
+
+				function(i){
+
+					if(!detectaDispositivoMobile()){
+
+						$(this).hover(
+
+							function(){
+
+								$(this).animate({ paddingLeft: pad_out, opacity: 0.7 },{ duration: 150, "easin": "easein", complete: function(){}});
+
+							},		
+
+							function(){
+
+								$(this).animate({ paddingLeft: pad_in, opacity: 1 },{ duration: 150, "easin": "elasinout", complete: function(){}});
+
+							}
+
+						);
+
+					}
+
+				}
+
+			);	
+
+			$('.'+claseTexto+' span').each(
+
+				function(i){
+
+					if(!detectaDispositivoMobile()){
+
+						$(this).hover(
+
+							function(){
+
+								$(this).parent().parent().find('div:eq(0)').find('div').animate({ paddingLeft: pad_out, opacity: 0.7 },{ duration: 150, "easin": "easein", complete: function(){}});
+
+								
+
+							},		
+
+							function(){
+
+								$(this).parent().parent().find('div:eq(0)').find('div').animate({ paddingLeft: pad_in, opacity: 1 },{ duration: 150, "easin": "elasinout", complete: function(){}});
+
+							}
+
+						);
+
+					}
+
+				}
+
+			);
+
+		}
+
+		$(document).ready(function(){
+
+			$("#horaactual").html(obtenerHora());
+
+			$('#anioActual').html(function () { 
+
+				var anio = new Date();
+
+				var anioAux = anio.getYear();
+
+				return anioAux < 1000 ? anioAux +=1900 : anioAux;
+
+			});
+
+			showtooltipLogin();
+
+			slide(".activaflecha2",5,0);
+
+		});
+
+	</script>
+
+</head>
+
+<body>
+
+	<table cellpadding="0" cellspacing="0" align="center" width="100%" style="margin:auto; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#666666">
+
+        <thead>
+
+            <tr height="45px">
+
+                <td valign="middle" align="left">
+
+                	<div id="Logo_Banamex_es" onclick="javascript:ligasNegocio('http://www.banamex.com')"></div>                   
+
+                </td>
+
+                <td valign="middle" align="right">
+
+                    <div id="Logo_Bancanet"></div>
+
+                </td>
+
+            </tr>
+
+            <tr height="10px"><td colspan="2"></td></tr>
+
+            <tr>
+
+                <td valign="middle" align="left" colspan="2">
+
+                    <span id="horaactual" name="horactual" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#666666"></span>
+
+                </td>
+
+            </tr>
+
+            <tr height="15px"><td colspan="2"></td></tr>
+
+            <tr height="25px">
+
+            	<td  colspan="1" valign="top" width="80%" align="right">
+
+                	<div id="tituloSeccion">
+
+                        <div class="contenedorTitulo_tit1">
+
+                        	<div class="contenedorTitulo_tit1_btnBox activaflecha2"><div class="contenedorTitulo_tit1_btn">&nbsp;</div></div>
+
+                        	<div class="contenedorTitulo_tit1_txt" style="margin-top:-1px"><span>&nbsp;T&eacute;rminos y Condiciones de Uso y Privacidad</span></div>
+
+                        </div>
+
+                    </div>
+
+                </td>
+
+            	<td colspan="1" valign="top" width="20%" align="left">
+
+                	<table cellpadding="0" cellspacing="0" width="100%" align="left">
+
+                    	<tr>                        	
+
+                            <td valign="middle" width="100%" align="right">
+
+                            	<div style="display:inline-block;">
+
+                                  	<div class="Imprimir showtooltipLogin saldos_btn2" id="btn_imp" onClick="javascript:window.print()"></div>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </td>
+
+            </tr>            
+
+        </thead>
+
+		<tbody>
+
+        <tr height="10px"><td colspan="2"></td></tr>
+
+        <tr>
+
+        	<td align="left" valign="middle" colspan="2">
+
+                <div class="color333 marginT20 f12" style="border: 1px solid #dedede; padding:20px; text-align:justify">
+
+       			<ul style="text-align:justify" >
+
+          		<li style="margin-top:15px;">
+
+                	<p><b>1. USO Y RESTRICCIONES</b></p><br />
+
+                    <p>
+
+                    La utilizaci&oacute;n del Portal expresa la adhesi&oacute;n plena y sin reservas del usuario a los presentes T&eacute;rminos y Condiciones de Uso y Privacidad. 
+
+                    A trav&eacute;s del Portal, el usuario accesar&aacute; y/o utilizar&aacute; diversos servicios y contenidos (en lo sucesivo, los "Servicios y Contenidos"), 
+
+                    puestos a disposici&oacute;n de los usuarios por los integrantes del Grupo Financiero Banamex y/o sus subsidiarias y afiliadas (en lo sucesivo, 
+
+                    el "Grupo Financiero Banamex"), y/o por terceros proveedores de Servicios y Contenidos. El Grupo Financiero Banamex tendr&aacute; el derecho a negar, 
+
+                    restringir o condicionar al usuario el acceso al Portal, total o parcialmente, a su entera discreci&oacute;n, as&iacute; como a modificar los Servicios y 
+
+                    Contenidos del Portal, en cualquier momento y sin necesidad de previo aviso. El usuario reconoce que no todos los Servicios y Contenidos est&aacute;n disponibles 
+
+                    en todas las &aacute;reas geogr&aacute;ficas y que algunos Servicios y Contenidos pueden ser utilizados solamente con posterioridad a la inscripci&oacute;n o 
+
+                    registro previo por el usuario y/o el pago de una comisi&oacute;n, seg&uacute;n se indique expresamente en las correspondientes "Condiciones Particulares" 
+
+                    (seg&uacute;n se define dicho t&eacute;rmino en el inciso 12). El Grupo Financiero Banamex no garantiza la disponibilidad y continuidad de la operaci&oacute;n 
+
+                    del Portal y de los Servicios y Contenidos, ni la utilidad del Portal o los Servicios y Contenidos en relaci&oacute;n con ninguna actividad espec&iacute;fica. 
+
+                    El Grupo Financiero Banamex no ser&aacute; responsable por ning&uacute;n da&ntilde;o o p&eacute;rdida de cualquier naturaleza que pueda ser causado debido a 
+
+                    la falta de disponibilidad o continuidad de operaci&oacute;n del Portal y/o de los Servicios y Contenidos.            
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>2. PROPIEDAD INTELECTUAL</b></p><br />
+
+                    <p>
+
+                    Los derechos de propiedad intelectual respecto de los Servicios y Contenidos y los signos distintivos y dominios del Portal, as&iacute; como los derechos de 
+
+                    uso y explotaci&oacute;n de los mismos, incluyendo su divulgaci&oacute;n, publicaci&oacute;n, reproducci&oacute;n, distribuci&oacute;n y transformaci&oacute;n, 
+
+                    son propiedad exclusiva del Grupo Financiero Banamex. El usuario no adquiere ning&uacute;n derecho de propiedad intelectual por el simple uso de los Servicios 
+
+                    y Contenidos del Portal y en ning&uacute;n momento dicho uso ser&aacute; considerado como una autorizaci&oacute;n ni licencia para utilizar los Servicios 
+
+                    y Contenidos con fines distintos a los que se contemplan en los presentes T&eacute;rminos y Condiciones de Uso y Privacidad.         
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>3. PROPIEDAD INTELECTUAL DE TERCEROS</b></p><br />
+
+                    <p>
+
+                    El usuario acuerda que las disposiciones que se establecen en el inciso 2 anterior respecto de la titularidad de los derechos del Grupo Financiero Banamex 
+
+                    tambi&eacute;n son aplicables a los derechos de terceros respecto de los Servicios y Contenidos de las p&aacute;ginas enlazadas al Portal.        
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>4. USOS PERMITIDOS</b></p><br />
+
+                    <p>
+
+                    El aprovechamiento de los Servicios y Contenidos del Portal es exclusiva responsabilidad del usuario, quien en todo caso deber&aacute; servirse de ellos 
+
+                    acorde a las funcionalidades permitidas en el propio Portal y a los usos autorizados en los presentes T&eacute;rminos y Condiciones de Uso y Privacidad, 
+
+                    por lo que el usuario se obliga a utilizarlos de modo tal que no atenten contra las normas de uso y convivencia en Internet, 
+
+                    las leyes de los Estados Unidos Mexicanos y la legislaci&oacute;n vigente en el pa&iacute;s en que el usuario se encuentre al usarlos, 
+
+                    las buenas costumbres, la dignidad de la persona y los derechos de terceros. El Portal es para el uso personal y del usuario por lo que no 
+
+                    podr&aacute; comercializar de manera alguna los Servicios y Contenidos.        
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>5. PROHIBICIONES</b></p><br />
+
+                    <p>
+
+                    El usuario no tiene el derecho de colocar hiperligas de y al Portal, ni el derecho de colocar o utilizar los Servicios y Contenidos del Portal en sitios 
+
+                    o p&aacute;ginas propias o de terceros sin autorizaci&oacute;n previa y por escrito del Grupo Financiero Banamex. Asimismo, el usuario no tendr&aacute; 
+
+                    el derecho de limitar o impedir a cualquier otro usuario el uso del Portal.                    
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>6. CALIDAD DE LOS SERVICIOS Y CONTENIDOS</b></p><br />
+
+                    <p>
+
+                    Ni el Grupo Financiero Banamex, ni sus proveedores o socios comerciales ser&aacute;n responsables de cualquier da&ntilde;o o perjuicio que sufra el usuario a consecuencia de inexactitudes, errores tipogr&aacute;ficos y cambios o mejoras que se realicen peri&oacute;dicamente a los Servicios y Contenidos. Las recomendaciones y consejos obtenidos a trav&eacute;s de el Portal son de naturaleza general, por lo que no deben tomarse en cuenta en la adopci&oacute;n de decisiones personales. Para ello se debe consultar a un profesional apropiado que pueda asesorar al usuario de acuerdo con sus necesidades espec&iacute;ficas.      
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>7. BIENES Y SERVICIOS DE TERCEROS ENLAZADOS</b></p><br />
+
+                    <p>
+
+                   	Respecto de los Servicios y Contenidos que prestan terceros dentro o mediante enlaces al Portal (tales como ligas, banners y botones), 
+
+                    el Grupo Financiero Banamex se limita exclusivamente, para conveniencia del usuario, a: (i) informar al usuario sobre los mismos, 
+
+                    y (ii) a proporcionar un medio para poner en contacto al usuario con proveedores o vendedores. Los productos y/o servicios que se comercializan dentro 
+
+                    del Portal y/o en los sitios de terceros enlazados son suministrados por comerciantes independientes al Grupo Financiero Banamex. El Grupo Financiero 
+
+                    Banamex no es ni podr&aacute; ser considerado como proveedor de los bienes y/o servicios que se ofrecen en dichas p&aacute;ginas y/o sitios. 
+
+                    La inclusi&oacute;n de dichas p&aacute;ginas y/o enlaces no implica la aprobaci&oacute;n, respaldo, patrocinio, recomendaci&oacute;n o garant&iacute;a, 
+
+                    por parte del Grupo Financiero Banamex, de los servicios y bienes que se comercializan en los mismos ni del contenido de dichas p&aacute;ginas. 					No existe ning&uacute;n tipo de relaci&oacute;n laboral, asociaci&oacute;n o sociedad, entre el Grupo Financiero Banamex y dichos terceros. Toda asesor&iacute;a, consejo, declaraci&oacute;n, informaci&oacute;n y contenido de las p&aacute;ginas de terceros enlazadas o dentro del Portal representan las opiniones y juicios de dicho tercero, consecuentemente, el Grupo Financiero Banamex no ser&aacute; responsable de ning&uacute;n da&ntilde;o o perjuicio que sufra el usuario a consecuencia de los mismos, incluyendo, de manera enunciativa mas no limitativa, da&ntilde;os causados por la p&eacute;rdida de datos o programas.       
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>8. CONFIDENCIALIDAD</b></p><br />
+
+                    <p>
+
+                   	El Grupo Financiero Banamex se obliga a mantener confidencial la informaci&oacute;n que reciba del usuario que tenga dicho car&aacute;cter conforme a 
+
+                    las disposiciones legales aplicables, en los Estados Unidos Mexicanos. El Grupo Financiero Banamex no asume ninguna obligaci&oacute;n de mantener 
+
+                    confidencial cualquier otra informaci&oacute;n que el usuario le proporcione, ya sea al inscribirse al Portal o en cualquier otro momento posterior, 
+
+                    incluyendo aquella informaci&oacute;n que el usuario proporcione a trav&eacute;s de boletines, pizarras o pl&aacute;tica en l&iacute;nea (chats), 
+
+                    as&iacute; como la informaci&oacute;n que obtenga el Grupo Financiero Banamex a trav&eacute;s de las Cookies que se describen en el inciso 11.        
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>9. PROGRAMA DE PRIVACIDAD DE CITIGROUP</b></p><br />
+
+                    <p>
+
+                  	En virtud de que la seguridad de la informaci&oacute;n personal del usuario es una prioridad para Grupo Financiero Banamex, se ha implementado un 
+
+                    programa denominado "Programa de Privacidad de Citigroup", que persigue proteger esta informaci&oacute;n mediante el establecimiento de distintos 
+
+                    controles, as&iacute; como la capacitaci&oacute;n a sus empleados en el manejo adecuado de esta informaci&oacute;n. Asimismo, al utilizar otras 
+
+                    compa&ntilde;&iacute;as para que nos presten servicios, Grupo Financiero Banamex les exige proteger la confidencialidad de la informaci&oacute;n 
+
+                    personal que ellos reciban. (Para m&aacute;s informaci&oacute;n respecto del Programa, haga click aqu&iacute;).      
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>10. USO DE LA INFORMACI&Oacute;N NO CONFIDENCIAL</b></p><br />
+
+                    <p>
+
+                    Mediante el uso del Portal, el usuario autoriza al Grupo Financiero Banamex a utilizar, publicar, reproducir, divulgar, comunicar p&uacute;blicamente 
+
+                    y transmitir la informaci&oacute;n no confidencial, en t&eacute;rminos de lo establecido en el art&iacute;culo 109 de la Ley Federal de los Derechos 
+
+                    de Autor y de la fracci&oacute;n I, del art&iacute;culo 76 bis de la Ley Federal de Protecci&oacute;n al Consumidor.
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>11. COOKIES</b></p><br />
+
+                    <p>
+
+                  	El usuario que tenga acceso al Portal, acuerda recibir las cookies que les transmitan los servidores del Grupo Financiero Banamex. "Cookie" 
+
+                    significa un archivo de datos que se almacena en el disco duro de la computadora del usuario cuando &eacute;ste tiene acceso al Portal. 
+
+                    Las Cookies pueden contener informaci&oacute;n tal como la identificaci&oacute;n proporcionada por el usuario o informaci&oacute;n para rastrear 
+
+                    las p&aacute;ginas que el usuario ha visitado. Una Cookie no puede leer los datos o informaci&oacute;n del disco duro del usuario ni leer las Cookies 
+
+                    creadas por otros sitios o p&aacute;ginas.
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>12. CLAVES DE ACCESO Y NUMEROS CONFIDENCIALES</b></p><br />
+
+                    <p>
+
+                   	En todo momento, el usuario es el responsable &uacute;nico y final de mantener en secreto el n&uacute;mero de sus cuentas, contrase&ntilde;as 
+
+                    personales, claves de acceso y n&uacute;meros confidenciales con los cuales tenga acceso a los Servicios y Contenidos del Portal, as&iacute; como a 
+
+                    las p&aacute;ginas de terceros.       
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>13. MODIFICACIONES</b></p><br />
+
+                    <p>
+
+                    El Grupo Financiero Banamex tendr&aacute; el derecho de modificar en cualquier momento los T&eacute;rminos y Condiciones de Uso y Privacidad. 
+
+                    En consecuencia, el usuario debe leer atentamente los T&eacute;rminos y Condiciones de Uso y Privacidad cada vez que pretenda utilizar el Portal. 
+
+                    Ciertos Servicios y Contenidos ofrecidos a los usuarios en y/o a trav&eacute;s del Portal est&aacute;n sujetos a condiciones particulares propias 
+
+                    que sustituyen, completan y/o modifican los T&eacute;rminos y Condiciones de Uso y Privacidad (en lo sucesivo, las "Condiciones Particulares").
+
+                     Consiguientemente, el usuario tambi&eacute;n debe leer atentamente las correspondientes Condiciones Particulares antes de acceder a cualesquiera Servicios y 
+
+                     Contenidos.       
+
+                    </p>
+
+          		</li>
+
+                <li style="margin-top:15px;">
+
+                	<p><b>14. LEYES APLICABLES Y JURISDICCI&Oacute;N</b></p><br />
+
+                    <p>
+
+                    Para la interpretaci&oacute;n, cumplimiento y ejecuci&oacute;n del presente Contrato, las partes est&aacute;n de acuerdo en que ser&aacute;n aplicables 
+
+                    las leyes Federales de los Estados Unidos Mexicanos y competentes los tribunales de la Ciudad de M&eacute;xico, Distrito Federal, renunciando expresamente 
+
+                    a cualquier otro fuero o jurisdicci&oacute;n que pudiera corresponderles en raz&oacute;n de sus domicilios presentes o futuros.      
+
+                    </p>
+
+          		</li>
+
+            </ul>
+
+            </div>
+
+            </td>
+
+        </tr>
+
+        <tr height="25px"><td colspan="2"></td></tr>
+
+        <tr>
+
+        	<td colspan="2" valign="bottom" align="center">
+
+            	<input type="button" class="btnRJ86" value="Salir" onclick="javascript:self.close()" />
+
+            </td>
+
+        </tr>
+
+		</tbody>
+
+		<tfoot>
+
+			<tr height="30px"><td colspan="2"></td></tr>
+
+        	<tr>
+
+            	<td valign="bottom" align="center" colspan="2">
+
+                	<span style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+
+                    	 Ponemos a tu disposici&oacute;n nuestros tel&eacute;fonos para m&aacute;s informaci&oacute;n o cualquier aclaraci&oacute;n.<br />
+
+						 Del D.F. al 1226-3990 o del interior al 01800-110-3990 de Lunes a S&aacute;bado de 7 a 21hrs.<br />
+
+						 Escr&iacute;benos a <b class="f11">"Cont&aacute;ctanos"</b> dentro de <b class="f11">www.banamex.com</b>
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+			<tr height="25px"><td colspan="2"></td></tr>
+
+            <tr>
+
+            	<td valign="top" align="center" colspan="2">
+
+                	<span style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+
+                    	D.R. &copy; Copyright <span id="anioActual" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333"></span>, Derechos Reservados.
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+		</tfoot>
+
+      </table>
+
+      
+
+      <div id="tooltipLogin">
+
+		<table cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td class="tooltipTLLogin"></td>
+
+				<td class="tooltipTLogin"></td>
+
+				<td class="tooltipTRLogin"></td>
+
+			</tr>
+
+			<tr>
+
+				<td class="tooltipLLogin">&nbsp;</td>
+
+				<td class="tooltipCLogin">&nbsp;</td>
+
+				<td class="tooltipRLogin">&nbsp;</td>
+
+			</tr>
+
+			<tr>
+
+				<td class="tooltipBLLogin"></td>
+
+				<td class="tooltipBLogin"><div class="tooltipPLogin"></div></td>
+
+				<td class="tooltipBRLogin"></td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+
+
+</body>
+
+</html>

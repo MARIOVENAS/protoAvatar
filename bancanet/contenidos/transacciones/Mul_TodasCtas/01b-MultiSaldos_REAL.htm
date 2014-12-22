@@ -1,0 +1,1580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="pragma" content="no-cache"/>
+
+<meta http-equiv="cache-control" content="no-cache"/>
+
+<meta http-equiv="expires" content="-1"/>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+<link href="../../bbAvatar/css/estilosmulti.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/plugins.js"></script>
+
+
+
+ <script type="text/javascript">
+
+	function seleccionaCuenta(valor){
+
+			var sigtmp;
+
+		var data = new Array();
+
+		data = valor.split("|");
+
+		if(data[0] == "1"){
+
+			sigtmp = "Mul_TodasCtas/14-Cheques_mes_actual_real.htm";
+
+		}else if(data[0] == "2"){
+
+			sigtmp = "Mul_TodasCtas/Resumen-de-inversiones_4.htm";
+
+		}else if(data[0] == "3"){
+
+			if(data[1] == "TC"){
+
+				sigtmp = "Mul_TodasCtas/04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/premia_mes_actual.htm";
+
+			}
+
+		}else if(data[0] == "4"){
+
+			if(data[1] == "IN"){
+
+				sigtmp = "Mul_TodasCtas/inversionesdetalle_horizonte.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/inversionesdetalle_inversionintegral.htm";
+
+			}
+
+		}else if(data[0] == "5"){
+
+			sigtmp = "Mul_TodasCtas/Afore.htm";
+
+		}else if(data[0] == "6"){
+
+			if(data[1] == "PE"){
+
+				sigtmp = "Mul_TodasCtas/cuenta_perfiles_periodo_actual.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/maestra_mes_actual.htm";	
+
+			}
+
+		}else if(data[0] == "7"){
+
+			sigtmp = "Mul_TodasCtas/Resumen-de-creditos.html";
+
+		}else{
+
+			sigtmp = "Mul_TodasCtas/Multiseries.htm";
+
+		}
+
+		$("#divCargando").show();
+
+		setTimeout("parent.DoSubmit('"+sigtmp+"');",1000);
+
+	}
+
+	
+
+	function DoSubmit(value){
+
+		$("#divCargando").show();
+
+		setTimeout("parent.DoSubmit('"+value+"');",1000);
+
+	}
+
+	
+
+	function imprimirMain(){
+
+		parent.document.getElementById("main").contentWindow.focus();
+
+		parent.document.getElementById("main").contentWindow.print();
+
+	}
+
+	
+
+	function AbreAyuda(fn){
+
+	window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+	}
+
+	function personalizarVista(){
+
+		parent.DoSubmit("Mul_TodasCtas/Resumen-de-inversiones_4.htm");
+
+	}
+
+</script>
+
+
+
+
+
+
+
+<script>parent.setFecha("04/05/12    11:25:09  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="112509  ";b$Cont="112509  "
+
+	</script>
+
+
+
+   <title></title>
+
+</head>
+
+
+
+<body>
+
+<div id="wrapper_div">
+
+	
+
+  <div class=" paddingB0" id="cuentas2">
+
+  <div class="resumen_enca ancho100p">
+
+    
+
+    
+
+    
+
+    
+
+    <div class="floatR marginT7 paddingR7 ancho20p">
+
+    
+
+    
+
+    <div class=" floatR">
+
+  <div class="saldos_btn1 showtooltip margin_menosT3 Ayuda" onclick="Javascript:AbreAyuda('https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/saldos.htm');"></div>
+
+ <div class="saldos_btn2 showtooltip margin_menosT3 Imprimir" onclick="imprimirMain();"></div>
+
+      
+
+      <div class="floatR marginR10">
+
+        <div class="resumen_flecha"></div>
+
+        <a href="javascript:DoSubmit('Ocultar Mostrar Cuentas/cuentas_propias.html');">Personalizar Vista</a></div>
+
+    </div>
+
+    
+
+    
+
+    </div>
+
+  
+
+    <div class="floatR ancho210 marginT5">
+
+  <div class="expandir_contraer floatR" id="edo1">
+
+    <a href="javascript:expandir();" class="expandir habilitado">Expandir todo</a>
+
+    <a href="javascript:void(0);" class="contraer deshabilitado">Contraer todo</a>
+
+    
+
+  </div>
+
+        
+
+        <div class="expandir_contraer floatR displayN" id="edo2">
+
+          <a href="javascript:void(0);" class="expandir deshabilitado">Expandir todo</a>
+
+          <a href="javascript:contraer();" class="contraer habilitado">Contraer todo</a>
+
+        </div>
+
+      </div>
+
+    
+
+    
+
+    <div class="floatL">
+
+      <div class="floatL">
+
+        <h1>RESUMEN DE CUENTAS</h1> </div>
+
+      <div class="floatL marginL10 marginT2">
+
+<select name="select" id="comboCuentas" onchange="javascript:seleccionaCuenta(value);">
+
+	<option class="0" value="PS">&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>
+
+    <option class="1" value="1|CH">Cheques&nbsp;-&nbsp;002&nbsp;-&nbsp;MXN</option>
+
+    <option class="2" value="2|IN">Mi inversion&nbsp;-&nbsp;010&nbsp;-&nbsp;MXN</option>
+
+    <option class="6" value="6|MA">Mi maestra.&nbsp;-&nbsp;490&nbsp;-&nbsp;MXN</option>
+
+    <option class="3" value="3|TC">Tarjeta Cr&eacute;dito&nbsp;-&nbsp;796&nbsp;-&nbsp;MXN</option>
+
+    <option class="7" value="7|CD">Cr&eacute;dito&nbsp;-&nbsp;256&nbsp;-&nbsp;MXN</option>
+
+    <option class="4" value="4|IN">HORZONT&nbsp;-&nbsp;746&nbsp;-&nbsp;MXN</option>
+
+    <option class="6" value="6|PE">Cuenta Perfiles&nbsp;-&nbsp;502&nbsp;-&nbsp;MXN</option>
+
+    <option class="4" value="4|PE">Inversion Perfiles&nbsp;-&nbsp;502&nbsp;-&nbsp;MXN</option>
+
+    <option class="5" value="5|AF">Mi afore NSS&nbsp;-&nbsp;424&nbsp;-&nbsp;MXN</option>
+
+    <option class="3" value="3|TP">Tarj Premia Pre&nbsp;-&nbsp;245&nbsp;-&nbsp;MXN</option>
+
+    <option class="8" value="8|IN">Multiseries&nbsp;-&nbsp;378&nbsp;-&nbsp;MXN</option>
+
+</select>
+
+      </div>
+
+      
+
+      
+
+      </div>
+
+      
+
+    <div class="clear"></div>
+
+  </div>
+
+
+
+   
+
+    <div class="clear"></div>
+
+    
+
+    <div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT15" id="cuentas_efectivo_mxn">
+
+    <div id="saldosbtn1" onclick="muestra1();">
+
+    <div class="ico expandir"></div>
+
+    <div class="floatL f14 marginT10 ancho80p">CUENTAS EN EFECTIVO MXN (2)</div>
+
+    </div>
+
+      <div onclick="oculta1();" class="displayN" id="saldosbtn1_1">
+
+      <div class="ico contraer"></div>
+
+      <div class="floatL f14 marginT10 ancho95p">CUENTAS EN EFECTIVO MXN (2)</div>
+
+      </div>
+
+      <div class="resumen_total floatR" id="saldosbtn1_1_1" onclick="muestra1();">
+
+        <div class="floatR">Saldo total</div>
+
+         <div class="clear"></div>
+
+        <div class="marginT5 floatR">$624,970.69</div>
+
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+
+   
+
+  
+
+    <div class="displayN" id="saldosConte1">
+
+  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td width="63%" class="padding_td">&nbsp;</td>
+
+        <td width="14%" align="right" class="padding_td"><span>Disponible</span></td>
+
+        <td width="23%" align="right" class="paddingR35 padding_td"><span>Saldo</span></td>
+
+        </tr>
+
+      <tr>
+
+        <td  class=" paddingL40 paddingT15 paddingB10 borderTSolid smbmult"><a class="underline" href="javascript:DoSubmit('Mul_TodasCtas/14-Cheques_mes_actual_real.htm');">CHEQUES MXN - Cheques - MXN - ** 002</a></td>
+
+        <td align="right" class="borderTSolid paddingT15  paddingB10 boldText smbmult">&nbsp;</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15  paddingB10 boldText smbmult">$617,130.05</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">Dep&oacute;sito salvo buen cobro: $1,200.00 <span class="marginL30">Movimientos en el d&iacute;a: 1 </span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <tr>
+
+        <td  class=" paddingL40 paddingT15  paddingB10 borderTSolid"><a class="underline" href="javascript:DoSubmit('Mul_TodasCtas/maestra_mes_actual.htm');">Cta.Maestra - Maestra490 - MXN - ** 490</a></td>
+
+        <td align="right" class="borderTSolid paddingT15  paddingB10 boldText">$ 7,840.64</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15  paddingB10 boldText">$ 7,840.64</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">Dep&oacute;sitos del d&iacute;a:  $1,000.00 <span class="marginL30">Retiros en el d&iacute;a: $2,000.00 </span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <tr class="bgF5F5F5">
+
+        <td class="paddingL40 boldText borderTSolid">Total</td>
+
+        <td align="right" class="boldText paddingB10 borderTSolid">&nbsp;</td>
+
+        <td align="right" class="boldText paddingR35 padding_td borderTSolid">$624,970.69</td>
+
+        </tr>
+
+    </table>
+
+                    </div>
+
+    <div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" id="inver">
+
+    <div id="saldosbtn2" onclick="muestra2();">
+
+    <div class="ico expandir"></div>
+
+    <div class="floatL marginT10 f14 ancho80p">INVERSIONES (1)</div>
+
+    </div>
+
+    <div class="displayN" id="saldosbtn2_2" onclick="oculta2();">
+
+    <div class="ico contraer"></div>
+
+    <div class="floatL marginT10 f14 ancho95p">INVERSIONES (1)</div>
+
+    </div>
+
+    
+
+      <div class="resumen_total floatR" id="saldosbtn2_2_2" onclick="muestra2();">
+
+        <div class="floatR">Saldo total</div>
+
+         <div class="clear"></div>
+
+        <div class="marginT5 floatR">$ 0.00</div>
+
+      </div>
+
+      <div class="clear"></div>
+
+  </div>
+
+  <div class="displayN" id="saldosConte2">
+
+      
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td width="63%" class="padding_td">&nbsp;</td>
+
+        <td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+        <td width="23%" align="right" class="paddingR35 padding_td"><span>Saldo</span></td>
+
+        </tr>
+
+      <tr>
+
+        <td  class=" paddingL40 paddingT15  paddingB10 borderTSolid smbmult"><a class="underline" href="javascript:DoSubmit('Mul_TodasCtas/inversionesdetalle_inversionintegral.htm');">Inv. Plazo - Mi inversion - MXN - ** 010</a></td>
+
+        <td align="right" class="borderTSolid paddingT15  paddingB10 boldText smbmult">&nbsp;</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15  paddingB10 boldText smbmult">$ 0.00</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">&Oacute;rdenes pendientes:  0<span class="marginL30"> </span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <!--tr>
+
+        <td  class=" paddingL40 paddingT15  paddingB10 borderTSolid"><a class="underline" href="javascript:parent.DoSubmit('Mul_TodasCtas/Resumen-de-inversiones_4.htm');" >Mi pagare - PAGARE M.N. - MXN - **312</a></td>
+
+        <td align="right" class="borderTSolid paddingT15  paddingB10 boldText">&nbsp;</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15  paddingB10 boldText">$51,465.32</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">N&uacute;mero de inversi&oacute;n:  4<span class="marginL30">Fecha de vencimiento:  23 Ene 2012 </span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <tr>
+
+        <td  class=" paddingL40 paddingT15  paddingB10 borderTSolid"><a class="underline" href="javascript:parent.DoSubmit('Mul_TodasCtas/Resumen-de-inversiones_6.htm');">Mi pagare - PAGARE M.N. - MXN - **312</a></td>
+
+        <td align="right" class="borderTSolid paddingT15  paddingB10 boldText">&nbsp;</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15  paddingB10 boldText">$8,229.07</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">N&uacute;mero de inversi&oacute;n: 6 <span class="marginL30">Fecha de vencimiento:  26 Ene 2012 </span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <tr>
+
+        <td  class=" paddingL40 paddingT15  paddingB10 borderTSolid"><a class="underline" href="javascript:parent.DoSubmit('Mul_TodasCtas/inversionesdetalle_horizonte.htm');">Mi horizonte - HORIZONTE BANAMEX UNO - MXN - **312</a></td>
+
+        <td align="right" class="borderTSolid paddingT15  paddingB10 boldText">&nbsp;</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15  paddingB10 boldText">$50,000.00</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">&Oacute;rdenes pendientes:  0<span class="marginL30"> </span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <tr>
+
+        <td  class=" paddingL40 paddingT15  paddingB10 borderTSolid"><a class="underline" href="javascript:parent.DoSubmit('Mul_TodasCtas/inversionesdetalle_inversionempresarial.htm');">Mi inv empresarial - CUENTA MAESTRA BANAMEX EMPRESA - MXN - **312</a></td>
+
+        <td align="right" class="borderTSolid paddingT15  paddingB10 boldText">&nbsp;</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15  paddingB10 boldText">$1,612,321.00</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">&Oacute;rdenes pendientes:  0<span class="marginL30"> </span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr-->
+
+      <tr class="bgF5F5F5">
+
+        <td class="paddingL40 boldText borderTSolid">Total</td>
+
+        <td align="right" class="boldText paddingB10 borderTSolid">&nbsp;</td>
+
+        <td align="right" class="boldText paddingR35 padding_td borderTSolid">$ 0.00</td>
+
+        </tr>
+
+    </table>
+
+                    </div>
+
+    <div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" id="terjetas_credito">
+
+    <div id="saldosbtn3" onclick="muestra3();">
+
+    <div class="ico expandir"></div>
+
+    <div class="floatL marginT10 f14 ancho80p">TARJETAS DE CR&Eacute;DITO (1)</div>
+
+    </div>
+
+    
+
+    <div class="displayN" id="saldosbtn3_3" onclick="oculta3();">
+
+    <div class="ico contraer"></div>
+
+    <div class="floatL marginT10 f14 ancho95p">TARJETAS DE CR&Eacute;DITO (1)</div>
+
+    </div>
+
+    
+
+    <div class="resumen_total floatR" id="saldosbtn3_3_3" onclick="muestra3();">
+
+    <div class="floatR">Saldo total</div>
+
+     <div class="clear"></div>
+
+        <div class="marginT5 floatR">9,166.76</div>
+
+      </div>
+
+      
+
+    
+
+</div>
+
+<div class="displayN" id="saldosConte3">
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td width="63%" class="padding_td">&nbsp;</td>
+
+        <td width="14%" align="right" class="padding_td0"><span>Cr&eacute;dito disponible</span></td>
+
+        <td width="23%" align="right" class="paddingR35 padding_td"><span>Saldo</span></td>
+
+        </tr>
+
+      
+
+      
+
+      <tr>
+
+        <td  class=" paddingL40 paddingT15 paddingB10 borderTSolid smbmult"><a class="underline" href="javascript:DoSubmit('Mul_TodasCtas/04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm');">Tarjeta Cr&eacute;dito - Oro - MXN - ** 796</a></td>
+
+        <td align="right" class="borderTSolid paddingT15 paddingB10 boldText smbmult">$110,833.24</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15 paddingB10 boldText smbmult">$9,166.76</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">Fecha l&iacute;mite de pago: 11 May 2012 <span class="marginL30">M&iacute;nimo a pagar: $8,166.00</span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <tr class="bgF5F5F5">
+
+        <td class="paddingL40 boldText borderTSolid">Total</td>
+
+        <td align="right" class="boldText padding_td borderTSolid">$110,833.24</td>
+
+        <td align="right" class="boldText paddingR35 padding_td borderTSolid">$9,166.76</td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+    <div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" id="premia">
+
+      
+
+      <div id="saldosbtn4" onclick="muestra4();">
+
+      <div class="ico expandir"></div>
+
+      <div class="floatL marginT10 f14 ancho80p">TARJETA PREMIA (1)</div>
+
+      </div>
+
+    
+
+    <div class="displayN" id="saldosbtn4_4" onclick="oculta4();">
+
+    <div class="ico contraer"></div>
+
+    <div class="floatL marginT10 f14 ancho95p">TARJETA PREMIA (1)</div>
+
+    </div>
+
+    <div class="resumen_total floatR" id="saldosbtn4_4_4" onclick="muestra4();">
+
+        <div class="floatR">Saldo total</div>
+
+         <div class="clear"></div>
+
+        <div class="marginT5 floatR">$853.82</div>
+
+      </div>
+
+    <div class="clear"></div>
+
+</div>
+
+<div class="displayN" id="saldosConte4">
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+
+        <td width="63%" class="padding_td">&nbsp;</td>
+
+        <td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+        <td width="23%" align="right" class="paddingR35 padding_td"><span>Saldo</span></td>
+
+        </tr>
+
+      <tr>
+
+        <td  class=" paddingL40 paddingT15 paddingB10 borderTSolid smbmult"><a class="underline" href="javascript:DoSubmit('Mul_TodasCtas/premia_mes_actual.htm');">TARJETA PREMIA (1)</a></td>
+
+        <td align="right" class="borderTSolid paddingT15 paddingB10 boldText smbmult">&nbsp;</td>
+
+        <td align="right" class="borderTSolid paddingR35 paddingT15 paddingB10 boldText smbmult">$853.82</td>
+
+        </tr>
+
+      <tr>
+
+        <td class=" color8f paddingB10 paddingL40">Saldo en puntos:  8,538 <span class="marginL30"></span></td>
+
+        <td>&nbsp;</td>
+
+        <td>&nbsp;</td>
+
+        </tr>
+
+      <tr class="bgF5F5F5">
+
+        <td class="paddingL40 boldText borderTSolid">Total</td>
+
+        <td align="right" class="boldText paddingB10 paddingT3 borderTSolid">&nbsp;</td>
+
+        <td align="right" class="boldText paddingR35 padding_td borderTSolid">$853.82</td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+    
+
+    <div class="titulo_cuentas marginT17 boldText borderBSolid000 paddingB5" id="afore">
+
+      
+
+      <div id="saldosbtn6" onclick="muestra6();">
+
+      <div class="ico expandir"></div>
+
+      <div class="floatL marginT10 f14 ancho80p">AFORE (1)</div>
+
+     </div>
+
+    
+
+    <div class="displayN" id="saldosbtn6_6" onclick="oculta6();">
+
+    <div class="ico contraer"></div>
+
+     <div class="floatL marginT10 f14 ancho95p">AFORE (1)</div>
+
+     </div>
+
+     
+
+     <div class="resumen_total floatR" id="saldosbtn6_6_6" onclick="oculta6();">
+
+        <div class="floatR">Saldo total</div>
+
+         <div class="clear"></div>
+
+        <div class="marginT5 floatR">$123,456,789.00</div>
+
+      </div>
+
+      <div class="clear"></div>
+
+  </div>
+
+    <div class="displayN" id="saldosConte6">
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+        <tr>
+
+          <td width="63%" class="padding_td">&nbsp;</td>
+
+          <td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+          <td width="23%" align="right" class="paddingR35 padding_td"><span>Saldo</span></td>
+
+          </tr>
+
+        <tr>
+
+          <td  class=" paddingL40 paddingT15 paddingB10 borderTSolid smbmult"><a class="underline" href="javascript:DoSubmit('Mul_TodasCtas/Afore.htm');">AFORE NSS M.N. - Mi afore - MXN - ** 424</a></td>
+
+          <td align="right" class="borderTSolid paddingT15 paddingB10 boldText smbmult">&nbsp;</td>
+
+          <td align="right" class="borderTSolid paddingR35 paddingT15 paddingB10 boldText smbmult">$123,456,789.00</td>
+
+          </tr>
+
+        <tr>
+
+          <td class=" color8f paddingB10 paddingL40">&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          </tr>
+
+        <tr class="bgF5F5F5">
+
+          <td class="paddingL40 boldText borderTSolid">Total</td>
+
+          <td align="right" class="boldText borderTSolid">&nbsp;</td>
+
+          <td align="right" class="boldText paddingR35 padding_td borderTSolid">$123,456,789.00</td>
+
+          </tr>
+
+        </table>
+
+                    </div>
+
+   
+
+    
+
+  <div class="clear alto53"></div>
+
+
+
+  </div>
+
+
+
+	<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayN">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src='../../bbAvatar/images/loader.gif'/></div>
+
+    <div style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'>Espere un momento por favor ...</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	<!--
+
+	$(document).ready(function(){
+
+		optieneAlturas();
+
+		parent.ajustar();
+
+		window.parent.$('.panelDerecho').hide();
+
+		$(window).bind('resize', function(){optieneAlturas()});
+
+		slide(".activaflecha",5,0);slide(".activaflecha2",5,0);
+
+		activaHoverIcos();
+
+		parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+		parent.$("#tituloSeccion").hide();
+
+		setTimeout("showtooltip2();",200);
+
+		setTimeout('reAjusteIE7()',300);
+
+	});
+
+	
+
+	function reAjusteIE7(){
+
+		if (parent.document.getElementById('main').offsetHeight<document.getElementById('wrapper_div').offsetHeight)
+
+		parent.ajustarIframe();
+
+	}
+
+		
+
+	-->
+
+
+
+</script>
+
+        
+
+        <script type="text/javascript">
+
+		var cargar=0;
+
+		
+
+		function muestra1(){
+
+			
+
+			$('#saldosbtn1').hide();
+
+			$('#saldosbtn1_1').show();
+
+			
+
+			$('#saldosbtn1_1_1').hide();
+
+			$('#saldosConte1').show();
+
+			
+
+			cargar=cargar+1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+	
+
+		function oculta1(){
+
+			
+
+			$('#saldosbtn1_1').hide();
+
+			$('#saldosbtn1').show();
+
+			
+
+			$('#saldosbtn1_1_1').show();
+
+			$('#saldosConte1').hide();
+
+			
+
+			cargar=cargar-1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			
+
+			}
+
+		
+
+	   function muestra2(){
+
+			
+
+			$('#saldosbtn2').hide();
+
+			$('#saldosbtn2_2').show();
+
+			
+
+			$('#saldosbtn2_2_2').hide();
+
+			$('#saldosConte2').show();
+
+			
+
+			cargar=cargar+1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+	
+
+		function oculta2(){
+
+			
+
+			$('#saldosbtn2_2').hide();
+
+			$('#saldosbtn2').show();
+
+			
+
+			$('#saldosbtn2_2_2').show();
+
+			$('#saldosConte2').hide();
+
+			
+
+			cargar=cargar-1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+		
+
+		function muestra3(){
+
+			
+
+			$('#saldosbtn3').hide();
+
+			$('#saldosbtn3_3').show();
+
+			
+
+			$('#saldosbtn3_3_3').hide();
+
+			
+
+			$('#saldosConte3').show();
+
+			
+
+			cargar=cargar+1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+	
+
+		function oculta3(){
+
+			
+
+			$('#saldosbtn3_3').hide();
+
+			$('#saldosbtn3').show();
+
+			
+
+			$('#saldosbtn3_3_3').show();
+
+			$('#saldosConte3').hide();
+
+			
+
+			cargar=cargar-1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+			
+
+		function muestra4(){
+
+			
+
+			$('#saldosbtn4').hide();
+
+			$('#saldosbtn4_4').show();
+
+			
+
+			$('#saldosbtn4_4_4').hide();
+
+			$('#saldosConte4').show();
+
+			$('#saldosConte5').show();
+
+		
+
+			cargar=cargar+1;	
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+	
+
+		function oculta4(){
+
+			
+
+			$('#saldosbtn4_4').hide();
+
+			$('#saldosbtn4').show();
+
+			
+
+			//saldosConte5
+
+			
+
+			$('#saldosbtn4_4_4').show();
+
+			$('#saldosConte4').hide();
+
+			$('#saldosConte5').hide();
+
+			
+
+			cargar=cargar-1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+			function muestra5(){
+
+			
+
+			$('#saldosbtn5').hide();
+
+			$('#saldosbtn5_5').show();
+
+			
+
+			$('#saldosbtn5_5_5').hide();
+
+			$('#saldosConte5').show();
+
+			
+
+			cargar=cargar+1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+	
+
+		function oculta5(){
+
+			
+
+			$('#saldosbtn5_5').hide();
+
+			$('#saldosbtn5').show();
+
+			
+
+			$('#saldosbtn5_5_5').show();
+
+			$('#saldosConte5').hide();
+
+			
+
+			cargar=cargar-1;
+
+			carga();
+
+			
+
+			parent.ajustar();			
+
+			}
+
+			function muestra6(){
+
+			
+
+			$('#saldosbtn6').hide();
+
+			$('#saldosbtn6_6').show();
+
+			
+
+			$('#saldosbtn6_6_6').hide();
+
+			$('#saldosConte6').show();
+
+			
+
+			cargar=cargar+1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+	
+
+		function oculta6(){
+
+			
+
+			$('#saldosbtn6_6').hide();
+
+			$('#saldosbtn6').show();
+
+			
+
+			$('#saldosbtn6_6_6').show();
+
+			$('#saldosConte6').hide();
+
+			
+
+			cargar=cargar-1;
+
+			carga();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+		
+
+		function carga(){
+
+			
+
+			if(cargar==0){
+
+							
+
+							estado1();
+
+							
+
+						}
+
+						else{
+
+							
+
+							estado2();
+
+							
+
+							}
+
+			
+
+			}
+
+			
+
+		function estado1(){
+
+			
+
+			$('#edo1').show();
+
+			$('#edo2').hide();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}	
+
+		
+
+		function estado2(){
+
+			
+
+			$('#edo1').hide();
+
+			$('#edo2').show();
+
+			
+
+			parent.ajustar();
+
+			
+
+			}
+
+			
+
+			function expandir(){
+
+				
+
+			$('#saldosbtn1').hide();
+
+			$('#saldosbtn1_1').show();
+
+			
+
+			$('#saldosbtn1_1_1').hide();
+
+			$('#saldosConte1').show();
+
+			
+
+			$('#saldosbtn2').hide();
+
+			$('#saldosbtn2_2').show();
+
+			
+
+			$('#saldosbtn2_2_2').hide();
+
+			$('#saldosConte2').show();
+
+			
+
+			$('#saldosbtn3').hide();
+
+			$('#saldosbtn3_3').show();
+
+			
+
+			$('#saldosbtn3_3_3').hide();
+
+			$('#saldosConte3').show();
+
+			
+
+			$('#saldosbtn4').hide();//modifique
+
+			$('#saldosbtn4_4').show();
+
+			
+
+			$('#saldosbtn4_4_4').hide();
+
+			$('#saldosConte4').show();
+
+			
+
+			$('#saldosbtn5').hide();
+
+			$('#saldosbtn5_5').show();
+
+			
+
+			$('#saldosbtn5_5_5').hide();
+
+			$('#saldosConte5').show();
+
+			
+
+			$('#saldosbtn6').hide();
+
+			$('#saldosbtn6_6').show();
+
+			
+
+			$('#saldosbtn6_6_6').hide();
+
+			$('#saldosConte6').show();
+
+			
+
+			estado2();
+
+			
+
+			parent.ajustar();			
+
+				
+
+			}
+
+		function contraer(){
+
+			
+
+			$('#saldosbtn1_1').hide();
+
+			$('#saldosbtn1').show();
+
+			
+
+			$('#saldosbtn1_1_1').show();
+
+			$('#saldosConte1').hide();
+
+			
+
+			$('#saldosbtn2_2').hide();
+
+			$('#saldosbtn2').show();
+
+			
+
+			$('#saldosbtn2_2_2').show();
+
+			$('#saldosConte2').hide();
+
+			
+
+			$('#saldosbtn3_3').hide();
+
+			$('#saldosbtn3').show();
+
+			
+
+			$('#saldosbtn3_3_3').show();
+
+			$('#saldosConte3').hide();
+
+			
+
+			$('#saldosbtn4_4').hide();
+
+			$('#saldosbtn4').show();
+
+			
+
+			$('#saldosbtn4_4_4').show();
+
+			$('#saldosConte4').hide();
+
+			
+
+			$('#saldosbtn5_5').hide();
+
+			$('#saldosbtn5').show();
+
+			
+
+			$('#saldosbtn5_5_5').show();
+
+			$('#saldosConte5').hide();
+
+
+
+			
+
+			$('#saldosbtn6_6').hide();
+
+			$('#saldosbtn6').show();
+
+			
+
+			$('#saldosbtn6_6_6').show();
+
+			$('#saldosConte6').hide();
+
+			
+
+			estado1();
+
+			
+
+			parent.ajustar();
+
+			
+
+			
+
+			}
+
+			
+
+		</script>
+
+        
+
+ </div>      
+
+</body>
+
+</html>
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+	<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/mando.css" />
+
+	<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script> 
+
+	<script LANGUAGE="JavaScript" SRC="../../spanishdir/js/bloquea.js"></script>
+
+	<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+	<script language="JavaScript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+	<script language="javascript">
+
+var obj=top.main.document.getElementById('ndw').contentWindow.getObj();
+
+
+
+var es=new Array('Investment Numbers -',
+
+				'Select the investment number and click "Continue"',
+
+				'Investment Number',
+
+				'Investment Type',
+
+				'Balance',
+
+				'Term',
+
+				'Due date',
+
+				'Available',
+
+				'Promissory Note (Dlls)',
+
+				'15 Dec 00',
+
+				'Yes',
+
+				'Cancel',
+
+				'Continue');
+
+
+
+jQuery(document).ready(function(){
+
+	parent.document.getElementById("DATAAUX").value = $("#Radio1").val();
+
+});
+
+	</script>
+
+</head> 
+
+<body style="background-color:#FFF;" oncontextmenu="return false;">
+
+<script language="javascript">
+
+function cerrar(){
+
+	parent.$.modal.close();
+
+	parent.$("#tabla_emergente").css("height", "1px").css('heigth','auto');
+
+	parent.$("#ventanaEmergente").css("height", "auto");
+
+	parent.$("#ventanaEmergente-contenido").css("height", "auto");
+
+	
+
+	var imp=parent.document.getElementById('main').contentWindow.document.getElementById('applet');
+
+	if(imp)
+
+	{
+
+		parent.document.getElementById('main').contentWindow.document.getElementById('applet').style.display='block';
+
+		parent.document.getElementById('main').contentWindow.$('#applet applet').css('visibility','visible');
+
+	}
+
+}
+
+
+
+function continuar(){
+
+	if (parent.$("#DATADEMO").val()=="1"){
+
+		parent.cargaDocN('Inversion Pagare/deposito_plazo_apertura.html');
+
+	}else{
+
+			parent.cargaDocN('Inversion Pagare/deposito_plazo_decrementos.html');
+
+	}
+
+	parent.$.modal.close();
+
+}
+
+</script>
+
+<div id="contenido" style="width: 600px; height: 351px; display: block;">
+
+	<div class="paddingT0 mensajeError_contenidoIn">
+
+	 <div class=" paddingT2 paddingB5"><div id="t0" class="panelIzEnca3_text2 floatL">Números de inversión - </div><div class="panelIzEnca3_text2 floatL" id="divDescrip">&nbsp;Mi inversion - **010</div>
+
+	   <div class="  marginT0 padding0 saldos_bloque3_2  bordeN clear ">
+
+		   <div class=" ">
+
+			 <div id="t1" class="color666  f11">Selecciona el número de inversión y da clic en "Continuar".</div>
+
+		   </div>
+
+			 <table width="100%" cellspacing="0" cellpadding="0" border="0" class=" paddingL0 paddingR0 tablaSaldos4 marginT24" id="tablaFolios">
+
+				<tbody><tr>
+
+					<td class=" " style="background-color: rgb(255, 255, 255);"></td>
+
+					<td class="borderRSolid paddingL0" style="background-color: rgb(255, 255, 255);"><div id="t2" class="fuente11 color333 negrita">Número de inversión</div></td>
+
+					<td class="borderRSolid " style="background-color: rgb(255, 255, 255);"><div id="t3" class="fuente11 color333 negrita">Tipo de Inversión</div></td>
+
+					<td class="borderRSolid " style="background-color: rgb(255, 255, 255);"><div id="t4" class="fuente11 color333 negrita">Saldo</div></td>
+
+					<td class="borderRSolid " style="background-color: rgb(255, 255, 255);"><div id="t5" class="fuente11 color333 negrita">Plazo</div></td>
+
+					<td class="borderRSolid " style="background-color: rgb(255, 255, 255);"><div id="t6" class="fuente11 color333 negrita">Fecha de vencimiento</div></td>
+
+					<td class=" " style="background-color: rgb(255, 255, 255);"><div id="t7" class="fuente11 color333 negrita">Disponible</div></td>                       
+
+				</tr>
+
+								<tr id="trFolio1" class="datos">
+
+					<td align="right" class=" bgF1F2F2 paddingR0" style="background-color: rgb(241, 242, 242);"><input type="radio" value="900001" name="radioInversion" checked="checked" ></td>
+
+					<td class="borderRSolid bgF1F2F2  paddingL0" style="background-color: rgb(241, 242, 242);">900001</td>
+
+					<td class="borderRSolid bgF1F2F2" style="background-color: rgb(241, 242, 242);" id="t8">Pagaré Dls</td>
+
+					<td class="borderRSolid bgF1F2F2" style="background-color: rgb(241, 242, 242);">15,000.00</td>
+
+					<td class="borderRSolid bgF1F2F2" style="background-color: rgb(241, 242, 242);">150</td>
+
+					<td class="borderRSolid bgF1F2F2" style="background-color: rgb(241, 242, 242);" id="t9">15 Dic 00</td>
+
+					<td class=" bgF1F2F2 disponible" style="background-color: rgb(241, 242, 242);" id="t10">Si</td>
+
+				</tr>
+
+
+
+				<tr id="trVacio" style="display: none;">
+
+					<td style="background-color: rgb(255, 255, 255);">&nbsp;</td>
+
+				</tr>
+
+			</tbody></table>
+
+		</div>
+
+		
+
+		<div style="padding-right: 10px; display: none;" class="  marginT0 padding0 saldos_bloque3_2  bordeN clear " id="bloquePaginacion">
+
+			<div class="bgF1F2F2 ancho100p clear overflow">
+
+				<div style="padding-left: 10px;" class="paddingT10 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL"></div>
+
+				<div id="paginacion" class="paddingT10 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL paginacion">
+
+					&nbsp;
+
+				</div>
+
+				<div id="bloques" class="paddingT5 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL">
+
+					&nbsp;
+
+				</div>
+
+				
+
+			</div>
+
+		</div>
+
+		
+
+		<div class="marginT20 overflow">
+
+			<input type="button" value="Cancelar" id="t11" class="btnRJ86 CerrarVentanaEmergente floatL" onclick="cerrar();">
+
+			<input type="button" value="Continuar" onclick="continuar();" class="btnAZ86 floatR" id="t12">
+
+		</div>
+
+	</div>
+
+	</div>
+
+</div>
+
+</body>
+
+</html>

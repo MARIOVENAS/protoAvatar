@@ -1,0 +1,1676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="pragma" content="no-cache"/>
+
+<meta http-equiv="cache-control" content="no-cache"/>
+
+<meta http-equiv="expires" content="-1"/>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+<link href="../../bbAvatar/css/estilosmulti.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+   <script type="text/javascript" src=../../"bbAvatar/js/plugins.js"></script>
+
+        <script type="text/javascript" src="../../bbAvatar/js/script.js"></script>
+
+          <script type="text/javascript" src="../../bbAvatar/js/jquery.tablesorter.js"></script>
+
+          <script type="text/javascript">
+
+
+
+	$(document).ready(function(){optieneAlturas();parent.ajustar();window.parent.$('.panelDerecho').hide();$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+
+
+function verSaldos1(){
+
+		$("#divCargando").show();
+
+		setTimeout("parent.DoSubmit('Mul_TodasCtas/01b-MultiSaldos_REAL.htm');",1000);
+
+	}
+
+function filtrar(){
+
+	parent.$.modal(			
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:244,
+
+			srcIfrm:'bbAvatar/modal/filtraMovimientos.html'
+
+		}
+
+	);
+
+}
+
+function filtrarResultados(){
+
+	var contexto = parent.document.getElementById('mensajeError_contenido_ifrm').contentWindow.document;
+
+	$("#DATA15").val($("#pClave", contexto).val());
+
+	$("#DATA16").val($("#fecInicio", contexto).val());
+
+	$("#DATA17").val($("#fecFin", contexto).val());
+
+	$("#DATA18").val($("#selectImporte", contexto).val());
+
+	$("#DATA19").val($("input[name='criterioImporte']:checked", contexto).val());
+
+	$("#DATA20").val($("#importeInicio", contexto).val());
+
+	$("#DATA21").val($("#importeFin", contexto).val());
+
+	parent.$.modal.close();
+
+	parent.$("#ventanaEmergente").css("height", "auto");
+
+	parent.$("#ventanaEmergente-contenido").css("height", "auto");
+
+	DoSubmit('FILTRA');
+
+}
+
+function exportar(){
+
+	$('#mensajeError_contenido_div', window.parent.document).html(
+
+		$("#divExportar").html()
+
+	);
+
+	$("#mensajeError_contenido_div input[name='radio_formato']", window.parent.document).click(function(){
+
+		if($(this).val() == "Texto"){
+
+			$("#mensajeError_contenido_div #combo_separador", window.parent.document).attr("disabled", "");
+
+		}else{
+
+			$("#mensajeError_contenido_div #combo_separador option:eq(0)", window.parent.document).attr("selected", "selected");
+
+			$("#mensajeError_contenido_div #combo_separador", window.parent.document).attr("disabled", "disabled");
+
+		}
+
+	});
+
+	parent.$.modal(				
+
+			{
+
+				closeHTML: '',
+
+				opacity:60,
+
+				overlayClose:false,
+
+				flagDiv:true,
+
+				widthDivIfrm:270,
+
+				heightDivIfrm:'auto'
+
+			}
+
+		);
+
+	$("#mensajeError_contenido_div input[name='radio_formato']:eq(0)", window.parent.document).attr("checked", "checked");
+
+}
+
+	
+
+function validaComboVacioModal(object){
+
+	if($(object).find("option:selected").val() != ""){
+
+		$('.'+$(object).attr('id')+'_div_error span', window.parent.document).hide();
+
+		$('.'+$(object).attr('id')+'_div_error', window.parent.document).slideUp('fast');
+
+		return true;
+
+	}else{
+
+		$('.'+$(object).attr('id')+'_div_error', window.parent.document).slideDown('fast', 
+
+			function(){
+
+				$('.'+$(object).attr('id')+'_div_error span', window.parent.document).show();
+
+			}
+
+		)
+
+		return false;
+
+	}
+
+}
+
+function exportarResultados(){
+
+	var flagCorrecto = true;
+
+	if($("#mensajeError_contenido_div input[name='radio_formato']:checked", window.parent.document).val() == "Texto"){
+
+		flagCorrecto = validaComboVacioModal($("#mensajeError_contenido_div #combo_separador", window.parent.document));
+
+	}
+
+	if(flagCorrecto == true){
+
+		
+
+		if($("#mensajeError_contenido_div input[name='radio_formato']:checked", window.parent.document).val() == "Texto"){
+
+			var nwin=window.open('../impresiones/trans.txt','','location=yes,height=320px,width=320px,top=0,left=0,resizable=yes,menubar=no,scrollbars=no,titlebar=no,toolbar=no,status=yes');
+
+			nwin.focus();
+
+		}else{
+
+			var nwin=window.open('../impresiones/trans.csv','','location=yes,height=320px,width=320px,top=0,left=0,resizable=yes,menubar=no,scrollbars=no,titlebar=no,toolbar=no,status=yes');
+
+			nwin.focus();
+
+		}
+
+		
+
+		$("#ventanaEmergente", window.parent.document).hide();
+
+		setTimeout( function(){parent.$.modal.close();},5000 );
+
+	}
+
+}
+
+	
+
+</script>
+
+		<script type="text/javascript">
+
+            $(document).ready(function(){
+
+				cargando_movimientos();
+
+				
+
+			
+
+				$("#fech1").click(function(){
+
+      if ( $(this).hasClass("headerSortDown") )
+
+      	$("#fldown").addClass("flechaabajong")
+
+               .removeClass("flechaarriba")
+
+               
+
+    });
+
+				
+
+			$("#fech1").click(function(){
+
+      if ( $(this).hasClass("headerSortUp") )
+
+          $("#fldown").addClass("flechaarriba")
+
+               .removeClass("flechaabajong")
+
+	          
+
+    });
+
+			
+
+            });
+
+        </script>
+
+         <script type="text/javascript">
+
+$(document).ready(function() { 
+
+     $.tablesorter.defaults.sortList = [[0,1]]; 
+
+	 $.tablesorter.defaults.widgets = ['zebra']; 
+
+ 
+
+
+
+	$("table").tablesorter({
+
+        headers: {
+
+		  	
+
+			0: { sorter: 'DD-MMM-YY' },
+
+			4: { sorter: 'currency' }
+
+        }
+
+
+
+    }); 
+
+
+
+$("#versaldos1").click(function() {
+
+   var sorting = [[0,0]]; 
+
+        // sort on the first column 
+
+        $("table").trigger("sorton",[sorting]); 
+
+        // return false to stop default link action 
+
+        return false; 
+
+});
+
+	
+
+});
+
+	</script>
+
+   <title></title>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="resumen_enca ancho100p">
+
+<div class="floatR marginT7 paddingR7 ancho40p">
+
+  <div class="saldos_btn1 showtooltip margin_menosT3 Ayuda" onclick="Javascript:AbreAyuda('https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/Estados-de-cuenta-y-Movimientos.htm');"></div>
+
+ <div class="saldos_btn2 showtooltip margin_menosT3 Imprimir" onclick="imprimirMain();"></div>
+
+
+
+   
+
+   <div class="floatR">
+
+  <div class="resumen_flecha"></div>
+
+   <a href="javascript:void(0);" onclick="javascript:verSaldos1()">Ver resumen de cuentas</a></div>
+
+  </div>
+
+ <div class="floatL">
+
+     <div class="floatL"><h1>DETALLE DE LA CUENTA</h1> </div>
+
+      <div class="floatL marginL10 marginT2">
+
+      <select name="select" id="comboCuentas" onchange="javascript:seleccionaCuenta(value);">
+
+	<option class="0" value="PS">&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>
+
+    <option class="1" value="1|CH">Cheques&nbsp;-&nbsp;002&nbsp;-&nbsp;MXN</option>
+
+    <option class="2" value="2|IN">Mi inversion&nbsp;-&nbsp;010&nbsp;-&nbsp;MXN</option>
+
+    <option class="6" value="6|MA">Mi maestra.&nbsp;-&nbsp;490&nbsp;-&nbsp;MXN</option>
+
+    <option class="3" value="3|TC">Tarjeta Cr&eacute;dito&nbsp;-&nbsp;796&nbsp;-&nbsp;MXN</option>
+
+    <option class="7" value="7|CD">Cr&eacute;dito&nbsp;-&nbsp;256&nbsp;-&nbsp;MXN</option>
+
+    <option class="4" value="4|IN">HORZONT&nbsp;-&nbsp;746&nbsp;-&nbsp;MXN</option>
+
+    <option class="6" value="6|PE">Cuenta Perfiles&nbsp;-&nbsp;502&nbsp;-&nbsp;MXN</option>
+
+    <option class="4" value="4|PE">Inversion Perfiles&nbsp;-&nbsp;502&nbsp;-&nbsp;MXN</option>
+
+    <option class="5" value="5|AF">Mi afore NSS&nbsp;-&nbsp;424&nbsp;-&nbsp;MXN</option>
+
+    <option class="3" value="3|TP">Tarj Premia Pre&nbsp;-&nbsp;245&nbsp;-&nbsp;MXN</option>
+
+    <option class="8" value="8|IN">Multiseries&nbsp;-&nbsp;378&nbsp;-&nbsp;MXN</option>
+
+</select>
+
+    </div>
+
+   </div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+
+<div class="floatL ancho70p marginT15">
+
+  <div class="floatR">
+
+<select class="ancho150" name="select" id="select" onchange="valor2=this.value;cambiopage2();">
+
+  <option selected="selected">Periodo actual</option>
+
+  <option value="2">Periodo anterior</option>
+
+    </select>
+
+  </div>
+
+  <div class="boldText f14 floatL paddingT4">Mi Inversi&oacute;n - MXN - 392 - Multiseries</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="floatL ancho70p marginT24" >
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td width="26%" class="boldText borderBSolid paddingB1 paddingT1 ">Fondo / Serie</td>
+
+    <td width="18%" align="right" class="boldText borderBSolid paddingB1 paddingT1">T&iacute;tulos</td>
+
+    <td width="18%" align="right" class="boldText borderBSolid paddingB1 paddingT1 ">Precio</td>
+
+    <td width="18%" class="boldText borderBSolid paddingB1 paddingT1 ">&nbsp;</td>
+
+    <td width="20%" align="right" class="boldText borderBSolid paddingB1 paddingT1">Saldo MXN</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT8 paddingB1 color8f borderBDotted">HORIZONT+ B0D</td>
+
+    <td align="right" class=" paddingT8 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class=" paddingT8 paddingB1 color8f borderBDotted">11.7742</td>
+
+    <td class="  paddingT8 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class=" paddingT8 paddingB1 color8f borderBDotted"> $11,774.20</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B1A</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> 11.6164 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> $11,616.40</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B1B </td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">11.4743 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$11,474.30</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B1C</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">11.3184 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$11,318.40</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B1D </td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">11.1646 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> $11,164.60</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B2A </td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> 11.0128 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$11,012.80</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B2C </td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.7931 </td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> $10,793.10</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B3A</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.5806</td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$10,580.60</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B3C</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.4093</td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted"> $10,409.30</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B4A</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.2528</td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$10,252.80</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">HORZNT+ B4B</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">1,000</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">10.229</td>
+
+    <td class="paddingT2 paddingB1 color8f borderBDotted">&nbsp;</td>
+
+    <td align="right" class="paddingT2 paddingB1 color8f borderBDotted">$10,229.00</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingT2 paddingB7 color8f">HORZNT+ B4C</td>
+
+    <td align="right" class="paddingT2 paddingB7 color8f">1,000</td>
+
+    <td align="right" class=" paddingT2 paddingB7 color8f">10.1694 </td>
+
+    <td class=" paddingT2 paddingB7 color8f">&nbsp;</td>
+
+    <td align="right" class=" paddingT2 paddingB7 color8f"> $10,169.40</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="borderTSolid paddingT8">Fecha de saldo</td>
+
+    <td class="borderTSolid paddingT8 color8f" align="right">11 Feb 2012</td>
+
+    <td class="borderTSolid paddingT8" align="right">&nbsp;</td>
+
+    <td class="borderTSolid paddingT8 paddingL30">&nbsp;</td>
+
+    <td class="borderTSolid paddingT8  color8f" align="right">&nbsp;</td>
+
+  </tr>
+
+</table>
+
+<div class="floatL paddingT5">
+
+    <div class="floatL">
+
+      <div class="floatL"><a href="#">1</a></div>
+
+    <div class="floatL marginL8">Siguiente</div>
+
+  </div>
+
+  <div class="resumen_flecha">&nbsp;</div>
+
+   </div>
+
+</div>
+
+<div class="floatL marginL30 paddingL25 ancho20p borderlSolid9 marginT5">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tr> 
+
+  <td class=" f14 boldText paddingB10">&iquest;QU&Eacute; DESEAS HACER?</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingT3 paddingB3 "><div class="resumen_flecha"></div>
+
+      <a href="#" onclick="saltoInversiones();">Invertir mi dinero</a></td>
+
+    </tr>
+
+    
+
+  </table>
+
+</div>
+
+<div class="clear"></div>
+
+
+
+<div class="panelIzEnca3_text2 marginT24">MOVIMIENTOS</div>
+
+<div id="movimientos_cargados">
+
+<div class=" paddingT15">
+
+  <div class="floatL marginT5">
+
+  <div class="resumen_flecha1 displayN" id="pre1"></div>
+
+  <div class="floatL">
+
+  <div class="floatL displayN" onclick="javascript:prevpage();" id="pre2"><a href="javascript:void(0);">Anterior </a></div>
+
+    <div class="floatL marginL8 boldText" id="p1" onclick="javascript:page1();"><a href="javascript:void(0);">1</a></div>
+
+    <div class="floatL marginL8" id="p2" onclick="javascript:page2();"><a href="javascript:void(0);">2</a></div>
+
+    <div class="floatL marginL8" id="p3" onclick="javascript:page3();"><a href="javascript:void(0);">3</a></div>
+
+    <div class="floatL marginL8" id="p4" onclick="javascript:page4();"><a href="javascript:void(0);">4</a> </div>
+
+    <div class="floatL marginL8" onclick="javascript:nextpage();" id="sig1"><a href="#">Siguiente</a></div>
+
+    </div>
+
+  <div class="resumen_flecha" id="sig2">&nbsp;</div>
+
+   </div>
+
+<div class="floatR">
+
+<div class="floatL marginR1 bm"></div>
+
+<a class="floatL marginR10 paddingT5 boldText" href="javascript:void(0);" onclick="javascript:filtrar();">Filtrar movimientos</a>
+
+<div class="resumen_flecha marginT7"></div><a class="floatL marginR10 paddingT5" href="#" onclick="javascript:exportar()">Exportar</a>
+
+  </div>
+
+ 
+
+ <div class="clear"></div>
+
+</div>
+
+
+
+<div>
+
+
+
+<table class="tablesorter" border="0" cellpadding="0" cellspacing="0">
+
+  <thead>
+
+  <tr>
+
+  <th id="fle" width="18%" align="left" class="paddingL20 borderBSolid borderTSolid9" onclick="javascript:ocultasaldos();">
+
+    Fecha 
+
+    
+
+   </th>
+
+  <th id="op"  width="18%" align="left" class="borderBSolid borderTSolid9" onclick="javascript:ocultasaldos();"> Operaci&oacute;n 
+
+   </th>
+
+  <th id="em"  width="20%" align="left" class="borderBSolid borderTSolid9" onclick="javascript:ocultasaldos();"> Emisi&oacute;n
+
+    </th>
+
+  <th id="dep"  width="10%" align="right" class="borderBSolid borderTSolid9 paddingR10" onclick="javascript:ocultasaldos();"> 
+
+ 
+
+ T&iacute;tulos
+
+    </th>
+
+ <th id="imp"  class="borderBSolid borderTSolid9 paddingR35" width="34%" align="right" onclick="javascript:ocultasaldos();">Importe neto MXN</th>
+
+ </tr>
+
+  </thead>
+
+ <tfoot>    
+
+  <tr>
+
+    <td class="paddingT10 paddingB5 borderBSolid9 borderTSolid">&nbsp;</td>
+
+  <th class="borderBSolid9 borderTSolid"   width="18%" align="right">&nbsp;</th>
+
+  <td align="left" class="borderBSolid9 borderTSolid">&nbsp;</td>
+
+  <td align="right" class="borderBSolid9 borderTSolid">&nbsp;</td>
+
+  <td align="right" class="borderBSolid9 borderTSolid">&nbsp;</td>
+
+  </tr>
+
+     </tfoot>
+
+  <tbody>
+
+    <tr>
+
+      <td width="20%" class="paddingL20">16 Ene 2012</td>
+
+      <td width="20%">COMPRA FONDO</td>
+
+      <td width="20%" align="left">HORZNT+ B0D</td>
+
+      <td width="10%" align="right"> 742</td>
+
+      <td class="paddingR35" width="30%" align="right"> $11,774.20</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">16 Ene 2012</td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B1A</td>
+
+      <td align="right"> 164</td>
+
+      <td class="paddingR35" align="right">$11,616.40</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">10 Ene 2012</td>
+
+      <td>VENTA FONDO</td>
+
+      <td align="left">HORZNT+ B1B</td>
+
+      <td align="right">43</td>
+
+      <td class="paddingR35" align="right">$11,474.30</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">08 Ene 2012</td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B1C</td>
+
+      <td align="right">184</td>
+
+      <td class="paddingR35" align="right">$11,318.40</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">08 Ene 2012</td>
+
+      <td>VENTA  FONDO</td>
+
+      <td align="left">HORZNT+ B1D</td>
+
+      <td align="right">46</td>
+
+      <td class="paddingR35" align="right"> $11,164.60</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">05 Ene 2012</td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B2A</td>
+
+      <td align="right">128</td>
+
+      <td class="paddingR35" align="right">$11,012.80</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">24 Dic 2011</td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B2C</td>
+
+      <td align="right">931</td>
+
+      <td class="paddingR35" align="right"> $10,793.10</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">24 Dic 2011 </td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B3A</td>
+
+      <td align="right">806</td>
+
+      <td class="paddingR35" align="right">$10,580.60</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">23 Dic 2011</td>
+
+      <td>VENTA  FONDO</td>
+
+      <td align="left">HORZNT+ B3C</td>
+
+      <td align="right">93</td>
+
+      <td class="paddingR35" align="right">$10,409.30</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">21 Dic 2011</td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B4A</td>
+
+      <td align="right">528</td>
+
+      <td class="paddingR35" align="right">$10,252.80</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">21 Dic 2011</td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B4B</td>
+
+      <td align="right">229</td>
+
+      <td class="paddingR35" align="right">$10,229.00</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">20 Dic 2011</td>
+
+      <td>VENTA  FONDO</td>
+
+      <td align="left">HORZNT+ B0D</td>
+
+      <td align="right"> 742</td>
+
+      <td class="paddingR35" align="right">$11,774.20</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">11 Dic 2011</td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B1A</td>
+
+      <td align="right">164 </td>
+
+      <td class="paddingR35" align="right">$11,616.40</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">11 Dic 2011</td>
+
+      <td>VENTA  FONDO</td>
+
+      <td align="left">HORZNT+ B1B</td>
+
+      <td align="right">743</td>
+
+      <td class="paddingR35" align="right">$11,474.30</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingL20">03 Dic 2011</td>
+
+      <td>COMPRA FONDO</td>
+
+      <td align="left">HORZNT+ B1C</td>
+
+      <td align="right">184</td>
+
+      <td class="paddingR35" align="right"> $11,318.40</td>
+
+      </tr>
+
+  
+
+  </tbody>
+
+ 
+
+
+
+     
+
+</table>
+
+</div>
+
+
+
+
+
+<div class="marginB5 borderTSolid paddingT10">
+
+  <div class="floatL marginT5">
+
+  <div class="resumen_flecha1 displayN" id="pre1_2">&nbsp;</div>
+
+  <div class="floatL">
+
+  <div class="floatL displayN" onclick="javascript:prevpage();" id="pre2_2"><a href="javascript:void(0);">Anterior </a></div>
+
+    <div class="floatL marginL8 boldText" id="p1_2" onclick="javascript:page1();"><a href="javascript:void(0);">1</a></div>
+
+    <div class="floatL marginL8" id="p2_2" onclick="javascript:page2();"><a href="javascript:void(0);">2</a></div>
+
+    <div class="floatL marginL8" id="p3_2" onclick="javascript:page3();"><a href="javascript:void(0);">3 </a></div>
+
+    <div class="floatL marginL8" id="p4_2" onclick="javascript:page4();"><a href="javascript:void(0);">4</a> </div>
+
+    <div class="floatL marginL8" onclick="javascript:nextpage();" id="sig1_2"><a href="#">Siguiente</a></div>
+
+    </div>
+
+  <div class="resumen_flecha" id="sig2_2"></div>
+
+   </div>
+
+<div class="floatR">
+
+<div class="floatL marginR1 bm"></div>
+
+<a class="floatL marginR10 paddingT5 boldText" href="javascript:void(0);" onclick="javascript:filtrar();">Filtrar movimientos</a>
+
+<div class="resumen_flecha marginT7"></div><a class="floatL marginR10 paddingT5" href="#" onclick="javascript:exportar()";>Exportar</a>
+
+  </div>
+
+ <div class="clear"></div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<div class="clear">&nbsp;</div>
+
+   <div class="div_cargando" id="movimientos_cargando">
+
+                       	  <img src="bbAvatar/images/loader.gif" alt="Cargando" /><br />
+
+                            Un momento por favor ...
+
+</div>
+
+
+
+<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	<!--
+
+	$(document).ready(function(){optieneAlturas();top.window.scrollTo(0,0);$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+	-->
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+		
+
+		valor=0;
+
+		
+
+        function cambiopage(){
+
+				
+
+				
+
+				
+
+				
+
+				if(valor==1)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm');
+
+					
+
+							}
+
+				if(valor==2)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('14-Cheques_mes_actual_real.htm');
+
+					
+
+							}
+
+				if(valor==3)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('26-TDD-MesActual-REAL.htm');
+
+					
+
+							}
+
+				if(valor==4)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Afore.htm');
+
+					
+
+							}
+
+				if(valor==5)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-creditos.html');
+
+					
+
+							}
+
+							
+
+				if(valor==6)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_horizonte.htm');
+
+					
+
+							}
+
+				if(valor==7)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_inversionempresarial.htm');
+
+					
+
+							}
+
+			        if(valor==8)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('inversionesdetalle_inversionintegral.htm');
+
+					
+
+							}
+
+				if(valor==9)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-inversiones_4.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==10)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Resumen-de-inversiones_6.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==11)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('maestra_mes_actual.htm');
+
+					
+
+							}
+
+							
+
+				if(valor==12)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('Multiseries.htm');
+
+					
+
+							}
+
+				if(valor==13)
+
+							{				
+
+				   						
+
+							window.parent.cargaDoc('premia_mes_actual.htm');
+
+					
+
+							}
+
+			
+
+			}
+
+        </script>
+
+        
+
+        <script type="text/javascript">
+
+		valor2=0;
+
+        function cambiopage2(){
+
+   
+
+    if(valor2==1)
+
+       {    
+
+             
+
+       window.parent.cargaDoc('Multiseries.htm');
+
+     
+
+       }
+
+    if(valor2==2)
+
+       {    
+
+             
+
+       window.parent.cargaDoc('Multiseries.htm');
+
+     
+
+       }
+
+	   
+
+   }
+
+        </script>
+
+<script type="text/javascript">
+
+        function seleccionaCuenta(valor){
+
+			var sigtmp;
+
+		var data = new Array();
+
+		data = valor.split("|");
+
+		if(data[0] == "1"){
+
+			sigtmp = "Mul_TodasCtas/14-Cheques_mes_actual_real.htm";
+
+		}else if(data[0] == "2"){
+
+			sigtmp = "Mul_TodasCtas/Resumen-de-inversiones_4.htm";
+
+		}else if(data[0] == "3"){
+
+			if(data[1] == "TC"){
+
+				sigtmp = "Mul_TodasCtas/04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/premia_mes_actual.htm";
+
+			}
+
+		}else if(data[0] == "4"){
+
+			if(data[1] == "IN"){
+
+				sigtmp = "Mul_TodasCtas/inversionesdetalle_horizonte.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/inversionesdetalle_inversionintegral.htm";
+
+			}
+
+		}else if(data[0] == "5"){
+
+			sigtmp = "Mul_TodasCtas/Afore.htm";
+
+		}else if(data[0] == "6"){
+
+			if(data[1] == "PE"){
+
+				sigtmp = "Mul_TodasCtas/cuenta_perfiles_periodo_actual.htm";
+
+			}else{
+
+				sigtmp = "Mul_TodasCtas/maestra_mes_actual.htm";	
+
+			}
+
+		}else if(data[0] == "7"){
+
+			sigtmp = "Mul_TodasCtas/Resumen-de-creditos.html";
+
+		}else{
+
+			sigtmp = "Mul_TodasCtas/Multiseries.htm";
+
+		}
+
+		$("#divCargando").show();
+
+		setTimeout("parent.DoSubmit('"+sigtmp+"');",1000);
+
+	}
+
+	
+
+	function imprimirMain(){
+
+		parent.document.getElementById("main").contentWindow.focus();
+
+		parent.document.getElementById("main").contentWindow.print();
+
+	}
+
+	
+
+	function AbreAyuda(fn){
+
+	window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+	}
+
+	
+
+	function adminTarjetas(expansor){
+
+	top.SaltoTransaccion(4,1,1);
+
+	window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	
+
+	}
+
+	
+
+	function comprobantes(){
+
+	top.SaltoTransaccion(1,2,5);
+
+	window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	function activarMovil(){
+
+		parent.submitFuera('Actualiza Datos Cliente', 'Mis Productos - Contrataci&oacute;n en l&iacute;nea');
+
+	}
+
+	function domiciliarServicio(){
+
+		top.SaltoTransaccion(1,2,4);
+
+		window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	
+
+	
+
+	function transferencias(){
+
+		var indice = $("#comboCuentas").find("option:selected").val();
+
+		$("#DATAAUX", window.parent.document).val(indice);
+
+		top.SaltoTransaccion(1,1,0);
+
+		window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	
+
+	function pagoServicios(){
+
+		var indice = $("#comboCuentas").find("option:selected").val();
+
+		$("#DATAAUX", window.parent.document).val(indice);
+
+		top.SaltoTransaccion(1,2,1);
+
+		window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	
+
+	function pagoTarjetas(){
+
+		$("#DATAAUX", window.parent.document).val("25");
+
+		top.SaltoTransaccion(1,2,0);
+
+		window.parent.setBanner(parent.menus[1][3], parent.menus[1][4]);
+
+	}
+
+	
+
+	function saltoInversiones(){
+
+		top.SaltoTransaccion(2,0);
+
+		window.parent.setBanner(parent.menus[2][3], parent.menus[2][4]);
+
+	}
+
+	
+
+	function saltoMultiseries(){
+
+		top.SaltoTransaccion(2,3);
+
+		window.parent.setBanner(parent.menus[2][3], parent.menus[2][4]);
+
+	}
+
+	
+
+	function saltoChequera(expansor){
+
+		top.SaltoTransaccion(4,1,2);
+
+		window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	}
+
+	
+
+	function activarNotificaciones(){
+
+		top.SaltoTransaccion(4,3);
+
+		window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	}
+
+	
+
+	function adminTarjetas(expansor){
+
+		top.SaltoTransaccion(4,1,1);
+
+		window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	}
+
+	
+
+	function cambioNIP(){
+
+		top.SaltoTransaccion(4,0,1);
+
+		window.parent.setBanner(parent.menus[4][3], parent.menus[4][4]);
+
+	}
+
+	
+
+	function LinkTransaccionSaldos(primerN, segundoN, tercerN, tPago){
+
+		var aux="";
+
+		if(tPago!="") aux = "|"+tPago;
+
+		$("#DATAAUX", window.parent.document).val("25"+ aux);
+
+			if(tercerN!="")
+
+				window.parent.SaltoTransaccion(primerN,segundoN,tercerN);
+
+			else
+
+				window.parent.SaltoTransaccion(primerN,segundoN);
+
+}
+
+
+
+
+
+	
+
+</script><div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayN">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src='../../bbAvatar/images/loader.gif'/></div>
+
+    <div style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'>Espere un momento por favor ...</div>
+
+</div>
+
+
+
+<div id="divExportar" class="displayN">	
+
+	<div class="mensajeError_contenidoInb">
+
+		<div id="f4" class="panelIzEnca3_text2">Exportar resultados</div>
+
+		<br />
+
+
+
+		<div class="color666 clear">
+
+			<div><input type="radio" name="radio_formato" value="Excel" /><img src="bbAvatar/images/xls.gif" /> <span id="f5">Excel</span></div>
+
+			<div>
+
+				<input type="radio" name="radio_formato" value="Texto"/><img src="bbAvatar/images/txt.gif" /> <span id="f6" class="marginR10">Texto</span>
+
+				<select class="select1" id="combo_separador" disabled="disabled">
+
+					<option value="">Separado por</option>
+
+
+
+					<option value="1">Coma</option>
+
+					<option value="2">Pipe</option>
+
+					<option value="3">Tab</option>
+
+				</select>
+
+			</div>
+
+		</div>
+
+		<div class="saldos_bloque2_f4_error combo_separador_div_error clear"><span id="f7">Seleccione un separador</span></div>
+
+
+
+		<div class="mensajeError_Fila3 clear">			
+
+			<div class="floatL"><input type="button" id="f8" value="Cancelar" class="btnRJ86 CerrarVentanaEmergente"/></div>
+
+			<div class="floatR"><input type="button" id="f9" value="Descargar" class="btnAZ86" onclick="JavaScript:frames.main.exportarResultados();" /></div>
+
+		</div></br>
+
+		<div class="f11" id="f10" style="background-color:#FAE5E5; color:#333">Es responsabilidad del usuario el resguardo de toda la información que sea exportada.</div>
+
+	</div>
+
+</div>
+
+</body>
+
+</html>
+

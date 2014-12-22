@@ -1,0 +1,307 @@
+	<link href="../../../JFP/regional/css/latamCommon.css" rel="stylesheet" type="text/css" />
+
+
+
+<div class="width141 widthOpt float-left">
+
+
+
+	<div class="cH-appPanelHead float-left margin-top-2">
+
+        <h4>BÚSQUEDA ESPECÍFICA</h4>
+
+    </div>
+
+
+
+ 	<div class="clear"></div>
+
+
+
+    <div class="form-row">
+
+        <label class="for-table">Buscar:</label>
+
+        <select>
+
+            <option>Por movimiento</option>
+
+        </select>
+
+        <div class="clear"></div>
+
+    </div>
+
+    
+
+    
+
+    <div class="form-row">
+
+    <label class="for-table">Fecha:</label>
+
+        <input type="text" class="calendario1 input_calendar float-left margin-right10 width105 paddingl3 fechaFut" readonly="readonly">
+
+        <div class="icon-calendar margin-top2 otra_c1" href="#">&nbsp;</div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    
+
+    <div class="form-row margin-bottom15">
+
+        <label class="for-table">No. de autorización:</label>
+
+        <input type="text" />
+
+        <div class="clear"></div>
+
+    </div>
+
+
+
+</div>
+
+<div class="float-left width-180 padding-left20">
+
+	<h4 class="margin-bottom10">¿QUÉ DESEAS HACER?</h4>
+
+    <div class="clear"></div>
+
+    <div id="flechaLinksOpcoes" class="float-left">
+
+        <span class="flechaGris float-left">&nbsp;</span>
+
+        <a class="float-left" href="#">Pagar mi tarjeta de crédito</a>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="flechaLinksOpcoes" class="float-left">
+
+        <span class="flechaGris float-left">&nbsp;</span>
+
+        <a class="float-left" href="#">Invertir mi dinero</a>
+
+    </div>
+
+</div>
+
+<div class="clear"></div>
+
+
+
+<div class="cF-sideBySide margin-top0 margin-bottom25">
+
+				<div class="width151">&nbsp;</div>
+
+				<ul class="cN-primaryNav">
+
+					<li class="cM-spriteBase cN-primaryNavButton">
+
+                    	<a href="#">BUSCAR</a>
+
+					</li>
+
+                    <div id="flechaLinksOpcoes" class="titulo ancho50 margin-top3 float-left">
+
+                        <span class="flechaGris float-left">&nbsp;</span>
+
+                        <a class="float-left" href="#">Borrar</a>
+
+                    </div>	
+
+				</ul>
+
+			 </div>
+
+             
+
+             <div class="clear"></div>
+
+             
+
+             <h4 class="sinMarginBottom">MOVIMIENTOS</h4>
+
+
+
+       		<div class="clear"></div>
+
+             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top10">
+
+                   <tbody>
+
+                      <tr>
+
+                        <th width="5%" class="borderLabels pad15">
+
+                            <span class="strong float-left">&nbsp;</span>
+
+                        </th>
+
+                        <th width="20%" valign="middle" scope="col" class="borderLabels">
+
+                            <span class="strong float-left">Fecha de Solicitud</span>
+
+                            <a href="#"><div class="descendente active float-left">&nbsp;</div></a>
+
+                        </th> 
+
+                        <th width="15%" valign="middle" scope="col" class="borderLabels">
+
+                            <span class="strong float-left">Descripción</span>
+
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+
+                        </th> 
+
+                        <th width="20%" valign="middle" scope="col" class="borderLabels">
+
+                            <span class="strong float-left"># Autorización / Instrucción</span>
+
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+
+                        </th> 
+
+                        <th width="19%" valign="middle" scope="col" class="borderLabels">
+
+                            <span class="strong float-left">Estatus</span>
+
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+
+                        </th> 
+
+                        <th width="20%" valign="middle" scope="col" class="borderLabels padding-right10">
+
+                        	<a href="#"><div class="descendente float-right">&nbsp;</div></a>
+
+                            <span class="strong float-right">Importe</span>
+
+                        </th>                    
+
+                    </tr>
+
+                      <tr class="degrade">
+
+                        <td class="pad15 border9A color666 alignCenter" colspan="6">No encontramos resultados para tu búsqueda</td>
+
+                      </tr>
+
+
+
+                    </tbody>
+
+                </table>
+
+
+
+             
+
+ <!-- Script para tootltips-->
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+            $(document).ready(function(){
+
+				
+
+				$('.fechaFut,.fechaFut2').datepicker({
+
+					dayNamesMin:['D','L','M','M','J','V','S'],
+
+					monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+
+					beforeShow: function(){
+
+						$(this).removeClass('ui-corner-all');
+
+						
+
+					},
+
+					showAnim: '',
+
+					showOtherMonths: true,
+
+					selectOtherMonths: false,
+
+					minDate: 'y',
+
+					maxDate: '30d',
+
+					dateFormat:"d M yy",
+
+					disabled: false
+
+				});
+
+				
+
+				$('.fechaFut,.fechaFut2').focus(
+
+					function(){
+
+						if( $(this).hasClass('modal_calendar') ){
+
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}else{
+
+							$('.ui-widget').css({'top':($(this).offset().top-63)+'px','left':($(this).offset().left+136)+'px', 'z-index':'99999999'});
+
+						}
+
+						if( $('.ui-datepicker .close').length == 0){
+
+							$('.ui-datepicker').append("<div class='close'></div>");
+
+						}
+
+						$('.ui-datepicker').find('.close').click(function(){
+
+							$('.input_calendar').datepicker( "hide" );
+
+						});
+
+						
+
+					}
+
+				);
+
+				
+
+			   $(".otra_c1").click(function(){
+
+    				$(".fechaFut").datepicker('show');
+
+			   });
+
+			   
+
+			   $(".otra_c2").click(function(){
+
+    				$(".fechaFut2").datepicker('show');
+
+			   });
+
+				
+
+				
+
+             });
+
+			 
+
+			 
+
+        </script>

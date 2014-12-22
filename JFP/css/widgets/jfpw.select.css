@@ -1,0 +1,443 @@
+/************************************************************
+
+ *  Selectmenu
+
+ * .jfpw-select
+
+/************************************************************/
+
+
+
+.jfpw-select {
+
+	font-size: 11px;
+
+	background: #ffffff none;
+
+}
+
+
+
+.ui-widget input.jfpw-select-input {
+
+	font-size: 11px;
+
+    color: #555555;
+
+    font-weight: normal;
+
+    padding: 1px 10px;
+
+    border: 0;
+
+}
+
+
+
+.ui-widget-content.jfpw-select {
+
+	border-style: none;
+
+}
+
+
+
+.ui-selectmenu.jfpw-select {
+
+	height: 14px;
+
+	zoom: 1; 
+
+	/*display: inline-block;*/
+
+	display: block;
+
+	position: relative; 
+
+	text-decoration: none; 
+
+	overflow: hidden; 
+
+}
+
+
+
+.ui-selectmenu.jfpw-select.ui-selectmenu-dropdown {
+
+	background: #ffffff none;
+
+	border: 1px solid #CCCCCC !important;
+
+	z-index: auto;
+
+}
+
+.ui-selectmenu.jfpw-select.ui-state-hover { 
+
+	border: 1px solid #cccccc; 
+
+	background: #ffffff none;
+
+	font-weight: normal;
+
+	color: #212121;
+
+}
+
+
+
+.jfpw-select .ui-selectmenu-icon.ui-icon-triangle-1-s.ui-icon, 
+
+.jfpw-select .ui-selectmenu-icon.ui-icon-triangle-1-s.ui-icon.ui-state-focus {
+
+	margin-top: -10px;
+
+	position: absolute;
+
+	right: 0px; 
+
+	top: 50%;
+
+    background-image: url('/JFP/images/widgets/jfpw.select.dropdown.icon.png');
+
+	background-position: 0px 0px;
+
+    height: 20px;
+
+    width: 20px;
+
+    display: inline-block;
+
+}
+
+
+
+.ui-selectmenu-menu.jfpw-select { 
+
+	padding: 0; 
+
+	margin: 0; 
+
+	list-style: none; 
+
+	position: absolute; 
+
+	top: 0; 
+
+	visibility: hidden; 
+
+	/*overflow: auto;*/
+
+	overflow: hidden;
+
+	z-index: 1005;
+
+} 
+
+	/* z-index: 1005 to make selectmenu work with dialog */
+
+.ui-selectmenu-open.jfpw-select { visibility: visible; }
+
+.ui-selectmenu-menu-popup.jfpw-select { margin-top: -1px; }
+
+.ui-selectmenu-menu-dropdown.jfpw-select { }
+
+.ui-selectmenu-menu.jfpw-select li { 
+
+	padding:0; 
+
+	margin:0; 
+
+	display: block; 
+
+	border-top: 1px dotted transparent; 
+
+	border-bottom: 1px dotted transparent; 
+
+	border-right-width: 0 !important; 
+
+	border-left-width: 0 !important; 
+
+	font-weight: normal ; 
+
+}
+
+.ui-selectmenu-menu.jfpw-select li a { 
+
+	line-height: 15px;
+
+	display: block; 
+
+	padding: 3px 10px;
+
+	outline: none; 
+
+	text-decoration: none;
+
+	z-index: auto;
+
+}
+
+
+
+.ui-selectmenu-status { 
+
+	/* line-height: 15px; */
+
+    line-height: 20px;
+
+	display: inline-block; 
+
+	padding: 3px 10px;
+
+	outline: none; 
+
+	text-decoration: none;
+
+	z-index: auto;
+
+}
+
+
+
+.ui-selectmenu-menu.jfpw-select li a:hover {
+
+	 font-weight: bold;
+
+	 background: #f7f7f7 none; 
+
+}
+
+
+
+.ui-selectmenu-menu.jfpw-select a.jfpw-select-disabled  {
+
+	cursor: auto;
+
+	font-weight: normal !important;
+
+	background: #FFFFFF none !important; 
+
+	color: #666666;
+
+}
+
+
+
+.ui-selectmenu-menu.jfpw-select li.ui-state-hover { 
+
+	background: #ffffff none;
+
+	/*border: 1px dotted transparent;*/
+
+	font-weight: bold;
+
+}
+
+
+
+.ui-selectmenu-menu.jfpw-select .ui-selectmenu-item-focus.ui-state-hover {
+
+	font-weight: bold;
+
+}
+
+
+
+
+
+.ui-selectmenu-menu.jfpw-select li.ui-selectmenu-hasIcon a,
+
+.ui-selectmenu-hasIcon .ui-selectmenu-status { padding-left: 20px; position: relative; margin-left: 5px; }
+
+.ui-selectmenu-menu.jfpw-select li .ui-icon, .ui-selectmenu-status .ui-icon { position: absolute; top: 1em; margin-top: -8px; left: 0; }
+
+.ui-selectmenu-status.jfpw-select { line-height: 1.4em; }
+
+.ui-selectmenu-open.jfpw-select li.ui-selectmenu-item-focus a { 
+
+	font-weight: bold; 
+
+}
+
+.ui-selectmenu-open.jfpw-select li.ui-selectmenu-item-selected { }
+
+.ui-selectmenu-menu.jfpw-select li span { 
+
+	display: inline; 
+
+	/*margin-bottom: .2em;*/ 
+
+}
+
+.jfpw-select .ui-selectmenu-status span { 
+
+	display: block; 
+
+	/*
+
+	margin-bottom: .2em; 
+
+	margin-top: -0.2em;
+
+   	margin-top: -3px;
+
+	*/
+
+    margin-top: -5px;
+
+	margin-bottom: 3px;
+
+}
+
+
+
+.ui-selectmenu-menu li .ui-selectmenu-item-content { }
+
+.ui-selectmenu-menu li .ui-selectmenu-item-footer { opacity: .8; }
+
+/* for optgroups */
+
+.ui-selectmenu-menu .ui-selectmenu-group { font-size: 1em; }
+
+.ui-selectmenu-menu .ui-selectmenu-group .ui-selectmenu-group-label { line-height: 1.4em; display:block; padding: .6em .5em 0; font-weight: bold; }
+
+.ui-selectmenu-menu .ui-selectmenu-group ul { margin: 0; padding: 0; }
+
+/* IE6 workaround (dotted transparent borders) */
+
+* html .ui-selectmenu-menu.jfpw-select li { border-color: pink; filter:chroma(color=pink); width:100%; }
+
+* html .ui-selectmenu-menu.jfpw-select li a { position: relative }
+
+
+
+
+
+
+
+/*div.jfpw-select-list-container .jfpw-select*/
+
+
+
+
+
+.jfpw-select-round-corners .round-corners-cont {
+
+/*    background-color: red;*/
+
+    clear: both;
+
+    height: 8px;
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+.jfpw-select-round-corners .round-corners-cont .round-corners-l {
+
+	background: url('/JFP/images/widgets/jfpw.select-bottom-round-white.png') transparent -5px 100% !important;
+
+	border: 0px solid white;
+
+	display: inline;
+
+	float: left;
+
+	position: absolute;
+
+	left: 0px;
+
+	top: 0px;
+
+	height: 8px; 
+
+	width: 35px;	
+
+}
+
+
+
+.jfpw-select-round-corners .round-corners-cont .round-corners-c {
+
+	position: absolute;
+
+	top: 0px;
+
+	height: 8px;
+
+	background-color: white; 
+
+}
+
+
+
+.jfpw-select-round-corners .round-corners-cont .round-corners-r {
+
+    background: url("/JFP/images/widgets/jfpw.select-bottom-round-white.png") repeat scroll 99% 100% transparent !important;
+
+    border: 0px solid white;
+
+    display: inline;
+
+    float: right;
+
+    position: absolute;
+
+    right: 0px;
+
+    top: 0px;
+
+    height: 8px;
+
+    width: 35px;
+
+}
+
+
+
+.jfpw-select-round-corners .ui-selectmenu-menu.jfpw-select li {
+
+    border-top: 1px dotted #CCCCCC;
+
+    padding-bottom: 3px;
+
+    padding-top: 3px;
+
+}
+
+
+
+.ui-selectmenu.jfpw-select.ui-selectmenu-dropdown.jfpw-select-round-corners {
+
+	background: none repeat scroll 0 0 #e7e7e7;	
+
+}
+
+.jfpw-select.jfpw-select-round-corners .ui-selectmenu-icon.ui-icon-triangle-1-s.ui-icon, 
+
+.jfpw-select.jfpw-select-round-corners .ui-selectmenu-icon.ui-icon-triangle-1-s.ui-icon.ui-state-focus {
+
+    background-image: url("/JFP/images/widgets/jfpw.select.dropdown.icon.png");
+
+    background-position: 0 0;
+
+    border-left: 1px solid #CCCC00;
+
+    display: inline-block;
+
+    height: 20px;
+
+    margin-top: -10px;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 50%;
+
+    width: 20px;
+
+}

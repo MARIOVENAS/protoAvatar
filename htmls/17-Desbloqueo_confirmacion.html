@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Layout Avatar</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+		<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+		<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+		<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+		<link rel="stylesheet" type="text/css" href="../JFP/regional/css/apps/regional_overlay.css"/>
+		<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+		<script type="text/javascript" src="../JFP/js/script3.js"></script>
+		<script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+		<script type="text/javascript" src="../JFP/js/langManagement.js"></script>
+	</head>
+	<body>
+		<!--inicia contenedor principal-->
+		<div id="wrap" class="cS-structMainContainer">
+			<!--inicia header-->
+			<div id="header">
+				<div class="utilities_nav" id="navegacionPrincipal"></div>
+				<div class="citibank-containerImg">
+					<a href="#"><div id="citibank-logo"></div></a>
+					<div id="citibank-imageb"></div>
+				</div>
+				<!--termina header-->
+			</div>
+			<div class="cS-structBodyContainer">
+				<div id="title-section" class="cH-appPageHead height20">
+					<div class="float-left"><h1 id="t117">SOLICITUD DE DESBLOQUEO DE CLAVES</h1></div>
+					<!--<div class="margin-top6 titulo ancho50" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a id="t64" href="javascript:void(0);" onclick="Layuda()" class="float-left">&nbsp;Ayuda</a>
+					</div>-->
+					<div class="margin-top6 titulo ancho10" id="flechaLinksOpcoes">&nbsp;</div>
+					<div class="margin-top6 titulo ancho50" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a id="t65" href="javascript:void(0);" onclick="javascript:print();" class="float-left">&nbsp;Imprimir</a>
+					</div>
+				</div>
+				<div class="bg_demo">
+					<div id="content">
+						<div id="subapp-box" class="noleftmenu float-left">
+							<div class="greenCheck"></div>
+							<p class="margin-bottom20 strong" id="t125">Tu clave num&eacute;rica ha sido exitosamente desbloqueada.</p>
+							<div class="border-top"></div>
+							<p class="margin-bottom20 strong">José Rivera López</p>
+							<div class="border-top"></div>
+							<p class="margin-bottom5" id="t126">Ponemos a tu disposici&oacute;n nuestros tel&eacute;fonos para m&aacute;s informaci&oacute;n o cualquier aclaraci&oacute;n.</p>
+							<p class="margin-bottom20" id="t127">Del D.F. al 1226-3990 o del interior al 01800-110-3990 de lunes a s&aacute;bado de 7:00 a 21:00 h.</p>
+							<p id="t128">Escr&iacute;benos a "Cont&aacute;ctanos" dentro de <a class="link" href="http://www.banamex.com" target="_blank">www.banamex.com</a></p>
+							<div class="cF-sideBySide cF-bottomNav bottomNav-Border" style="background:none !important; border-top: 1px solid #c5c5c5 !important;">
+								<ul class="cN-primaryNav">
+									<li class="cM-spriteBase cN-primaryNavButton"><a onclick="javascript:continuar();" id="t129">ACEPTAR</a></li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="footer"></div>
+			</div>
+		</div>
+	</div>	
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    ajustarOverlay();
+		    ajusta_tooltpis();
+		    funciones_loginP();
+		    /*setTimeout(function() {
+		$('#t7').trigger('click');
+		}, 1200);*/
+		});
+		$(document).ajaxStop(function() {
+		    $('#t0').hide();
+		});
+
+		function print() {
+
+	        if (isEnglishSel) {
+
+	            window.open('17-Desbloqueo_print.html', '', 'height=' + (screen.height - 200) + ',width=800,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	        } else {
+
+	            window.open('17-Desbloqueo_print.html', '', 'height=' + (screen.height - 200) + ',width=800,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	        }
+
+	    }
+
+		function Layuda() {
+		     window.open(rutaAyudaCC, '', 'height=' + (screen.height - 70) + ',width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+		}
+
+		/*******/
+		/*** proto */
+		 // ponerlo en el jquery
+		/* jQuery doTimeout: Like setTimeout, but better! - v1.0 - 3/3/2010*/
+		(function($) {
+		    var a = {},
+		        c = "doTimeout",
+		        d = Array.prototype.slice;
+		    $[c] = function() {
+		        return b.apply(window, [0].concat(d.call(arguments)))
+		    };
+		    $.fn[c] = function() {
+		        var f = d.call(arguments),
+		            e = b.apply(this, [c + f[0]].concat(f));
+		        return typeof f[0] === "number" || typeof f[1] === "number" ? this : e
+		    };
+
+		    function b(l) {
+		        var m = this,
+		            h, k = {},
+		            g = l ? $.fn : $,
+		            n = arguments,
+		            i = 4,
+		            f = n[1],
+		            j = n[2],
+		            p = n[3];
+		        if (typeof f !== "string") {
+		            i--;
+		            f = l = 0;
+		            j = n[1];
+		            p = n[2]
+		        }
+		        if (l) {
+		            h = m.eq(0);
+		            h.data(l, k = h.data(l) || {})
+		        } else {
+		            if (f) {
+		                k = a[f] || (a[f] = {})
+		            }
+		        }
+		        k.id && clearTimeout(k.id);
+		        delete k.id;
+
+		        function e() {
+		            if (l) {
+		                h.removeData(l)
+		            } else {
+		                if (f) {
+		                    delete a[f]
+		                }
+		            }
+		        }
+
+		        function o() {
+		            k.id = setTimeout(function() {
+		                k.fn()
+		            }, j)
+		        }
+		        if (p) {
+		            k.fn = function(q) {
+		                if (typeof p === "string") {
+		                    p = g[p]
+		                }
+		                p.apply(m, d.call(n, i)) === true && !q ? o() : e()
+		            };
+		            o()
+		        } else {
+		            if (k.fn) {
+		                j === undefined ? e() : k.fn(j === false);
+		                return true
+		            } else {
+		                e()
+		            }
+		        }
+		    }
+		})(jQuery);
+
+		function cronometroMinutos(idTime, segundosCronometro, id, callback) {
+		    var cadMinutos = "";
+		    var minutos = 0;
+		    var segundos = 0;
+		    $.doTimeout(idTime, 1000, function() {
+		        segundosCronometro--
+		        if (segundosCronometro == 0) {
+		            try {
+		                eval('(' + callback + ')();')
+		            } catch (e) {}
+		            return false;
+		        }
+		        minutos = segundosCronometro / 60;
+		        cadMinutos = minutos.toString();
+		        if (cadMinutos.indexOf('.'))
+		            minutos = cadMinutos.split(".")[0];
+		        segundos = segundosCronometro % 60;
+		        if (minutos <= 9)
+		            minutos = '0' + minutos;
+		        if (segundos <= 9)
+		            segundos = '0' + segundos;
+		        $(id).html(minutos + ":" + segundos + " (mm:ss)");
+		        return true;
+		    });
+		}
+		/* fecha y hora*/
+		function fechaHora() {
+		    var dias = {
+		        esp: ['Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles', 'Jueves', 'Viernes', 'Sabado'],
+		        eng: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+		    };
+		    var meses = {
+		        esp: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Juilio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+		        eng: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+		    };
+		    var fecha = new Date();
+		    var diaTexto = dias[language][fecha.getDay()];
+		    var dia = fecha.getDate();
+		    var mesTexto = meses[language][fecha.getMonth()];
+		    var year = fecha.getFullYear();
+		    var hora = fecha.getHours();
+		    var minuto = fecha.getMinutes();
+		    var segundo = fecha.getSeconds();
+		    if (hora <= 1)
+		        hora = '0' + hora;
+		    if (minuto <= 9)
+		        minuto = '0' + minuto;
+		    if (segundo <= 9)
+		        segundo = '0' + segundo;
+		    if (isEnglishSel) {
+		        var stgDate = diaTexto + ", " + mesTexto + " " + dia + ", " + year + ", " + hora + ":" + minuto + ":" + segundo + " Mexico City";
+		    } else {
+		        var stgDate = " " + diaTexto + " " + dia + " de " + mesTexto + " de " + year + ", " + hora + ":" + minuto + ":" + segundo + " Centro de M&eacute;xico"
+		    }
+		    return stgDate;
+		}
+
+		
+		function continuar() {
+		    window.location.href = "../htmls/01-Log-in.html";
+		}
+	</script>
+	<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript">
+	google.load('search', '1', {language : 'es'});
+	</script>
+</body>
+<!--termina contenedor principal-->
+</html>

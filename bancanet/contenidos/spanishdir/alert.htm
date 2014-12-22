@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+
+    <title>Alerta</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+    <link href="../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../bbAvatar/js/motor.js"></script>
+
+    <script type="text/javascript">		
+
+		var banderaClickIframeSesion = 0;
+
+		var minutosIframeSesion = 0;
+
+		
+
+		$(document).ready(function(){
+
+			setInterval("contadorModal()", 100);
+
+			$("#mensajeError_contenido_div").css("height","auto");
+
+			parent.$.modalEspecial.setDimentions($("#mensajeError_contenido_div").height(), 600);
+
+		});		
+
+			
+
+		function contadorModal(){			
+
+			var segundosreales = parseInt( parent.GI('segRestan').value, 10)-10;
+
+			var segundos = (segundosreales)%60;
+
+			minutosIframeSesion = parseInt(segundosreales/60, 10);
+
+			if(minutosIframeSesion < 0){
+
+				minutosIframeSesion = 0;
+
+			}
+
+			if(segundos%10 != 0 && segundos > 0 && segundos < 10 ){
+
+				segundos = "0"+segundos;
+
+			}
+
+			if(segundos == 0){
+
+				segundos = "0"+segundos;
+
+			}
+
+			if(segundos < 0){
+
+				segundos = "00";
+
+			}			
+
+			$("#tiempores").html(minutosIframeSesion+"&nbsp;:&nbsp;"+segundos);
+
+		}
+
+	
+
+		function countdown(){ 
+
+			var argumentos = parent.dialArgsAlertSesion();
+
+			var milisegundos = argumentos.alertime*60000*2;
+
+			setTimeout("parent.cerrarModal('tersesion')", milisegundos);			
+
+		}	
+
+			
+
+		function renovarModalSesion(){	
+
+			if(banderaClickIframeSesion == 0){
+
+				banderaClickIframeSesion++;
+
+				$("#renueva").html("Espera por favor. La sesi&oacute;n se est&aacute actualizando.");
+
+				parent.scd();
+
+				try{$.modalEspecial.close();}catch(exp){}
+
+			}
+
+		}
+
+		
+
+		function EBX_SetNavigation(value){}
+
+		
+
+		function ref(){			
+
+			setTimeout("parent.cerrarModal('resesion')",100);		
+
+		}
+
+		
+
+		function f_h_f(a){}
+
+		
+
+		function falloRefrescoSesion(msj){
+
+			$("#msjprincipal").hide();
+
+			$("#msjerrortext").html(msj);
+
+			$("#msjerror").show();
+
+		}	
+
+		
+
+	</script>
+
+</head>
+
+<body onload="countdown()">	
+
+    <div id="mensajeError_contenido_div" style="background-color:#FFF; height:auto;">
+
+        <div class="mensajeError_contenidoInLogin">
+
+            <div class="mensajeError_Fila1Login">
+
+                <div class="mensajeError_login"></div><span class="mensajeError_loginTexto" id="">Tiempo de sesi&oacute;n por finalizar</span>
+
+            </div>	
+
+			<div id="msjprincipal">
+
+				<div class="mensajeError_Fila2Login color666 padding20">
+
+					<span class="f11 color333333">Por tu seguridad y debido a que no has realizado ninguna operaci&oacute;n, la sesi&oacute;n finalizar&aacute; en&nbsp;<span class="f12 negrita" style="color:#ee2e24 !important" id="tiempores"></span><span class="f11 negrita color333333">&nbsp;(mm:ss)</span>
+
+					</span>                 
+
+					<br /><br />
+
+					<span id="renueva" class="f11 color333333">Si deseas extender el tiempo de sesi&oacute;n has clic en &quot;Continuar&quot;</span>
+
+				</div>
+
+                <br /><br />
+
+				<div class="mensajeError_Fila3Login paddingL10 paddingR10">
+
+					<div class="floatL"><input id="cancelarmodal" type="button" value="Finalizar" class="btnRJ86login" onclick="javascript:parent.cerrarModal('sasesion');" /></div>
+
+					<div class="floatR"><input id="continuarmodal" type="button" value="Continuar" class="btnAZ86login" onclick="javascript:renovarModalSesion();"/></div>
+
+				</div>
+
+                <br />                
+
+			</div>
+
+			<div id="msjerror" style="display:none">
+
+				<div class="mensajeError_Fila2Login color666 padding20">
+
+					<span class="f11 color333333" id="msjerrortext">
+
+					</span>
+
+					<br /><br /><br /><br />
+
+				</div>
+
+				<div class="mensajeError_Fila3Login paddingL10 paddingR10">
+
+					<div class="floatR"><input id="continuarerror" type="button" value="Continuar" class="btnAZ86login" onclick="javascript:parent.cerrarModal();"/></div>
+
+				</div>
+
+                <br />
+
+			</div>
+
+        </div>
+
+    </div>	
+
+    <span id="fecha" name="fecha" style="display:none"></span>
+
+</body>
+
+</html>

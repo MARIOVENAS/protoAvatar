@@ -1,0 +1,49 @@
+<?xml version=’1.0' encoding=’UTF-8'?>
+
+<RECORDS>
+
+<RECORD b24_emp_cve="1" b24_emp_id_cop="889" b24_emp_cve_cop="1:256" b24_emp_razon_social="TELEFONOS DE MEXICO SA B DE CV							" b24_emp_nombre_comun="TELMEX                                                 " rowguid="C4FCB0FC-B10D-4F0C-A153-C602378F8876"/>
+
+<RECORD b24_emp_cve="1" b24_emp_id_cop="1600" b24_emp_cve_cop="1:2526" b24_emp_razon_social="TELEFONOS DE MEXICO SA B DE CV                         " b24_emp_nombre_comun="PAGO DE TELMEX POR EBPP                                " rowguid="A46DC242-9E0A-4EA1-9759-EA391BBE5102"/>
+
+<RECORD b24_emp_cve="2" b24_emp_id_cop="890" b24_emp_cve_cop="2:106" b24_emp_razon_social="COMISION FEDERAL DE ELECTRICIDAD                       " b24_emp_nombre_comun="C.F.E                                                  " rowguid="C0352E7A-C768-46A4-8F49-C98A5FFA470F"/>
+
+<RECORD b24_emp_cve="32" b24_emp_id_cop="123" b24_emp_cve_cop="32:052" b24_emp_razon_social="MVS MULTIVISION S A DE C V                             " b24_emp_nombre_comun="MULTIVISION                                            " rowguid="CA0A5C22-6A20-40D1-BEFA-B1EF2240FC0E"/>
+
+<RECORD b24_emp_cve="33" b24_emp_id_cop="1506" b24_emp_cve_cop="33:0519" b24_emp_razon_social="CABLEVISION SA DE CV                                   " b24_emp_nombre_comun="CABLEVISION                                            " rowguid="172B0F18-1003-4C2E-8AAB-E4C6DD59E984"/>
+
+<RECORD b24_emp_cve="38" b24_emp_id_cop="351" b24_emp_cve_cop="38:254" b24_emp_razon_social="RADIOMOVIL DIPSA SA DE CV                              " b24_emp_nombre_comun="TELCEL                                                 " rowguid="A819CCE8-D555-46DD-8D45-1324EFB17B04"/>
+
+<RECORD b24_emp_cve="74" b24_emp_id_cop="359" b24_emp_cve_cop="74:254" b24_emp_razon_social="RADIOMOVIL DIPSA SA DE CV                              " b24_emp_nombre_comun="TELCEL                                                 " rowguid="EE822AC6-32AF-45BD-A50A-9DA699B5E6B9"/>
+
+<RECORD b24_emp_cve="2446" b24_emp_id_cop="8933" b24_emp_cve_cop="2446:256" b24_emp_razon_social="AVANTEL INFRAESTRUCTURA S DE RL DE CV                  " b24_emp_nombre_comun="AVANTEL INFRAESTRUCTURA                                " rowguid="0FA41840-0E09-4828-9DD0-91DC6A0B4CEC"/>
+
+<RECORD b24_emp_cve="2447" b24_emp_id_cop="8774" b24_emp_cve_cop="2447:256" b24_emp_razon_social="AVANTEL S DE RL DE CV                                  " b24_emp_nombre_comun="AVANTEL SERVICIOS LOCALES                              " rowguid="1D1DA23F-BD62-4C3F-889D-8DBC35EAEDE7"/>
+
+<RECORD b24_emp_cve="2238" b24_emp_id_cop="5411" b24_emp_cve_cop="2238:252" b24_emp_razon_social="ALESTRA S DE RL DE CV                                  " b24_emp_nombre_comun="ALESTRA                                                " rowguid="5EBB28C9-DE7F-427F-B091-797670AF66EC"/>
+
+<RECORD b24_emp_cve="2240" b24_emp_id_cop="3894" b24_emp_cve_cop="2240:123" b24_emp_razon_social="FRIGORIFICOS DEL BAJIO SA DE CV                        " b24_emp_nombre_comun="FRIGORIFICOS DEL BAJIO                                 " rowguid="D3488739-B5B4-498D-B98C-46F9859ED4DE"/>
+
+<RECORD b24_emp_cve="632" b24_emp_id_cop="902" b24_emp_cve_cop="632:256" b24_emp_razon_social="AXTEL SA B DE CV                                       " b24_emp_nombre_comun="AXTEL                                                  " rowguid="84E87E9F-01E3-42DA-B21A-02194C223F42"/>
+
+<RECORD b24_emp_cve="634" b24_emp_id_cop="475" b24_emp_cve_cop="634:084" b24_emp_razon_social="INSTITUTO DEL CARMEN AC                                " b24_emp_nombre_comun="INSTITUTO DEL CARMEN                                   " rowguid="26B21AD7-56C4-4577-9AF9-84EE9D8566FD"/>
+
+<RECORD b24_emp_cve="8963" b24_emp_id_cop="5223" b24_emp_cve_cop="8963:254" b24_emp_razon_social="COMUNICACIONES NEXTEL DE MEXICO SA DE CV               " b24_emp_nombre_comun="COMUNICACIONES NEXTEL DE MEXICO                        " rowguid="FDF6C941-90A4-4D36-B8AE-4BAA43AE519C"/>
+
+<RECORD b24_emp_cve="8965" b24_emp_id_cop="11866" b24_emp_cve_cop="8965:053" b24_emp_razon_social="COMUNICACIONES REDES Y SISTEMAS SA DE CV               " b24_emp_nombre_comun="COMUNICACIONES REDES Y SISTEMAS                        " rowguid="85ADCDA2-44FF-463D-B5C4-68A3D912645E"/>
+
+<RECORD b24_emp_cve="885" b24_emp_id_cop="905" b24_emp_cve_cop="885:256" b24_emp_razon_social="MAXCOM TELECOMUNICACIONES SA DE CV                     " b24_emp_nombre_comun="MAXCOM                                                 " rowguid="4DF15CC6-E76D-4619-8964-9DD76A24A1E2"/>
+
+<RECORD b24_emp_cve="885" b24_emp_id_cop="1562" b24_emp_cve_cop="885:2523" b24_emp_razon_social="MAXCOM TELECOMUNICACIONES SA DE CV                     " b24_emp_nombre_comun="MAXCOM COMUNUCACIONES                                  " rowguid="32E68041-DCA1-4292-BD92-43AEACA68235"/>
+
+<RECORD b24_emp_cve="887" b24_emp_id_cop="553" b24_emp_cve_cop="887:084" b24_emp_razon_social="UNIVERSIDAD TECNOLOGICA DE HERMOSILLO SONORA           " b24_emp_nombre_comun="UNIV TECNOLOGICA DE                                    " rowguid="C4214C14-B85B-4079-BD32-CE20BBEFA5F4"/>
+
+<RECORD b24_emp_cve="881" b24_emp_id_cop="155" b24_emp_cve_cop="881:052" b24_emp_razon_social="CORPORACION NOVAVISION S DE RL DE CV                   " b24_emp_nombre_comun="SKY                                                    " rowguid="CD15ECA9-A6E2-4661-AC6D-B72829071DC2"/>
+
+<RECORD b24_emp_cve="124" b24_emp_id_cop="13289" b24_emp_cve_cop="124:024" b24_emp_razon_social="MEGACABLE COMUNICACIONES SA DE CV                      " b24_emp_nombre_comun="MEGACABLE                                              " rowguid="D5BFB7A9-706C-4000-80D8-C3B917C22434"/>
+
+<RECORD b24_emp_cve="3858" b24_emp_id_cop="7911" b24_emp_cve_cop="3858:105" b24_emp_razon_social="SECRETARIA DE FINANZAS TESORERIA DEL G D F             " b24_emp_nombre_comun="SECRETARIA DE FINANZAS TESORERIA DEL GDF               " rowguid="0D961293-4CBD-4886-A790-B40AF618131E"/>
+
+<RECORD b24_emp_cve="53" b24_emp_id_cop="0" b24_emp_cve_cop="53:195" b24_emp_razon_social="JOSE SALVADOR,ROMO/CAMACHO" b24_emp_nombre_comun="FZA INMOBILIARIA CIG" rowguid="1C98D95B-3BE7-4E4F-8022-51FDE0F125E6"/>
+
+</RECORDS>

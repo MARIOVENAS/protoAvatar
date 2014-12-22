@@ -1,0 +1,2525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+</head>
+
+<body BACKGROUND="" TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+<script language="JavaScript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+<script language="JavaScript" src="../../bbAvatar/js/swap.js"></script>
+
+<script language="JavaScript" src="../../bbAvatar/js/opciones.js"></script>
+
+<style type="text/css">
+
+body{
+
+	background: transparent;
+
+}
+
+</style>
+
+<script language="JavaScript">
+
+es=new Array('Specific search','To search the electronic banking operationtransactions, select a criterion, enter  the necessary data and click "Search"','Select a criterion','Date','Date','To','Period','Transaction status',"Authorization's number  / instruction",'Search','There are no transactions for:&nbsp;','Date','Description',"Authorization's number  / instruction",'Service / Medium','Status','Balance','Next &raquo;','*The transaction query is for information purposes only, not as legal or tax official recognition');
+
+var consultaCuenta = "1";
+
+var diaActual;
+
+var Ind_Criterio;
+
+var Formato;
+
+var diasSemana;
+
+var Meses;
+
+var formatoOrdena;
+
+jQuery(document).ready(function(){	
+
+	if (language == "eng"){
+
+		var aux = new Array("What do you want to do?" , "Make tranfers", "Bill payments", "Print receipt",'Export results','Excel','Text','Select an option','Cancel','Download');
+
+		for(var i=0; i<aux.length; i++){
+
+			$("[id=f"+i+"]").each(function(){
+
+				this.innerHTML = aux[i];});
+
+		}
+
+	}
+
+	var fechaSer = new Date();
+
+	var anio = fechaSer.getFullYear();
+
+	var mes = fechaSer.getMonth();
+
+	var dia = fechaSer.getDate();
+
+	diaActual = new Date( anio, mes, dia);
+
+	Ind_Criterio = (language != "eng") ? "0" : "1";
+
+	if(isNaN(Ind_Criterio))
+
+		Ind_Criterio = 0;
+
+	Formato = (language != "eng") ? "dd/mm/yy" : "mm/dd/yy";
+
+	diasSemana = (language != "eng") ? ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'] : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+	Meses = (language != "eng") ? ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'] : ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+	formatoOrdena = (language != "eng") ? "DI" : "D";
+
+	if (language == "eng"){
+
+		var option = '<option value="DIA">By Day</option><option value="RANGO">By range of days</option>';
+
+			option += '<option value="TRANSACCION">By transaction</option><option value="PERIODO">By period</option>';
+
+		var option1 = '<option value="00">All</option><option value="03">Applied</option><option value="09">Instructions received</option>';
+
+			option1 += '<option value="05">Rejected</option><option value="07">Rejection due to cancellation</option>';
+
+			option1 += '<option value="08">Cancelled without applying</option><option value="10">Cancelled by request</option>';
+
+		$("#comboCriterio").html('');
+
+		$("#comboCriterio").append(option);
+
+		$("#comboTransaccion").html('');
+
+		$("#comboTransaccion").append(option1);
+
+	}
+
+	$("#diaActual").val(diaActual.getDate()+'|'+diaActual.getMonth()+'|'+diaActual.getYear());
+
+	mostrarCriterios();
+
+	crearComboPeriodo();
+
+	crearCalendarios();
+
+	$("#comboCriterio").change(function(){
+
+		limpiarErrores();
+
+		mostrarCriterios();
+
+		crearComboPeriodo();
+
+		crearCalendarios();
+
+	});
+
+});
+
+$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);leerDatos();setTimeout('window.parent.ajustarIframe()', 1000);});
+
+function mostrarCriterios(){
+
+	$("#comboDiaInicio").hide();
+
+	$("#comboDiaFin").hide();
+
+	$("#comboPeriodo").hide();
+
+	$("#comboEstatus").hide();
+
+	$("#comboAutorizacion").hide();
+
+	if (consultaCuenta != 0)
+
+		$("#comboCriterio option[value='"+statusdemo+"']").attr("selected","selected");
+
+	var criterio = $("#comboCriterio option:selected").val();
+
+	switch(criterio){
+
+		case "DIA":
+
+			$("#comboDiaInicio").show();
+
+			$("#comboEstatus").show();
+
+			break;
+
+		case "RANGO":
+
+			$("#comboDiaInicio").show();
+
+			$("#comboDiaFin").show();
+
+			$("#comboEstatus").show();
+
+			break;
+
+		case "TRANSACCION":
+
+			$("#comboDiaInicio").show();
+
+			$("#comboAutorizacion").show();
+
+			break;
+
+		case "PERIODO":
+
+			$("#comboPeriodo").show();
+
+			$("#comboEstatus").show();
+
+			break;
+
+	}
+
+}
+
+function crearComboPeriodo(){
+
+	var dia = new Date();
+
+	var mes = dia.getMonth() + 1;
+
+	var anio = dia.getFullYear();
+
+	var meses = (language != "eng") ? ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"] :  ["","January","February","March","April","May","June","July","August","September","October","November","December"];
+
+	var periodoActual = meses[mes] + "  " + anio;
+
+	var periodoAnterior = meses[mes-1] + "  " + anio;
+
+	$("#periodo option:eq(0)").text(periodoActual);
+
+	$("#periodo option:eq(1)").text(periodoAnterior);
+
+	if(consultaCuenta != 0){
+
+		$("#periodo option[value='"+dataarray[3]+"']").attr("selected","selected");
+
+		$("#comboTransaccion option[value='"+dataarray[0]+"']").attr("selected","selected");
+
+		$("#inputAutorizacion").val("999999");
+
+	}else{
+
+		$("#periodo option[value='"+dataarray[3]+"']").attr("selected","selected");
+
+	}
+
+}
+
+function validarCriterios(){
+
+	msj1 = (language != "eng") ? "Selecciona una fecha" : "Select a date";
+
+	msj2 = (language != "eng") ? "El campo debe ser num&eacute;rico" : "The field must be numeric";
+
+	var criterio = $("#comboCriterio").val();
+
+	var flagCorrecto = true;
+
+	switch(criterio){
+
+		case "DIA":
+
+			if(!Campo_Vacio("fecInicio",msj1,"SI"))
+
+				flagCorrecto = false;
+
+			break;	
+
+		case "RANGO":
+
+			if(!Campo_Vacio("fecInicio",msj1,"SI"))
+
+				flagCorrecto = false;
+
+			if(flagCorrecto){
+
+				if(!Campo_Vacio("fecFin",msj1,"SI"))
+
+				flagCorrecto = false;
+
+			}
+
+			break;
+
+		case "TRANSACCION":
+
+			if(!Campo_Vacio("fecInicio",msj1,"SI"))
+
+				flagCorrecto = false;
+
+			if(!Valida_Caracteres ("inputAutorizacion","",1,"SI",msj2))
+
+				flagCorrecto = false;
+
+		case "PERIODO":
+
+			break;			
+
+	}
+
+	if(flagCorrecto){
+
+		$("#t9").attr("disabled","disabled");
+
+		var estadoActual = $("#Estado").val();
+
+		var regresa = '';
+
+		switch(estadoActual){
+
+			case "INICIO":
+
+				regresa = "INICIO";
+
+				break;
+
+			case "GENERAL":
+
+				if($("#comboCriterio").val() == "TRANSACCION")
+
+					regresa = "INICIO";
+
+				else
+
+					regresa = "GENERAL";
+
+				break;
+
+		}
+
+		parent.document.getElementById("REGRESADEMO").value=$("#comboCriterio").val();
+
+		parent.document.getElementById("DATADEMO").value=$("#comboTransaccion").val()+"|"+$("#fecInicio").val()+"|"+$("#fecFin").val()+"|"+$("#periodo").val()+"|"+$("#inputAutorizacion").val();
+
+		parent.cargaDocN('Consulta de operaciones/historial_todas.html');
+
+	}else{
+
+		window.parent.ajustarIframe();
+
+	}
+
+}
+
+function validaCampoVacio(object){
+
+	if($(object).val() != ""){
+
+		$('.'+$(object).attr('id')+'_div_error span').hide();
+
+		$('.'+$(object).attr('id')+'_div_error').slideUp('fast');
+
+		return true;
+
+	}else{
+
+		$('.'+$(object).attr('id')+'_div_error').slideDown('fast', 
+
+			function(){
+
+				$('.'+$(object).attr('id')+'_div_error span').show();
+
+			}
+
+		)
+
+		return false;
+
+	}
+
+}
+
+function limpiarErrores(){
+
+	$("#fecFin").val('');
+
+	$("#fecInicio").val('');
+
+	$("#inputAutorizacion").val('');
+
+	$("div[id$='error']").hide();
+
+	$("div[class$='div_error']").each(function(){
+
+		$(this).find('span').hide();
+
+		$(this).slideUp('fast');
+
+	});
+
+}
+
+function ordenaTabla(tabla,columna){
+
+	var SortString;
+
+	if($("#btnFecha").hasClass("saldos_btn6")){
+
+		SortString = columna + '~' + tabla + '~D~'+formatoOrdena;
+
+	}else{
+
+		SortString = columna + '~' + tabla + '~A~'+formatoOrdena;
+
+	}
+
+}
+
+function crearCalendarios(){
+
+	var fecInicio = dataarray[1];
+
+	var fecFin = dataarray[2];
+
+	EliminarCal("#fecFin");
+
+	EliminarCal("#fecInicio");
+
+	if(consultaCuenta != 0){
+
+		if($("#comboCriterio").val() == 'RANGO'){
+
+			diaInicial = operarDias(fecInicio, '+', 1);
+
+			diaFinal = operarDias(diaActual, '-', 0);
+
+			CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaFinal, 30, '', 0);
+
+			CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, diaInicial, diaFinal, 30, '', 0);
+
+			$("#fecFin").datepicker("enable");
+
+		}else if($("#comboCriterio").val() == 'DIA' || $("#comboCriterio").val() == 'TRANSACCION'){
+
+			CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaActual, 30, '', 0);
+
+			CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, 30, diaActual, 30, '', 0);
+
+			$("#fecFin").datepicker("disable");
+
+		}		
+
+		$("#fecInicio").val(fecInicio);
+
+		$("#fecFin").val(fecFin);	
+
+		consultaCuenta = 0;
+
+	}else{
+
+		CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, 30, diaActual, 30, '', 0);
+
+		CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, 30, diaActual, 30, '', 0);
+
+		$("#fecFin").datepicker("disable");
+
+	}
+
+	$("#fecInicio").change(function(){
+
+		EliminarCal("#fecFin");
+
+		diaInicial2 = operarDias($(this).val(), '+', 1);
+
+		if(diaInicial2.getMonth() == diaActual.getMonth() && diaInicial2.getDate() == diaActual.getDate())
+
+			diaInicial = operarDias($(this).val(), '+', 0);
+
+		else
+
+			diaInicial = operarDias($(this).val(), '+', 0);
+
+		diaFinal = diaActual;
+
+		CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, diaInicial, diaFinal, 30, '', 0);
+
+		$("#fecFin").datepicker("enable");
+
+	});
+
+}
+
+function HabilitarCal(Element){
+
+	$(Element).datepicker("enable");
+
+}
+
+function InhabilitarCal(){
+
+	$(Element).datepicker("disable");
+
+}
+
+function operarDias(fecha, signo, dias){
+
+	if(typeof(fecha) == 'string'){
+
+		var stringDiaInicio = fecha.split('/');
+
+		if(Formato == 'dd/mm/yy'){
+
+			var dia = parseFloat(stringDiaInicio[0]);
+
+			var mes = parseFloat(stringDiaInicio[1])-1;
+
+			var anio = parseFloat(stringDiaInicio[2]);
+
+		}else{
+
+			var dia = parseFloat(stringDiaInicio[1]);
+
+			var mes = parseFloat(stringDiaInicio[0])-1;
+
+			var anio = parseFloat(stringDiaInicio[2]);
+
+		}
+
+	}else{
+
+		var dia = fecha.getDate();
+
+		var mes = fecha.getMonth();
+
+		var anio = fecha.getFullYear();
+
+	}
+
+	if(signo == '+')
+
+		var diaInicio = new Date(anio,mes,dia + dias);
+
+	else
+
+		var diaInicio = new Date(anio,mes,dia - dias);
+
+	return diaInicio;
+
+}
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+function AnioActualValido(anio,mensaje){
+
+    hoy=new Date();
+
+    anioactual=hoy.getYear();  
+
+    if(anio.value!=anioactual){
+
+        anio.focus();
+
+        return false;
+
+    }else{
+
+        return true;
+
+    }
+
+
+
+}
+
+function ConsultaOperaciones(){
+
+	mens1 = (language != "eng") ? "Se requiere indicar tipo de consulta a realizar." : "The type of Inquiry to be performed must be indicated.";
+
+	mens2 = (language != "eng") ? "Para las opciones por d\u00EDa y por transacci\u00F3n se requiere capturar fecha." : "The date must be keyed in for the Per Day and Per Transaction Option."; 
+
+	mens5 = (language != "eng") ? "Para la opción Por D\u00EDa no se requiere n\u00FAmero de autorizaci\u00F3n." : "The authorization number is not required for the Per Day Option.";
+
+	mens6 = (language != "eng") ? "Se necesita indicar el estatus de la consulta." : "The status of the inquiry must be indicated.";
+
+	mens7 = (language != "eng") ? "Para la operaci\u00F3n por trasacción se requiere un n\u00FAmero de autorizaci\u00F3n." : "The authorization number, is required for the per transaction option.";
+
+	mens8 = (language != "eng") ? "Para la opci\u00F3n mes actual o mes anterior no se requiere capturar la fecha de aplicaci\u00F3n." : "There is not need to key in the Application Date for the Current Month or Prior Month option.";
+
+	mens9 = (language != "eng") ? "Para la opci\u00F3n mes actual o mes anterior no se requiere capturar el n\u00FAmero de autorizaci\u00F3n." : "There is not need to key in the Authorization Number for the Current Month or Prior Month option.";
+
+	mens10 = (language != "eng") ? "Si su consulta es por transacci\u00F3n no especifique el estatus." : "In your inquired per transaction, do not specify status.";
+
+	mens11 = (language != "eng") ? "Error en el N\u00FAmero de Autorizaci\u00F3n, los datos deben ser numericos." : "Error in the Authorization Number, the data must be numerical.";   
+
+    if(Combo_Vacio(document.forms[0].DATA1,mens1,"SI") == true){
+
+        return;
+
+    }
+
+    if(document.forms[0].DATA1.value=="TRANSACCION" || document.forms[0].DATA1.value=="DIA"){
+
+        if(document.forms[0].DATA3.value=="PS" || document.forms[0].DATA4.value=="PS"){           
+
+            document.forms[0].DATA3.focus();
+
+            return;
+
+         } 
+
+    }
+
+    if(document.forms[0].DATA1.value=="DIA" && document.forms[0].DATA6.value!=""){       
+
+        document.forms[0].DATA6.value="";
+
+        document.forms[0].DATA6.focus();
+
+        document.forms[0].DATA6.select();
+
+        return;
+
+    }
+
+    if(document.forms[0].DATA1.value=="DIA" || document.forms[0].DATA1.value=="MES ACTUAL" || document.forms[0].DATA1.value=="MES ANTERIOR"){
+
+        if(document.forms[0].DATA2.value=="PS"){
+
+            alert(mens6);
+
+            document.forms[0].DATA2.focus();
+
+            return;
+
+        }
+
+        if(document.forms[0].DATA6.value!=""){
+
+            alert(mens9);
+
+            document.forms[0].DATA6.value="";
+
+            document.forms[0].DATA1.focus();
+
+            return;
+
+        }
+
+    }
+
+    if(document.forms[0].DATA1.value=="TRANSACCION"){
+
+         if(document.forms[0].DATA6.value==""){
+
+             alert(mens7);
+
+             document.forms[0].DATA6.focus();
+
+             document.forms[0].DATA6.select();
+
+             return;
+
+         }else{
+
+            if(Valida_Caracteres(document.forms[0].DATA6,"","1","SI",mens11) == false){   
+
+                 return;}
+
+         }
+
+         if(document.forms[0].DATA2.value!="PS"){
+
+             alert(mens10);
+
+             document.forms[0].DATA2[0].selected=true;      
+
+             document.forms[0].DATA1.focus();
+
+             return;
+
+        }
+
+   }
+
+    if((document.forms[0].DATA1.value=="MES ACTUAL" || document.forms[0].DATA1.value=="MES ANTERIOR") && (document.forms[0].DATA3.value!="PS" && document.forms[0].DATA4.value!=""))
+
+    {
+
+		alert(mens8);
+
+		document.forms[0].DATA3[0].selected=true;      
+
+		document.forms[0].DATA4[0].selected=true;      
+
+		document.forms[0].DATA1.focus();
+
+		return;
+
+    }
+
+}
+
+function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/
+
+  var valMail = $("#"+idCampo, contexto ).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"", contexto ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function curpValido( idTxt ) {
+
+  var regexCurp;
+
+  var valCurp = $( "#"+idTxt+"" ).val();
+
+  regexCurp = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[0-9]{2}$/;
+
+  return regexCurp.test( valCurp );
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function showError( idElem, msgErr, contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'', contexto ).after( $divErr );
+
+}
+
+
+
+function hideErrors( contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display', contexto).remove();
+
+}
+
+
+
+function toggleChecks( idChecken, idCheckdis ) {
+
+  var flag =  $('#'+idChecken).is(':checked');
+
+  $('#'+idChecken).attr('disabled', false);
+
+  $('#'+idCheckdis).attr('disabled', flag);
+
+  $('#'+idCheckdis).attr('checked', false);
+
+  $('#msgFrec').show();
+
+  window.parent.ajustarIframe();
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+</script>
+
+<div class="saldos_bloque2">
+
+	<div class="saldos_bloque2_f1">
+
+		<div class="saldos_bloque2_f1_btn" id="saldosbtn1" onclick="desplegable('saldosbtn1', 'saldosConte1', 0);"><div class="cortinabtnSaldos bge2f2fe"></div></div>
+
+		<div id="t0" class="saldos_bloque2_f1_txt">B&uacute;squeda&nbsp;espec&iacute;fica</div>
+
+	</div>
+
+	<div class="expand floatL" id="saldosConte1">
+
+		<div class="saldos_bloque2_f2 floatL clear">
+
+			<div id="t1" class="saldos_bloque2_f2_txt">Para&nbsp;realizar&nbsp;una&nbsp;b&uacute;squeda&nbsp;de los movimientos por banca electr&oacute;nica, selecciona un criterio, indica los datos necesarios y da clic en &#8220;Buscar&#8221;</div>
+
+		</div>
+
+		<div class="saldos_bloque2_f3">
+
+			<div class="ancho100p overflow">
+
+				<div class="saldos_bloque2_f3in clear">       
+
+					<div class="saldos_bloque2_f4">
+
+						<div id="t2" class="saldos_bloque2_f4_txt">Selecciona un criterio</div>
+
+						<div class="saldos_bloque2_f4_inp">
+
+							<select name="DATA1" id="comboCriterio" class="ancho170">
+
+								<option value="DIA">Por d&iacute;a</option>
+
+								<option value="RANGO">Por rango de d&iacute;as</option>
+
+								<option value="TRANSACCION">Por movimiento</option>
+
+								<option value="PERIODO">Por periodo</option>
+
+							</select>
+
+						</div>
+
+					</div>
+
+					<div class="saldos_bloque2_f5_2 ancho140" id="comboDiaInicio" style="display:none;">
+
+						<div id="t3" class="saldos_bloque2_f4_txt">Fecha</div>
+
+						<div class="saldos_bloque2_f4_inp2 calendario">
+
+							<input name="DATA2" type="text" id="fecInicio" class="yearpicker" readonly="readonly" />
+
+							<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" />
+
+							<div id="fecInicio_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+						</div>
+
+					</div>
+
+					<div class="saldos_bloque2_f5_2" id="comboDiaFin" style="display:none;">
+
+						<div id="t4" class="saldos_bloque2_f4_txt" style="margin-left:22px;">Fecha</div>
+
+						<div class="saldos_bloque2_f4_inp2 calendario"><span id="t5" class="marginR10 color666 floatL">Al</span>
+
+							<input name="DATA3" type="text" id="fecFin" class="yearpicker" readonly="readonly" />
+
+							<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" />
+
+							<div id="fecFin_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+						</div>
+
+					</div>
+
+					<div class="saldos_bloque2_f5_2" id="comboPeriodo">
+
+						<div id="t6" class="saldos_bloque2_f4_txt">Periodo</div>
+
+						<div class="saldos_bloque2_f4_inp">
+
+							<select id="periodo" name="DATA4" class="ancho170">
+
+								<option value="MES ACTUAL"></option>
+
+								<option value="MES ANTERIOR"></option>
+
+							</select>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="saldos_bloque2_f3in clear">
+
+				<div class="saldos_bloque2_f4" id="comboEstatus">
+
+					<div id="t7" class="saldos_bloque2_f4_txt">Estatus del movimiento</div>
+
+					<div class="saldos_bloque2_f4_inp">
+
+						<select id="comboTransaccion" name="DATA5" class="ancho170">
+
+							<option value="00">Todas</option>
+
+							<option value="03">Aplicadas</option>
+
+							<option value="09">Instrucciones Recibidas</option>
+
+							<option value="05">Rechazadas</option>
+
+							<option value="07">Canceladas por Rechazo</option>
+
+							<option value="08">Canceladas sin Aplicar</option>
+
+							<option value="10">Canceladas por Petici&oacute;n</option>
+
+						</select>
+
+					</div>
+
+				</div>
+
+				<div class="saldos_bloque2_f4" id="comboAutorizacion">
+
+					<div id="t8" class="saldos_bloque2_f4_txt clear">N&uacute;mero de autorizaci&oacute;n o instrucci&oacute;n</div>
+
+					<div class="saldos_bloque2_f4_inp clear">
+
+						<input class="input ancho238" type="text" id="inputAutorizacion" maxlength="16" name="DATA6"/>
+
+					</div>
+
+					<div id="inputAutorizacion_error" class="saldos_bloque2_f4_error_display_blanco  clear"><span>Introduce n&uacute;mero de autorizaci&oacute;n</span></div>
+
+				</div>
+
+			</div>
+
+			<div class="saldos_bloque2_f6">
+
+				<div class="saldos_bloque2_f4_txt">&nbsp;&nbsp;</div>
+
+				<div class="saldos_bloque2_f6_inp">
+
+					<input id="t9" type="button" name="btnBuscar" value="Buscar" class="btnAZ86" onclick="validarCriterios()" />
+
+				</div>
+
+			</div>	
+
+		</div>
+
+	</div>        
+
+</div>
+
+<div id="divNoMovs" class="saldos_bloque3_rojo alto16 displayN">
+
+	<div id="t10" class="floatL">No se encontraron movimientos para:&nbsp;</div><div id="mensaje" class="floatL"></div>
+
+</div>
+
+<script language="JavaScript">
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+function replaceLabelConsult(id1,id2)
+
+ {
+
+	if(language == "eng")	
+
+		var leyenda = new Array('Numeric reference', 'Payment Concept', 'Numeric reference','Alphanumeric reference');
+
+	else
+
+		var leyenda = new Array('N&uacute;mero de Referencia', 'Concepto de Pago', 'Referencia num&eacute;rica', 'Referencia alfanum&eacute;rica');				
+
+	$(id1).html('<span>' + leyenda[2] + '<\span>');
+
+	$(id2).html('<span>' + leyenda[3] + '<\span>');
+
+	$(".PagoInterbancario").hide();
+
+    $(".PagoInterbancariom").hide();	
+
+}
+
+function Inversion() {      
+
+	vacio = "";
+
+    bandera = false;
+
+	mens4 = (language != "eng") ? "La Firma Digital debe ser numerica" : "The digital sign ought to be numeric"; 
+
+	mens3 = (language != "eng") ? "Digite un valor en el campo importe" : "Enter a value in the AMOUNT field"; 
+
+	mens2 = (language != "eng") ? "Seleccione algún tipo de inversión" : "Please, chose one kind of investment"; 
+
+	mens1 = (language != "eng") ? "Seleccione alguna de las opciones disponibles" : "Please, chose one of the possible options";
+
+    mens5 = (language != "eng") ? "Seleccione el dia" : "Please, select the day";
+
+	mens6 = (language != "eng") ? "Sleccione el mes" : "Please, select the month";
+
+    if(!RdioChk_Vacio(document.forms[0].DATA1, mens1, "SI")) {
+
+        if(!Combo_Vacio(document.forms[0].DATA2, mens2, "SI")) { 
+
+          if(Verifica_CampoVacio(document.forms[0].DATA3, mens3, "SI")) {       
+
+            bandera=true;
+
+          }
+
+        }
+
+    }
+
+    if(bandera == true) {
+
+        if(Verifica_CampoVacio(document.forms[0].DATA4, "NO")) {  
+
+          if(Valida_Caracteres(document.forms[0].DATA4,vacio,1,"NO",mens4)) {
+
+            bandera=true;				               
+
+          } else {
+
+              bandera = false;
+
+            }
+
+        } else {
+
+              bandera = true;
+
+          }
+
+    }
+
+    if(bandera == true) { 
+
+        if(!Verifica_Combos_Vacios(document.forms[0].DATA5, 
+
+	          document.forms[0].DATA6, mens5, mens6)) {
+
+        }
+
+    }
+
+}
+
+es=new Array('Specific search','To search the electronic banking operationtransactions, select a criterion, enter  the necessary data and click "Search"','Select a criterion','Date','Date','To','Period','Transaction status',"Authorization's number  / instruction",'Search','There are no transactions for:&nbsp;','Electronic banking transaction details',"Transaction's name","Request's date","Approval or instruction's date","Authorization's number  / instruction",'Status','Service / Medium','Balance','Numeric reference','Alphanumeric reference','Exchange rate',"Executive's ID","Executive's name","Executive's ID","Executive's name",'Cancellation details','Service / Medium','Branch','Date','Operator','Origin account','Destination account','Type','Branch','Account','Instrument type','Amount - currency','Return','Bank', 'Tracking Code', 'Applied Instruction', 'Liquidated Instruction');
+
+jQuery(document).ready(function(){
+
+	$("#tablaDinamica0").find("td.contenidoTd").each(function(){
+
+		if($.trim($(this).html()) == '' || $.trim($(this).html()) == '-'){
+
+			$(this).parent().hide();
+
+		}
+
+	});
+
+	$("#tablaDinamica1").find("td.contenidoTd").each(function(){
+
+		if($.trim($(this).html()) == '' || $.trim($(this).html()) == '-' || $.trim($(this).html()) == '000000'){
+
+			$(this).parent().hide();
+
+		}
+
+	});
+
+	var contDatosCanc = 0;
+
+	$("#tablaDinamica2").find("td.contenidoTd").each(function(){
+
+		if($.trim($(this).html()) == '' || $.trim($(this).html()) == '-'){
+
+			$(this).parent().hide();
+
+		}else{
+
+			contDatosCanc += 1;
+
+		}
+
+	});
+
+	
+
+	if(contDatosCanc == 0){
+
+		$(".datosCanc").css("color",$("#datosCanc").parent().css("background-color"));
+
+		$(".datosCanc").html('');
+
+	}
+
+	replaceLabelConsult('#t19', '#t20');
+
+});
+
+var mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+$(document).ready(
+
+	function ()
+
+	{
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+				catch(e){}
+
+			}
+
+		)	
+
+	}
+
+)
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+	var hora = fecha.substring(10);
+
+	var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+	return fechaformateada + hora;
+
+}
+
+function formato_ddMMMaaaa(fecha){
+
+	fecha = fecha.replace(/\-/gi," ");
+
+	var conversion = (fecha.substring(4,6)).toLowerCase();
+
+	var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+	return fechaformateada;
+
+}
+
+function formato_ddemesdeaaaa(Fecha)
+
+{
+
+	var mesIngles="";
+
+	var fechaFormateada="";
+
+	var fec="24/04/2012";
+
+	var splitFecha=fec.split(' ');
+
+	if(splitFecha[0].length==1)
+
+	{
+
+		splitFecha[0]="0"+splitFecha[0];
+
+	}
+
+	if(language != "eng")
+
+	{
+
+		fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+	}
+
+	else
+
+	{
+
+		if(splitFecha[2]=="Enero")
+
+			{mesIngles="Jan";}
+
+		if(splitFecha[2]=="Febrero")
+
+			{mesIngles="Feb";}
+
+		if(splitFecha[2]=="Marzo")
+
+			{mesIngles="Mar";}
+
+		if(splitFecha[2]=="Abril")
+
+			{mesIngles="Apr";}
+
+		if(splitFecha[2]=="Mayo")
+
+			{mesIngles="May";}
+
+		if(splitFecha[2]=="Junio")
+
+			{mesIngles="Jun";}
+
+		if(splitFecha[2]=="Julio")
+
+			{mesIngles="Jul";}
+
+		if(splitFecha[2]=="Agosto")
+
+			{mesIngles="Aug";}
+
+		if(splitFecha[2]=="Septiembre")
+
+			{mesIngles="Sep";}
+
+		if(splitFecha[2]=="Octubre")
+
+			{mesIngles="Oct";}
+
+		if(splitFecha[2]=="Noviembre")
+
+			{mesIngles="Nov";}
+
+		if(splitFecha[2]=="Diciembre")
+
+			{mesIngles="Dec";}
+
+		fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+	}
+
+	return fechaFormateada;
+
+}
+
+function formato_dddemesdeaaaa(Fecha)
+
+{
+
+	var mesIngles="";
+
+	var fechaFormateada="";
+
+	var fec="[Fecha]";
+
+	var splitFecha=fec.split(' ');	
+
+	if(language != "eng")
+
+	{
+
+		fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+	}
+
+	else
+
+	{
+
+		if(splitFecha[2]=="Enero")
+
+			{mesIngles="Jan";}
+
+		if(splitFecha[2]=="Febrero")
+
+			{mesIngles="Feb";}
+
+		if(splitFecha[2]=="Marzo")
+
+			{mesIngles="Mar";}
+
+		if(splitFecha[2]=="Abril")
+
+			{mesIngles="Apr";}
+
+		if(splitFecha[2]=="Mayo")
+
+			{mesIngles="May";}
+
+		if(splitFecha[2]=="Junio")
+
+			{mesIngles="Jun";}
+
+		if(splitFecha[2]=="Julio")
+
+			{mesIngles="Jul";}
+
+		if(splitFecha[2]=="Agosto")
+
+			{mesIngles="Aug";}
+
+		if(splitFecha[2]=="Septiembre")
+
+			{mesIngles="Sep";}
+
+		if(splitFecha[2]=="Octubre")
+
+			{mesIngles="Oct";}
+
+		if(splitFecha[2]=="Noviembre")
+
+			{mesIngles="Nov";}
+
+		if(splitFecha[2]=="Diciembre")
+
+			{mesIngles="Dec";}
+
+				
+
+			fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+	}
+
+	return fechaFormateada;
+
+}	
+
+function formato_ddmmaaaaEBSJS(fecha)
+
+{
+
+	var indice;
+
+	var fechaAux;
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+	if(indice!=-1)
+
+	{
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if(language != "eng")
+
+		{
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}	else
+
+		{
+
+			mesFecha=fechaAux.substring(0,2);
+
+				if(mesFecha=="01")
+
+					{mesFecha1="Jan";}
+
+				if(mesFecha=="02")
+
+					{mesFecha1="Feb";}
+
+				if(mesFecha=="03")
+
+					{mesFecha1="Mar";}
+
+				if(mesFecha=="04")
+
+					{mesFecha1="Apr";}
+
+				if(mesFecha=="05")
+
+					{mesFecha1="May";}
+
+				if(mesFecha=="06")
+
+					{mesFecha1="Jun";}
+
+				if(mesFecha=="07")
+
+					{mesFecha1="Jul";}
+
+				if(mesFecha=="08")
+
+					{mesFecha1="Aug";}
+
+				if(mesFecha=="09")
+
+					{mesFecha1="Sep";}
+
+				if(mesFecha=="10")
+
+					{mesFecha1="Oct";}
+
+				if(mesFecha=="11")
+
+					{mesFecha1="Nov";}
+
+				if(mesFecha=="12")
+
+					{mesFecha1="Dec";}
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+	}
+
+	return fechaFormateada;
+
+}
+
+function formateaFechaBB(formato, fecha)
+
+{		
+
+	fechaFormateada="";
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+	if(fecha != '' &&  fecha != '&nbsp;'){	
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if(language == "eng")
+
+							fechaFormateada = fecha.substring(3,5) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(0,2), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+</script>
+
+<input type="hidden" id="Estado" value="DETALLE">
+
+<div class="saldos_bloque3">
+
+	<div class="panelIzEnca3_text2">
+
+		<div id="t11" class="panelIzEnca3_text2">Detalle del movimiento de Banca Electr&oacute;nica</div>
+
+	</div>
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT20">
+
+		<tr>
+
+			<td class="paddingR15 ancho50p paddingL0 paddingT0" valign="top">
+
+				<table id="tablaDinamica0" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 pinta1">
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t12">Nombre de la transacci&oacute;n</span></td>
+
+						<td id="nombretran" class="ancho50p contenidoTd">PAGO TC A TC</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t13">Fecha de solicitud</span></td>
+
+						<td id="fechatran" class="ancho50p contenidoTd" name = "FECHA_BNP_ddmmaaaa_hhmm">24/04/2012 - 11:21</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t14">Fecha de autorizaci&oacute;n / instrucci&oacute;n</span></td>
+
+						<td id="fechaautotran" class="ancho50p contenidoTd" name = "FECHA_BNP_ddmmaaaa_hhmm">24/04/2012 - 11:21</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t15">N&uacute;mero de autorizaci&oacute;n / instrucci&oacute;n</span></td>
+
+						<td id="numtran"class="ancho50p contenidoTd">3062</td>
+
+					</tr>
+
+					<tr class="PagoInterbancario">
+
+						<td class="borderRSolid ancho50p"> <span id="t39">Banco</span></td>
+
+						<td class="ancho50p"></td>
+
+					</tr>					
+
+                    <tr class="PagoInterbancariom">
+
+						<td class="borderRSolid ancho50p"><span id="t40">Clave de Rastreo</span></td>
+
+						<td class="ancho50p"></td>
+
+					</tr>
+
+                    <tr class="PagoInterbancariom">
+
+						<td class="borderRSolid ancho50p"><span id="t41">Instrucci&oacute;n Aplicada</span></td>
+
+						<td class="ancho50p"></td>
+
+					</tr>
+
+                    <tr class="PagoInterbancariom">
+
+						<td class="borderRSolid ancho50p"><span id="t42">Instrucci&oacute;n Liquidada</span></td>
+
+						<td class="ancho50p"></td>
+
+					</tr>					
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t16">Estatus</span></td>
+
+						<td id="statustran"class="ancho50p contenidoTd">APLICADA</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t17">Servicio / Medio</span></td>
+
+						<td class="ancho50p contenidoTd">BCO/CASA INTERNET</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t18">Importe</span></td>
+
+						<td id="importetran" class="ancho50p contenidoTd">$665.50</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid  ancho50p"><span id="t19">Referencia num&eacute;rica</span></td>
+
+						<td class="ancho50p contenidoTd">12345678</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t20">Referencia alfanum&eacute;rica</span></td>
+
+						<td class="ancho50p contenidoTd">ref2</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t21">Tipo de cambio</span></td>
+
+						<td class="ancho50p contenidoTd"></td>
+
+					</tr>
+
+				</table>
+
+			</td>
+
+			<td class="paddingL15 paddingT0 paddingR0" valign="top">
+
+				<table id="tablaDinamica1" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 pinta1 displayN">
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t22">ID de ejecutivo 1</span></td>
+
+						<td class="ancho50p contenidoTd"></td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t23">Nombre de ejecutivo 1</span></td>
+
+						<td class="contenidoTd"></td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t24">ID de ejecutivo 2</span></td>
+
+						<td class="ancho50p contenidoTd"></td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t25">Nombre de ejecutivo 2</span></td>
+
+						<td class="ancho50p contenidoTd"></td>
+
+					</tr>
+
+				</table>
+
+				<table id="tablaDinamica2" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT20 pinta2 displayN">
+
+					<tr>
+
+						<td colspan="2"><span id="t26" class="datosCanc">Datos de cancelaci&oacute;n</span></td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t27">Servicio / medio</span></td>
+
+						<td class="ancho50p contenidoTd"></td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t28">Sucursal</span></td>
+
+						<td class="contenidoTd ancho50p"></td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t29">Fecha</span></td>
+
+						<td class="ancho50p contenidoTd" name = "FECHA_BNP_ddmmaaaa_hhmm"> - </td>
+
+					</tr>
+
+					<tr>
+
+						<td class="borderRSolid ancho50p"><span id="t30">Operador</span></td>
+
+						<td class="contenidoTd ancho50p"></td>
+
+					</tr>
+
+				</table>
+
+			</td>	                        
+
+		</tr>
+
+	</table> 
+
+	<table width="75%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT20" id="tblDetallesMov">
+
+		<tr>
+
+			<td class="borderRSolid ancho33p">&nbsp;</td>
+
+			<td class="borderRSolid ancho33p"><span id="t31">Cuenta origen</span></td>
+
+			<td><span id="t32">Cuenta destino</span></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="borderRSolid bgF1F2F2"><span id="t33">Tipo</span></td>
+
+			<td class="borderRSolid bgF1F2F2 CARGO"></td>
+
+			<td class="bgF1F2F2 ABONO"></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="borderRSolid"><span id="t34">Sucursal</span></td>
+
+			<td class="borderRSolid CARGO"></td>
+
+			<td class="ABONO"></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="borderRSolid bgF1F2F2"><span id="t35">Cuenta</span></td>
+
+			<td class="borderRSolid  bgF1F2F2 CARGO"></td>
+
+			<td class="bgF1F2F2 ABONO"></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="borderRSolid"><span id="t36">Tipo de instrumento</span></td>
+
+			<td class="borderRSolid CARGO"></td>
+
+			<td class="ABONO"></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="borderRSolid bgF1F2F2"><span id="t37">Importe - Moneda</span></td>
+
+			<td class="borderRSolid bgF1F2F2 CARGO"></td>
+
+			<td class="bgF1F2F2 ABONO"></td>
+
+		</tr>
+
+	</table>   
+
+</div>
+
+<div class="saldos_regresar">
+
+	<div>&laquo;&nbsp;</div>
+
+	<div class="paddingT2"><a id="t38" href="javascript:void(0)" onclick="parent.todas()">Regresar</a></div>
+
+</div>
+
+<div class="marginT37 bloqueQueHacer">
+
+	<table cellspacing="0" cellpadding="0" border="0" width="100%" class="tablaQueHacer">
+
+		<tbody><tr>
+
+			<td class=" ancho20p"><p id="f0">&iquest;Qu&eacute; deseas hacer?</p></td>
+
+			<td class="ancho26p"><span>&raquo;&nbsp;</span><a id="f1" href="#" onClick="javascript:top.open('../../30-Transferencias_pagos.html?ifrContenedor=1&link=t27' , '_self')">Realizar transferencias</a></td>
+
+			<td class="ancho26p"><span>&raquo;&nbsp;</span><a id="f2" href="#" onClick="javascript:top.open('../../30-Transferencias_pagos.html?ifrContenedor=3&link=t34' , '_self')">Hacer pago de servicios</a></td>
+
+			<td class="ancho26p"><span>&raquo;&nbsp;</span><a id="f3" href="#" onClick="javascript:top.banca()">Imprimir comprobantes</a></td>
+
+		</tr>
+
+	</tbody></table>        	
+
+</div>
+
+<input type="hidden" id="diaActual" value="vacio"/>
+
+<script>
+
+var datos = '';
+
+datos += 'CARGO-CHQS-4337-155-N/A-$665.50-M N|';
+
+datos += 'ABONO-CHQS-0-899-N/A-$665.50-|';
+
+var desMoneda = '';
+
+jQuery(document).ready(function(){
+
+	datos = datos.split('|');
+
+	var datosTemp;
+
+	var numCampos = 5;
+
+	for(i=0;i<datos.length-1;i++){
+
+		datosTemp = datos[i].split('-');
+
+		for(j=1;j<=5;j++){
+
+			if(j==5){
+
+				if(datosTemp[j+1] == 'M N')
+
+					desMoneda = 'MXN';
+
+				else
+
+					desMoneda = 'USD';
+
+				$("#tblDetallesMov tr:eq("+j+") td."+datosTemp[0]).html(datosTemp[j]+' '+desMoneda);
+
+			}else{
+
+				$("#tblDetallesMov tr:eq("+j+") td."+datosTemp[0]).html(datosTemp[j]);
+
+			}
+
+		}
+
+	}
+
+});
+
+var statusdemo = ""; var dataarray = new Array();
+
+function formateaFecha(fecha){
+
+	var Meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+	var tmp = fecha.split("/");
+
+	return tmp[0] + " " + Meses[tmp[1]-1] + " " + tmp[2]; 
+
+}
+
+function leerDatos(){
+
+	statusdemo = parent.document.getElementById("REGRESADEMO").value; 
+
+	dataarray = parent.document.getElementById("DATADEMO").value.split("|");
+
+	$("#comboTransaccion option[value='"+dataarray[0]+"']").attr("selected","selected")
+
+	if(statusdemo == "DIA" || statusdemo == "RANGO"){
+
+		$("#fecInicio").val(dataarray[1]);
+
+		$("#fecFin").val(dataarray[2]);
+
+		$("[name='fechaFormateada']").html(formateaFecha(dataarray[1]));
+
+		if(dataarray[0] == "03"){
+
+			for(var i= 5; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Aplicada");
+
+		}
+
+		if(dataarray[0] == "09"){
+
+			for(var i= 5; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Instruccion Recibida");
+
+		}
+
+		if(dataarray[0] == "05"){
+
+			for(var i= 5; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Rechazada");
+
+		}
+
+		if(dataarray[0] == "07"){
+
+			for(var i= 5; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Cancelada por Rechazo");
+
+		}
+
+		if(dataarray[0] == "08"){
+
+			for(var i= 5; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Cancelada sin Aplicar");
+
+		}
+
+		if(dataarray[0] == "10"){
+
+			for(var i= 5; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("");
+
+		}
+
+	}else if(statusdemo == "PERIODO"){
+
+		var dia = new Date();
+
+		var mes = dia.getMonth()+1;
+
+		var Meses = ['', 'Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+		if(dataarray[3]=="MES ACTUAL"){
+
+			var i = 1;
+
+			$("[name='fechaFormateada']").each(function(i){
+
+				var aux = (i+3<10) ? "0"+parseInt(i+3): parseInt(i+3)
+
+				$(this).html( aux + " " + Meses[mes] + " " + 2012)
+
+			})
+
+		}else{
+
+			$("[name='fechaFormateada']").each(function(i){
+
+				var aux = (i+3<10) ? "0"+parseInt(i+3): parseInt(i+3)
+
+				$(this).html( aux + " " + Meses[mes-1] + " " + 2012)
+
+			})
+
+		}
+
+		if(dataarray[0] == "03"){
+
+			for(var i= 3; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Aplicada");
+
+		}
+
+		if(dataarray[0] == "09"){
+
+			for(var i= 3; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Instruccion Recibida");
+
+		}
+
+		if(dataarray[0] == "05"){
+
+			for(var i= 3; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Rechazada");
+
+		}
+
+		if(dataarray[0] == "07"){
+
+			for(var i= 3; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Cancelada por Rechazo");
+
+		}
+
+		if(dataarray[0] == "08"){
+
+			for(var i= 3; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("Cancelada sin Aplicar");
+
+		}
+
+		if(dataarray[0] == "10"){
+
+			for(var i= 3; i < 10; i++){$("#especial_"+i).hide()}
+
+			$("[name='status']").html("");
+
+		}
+
+	}
+
+	if(dataarray[5]=="DETALLE"){
+
+		$("#nombretran").html(dataarray[6]);
+
+		$("#numtran").html(dataarray[8]);
+
+		$("#importetran").html("$"+dataarray[9]);
+
+		if(dataarray[1]!="" && dataarray[1]!=null){
+
+			$("#fechatran").html(dataarray[1]+" - 11:21");
+
+			$("#fechaautotran").html(dataarray[1]+" - 11:21");
+
+		}else{
+
+			$("#fechatran").html(dataarray[7]+" - 11:21");
+
+			$("#fechaautotran").html(dataarray[7]+" - 11:21");
+
+		}
+
+		if(dataarray[0] == "03"){
+
+			$("#statustran").html("APLICADA");
+
+		}else if(dataarray[0] == "09"){
+
+			$("#statustran").html("INSTRUCCION RECIBIDA");
+
+		}else if(dataarray[0] == "05"){
+
+			$("#statustran").html("RECHAZADA");
+
+		}else if(dataarray[0] == "07"){
+
+			$("#statustran").html("CANCELADA POR RECHAZO");
+
+		}else if(dataarray[0] == "08"){
+
+			$("#statustran").html("CANCELADA SIN APLICAR");
+
+		}else{
+
+			$("#statustran").html(dataarray[10]);
+
+		}
+
+	}
+
+}
+
+</script>
+
+</body>
+
+</html>

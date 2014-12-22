@@ -1,0 +1,26 @@
+Date: 12/7/2012
+
+Name: Mariano Gardos
+
+SOEID: mg71199
+
+Changes:
+
+- Creation of this change control file.
+
+- Changed description of style from 'tooltip style' to 'In-Line Error Messages'.
+
+- Added leyend 'ADDED BY MEXICO (PENDING DOCUMENTATION AND REVISION)'.
+
+
+
+Date:
+
+Name:
+
+SOEID:
+
+Changes:
+
+-
+

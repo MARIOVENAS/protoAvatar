@@ -1,0 +1,712 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Layout Avatar</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+    <link rel="stylesheet" type="text/css" href="../JFP/regional/css/apps/regional_overlay.css"/>
+	<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+	<script type="text/javascript" src="../JFP/js/script3.js"></script>
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/script.js"></script>
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+</head>
+
+<style>
+.displayN{display: none;}
+.espacioie {*left:177px !important; left:177px\0/ !important; left:220px;}
+@-moz-document url-prefix(){.espacioFX {left:177px;}}
+@media screen and (-webkit-min-device-pixel-ratio:0) {.espacioWebK{left:177px !important;}}
+
+.espacioie2 {*left:700px !important; left:700px\0/ !important; left:783px;}
+@-moz-document url-prefix(){.espacioFX2 {left:700px;}}
+@media screen and (-webkit-min-device-pixel-ratio:0) {.espacioWebK2{left:700px !important;}}
+</style>
+
+<body onload="completa();">
+<!--inicia contenedor principal-->
+<div id="wrap" class="cS-structMainContainer">
+    <!--inicia header-->
+	<div id="header">
+		<div class="utilities_nav" id="navegacionPrincipal"></div>
+		<div class="citibank-containerImg">
+			<a href="#"><div id="citibank-logo"></div></a>
+			<div id="citibank-imageb"></div>
+		</div>
+<!--termina header-->
+	</div>
+	<div class="cS-structBodyContainer">
+		<div id="title-section" class="cH-appPageHead height20">
+			<div class="float-left"><h1 id="t76">CAMBIO DE CLAVES DE ACCESO</h1></div>
+			<div class="margin-top6 titulo ancho50 margin-left10" id="flechaLinksOpcoes">
+				<span class="flechaGris float-left">&nbsp;</span>
+				<a id="t77" href="javascript:void(0);" onclick="Layuda()" class="float-left">&nbsp;Ayuda</a>
+			</div>
+		</div>
+		<div class="bg_demo">
+		    <div id="content">
+				<div id="subapp-box" class="noleftmenu float-left">
+					<div class="ancho100p" style="height:260px;" id="tecladosvirtuales">
+						<div class="width50p float-left">
+							<p class="paddingB20" id="t78">Para ingresar a BancaNet y Audiomático es necesario cambiar tus claves de acceso para realizar tus operaciones bancarias con mayor seguridad.</p>
+                            
+                            <div class="float-left borderRight width100p">
+				
+                            <h4 class="margin-bottom20" id="t79">Para BancaNet</h4>
+                            
+                            <p class="margin-bottom15" id="t80">Crea una nueva clave alfanumérica (8 caracteres)</p>
+                            <div class="inputs-alf-password">
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box1" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box2" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box3" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box4" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box5" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box6" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box7" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 textCenter strong char-pass" readonly="readonly" maxlength="1" id="box8" />
+                            <div class="displayN greenCheck margin-left5"></div>
+                            <div class="displayN error-x margin-top3 margin-left5"></div>
+                        </div>    
+                            <br />
+   							<div class="overflow height20 ancho100p clearL"> </div>
+                            
+                            <div class="margin-bottom15" id="t81">Confirma tu nueva clave alfanumérica (8 caracteres)</div>
+                            <div class="inputs-alf-confirm">
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1"  id="box1_2" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1"  id="box2_2" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1"  id="box3_2" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1"  id="box4_2" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1"  id="box5_2" />
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1"  id="box6_2"/>
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm" readonly="readonly" maxlength="1"  id="box7_2"/>
+                            <span class="float-left margin-right3 margin-top2">-</span>
+                            <input type="password" class="float-left width30 textCenter strong char-confirm" readonly="readonly" maxlength="1" id="box8_2" />
+                            <div class="displayN greenCheck margin-left5"></div>
+                            <div class="displayN error-x margin-top3 margin-left5"></div>
+                            <div class="clear"></div>
+                            </div>
+                        </div>
+                            
+						</div>
+						<div class="width50p float-left">
+							<div class="paddingL30">
+								
+                                <div class="float-left width400 marginT49">
+				
+                                <h4 class="margin-bottom20" id="t82">Para Audiomático</h4>
+                                
+                                <p class="margin-bottom15" id="t83">Crea una nueva clave numérica* (8 caracteres)</p>
+                                <div class="inputs-alf-password2">
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass2" readonly="readonly" maxlength="1" id="box1_3" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass2" readonly="readonly" maxlength="1" id="box2_3" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass2" readonly="readonly" maxlength="1" id="box3_3" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass2" readonly="readonly" maxlength="1" id="box4_3" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass2" readonly="readonly" maxlength="1" id="box5_3" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass2" readonly="readonly" maxlength="1" id="box6_3" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-pass2" readonly="readonly" maxlength="1" id="box7_3" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 textCenter strong char-pass2" readonly="readonly" maxlength="1" id="box8_3" />
+                                <div class="displayN greenCheck margin-left5" id="greencheck1"></div>
+                                <div class="displayN error-x margin-top3 margin-left5"></div>
+                                </div>
+                                <br />
+   								<div class="overflow height20 ancho100p clearL"> </div>
+                                <div class="margin-bottom15" id="t84">Confirma tu nueva clave numérica* (8 caracteres)</div>
+                                <div class="inputs-alf-confirm2">
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm2" readonly="readonly" maxlength="1" id="box1_4" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm2" readonly="readonly" maxlength="1" id="box2_4" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm2" readonly="readonly" maxlength="1" id="box3_4" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm2" readonly="readonly" maxlength="1" id="box4_4" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm2" readonly="readonly" maxlength="1" id="box5_4" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm2" readonly="readonly" maxlength="1" id="box6_4" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 margin-right3 textCenter strong char-confirm2" readonly="readonly" maxlength="1" id="box7_4" />
+                                <span class="float-left margin-right3 margin-top2">-</span>
+                                <input type="password" class="float-left width30 textCenter strong char-confirm2" readonly="readonly" maxlength="1" id="box8_4" />
+                                <div class="displayN greenCheck margin-left5" id="greencheck2"></div>
+                                <div class="displayN error-x margin-top3 margin-left5"></div>
+                                </div>
+                                <br />
+   								<div class="overflow height20 ancho100p clearL"> </div>
+                                <div id="t85">Si generaste tu número secreto en sucursal y lo cambiaste en<br />Audiomático, genéralo nuevamente.</div>
+                            
+                            </div>
+                                
+							</div>
+						</div>
+					</div>
+					<div class="border-solid margin-top20"></div>
+					<ul class="cN-primaryNav float-left margin-top5" id="loginAceptar1">
+						<li class="cM-spriteBase cN-primaryNavButton"><a id="t86" href="javascript:void(0);">ACEPTAR</a></li>
+						<li>
+							<div id="flechaLinks">
+								<span class="flechaazul float-left"></span>
+								<!--<a href="#" class="sinBold" onclick="enConstruccion()" id="t39">Cancelar</a>-->
+                                <a href="01-Log-in.html" class="sinBold" id="t87">Cancelar</a>
+							</div>
+						</li>
+					</ul>
+                    <ul class="cN-primaryNav float-left margin-top5 displayN" id="loginAceptar2" style="z-index:999999 !important;">
+                        <li class="cM-spriteBase cN-primaryNavButton"><a id="t88" href="#" onclick="exportar();">ACEPTAR</a></li>
+						<li>
+							<div id="flechaLinks">
+								<span class="flechaazul float-left"></span>
+								<!--<a href="#" class="sinBold" onclick="enConstruccion()" id="t39">Cancelar</a>-->
+                                <a href="01-Log-in.html" class="sinBold" id="t89">Cancelar</a>
+							</div>
+						</li>
+					</ul>
+					<div class="width50p floatL">
+						<div class="paddingL45"></div>
+					</div>
+					<ul class="cN-primaryNav  margin-top10">
+						<li></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+        </div>
+		<div id="footer"></div>
+	</div>
+</div>
+
+<div class="tt-char teclado-virt espacioie espacioFX espacioWebK">
+	<div class="tt-box">
+		<h4 id="t90">Caracteres disponibles</h4>
+        <div class="char-row margin-bottom20">
+        	<a class="char-virt" data-char="a" href="javascript:void(0);">A</a>
+        	<a class="char-virt" data-char="b" href="javascript:void(0);">B</a>
+        	<a class="char-virt" data-char="c" href="javascript:void(0);">C</a>
+        	<a class="char-virt" data-char="d" href="javascript:void(0);">D</a>
+        	<a class="char-virt" data-char="e" href="javascript:void(0);">E</a>
+        	<a class="char-virt" data-char="f" href="javascript:void(0);">F</a>
+        	<a class="char-virt" data-char="g" href="javascript:void(0);">G</a>
+        	<a class="char-virt" data-char="h" href="javascript:void(0);">H</a>
+        	<a class="char-virt" data-char="i" href="javascript:void(0);">I</a>
+        	<a class="char-virt" data-char="j" href="javascript:void(0);">J</a>
+        	<a class="char-virt" data-char="k" href="javascript:void(0);">K</a>
+        	<a class="char-virt" data-char="l" href="javascript:void(0);">L</a>
+        	<a class="char-virt" data-char="m" href="javascript:void(0);">M</a>
+        	<a class="char-virt" data-char="n" href="javascript:void(0);">N</a>
+        	<a class="char-virt" data-char="o" href="javascript:void(0);">O</a>
+        	<a class="char-virt" data-char="p" href="javascript:void(0);">P</a>
+        	<a class="char-virt" data-char="q" href="javascript:void(0);">Q</a>
+        	<a class="char-virt" data-char="r" href="javascript:void(0);">R</a>
+        	<a class="char-virt" data-char="s" href="javascript:void(0);">S</a>
+        	<a class="char-virt" data-char="t" href="javascript:void(0);">T</a>
+        	<a class="char-virt" data-char="u" href="javascript:void(0);">U</a>
+        	<a class="char-virt" data-char="v" href="javascript:void(0);">V</a>
+        	<a class="char-virt" data-char="w" href="javascript:void(0);">W</a>
+        	<a class="char-virt" data-char="x" href="javascript:void(0);">X</a>
+        	<a class="char-virt" data-char="y" href="javascript:void(0);">Y</a>
+        	<a class="char-virt sinMarginRight" data-char="z" href="javascript:void(0);">Z</a>
+            <div class="clear"></div>
+        </div>
+        <div class="char-row margin-bottom20 minuscula">
+        	<a class="char-virt" data-char="a" href="javascript:void(0);">a</a>
+        	<a class="char-virt" data-char="b" href="javascript:void(0);">b</a>
+        	<a class="char-virt" data-char="c" href="javascript:void(0);">c</a>
+        	<a class="char-virt" data-char="d" href="javascript:void(0);">d</a>
+        	<a class="char-virt" data-char="e" href="javascript:void(0);">e</a>
+        	<a class="char-virt" data-char="f" href="javascript:void(0);">f</a>
+        	<a class="char-virt" data-char="g" href="javascript:void(0);">g</a>
+        	<a class="char-virt" data-char="h" href="javascript:void(0);">h</a>
+        	<a class="char-virt" data-char="i" href="javascript:void(0);">i</a>
+        	<a class="char-virt" data-char="j" href="javascript:void(0);">j</a>
+        	<a class="char-virt" data-char="k" href="javascript:void(0);">k</a>
+        	<a class="char-virt" data-char="l" href="javascript:void(0);">l</a>
+        	<a class="char-virt" data-char="m" href="javascript:void(0);">m</a>
+        	<a class="char-virt" data-char="n" href="javascript:void(0);">n</a>
+        	<a class="char-virt" data-char="o" href="javascript:void(0);">o</a>
+        	<a class="char-virt" data-char="p" href="javascript:void(0);">p</a>
+        	<a class="char-virt" data-char="q" href="javascript:void(0);">q</a>
+        	<a class="char-virt" data-char="r" href="javascript:void(0);">r</a>
+        	<a class="char-virt" data-char="s" href="javascript:void(0);">s</a>
+        	<a class="char-virt" data-char="t" href="javascript:void(0);">t</a>
+        	<a class="char-virt" data-char="u" href="javascript:void(0);">u</a>
+        	<a class="char-virt" data-char="v" href="javascript:void(0);">v</a>
+        	<a class="char-virt" data-char="w" href="javascript:void(0);">w</a>
+        	<a class="char-virt" data-char="x" href="javascript:void(0);">x</a>
+        	<a class="char-virt" data-char="y" href="javascript:void(0);">y</a>
+        	<a class="char-virt sinMarginRight" data-char="z" href="javascript:void(0);">z</a>
+            <div class="clear"></div>
+        </div>
+        <div class="char-row" style="margin-left:150px">
+        	<a class="char-virt char-num" data-char="1" href="javascript:void(0);">1</a>
+        	<a class="char-virt char-num" data-char="2" href="javascript:void(0);">2</a>
+        	<a class="char-virt char-num" data-char="3" href="javascript:void(0);">3</a>
+        	<a class="char-virt char-num" data-char="4" href="javascript:void(0);">4</a>
+        	<a class="char-virt char-num" data-char="5" href="javascript:void(0);">5</a>
+        	<a class="char-virt char-num" data-char="6" href="javascript:void(0);">6</a>
+        	<a class="char-virt char-num" data-char="7" href="javascript:void(0);">7</a>
+        	<a class="char-virt char-num" data-char="8" href="javascript:void(0);">8</a>
+        	<a class="char-virt char-num" data-char="9" href="javascript:void(0);">9</a>
+        	<a class="char-virt char-num" data-char="0" href="javascript:void(0);">0</a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="tt-char-arrow" style="left:0px; bottom:-23px"></div>
+	</div>
+</div>
+
+<div class="tt-char2 teclado-virt2 espacioie2 espacioFX2 espacioWebK2">
+	<div class="tt-box2">
+		<h4 id="t91">Caracteres disponibles</h4>
+        <div class="char-row2 margin-bottom20">
+            <!--<div class="clear"></div>-->
+        </div>
+        <div class="char-row2 margin-bottom20 minuscula">
+            <!--<div class="clear"></div>-->
+        </div>
+        <div class="char-row2" style="margin-left:72px">
+        	<a class="char-virt2 char-num2" data-char="1" href="javascript:void(0);">1</a>
+        	<a class="char-virt2 char-num2" data-char="2" href="javascript:void(0);">2</a>
+        	<a class="char-virt2 char-num2" data-char="3" href="javascript:void(0);">3</a>
+        	<a class="char-virt2 char-num2" data-char="4" href="javascript:void(0);">4</a>
+        	<a class="char-virt2 char-num2" data-char="5" href="javascript:void(0);">5</a>
+        	<a class="char-virt2 char-num2" data-char="6" href="javascript:void(0);">6</a>
+        	<a class="char-virt2 char-num2" data-char="7" href="javascript:void(0);">7</a>
+        	<a class="char-virt2 char-num2" data-char="8" href="javascript:void(0);">8</a>
+        	<a class="char-virt2 char-num2" data-char="9" href="javascript:void(0);">9</a>
+        	<a class="char-virt2 char-num2" data-char="0" href="javascript:void(0);">0</a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="tt-char-arrow2" style="left:0px; bottom:-23px"></div>
+	</div>
+</div>
+
+<!-- Exportar NEW-->
+
+<!-- sección traida del parent -->
+		
+        <div id="cortinaOverlay" class="cerrarOverlay" style="display: none;"></div>
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+			<tbody><tr><td>
+						<div id="mensajeError_contenido_div">
+						</div>
+						<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+			</td></tr></tbody>
+			</table>
+		</div>
+	</div>
+<iframe id="nwd" src="if.htm" name="ndw" style="display:none"></iframe>    
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+		<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+			<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+				<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+					<tbody>
+						<tr>
+							<td>
+								<div id="mensajeError_contenido_divEspecial"></div>
+								<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>                        
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+        
+<!-- -->
+                            
+                     <div class="modal" id="divExportar">
+                            
+                        <div class="overlay-error">
+							<div class="overlay-content">
+								<div class="external-tranfer">
+									<div class="external-tranfer-content" style="left:-38px !important; top:-15px; position:relative;">
+										<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+										<div class="content-top">
+											<div class="center">
+												<div class="dot-bottom">
+													<div class="left"><span class="title" id="t92">CAMBIO DE CLAVES</span></div>                                   
+												</div>
+												<div class="error-content">
+
+													<div id="scrollbar2" class="">
+														<div>
+															<!--div class="flechaUp"></div-->
+                                                            <div class="clear"></div>
+															<div class="scrollbar">
+																
+															</div>
+															<div class="viewport">
+																<div class="overview" style="width:100%">
+																	<div class="greenCheck"></div>
+																	 <p class="strong margin-bottom10 paddingL20" id="t93">El cambio de claves de acceso se realizó exitosamente.</p>
+                                                                     <div class="border-dotted_top margin-bottom10"></div>
+														             <div>
+														                <p class="margin-bottom30" id="t94">Por tu seguridad, para poder acceder a BancaNet con tus nuevas claves de acceso, da clic en continuar y desde la pantalla de inicio ingresa nuevamente a BancaNet.</p>
+																		<div class="borderB1 margin-bottom10"></div>
+																		<p id="t95"><span class="strong">Recuerda:</span><br />Banamex NUNCA te solicitará información específica de tus cuentas bancarias o claves de acceso, vía correo electrónico ni por páginas electrónicas referenciadas desde un correo electrónico.</p>
+														            </div>
+																</div>
+															</div>
+															<!--div class="flechaDown"></div-->
+														</div>
+													</div>
+
+														<div class="clear"></div>									
+														<div class="cF-sideBySide" style="background:none !important; padding-bottom:26px !important; border:none !important; width:88% !important; position:absolute !important; bottom:0;">
+														<div class="border-dotted_top margin-bottom10"></div>
+															<ul class="cN-primaryNav">
+																<li class="cM-spriteBase cN-primaryNavButton"><a href="../bancanet/contenidos/48-dashboard-extended.html" id="t96">Continuar</a></li> 
+															</ul>
+														 </div>
+														<div class="clear"></div>
+
+													</div>
+													<div class="content-footer" style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important;">
+														<div class="title" id="t97">Cont&aacute;ctanos</div>
+														<div class="telefono"><a href="popup-a.html" class="telefono" id="t98">Ll&aacute;manos</a></div>
+														<div class="lineaDivisoria">&nbsp;</div>
+														<div class="email"><a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="email" id="t99">Mensajes</a></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                            </div>
+                            
+                            <!-- Exportar NEW-->
+<script type="text/javascript" src="../JFP/js/langManagement.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		ajustarOverlay();
+		ajusta_tooltpis();
+		funciones_loginP();
+	});
+
+	$( document ).ajaxStop( function(){
+		$( '#t0' ).hide();
+		if( isEnglishSel ) {
+			tooltip_left();
+		}
+	});
+
+	function Layuda(){
+		window.open(rutaAyudaClaves,'','height='+(screen.height-70)+',width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+</script>
+
+<script type="text/javascript">
+	
+	
+
+	$( document ).ajaxStop( function(){
+		$( '#t0' ).hide();
+		if( isEnglishSel ) {
+			tooltip_left();
+		}
+	});
+
+	$(document).ready(function(){
+		ajustarOverlay();
+		ajusta_tooltpis();
+		funciones_loginP();
+	});
+
+</script>
+
+<script type="text/javascript">				
+	$(document).ready(function(){
+		addTooltip();
+		addTooltip2();
+
+		var cliente = '13579';
+		teclado_virtual( cliente );	
+		
+		var cliente2 = '13579';
+		teclado_virtual2( cliente2 );	
+		
+	});
+				
+	function posicionarTooltip(link, tooltip){
+		var posLink = link.offset();
+		//If tooltip's position is bigger than body's width
+		if(posLink.left + link.outerWidth() + tooltip.outerWidth() + 15 < $("body").outerWidth()){
+			tooltip.css({
+				'left': posLink.left + link.outerWidth() + 15,
+				'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+			});
+		}else{
+		tooltip.css({
+			'left': posLink.left - link.outerWidth() - 225,
+			'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+		})
+			.find(".tt_arrow")
+			.addClass("tt_arrow_right");
+		}
+	}
+
+	function addTooltip(){
+		$('.tooltip').click(function(e){
+					
+			e.preventDefault();
+			
+			var tt_container = $('<div id="tt_container" class="medium"></div>'),
+			flecha = $('<div class="tt_arrow"></div>'),
+			actions = $('<div class="tt_actions"></div>'),
+			title_content = $(this).attr("title");
+					
+			//Si ya había un tooltip lo elimino
+			if($('#tecladosvirtuales').find('#tt_container')){
+				$('#tt_container').remove(); 
+			}
+			
+			//Agrego la flechita
+			flecha.appendTo(tt_container);
+			//Agrego el boton de cerrar
+			$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container);
+			
+			//Agrego el texto indicativo
+			$('<p class="p_tooltip"></p>').appendTo(tt_container);
+
+			//Agrego el tooltip
+			tt_container.appendTo('#tecladosvirtuales');
+			$('.p_tooltip').html(title_content);
+			
+			//Acomodo la fecha a la mitad del tooltip
+			flecha.css({
+				'top' : (tt_container.outerHeight() - flecha.outerHeight())/2
+			})
+			
+			posicionarTooltip($(this), tt_container);
+				
+			$('#tt_container .tt_cancel, #tt_container .tt_close, #tt_container .tt_continue').click(function(){
+				$('#tt_container').remove();
+			});
+		});
+	}
+	
+	function posicionarTooltip2(link, tooltip2){
+		var posLink2 = link.offset();
+		
+		//If tooltip's position is bigger than body's width
+		if(posLink2.left + link.outerWidth() + tooltip2.outerWidth() + 15 < $("body").outerWidth()){
+			
+			tooltip2.css({
+				'left': posLink2.left + link.outerWidth() + 15,
+				'top' : (posLink2.top + 7) - (tooltip2.outerHeight() /2)
+			});
+		}else{
+		tooltip2.css({
+			'left': posLink2.left - link.outerWidth() - 225,
+			'top' : (posLink2.top + 7) - (tooltip2.outerHeight() /2)
+		})
+			
+			.find(".tt_arrow2")
+			.addClass("tt_arrow_right2");
+		}
+	}
+
+	function addTooltip2(){
+		
+		$('.tooltip2').click(function(e){
+					
+			e.preventDefault();
+			
+			var tt_container2 = $('<div id="tt_container2" class="medium2"></div>'),
+			flecha2 = $('<div class="tt_arrow2"></div>'),
+			actions2 = $('<div class="tt_actions2"></div>'),
+			title_content2 = $(this).attr("title");
+					
+			//Si ya había un tooltip lo elimino
+			if($('#tecladosvirtuales').find('#tt_container2')){
+				$('#tt_container2').remove(); 
+			}
+			
+			//Agrego la flechita
+			flecha2.appendTo(tt_container2);
+			//Agrego el boton de cerrar
+			$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container2);
+			
+			//Agrego el texto indicativo
+			$('<p class="p_tooltip2"></p>').appendTo(tt_container2);
+
+			//Agrego el tooltip
+			tt_container2.appendTo('#tecladosvirtuales');
+			$('.p_tooltip2').html(title_content);
+			
+			//Acomodo la fecha a la mitad del tooltip
+			flecha2.css({
+				'top' : (tt_container2.outerHeight() - flecha2.outerHeight())/2
+			})
+			
+			posicionarTooltip2($(this), tt_container2);
+				
+			$('#tt_container2 .tt_cancel2, #tt_container2 .tt_close2, #tt_container2 .tt_continue2').click(function(){
+				$('#tt_container2').remove();
+			});
+		});
+	}
+
+	function completa(){
+		
+	 var espera=300;
+	
+	if(location.href.indexOf('10-Log-in-CambioClaves.html')!=-1 )
+    $.doTimeout(espera+800, function(){  // llenado en 01-Log-in.html
+		   llenarValores('input','#box1','a');
+		   llenarValores('input','#box2','c');
+		   llenarValores('input','#box3','e'); 
+		   llenarValores('input','#box4','g'); 
+		   llenarValores('input','#box5','i');
+		   llenarValores('input','#box6','k'); 
+		   llenarValores('input','#box7','m'); 
+		   llenarValores('input','#box8','2');
+		   $('#box8').focus();
+			   $.doTimeout(espera+800, function(){ 
+			   $('#box8').blur();
+			   setTimeout(function(){completa2();},800);
+			});
+     });
+	 
+	}
+	 /// Confirmacion
+	function completa2(){ 
+	var espera=300;
+	
+	if(location.href.indexOf('10-Log-in-CambioClaves.html')!=-1 )
+	
+	$.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+            
+    llenarValores('input','#box1_2','a'); 	   
+    llenarValores('input','#box2_2','c'); 
+    llenarValores('input','#box3_2','e'); 
+	llenarValores('input','#box4_2','g'); 
+	llenarValores('input','#box5_2','i'); 
+	llenarValores('input','#box6_2','k'); 
+	llenarValores('input','#box7_2','m'); 
+	llenarValores('input','#box8_2','2');
+	$('#box8_2').focus();
+			  $.doTimeout(espera+800, function(){ 
+			  $('#box8_2').blur();
+			  setTimeout(function(){completa3();},1000);
+			});
+     });
+	}
+
+    function completa3(){ 
+	var espera=300;
+	
+	if(location.href.indexOf('10-Log-in-CambioClaves.html')!=-1 )
+	
+	$.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+            
+    llenarValores('input','#box1_3','a'); 	   
+    llenarValores('input','#box2_3','c'); 
+    llenarValores('input','#box3_3','e'); 
+	llenarValores('input','#box4_3','g'); 
+	llenarValores('input','#box5_3','i'); 
+	llenarValores('input','#box6_3','k'); 
+	llenarValores('input','#box7_3','m'); 
+	llenarValores('input','#box8_3','2');
+	$('#box8_3').focus();
+			  $.doTimeout(espera+800, function(){ 
+			  $('#box8_3').blur();
+			  setTimeout(function(){completa4();},1000);
+			});
+     });
+	}
+	 /// Confirmacion
+	function completa4(){ 
+	var espera=300;
+	
+	if(location.href.indexOf('10-Log-in-CambioClaves.html')!=-1 )
+	
+	$.doTimeout(espera, function(){  // llenado en 01-Log-in.html
+          
+    llenarValores('input','#box1_4','a');   
+    llenarValores('input','#box2_4','c'); 
+	llenarValores('input','#box3_4','e'); 
+	llenarValores('input','#box4_4','g');
+	llenarValores('input','#box5_4','i'); 
+	llenarValores('input','#box6_4','k'); 
+	llenarValores('input','#box7_4','m'); 
+	llenarValores('input','#box8_4','2');
+	$('#box8_4').focus();
+			  $.doTimeout(espera+800, function(){
+			  $('#box8_4').blur();
+			  $( '#greencheck2' ).show();
+			  $( '#loginAceptar1').hide();
+			  $( '#loginAceptar2').show();
+			  $( '#loginAceptar2').focus();
+			});
+     });
+	}
+
+
+</script>
+
+<script>
+	   function exportar(){
+		   
+	$('#mensajeError_contenido_div', window.document).html(
+		$("#divExportar").html()
+		
+	);
+	
+	$.modal(				
+			{
+				closeHTML: '',
+				opacity:60,
+				overlayClose:false,
+				flagDiv:true,
+				widthDivIfrm:570,
+				heightDivIfrm:'auto'
+			}
+		);
+		
+		$('#box1').blur();
+		$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');
+		
+		
+}
+
+		
+
+	   </script>
+       
+       
+   <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+            google.load('search', '1', {language : 'es'});
+            
+        </script>
+
+</body>
+<!--termina contenedor principal-->
+</html>

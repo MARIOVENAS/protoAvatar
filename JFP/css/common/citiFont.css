@@ -1,0 +1,64 @@
+/* Declaration for the regular Century Gothic font for Internet Explorer */
+
+
+
+@font-face {
+
+   font-family: 'citi-gothic';
+
+   font-style: normal;
+
+    font-weight: normal;
+
+    src: url("/JFP/fonts/citiGothic.eot");
+
+  	 src: local('*'), url("/JFP/fonts/citiGothic.ttf") format('truetype'),
+
+      url("/JFP/fonts/citiGothic.woff") format('woff');
+
+}
+
+
+
+/* Declaration for the Bold Century Gothic font for Internet Explorer */
+
+
+
+@font-face {
+
+   font-family: 'citi-gothic';
+
+   font-style: normal;
+
+    font-weight: bold;
+
+    src: url("/JFP/fonts/citiGothic-Bold.eot");
+
+  	 src: local('*'), url("/JFP/fonts/citiGothic-Bold.ttf") format('truetype'),
+
+      url("/JFP/fonts/citiGothic-Bold.woff") format('woff');
+
+}
+
+
+
+/* Declaration for the Italic Century Gothic font for Internet Explorer */
+
+
+
+@font-face {
+
+   font-family: 'citi-gothic';
+
+ 	font-style: italic;
+
+    font-weight: normal;
+
+    src: url("/JFP/fonts/citiGothic-Italic.EOT");
+
+   	src: local('*'), url("/JFP/fonts/citiGothic-Italic.ttf") format('truetype'),
+
+      url("/JFP/fonts/citiGothic-Italic.woff") format('woff');
+
+}
+

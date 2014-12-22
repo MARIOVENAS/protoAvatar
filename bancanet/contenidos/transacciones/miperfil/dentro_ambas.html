@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Layout Avatar</title>	
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>	
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+</head>
+
+
+<div class="float-left width345">
+
+	<p class="margin-bottom20">Para cambiar tus claves de acceso a BancaNet, ingresa<br>los datos solicitados y da clic en "Aceptar".</p>
+    
+    <p class="margin-bottom10">Ingresa tu clave de acceso actual:</p>
+    <input type="password" class="margin-bottom20" />
+    
+    <p class="margin-bottom15">Crea una nueva clave alfanumérica (8 caracteres)</p>
+    
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 textCenter strong" maxlength="1" />
+	<div class="clear margin-bottom20"></div>
+    
+    <p class="margin-bottom15">Confirma tu nueva clave alfanumérica (8 caracteres)</p>
+    
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 margin-right3 textCenter strong" maxlength="1" />
+    <span class="float-left margin-right3 margin-top2">-</span>
+    <input type="password" class="float-left width30 textCenter strong" maxlength="1" />
+	<div class="clear"></div>
+
+</div>
+<div class="boxInstructions float-right" style="padding-right:0 !important; width:293px !important">
+	<p class="margin-bottom15"><span class="strong">Para crear tus claves de acceso utiliza el teclado virtual que se presenta en tu pantalla,</span> este te habilitará las letras o números disponibles para cada casilla en base al cumplimiento de las reglas que abajo se indican.</p>
+	<p class="margin-bottom15">Posiciona el cursor de tu mouse en cada una de las casillas y selecciona uno a uno el caracter deseado.</p>
+	<ul class="bulletList">
+    	<li>Debe contener tanto números como letras, y ser de 8 posiciones</li>
+        <li>Se permite el uso de letras <a href="#" class="border-dotted-link tooltip" title="ej. 'hola1357' <br>es diferente <br>que 'HOLA1357'">mayúsculas y minúsculas</a></li> <!-- Agregar clase "tooltip" y contenido dentro de title="" -->
+        <li>El primer caracter, debe ser una letra</li>
+        <li>No se permite el uso de letras acentuadas ni <a href="#" class="border-dotted-link">caracteres especiales</a></li>
+        <li>El Número de Cliente no debe estar contenido en el Password</li>
+        <li>No debe contener más de <a href="#" class="border-dotted-link">2 número o letras iguales o consecutivos</a></li>
+        <li class="sinMarginBottom">No debe contener el nombre de la institución (Banamex)</li>
+    </ul>
+</div>
+
+<div class="clear"></div>
+
+<div class="cF-sideBySide cF-bottomNav bottomNav-Border">
+							<ul class="cN-primaryNav">
+								<li class="cM-spriteBase cN-primaryNavButton "><a href="#">Aceptar</a></li>
+								<li class="cN-primaryNav">
+									<div id="flechaLinks">
+										<span class="flechaGris float-left"></span>
+										<a class="sinBold" href="#">Cancelar</a>
+									</div></li>	
+							</ul>
+						 </div>
+           
+
+
+
+<script type="text/javascript">
+
+				
+				$(document).ready(function(){
+					addTooltip();
+				});
+				
+	function posicionarTooltip(link, tooltip){
+		var posLink = link.offset();
+		//If tooltip's position is bigger than body's width
+		if(posLink.left + link.outerWidth() + tooltip.outerWidth() + 15 < $("body").outerWidth()){
+			tooltip.css({
+				'left': posLink.left + link.outerWidth() + 15,
+				'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+			});
+		}else{
+		tooltip.css({
+			'left': posLink.left - link.outerWidth() - 225,
+			'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+		})
+			.find(".tt_arrow")
+			.addClass("tt_arrow_right");
+		}
+	}
+
+	function addTooltip(){
+	
+		$('.tooltip').click(function(e){
+					
+			e.preventDefault();
+			
+			var tt_container = $('<div id="tt_container" class="medium"></div>'),
+			flecha = $('<div class="tt_arrow"></div>'),
+			actions = $('<div class="tt_actions"></div>'),
+			title_content = $(this).attr("title");
+					
+			//Si ya había un tooltip lo elimino
+			if($('body').find('#tt_container')){
+				$('#tt_container').remove(); 
+			}
+			
+			//Agrego la flechita
+			flecha.appendTo(tt_container);
+			//Agrego el boton de cerrar
+			$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container);
+			
+			//Agrego el texto indicativo
+			$('<p class="p_tooltip"></p>').appendTo(tt_container);
+
+			//Agrego el tooltip
+			tt_container.appendTo('body');
+			$('.p_tooltip').html(title_content);
+			
+			//Acomodo la fecha a la mitad del tooltip
+			flecha.css({
+				'top' : (tt_container.outerHeight() - flecha.outerHeight())/2
+			})
+			
+			posicionarTooltip($(this), tt_container);
+				
+			
+			
+			$('#tt_container .tt_cancel, #tt_container .tt_close, #tt_container .tt_continue').click(function(){
+				$('#tt_container').remove();
+			});
+			
+			
+		});
+	}
+
+			 
+			 
+        </script>

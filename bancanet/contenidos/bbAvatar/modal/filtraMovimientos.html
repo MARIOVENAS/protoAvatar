@@ -1,0 +1,792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" href="../../bbAvatar/css/mando.css" type="text/css" />
+
+	<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+	<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script> 
+
+	<script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/validaciones.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+	<script>
+
+	var es = new Array('Filter transactions','According to the search criteria, choose at least one of the following options','By keyword','By date','Date','&nbsp; &nbsp; To','Date','By amount','Specific','By rank','From','To','Cancel','Filter');
+
+	function bindBackSpace(){$(document).bind('keydown.backspace keyup.backspace',function(event){if(event.keyCode==8){ event.preventDefault();}});}
+
+	function AbreAyuda(fn){
+
+		window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+	}
+
+	function showtooltip(){
+
+		$('.showtooltip').hover(
+
+			function(){
+
+				var clase = $(this).attr("class").split(" ");
+
+				$('#tooltip-iconos').find('.tooltip').html( clase[clase.length - 1].replace(/[_]+/g," ") );
+
+				pos = $(this).offset();
+
+				alto = $('#tooltip-iconos').height()-3;
+
+				ancho = $('#tooltip-iconos').width()-20;
+
+				$('#tooltip-iconos').css({'top':(pos.top-alto+45)+'px','left':(pos.left-ancho-20)+'px'});
+
+				$('#tooltip-iconos').show();
+
+			},
+
+			function()
+
+			{
+
+				$('#tooltip-iconos').hide();
+
+			}
+
+		);
+
+	}		
+
+	function showtooltip2(){
+
+	 if ($.browser.msie && $.browser.version.substr(0, 1) == '7')
+
+	 {	
+
+		 var td = $(".tooltipB");
+
+		 if($(td).attr("tagname")== 'TD')
+
+			 $(td).html('<div class="tooltipB"></div>').removeClass('tooltipB').css({'padding-top':'3px','background-color':'#ffffff'});
+
+	 }	
+
+	$('.showtooltip').hover(
+
+		function(){
+
+			  var clase = $(this).attr("class").split(" ");
+
+			  $('#tooltip').find('.tooltipC').html( clase[clase.length - 1].replace(/[_]+/g," ") );
+
+			  pos = $(this).offset();
+
+			  alto = $('#tooltip').height()-10;
+
+			  ancho = $('#tooltip').width()-27;
+
+			  $('#tooltip').css({'top':(pos.top+alto)+'px','left':(pos.left-ancho)+'px'});
+
+			  $('#tooltip').show();
+
+		},
+
+		function()
+
+		{
+
+			  $('#tooltip').hide();
+
+			  $('#tooltip').css({'top':'0px','left':'0px'});
+
+		}
+
+	);
+
+	$('.showtooltipR').hover(
+
+		function(){
+
+			$('#tooltip').find('.tooltipC').html( $(this).attr("title") );
+
+			$('#tooltip').find('.tooltipTL').css('width','6px');
+
+			$('#tooltip').find('.tooltipBL').css('width','6px');
+
+			$('#tooltip').find('.tooltipTR').css('width','6px');
+
+			$('#tooltip').find('.tooltipBR').css('width','6px');
+
+			pos = $(this).offset();
+
+			alto = $('#tooltip').height()+10;
+
+			ancho = $('#tooltip').width()-20;
+
+			$('#tooltip').css({'top':(pos.top+alto)+'px','left':(pos.left-ancho)+'px'});
+
+			$('#tooltip').show();
+
+		},
+
+		function()
+
+		{
+
+			$('#tooltip').hide();
+
+			$('#tooltip').find('.tooltipTL').css('width','10px');
+
+			$('#tooltip').find('.tooltipBL').css('width','10px');			 
+
+			$('#tooltip').find('.tooltipTR').css('width','10px');
+
+			$('#tooltip').find('.tooltipBR').css('width','10px');
+
+			$('#tooltip').css({'top':'0px','left':'0px'});
+
+		}
+
+	);	
+
+}
+
+var Formato,diasSemana,Meses,msj1,msj2,msj3;
+
+var minDate = 30;
+
+jQuery(document).ready(function(){
+
+	var urlAyuda = $("#rutaAyuda", parent.frames.main.document).val();
+
+	var tipoCuenta = $("#tipoCuenta", parent.frames.main.document).val();
+
+	$("#contenido").css("height","auto");parent.$.modal.setDimentions($("#contenido").height(), 600);
+
+	var fechaSer = new Date();
+
+	var anio = fechaSer.getFullYear();
+
+	var mes = fechaSer.getMonth();
+
+	var dia = fechaSer.getDate();
+
+	var idioma = language;
+
+	var isIE = (window.navigator.userAgent.indexOf("MSIE")> 0);
+
+	var diaActual = new Date( anio, mes, dia);	
+
+	var ciclo =  "CICLOANTERIOR";
+
+	if(ciclo == 'CICLOANTERIOR' || ciclo == 'MES ANTERIOR'){
+
+		minDate = 60;
+
+	}			
+
+	if(idioma == 'eng'){
+
+		Formato = "mm/dd/yy";
+
+		diasSemana = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+		Meses = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+		msj1 = 'The field cannot contain special characters';
+
+		msj2 = 'The field must be numeric';
+
+		msj3 = 'Select an option';
+
+		msj4 = 'Invalid characters in this field';
+
+		urlAyuda = 'https://bancanet.boveda.banamex.com.mx/englishdir/ayudas/Estados-de-cuenta-y-Movimientos.htm';
+
+		$("#btn_ayuda").addClass("Help");
+
+	}else{
+
+		Formato = "dd/mm/yy";
+
+		diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+		Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+		msj1 = 'El campo no puede contener caracteres especiales';
+
+		msj2 = 'El campo debe ser num&eacute;rico';
+
+		msj3 = 'Selecciona una opci&oacute;n';
+
+		msj4 = 'El campo no puede contener espacios';
+
+		urlAyuda = 'https://bancanet.boveda.banamex.com.mx/spanishdir/ayudas/Estados-de-cuenta-y-Movimientos.htm';
+
+	}
+
+	$("input[name='importeInicio']").css("backgroundColor","#E6E6FA");
+
+	$("input[name='importeFin']").css("backgroundColor","#E6E6FA");
+
+	if($("#transaccion", parent.frames.main.document).val() == "Movimientos"){
+
+		if(ciclo == "HOY" || ciclo == "OTRO"){
+
+			if(idioma != "eng")
+
+				var options = "<option value='AMBOS'>Dep&oacute;sitos y Retiros</option><option value='DEPOSITOS'>Dep&oacute;sitos</option><option value='RETIROS'>Retiros</option><option value='SBC'>Salvo Buen Cobro</option><option value='IDE'>Dep&oacute;sitos en Efectivo</option>";
+
+			else
+
+				var options = "<option value='AMBOS'>Deposits and withdrawals</option><option value='DEPOSITOS'>Deposits</option><option value='RETIROS'>Withdrawals</option><option value='SBC'>Subject to collection</option><option value='IDE'>Cash deposits</option>";
+
+		}else{
+
+			if(tipoCuenta == "tarjCredito"){
+
+				if(idioma != "eng")
+
+					var options = "<option value='AMBOS'>Pagos y Compras</option><option value='DEPOSITOS'>Pagos</option><option value='RETIROS'>Compras</option>";
+
+				else
+
+					var options = "<option value='AMBOS'>Payments and Purchases</option><option value='DEPOSITOS'>Payments</option><option value='RETIROS'>Purchases</option>";
+
+			}else{
+
+				if(idioma != "eng")
+
+					var options = "<option value='AMBOS'>Dep&oacute;sitos y Retiros</option><option value='DEPOSITOS'>Dep&oacute;sitos</option><option value='RETIROS'>Retiros</option>";
+
+				else
+
+					var options = "<option value='AMBOS'>Deposits and withdrawals</option><option value='DEPOSITOS'>Deposits</option><option value='RETIROS'>Withdrawals</option>";
+
+			}					
+
+		}
+
+	}else{
+
+		if(idioma != "eng")
+
+			var options = "<option value=''>Seleccione una opci&oacute;n</option><option value='AMBOS'>Importe</option>";
+
+		else
+
+			var options = "<option value=''>Select an option</option><option value='AMBOS'>Amount</option>";
+
+	}
+
+	$("#selectImporte").append(options);
+
+	$("#selectImporte").change(function(){
+
+		ocultarErrores();
+
+		if($(this).find("option:selected").val() == ""){
+
+			$("input[name='criterioImporte']").attr("checked","");
+
+			$("input[name='importeInicio']").val("");
+
+			$("input[name='importeInicio']").attr("disabled",true).css("backgroundColor","#E6E6FA");
+
+			$("input[name='importeFin']").val("");
+
+			$("input[name='importeFin']").attr("disabled",true).css("backgroundColor","#E6E6FA");
+
+		}
+
+	});
+
+	$("input[name='criterioImporte']").click(function(){
+
+		if($(this).val() == "RANGO"){
+
+			$("input[name='importeInicio']").attr("disabled",false).css("backgroundColor","#FFF");
+
+			$("input[name='importeFin']").attr("disabled",false).css("backgroundColor","#FFF");
+
+		}else{
+
+			$("input[name='importeInicio']").attr("disabled",false).css("backgroundColor","#FFF");
+
+			$("input[name='importeFin']").val("");
+
+			$("input[name='importeFin']").attr("disabled",true).css("backgroundColor","#E6E6FA");
+
+		}
+
+	});
+
+	CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, minDate, diaActual, 0, '');
+
+	CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, minDate, diaActual, 0, '');
+
+	DeshabilitarCal("#fecFin");
+
+	$("#fecInicio").change(function(){
+
+		EliminarCal("#fecFin");
+
+		var tmp = $("#fecInicio").val().split("/");
+
+		if (language == "eng") diaInicial = new Date( parseInt(tmp[2]), parseInt(tmp[0])-1, parseInt(tmp[1]) );
+
+		else diaInicial = new Date( parseInt(tmp[2]), parseInt(tmp[1])-1, parseInt(tmp[0]) );
+
+		diaFinal = diaActual;
+
+		EliminarCal("#fecFin");
+
+		CrearCal("#fecFin", Formato, diasSemana, Meses, diaActual, diaInicial, diaFinal, 0, '');
+
+		HabilitarCal("#fecFin");
+
+	});
+
+	$("#btn_ayuda").click(function(){
+
+		AbreAyuda(urlAyuda);
+
+	});
+
+	bindBackSpace()	;	
+
+	$("input:text, input:password, textarea").focus(function(){ if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false) $(document).unbind('.backspace');});
+
+	$("input:text, input:password, textarea").blur(function(){ if($(this).attr("readonly") == "") bindBackSpace(); });
+
+});
+
+function validar(){
+
+	var campoSeleccionado = false;
+
+	var flagError = true;
+
+	var flagCorrecto = false;
+
+	var conPalabra = false;
+
+	ocultarErrores();
+
+	var selectImporte = $("select[name='selectImporte']").val();
+
+	if(selectImporte != ""){
+
+		campoSeleccionado = true;
+
+		flagCorrecto = true;	
+
+		conPalabra = Campo_Vacio("pClave","","NO");
+
+		if(conPalabra){
+
+			campoSeleccionado = true;
+
+			if($("#pClave").val().indexOf(" ") != -1)
+
+				flagCorrecto = Valida_Caracteres("pClave",".",3,"SI",msj4);
+
+			else
+
+				flagCorrecto = Valida_Caracteres("pClave",".",3,"SI",msj1);
+
+		}
+
+		var criterioImporte = $("input[name='criterioImporte']:checked").val();
+
+		if(criterioImporte){
+
+			var importeCorrecto = false;
+
+			flagCorrecto = false;
+
+			switch(criterioImporte){
+
+				case "ESPECIFICO":
+
+					importeCorrecto = importeValido("importeInicio",msj2,"SI");
+
+					if(importeCorrecto)
+
+						flagCorrecto = true;
+
+					break;
+
+				case "RANGO":
+
+					importeCorrecto = importeValido("importeInicio",msj2,"SI");
+
+					if(importeCorrecto){
+
+						importeCorrecto = importeValido("importeFin",msj2,"SI");
+
+						if(importeCorrecto){
+
+							if( parseInt($("#importeInicio").val()) < parseInt($("#importeFin").val()))
+
+								flagCorrecto = true;
+
+							else{
+
+								flagCorrecto = false;
+
+								$("#importeFin_error").css("display","block").html("El importe inicial debe ser menor al final");
+
+							}
+
+						}
+
+					}else{
+
+						importeValido("importeFin",msj2,"SI");
+
+						flagCorrecto = false;
+
+					}
+
+					break;
+
+				default:
+
+					break;
+
+			}
+
+		}
+
+	}
+
+	if(!campoSeleccionado)
+
+		$("#Criterio_error").css("display","block").html(msj3);
+
+	if(!campoSeleccionado || !flagCorrecto){
+
+		$("#contenido").css("height","auto");
+
+		parent.$.modal.setDimentions($("#contenido").height(), 600);
+
+	}
+
+	if(campoSeleccionado && flagCorrecto){
+
+		parent.$.modal.close();
+
+	}
+
+}
+
+
+
+function ocultarErrores(){
+
+	$("div[id$='error']").each(function(){
+
+			$(this).css("display","none");
+
+			$(this).html('');
+
+		});
+
+	$("#contenido").css("height","auto");
+
+	parent.$.modal.setDimentions($("#contenido").height(), 600);
+
+}
+
+
+
+function mostrar(){
+
+	$(".saldos_bloque2_f4_error").show();
+
+	$("#contenido").css("height","auto");
+
+	parent.$.modal.setDimentions($("#contenido").height() + 10, 1);
+
+	$("#contenido").height($("#contenido").height() + 10);
+
+}
+
+function cerrar(){
+
+	parent.$.modal.close();
+
+	parent.$("#ventanaEmergente").css("height", "auto");
+
+	parent.$("#ventanaEmergente-contenido").css("height", "auto");
+
+}
+
+function centrar(){
+
+	parent.$.modal.impl.setContainerDimensions(true);
+
+}
+
+
+
+function importeValido( txtImp, Msg_Error, Req ) {
+
+  var valImp = $( "#"+txtImp+"" ).val().replace(/,/gi,"");
+
+  var regexImp = /^([1-9])([0-9]{0,10})((\.)([0-9]{1,2}))?$/;
+
+  if( regexImp.test( valImp ) ) {
+
+	return true;
+
+  } else{
+
+	if(Req != "NO"){
+
+		$("#"+txtImp+"_error").css("display","block").html(Msg_Error);
+
+	}
+
+	return false;
+
+  }
+
+}	
+
+</script>
+
+	
+
+</head>
+
+<body style="background-color:#FFF;">
+
+
+
+<div id="contenido" style="background-color:#FFF; height:auto;">
+
+	<div class="clear">
+
+		<div id="t0" class="panelIzEnca3_text2 floatL marginR10">Filtrar movimientos</div>
+
+		<div class="floatL">
+
+			<select name="selectImporte" id="selectImporte">
+
+			</select>
+
+		</div>
+
+		<div id="btn_ayuda" class="saldos_btn1 showtooltip Ayuda"></div>
+
+	</div>
+
+	<div class="clear">
+
+	<p id="t1" class="mensajeError_Fila2 color666 paddingL2">De acuerdo al criterio de b&uacute;squeda, elige al menos una de las opciones siguientes:</p>
+
+	</div>
+
+	<div class="mensajeError_Fila2 color666">
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+			<tr>
+
+				<td class="ancho30p tablaSaldos2_bordeR" valign="top">
+
+					<span id="t2">Por palabra clave</span><br /><br />
+
+					<input type="text" class="input ancho155" maxlength="20" id="pClave"/>
+
+				</td>
+
+				<td class="ancho30p tablaSaldos2_bordeR" valign="top">
+
+					<span id="t3">Por fechas</span><br /><br />
+
+					<div class="clear calendario">
+
+						<div id="t4" class="color000 f11">Fecha</div>
+
+						<p class="floatL"><input type="text" class="yearpicker" readonly="readonly" name="fecInicio" id="fecInicio" />
+
+						<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" /></p>
+
+						<p id="t5" class="marginT10 floatL normal">&nbsp; &nbsp; Al</p>
+
+					</div>
+
+					<div class="saldos_bloque2_f4_error fecInicio_error"><span>Introduce una Fecha</span></div>
+
+					
+
+					<br />
+
+					<div class="clear marginT20 calendario">
+
+						<div id="t6" class="color000 f11">Fecha</div>
+
+						<p class="floatL"><input type="text" class="yearpicker" readonly="readonly" name="fecFin" id="fecFin" />
+
+						<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" /></p>
+
+						<p class="floatL">&nbsp;</p>
+
+					</div>
+
+					<div class="saldos_bloque2_f4_error fecFin_error"><span>Introduce una Fecha</span></div>
+
+				</td>
+
+				<td class="ancho30p" valign="top">
+
+					<div>
+
+						<span id="t7">Por importe</span><br /><br />
+
+						
+
+						<div>
+
+							<div class="clear">
+
+								<div class="floatL"><input type="radio" name="criterioImporte" value="ESPECIFICO" /></div>
+
+								<div id="t8" class="floatL marginT3 color666 f11">Espec&iacute;fico</div>
+
+							</div>
+
+							<div class="clear">
+
+								<div class="floatL"><input type="radio" name="criterioImporte" value="RANGO" /></div>
+
+								<div id="t9" class="floatL marginT3 color666 f11">Por rango</div>
+
+							</div>
+
+						</div>
+
+						<br /><br /><br />
+
+						<div>
+
+							<div class="clear">
+
+								<div id="t10" class="floatL color666 f11">
+
+									De&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+								</div>
+
+								<div class="floatR">
+
+									<input type="text" class="input" name="importeInicio" id="importeInicio" maxlength="14" disabled="true"/>
+
+								</div>
+
+								<div id="importeInicio_error" class="saldos_bloque2_f4_error_display_blanco clear"></div><br /><br />
+
+							</div>
+
+							
+
+							<div class="clear">
+
+								<div id="t11" class="floatL color666 f11">
+
+									Hasta 
+
+								</div>
+
+								<div class="floatR">
+
+									<input type="text" class="input" name="importeFin" id="importeFin" maxlength="14" disabled="true"/><br />
+
+								</div>
+
+								<div id="importeFin_error" class="saldos_bloque2_f4_error_display_blanco clear"></div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<div id="pClave_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+	<div class="saldos_bloque2_f4_error_display_blanco" id="Criterio_error"></div>
+
+	<div class="mensajeError_Fila3 paddingT10">
+
+		<div class="floatL"><input type="button" value="Cancelar" class="btnRJ86" id="t12" onClick="JavaScript:cerrar();"/></div>
+
+		<div class="floatR"><input type="button" value="Filtrar" class="btnAZ86"  id="t13" onClick="JavaScript:validar();"/></div>
+
+	</div>
+
+</div>
+
+<div id="tooltip">
+
+	 <table cellpadding="0" cellspacing="0">
+
+		 <tr>
+
+			<td class="tooltipTL"></td>
+
+			<td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+			<td class="tooltipTR"></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="tooltipL">&nbsp;</td>
+
+			<td class="tooltipC">&nbsp;</td>
+
+			<td class="tooltipR">&nbsp;</td>
+
+		</tr>
+
+		<tr>
+
+			<td class="tooltipBL"></td>
+
+			<td class="tooltipB"></td>
+
+			<td class="tooltipBR"></td>
+
+		</tr>
+
+	</table>
+
+</div>
+
+
+
+</body>
+
+</html>
+

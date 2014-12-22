@@ -1,0 +1,627 @@
+/*
+
+* qTip2 - Pretty powerful tooltips
+
+* http://craigsworks.com/projects/qtip2/
+
+*
+
+* Version: nightly
+
+* Copyright 2009-2010 Craig Michael Thompson - http://craigsworks.com
+
+*
+
+* Dual licensed under MIT or GPLv2 licenses
+
+*   http://en.wikipedia.org/wiki/MIT_License
+
+*   http://en.wikipedia.org/wiki/GNU_General_Public_License
+
+*
+
+* Date: Thu Mar  3 10:10:57 PST 2011
+
+*/
+
+
+
+/* Fluid class for determining actual width in IE */
+
+.ui-tooltip-fluid {
+
+	display: block;
+
+	visibility: hidden;
+
+	position: static !important;
+
+	float: left !important;
+
+	max-width: none !important;
+
+	min-width: 0px !important;
+
+	max-height: none !important;
+
+	min-height: 0px !important;
+
+}
+
+
+
+.ui-tooltip, .qtip, .ui-tooltip-hidden {
+
+	position: absolute;
+
+	left: -31000px;
+
+	top: -31000px;
+
+	display: block;
+
+	max-width: 280px;
+
+	min-width: 50px;
+
+	font-size: 10.5px;
+
+	line-height: 12px;
+
+}
+
+
+
+.ui-tooltip-content {
+
+	position: relative;
+
+	padding: 0px 20px 20px;
+
+	overflow: hidden;
+
+	border-width: 1px;
+
+	border-style: solid;
+
+	text-align: left;
+
+	word-wrap: break-word;
+
+	overflow: hidden;
+
+	zoom: 1;
+
+}
+
+
+
+.ui-tooltip-titlebar {
+
+	position: relative;
+
+	min-height: 14px;
+
+	padding: 5px 20px 5px 10px;
+
+	overflow: hidden;
+
+	/*width: 100%;*/
+
+	border-width: 1px 1px 0px;
+
+	border-style: solid;
+
+	font-weight: bold;
+
+}
+
+
+
+.ui-tooltip-titlebar + .ui-tooltip-content { 
+
+	border-top-width: 0px !important; 
+
+}
+
+
+
+/*! Default close button class */
+
+.ui-tooltip-titlebar .ui-state-default{
+
+	position: absolute;
+
+	right: 4px;
+
+	top: 50%;
+
+	margin-top: -9px;
+
+
+
+	cursor: pointer;
+
+	outline: medium none;
+
+
+
+	border-width: 1px;
+
+	border-style: solid;
+
+}
+
+
+
+* html .ui-tooltip-titlebar .ui-state-default{
+
+	top: 16px;
+
+}
+
+
+
+.ui-tooltip-titlebar .ui-icon,
+
+.ui-tooltip-icon .ui-icon{
+
+	display: block;
+
+	text-indent: -1000em;
+
+}
+
+
+
+.ui-tooltip-icon, .ui-tooltip-icon .ui-icon{
+
+	-moz-border-radius: 3px;
+
+	-webkit-border-radius: 3px;
+
+	border-radius: 3px;
+
+}
+
+
+
+.ui-tooltip-icon .ui-icon{
+
+	width: 18px;
+
+	height: 14px;
+
+	text-align: center;
+
+	text-indent: 0;
+
+	font: normal bold 10px/13px Tahoma,sans-serif;
+
+	color: inherit;
+
+}
+
+
+
+/* Applied to 'focused' tooltips e.g. most recently displayed/interacted with */
+
+.ui-tooltip-focus{
+
+
+
+}
+
+
+
+/*! Default tooltip style */
+
+.ui-tooltip-titlebar,
+
+.ui-tooltip-content{
+
+	border-color: #F1D031;
+
+	background-color: #FFFFA3;
+
+	color: #555;
+
+}
+
+
+
+.ui-tooltip-titlebar{
+
+	background-color: #FFEF93;
+
+}
+
+
+
+.ui-tooltip-titlebar .ui-tooltip-icon{
+
+	border-color: #CCC;
+
+	background: #F1F1F1;
+
+	color: #777;
+
+}
+
+
+
+.ui-tooltip-titlebar .ui-state-hover{
+
+	border-color: #AAA;
+
+	color: #111;
+
+}
+
+
+
+.ui-tooltip .ui-tooltip-tip {
+
+	position: absolute;
+
+	margin: 0 auto;
+
+	overflow: hidden;
+
+	background: transparent !important;
+
+	border: 0px dashed transparent !important;
+
+	z-index: 10;
+
+}
+
+
+
+.ui-tooltip .ui-tooltip-tip,
+
+.ui-tooltip .ui-tooltip-tip *{
+
+	line-height: 0.1px !important;
+
+	font-size: 0.1px !important;
+
+	color: #123456;
+
+	background: transparent;
+
+	border: 0px dashed transparent;
+
+}
+
+
+
+#qtip-overlay {
+
+	position: absolute;
+
+	left: -10000em;
+
+	top: -10000em;
+
+	background-color: white;
+
+	opacity: 0.1;
+
+	filter: alpha(opacity=10);
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+
+	width: 100% !important;
+
+	height: 100% !important;
+
+}
+
+
+
+/*! Add shadows to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE6+, Safari 2+ */
+
+.ui-tooltip-shadow {
+
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.25);	
+
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+
+	-webkit-box-shadow: 0 0 5px 1px #666666;
+
+	-o-box-shadow: 0 0 5px 1px #666666;
+
+}
+
+
+
+.ie.ui-tooltip-shadow  {
+
+	filter: progid:DXImageTransform.Microsoft.Shadow(Color='gray', Direction=135, Strength=6);
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Color='gray', Direction=135, Strength=6)";
+
+}
+
+
+
+/*! Add rounded corners to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+
+.ui-tooltip-rounded,
+
+.ui-tooltip-rounded .ui-tooltip-content,
+
+.ui-tooltip-tipsy,
+
+.ui-tooltip-tipsy .ui-tooltip-content,
+
+.ui-tooltip-youtube,
+
+.ui-tooltip-youtube .ui-tooltip-content{
+
+	-moz-border-radius: 4px;
+
+	-webkit-border-radius: 4px;
+
+	border-radius: 4px;
+
+}
+
+
+
+.ui-tooltip-rounded .ui-tooltip-titlebar,
+
+.ui-tooltip-tipsy .ui-tooltip-titlebar,
+
+.ui-tooltip-youtube .ui-tooltip-titlebar{
+
+	-moz-border-radius: 5px 5px 0 0;
+
+	-webkit-border-radius: 5px 5px 0 0;
+
+	border-radius: 5px 5px 0 0;
+
+}
+
+
+
+.ui-tooltip-rounded .ui-tooltip-titlebar + .ui-tooltip-content,
+
+.ui-tooltip-tipsy .ui-tooltip-titlebar + .ui-tooltip-content,
+
+.ui-tooltip-youtube .ui-tooltip-titlebar + .ui-tooltip-content{
+
+	-moz-border-radius: 0 0 5px 5px;
+
+	-webkit-border-radius: 0 0 5px 5px;
+
+	border-radius: 0 0 5px 5px;
+
+}
+
+
+
+/************************************************************/
+
+
+
+.ui-tooltip.jfpw-tooltip {
+
+	border-color: #cccccc;
+
+}
+
+
+
+.jfpw-tooltip-small {
+
+    max-width: 110;
+
+    min-width: 50px;
+
+	width: 110px;
+
+}
+
+
+
+.ui-tooltip.jfpw-tooltip.jfpw-tooltip-error .ui-tooltip-title,
+
+.ui-tooltip.jfpw-tooltip.jfpw-tooltip-error .ui-tooltip-content {
+
+	background-color: #FFFF99;
+
+	color: #000000;
+
+	padding: 10px 10px 10px;
+
+	border-color: #C5C5C5;
+
+} 
+
+
+
+.ui-tooltip.jfpw-tooltip .ui-tooltip-titlebar {
+
+    background-color: #ffffff;
+
+    border-color: #CCCCCC;
+
+    color: #000000;
+
+    display: block;
+
+    height: 20px;
+
+    min-height: 0;
+
+    position: relative;
+
+}
+
+
+
+.ui-tooltip.jfpw-tooltip .ui-tooltip-title {
+
+	height: 12px;
+
+	width: 90%;
+
+	position: absolute;
+
+	padding: 5px 10px;
+
+}
+
+
+
+.ui-tooltip.jfpw-tooltip .ui-tooltip-content {
+
+    background-color: #FFFFFF;
+
+    border-color: #CCCCCC;
+
+    color: #858585;
+
+    padding-top: 0px 20px 20px;
+
+}
+
+
+
+.ui-tooltip.jfpw-tooltip .ui-tooltip-titlebar .ui-state-default {
+
+	-moz-border-radius: 0px;
+
+	-webkit-border-radius: 0px;
+
+	-o-border-radius: 0px;
+
+	border-radius: 0px;
+
+	color: #777777;
+
+}
+
+
+
+.ui-tooltip.jfpw-tooltip .ui-tooltip-titlebar .ui-state-default {
+
+	color: #777777;
+
+}
+
+
+
+.ui-tooltip.jfpw-tooltip .ui-tooltip-titlebar .ui-tooltip-icon {
+
+/*	height: 10px; */
+
+    height: 13px;
+
+	right: 10px;
+
+	top: 10px;
+
+	margin-top: 0px;
+
+    width: 13px; /* New attribute added */
+
+}
+
+.ui-tooltip.jfpw-tooltip .ui-tooltip-titlebar .ui-tooltip-icon .ui-tooltip-icon .ui-icon {
+
+	
+
+}
+
+.ui-tooltip.jfpw-tooltip * .ui-tooltip-icon .ui-icon {
+
+    background-image: url('/JFP/images/widgets/jfpw.tooltip.close.png');
+
+/*    background-position: -1px -2px; */
+
+    background-position: -1px -1px; 
+
+	background-repeat: no-repeat;
+
+    color: inherit;
+
+    font: bold 10px/13px Tahoma,sans-serif;
+
+/*    height: 12px; */
+
+    height: 13px; 
+
+    text-align: center;
+
+    text-indent: 0;
+
+/*    width: 12px; */
+
+     width: 13px;
+
+	-moz-border-radius: 0px;
+
+	-webkit-border-radius: 0px;
+
+	-o-border-radius: 0px;
+
+	border-radius: 0px;
+
+}
+
+	
+
+.jfpw-tooltip-cursor {
+
+	cursor: pointer; 
+
+}
+
+
+
+.jfp-tooltip-error-content {
+
+    border-color: #F1D031 !important;
+
+    background-color: #FFFFA3 !important;
+
+    color: #555;
+
+}
+
+
+
+.jfpw-tooltip-info {
+
+    display: none;
+
+    height: 0;
+
+    visibility: hidden;
+
+    width: 0;
+
+}
+
+
+
+.ui-tooltip.jfpw-tooltip.jfpw-tooltip-datepicker .ui-tooltip-title,
+
+.ui-tooltip.jfpw-tooltip.jfpw-tooltip-datepicker .ui-tooltip-content {
+
+	padding: 0px 5px 5px;
+
+} 
+
+
+
+.jfpw-tooltip-datepicker {
+
+	width: 160px;
+
+}
+
+.VMLElem { behavior: url(#default#VML); }

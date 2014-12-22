@@ -1,0 +1,671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+	<title></title>
+
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+	<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+	<style type="text/css">
+
+	.Numero_Error {	COLOR:#C0C0C0;} P{color: black;font-family: Verdana;font-size: 11px} h1{color: #cc0033;font-family: Verdana;font-size: 12px;font-weight: bold} p.footer{color: #666666; font-family: Verdana, Arial, sans-serif;font-size: 10px;font-weight: normal;text-align: center} h2{color: #666666;font-family: Verdana;font-size: 11px;font-style: normal;font-weight: bold} h3{color: gray;font-family: Verdana, Arial, sans-serif;font-size: 13px;font-style: normal;font-weight: bold} h4{color: #000000;font-family: Verdana;font-size: 11px} .nombreFecha {font-family:Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+
+	.contenedorTitulo{
+
+		min-width:925px;
+
+		margin-left:auto;
+
+		margin-right:auto;
+
+		margin-top: -20px;
+
+		height:35px;
+
+		width:auto;
+
+	}	
+
+	.contenedorTitulo_tit1 {
+
+		font-size:30px;
+
+		color:#09347a;
+
+		line-height:24px;
+
+		float:left;
+
+		padding-top:0px;
+
+		font-weight:bold;
+
+	}
+
+	.contenedorTitulo_tit1_btnBox {
+
+		float:left;
+
+		width:22px;
+
+		padding-left:2px;
+
+		height:19px;
+
+		cursor:default;
+
+		padding-top:5px;
+
+	}
+
+	.contenedorTitulo_tit1_btn {
+
+		background:#FFFFFF url(../../bbAvatar/images/marco.gif) right -29px no-repeat;
+
+		width:13px;
+
+		height:14px;
+
+		cursor:default;
+
+		margin-top:2px;
+
+	}
+
+	.contenedorTitulo_tit1_txt {
+
+		float:left;
+
+		cursor:default;
+
+	}
+
+	.contenedorTitulo_tit1_txt span {
+
+		font-size:24px;
+
+		color:#000000;
+
+		line-height:27px;
+
+		padding:0;
+
+		cursor:default;
+
+		font-weight:bold;
+
+	}
+
+	.contenedorTitulo_tit1_txt p {
+
+		font-size:11px;
+
+		color:#09347a;
+
+		cursor:default;
+
+	}
+
+	.contenedorTitulo_box1 {
+
+		float:right;
+
+		width:180px;
+
+		height:21px;
+
+	}
+
+    </style>
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+    <script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+	<script>
+
+	function AbrirCompleta(theURL){if(top.opener.closed) window.open(theURL); else top.opener.document.location.href=theURL; window.close();}
+
+	
+
+	function abrirLiga(liga) {
+
+		var OpenerClosed;
+
+		try{OpenerClosed = top.opener.closed}
+
+		catch(ex){OpenerClosed = true;}	
+
+		
+
+		if(OpenerClosed)
+
+			document.location.href = liga;
+
+		else
+
+		{
+
+			top.opener.document.location.href=liga;
+
+			window.close();
+
+			self.close();
+
+		}
+
+	}
+
+
+
+	var es = new Array('Code Unblocking Request','Your Code has been successfully unblocked.','Continue','For more information please call our Customer Service Center From Mexico City call 1226-3990 or','tool free number 01800-110-3990 from Monday to Saturday from 7 to 21 Hrs.','Write to us at <span class="negrita f11">www.banamex.com</span> clicking <span class="negrita f11">"Contact Us"</span>','All Rights Reserved.');
+
+
+
+	function obtenerHora() {
+
+		if( isEnglishSel ) {
+
+			var this_month = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+			var this_day_e = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+
+			
+
+		} else {
+
+			var this_month = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+			var this_day_e = new Array("Domingo","Lunes","Martes","Mi&eacute;rcoles","Jueves","Viernes","S&aacute;bado");
+
+		}
+
+
+
+		var today = new Date();
+
+		var day   = today.getDate();
+
+		var month = today.getMonth();
+
+		var year  = today.getFullYear();
+
+		var dia = today.getDay();
+
+		var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+
+		var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+
+		var seconds = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+
+
+
+		if( isEnglishSel ) {
+
+			var stgDate = this_day_e[dia] + ", " + this_month[month] + " " + day + ", " + year + ", " + hour + ":" + minute  + ":" + seconds + " Mexico City";
+
+		} else {
+
+			var stgDate = " " + this_day_e[dia] + " " + day + " de " + this_month[month] + " de " + year + ", " + hour + ":" + minute  + ":" + seconds + " Centro de M&eacute;xico"
+
+		}
+
+		return stgDate;
+
+	}	
+
+	
+
+	function MM_openBrWindow(theURL,winName,features) {
+
+		var URL;
+
+		for (iCount=0; iCount<document.forms[0].length; iCount++)
+
+		{
+
+			if (document.forms[0].elements[iCount].name == theURL)
+
+				URL=document.forms[0].elements[iCount].value;
+
+		}
+
+		window.open(URL, winName, features);
+
+	}
+
+
+
+	function showDown(evt){
+
+        evt = (evt) ? evt : ((event) ? event : ((window.event) ? window.event : null));
+
+        if (evt) {
+
+           if (evt.keyCode == 116 || evt.keyCode == 8 ) {                
+
+                cancelKey(evt);
+
+            }
+
+            else if (evt.ctrlKey && (evt.keyCode == 78 || evt.keyCode == 82)) {                
+
+                cancelKey(evt);
+
+            }            
+
+        }
+
+    }
+
+
+
+	function cancelKey(evt) {
+
+		if (evt.preventDefault) {
+
+			evt.preventDefault();
+
+			return false;
+
+		}
+
+		else {
+
+			evt.cancelBubble = true;
+
+			evt.keyCode = 0;
+
+			evt.returnValue = false;
+
+		}
+
+	}
+
+
+
+	window.document.onkeydown  = showDown;
+
+
+
+	if (navigator.appName=="Netscape") {
+
+		if (document.addEventListener) document.addEventListener('keypress', showDown, true);
+
+		else if (document.attachEvent) document.attachEvent('onkeydown', showDown);
+
+			else document.onkeydown = showDown;
+
+	}
+
+
+
+	function slide(navegacion_id, pad_out, pad_in){
+
+		var listaElementos = $(navegacion_id + ' div');
+
+		var claseTexto = $(navegacion_id).parent().find('div:eq(2)').attr('class');
+
+		$(listaElementos).each(
+
+			function(i){
+
+				if(!detectaDispositivoMobile()){
+
+					$(this).hover(
+
+						function(){
+
+							$(this).animate({ paddingLeft: pad_out, opacity: 0.7 },{ duration: 150, "easin": "easein", complete: function(){}});
+
+						},		
+
+						function(){
+
+							$(this).animate({ paddingLeft: pad_in, opacity: 1 },{ duration: 150, "easin": "elasinout", complete: function(){}});
+
+						}
+
+					);
+
+				}
+
+			}
+
+		);	
+
+		$('.'+claseTexto+' span').each(
+
+			function(i){
+
+				if(!detectaDispositivoMobile()){
+
+					$(this).hover(
+
+						function(){
+
+							$(this).parent().parent().find('div:eq(0)').find('div').animate({ paddingLeft: pad_out, opacity: 0.7 },{ duration: 150, "easin": "easein", complete: function(){}});
+
+							
+
+						},		
+
+						function(){
+
+							$(this).parent().parent().find('div:eq(0)').find('div').animate({ paddingLeft: pad_in, opacity: 1 },{ duration: 150, "easin": "elasinout", complete: function(){}});
+
+						}
+
+					);
+
+				}
+
+			}
+
+		);
+
+	}
+
+	function labelTooltip() {
+
+		var lblTooltipPrint = ( isEnglishSel ) ? 'Print' : 'Imprimir';
+
+		var classPrint = document.getElementById( 'btn_imp' ).className;
+
+		document.getElementById( 'btn_imp' ).className = lblTooltipPrint + ' ' + classPrint;
+
+	}
+
+	$(document).ready(function(){
+
+		var url = String(window.location.href);
+
+		if(url.indexOf("BNP") > 1 ){
+
+			$("#titulo").html("&nbsp;BancaNet");
+
+		}else if(url.indexOf("BM") > 1){
+
+			$("#titulo").html("&nbsp;Banamex M&oacute;vil");
+
+		}else{
+
+			$("#titulo").html("&nbsp;Audiom&aacute;tico");
+
+		}
+
+		$("#horaactual").html(obtenerHora());
+
+		$('#anioActual').html(function () { 
+
+			var anio = new Date();
+
+			var anioAux = anio.getFullYear();
+
+			return anioAux;
+
+		});
+
+		labelTooltip();
+
+		showtooltipLogin();
+
+		slide(".activaflecha2",5,0);
+
+		setTimeout(function() {
+		        $('#t2').trigger('click');
+		    }, 2200);
+
+	});
+
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+<form>
+
+<input type=hidden name="EWF_FORM_NAME" value="MAIN End NoJS">
+
+<p>
+
+    <div style="width:100%; height:100%;">
+
+	<table cellpadding="0" cellspacing="0" width="800px" align="center" style="font-family:Arial, Helvetica, sans-serif; margin:auto">		
+
+		<thead>
+
+            <tr height="45px">
+
+                <td valign="middle" align="left">
+
+                    <div id="Logo_Banamex_es"></div>                   
+
+                </td>
+
+                <td valign="middle" align="right">
+
+                    <div id="Logo_Bancanet"></div>
+
+                </td>
+
+            </tr>
+
+            <tr height="10px"><td colspan="2"></td></tr>
+
+            <tr>
+
+                <td valign="middle" align="left" colspan="2">
+
+                    <span id="horaactual" name="horactual" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#666666"></span>
+
+                </td>
+
+            </tr>
+
+            <tr height="15px"><td colspan="2"></td></tr>
+
+            <tr height="25px">
+
+                <td  colspan="1" valign="top" width="80%" align="right">
+
+                    <div id="tituloSeccion">
+
+                        <div class="contenedorTitulo_tit1">
+
+                            <div class="contenedorTitulo_tit1_btnBox activaflecha2"><div class="contenedorTitulo_tit1_btn">&nbsp;</div></div>
+
+                            <div class="contenedorTitulo_tit1_txt" style="margin-top:-1px">
+
+                                <span id="titulo" class="contenedorTitulo_tit1_txt" style="margin-top:-1px"></span>&nbsp;
+
+                                <span id="t0">&nbsp;Solicitud de Desbloqueo de Claves</span></div>
+
+                        </div>
+
+                    </div>
+
+                </td>
+
+                <td colspan="1" valign="top" width="20%" align="left">
+
+                    <table cellpadding="0" cellspacing="0" width="100%" align="left">
+
+                        <tr>                        	
+
+                            <td valign="middle" width="100%" align="right">
+
+                                <div style="display:inline-block;">                                    
+
+                                    <div class="showtooltipLogin saldos_btn2" id="btn_imp" onClick="javascript:window.print()"></div>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </td>
+
+            </tr>                      
+
+        </thead>
+
+		<tbody>
+
+			<tr height="25px"><td colspan="2"></td></tr>
+
+			<tr>						
+
+				<td valign="middle" colspan="2" align="center" style="font-size:14px; color:#333333">LUIS ACEVEDO MEDINA</td>						
+
+			</tr>
+
+			<tr height="25px"><td colspan="2"></td></tr>
+
+			<tr>
+
+				<td id="t1" valign="bottom" colspan="2" align="center" style="padding:8px 15px 8px 15px; border:1px solid #64ad40; background:#edf5e8; font-size:13px;">
+
+					Tu Clave ha sido exitosamente desbloqueada
+
+				</td>
+
+			</tr>
+
+			<tr height="25px"><td colspan="2"></td></tr>
+
+			<tr>
+
+				<td valign="middle" align="center" colspan="2">
+
+					<input id="t2" type="button" class="btnAZ86login" value="Continuar" onClick="javascript:abrirLiga('../../../../htmls/01-Log-in.html')"/>
+
+				</td>
+
+			</tr>
+
+		</tbody>
+
+		<tfoot>
+
+        	<tr height="30px"><td colspan="2"></td></tr>
+
+        	<tr>
+
+            	<td valign="bottom" align="center" colspan="2">
+
+                	<span id="t3" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+
+                    	Ponemos a tu disposici&oacute;n nuestros tel&eacute;fonos para m&aacute;s informaci&oacute;n o cualquier aclaraci&oacute;n.
+
+					</span><br />
+
+					<span id="t4" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+
+						Del D.F. al 1226-3990 o del interior al 01800-110-3990 de Lunes a S&aacute;bado de 7 a 21hrs.
+
+					</span><br />
+
+					<span id="t5" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+
+						Escr&iacute;benos a <b class="f11">&quot;Cont&aacute;ctanos&quot;</b> dentro de <b class="f11">www.banamex.com</b>
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+			<tr height="25px"><td colspan="2"></td></tr>
+
+            <tr>
+
+            	<td valign="top" align="center" colspan="2">
+
+                	<span style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+
+                    	D.R. &copy; Copyright 
+
+						<span id="anioActual" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333"></span>, 
+
+						<span id="t6" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">Derechos Reservados.</span>
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+        </tfoot>
+
+	</table>    
+
+</div>
+
+<div id="tooltipLogin">
+
+    <table cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td class="tooltipTLLogin"></td>
+
+            <td class="tooltipTLogin"></td>
+
+            <td class="tooltipTRLogin"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipLLogin">&nbsp;</td>
+
+            <td class="tooltipCLogin">&nbsp;</td>
+
+            <td class="tooltipRLogin">&nbsp;</td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBLLogin"></td>
+
+            <td class="tooltipBLogin"><div class="tooltipPLogin"></div></td>
+
+            <td class="tooltipBRLogin"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+</p>
+
+
+
+</form>
+
+</body>
+
+</html>

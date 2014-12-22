@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+		
+		<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+		<script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+		<script type="text/jscript">
+			es=new Array(
+			
+			'Notificaciones Banamex',
+			'Select the operation you want to carry out and click "Continue"',
+			'Operation:',
+			'Modify data',
+			'Register / Cancel / Update Notifications',
+			'Consult Notices',
+			'Generate new password for email Account Statement',
+			'Continue',
+			'Cancel'
+			);
+		</script>
+	</head>
+	<body class="bg_demo">
+		<div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">
+			
+			<div class="cH-appPanelHead">
+				<h3 id="t0">Notificaciones Banamex</h3>
+			</div>
+			<div class="width100p">
+				<p class="instructions" style="width:100%; margin-bottom:0px !important;" id="t1">Selecciona la operaci&oacute;n que deseas hacer y da clic en "Continuar".</p>
+				
+				<div class="form-row" style="margin:23px 0 10px 0">
+					<label  class="for-table width139i" id="t2">Operaci&oacute;n:</label>
+					<label class="marginsRadios for-table radioR margin-right11">
+						<input name="cuenta" class="paddingT2" type="radio" id="cuenta1" onClick="valor=this.value;" value="1" checked="checked" />
+					</label>
+					<div id="t3">Modificar datos</div>
+					<div class="clear"></div>
+				</div>
+				<div class="form-row marginT2" style="margin-bottom: 10px;">
+					<label  class="for-table width139i">&nbsp;</label>
+					<label class="marginsRadios for-table radioR margin-right11">
+						<input name="cuenta" type="radio" class="paddingT0 marginT0" id="cuenta2" onClick="valor=this.value;" value="2" />
+					</label>
+					<div class="float-left" id="t4">Alta / Baja / Modificaci&oacute;n de Notificaciones</div>
+					<div class="clear"></div>
+				</div>
+				
+				<div class="form-row marginT2" style="margin-bottom: 10px;">
+					<label  class="for-table width139i">&nbsp;</label>
+					<label class="marginsRadios for-table radioR margin-right11">
+						<input name="cuenta" type="radio" class="paddingT0 marginT0" id="cuenta3" onClick="valor=this.value;" value="3" />
+					</label>
+					<div class="float-left" id="t5">Consulta de Notificaciones</div>
+					<div class="clear"></div>
+				</div>
+				
+				<div class="form-row marginT2" style="margin-bottom: 10px;">
+					<label  class="for-table width139i">&nbsp;</label>
+					<label class="marginsRadios for-table radioR margin-right11">
+						<input name="cuenta" type="radio" class="paddingT0 marginT0" id="cuenta4" onClick="valor=this.value;" value="4" />
+					</label>
+					<div class="float-left" id="t6">Generar nueva contrase&ntilde;a para Estado de Cuenta por e-mail</div>
+					<div class="clear"></div>
+				</div>
+				
+				<!--  termina rango de cheques-->
+			</div><!--termina 98-->
+				
+			<div class="cF-sideBySide border-topSolid ancho100p margin-top30 paddingT2">
+				<div class="width139i floatLI">&nbsp;</div>
+				<ul class="cN-primaryNav paddingT10 floatLI margin-left12">
+					<li class="cM-spriteBase cN-primaryNavButton"><a onClick="continuar()" id="t7">CONTINUAR</a></li>
+					<li class="cN-primaryNav">
+						<div id="flechaLinks">
+							<span class="flechaazul float-left"></span>
+							<a href="javascript:cancelar();" class="sinBold" id="t8">Cancelar</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+			
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    top.tamano7();
+			    $.imageTick.logging = true;
+			    $("input[name='cuenta']").imageTick({
+			        tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png",
+			        no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			        image_tick_class: "radios"
+			    });
+			});
+			var valor = 1;
+
+			function continuar() {
+			    if (valor == 1) {
+			        top.cargaDocN('Notificaciones_Banamex/screenC1.html');
+			    }
+			    if (valor == 2) {
+			        top.cargaDocN('Notificaciones_Banamex/screenC2.html');
+			    }
+			    if (valor == 3) {
+			        top.cargaDocN('Notificaciones_Banamex/screenC3.html');
+			    }
+			    if (valor == 4) {
+			        top.cargaDocN('Notificaciones_Banamex/screenC4.html');
+			    }
+			}
+
+			function cancelar(){
+				top.cargaDocN('Notificaciones_Banamex/screen1.html');
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,196 @@
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/jscript">
+
+	es=new Array( 
+	'Capture',
+	'Verify',
+	'Response',
+	
+	'Withdrawals',
+	
+	'Complete the data for the withdrawal and click "Continue".',
+	
+	'Withdrawal account:',
+	
+	'Deposit account:',
+	'Select an option',
+	
+	'SIEFORE',
+	
+	'Select the SIEFORE from which you want to withdraw and enter the amount indicating if it includes ISR.',
+	
+	'SIEFORE 3 - MXN: $ 132,123,023.00',
+	'SIEFORE 5 - MXN: $ 2,232,123.43',
+	'SIEFORE 7 - MXN: $ 23,232,222.00',
+	
+	'ISR included',
+	'ISR not included',
+	
+	'<span class="sAdmiracion2" style="height:55px !important;"></span> The balances are informative and take into account the previous day; the estimations take into account today&acute;s stock price of each SIEFORE, however, these amounts may vary as, according with the law, the liquidation is carried out no later than the 5th business day after the date on which you registered your withdrawal request.',
+	
+	'CONTINUE'
+	);
+
+     </script>
+</head>
+<body class="bg_demo">
+
+	<div class="ancho100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t0">Captura</span> </li>
+            <li id="opcVerifica"><strong>2</strong>  <span id="t1">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t2">Respuesta</span> </li>
+        </ul>
+        </div> 
+
+     <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important"> 
+     
+
+                    <div class="cH-appPanelHead">
+
+                        <h3 id="t3">Retiros</h3>
+
+                    </div>
+                    
+           <div class="width100p">
+
+							 <p class="instructions" style="width:100%; margin-bottom:0px !important;" id="t4">Selecciona la cuenta de dep&oacute;sito y da clic en "Continuar".</p>
+
+                            
+                            <div class="form-row margin-top25">
+                            <label  class="for-table width139i margin-top4" id="t5">Cuenta de retiro</label>
+                            <label  class="for-table width230 margin-top4">Mi retiro - AFORE NSS - MXN - 12345</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="border-top"></div>
+                            
+                            <div class="form-row">
+                            <label  class="for-table width139i margin-top4" id="t6">Cuenta de dep&oacute;sito</label>
+                                <select class="width315">
+									<option id="t7">Selecciona una opci&oacute;n</option>
+									<option selected="selected">Mi Cuenta - Cheques - MXN - 67890 - $ 45,000.00</option>
+								</select>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="border-top"></div>
+                            
+                            <div class="form-row">
+                            	<label  class="for-table width139i margin-top4 bold" id="t8">SIEFORE</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row">
+                            	<label  class="for-table ancho100p margin-top4" id="t9">Selecciona la SIEFORE de la que deseas realizar el retiro e ingresa el importe indicado si &eacute;ste incluye el ISR.</label>
+                                <div class="clear"></div>
+                            </div>
+							
+                            <div class="form-row">
+                            	<label  class="for-table width139i margin-top4">&nbsp;</label>
+								<label class="marginsRadios for-table radioR">
+                                <input name="cuenta" type="checkbox" id="cuenta1" checked="checked" />
+                                </label>
+								<div class="paddingT2 width257  floatLI" id="t10">SIEFORE 3 - MXN: $ 132,123,023.00</div>
+                                <input type="text" value="$ 2,918,081.00" class="margin-left20 floatLI">
+                                <div class="clear"></div>
+                            </div>
+
+                      		<div class="form-row">
+                              	<label  class="for-table width139i margin-top4">&nbsp;</label>
+                                <label class="marginsRadios for-table radioR">
+                                <input name="cuenta" type="checkbox" id="cuenta2" onClick="valor=this.value;" value="2" />
+                                </label>
+                                <div class="float-left paddingT2 width257 floatLI" id="t11">SIEFORE 5 - MXN: $ 2,232,123.43</div>
+                                <input type="text" value="$" class="margin-left20 floatLI">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row">
+                              	<label  class="for-table width139i margin-top4">&nbsp;</label>
+                                <label class="marginsRadios for-table radioR">
+                                <input name="cuenta" type="checkbox" id="cuenta3" onClick="valor=this.value;" value="2" />
+                                </label>
+                                <div class="float-left paddingT2 width257 floatLI" id="t12">SIEFORE 7 - MXN: $ 23,232,222.00</div>
+                                <input type="text" value="$" class="margin-left20 floatLI">
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="border-top" style="height:10px !important;"></div>	
+                            
+                            <div class="form-row margin-bottom10">
+                            	<label  class="for-table width139i margin-top4">&nbsp;</label>
+								<label class="marginsRadios for-table radioR">
+                                <input name="cuenta2" type="radio" id="cuentar1" value="1" checked="checked" />
+                                </label>
+								<div class="margin-top5 paddingT2" id="t13">Incluye ISR</div>
+                                <div class="clear"></div>
+                            </div>
+
+                      		<div class="form-row margin-bottom10">
+                              	<label  class="for-table width139i margin-top4">&nbsp;</label>
+                                <label class="marginsRadios for-table radioR">
+                                <input name="cuenta2" type="radio" id="cuentar2" value="2" />
+                                </label>
+                                <div class="float-left paddingT2"id="t14">No incluye ISR</div>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="border-top"></div>
+                    
+                    <p style="margin-bottom:12px !important; *margin-bottom:0px !important; margin-bottom:12px\0/ !important;" id="t15" class="instructions margin-botom0 clear"><span class="sAdmiracion2" style="height:50px !important;"></span>Los saldos son informativos al d&iacute;a anterior, los c&aacute;lculos son considerados al precio de acci&oacute;n de cada SIEFORE<br>correspondiente al d&iacute;a de hoy, sin embargo, estos saldos podr&aacute;n variar ya que la liquidaci&oacute;n de conformidad con la<br> ley se realizar&aacute; a m&aacute;s tardar el 5&deg; d&iacute;a h&aacute;bil posterior a la fecha en que se registr&oacute; tu solicitud de retiro.</span></p>
+                    <!--  termina rango de cheques-->
+
+				</div><!--termina 98-->
+							
+
+                <div class="cF-sideBySide border-topSolid ancho100p margin-top12 paddingT2">
+                <div class="width139i floatLI">&nbsp;</div>
+
+                    <ul class="cN-primaryNav paddingT10 floatLI margin-left12">
+
+                        <li class="cM-spriteBase cN-primaryNavButton"><a onClick="continuar()" id="t16">CONTINUAR</a></li>	
+
+                    </ul>
+
+                 </div>
+               
+               </div>
+                 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	top.tamano10();
+	
+	$.imageTick.logging = true;
+	$("input[name='cuenta']").imageTick({
+		tick_image_path: "../../../../JFP/regional/images/img_form/check_1.png", 
+		no_tick_image_path: "../../../../JFP/regional/images/img_form/no_check_1.png",
+		image_tick_class: "checkboxes"
+	});
+	
+	$.imageTick.logging = true;
+	$("input[name='cuenta2']").imageTick({
+		tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+		no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+		image_tick_class: "radios"
+	});
+	
+});
+	function continuar(){
+		top.cargaDocN('Retiro_Afore/screenC1_2.html');
+	}
+
+</script>                
+
+</body>
+</html>

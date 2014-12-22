@@ -1,0 +1,2043 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+   	<title>Banamex</title>
+
+    <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+   
+
+<script language="JavaScript">
+
+function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected" ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+
+
+function campoVacio( idCampo, contexto) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "" ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+
+
+
+
+function importeCero( idTxt, contexto) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"").val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([a-zA-Z]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"" ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[^@ ]+@([a-zA-Z]+)\.([a-zA-Z]{2,6})$/;
+
+  var valMail = $("#"+idCampo).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"").val().replace(/,/gi,"");
+
+  var regexImp = /^([1-9])([0-9]{0,10})((.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"").val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"" ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	var test = regexRFC.test( valRfc )
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"").val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"").val().replace(/,/gi,"") );
+
+  if( valIva >= valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+/////////////////////////////////////validaciones CHEQUERAS
+
+
+
+function personaFoM(idtxtbox){
+
+	if(tipo_persona=="001551" || tipo_persona=="001521"){
+
+		if($("#"+idtxtbox).val()>5)
+
+		return true;
+
+	else
+
+		return false;
+
+	}
+
+	else{
+
+		if($("#"+idtxtbox).val()>10)
+
+		return true;
+
+	else
+
+		return false;
+
+	}
+
+}
+
+
+
+function radbutton4(idbut1, idbut2, idbut3, idbut4){
+
+	if($("#"+idbut1).attr("checked")==false && $("#"+idbut2).attr("checked")==false && $("#"+idbut3).attr("checked")==false	&& $("#"+idbut4).attr("checked")==false)
+
+		return true;
+
+	else
+
+		return false;
+
+}
+
+
+
+function radbutton3(idcheck1,idcheck2,idcheck3){
+
+	if($("#"+idcheck1).attr("checked")==false && $("#"+idcheck2).attr("checked")==false && $("#"+idcheck3).attr("checked")==false)
+
+		return true;
+
+	else
+
+		return false;
+
+}
+
+
+
+function radbutton2(idcheck1,idcheck2){
+
+	if($("#"+idcheck1).attr("checked")==false && $("#"+idcheck2).attr("checked")==false)
+
+		return true;
+
+	else
+
+		return false;
+
+}
+
+
+
+function rango(idtxtbox1,idtxtbox2){
+
+	var a=$("#"+idtxtbox1).val();
+
+	var b=$("#"+idtxtbox2).val();
+
+	if(parseFloat(a) > parseFloat(b))
+
+		return true;
+
+	else
+
+		return false;
+
+}
+
+
+
+function validaChecks(){
+
+	var i;
+
+	var ne=0;
+
+	if(document.getElementsByName("checkbox").length=="1"){
+
+		if(document.getElementById("check"+document.forms[0].checkbox.value).checked){
+
+			var ne=1;
+
+		}
+
+	}
+
+	else{
+
+		for (i=0; i<document.getElementsByName("checkbox").length; i++){
+
+			if (document.getElementById("check"+document.forms[0].checkbox[i].value).checked){
+
+				var ne=1;
+
+				i=document.getElementsByName("checkbox").length;
+
+			}
+
+		}
+
+	}
+
+	if(ne==1)
+
+		return false;
+
+	else
+
+		return true;
+
+}
+
+///////////////////////////////////////Funciones generales!!!!!!!
+
+function showErrorChe( idElem, msgErr) {
+
+  hasError = true;
+
+  var $divErr = $('<div class="error_formulario"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'').after( $divErr );
+
+  window.parent.ajustar();
+
+}
+
+
+
+function hideErrorsChe(){
+
+	hasError = false;
+
+	$('div.error_formulario').remove();
+
+}
+
+
+
+
+
+
+
+
+
+  var msg1 = "Seleccione la cuenta origen.";
+
+  var msg2 = "Error en n&uacute;mero de chequeras.";
+
+  var msg3 = "Debe seleccionar una cuenta origen.";
+
+  var msg4 = "El n&uacute;mero m&aacute;ximo de chequeras que puede solicitar: Personas f&iacute;sicas 5, Personas morales 10.";
+
+  var msg5 = "Seleccione alguna de las opciones disponibles.";
+
+  var msg6 = "Es necesario indicar el valor del cheque. Favor de verificar.";
+
+  var msg7 = "El valor ingresado debe ser num&eacute;rico. Por favor verifique.";
+
+  var msg8 = "Es necesario indicar el rango de cheques para cambio de estatus.";
+
+  var msg9 = "El dato debe ser num&eacute;rico. Por favor verifique.";
+
+  var msg11 = "Para una solicitud o modificaci&oacute;n, el n&uacute;mero de chequeras debe ser un valor num&eacute;rico mayor a cero.";
+
+  var msg10 = "El rango de Cheques ingresado es Incorrecto."
+
+  var msg12 = "Seleccione un Cheque para cambiar su estatus."
+
+  var msg13 = "Seleccione una opci&oacute;n para realizar el cambio de estatus."
+
+  var msg14 = "Para continuar, es necesario hacer el cambio de estatus de al menos un cheque."
+
+  var msg15 = "Importe inv&aacute;lido. Favor de verificar."
+
+
+
+
+
+
+
+
+
+//var ctasProp = true;
+
+var hasError = false;
+
+
+
+function validateForm1(){
+
+	hideErrorsChe();
+
+	if( comboVacio("comboCuentas") ) 
+
+		showErrorChe( "comboCuentas", msg1 );
+
+	if(radbutton4("ch1", "ch2", "ch3", "ch4"))
+
+		showErrorChe("err_radios",msg5);
+
+	if(document.getElementById("ch1").checked==true){
+
+		if(campoVacio("txtbox1")){
+
+			showErrorChe("err_txt1",msg11);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox1") || importeCero("txtbox1"))
+
+				showErrorChe("err_txt1",msg2);
+
+			if(personaFoM("txtbox1"))
+
+				showErrorChe("err_txt1",msg4);
+
+		}
+
+		if(document.getElementById("bloque1")){
+
+			if(radbutton3("op1","op2","op3"))
+
+				showErrorChe("tiposChequera1",msg5);
+
+		}
+
+	}
+
+	if(document.getElementById("ch3").checked==true){
+
+		if(campoVacio("txtbox2")){
+
+			showErrorChe("err_txt2",msg11);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox2") || importeCero("txtbox2"))
+
+				showErrorChe("err_txt2",msg2);
+
+			if(personaFoM("txtbox2"))
+
+				showErrorChe("err_txt2",msg4);
+
+		}
+
+		if(document.getElementById("bloque2")){
+
+			if(radbutton3("op4","op5","op6"))
+
+				showErrorChe("tiposChequera3",msg5);
+
+		}
+
+	}
+
+	if(document.getElementById("ch4").checked==true){
+
+		if(document.getElementById("bloque3")){
+
+			if(radbutton3("op7","op8","op9"))
+
+				showErrorChe("tiposChequera2",msg5);
+
+		}
+
+	}
+
+
+
+	if( !hasError ){
+
+		DoSubmit( 'VARIABLES' );
+
+	}
+
+	window.parent.ajustar();
+
+}
+
+
+
+function validateForm2(){
+
+	hideErrorsChe();
+
+	if( comboVacio( "comboCuentas2" ) ) 
+
+		showErrorChe( "comboCuentas2", msg3);
+
+	if(radbutton2("ch5", "ch6"))
+
+		showErrorChe("err_radios2",msg5);
+
+	if(document.getElementById("ch5").checked==true){
+
+		if(campoVacio("txtbox3")){
+
+			showErrorChe("err_txt3",msg6);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox3") || importeCero("txtbox3")){
+
+				showErrorChe("err_txt3",msg7);
+
+			}
+
+		}
+
+	}
+
+	if(document.getElementById("ch6").checked==true){
+
+		if(campoVacio("txtbox4") || campoVacio("txtbox5") ){
+
+			showErrorChe("err_txt4",msg8);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox4") || importeCero("txtbox4") || campoNumerico("txtbox5")  || importeCero("txtbox5")){
+
+				showErrorChe("err_txt4",msg9);
+
+			}
+
+			else{
+
+				if(rango("txtbox4","txtbox5"))
+
+					showErrorChe("err_txt4",msg10);
+
+			}
+
+		}
+
+	}
+
+	if( !hasError ){
+
+		DoSubmit( 'MOD ESTATUS' );
+
+	}
+
+	window.parent.ajustar();
+
+}
+
+
+
+function validateForm3(){
+
+	hideErrorsChe();
+
+	if(validaChecks()){
+
+		showErrorChe("tablas",msg12);
+
+	}
+
+	if(comboVacio("estatus"))
+
+		showErrorChe("opciones",msg13);
+
+	if(document.getElementById("estatus").value=="Liberado con importe"){
+
+		if(campoVacio("txtimporte") || importeCero("txtimporte")){
+
+			showErrorChe("ff",msg15);
+
+		}
+
+		else{	
+
+			if(importeValido("txtimporte")){}
+
+			else{showErrorChe("ff",msg15);}
+
+		}
+
+	}
+
+}
+
+function validateForm4(){
+
+	hideErrorsChe();
+
+	if(comboVacio( "comboCuentas3" ) ) 
+
+		showErrorChe( "leyen_err3", msg1);
+
+	if(!hasError){
+
+		DoSubmit("PROTEGIDA");
+
+	}
+
+}
+
+
+
+
+
+$(document).ready(
+
+	
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	
+
+	}
+
+	
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+</script>
+
+		
+
+<script type="text/javascript">
+
+		
+
+	cadena_de_datos="";
+
+			$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});
+
+			activaHoverIcos();slide(".activaflecha2",5,0); });
+
+			
+
+function Initialize(){
+
+	indice="2";
+
+	document.getElementById('txtimporte').style.display = "none";
+
+	if("[Flechas]"=="1" || "[Flechas]"=="2" || "[Flechas]"=="3" || "[Flechas]"=="4"){
+
+		var datos="[Ordenado]";
+
+		var datos=datos.split(",");
+
+		var id=datos[3];
+
+		if(datos[1]=="a"){
+
+			var bot="up";
+
+		}
+
+		else{
+
+			var bot="down";
+
+		}
+
+		$("#flecha1").removeClass("saldos_btn9_up_over");
+
+		$("#flecha1").addClass("saldos_btn9_up");
+
+		$("#flecha"+id).removeClass("saldos_btn9_"+bot);
+
+		$("#flecha"+id).addClass("saldos_btn9_"+bot+"_over");
+
+	}
+
+	if(document.getElementsByName("checkbox").length=="1"){
+
+		var estado=document.getElementById("est"+document.forms[0].checkbox.value).innerHTML;
+
+		if(estado=="ROBADO"	|| estado=="ROBADO CR" || estado=="PAGADO" || estado=="PAGADO CR" || estado=="NO EXISTE" || estado=="STOLEN" || estado=="STOLEN CR" 
+
+			|| estado=="PAID" || estado=="PAID CR" || estado=="NOT EXIST" || estado=="CANCELADO" || estado=="CANCELED"){
+
+			document.forms[0].checkbox.disabled=true;
+
+		}
+
+		if("SPANISH"=="ENGLISH"){
+
+			msg14="To continue, it is necessary to change status.";
+
+		}
+
+		else{
+
+			msg14="Para continuar, es necesario hacer el cambio de estatus.";
+
+		}
+
+	}
+
+	else{
+
+		for(i=0; i<document.getElementsByName("checkbox").length; i++){
+
+			if(document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="ROBADO" 
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="ROBADO CR"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="STOLEN CR"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="STOLEN"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="NO EXISTE"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="NOT EXIST"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="PAGADO"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="PAGADO CR"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="PAID"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="PAID CR"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="CANCELADO"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="CANCELADO CR"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="CANCELED CR"
+
+			|| document.getElementById("est"+document.forms[0].checkbox[i].value).innerHTML=="CANCELED"){
+
+				document.forms[0].checkbox[i].disabled=true;
+
+			}
+
+			var n=document.getElementById("num"+document.forms[0].checkbox[i].value).innerHTML;
+
+			var numero = n.replace(/,/gi,"");
+
+			document.getElementById("num"+document.forms[0].checkbox[i].value).innerHTML=numero;
+
+		}
+
+	}
+
+	if("M.N"=="Dls." || "M.N"==" Dls." || "M.N"=="Dlls." || "M.N"==" Dlls."){
+
+		document.getElementById("moneda").innerHTML="USD"
+
+	}
+
+	var tabla = document.getElementById("tablas"); 
+
+	var filas = tabla.getElementsByTagName("tr"); 
+
+	for(var i in filas){ 
+
+		if ((i%2)==1)  
+
+		filas[i].className = "bgF1F2F2"; 
+
+    } 
+
+	if("SPANISH"=="ENGLISH"){
+
+		
+
+		es=["Status consultation by check","Account Details","Account","Requested check","Check  data",
+
+		"Select one or more checks, choose the desired status for each and click Continue","Check number","Check Status","Change the selection status",
+
+		"Released","Desactivated","Stolen","Released by amount","Amount","Checkbooks management",
+
+		"Sorry the transaction could not be completed","Checkbooks management","Cause:","Possible solution","What can I do?",
+
+		"You can use online help or contact the customer service at 1226 3990 (D.F. and Metropolitan area) or<br> 01 800 110 3990 (rest of the Republic)",
+
+		"Is important to have on hand the following code:"];
+
+		swap();
+
+		document.getElementById("regresar").value="Return";
+
+		document.getElementById("continuar").value="Continue";
+
+		$("#btn_continuar_modal").val("Continue");
+
+		act="Released";
+
+		des="Desactivated";
+
+		rob="Stolen";
+
+		lci="Released by amount";
+
+	}
+
+	else{
+
+	
+
+		act="Activado (Liberado)";
+
+		des="Desactivado";
+
+		rob="Robado";
+
+		lci="Liberado con Importe"
+
+	}
+
+	if("0" == "1"){
+
+		$("#causa").css("height","auto");
+
+		$("#mensajeError_contenido_div", window.parent.document).html(
+
+		$("#divError").html());
+
+		parent.$.modal({
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:true,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:'auto'
+
+			});
+
+	}
+
+	var chini="1";
+
+	var chfin="5";
+
+	if(chini==chfin){
+
+		document.getElementById("ran").innerHTML=chfin;
+
+	}
+
+	else{
+
+		document.getElementById("ran").innerHTML=("SPANISH"=="ENGLISH")?chini+" "+"to"+" "+chfin:chini+" "+"a"+" "+chfin;
+
+	}
+
+	var totche=parseInt(chfin)-parseInt(chini)+1;
+
+	if("SPANISH"=="ENGLISH"){var conec1="to"; var conec2="from";}else{var conec1="a"; var conec2="de";}
+
+	if(totche<=10){
+
+		var $ranch=$('<div class="paddingT10 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL color666">'+"1"+" "+conec1+" "+totche+" "+conec2+" "+totche+'</div>');
+
+		$ranch.insertAfter("#rango");
+
+	}
+
+	else{
+
+		var $ranch=$('<div class="paddingT10 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL color666">'+"1"+" "+conec1+" "+"10"+" "+conec2+" "+totche+'</div>');
+
+		$ranch.insertAfter("#rango");
+
+	}
+
+	if("0"=="4"){
+
+		var cadena="Activado::4,1,~";
+
+		var arreglo=cadena.split("~");
+
+		for(var i in arreglo){
+
+			if(arreglo[i]!=""){
+
+				var dato=arreglo[i];
+
+				var arr_datos=dato.split(":");
+
+				cheques=arr_datos[2];
+
+				var cheques=cheques.split(",");
+
+				$("#estatus option[value=" + arr_datos[0] + "]").attr("selected","selected");
+
+				for(q in cheques){
+
+						if(cheques[q]!=""){
+
+						document.getElementById("check" + cheques[q]).checked=true;
+
+						var newstatus=arr_datos[0];
+
+						var nest=document.getElementById("est"+cheques[q]);
+
+						var nnum=document.getElementById("num"+cheques[q]);
+
+						switch (newstatus){
+
+							case "Activado": {
+
+								nest.innerHTML = act;
+
+								nest.className="color01589f";
+
+								nnum.className="color01589f"; 
+
+							} break;
+
+							case "Released": {
+
+								nest.innerHTML = act;
+
+								nest.className="color01589f";
+
+								nnum.className="color01589f"; 
+
+							} break;
+
+							case "Desactivado": {
+
+								nest.innerHTML = des;
+
+								nest.className="color01589f";
+
+								nnum.className="color01589f"; 
+
+							} break;
+
+							case "Desactivated": {
+
+								nest.innerHTML = des;
+
+								nest.className="color01589f";
+
+								nnum.className="color01589f"; 
+
+							} break;
+
+							case "Prevenir por robo o extravio": {
+
+								nest.innerHTML = rob;
+
+								nest.className="color01589f";
+
+								nnum.className="color01589f";
+
+							} break;
+
+							case "Stolen": {
+
+								nest.innerHTML = rob;
+
+								nest.className="color01589f";
+
+								nnum.className="color01589f";
+
+							} break;
+
+							case "Liberado con importe": {
+
+								nest.innerHTML = lci;
+
+								nest.className="color01589f";
+
+								nnum.className="color01589f"; 
+
+								var total=parseFloat(arr_datos[1]);
+
+								document.getElementById("imp"+cheques[q]).innerHTML=total;
+
+							} break;
+
+							case "Released by amount": {
+
+								nest.innerHTML = lci;
+
+								nest.className="color01589f";
+
+								nnum.className="color01589f"; 
+
+								var total=parseFloat(arr_datos[1]);
+
+								document.getElementById("imp"+cheques[q]).innerHTML=total;
+
+							} break;
+
+						}
+
+					}
+
+				}
+
+			}
+
+		} 
+
+	}
+
+	window.parent.ajustar();
+
+}
+
+	
+
+
+
+function DoSubmit( value ){
+
+	document.forms[0].EWFBUTTON.value = value;
+
+	document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+	document.forms[0].submit();
+
+}
+
+
+
+function continua(){ 
+
+	
+
+	var aux = $("#estatus").val(); 
+
+	acep();
+
+	if("0"=="4" && cadena_de_datos==""){
+
+		
+
+		cadena_de_datos="Activado::4,1,~";
+
+		document.forms[0].DATA1.value=indice;
+
+		document.forms[0].DATA2.value= cadena_de_datos;
+
+	}
+
+	if( !hasError ){
+
+		
+
+	switch (aux){
+
+				case "Activado": {
+
+					
+
+					
+
+					if(document.getElementById("check1").checked==true && document.getElementById("check4").checked==true){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_liberado1-4.html');
+
+					}
+
+					if(document.getElementById("check1").checked==true && document.getElementById("check4").checked==false){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_liberado1.html');
+
+					}
+
+					if(document.getElementById("check1").checked==false && document.getElementById("check4").checked==true){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_liberado4.html');
+
+					}
+
+					
+
+								
+
+				} break;
+
+							
+
+				case "Desactivado": {
+
+					if(document.getElementById("check1").checked==true && document.getElementById("check4").checked==true){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_desactivado1-4.html');
+
+					}
+
+					if(document.getElementById("check1").checked==true && document.getElementById("check4").checked==false){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_desactivado1.html');
+
+					}
+
+					if(document.getElementById("check1").checked==false && document.getElementById("check4").checked==true){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_desactivado4.html');
+
+					}			 
+
+				} break;							
+
+				case "Prevenir por robo o extravio": {
+
+					if(document.getElementById("check1").checked==true && document.getElementById("check4").checked==true){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_robo1-4.html');
+
+					}
+
+					if(document.getElementById("check1").checked==true && document.getElementById("check4").checked==false){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_robo1.html');
+
+					}
+
+					if(document.getElementById("check1").checked==false && document.getElementById("check4").checked==true){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_robo4.html');
+
+					}
+
+				} break;
+
+				case "Liberado con importe": {
+
+					if(document.getElementById("check1").checked==true && document.getElementById("check4").checked==true){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_liberadoimporte1-4.html');
+
+					}
+
+					if(document.getElementById("check1").checked==true && document.getElementById("check4").checked==false){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_liberadoimporte1.html');
+
+					}
+
+					if(document.getElementById("check1").checked==false && document.getElementById("check4").checked==true){
+
+						parent.DoSubmit('Solicitud_de_Chequeras/confirma_status_rango_liberadoimporte4.html');
+
+					}
+
+				} break;
+
+		}	
+
+		
+
+	}
+
+}
+
+
+
+function regresa(){
+
+	parent.DoSubmit('Solicitud_de_Chequeras/Chequeras.html');
+
+}
+
+
+
+
+
+function acep(){
+
+	validateForm3();
+
+	if("0"=="4"){
+
+		cadena_de_datos="Activado::4,1,~";
+
+	}
+
+	if(hasError==false){	
+
+		var i;
+
+		var cadena="";
+
+		var datos="";
+
+		var cad="";
+
+		var newstatus= document.getElementById("estatus").value;
+
+		var impor=document.getElementById("txtimporte").value;
+
+		if(document.getElementsByName("checkbox").length=="1"){
+
+			if(document.forms[0].checkbox.checked){
+
+				var cadena= document.forms[0].checkbox.value + ",";
+
+				var nest=document.getElementById("est"+document.forms[0].checkbox.value);
+
+				var nnum=document.getElementById("num"+document.forms[0].checkbox.value);
+
+				/*switch (newstatus){
+
+					case "Activado": {
+
+						nest.innerHTML = act;
+
+						nest.className="color01589f";
+
+						nnum.className="color01589f"; 
+
+						} break;
+
+					case "Desactivado": {
+
+						nest.innerHTML = des;
+
+						nest.className="color01589f";
+
+						nnum.className="color01589f"; 
+
+						} break;
+
+					case "Prevenir por robo o extravio": {
+
+						nest.innerHTML = rob;
+
+						nest.className="color01589f";
+
+						nnum.className="color01589f"; 
+
+						} break;
+
+					case "Liberado con importe": {
+
+						nest.innerHTML = lci;
+
+						nest.className="color01589f";
+
+						nnum.className="color01589f"; 
+
+						var total=parseFloat(impor);
+
+						document.getElementById("imp"+document.forms[0].checkbox.value).innerHTML=total;
+
+					} break;
+
+				}*/
+
+			}
+
+		}
+
+		else{
+
+			for (i=0; i<document.getElementsByName("checkbox").length; i++){
+
+				if (document.getElementById("check"+document.forms[0].checkbox[i].value).checked){
+
+					var n=document.forms[0].checkbox[i].value;
+
+					var numero=n.replace(/,/gi,"");
+
+					var datos= numero + ","
+
+					var cadena= cadena + datos;
+
+					var nest=document.getElementById("est"+document.forms[0].checkbox[i].value);
+
+					var nnum=document.getElementById("num"+document.forms[0].checkbox[i].value);
+
+					/*switch (newstatus){
+
+						case "Activado": {
+
+							nest.innerHTML = act;
+
+							nest.className="color01589f";
+
+							nnum.className="color01589f"; 
+
+						} break;
+
+						case "Desactivado": {
+
+							nest.innerHTML = des;
+
+							nest.className="color01589f";
+
+							nnum.className="color01589f"; 
+
+						} break;
+
+						case "Prevenir por robo o extravio": {
+
+							nest.innerHTML = rob;
+
+							nest.className="color01589f";
+
+							nnum.className="color01589f";
+
+						} break;
+
+						case "Liberado con importe": {
+
+							nest.innerHTML = lci;
+
+							nest.className="color01589f";
+
+							nnum.className="color01589f"; 
+
+							var total=parseFloat(impor);
+
+							document.getElementById("imp"+document.forms[0].checkbox[i].value).innerHTML=total;
+
+						} break;
+
+					}*/
+
+					//document.getElementById("check"+document.forms[0].checkbox[i].value).checked=false;
+
+					document.getElementById("estatus").value="";
+
+					document.getElementById("txtimporte").value=""
+
+					$("#txtimporte").hide();
+
+				}
+
+			}
+
+		}
+
+		var chain= newstatus + ":" + impor + ":" + cadena + "~";
+
+		cadena_de_datos= cadena_de_datos + chain;
+
+		document.forms[0].DATA1.value=indice;
+
+		document.forms[0].DATA2.value= cadena_de_datos;
+
+	}
+
+}
+
+
+
+function verifica(){
+
+	if (document.getElementById("estatus").value == "Liberado con importe"){
+
+		document.getElementById("txtimporte").style.display="";
+
+		}
+
+	else{
+
+		document.getElementById("txtimporte").style.display="none";
+
+		document.getElementById("txtimporte").value="";
+
+	}
+
+}
+
+
+
+function todos_checks(){
+
+	var t=$("#todos").attr("checked");
+
+	if(t==true){
+
+		for(i=0; i<document.getElementsByName("checkbox").length; i++){
+
+			if(document.getElementById("check"+document.forms[0].checkbox[i].value).disabled==false){
+
+				document.getElementById("check"+document.forms[0].checkbox[i].value).checked=true;
+
+			}
+
+		}
+
+	}
+
+	else{
+
+		for(i=0; i<document.getElementsByName("checkbox").length; i++){
+
+			document.getElementById("check"+document.forms[0].checkbox[i].value).checked=false;
+
+		}
+
+	}	
+
+}
+
+$(document).ready(function() {
+
+	var reng=$("#tablas").find("tbody tr").length;
+
+	var no_reng=10;
+
+	var no_pags= Math.ceil(reng/no_reng);
+
+	var $numeros=$('<div id="paginacion" class="marginL25P  ancho400 floatL     paddingT10  paddingB5  f11   paginacion color666 "></div>');
+
+	$('<span name="numeracion" id=span_num_pag'+(1)+' class="sel_num" onclick="cambia_estilo('+(1)+')"><a id=a_num_pag'+(1)+' class="colorFFFFFF" href="JavaScript:void(0);">'+(1)+'</a></span>').appendTo($numeros);
+
+	for(i=1;i<no_pags;i++){
+
+		$('<span name="numeracion" id=span_num_pag'+(i+1)+' class="num" onclick="cambia_estilo('+(i+1)+')"><a id=a_num_pag'+(i+1)+' class="color01589F" href="JavaScript:void(0);">'+(i+1)+'</a></span>').appendTo($numeros);
+
+	}
+
+	$numeros.insertAfter("#rango");
+
+	$("#tablas").find("tbody tr").hide();
+
+	var tr=$('#tablas tbody tr');
+
+	for(var i=0;i<=no_reng-1;i++){
+
+		$(tr[i]).show();
+
+	}
+
+	$("[name=numeracion]").click(function(event){
+
+		$("#tablas").find('tbody tr').hide();
+
+		for(var i=($(this).text()-1)*no_reng;i<=$(this).text()*no_reng-1;i++){
+
+			$(tr[i]).show();
+
+		}
+
+		
+
+	});
+
+});
+
+
+
+function verifica_todos(){
+
+	var estado=$("#todos").attr("checked");
+
+	if(estado==true){
+
+		document.getElementById("todos").checked=false;
+
+	}
+
+}
+
+
+
+function flechas(tipo,ordenamiento,columna,num_id){
+
+	document.forms[0].DATA1.value=tipo;
+
+	document.forms[0].DATA2.value=ordenamiento;
+
+	document.forms[0].DATA3.value=columna;
+
+	document.forms[0].DATA4.value=num_id;
+
+	DoSubmit("ORDENA");
+
+}
+
+
+
+function cambia_estilo(numero){
+
+	$("[class=sel_num]").addClass("num");
+
+	$("[class=sel_num num]").removeClass("sel_num");
+
+	$("[class=colorFFFFFF]").removeClass("colorFFFFFF");
+
+	$("#span_num_pag1").addClass("num");
+
+	$("#span_num_pag"+numero).removeClass("num");
+
+	$("#span_num_pag"+numero).addClass("sel_num");
+
+	$("#a_num_pag"+numero).removeClass("color01589F");
+
+	$("#a_num_pag"+numero).addClass("colorFFFFFF");
+
+}
+
+
+
+</script>	
+
+<script>parent.setFecha("16/04/12    18:38:54  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="183854  ";b$Cont="183854  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="F5UE0G31H2Z1ZLU8BCLEI5T6SBEOY3R3JL9RIU6K" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZSCH-PAG DE SELECCION"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="18-Consulta_Modificacion_Estatus.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="26"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+	    <div class="overflow clear">
+
+			<span id="t14" class="floatL panelIzEnca3_text2">Administraci&oacute;n de chequeras</span>
+
+		</div>
+
+        <div class=" overflow borderBSolid  borderRSolid borderTSolid borderLSolid  marginT17">
+
+			<div class=" paddingR15 paddingL15  ">
+
+				<div class="overflow clear marginT17">
+
+					   <span id="t0" class="floatL panelIzEnca3_text2">Consulta de estatus de cheques</span>
+
+				</div>  
+
+				<div class="overflow clear borderBSolid   paddingT15 margin_menosT1 paddingB5" onclick="">
+
+					<span id="t1" class="floatL negrita  f11 ">Detalle de la cuenta</span>
+
+				</div>  
+
+							
+
+				<div class="ancho100p overflow paddingT10 marginT0">
+
+					<table cellpadding="0" cellspacing="0" border="0" align="center" class="ancho100p">
+
+						<tr>
+
+							<td class="ancho50p bgF1F2F2">
+
+								<div class="ancho100p floatL paddingT0">
+
+									<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT0">
+
+										<tr>
+
+											<td id="t2" class="  ancho60p negrita color333" >Cuenta</td>
+
+											<td class="  borderLSolid" align="left">Cheques M.N 002 Cheques</td>
+
+										</tr>
+
+									</table>
+
+								</div>		   
+
+							 </td>
+
+							 <td class=" bgFFF"><div class=" ancho30"></div></td>
+
+							 <td class="ancho50p bgF1F2F2">
+
+								<div class="ancho100p floatR paddingT0">
+
+									<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT0 ">
+
+										<tr>
+
+											<td id="t3" class="  ancho60p color333 negrita">Cheque solicitado</td>
+
+											<td id="ran"class="borderLSolid " align="left"></td>
+
+										</tr>
+
+									</table>
+
+								</div>
+
+							</td>
+
+						</tr>
+
+					</table>
+
+				</div>
+
+				<div class=" clear overflow  borderBSolid  marginT27 paddingB5 ">
+
+					   <span id="t4" class="floatL negrita  f11">Detalle de cheques</span>
+
+				</div>	  
+
+				<div id="t5" class="color666 paddingT4 f11 alto20">Selecciona uno o varios cheques, indique el estatus deseado para cada uno y d&eacute; click en &quot;Continuar&quot;.</div>
+
+				<table id="tablas" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3  marginT20" >
+
+				<thead>
+
+					<tr>
+
+						<td class="   borderRSolid ancho10 "><input id="todos" type="checkbox" onclick="todos_checks()"/></td>
+
+						<td class="   borderRSolid  alto_25  ">
+
+							 <div class="   paddingT8">
+
+								 <span id="t6" class=" floatL ">N&uacute;mero de cheque</span>
+
+								 <div class="    floatR ancho10  margin_menosT2 " >
+
+									<div id="flecha1" class="saldos_btn9_up_over" onclick="flechas('n','a','1','1')"></div>
+
+									<div id="flecha2" class="saldos_btn9_down paddingT1" onclick="flechas('n','d','1','2')"></div>
+
+								 </div> 
+
+							</div>
+
+						</td>
+
+						<td class="   borderRSolid alto_25">
+
+							<div class="  paddingT8">
+
+								<span id="t7" class=" floatL ">Estatus del cheque</span>
+
+								<div class="    floatR ancho10  margin_menosT2 " >
+
+									<div id="flecha3" class="saldos_btn9_up" onclick="flechas('t','a','2','3')"></div>
+
+									<div id="flecha4" class="saldos_btn9_down paddingT1" onclick="flechas('t','d','2','4')"></div>
+
+								 </div> 
+
+							</div>
+
+						
+
+						</td>
+
+						<td class="   alto_25">
+
+							<div class="  paddingT3">
+
+								<span class="floatL f11"><label id="t13">Importe</label> <label id="moneda">MXN</label></span>
+
+							</div>
+
+						</td>
+
+					</tr>
+
+					</thead>
+
+					<tbody>
+
+						<tr>
+
+							<td  class="borderRSolid"><input id="check1" name="checkbox" type="checkbox" value="1" onclick="verifica_todos()"/></td>
+
+							<td  class="borderRSolid"><label id="num1" value="1">1</label></td>
+
+							<td  class="borderRSolid"><label id="est1">LIBERADO CR</label></td>
+
+							<td><label id="imp1">14,201.00</label></td>
+
+						</tr><tr>
+
+							<td  class="borderRSolid"><input id="check2" name="checkbox" type="checkbox" value="2" onclick="verifica_todos()"/></td>
+
+							<td  class="borderRSolid"><label id="num2" value="2">2</label></td>
+
+							<td  class="borderRSolid"><label id="est2">CANCELADO CR</label></td>
+
+							<td><label id="imp2">1,402.00</label></td>
+
+						</tr><tr>
+
+							<td  class="borderRSolid"><input id="check3" name="checkbox" type="checkbox" value="3" onclick="verifica_todos()"/></td>
+
+							<td  class="borderRSolid"><label id="num3" value="3">3</label></td>
+
+							<td  class="borderRSolid"><label id="est3">ROBADO CR</label></td>
+
+							<td><label id="imp3">4,000.00</label></td>
+
+						</tr><tr>
+
+							<td  class="borderRSolid"><input id="check4" name="checkbox" type="checkbox" value="4" onclick="verifica_todos()"/></td>
+
+							<td  class="borderRSolid"><label id="num4" value="4">4</label></td>
+
+							<td  class="borderRSolid"><label id="est4">LIBERADO CON IMPORTE CR</label></td>
+
+							<td><label id="imp4">100.00</label></td>
+
+						</tr><tr>
+
+							<td  class="borderRSolid"><input id="check5" name="checkbox" type="checkbox" value="5" onclick="verifica_todos()"/></td>
+
+							<td  class="borderRSolid"><label id="num5" value="5">5</label></td>
+
+							<td  class="borderRSolid"><label id="est5">PAGADO CR</label></td>
+
+							<td><label id="imp5">750.00</label></td>
+
+						</tr>
+
+					</tbody></table>
+
+			
+
+				<div class="clear marginT2 alto10"></div>
+
+			
+
+				<table cellpadding="0" cellspacing="0" border="0" align="center" class="ancho100p">
+
+					<tr id="caja1">
+
+						<td>
+
+							<div class="marginT17" id="opciones">
+
+								<select id="estatus" class="ancho220" onchange="verifica();">
+
+									<option id="t8" value="">Cambiar estatus de la selecci&oacute;n</option>
+
+									<option id="t9" value="Activado">Activar (Liberados)</option>
+
+									<option id="t10" value="Desactivado">Desactivar (No Liberados)</option>
+
+									<option id="t11" value="Prevenir por robo o extravio">Prevenci&oacute;n por robo o extrav&iacute;o</option>
+
+									<option id="t12" value="Liberado con importe">Activar (Liberaci&oacute;n con Importe)</option><input id="txtimporte"class="input marginL30" type="text" value="" />                                                            
+
+								</select>
+
+							</div><label><label id="ff"></label></label>
+
+						</td>
+
+					</tr>
+
+				</table>
+
+
+
+			</div>
+
+				<div class="clear bgF1F2F2  ancho100p    marginT20    alto33">
+
+					<label id="rango"></label>
+
+					
+
+				</div>
+
+		</div>
+
+		<div class=" clear marginT20  alto20   ">
+
+			<input id="regresar" type="button" class="btnRJ86 floatL" value="Regresar" onclick="regresa()"/>
+
+			<input id="continuar" type="button" class="btnAZ86 floatR" value="Continuar" onclick="continua()"/>
+
+		</div>
+
+		
+
+	
+
+
+
+<div id="divError" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div id="t15" class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    Consulta de Estatus de Cheques<br/>
+
+		<div id="causa"><label id="t17" class="f11 color666">Causa:</label>&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+    <div id="t19" class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      <label id="t20">Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).</label><br/>
+
+	  <label id="t21">Es importante tener a la mano el siguiente c&oacute;digo:</label>
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+	
+
+      
+
+	<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA1" VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA2" VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA3" VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA4" VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA5" VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA7" VALUE="">
+
+	<INPUT TYPE=HIDDEN NAME="DATA9" VALUE="">
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Solicitud de Chequeras|18-Consulta_Modificacion_Estatus.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

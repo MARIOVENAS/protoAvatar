@@ -1,0 +1,101 @@
+.ui-widget-content.jfpw-datagrid {
+
+    background: none;
+
+    border: none;
+
+}
+
+
+
+.ui-jqgrid.jfpw-datagrid .ui-jqgrid-bdiv {
+
+	border: none;
+
+}
+
+
+
+.ui-state-highlight.jfpw-datagrid, .ui-widget-content.jfpw-datagrid .ui-state-highlight, .ui-widget-header.jfpw-datagrid .ui-state-highlight {
+
+}
+
+
+
+.ui-jqgrid.jfpw-datagrid tr.ui-row-ltr td {
+
+    border-right: none;
+
+    border-right: none;
+
+    text-align: left;
+
+}
+
+
+
+.ui-jqgrid.jfpw-datagrid tr.jqgrow td {
+
+    border-bottom: 1px dotted #222;
+
+    padding: 5px;
+
+}
+
+
+
+.blueText
+
+{
+
+	color: #005589;
+
+	font-weight: bold;
+
+	font-size: 11px;
+
+}
+
+
+
+/* GRID HEADER container DIV Style */
+
+.ui-jqgrid.jfpw-datagrid .ui-jqgrid-hdiv {
+
+	border-bottom: 1px dotted #222;
+
+}
+
+.ui-th-ltr.jfpw-datagrid, .ui-jqgrid.jfpw-datagrid .ui-jqgrid-htable th.ui-th-ltr {
+
+    border-right: 0 none;
+
+}
+
+.ui-jqgrid.jfpw-datagrid .ui-jqgrid-htable th {
+
+    padding: 0;
+
+}
+
+.ui-jqgrid.jfpw-datagrid .ui-jqgrid-htable th div {
+
+	font-weight: bold;
+
+	text-align: left;
+
+	padding-left: 9px;
+
+}
+
+
+
+.ui-state-hover.jfpw-datagrid{ 
+
+	border: 1px solid #999999;
+
+background: none;
+
+font-weight: normal;
+
+color: #212121; }

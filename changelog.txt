@@ -1,0 +1,69 @@
+Date: 12/7/2012
+
+Name: Mariano Gardos
+
+SOEID: mg71199
+
+Version: V2.1
+
+Changes:
+
+- Initial version of this structure for Mexico, created from regional structure 'Estructura-Avatar-1.5-V4-RC2'.
+
+- Added change control file for logging the changes to this structure.
+
+- Added change control file JFP\regional\css\changelog.txt for logging the changes in file JFP\regional\css\latamCommon.css.
+
+- Removed directory .svn since they are not necessary and the size of the packaged struture drops to half of its size.
+
+- Added titles ...
+
+- Fixed name of menu option in file left_menus/left_menu_inversiones.html, the option 'Fondos horizontales' was changed to 'Fondos horizontes'.
+
+- Fixed name of menu option in file left_menus/left_menu_investments.html, the option 'Time deposit' was changed to 'Time deposits'.
+
+- Added menu option 'Cambio de NIP de Tarjeta de Crédito o Débito' to file left_menus/left_menu_miperfil.html.
+
+- Added menu option 'Change PIN on Debit or Credit Cards' to file left_menus/left_menu_myprofile.html.
+
+- Removed the following menu options, that were childs of menu option 'Mis tarjetas Banamex', from file left_menus/left_menu_servicios.html:
+
+Reporte por robo o extravío, Cambio de NIP de Tarjeta de Crédito o Débito, Activación o ubicación de tarjetas, Modificación de límite de crédito,
+
+Incorporación a Banamex Premia, Inscripción a Libra Plus.
+
+- Fixed name of menu option in file left_menus/left_menu_servicios.html, the option 'Solicitud chequeras' was changed to 'Solicitud de chequeras'.
+
+- Added menu options 'Consultar estatus de solicitudes previas', 'Modificar solicitud anterior de chequeras' and 'Cancelar solicitud anterior de chequeras'
+
+to file left_menus/left_menu_servicios.html.
+
+- Removed the following menu options, that were childs of menu option 'My Banamex cards', from file left_menus/left_menu_services.html:
+
+Report stolen or theft, Change NIP on Debit or Credit Cards, Activation or location of cards, Modify credit limit, Sign up to Banamex Premia,
+
+Sign up to Libra Plus.
+
+- Fixed name of menu option in file left_menus/left_menu_services.html, the option 'My checkboks' was changed to 'My checkbooks'.
+
+- Fixed name of menu option in file left_menus/left_menu_services.html, the option 'Request checkboks' was changed to 'Request checkbooks'.
+
+- Added menu options 'View previous requests status', 'Modify last checkbook request', 'Cancel last checkbook request' to file
+
+left_menus/left_menu_services.html.
+
+- Fixed name of menu option in file left_menus/left_menu_pagostransferencia.html, the option 'Pago de mis otras tarjetas de crédito' was changed to
+
+'Pago de otras tarjetas de crédito'.
+
+- Fixed name of menu option in file left_menus/left_menu_pagostransferencia.html, the option 'Alta de cuentas' was changed to 'Alta de cuentas de terceros'.
+
+- Fixed name of menu option in file left_menus/left_menu_afore.html, the option 'Solicitud de consulta de BancaNet' was changed to
+
+'Solicitud de consulta en BancaNet'.
+
+- Added link 'Movimientos en Banca Electronica' to file titles/mibancanet.html.
+
+- Added link 'eBanking transactions' to file titles/mybancanet.html.
+
+- Added files titles/CPB.html, titles/CPB2.html and titles/MBE.html, titles/PAG.html and titles/PAG2.html.

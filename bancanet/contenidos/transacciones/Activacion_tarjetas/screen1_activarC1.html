@@ -1,0 +1,187 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Capture', 
+			'Verify', 
+			'Response',
+			
+			'Activate cards',
+			'Confirm the activation data.',
+			
+			'Alias',
+			'Product name',
+			'Number card',
+			
+			'Purchase card',
+			
+			'ACCEPT',
+			'Back'
+			);
+    </script>
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+	
+	setTimeout(function(){top.$('#iframeConte').removeClass('alto610').removeClass('alto525').addClass('alto550');},800);
+		
+	});
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+<div class="width691 floatL">
+        
+        <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura"><strong>1</strong> <span id="t23">Captura</span> </li>
+            <li id="opcVerifica" class="selected"><strong>2</strong>  <span id="t24">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t25">Respuesta</span> </li>
+        </ul>
+        </div>  
+        
+        <!--<table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+          	<td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t23">Captura</td>
+              </tr>
+              <tr>
+                <td class="esq_L">&nbsp;</td>
+                <td class="esq"></td>
+                <td class="esq_R">&nbsp;</td>
+              </tr>
+              </table>
+          </td>
+          <td class="width20">&nbsp;</td>
+          <td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsqB" id="t24">Confirmaci&oacute;n</td>
+              </tr>
+              <tr>
+                <td class="esq_LB">&nbsp;</td>
+                <td class="esq_B"></td>
+                <td class="esq_RB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+            <td class="width20">&nbsp;</td>
+            <td width="32%">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t25">Verificaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+          </tr>
+          </table>-->
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t26">Activaci&oacute;n de tarjetas</h3>
+
+            </div>
+
+			<p class="instructions margin-botom0" id="t27"  style="margin-bottom:18px !important; *margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Confirma los datos de la activaci&oacute;n.</p>
+
+            <div class="width141 clear">
+            	<div id="subapp-box" class="ancho100p" style="min-height:64px !important;">
+            
+                <table cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top5 back_white ancho100p">
+                   <tbody>
+                      <tr class="ada">
+                        <th width="4%" valign="middle" scope="col" class="borderLabels pad15 height20 alignCenter">&nbsp;
+                           
+                        </th> 
+                        <th width="32%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t28">Alias</span>
+                        </th> 
+                        <th width="32%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t29">Nombre del producto</span>
+                        </th> 
+                        <th width="32%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t30">N&uacute;mero de tarjeta</span>
+                        </th>                   
+                      </tr>
+                      <tr class="degrade">
+                        <td class="paddingR15 borderB1solidCCC last">&nbsp;</td>
+                        <td class="paddingR15 borderB1solidCCC last" id="t31">La de las compras</td>
+                        <td class="paddingR15 borderB1solidCCC last">Tarjeta Travel Pass</td>
+                        <td class="paddingR15 borderB1solidCCC last">98210</td>
+                      </tr>
+                      <!--<tr>
+                        <td class="border9A height36" colspan="5">&nbsp;
+                        </td>
+                      </tr>-->
+                    </tbody>
+                </table>
+                </div><!-- id="subapp-box"  -->
+            </div><!-- Fin width141 -->
+
+						
+            <div id="btns"> <!-- Botones -->
+            
+            <div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT5">
+
+                <ul class="cN-primaryNav">
+                    <li class="cM-spriteBase cN-primaryNavButton" id="btn2">
+                        <a href="javascript:void(0);" onClick="javascript:continuar();" id="t32">ACEPTAR</a>
+                    </li>	
+                    <li class="cN-primaryNav">
+                        <div id="flechaLinks">
+                            <span class="flechaazul float-left"></span>
+                            <a id="t33" href="javascript:regresar();" class="sinBold">Regresar</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+             </div>	
+             
+             </div><!-- BTN -->
+
+	  <div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript">
+	
+	function continuar(){
+		top.challengeAire3();
+		//top.cargaDocN('Activacion_tarjetas/screen1_activarA1.html');
+	}
+	
+	function regresar(){
+		top.cargaDocN('Activacion_tarjetas/screen1_activar.html');
+	}
+	
+	
+	</script>
+</body>
+</html>

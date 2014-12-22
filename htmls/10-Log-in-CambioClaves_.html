@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>Layout Avatar</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+
+	<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+	<script type="text/javascript" src="../JFP/js/script3.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="../bancanet/contenidos/bbAvatar/js/swap.js"></script>
+
+</head>
+
+
+
+<body>
+
+<!--inicia contenedor principal-->
+
+<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+	<div id="header">
+
+		<div class="utilities_nav" id="navegacionPrincipal"></div>
+
+		<div class="citibank-containerImg">
+
+			<a href="#"><div id="citibank-logo"></div></a>
+
+			<div id="citibank-imageb"></div>
+
+		</div>
+
+<!--termina header-->
+
+	</div>
+
+	<div class="cS-structBodyContainer">
+
+		<div id="title-section" class="cH-appPageHead height20">
+
+			<div class="float-left"><h1 id="t24">CAMBIO DE CLAVES DE ACCESO</h1></div>
+
+			<div class="margin-top6 titulo ancho50 margin-left10" id="flechaLinksOpcoes">
+
+				<span class="flechaGris float-left">&nbsp;</span>
+
+				<a id="t37" href="javascript:void(0);" onclick="Layuda()" class="float-left">&nbsp;Ayuda</a>
+
+			</div>
+
+		</div>
+
+		<div class="bg_demo">
+
+		    <div id="content">
+
+				<div id="subapp-box" class="noleftmenu float-left">
+
+					<div class="ancho100p height300b">
+
+						<div class="width50p float-left">
+
+							<p class="paddingB15" id="t25">Para ingresar a <b>Banca</b>Net y Audiom&aacute;tico es necesario cambiar tusclaves de acceso  para realizar tus operaciones bancarias con mayor seguridad.</p>
+
+							<div class="clear overflow">
+
+								<div class="width50p float-left">
+
+									<div class="paddingR15">
+
+										<div class="borderR1D9D9D9">
+
+											<p class="bold" id="t26">Para Banca<span class="normal">Net</span></p>
+
+											<p class="paddingT18"id="t27">Crea una nueva clave alfanum&eacute;rica <br />(8 caracteres)</p>
+
+											<p class="paddingT5"><input id="cambioPassword" readonly type="password" maxlength="8" class="width160 margin-right10" /><img src="../JFP/regional/images/layout/input_correcto.gif" alt="OK" class="displayNone" /></p>
+
+											<p class="paddingT15"id="t28">Confirma tu nueva clave alfanum&eacute;rica <br />(8 caracteres)</p>
+
+											<p class="paddingT5"><input id="cambioPasswordConfirmar" readonly type="password" maxlength="8" class="width160 margin-right10" /><img src="../JFP/regional/images/layout/input_correcto.gif" alt="OK" class="displayNone" /></p>
+
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="width50p float-left">
+
+									<div class="paddingL15">
+
+										<p class="bold"id="t40">Para Audiom&aacute;tico y/o Banamex M&oacute;vil</p>
+
+										<p class="paddingT18"id="t41">Crea una nueva clave num&eacute;rica*<br />(8 d&iacute;gitos)</p>
+
+										<p class="paddingT5"><input id="cambioPassword2" readonly type="password" maxlength="8" class="width160 margin-right10" /><img src="../JFP/regional/images/layout/input_correcto.gif" alt="OK" class="displayNone" /></p>
+
+										<p class="paddingT15" id="t42">Confirma tu nueva clave num&eacute;rica <br />(8 d&iacute;gitos)</p>
+
+										<p class="paddingT5"><input id="cambioPasswordConfirmar2" readonly  type="password" maxlength="8" class="width160 margin-right10" /><img src="../JFP/regional/images/layout/input_correcto.gif" alt="OK" class="displayNone" /></p>
+
+										<p class="paddingT15" id="t43">*Si generaste tu n&uacute;mero secreto en sucursal y lo cambiaste en Audiom&aacute;tico, gen&eacute;ralo nuevamente.</p>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="width50p float-left">
+
+							<div class="paddingL45">
+
+								<div class="border1DADADA height300b">
+
+									<div class="padding20 overflow">
+
+										<p class="bold"id="t29">Clave de acceso alfanum&eacute;rica:</p>
+
+										<ul class="paddingT15 listaclave">
+
+											<li id="t30">Debe contener tanto n&uacute;meros como letras, y ser de 8 posiciones</li><br />
+
+											<li id="t31">Se permite el uso de letras <a href="javascript:void(0);" class="border-bot tool_left" id="mayusculas">may&uacute;sculas y min&uacute;sculas</a></li><br />
+
+											<li id="t32">El primer caracter, debe ser una letra</li><br />
+
+											<li id="t33">No se permite el uso de letras acentuadas ni <a href="javascript:void(0);" class="border-bot tool_left" id="caracteres">caracteres especiales</a></li><br />
+
+											<li id="t34">El N&uacute;mero de Cliente no debe estar contenido en el Password</li><br />
+
+											<li id="t35">No debe contener m&aacute;s de <a href="javascript:void(0);" class="border-bot tool_left" id="consecutivos">2 n&uacute;meros o letras iguales o consecutivos</a></li><br />
+
+											<li id="t36">No debe contener el nombre de la instituci&oacute;n (Banamex)</li><br />
+
+										</ul>
+
+										<div class="tooltip_left mayusculas">
+
+											<div class="flecha"></div>
+
+											<div class="boxt">
+
+												<div class="close"></div>
+
+												<p id="t44" class="f11">
+
+													Ejemplo: es diferente "hola1357" que "HOLA1357"
+
+												</p>
+
+											</div>
+
+										</div>
+
+										<div class="tooltip_left caracteres">
+
+											<div class="flecha"></div>
+
+											<div class="boxt">
+
+												<div class="close"></div>
+
+												<p id="t45" class="f11">
+
+												   Ejemplo: "&ntilde;","$", comas, etc. 
+
+												</p>
+
+											</div>
+
+										</div>
+
+										<div class="tooltip_left consecutivos">
+
+											<div class="flecha"></div>
+
+											<div class="boxt">
+
+												<div class="close"></div>
+
+												<p id="t46" class="f11">
+
+												   Ejemplo: "12223445", "abbbcd"
+
+												</p>
+
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="border-solid margin-top20"></div>
+
+					<ul class="cN-primaryNav float-left margin-top5">
+
+						<li class="cM-spriteBase cN-primaryNavButton" id="cambioPasswordAceptar"><a id="t38"href="javascript:void(0)">ACEPTAR</a></li>
+
+						<li>
+
+							<div id="flechaLinks">
+
+								<span class="flechaazul float-left"></span>
+
+								<a href="#" class="sinBold" onclick="enConstruccion()" id="t39">Cancelar</a>
+
+							</div>
+
+						</li>
+
+					</ul>
+
+					<div class="width50p floatL">
+
+						<div class="paddingL45"></div>
+
+					</div>
+
+					<ul class="cN-primaryNav  margin-top10">
+
+						<li></li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="clear"></div>
+
+        </div>
+
+		<div id="footer"></div>
+
+	</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	var es = new Array('ESPAÑOL','BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My <strong>Banca</strong>Net','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+
+
+
+	es.push('ACCESS CODE CHANGE',
+
+		'To log into <b>Banca</b>Net it is necessary  to change your secret<br/> number for an alphanumeric password to carry out your banking transactions whit higher security',
+
+		'For Banca<span class="normal">Net</span>',
+
+		'Create a new alphanumeric code<br/> (8 characters)',
+
+		'Confirm your new alphanumeric code <br/> (8 characters)',
+
+		'Alphanumeric access code:',
+
+		'Must have letters and numbers, and be 8 positions long',
+
+		'The use of <a href="javascript:void(0);" class="border-bot tool_left" id="mayusculas">all caps and small caps</a> is allowed',
+
+		'The first  character must be a letter',
+
+		'<a href="javascript:void(0);" class="border-bot tool_left" id="caracteres">Special characters</a> or accents are not allowed',
+
+		'The Customer number must not be included in the Password',
+
+		'Must not include more than <a href="javascript:void(0);" class="border-bot tool_left" id="consecutivos">2 repeated or consecutive numbers or letters</a>',
+
+		'Must not include the name of the institution (Banamex)',
+
+		'Help','ACCEPT','Cancel',
+
+		'For Audiom&aacute;tico and/or Banamex Movil',
+
+		'Create a new numeric code*',
+
+		'Confirm your new numeric code',
+
+		'*if you generated your secret number at the branch, and  you changed it in Audiomatico, generate it again',
+
+		'Example: "hello 1357" is different from "HELLO 1357"',
+
+		'Example: "ñ", "$", comas, etc.',
+
+		'Example: "12223445", "abbbcd"'
+
+	);
+
+
+
+	$(document).ready(function(){
+
+		ajustarOverlay();
+
+		ajusta_tooltpis();
+
+		funciones_loginP();
+
+	});
+
+
+
+	$( document ).ajaxStop( function(){
+
+		$( '#t0' ).hide();
+
+		if( isEnglishSel ) {
+
+			tooltip_left();
+
+		}
+
+	});
+
+
+
+	function Layuda(){
+
+		window.open(rutaAyudaAv+'CambiodeClavesdeAcceso.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+</script>
+
+
+
+</body>
+
+<!--termina contenedor principal-->
+
+</html>

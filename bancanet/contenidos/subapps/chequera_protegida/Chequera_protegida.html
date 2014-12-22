@@ -1,0 +1,213 @@
+<html>
+
+<head><link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    <!-- <script type="text/javascript" src="../../JFP/js/widgets/jfpw.spinner.js"></script>-->
+
+     <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+     <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			
+
+			//setTimeout('top.cargando_movimientos()', 1000);
+
+			setTimeout(function(){top.ajustarP();},1100);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+<body>
+
+
+
+                    <div class="cH-appPanelHead">
+
+                        <h3>Inscripci&oacute;n a Chequera Protegida </h3>
+
+                    </div>
+
+                    <p class="instructions">Selecciona la cuenta que deseas inscribir al servicio de Chequera Protegida.</p>
+
+                  <div class="width109">
+
+                    <div class="form-row">
+
+                        <label class="for-table ancho115">Cuenta de cheques:</label> 
+
+                        <select title="Selecciona cuenta origen" onChange="valor1=this.value;Cheqp();" > 
+
+                            <option> Selecciona una cuenta </option>
+
+                            <option value="1"> Chequera - Cheques - **002 - MXN </option>
+
+                        </select>
+
+                      
+
+                    </div>
+
+                 
+
+						      <div class="border-top margin-top25">                                   
+
+                               
+
+                             </div>
+
+                             </div>
+
+
+
+						<!-- <div class="greenCheck"></div>
+
+						<p class="strong">Deposit completed successfully.</p>
+
+                        <div class="border-top"></div> -->
+
+						<!-- Script para tootltips-->
+
+
+
+<!--
+
+<script type="text/javascript">
+
+// Create the tooltips only on document load
+
+	$(document).ready(function()
+
+	{
+
+		// Tooltip para input type=text
+
+		//Dentro de tag <input> se debe poner el atributo title="...." con el texto que corresponda
+
+		$('input[title]').qtip({
+
+			position: {
+
+			    my: 'center left',  // Position my top left...
+
+				at: 'right center' // at the bottom right of...
+
+			},
+
+			style: {
+
+					
+
+					classes: 'ui-tooltip-shadow',
+
+					tip: {	
+
+						 width:9,
+
+						 height:17
+
+						}
+
+
+
+					}
+
+		});
+
+		/*************************************/
+
+
+
+		// Tooltip para selects
+
+		//Dentro de tag <select> se debe poner el atributo title="...." con el texto que corresponda
+
+		$('select[title]').qtip({
+
+			position: {
+
+			    my: 'center left',  // Position my top left...
+
+				at: 'right center' // at the bottom right of...
+
+			},
+
+			style: {
+
+					
+
+					classes: 'ui-tooltip-shadow',
+
+					tip: {
+
+						 width:9,
+
+						 height:17
+
+						}
+
+					}
+
+		});
+
+	});
+
+</script> 
+
+
+
+-->
+
+<br><br><br>
+
+<br><br><br>
+
+</body>
+
+<script>
+
+
+
+
+
+var valor1=0;   
+
+function Cheqp(){
+
+	
+
+	if(valor1==1){
+
+		
+
+		top.cheq2();
+
+	}
+
+	
+
+}
+
+
+
+</script>
+
+</html>

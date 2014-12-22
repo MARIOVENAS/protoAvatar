@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="NZYB3519BQCVB31PTV8MO9VQ1GORNDVM@GHHUD19" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZDOA-PaginaPoliticas"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="dpoliti01.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="27"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>      
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+<script language="javascript">
+
+var es=new Array('Direct-bill-payment registration','Below are the payment policies for the selected bill. If you want to continue with the direct bill-payment, click "Accept".','Payment Policies for CFE, PAGO DE ENERGIA ELECTRICA (CFE)','Return','Accept','Direct Debit','<ul><li>TO SET UP THIS SERVICE YOU MUST HAVE YOUR ACCOUNTS INCORPORATED TO THE ELECTRONIC BANKING SERVICE. IN CASE OF CANCELLATION, THEFT OR LOSS OF THE ACCOUNT TO BE DEBITED, YOU MUST INCORPORATE THE NEW ACCOUNT TO YOUR ELECTRONIC BANKING SERVICE, AND THEN SIGN UP FOR THE DOMICILIACIÓN (AUTOMATED PAYMENT<br><li>THIS SERVICE IS APPLIED BY DEBITING THE CHECKING ACCOUNT, CUENTA MAESTRA ACCOUNT, DEBIT AND/OR CREDIT CARD<br><li>THE SERVICE WILL BEGIN AS SOON AS, A STATEMENT IS DISPLAYED IN YOUR PHONE BILL WHICH READS: "AMOUNT SENT TO YOUR BANK, BANAMEX FOR COLLECTION PURPOSES", UNTIL THEN, YOU MUST CONTINUE PAYING AS USUAL<br><li>TELMEX WILL COLLECT THE PAYMENT (DEBIT THE ACCOUNT) WITHIN TEN DAYS PRIOR TO THE PHONE BILL DUE DATE. AS A RESULT, IF THE ACCOUNT DOES NOT HAVE ENOUGH FUNDS, THE SERVICE COULD BE SUSPENDED. IF THE PAYMENT DUE DATE IS A NON-WORKING DAY, THE PAYMENT WILL BE POSTED THE PRIOR DAY<br><li>IF THE AMOUNT DUE ON YOU TELMEX BILL IS GREATER THAN WHAT YOU HAVE AUTHORIZED TO BE AUTOMATICALLY DEBITED, THE PAYMENT WILL NOT BE POSTED AND YOU WILL HAVE TO GO TO A TELMEX OFFICE TO PAY BEFORE THE PAYMENT DUE DATE INDICATED IN YOUR BILL, TO AVOID THE SUSPENSION OF THE SERVICE<br><li>IN CASE YOU HAVE QUESTIONS OR A CLAIM RELATED TO YOUR CONSUMPTION OR BILLING, YOU MUST GO DIRECTLY TO THE TELMEX OFFICES<br><li>IF IN THREE CONSECUTIVE OCCASIONS THE CHECKING ACCOUNT, CUENTA MAESTRA ACCOUNT, CREDIT OR DEBIT CARD, DOES NOT HAVE SUFFICIEN<br><li>THE INSTRUCTION CANCELLATION, WHETHER IT IS VOLUNTARY OR DUE TO INSUFFICIENT FUNDS, WILL MEAN THAT THE FOLLOWING STATEMENT WHICH READS: "AMOUNT SENT TO YOUR BANK, BANAMEX FOR COLLECTION PURPOSES" WILL NO LONGER BE PRESENT IN YOUR PHONE BILL<br></ul>');
+
+
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+</script> 
+
+
+
+<script>parent.setFecha("20/04/12    11:51:24  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="115122  ";b$Cont="115124  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+if(""=="E"){
+
+$("#mensajeError_contenido_div", window.parent.document).html($("#idErr").html());	
+
+parent.$.modal({
+
+opacity:60, 
+
+overlayClose:false, 
+
+flagDiv:true,
+
+widthDivIfrm:600});
+
+}
+
+
+
+
+
+
+
+
+
+ 
+
+top.ajustar();
+
+
+
+});
+
+	
+
+</script> 
+
+
+
+
+
+<div class="float-left fonttit" id="t5">Domiciliaci&oacute;n</div>
+
+
+
+<div class="panelIzEnca3_text2" id="t0">
+
+Alta de pagos domiciliados
+
+</div>
+
+<div class="color666 paddingT5 f11" id="t1">
+
+A continuaci&oacute;n se muestran las pol&iacute;ticas de pago aplicables al servicio seleccionado. Si desea continuar con el servicio de domiciliaci&oacute;n, da clic en &quot;Aceptar&quot;.
+
+</div>
+
+
+
+<div class="saldos_bloque3 overflow">
+
+<div class="panelIzEnca3_text2" id="t2">Pol&iacute;ticas de pago para CFE, PAGO DE ENERGIA ELECTRICA (CFE)</div>
+
+
+
+<div class="saldos_bloque2_f3inb paddingT5">
+
+<div class="saldos_bloque2_f4_txt ancho100p floatL" id="t6">
+
+<ul><li>Para el alta de este servicio debera tener incorporadas sus cuentas al servicio de Banca Electronica. En caso de cancelacion, robo o extravio de la cuenta de cargo debera incorporar la nueva cuenta a su servicio de Banca Electronica y posteriormente contratar el servicio de Domiciliaci&oacute;n nuevamente<br><li>Este servicio aplica solo para el interior de la Rep&uacute;bli ca considerando la cobertura de CFE<br><li>Este servicio aplica con cargo a Cuenta de Cheques, Cuenta Maestra, Tarjeta de Credito y Debito<br><li>El servicio iniciara cuando en su recibo de luz aparezca la leyenda de cargo autom&aacute;tico, por lo que debera pagar hasta que esto ocurra<br><li>La instruccion de cobro se realizara el dia determinado como fecha limite de pago, la cual varia mes a mes, y se debitara de la cuenta el importe total indicado en su recibo. Debera contar con fondos suficientes, de lo contrario no se efectuar&aacute; el pago y podra cancelarse el servicio<br><li>Si la fecha requerida para efectuar el cargo es d&iacute;a inha bil, el mismo se efectuara el dia anterior.                                                                                                                 de lo contrario no se efectuar&aacute; el pago y podra cancelarse el servicio<br><li>En caso de requerir alguna aclaracion referente al consu mo o afectacion de su recibo debera acudir directamente a las oficinas de CFE correspondiente a la Zona<br><li>La cancelacion voluntaria del servicio debera hacerla co n 6 d&iacute;as de anticipacion a la fecha limite de pago, y debera pagar en las oficinas de CFE para evitar el corte del servicio<br></ul>
+
+</div>
+
+</div>           	
+
+</div>
+
+<div class="marginT20 overflow">
+
+<input type="button"  id="t3" class="btnRJ86 floatL" value="Regresar" onClick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/domiciliar_Pago.html')"/>
+
+<input type="button"  id="t4" class="btnAZ86 floatR" value="Aceptar" onClick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/solicitud_CFE.html')"/>
+
+
+
+</div> 
+
+<INPUT type="hidden" name="EWFBUTTON" value="" />
+
+
+
+
+
+<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Causa:&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Domiciliacion Alta|dpoliti01.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

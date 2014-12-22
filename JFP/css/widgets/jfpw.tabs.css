@@ -1,0 +1,46 @@
+/*
+
+ * jQuery UI Tabs 1.8.7
+
+ *
+
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+
+ * http://jquery.org/license
+
+ *
+
+ * http://docs.jquery.com/UI/Tabs#theming
+
+ */
+
+
+
+.ui-tabs.jfpw-tabs {border:0px none; position: relative; padding: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+
+.ui-tabs.jfpw-tabs .ui-tabs-panel {border-left:1px solid #C1C1C1;border-bottom:1px solid #C1C1C1;border-right:1px solid #C1C1C1;border-top:1px solid #C1C1C1; display: block; padding: 1em 1.4em; background: none;}
+
+.ui-tabs.jfpw-tabs .ui-state-default,
+
+.ui-tabs.jfpw-tabs .ui-widget-content .ui-state-default,
+
+.ui-tabs.jfpw-tabs .ui-widget-header .ui-state-default {border: 0px none;} 
+
+.ui-tabs.jfpw-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px;border-left:1px solid #C1C1C1;margin-left:0px;border-top:1px solid #C1C1C1;border-right:1px solid #C1C1C1; }
+
+.ui-tabs.jfpw-tabs .ui-tabs-nav {background:none #F7F7F7;border:0px none  #C1C1C1;margin: 0; padding: 0; }
+
+.ui-tabs.jfpw-tabs .ui-tabs-nav li {list-style: none; float: left; position: relative; top: 1px; margin: 0; border-bottom: 0px none; padding: 0px !important; white-space: nowrap;text-transform:uppercase;color:#000000;font-weight:normal;}
+
+.ui-tabs.jfpw-tabs .ui-tabs-nav li a {outline:none;margin:0;border:0px none;float: left; padding: .5em 1em; text-decoration: none; }
+
+
+
+.ui-tabs.jfpw-tabs .ui-state-hover a{ font-weight: normal; color: #555555; border: #555555}
+
+.ui-tabs.jfpw-tabs .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{background: none transparent;}
+
+
+

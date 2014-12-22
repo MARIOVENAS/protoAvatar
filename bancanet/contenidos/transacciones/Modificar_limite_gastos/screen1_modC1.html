@@ -1,0 +1,251 @@
+<html>
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+	
+	es.push('Modify spending limit',
+			'Confirm the data of your operation.',
+			'Confirm each card data',
+			'Card name and number:',
+			'Current spending limit pesos:',
+			'New spending limit pesos:',
+			'Card name and number:',
+			'Current spending limit pesos:',
+			'New spending limit pesos:',
+			'CONTINUE',
+			'Return',
+			'Capture',
+			'Confirmation',
+			'Verification');
+			
+    </script>
+     <script type="text/javascript">
+	$(document).ready(function(){
+		setTimeout(function(){top.$('#iframeConte').addClass('alto550');},800);
+	});
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+<div class="width691 floatL">
+        <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura"><strong>1</strong> <span id="t34">Captura</span> </li>
+            <li id="opcVerifica" class="selected"><strong>2</strong>  <span id="t35">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t36">Respuesta</span> </li>
+        </ul>
+        </div>
+        <!-- <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+          	<td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t34">Captura</td>
+              </tr>
+               <tr>
+                <td class="esq_L">&nbsp;</td>
+                <td class="esq"></td>
+                <td class="esq_R">&nbsp;</td>
+              </tr>
+              </table>
+          </td>
+          <td class="width20">&nbsp;</td>
+          <td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsqB" id="t35">Confirmaci&oacute;n</td>
+              </tr>
+                <tr>
+                <td class="esq_LB">&nbsp;</td>
+                <td class="esq_B"></td>
+                <td class="esq_RB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+            <td class="width20">&nbsp;</td>
+            <td width="32%">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t36">Verificaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+          </tr>
+          </table> -->
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t23">Modificaci&oacute;n de l&iacute;mite de gastos</h3>
+
+            </div>
+			
+            <div class="border-topSolid"></div>
+
+			<p class="instructions margin-botom0" id="t24"  style="margin-bottom:18px !important; *margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Confirma los datos de tu operaci&oacute;n.</p>
+            
+						<div class="width141 clear">
+							<div class="form-row margin-right0">
+
+                                <div class="floatLI height50 overflow" style="width:90px !important; padding:0px !important;" id="Horo">
+                                	<div class="tajOro floatLI" id="Oro"></div>
+                                </div>
+
+                                <div class="height30 floatLI">
+                                &nbsp;&nbsp;Mi tarjeta - Tarj. Oro - MXN - 12680
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+							<div id="step"> <!-- Step -->
+                            <div class="border-top"></div>
+                            
+                            <div class="form-row margin-bottom18">
+                            	 <div class="overflow clear">
+                                <label id="t25" class="for-table width-360">Confirma los datos de cada tarjeta.</label>
+                                </div>
+                                
+                                 <div class="overflow clear marginT15">
+                                    <div class="floatLI">
+                                    <label class="for-table width-240 bold">Jos&eacute; Francisco Fern&aacute;ndez - 12680</label>
+                                    </div>
+                                </div>
+                                
+                                 <div class="overflow clear marginT15">
+                                    <div class="floatLI">
+                                    <label id="t26" class="for-table width-180">Nombre y n&uacute;mero de tarjeta:</label>
+                                    </div>
+                                    <div class="floatLI">
+                                    <label class="for-table width-240">Jos&eacute; Francisco Fern&aacute;ndez - 12680</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="overflow margin-top10 clear">
+                                    <div class="floatLI">
+                                    <label id="t27" class="for-table width-180">L&iacute;mite de gastos actual MXN:</label>
+                                    </div>
+                                    <div class="floatLI">
+                                    <label class="for-table width-240">$ 12,000.00</label>
+                                    </div>
+                                </div>
+                                
+                                 <div class="overflow margin-top10 clear">
+                                    <div class="floatLI">
+                                    <label id="t28" class="for-table width-180">Nuevo l&iacute;mite de gastos MXN:</label>
+                                    </div>
+                                    <div class="floatLI">
+                                    <label class="for-table width-240">$ 7,500.00</label>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+						  </div>
+                          <!-- Segunda cuenta -->
+                          
+                          <div class="border-top"></div>
+                          
+                          <div class="form-row">
+                                
+                                 <div class="overflow clear">
+                                    <div class="floatLI">
+                                    <label class="for-table width-240 bold">Jos&eacute; Manuel Fern&aacute;ndez - 12564</label>
+                                    </div>
+                                </div>
+                                
+                                 <div class="overflow clear marginT15">
+                                    <div class="floatLI">
+                                    <label id="t29" class="for-table width-180">Nombre y n&uacute;mero de tarjeta:</label>
+                                    </div>
+                                    <div class="floatLI">
+                                    <label class="for-table width-240">Jos&eacute; Manuel Fern&aacute;ndez - 12564</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="overflow margin-top10 clear">
+                                    <div class="floatLI">
+                                    <label id="t30" class="for-table width-180">L&iacute;mite de gastos actual MXN:</label>
+                                    </div>
+                                    <div class="floatLI">
+                                    <label class="for-table width-240">$ 2,000.00</label>
+                                    </div>
+                                </div>
+                                
+                                 <div class="overflow margin-top10 clear">
+                                    <div class="floatLI">
+                                    <label id="t31" class="for-table width-180">Nuevo l&iacute;mite de gastos MXN:</label>
+                                    </div>
+                                    <div class="floatLI">
+                                    <label class="for-table width-240">$ 4,500.00</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="clear"></div>
+						  </div>
+                          
+                          
+                       </div><!-- Step -->
+
+                        </div><!-- Fin width141 -->
+						
+						<div id="btns"> <!-- Botones -->
+                        
+						<div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT5">
+
+							<!-- <div class="width156">&nbsp;</div> -->
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton">
+                                	<a onClick="javascript:continuar();" id="t32">CONTINUAR</a>
+                                </li>	
+                                <li class="cN-primaryNav">
+									<div id="flechaLinks">
+										<span class="flechaazul float-left"></span>
+										<a id="t33" href="javascript:regresar();" class="sinBold">Regresar</a>
+									</div>
+								</li>
+
+							</ul>
+
+						 </div>	
+                         
+                         </div><!-- BTN -->
+
+						<div class="clear"></div>
+      </div>
+</div>
+	<script type="text/javascript">
+	function continuar(){
+		//alert('Modal');
+		top.challengeAire2();
+		top.$('.ventanaEmergente').css({
+			'top': 80,
+			'height':500
+			
+			   }, 600);
+	}
+	function regresar(){
+		top.cargaDocN('Modificar_limite_gastos/screen1_mod.html');
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+.jcarousel-skin-tango .jcarousel-container {
+
+
+
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-direction-rtl {
+
+	direction: rtl;
+
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+
+    width: auto;
+
+    padding:0 35px 0 35px;
+
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+
+    width:  auto;
+
+    height: 70px;
+
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-item {
+
+    width: 125px;
+
+    height: 52px;
+
+	background:#FFF;
+
+	border:1px solid #DEDEDE;
+
+	padding-top:15px;
+
+	text-align:center;
+
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-item-horizontal {
+
+	margin-left: 0;
+
+    margin-right: 10px;
+
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
+
+	margin-left: 10px;
+
+    margin-right: 0;
+
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-item-placeholder {
+
+    background: #fff;
+
+    color: #000;
+
+}
+
+
+
+/**
+
+ *  Horizontal Buttons
+
+ */
+
+.jcarousel-skin-tango .jcarousel-next-horizontal {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+	background:url(../../bbAvatar/images/carrusel_interno.gif) right no-repeat;
+
+	width:30px;
+
+	height:68px;
+
+	float:right;
+
+	cursor:pointer;
+
+}
+
+
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    background:url(../../bbAvatar/images/carrusel_interno.gif) left no-repeat;
+
+	width:30px;
+
+	height:68px;
+
+	float:left;
+
+	cursor:pointer;
+
+}
+
+
+

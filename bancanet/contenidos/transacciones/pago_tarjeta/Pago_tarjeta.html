@@ -1,0 +1,546 @@
+       <html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+       
+
+    <script type="text/javascript" src="sim.js"></script>
+
+
+
+	<script src="../../../../JFP/js/widgets/jquery.cookie.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="../../../../JFP/js/jquery/plugins/script.js"></script>
+
+	<script type="text/javascript" src="../../../../JFP/js/widgets/jquery.qtipW3.js"></script>
+
+    
+
+    
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+
+
+     <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+
+
+<script type="text/javascript">
+
+
+
+	$(document).ready(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='chequeRango']").imageTick({
+
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+
+			image_tick_class: "radios"
+
+		});
+
+		
+
+		
+
+		$("input[name='chequeRango2']").imageTick({
+
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+
+			image_tick_class: "radios"
+
+		});
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	</script>
+
+<div class="contentSteps margin-topm18">
+
+	<div class="step1 active"><b>1</b> Captura</div>
+
+	<div class="step2"><b>2</b> Verifica</div>
+
+	<div class="step3"><b>3</b> Respuesta</div>
+
+	<div class="barrita">&nbsp;</div>
+
+</div>                 
+
+  <div class="clear"></div>
+
+				<div class="cH-appPanelHead float-left margin-top-2">
+
+                 <h3>Pagar Mi Tarjeta</h3>
+
+                </div>
+
+       <div id="jfpHelpLinkDiv">
+
+        <div class="margin-top6 titulo" id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="#" class="float-left">&nbsp;Ayuda</a>
+
+		</div>
+
+       </div> 
+
+ <div class="clear"></div>
+
+
+
+  <p class="instructions">Selecciona una tarjeta de cr&eacute;dito y la cuenta retiro, indica los datos de pago y da clic en "Continuar".</p>
+
+                     <!--<span class="strong">Instruç&otilde;es</span>-->
+
+    
+
+<div class="width141">
+
+
+
+
+
+
+
+<div class="form-row">
+
+<label class="for-table">Cuenta de retiro:</label>
+
+                                <select class="width315">
+                    
+                                                      <option selected="selected">Selecciona una cuenta</option>
+                    
+                                                        <option value="GT">Cheques - 12002 - MXN - $ 62,294.10</option>
+                    
+                                                        
+                    
+                        </select>
+
+
+
+
+
+<div class="clear"></div>
+
+
+
+</div>
+
+
+
+
+
+<div class="form-row">
+
+<label class="for-table">Tarjeta de cr&eacute;dito:</label>
+
+    <select class="width315">
+
+									<option selected="selected">Selecciona una tarjeta</option>
+
+									<option value="GT">Banamex - Tarjeta Cr&eacute;dito - 12780 - MXN: $ 15,987.00</option>
+
+									
+
+								</select>
+
+
+
+
+
+<div class="clear"></div>
+
+</div>
+
+
+
+<div class="form-row margin-bottom10">
+
+                                <label class="for-table">Importe:</label>
+
+								<label class="marginsRadios for-table radioR float-left"><input type="radio" name="chequeraPers" id="rdchequeraPers1" class="float-left" /></label>
+
+ <div class="float-left"> M&iacute;nimo a pagar: $ 0.00</div>
+
+                                <div class="clear"></div>
+
+                                </div>
+
+
+
+
+
+
+
+<div class="form-row margin-bottom10">
+
+                                <label class="for-table">&nbsp;</label>
+
+								<label class="marginsRadios for-table radioR float-left"><input type="radio" name="chequeraPers" id="rdchequeraPers2" class="float-left" /></label>
+
+ <div class="float-left">Pago para no generar intereses: $ 0.00</div>
+
+                                <div class="clear"></div>
+
+                                </div>
+
+
+
+
+
+
+
+<div class="form-row margin-bottom20">
+
+                                <label class="for-table">&nbsp;</label>
+
+								<label class="marginsRadios for-table radioR float-left"><input name="chequeraPers" id="rdchequeraPers3" type="radio" checked="checked" /></label>
+
+								<div class="float-left">Otra cantidad: $</div>
+
+								<div class="margin-left10 float-left">
+
+									
+
+									<input type="text" class="width100 margin-topm5IE text float-left paddingr3 text float-left TxtAR" title="Importe mayor al permitido" /> 
+
+								</div>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+
+
+
+
+
+
+<div class="border-top"></div>	
+
+
+
+
+
+<div class="form-row margin-bottom10">
+
+                                <label class="for-table">Opciones<br>
+
+ adicionales:</label>
+
+								<label class="for-table checkR"><input name="makeOrSave" id="chMakeOrSave1" type="checkbox"/></label>
+
+								<div class="float-left">Programar a fecha futura</div>
+
+                            </div>
+
+
+
+
+
+	<div class="form-row">
+
+                                <label class="for-table">&nbsp;</label>
+
+	<div class="float-left ancho100p paddingL175">
+
+    						
+
+								<input type="text" class="calendario1 input_calendar float-left margin-right15 width105 paddingl3" readonly id="fechaFut">
+
+                                    <!--<input type="text" id="fechaFut" class="calendario1 f12 paddingT2" readonly/>-->
+
+                                    
+
+                                    <div class="icon-calendar margin-top2" href="#" id="otra_c">&nbsp;</div>
+
+									
+
+                                    <div class="comboH">
+
+              <input type="text" id="selHoras" class="selhoras f12normal paddingL2" readonly onFocus="HorasSel();"  />
+
+              
+
+            
+
+              <div id="drpList" class="list_abs">
+
+                <div id="listaHoras2">
+
+                  <div class="scroll_y">
+
+                    <div class="scrollbar paddingR1"><div class="track"><div class="thumb"><div class="end"></div><div class="grip"></div></div></div></div>
+
+                    <div class="viewport height90">
+
+                      <div class="overview">
+
+                        
+
+                        
+
+                        <!-- You can add all your contents here -->
+
+                        <div id="horasM">
+
+                          
+
+                          
+
+                        			
+
+                          
+
+                          </div>
+
+                        
+
+                        
+
+                        </div>
+
+                      
+
+                      </div>
+
+                    </div>
+
+                  </div><!-- end of updateHolder //-->
+
+                </div>
+
+              </div>
+
+		
+
+	  </div><!-- Termina Contenedor fecha y lista de horas -->						
+
+								<div class="clear"></div>	
+
+						
+
+											
+
+						</div>
+
+                        
+
+                        
+
+<div class="form-row margin-bottom10">
+
+                                <label class="for-table">&nbsp;</label>
+
+	<div class="float-left">
+
+	  <label class="for-table checkR"><input name="makeOrSave" id="chMakeOrSave2" type="checkbox"/></label> </div><div class="float-left"> Guardar como operaci&oacute;n frecuente 
+
+                           <br />
+
+                         Las operaciones programadas no pueden ser almacenadas como frecuentes.</div>
+
+      									
+
+                                        <div class="clear"></div>	
+
+						</div>        
+
+                                   
+
+                            
+
+                             
+
+                           <div class="cF-sideBySide cF-bottomNav margin-top0">
+
+				<div class="width156">&nbsp;</div>
+
+				<ul class="cN-primaryNav">
+
+					<li class="cM-spriteBase cN-primaryNavButton"><a href="layout_a.htm?subapps/Pack3/UpdateCheckbookRequest/screen2&SER&header_postlogin&footer_postlogin&left_menu_services">CONTINUAR</a></li>	
+
+				</ul>
+
+			 </div>
+
+                        
+
+                 
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+ <!-- Script para tootltips-->
+
+ <script type="text/javascript">$(document).ready(function(){
+
+	 setTimeout("$('#listaHoras2').hide();",200);
+
+	 setTimeout("$('.scroll_y').tinyscrollbar({scroll:true,sizethumb: '36' });",100);setTimeout("$('.scroll_y .overview').css({'width':$('.scroll_y .viewport').width()+'px'});",200);
+
+	 
+
+	 });
+
+        	
+
+        </script>
+
+
+
+
+
+<script type="text/javascript">
+
+            $(document).ready(function(){
+
+				
+
+				$('#fechaFut').datepicker({
+
+					dayNamesMin:['D','L','M','M','J','V','S'],
+
+					monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+
+					beforeShow: function(){
+
+						$(this).removeClass('ui-corner-all');
+
+						
+
+					},
+
+					showAnim: '',
+
+					showOtherMonths: true,
+
+					selectOtherMonths: false,
+
+					minDate: 'y',
+
+					maxDate: '30d',
+
+					dateFormat:"d M yy",
+
+					disabled: false
+
+				});
+
+				
+
+				$('#fechaFut').focus(
+
+					function(){
+
+						if( $(this).hasClass('modal_calendar') ){
+
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}else{
+
+							$('.ui-widget').css({'top':($(this).offset().top-55)+'px','left':($(this).offset().left+125)+'px', 'z-index':'99999999'});
+
+						}
+
+						if( $('.ui-datepicker .close').length == 0){
+
+							$('.ui-datepicker').append("<div class='close'></div>");
+
+						}
+
+						$('.ui-datepicker').find('.close').click(function(){
+
+							$('.input_calendar').datepicker( "hide" );
+
+						});
+
+						
+
+					}
+
+				);
+
+				
+
+			   $("#otra_c").click(function(){
+
+    				$('#fechaFut').datepicker('show');
+
+			   });
+
+				
+
+				
+
+             });
+
+			 
+
+			 
+
+        </script>
+

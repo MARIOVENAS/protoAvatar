@@ -1,0 +1,2041 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="aa0cf85a-af21-4344-bce4-e56fe7dca4ea" ><input type=hidden name="EWF_SYS_1" value="P004SXSKLCBFWBNEQSQL3SE8WFKQS347CZFLA8FV" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZADT-PAG ADMINISTRACION TARJETAS"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="iniAdmonTarj.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="9"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script>parent.setFecha("09/04/12    14:32:06  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="143206  ";b$Cont="143206  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>
+
+<script type="text/javascript">
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+es = new Array("Card managment", 
+
+					   "Lost or stolen Report", 
+
+					   "Select one or several cards, indicate the type of report you want to do and click &quot;Continue&quot;",
+
+					   "Card", 
+
+					   "Select an option", 
+
+					   "Report more than one", 
+
+					   "Report theft", 
+
+					   "Report loss", 
+
+					   "Continue", 
+
+					   "Card activation or location", 
+
+					   "Select a card, indicate the application type you want to make and click &quot;Continue&quot;", 
+
+					   "Card", 
+
+					   "Select an option", 
+
+					   "Plastic activation", 
+
+					   "Plastic location", 
+
+					   "Continue", 
+
+					   "Change credit limit", 
+
+					   "Select a card, indicate the application type you want to make and click &quot;Continue&quot;", 
+
+					   "Card", 
+
+					   "Select an option", 
+
+					   "Select an option", 
+
+					   "Credit Limit of this card", 
+
+					   "Additional cards credit limit", 
+
+					   "Credit Limit assigned", 
+
+					   "Current Credit Limit", 
+
+					   "New limit credit", 
+
+					   "Continue", 
+
+					   "Select the card you want to register in Banamex Premia and click &quot;Continue&quot;", 
+
+					   "Card", 
+
+					   "Select an option", 
+
+					   "Select the card you want to register in Banamex Premia and click &quot;Continue&quot;", 
+
+					   "Premia Card", 
+
+					   "Card", 
+
+					   "Select an option", 
+
+					   "Register more than one", 
+
+					   "Continue", 
+
+					   "Registration to Libra Plus", 
+
+					   "Select the card you want to register in Libra Plus and click &quot;Continue&quot;", 
+
+					   "Card", 
+
+					   "If you have Libra Plus service in any of the Banamex cards, you're protected", 
+
+					   "Continue", 
+
+					   "Since you have Platinum account, you already have the Libra Plus service <a href=\"#\">More information about Libra Plus </a>", 
+
+					   "Accounts Multiple Selection", 
+
+					   "Select one or more accounts and click &quot;Continue&quot;", 
+
+					   "Account", 
+
+					   "# Account", 
+
+					   "Cancel", 
+
+					   "Continue", 
+
+					   "Accounts Multiple Selection", 
+
+					   "Select one or more accounts and click &quot;Continue&quot;", 
+
+					   "Account", 
+
+					   "# Account", 
+
+					   "Cancel", 
+
+					   "Continue", 
+
+					   "Sorry, the transaction could not be completed", 
+
+					   "Card managment", 
+
+					   "What Can I do?", 
+
+					   "Continue", 
+
+					   "[IdPremia]" != "OK" ? "Banamex Premia Registration" : "Banamex Premia Incorporation",
+
+					   "Cause",
+
+					   "Possible solution",
+
+					   "You can contact",
+
+							  "customer service",
+
+							  "at 1226 3990 (D.F. and Metropolitan area) or 01 800 110 3990 (rest of the Republic).",
+
+							  "It is important to have the following code:");
+
+
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+
+
+	//function swap(){}
+
+
+
+
+
+var ctas = '';
+
+var html = '';
+
+var htmlAux = '';
+
+var htmlP = '';
+
+var htmlPAux = '';
+
+var ctasP = '';
+
+var tabla = '';
+
+var paginacion = '';
+
+var paginaActu = 1;
+
+var noPaginas = 1;
+
+var errCta;
+
+
+
+function Initialize() {
+
+	$('div[id="saldosbtn'+''+'"]').click();
+
+	$('input[name="DATA1"][value="'+'[BandRoboExt]'+'"]').attr("checked",true);
+
+	$('input[name="DATA3"][value="'+'[TipTx]'+'"]').attr("checked",true);
+
+	if ( '0' != '1' ){
+
+		$('input[name="DATA5"][value="0"]').attr("checked",true);
+
+		$('#limasig').html('');
+
+		$('#limactu').html('');
+
+		$('#vnolim').attr('value','');
+
+	} else {
+
+		$('#licrad').click();
+
+	}
+
+	
+
+	$('option[value="'+''+'"]','#selectActUbi').attr("selected","selected");
+
+	$('option[value="'+''+'"]','#selectModCreTitular').attr("selected","selected");
+
+	$('option[value="'+''+'"]','#selectModCreAdicional').attr("selected","selected");
+
+	$('option[value="'+''+'"]','#selectLibra').attr("selected","selected");
+
+	
+
+		rutaAyuda=rutaAyuda+"CuentasPropiasBanamex-Tarjetas.htm";
+
+		
+
+	
+
+	htmlP = $('#mulPre').html();
+
+	htmlPAux = htmlP;
+
+	html = $('#robExt').html();
+
+	htmlAux = html;
+
+	var strAux = ''.split("@");
+
+	if ( strAux.length > 2 ){
+
+		x('');
+
+	} else {
+
+		$('option[value="'+''+'"]','#selectRobExt').attr("selected","selected");
+
+	}
+
+	
+
+		$('option[value="'+''+'"]','#selectPremia').attr("selected","selected");
+
+	
+
+}
+
+
+
+function ModalInicializacion(){
+
+	var contexto = parent.document.getElementById('mensajeError_contenido_div');
+
+	paginaActu = 1;
+
+	if ( $('#robExt1',contexto).length == 1 ) {
+
+		tabla = 'tablaMulRobExt';
+
+		paginacion = 'paginacionRE';
+
+		ttabla = "robExt1";
+
+	} else {
+
+		tabla = 'tablaMulPremia';
+
+		paginacion = 'paginacionPR';
+
+		ttabla = "mulPre1";
+
+	}
+
+	$('#' + tabla + ' tr:even > td',contexto).addClass('bgF1F2F2');
+
+	var pagina = 10;
+
+	$('#' + tabla + ' tr',contexto).each(function () {
+
+		$(this).attr('name', 'pag' + pagina);
+
+		$(this).hide();
+
+		pagina++;
+
+	});
+
+	noPaginas = parseInt( pagina / 10 );
+
+	var val = parseInt( pagina / 10 );
+
+	if ( val > 1 ) {
+
+		var pag = '';
+
+		var funcion;
+
+		for ( var i = 1; i <= val; i++ ){
+
+			funcion = "parent.document.getElementById('main').contentWindow.visible('" + i +"')";
+
+			pag += '<a class="num" href="#" onclick="' + funcion + '" id="pagina' + i + '" style="display:none;">' + i + '</a>';
+
+		}
+
+		funcion = "parent.document.getElementById('main').contentWindow.siguiente()";
+
+		pag += ' <a class="antsig" href="#" onclick="' + funcion + '" id="sigPag"> Siguiente &raquo;</a>';
+
+		$('#' + paginacion ,contexto).html(pag);
+
+		$('#pagina1',contexto).click();
+
+	} else {
+
+		$('#' + tabla + ' tr',contexto).show();
+
+	}
+
+	parent.$.modal.setDimentions(parent.document.getElementById(ttabla).offsetHeight,parent.document.getElementById(ttabla).offsetWidth);
+
+}
+
+
+
+function siguiente(){
+
+	paginaActu++;
+
+	if ( paginaActu == noPaginas ) {
+
+		var contexto = parent.document.getElementById('mensajeError_contenido_div');
+
+		$("#sigPag",contexto).detach();
+
+	}
+
+	visible(paginaActu);
+
+}
+
+
+
+function visible(num){
+
+	var contexto = parent.document.getElementById('mensajeError_contenido_div');
+
+	$('#' + tabla + ' tr',contexto).hide();
+
+	$('#' + tabla + ' tr[name^="pag'+num+'"]',contexto).show();
+
+	$('#' + paginacion + ' a[id^=pagina]',contexto).removeClass().addClass('num');
+
+	$('#pagina' + num,contexto).removeClass().addClass('sel_num');
+
+	$('#pagina' + num,contexto).css("display","inline");
+
+	parent.$.modal.setDimentions(parent.document.getElementById(ttabla).offsetHeight,parent.document.getElementById(ttabla).offsetWidth);
+
+}	
+
+
+
+function IsNumeric(sText){
+
+	var ValidChars = "0123456789.";
+
+	var IsNumber=true;
+
+	var Char;
+
+	for (i = 0; i < sText.length && IsNumber == true; i++) { 
+
+		Char = sText.charAt(i); 
+
+		if (ValidChars.indexOf(Char) == -1){
+
+			IsNumber = false;
+
+        }
+
+    }
+
+	return IsNumber;
+
+}
+
+
+
+function x(cuentas) {
+
+	ctas = cuentas;
+
+	var arrCta = cuentas.split("@");
+
+	var i = 0;
+
+	var msg = '';
+
+	htmlAux = html;
+
+	for (i=0;i<arrCta.length-1;i++){
+
+		htmlAux = htmlAux.replace('value="'+ arrCta[i] + '"', 'value="'+ arrCta[i] + '" checked="checked"');
+
+		htmlAux = htmlAux.replace('value='+ arrCta[i], 'value='+ arrCta[i] + ' checked=checked');
+
+	}
+
+	$('#mulCtasRE','#selectRobExt').remove();
+
+	if( arrCta.length > 1){
+
+		$('#selectRobExt').append('<option value="'+cuentas+'" id="mulCtasRE"> ' + (language != 'eng' ? 'Selecciona una opci&oacute;n' : 'Select an option' ) + ' </option>');
+
+		$('option[value="'+cuentas+'"]','#selectRobExt').attr("selected", "selected");
+
+		msg = '<div class="color666 paddingT5 f11 font_arial">' + ( language != 'eng' ? 'Has seleccionado m&aacute;s de una cuenta.' : 'You have select more than one account' ) + '</div>' ;
+
+	}
+
+	$('#msgErrRobExt').html(msg);
+
+	window.parent.ajustar();
+
+}
+
+
+
+function y(cuentas) {
+
+	ctasP = cuentas;
+
+	var arrCta = cuentas.split("@");
+
+	var i = 0;
+
+	var msg = '';
+
+	htmlPAux = htmlP;
+
+	for (i=0;i<arrCta.length-1;i++){
+
+		htmlPAux = htmlPAux.replace('value="'+ arrCta[i] + '"', 'value="'+ arrCta[i] + '" checked="checked"');
+
+		htmlPAux = htmlPAux.replace('value='+ arrCta[i], 'value='+ arrCta[i] + ' checked=checked');
+
+	}
+
+	$('#mulCtasPremia','#selectPremia1').remove();
+
+	if( arrCta.length > 1){
+
+		$('#selectPremia1').append('<option value="'+cuentas+'" id="mulCtasPremia"> ' + (language != 'eng' ? 'Selecciona una opci&oacute;n' : 'Select an option' ) + ' </option>');
+
+		$('option[value="'+cuentas+'"]','#selectPremia1').attr("selected", "selected");
+
+		msg = '<div class="color666 paddingT5 f11 font_arial">' + ( language != 'eng' ? 'Has seleccionado m&aacute;s de una cuenta.' : 'You have select more than one account.' ) + '</div>' ;
+
+	}
+
+	$('#msgErrPremia').html(msg);
+
+	window.parent.ajustar();
+
+}
+
+
+
+function pmAux(ev){
+
+	var d=document.getElementById('ndw').contentWindow.document.forms[0];
+
+	var o=document.forms[0];
+
+//	d.action=o.action;
+
+//	d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+//	d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+//	d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+//	d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+//	d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;	
+
+//	d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+//	d.DATA6.value = $("#selectModCreTitular").val();
+
+	//d.EWFBUTTON.value=ev;
+
+	//d.EWFBUTTON.name='EWF_BUTTON_'+ev;
+
+	//d.submit();
+
+}
+
+
+
+var indexAux='';
+
+
+
+$(document).ready(function (){
+
+	//swap();
+
+	errCta = '<div class="saldos_bloque2_f4_error_display_blanco" style="display:block;">' + (language != 'eng' ? "Seleccione la Cuenta Origen." : "Select the Debit Account." ) + '</div>';
+
+	if ( '' == 'ERROR' ){
+
+			$('#mensajeError_contenido_div', window.parent.document).html($('#ventanaEmergenteContenido').html());parent.$.modal({opacity:60,overlayClose:false,flagDiv:true,widthDivIfrm:640,heightDivIfrm:150});
+
+			parent.$.modal.setDimentions($("#mensaADTModal",window.parent.document).height(),$("#mensaADTModal",window.parent.document).width());
+
+		}	
+
+	$("#selectModCreTitular").change( function() {
+
+		if ( $("#licrpe").attr("checked") == true ){
+
+			pmAux('CREDITOS');
+
+			var pesos = /MXN/;
+
+			var dolares = /USD/;
+
+			if(pesos.test($('option[value="'+$("#selectModCreTitular").val()+'"]','#selectModCreTitular').html())){
+
+				$(".tipoMoneda").each(function(){
+
+					$(this).html("MXN");
+
+				});
+
+			}else if(dolares.test($('option[value="'+$("#selectModCreTitular").val()+'"]','#selectModCreTitular').html())){
+
+				$(".tipoMoneda").each(function(){
+
+					$(this).html("USD");
+
+				});
+
+			}else{
+
+				$(".tipoMoneda").each(function(){
+
+					$(this).html("MXN");
+
+				});
+
+			}			
+
+		}else{
+
+			$(".tipoMoneda").each(function(){
+
+				$(this).html("MXN");
+
+			})
+
+		}
+
+	});
+
+	$("#licrpe").click(
+
+	function () {
+
+		$("#limcretarpro").slideDown("slow", function(){window.parent.ajustarIframe();});
+
+		$("#selectModCreAdicional").css("display","none");
+
+		$("#selectModCreTitular").css("display","block");
+
+		window.parent.ajustar();
+
+	});
+
+	
+
+	$("#licrad").click(
+
+	function () {
+
+		$("#limcretarpro").slideUp("slow");
+
+		$("#selectModCreAdicional").css("display","block");
+
+		$("#selectModCreTitular").css("display","none");
+
+		window.parent.ajustar();
+
+	});
+
+	
+
+	$("div[id^='saldosbtn']").click( 
+
+	function () {
+
+		if($("div[id^='saldosConte']:visible").length==0){
+
+			$(this).removeClass().addClass('saldos_bloque4_f1_btn');
+
+			$("#saldosConte" + $(this).attr("id").replace("saldosbtn","")).slideDown('slow', function(){window.parent.ajustarIframe();});			
+
+		}
+
+		else{
+
+			if($(this).attr("class")!='saldos_bloque4_f1_btn'){			
+
+				indexAux=$(this).attr("id").replace("saldosbtn","");
+
+				$("div[id^='saldosConte']:visible").slideUp('slow', function(){							
+
+					$("#saldosConte" + indexAux).slideDown("slow", function(){window.parent.ajustarIframe();});
+
+				});
+
+				$("div[id^='saldosbtn']").removeClass().addClass('saldos_bloque4_f1_btnH');
+
+				$(this).removeClass().addClass('saldos_bloque4_f1_btn');
+
+			}
+
+			else{
+
+				$(this).removeClass().addClass('saldos_bloque4_f1_btnH');
+
+				$("#saldosConte" + $(this).attr("id").replace("saldosbtn","")).slideUp("slow");
+
+			}
+
+		}
+
+	}	
+
+	);
+
+	
+
+	$('#t8').click(function(){
+
+		if ( $('#selectRobExt').val() != 'PS'){
+
+					if ( $('#chk1').is(":checked") ){
+
+					parent.cargaDocN('ROBOEXTRAVIO/confirmacion_robo.html');
+
+					} else {
+
+					parent.cargaDocN('ROBOEXTRAVIO/confirmacion_extravio.html');
+
+					}
+
+			
+
+		
+
+		} else {
+
+			$('#msgErrRobExt').html(errCta);
+
+		}
+
+		window.parent.ajustarIframe();
+
+	});
+
+		
+
+	$('#t26').click(function(){
+
+			var expImp = /^\d{1,3}(,?\d{3}){0,4}(\.0{0,2})?$/;
+
+			if ( $("#licrpe").attr("checked") == true ){
+
+				if ( $('#selectModCreTitular').val() != 'PS'){
+
+					if ( $('#nvolim').val() == "" ){
+
+						$('#msgErrModCreMon').html('<div class="ancho100p marginT10 error">' + ( language != 'eng' ? 'Es necesario ingresar el Importe , favor de verificar.' : 'Enter a value in the Amount field, please verify') + '</div>')
+
+					}  else if ( $('#nvolim').val().match(expImp) == null  || parseInt($('#nvolim').val().replace(/,/g, "")) <= 0 || isNaN( $('#nvolim').val().replace(/,/g, "") )  ) {
+
+						$('#msgErrModCreMon').html('<div class="ancho100p marginT10 error">' + ( language != 'eng' ? 'Solo se permiten datos numericos en este campo, favor de verificar' : 'The entered field must be numeric, please verify') + '</div>');
+
+					} else {
+
+						parent.cargaDocN("LIMCREPER/limite_credito_tarjeta.html");
+
+					}
+
+				} else {
+
+					$('#msgErrModCre').html(errCta);
+
+				}
+
+			} else {
+
+				if ( $('#selectModCreAdicional').val() != 'PS'){
+
+					parent.cargaDocN("LICRAD/limite_credito_tarjetaadicional.html");
+
+				} else {
+
+					$('#msgErrModCre').html(errCta);
+
+				}
+
+			}
+
+			window.parent.ajustarIframe();
+
+		});
+
+	
+
+	$('#t15').click(function(){
+
+		if ( $('#selectActUbi').val() != 'PS'){
+
+				if ( $('#chk2').is(":checked") ){
+
+					parent.cargaDocN('UBIACT/confirmacion_activacion.html');
+
+					} else {
+
+					parent.cargaDocN('UBIACT/ubicacion_plastico.html');
+
+					}
+
+				
+
+				
+
+				
+
+				
+
+		} else {
+
+			$('#msgErrActUbi').html(errCta);
+
+			window.parent.ajustarIframe();
+
+		}
+
+	});
+
+
+
+	$('#t35').click(function(){
+
+		if ( $('#selectPremia').val() != 'PS'){
+
+			if( '' == 'OK' ){
+
+				if ( $('#selectPremia1').val() == 'PS' || $('#selectPremiaN').val() == 'PS' ){
+
+					$('#msgErrPremia').html(errCta);
+
+				} else {
+
+					//DoSubmit("INCPRE");
+
+				}
+
+			} else {
+
+				parent.cargaDocN("INSPRE/confirma_inscripcion_premia.html")
+
+			}
+
+		} else {
+
+			$('#msgErrPremia').html(errCta);
+
+		}
+
+		window.parent.ajustarIframe();
+
+	});
+
+	
+
+	$('#t40').click(function(){
+
+		if ( $('#selectLibra').val() != 'PS'){
+
+				parent.cargaDocN('INSLIB/confirma_incripcion_libra.html');
+
+		} else {
+
+			$('#msgErrLibra').html(errCta);
+
+			window.parent.ajustarIframe();
+
+		}
+
+	});
+
+	
+
+	var temp = '<option value="PS">' + (language != 'eng' ? 'Selecciona una opci&oacute;n' : 'Select an option' ) + '</option>';
+
+				temp += '<option VALUE="9">Tarjeta Cr&eacute;dito&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**  796</option>';
+
+				
+
+			
+
+	$('#selectLibra').html(temp);
+
+	
+
+	temp = '<option value="PS">' + (language != 'eng' ? 'Selecciona una opci&oacute;n' : 'Select an option' ) + '</option>';
+
+				temp += '<option VALUE="18">Tarj Premia Pre&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**793</option>';
+
+				temp += '<option VALUE="25">Tarj Premia Pre&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**245</option>';
+
+			
+
+	$("#selectPremiaN").html(temp);
+
+	
+
+	/*var no_Cuentas = '<div class="borderDEDEDE borderTNone borderBNone"><div class="paddingT12 paddingR20 paddingL20 paddingB12"><br /><table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3"><tr><td class="ancho100p paddingL0">'+ ( "SPANISH" != "ENGLISH" ? 'No tienes Tarjetas de Cr&eacute;dito incorporadas &oacute; no se pudieron recuperar tus cuentas.' : 'You don't have Credit cards incorporated or they cannot be recovered' ) + '</td></tr></table><br /></div></div>';
+
+	var no_Cuentas1 = '<div class="borderDEDEDE borderTNone borderBNone"><div class="paddingT12 paddingR20 paddingL20 paddingB12"><br /><table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3"><tr><td class="ancho100p paddingL0">' + ( "SPANISH" != "ENGLISH" ? 'No tienes Tarjetas &oacute; no se pudieron recuperar tus cuentas.' : 'You don't have Cards or they cannot be recovered' ) + '</td></tr></table><br /></div></div>';
+
+	if ( parseInt("4") <= 0 ){
+
+		$("#saldosConte26").html(no_Cuentas1);
+
+	}
+
+	if ( parseInt("4") <= 0 ){
+
+		$("#saldosConte27").html(no_Cuentas1);
+
+	}
+
+	if ( parseInt("2") <= 0  && parseInt("2") <= 0 ){
+
+		$("#saldosConte28").html(no_Cuentas);
+
+	}
+
+	if ( parseInt("5") <= 0){
+
+		$("#saldosConte29").html(no_Cuentas);
+
+	}
+
+	*/
+
+	var extra = '<div class="ancho100p" id="ssaldosConte30b"><table cellpadding="0" cellspacing="0" width="100%"><tr><td class="borderTDotted" valign="bottom"><div class="saldos_bordeSupIz2c_2_a alto31"></div></td>' +
+
+                '<td class="bordeSupCe2c_2_a paddingB5 paddingT5 borderTDotted color666 f11"><div class="ancho100p paddingR0"><div class="floatL paddingT3 ancho435 f11 paddingR0"></div><div class="ancho100 floatR"></div>' +
+
+                '</div></td><td class="borderTDotted" valign="bottom"><div class="saldos_bordeInfDe2c_2_a alto31"></div></td></tr></table></div>';
+
+	if ( parseInt("2") <= 0 && "" != "OK" ){
+
+		$("#saldosConte30").html('<div class="saldos_bloque5 expand paddingL0 paddingR0" >' + no_Cuentas1 + '</div>' + extra);
+
+	}
+
+	setTimeout('window.parent.ajustarIframe()', 3000);
+
+});
+
+
+
+</script>
+
+        <div class="saldos_bloque1b alto25 paddingB5">
+
+          
+
+        	<div class="panelIzEnca4 paddingT0">
+
+          
+
+                <div class="activaflecha"><div class="flecha3"></div></div>
+
+                <div class="panelIzEnca3_text font_arial"><span id="t0">Administraci&oacute;n de tarjetas</span></div>
+
+            </div>
+
+        </div>
+
+        <div class="saldos_bloque4 bordeInfContrae">
+
+            <div class="saldos_bloque4_f1 ancho300">
+
+                <div class="saldos_bloque4_f1_btnH" id="saldosbtn26"><div class="cortinabtnSaldos  bge2f2fe"></div></div>
+
+                <div class="saldos_bloque4_f1_txt font_arial" id="t1">Reporte por robo o extrav&iacute;o</div>
+
+            </div>
+
+        </div>
+
+        <div class="saldos_bloque5 expand paddingL0 paddingR0" id="saldosConte26" style="display:none">
+
+			<div class="borderDEDEDE borderTNone borderBNone">
+
+				<div class="paddingT12 paddingR20 paddingL20 paddingB12">		
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="paddingL0" id="t2">Selecciona una o varias tarjetas, indica el tipo de reporte que deseas hacer y da clic en &quot;Continuar&quot;.</td>
+
+						</tr>
+
+					</table>
+
+					<div class=" paddingT10">
+
+						<div class="negrita color333 f11 paddingB5 font_arial" id="t3">Tarjeta</div>
+
+							<div class="paddingB5 txt_link">
+
+								<select id="selectRobExt" class="ancho80p selectp1" name="DATA2">
+
+									<option value="PS" id="t4"> Selecciona una opci&oacute;n </option>
+
+																		<option VALUE="9@">Tarjeta Cr&eacute;dito&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**  796</option>
+
+																		
+
+									
+
+								</select> 
+
+								&nbsp;&nbsp;&nbsp;										
+
+								<a href="#" class="f11 underline" onclick="$('#mensajeError_contenido_div', window.parent.document).html(htmlAux);parent.$.modal({opacity:60,overlayClose:false,flagDiv:true,widthDivIfrm:400,heightDivIfrm:100});ModalInicializacion()" id="t5">Reportar m&aacute;s de una</a>
+
+								<div id="msgErrRobExt"></div>
+
+                                <div id="hasM" class="f11 color666 displayN">Has seleccionado m&aacute;s de una cuenta.</div>
+
+								<div id="hasM3" class="f11 color666 displayN">You have select more than one account.</div>
+
+							</div>
+
+					</div>
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT5 marginB17">
+
+							<tr>
+
+								<td class="paddingL0"><input id="chk1" name="DATA1" type="radio" value="U" checked="checked" /><span id="t6" style="font-weight:normal;"> Reportar robo</span></td>
+
+							</tr>
+
+							<tr>
+
+								<td class="paddingL0"><input name="DATA1" type="radio" value="L" /><span id="t7" style="font-weight:normal;"> Reportar extrav&iacute;o</span></td>
+
+							</tr>
+
+					</table>
+
+                </div>          
+
+                <div class="paddingT5 bgF1F2F2 overflow borderTDotted paddingB5 color666">
+
+					<div class="paddingR20 clear overflow">
+
+						<input type="button" class="btnAZ86 floatR" value="Continuar" id="t8" />
+
+					</div>
+
+				</div>
+
+			</div>
+
+        </div>
+
+        
+
+        <div class="saldos_bloque4 bordeInfContrae">
+
+            <div class="saldos_bloque4_f1 ancho300">
+
+                <div class="saldos_bloque4_f1_btnH" id="saldosbtn27"><div class="cortinabtnSaldos  bge2f2fe"></div></div>
+
+                <div class="saldos_bloque4_f1_txt font_arial" id="t9">Activaci&oacute;n o ubicaci&oacute;n de tarjetas</div>
+
+            </div>
+
+        </div>
+
+        <div class="saldos_bloque5 expand paddingL0 paddingR0" id="saldosConte27" style="display:none">
+
+			<div class="borderDEDEDE borderTNone borderBNone">
+
+				<div class="paddingT12 paddingR20 paddingL20 paddingB12">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="ancho100p paddingL0" id="t10">Selecciona una tarjeta, indica el tipo de solicitud que deseas hacer y da clic en &quot;Continuar&quot;.</td>  
+
+						</tr>
+
+					</table>
+
+					<div class=" paddingT10">
+
+						<div class="negrita color333 f11 paddingB5 font_arial" id="t11">Tarjeta</div>
+
+						<div class="paddingB5">
+
+							<select id="selectActUbi" class="ancho80p selectp1" name="DATA4">
+
+								<option value="PS" id="t12"> Selecciona una opci&oacute;n </option>
+
+								<option value="9">Tarjeta Cr&eacute;dito&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**  796</option>
+
+							
+
+								
+
+							</select> 
+
+							<div id="msgErrActUbi"></div>
+
+						</div>
+
+					</div>
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT5 marginB17">
+
+						<tr>
+
+							<td class="ancho100p paddingL0"><input id="chk2" name="DATA3" value="1" type="radio"  checked="checked" /><span id="t13" style="font-weight:normal;"> Activaci&oacute;n del pl&aacute;stico</span></td>
+
+						</tr>
+
+						<tr>
+
+							<td class="ancho100p paddingL0"><input name="DATA3" value="0" type="radio" /><span id="t14" style="font-weight:normal;"> Ubicaci&oacute;n del pl&aacute;stico</span></td> 
+
+						</tr>
+
+					</table>
+
+				</div>
+
+                <div class="paddingT5 bgF1F2F2 overflow borderTDotted paddingB5 color666">
+
+					<div class="paddingR20 clear overflow">
+
+						<input type="button" class="btnAZ86 floatR" value="Continuar" id="t15" />
+
+					</div>
+
+				</div>
+
+			</div>
+
+        </div>
+
+
+
+        <div class="saldos_bloque4 bordeInfContrae">
+
+            <div class="saldos_bloque4_f1 ancho300">
+
+                <div class="saldos_bloque4_f1_btnH" id="saldosbtn28"><div class="cortinabtnSaldos  bge2f2fe"></div></div>
+
+                <div class="saldos_bloque4_f1_txt font_arial" id="t16">Modificaci&oacute;n de l&iacute;mite de cr&eacute;dito</div>
+
+            </div>
+
+        </div>
+
+        <div class="saldos_bloque5 expand paddingL0 paddingR0" id="saldosConte28" style="display:none">
+
+			<div class="borderDEDEDE borderTNone borderBNone">
+
+				<div class="paddingT12 paddingR20 paddingL20 paddingB12">			
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="ancho100p paddingL0" id="t17">Selecciona una tarjeta, indica el tipo de l&iacute;mite que deseas modificar y da clic en &quot;Continuar&quot;.</td>
+
+						</tr>
+
+					</table>
+
+					<div class="paddingT10">
+
+						<div class="negrita color333 f11 paddingB5 font_arial" id="t18">Tarjeta</div>
+
+						<div class="paddingB5">
+
+							<select id="selectModCreTitular" class="ancho80p selectp1" name="DATA6" >
+
+								<option value="PS" id="t19"> Selecciona una opci&oacute;n </option>
+
+																<option VALUE="9">Tarjeta Cr&eacute;dito&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**  796</option>
+
+																
+
+								
+
+							</select>
+
+							<select id="selectModCreAdicional" class="ancho80p selectp1 " name="DATA11" style="display:none">
+
+								<option value="PS" id="t20"> Selecciona una opci&oacute;n </option>
+
+																<option VALUE="9">Tarjeta Cr&eacute;dito&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**  796</option>
+
+																<option VALUE="26">Clasica&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**199</option>
+
+								
+
+							</select>
+
+							<div id="msgErrModCre"></div>
+
+						</div>
+
+                    </div>
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 paddingB15 paddingT5">
+
+							<tr>
+
+								<td class="ancho100p paddingL0"><input id="licrpe" type="radio" name="DATA5" value="0" checked="checked" /><span id="t21" style="font-weight:normal;">L&iacute;mite de cr&eacute;dito de esta tarjeta</span></td>
+
+							</tr>
+
+							<tr>
+
+								<td class="ancho100p paddingL0"><input id="licrad" type="radio" name="DATA5" value="1"/><span id="t22" style="font-weight:normal;">L&iacute;mite de cr&eacute;dito de tarjetas adicionales</span></td>
+
+							</tr>
+
+					</table>
+
+					<table id="limcretarpro" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginB17">
+
+						<tr>  
+
+							<td class="ancho33p borderRSolid"><span id="t23">L&iacute;mite de cr&eacute;dito asignado&nbsp;</span>&nbsp;<span class="tipoMoneda">MXN</span></td>
+
+							<td class="ancho33p borderRSolid paddingL20"><span id="t24">L&iacute;mite de cr&eacute;dito actual&nbsp;</span>&nbsp;<span class="tipoMoneda">MXN</span></td>
+
+							<td class="ancho33p paddingL20" align="left"><span id="t25">L&iacute;mite de cr&eacute;dito nuevo&nbsp;</span>&nbsp;<span class="tipoMoneda">MXN</span></td>
+
+						</tr>
+
+						<tr>  
+
+							<td class="ancho33p borderRSolid" id="limasig"></td>
+
+							<td class="ancho33p borderRSolid paddingL20" id="limactu"></td>
+
+							<td class="ancho33p paddingL20 " align="left"><input type="text" class="input" name="DATA7" id="nvolim" maxlength="14" /><span id="msgErrModCreMon"></span></td>
+
+						</tr>
+
+					</table>
+
+                </div>
+
+                <div class="paddingT5 bgF1F2F2 overflow borderTDotted paddingB5 color666">
+
+					<div class="paddingR20  clear overflow">
+
+						<input type="button" class="btnAZ86 floatR" value="Continuar" id="t26" />
+
+					</div>
+
+				</div>
+
+			</div>
+
+        </div>
+
+		
+
+        <div class="saldos_bloque4 bordeInfContrae">
+
+            <div class="saldos_bloque4_f1 ancho300">
+
+                <div class="saldos_bloque4_f1_btnH" id="saldosbtn29"><div class="cortinabtnSaldos bge2f2fe"></div></div>
+
+                <div class="saldos_bloque4_f1_txt font_arial" id="t58">Inscripci&oacute;n a Banamex Premia</div>
+
+            </div>
+
+        </div>
+
+        <div class="saldos_bloque5 expand paddingL0 paddingR0" id="saldosConte29" style="display:none">
+
+			<div class="borderDEDEDE borderTNone borderBNone">
+
+				<div class="paddingT12 paddingR20 paddingL20 paddingB12">			
+
+					
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="ancho100p paddingL0" id="t27">Selecciona una tarjeta que deseas inscribir a Banamex Premia y da clic en &quot;Continuar&quot;.</td>
+
+						</tr>
+
+					</table>
+
+						<div class=" paddingT10">
+
+						<div class="negrita color333 f11 paddingB5 font_arial" id="t28">Tarjeta</div>
+
+						<div class="paddingB5">
+
+							<select id="selectPremia" class="ancho80p selectp1" name="DATA9" selected="">
+
+							<option value="PS" id="t29"> Selecciona una opci&oacute;n </option>
+
+															<option VALUE="563467894257">Tarjeta&nbsp;&nbsp;-&nbsp;&nbsp;M.N&nbsp;&nbsp;-&nbsp;&nbsp;**257</option>
+
+															
+
+							
+
+							</select> 
+
+							<div class="f11 paddingB0 color666 paddingT10" id="msgErrPremia"></div>
+
+						</div>
+
+						</div>
+
+					
+
+				</div>
+
+			</div>
+
+            <div class="paddingT5 bgF1F2F2 overflow borderTDotted paddingB5 color666">
+
+				<div class="paddingR20 clear overflow"><input type="button" class="btnAZ86 floatR" value="Continuar" id="t35" /></div>
+
+			</div>
+
+        </div>
+
+		<div class="saldos_bloque4 bordeInfContrae">
+
+			<div class="saldos_bloque4b">
+
+                <div class="saldos_bloque4_f1 ancho300">
+
+                    <div class="saldos_bloque4_f1_btnH" id="saldosbtn30"><div class="cortinabtnSaldos  bge2f2fe"></div></div>
+
+                    <div class="saldos_bloque4_f1_txt font_arial" id="t36">Inscripci&oacute;n a Libra Plus</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+		<div id="saldosConte30" style="display:none">		
+
+			
+
+		<div class="borderDEDEDE borderTNone">
+
+			<div class="saldos_bloque5 expand paddingL0 paddingR0" >
+
+				<div class="paddingT12 paddingR20 paddingL20 paddingB12">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="ancho100p paddingL0" id="t37">Selecciona la tarjeta que deseas inscribir a Libra Plus y da clic en &quot;Continuar&quot;.</td>
+
+						</tr>
+
+					</table>
+
+					<div class=" paddingT10">
+
+						<div class="negrita color333 f11 paddingB5 font_arial" id="t38">Tarjeta</div>
+
+						<div class="paddingB5" id="divSelectLibra">
+
+							<select id="selectLibra" class="ancho80p selectp1" name="DATA10" >
+
+							</select>
+
+							<div class="f11 paddingB0 color666 paddingT10" id="msgErrLibra"></div>
+
+						</div>
+
+					</div>                  
+
+				</div>
+
+			</div>
+
+		</div>
+
+        <div class="ancho100p" id="ssaldosConte30b">
+
+			<div class="paddingT5 bgF1F2F2 overflow borderTDotted paddingB5 color666">
+
+                <div class="paddingR20 paddingL20 clear overflow">
+
+                    <div class="floatL paddingT3 ancho435 f11 paddingR0" id="t39">Si ya tienes el servicio Libra Plus en alguna tarjeta Banamex, ya est&aacute;s protegido.</div>
+
+                    <input id="t40" type="button" class="btnAZ86 floatR" value="Continuar"  />
+
+                </div>
+
+			</div>
+
+		</div>
+
+		
+
+		</div>
+
+
+
+<input type="HIDDEN" name="EWFBUTTON" value="" />
+
+
+
+<div id="mulPre" style="display:none">
+
+<div id="mulPre1">
+
+    <div class="panelIzEnca3_text2 paddingL0" id="t42">Selecci&oacute;n m&uacute;ltiple de cuentas</div>
+
+    <p class="color666 paddingL2 f11 paddingT5" id="t43">Seleccione una o varias cuentas y da clic en &quot;Continuar&quot;.</p>
+
+    <br />
+
+    <div class="mensajeError_Fila2 color666">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3" >
+
+		<thead>
+
+			<tr>
+
+				<td align="center" class="tablaSaldos2_bordeR"><input type="checkbox" id="checkHead1"  onclick="if($('#checkHead1').is(':checked') == true){$('input','#tablaMulPremia').attr('checked',true);}else{$('input','#tablaMulPremia').attr('checked',false);}"/></td>
+
+                <td class="tablaSaldos2_bordeR"><span class="floatL" id="t44">Cuenta</span></td>
+
+                <td><span class="floatL" id="t45"># Cuenta</span></td>
+
+            </tr>
+
+		</thead>
+
+		<tbody id="tablaMulPremia">
+
+        <tr>
+
+            <td class="tablaSaldos2_bordeR" align="center"><input value="563467894257" type="checkbox" name="checkCuenta" /></td>
+
+            <td class="tablaSaldos2_bordeR">Tarjeta&nbsp;M.N</td>
+
+            <td>**257</td>
+
+        </tr><tr>
+
+            <td class="tablaSaldos2_bordeR" align="center"><input value="345776909469" type="checkbox" name="checkCuenta" /></td>
+
+            <td class="tablaSaldos2_bordeR">Tarjeta&nbsp;M.N</td>
+
+            <td>**469</td>
+
+        </tr><tr>
+
+            <td class="tablaSaldos2_bordeR" align="center"><input value="265909824648" type="checkbox" name="checkCuenta" /></td>
+
+            <td class="tablaSaldos2_bordeR">Tarjeta&nbsp;Dls.</td>
+
+            <td>**648</td>
+
+        </tr><tr>
+
+            <td class="tablaSaldos2_bordeR" align="center"><input value="086453789879" type="checkbox" name="checkCuenta" /></td>
+
+            <td class="tablaSaldos2_bordeR">Tarjeta&nbsp;Dls.</td>
+
+            <td>**879</td>
+
+        </tr><tr>
+
+            <td class="tablaSaldos2_bordeR" align="center"><input value="326550806909" type="checkbox" name="checkCuenta" /></td>
+
+            <td class="tablaSaldos2_bordeR">Tarjeta&nbsp;M.N</td>
+
+            <td>**909</td>
+
+        </tr>
+
+		</tbody></table>
+
+	<br />
+
+	<p class="paginacion" align="center" id="paginacionPR"></p>
+
+    <div class="mensajeError_Fila3">
+
+        <div class="floatL"><input type="button" value="Cancelar" class="btnRJ86 CerrarVentanaEmergente" id="t46" /></div>
+
+        <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" onclick="var cuentas = ''; $('input:checked','#tablaMulPremia').each( function(){ cuentas += $(this).val() + '@';}); parent.document.getElementById('main').contentWindow.y(cuentas);" id="t47" /></div>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div id="robExt" style="display:none">
+
+<div id="robExt1" class="paddingL20 paddingT20">
+
+	
+
+    <style type="text/css">
+
+							.saldos_btn2-2{
+
+							background: url(../../JFP/images/marco.gif) no-repeat scroll -289px 0 #FFFFFF;
+
+							cursor: pointer;
+
+							float: right;
+
+							height: 21px;
+
+							margin-right: 10px;
+
+							width: 23px;
+
+							}
+
+							.saldos_btn2-2:hover {
+
+								background: url(../../JFP/images/marco.gif) no-repeat scroll -312px 0 #FFFFFF;
+
+							}
+
+							.btnRJ86-2{
+
+							background: url(../../JFP/images/marco.gif) no-repeat scroll -390px -21px transparent;
+
+							border: 0 none;
+
+							color: #FFFFFF;
+
+							cursor: pointer;
+
+							height: 20px;
+
+							margin: 0;
+
+							padding: 0 0 2px;
+
+							width: 86px;
+
+							cursor:pointer;
+
+							}
+
+							.btnRJ86-2:hover {
+
+								background: url(../../JFP/images/marco.gif) no-repeat scroll -476px -21px transparent;
+
+							}
+
+							.btnAZ86-2{
+
+							
+
+							background:url(../../JFP/images/marco.gif) -390px 0 no-repeat;
+
+							border: 0 none;
+
+							color: #FFFFFF;
+
+							cursor: pointer;
+
+							height: 20px;
+
+							margin: 0;
+
+							padding: 0 0 2px;
+
+							width: 86px;
+
+						}
+
+						.btnAZ86-2:hover{
+
+							background:url(../../JFP/images/marco.gif) -476px 0 no-repeat;
+
+						}
+
+							.paddingL0{
+
+								padding-left:0 !important;
+
+							}
+
+							
+
+							.panelIzEnca3_text2 {
+
+								font-size: 14px;
+
+								font-weight: bold;
+
+								padding-top: 4px;
+
+							}
+
+							.marginT20{
+
+								margin-top: 20px;
+
+							}
+
+							.tablaSaldos3-2{
+
+							font-size: 11px;
+
+							color:#666;
+
+							}
+
+							.ancho640{ width:640px;}
+
+							.bgF1F2F2 {
+
+								background: none repeat scroll 0 0 #F1F2F2;
+
+							}
+
+							
+
+						.tablaSaldos3-2{ 
+
+							background: none repeat scroll 0 0 transparent;
+
+							border: 0 none;
+
+							font-family: Arial,Helvetica,sans-serif;
+
+							font-size: 12px;
+
+							margin: 0;
+
+							padding: 0;
+
+						}
+
+						
+
+						.tablaSaldos3-2 td {
+
+							color: #666666;
+
+							font-size: 11px;
+
+							line-height: 12px;
+
+							padding: 5px 10px;
+
+						}
+
+						.paddingT5{
+
+							padding-top:5px !important;
+
+							}
+
+						.mensajeError_Fila3-2 {
+
+							font-size: 11px;
+
+							height: 20px;
+
+							padding-top:25px;
+
+						
+
+						}
+
+						
+
+						.mensajeError_Fila2-2 {
+
+							font-size: 11px;
+
+							padding-bottom: 5px;
+
+							padding-top: 5px;
+
+						}
+
+						.f11-2{font-size:11px !important!}
+
+						.marginT20-2{margin-top:20px !important;}
+
+							</style>
+
+    <div class="panelIzEnca3_text2 paddingL0" id="t48">Selecci&oacute;n m&uacute;ltiple de cuentas</div>
+
+    <p class="color666 paddingL2 f11-2 paddingT5 clear" id="t49">Seleccione una o varias cuentas y da clic en &quot;Continuar&quot;.</p>
+
+    
+
+    <div class="color666 clear overflow marginT20-2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3-2 clear" >
+
+		<thead>
+
+			<tr>
+
+				<td align="center" class="tablaSaldos2_bordeR"><input type="checkbox" id="checkHead" onclick="if($('#checkHead').is(':checked') == true){$('input','#tablaMulRobExt').attr('checked',true);}else{$('input','#tablaMulRobExt').attr('checked',false);}" /></td>
+
+                <td class="tablaSaldos2_bordeR"><span class="floatL" id="t50"><b>Cuenta</b></span></td>
+
+                <td><span class="floatL" id="t51"><b># Cuenta</b></span></td>
+
+            </tr>
+
+		</thead>
+
+		<tbody id="tablaMulRobExt">
+
+			<tr>
+
+				<td class="tablaSaldos2_bordeR" align="center"><input type="checkbox" name="checkCuenta" value="9" /></td>
+
+				<td class="tablaSaldos2_bordeR">Tarjeta Cr&eacute;dito</td>
+
+				<td>**  796</td>
+
+			</tr><tr>
+
+				<td class="tablaSaldos2_bordeR" align="center"><input type="checkbox" name="checkCuenta" value="18" /></td>
+
+				<td class="tablaSaldos2_bordeR">Tarj Premia Pre</td>
+
+				<td>**793</td>
+
+			</tr><tr>
+
+				<td class="tablaSaldos2_bordeR" align="center"><input type="checkbox" name="checkCuenta" value="25" /></td>
+
+				<td class="tablaSaldos2_bordeR">Tarj Premia Pre</td>
+
+				<td>**245</td>
+
+			</tr>
+
+            <tr>
+
+				<td class="tablaSaldos2_bordeR" align="center"><input type="checkbox" name="checkCuenta" value="26" /></td>
+
+				<td class="tablaSaldos2_bordeR">Clasica</td>
+
+				<td>**199</td>
+
+			</tr>
+
+            
+
+            </tr>
+
+		</tbody></table>
+
+   		<div class="marginT20">
+
+    
+
+    
+
+        <input id ="t46" type="button" value="Cancelar" class="btnRJ86-2 CerrarVentanaEmergente floatL" style=" *position:absolute !important; *top:265px !important;" />
+
+        <input id ="t8" type="button" value="Continuar" class="btnAZ86-2 CerrarVentanaEmergente floatR" onclick="javascript:top.mhasM()" />
+
+  		 <script type="text/javascript">
+
+		function mhasM2(){
+
+		
+
+				if(language == 'eng'){
+
+				$('#hasM3').show();
+
+			top.ajustarP();
+
+				}else{
+
+			$('#hasM').show();
+
+			top.ajustarP();}
+
+			}
+
+		</script>
+
+    
+
+    </div>
+
+</div>
+
+</div>
+
+<iframe id="ndw" src="" style="display:none"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="ventanaEmergenteContenido" style="display:none;">
+
+	<div id="mensaADTModal">
+
+		<div class="mensajeError_contenidoIn">
+
+            <div class="mensajeError_Fila1">
+
+                <div class="mensajeError_titulo1" id="t54">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+                <div class="mensaje_btn1">
+
+					<div class="saldos_btn2-2 margin0" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+				</div>
+
+            </div>
+
+            <div class="mensajeError_Fila1_2  ">
+
+                <div class="color666 paddingT5 paddingL25 f11"> <span class="color666 paddingT5 f11" id="t55">Administraci&oacute;n de Tarjetas</span></br>
+
+				
+
+					&nbsp;&nbsp;<label id="me"></label><br/>
+
+							
+
+				
+
+				</div>
+
+            </div>
+
+			<div class="mensajeError_Fila2 color333 negrita paddingL25" id="t56">&iquest;Qu&eacute; puedo hacer?</div>
+
+			
+
+				<div class="mensajeError_Fila2 color666 paddingL25" >
+
+				<span class="color666 paddingT5 f11" id="t61">Si deseas comun&iacute;cate a</span> <span  class="f11" id="t62">servicio a clientes</span> 
+
+				<span class="color666 paddingT5 f11" id="t63">al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br>
+
+				01 800 110 3990 (Del interior de la Rep&uacute;blica).<br></span> 
+
+				</div>
+
+				
+
+					<div class="mensajeError_Fila2 color666 paddingL25" id="t64">
+
+						Es importante tener a la mano el siguiente c&oacute;digo: 
+
+					</div>
+
+					<div id="ne" class="coloree2e24 mensajeError_Fila2 paddingL25"></div>
+
+			<div class="mensajeError_Fila3">
+
+                <div class="floatR"><input type="button" id="t57" value="Continuar" class="floatR btnAZ86 CerrarVentanaEmergente" onclick=" parent.Expandir();"/></div>
+
+            </div>
+
+		 </div>
+
+	  </div>
+
+	</div>
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Administracion de Tarjetas|iniAdmonTarj.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

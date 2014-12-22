@@ -1,0 +1,1291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>Pago Tarjetas</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+    <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" />
+
+    <style type="text/css">.ui-datepicker-trigger{margin-left:4px; margin-bottom:-5px}</style>
+
+    <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+    <script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>
+
+    <script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>  
+
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+   
+
+   <script>
+
+var f = new Date();
+
+var monthm=f.getMonth();
+
+
+
+if (monthm < 10)
+
+var meses = new Array ("01","02","03","04","05","06","07","08","09","10","11","12");
+
+
+
+var meses2 = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+
+
+var mfec = f.getDate() + " de " + meses2[f.getMonth()] + " de " + f.getFullYear();
+
+
+
+//var ifec = f.getDate() + "/" +  meses[monthm] + "/" + f.getFullYear(); 
+
+
+
+//var fec = f.getDate() + "|" + (f.getMonth() +1) + "|" + f.getFullYear();
+
+
+
+		function mDatosX(){
+
+			var userdate1 = $('#otraCantidad').val();
+
+			alert(userdate1)
+
+			}
+
+		var Formato,diasSemana,Meses;
+
+		var minDate = 30;
+
+		jQuery(document).ready(function(){
+
+			if(language=='eng')
+
+			{
+
+				$('#fecInicio').val('09/24/2013');
+
+				$('.leyendaING').val('Pay');
+
+			}else{
+
+				$('#fecInicio').val('24/09/2013');
+
+				$('.leyendaING').val('Pagar');
+
+			}
+
+			//$('#fecInicio').val(ifec);
+
+			//var fecha = fec.split("|");
+
+			var isIE = (window.navigator.userAgent.indexOf("MSIE")> 0);
+
+			var anio = 0;
+
+			//var diaActual = new Date(parseInt(fecha[2])+anio,parseInt(fecha[1]), parseInt(fecha[0]));
+
+			var ciclo =  "CICLOANTERIOR";
+
+			if(ciclo == 'CICLOANTERIOR' || ciclo == 'MES ANTERIOR'){
+
+				maxDate = 60;
+
+			}
+
+			if(language != 'eng'){
+
+				Formato = "dd/mm/yy";
+
+				diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+				Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+				msj1 = 'El campo no puede contener caracteres especiales';
+
+				msj2 = 'El campo debe ser num&eacute;rico';
+
+				msj3 = 'Selecciona una opci&oacute;n';
+
+				msj4 = 'El campo no puede contener espacios';
+
+			}else{
+
+				var Formato = "mm/dd/yy";
+
+				var diasSemana = ['Sun','Mon','Tue','Wed','Thu','Fry','Sat'];
+
+				var Meses = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+			}
+
+			var fechaSer= new Date();
+
+			var anio = fechaSer.getFullYear();
+
+			var mes = fechaSer.getMonth();
+
+			var dia = fechaSer.getDate();
+
+			fechaIni = new Date(anio, mes, dia);
+
+			CrearCal("#fecInicio", Formato, diasSemana, Meses, fechaIni, fechaIni, 60, '');
+
+			});
+
+	</script> 
+
+    <script type="text/javascript">
+
+		String.prototype.trimtar = function(){ return this.replace(/^\s+|\s+$/g,"");}
+
+		var nomaspostmodal = 0;
+
+		//var atajobestbanking = parent.document.getElementById("main").contentWindow.document.getElementById("pagotarjetas").contentWindow;
+
+		var idiomapagotarjeta = language;
+
+		var diasSemanaPagoT = new Array(); var MesesPagoT = new Array(); var fmtFechaPagoT = ""; 
+
+		var msg1 = ""; var msg3 = ""; var msg4 = ""; var msg5 = ""; var msg6 = ""; var msg7 = ""; var msg8= "";
+
+		var es = ["Credit payment", "You have selected to do<span id='tipoPago' style='font-size:12px; color:#666;'>&nbsp;<\/span>payment to your card", "Select withdrawal account"," - Select an option - ","* Payment due data&nbsp;&nbsp;", "Minimum payment", "Non-interest payment", "Another amount", "Schedule for future date", "Date", "Time", "Cancel", "Pay"];
+
+		
+
+		var MesesPagoT = new Array();
+
+		
+
+		if(language=="esp"){
+
+			MesesPagoT = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+		}else{
+
+			MesesPagoT = ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+		}
+
+		
+
+		function formateaFecha(fecha){
+
+			var tmp = fecha.split("/");
+
+			if(language=="esp"){
+
+				return tmp[0]+"&nbsp;"+MesesPagoT[parseInt(tmp[1],10)-1]+"&nbsp;"+tmp[2];
+
+			}else{
+
+				return tmp[1]+"&nbsp;"+MesesPagoT[parseInt(tmp[0],10)-1]+"&nbsp;"+tmp[2];
+
+			}
+
+		}
+
+		
+
+		function habilitarImporte(){
+
+			if($('input[name=opcionpago]:checked').val() == "PM"){
+
+				$("#tipoPago").html( language=="esp" ? "&nbsp;m&iacute;nimo&nbsp;":"&nbsp;m&iacute;nimo&nbsp;");
+
+				$("#otraCantidad").val("");
+
+				$("#otraCantidad").attr("disabled", true);
+
+				$("#btn1").show();
+
+				$("#btn2").hide();
+
+				$("#btn3").hide();
+
+			}else if($('input[name=opcionpago]:checked').val() == "PT"){
+
+				$("#tipoPago").html( language=="esp" ? "&nbsp;para no generar intereses&nbsp;":"&nbsp;para no generar intereses&nbsp;");
+
+				$("#otraCantidad").val("");
+
+				$("#otraCantidad").attr("disabled", true);
+
+				
+
+				$("#btn1").hide();
+
+				$("#btn2").show();
+
+				$("#btn3").hide();
+
+			}else if($('input[name=opcionpago]:checked').val() == "PO"){
+
+				$("#tipoPago").html( language=="esp" ? "&nbsp;de otra cantidad&nbsp;":"&nbsp;otra cantidad&nbsp;");
+
+				$("#otraCantidad").attr("disabled", false);
+
+				$("#btn1").hide();
+
+				$("#btn2").hide();
+
+				$("#btn3").show();
+
+			}else{
+
+				$("#tipoPago").html("&nbsp;");
+
+			}
+
+		}
+
+		
+
+		function bindBackSpace(){$(document).bind('keydown.backspace keyup.backspace',function(event){if(event.keyCode==8){ event.preventDefault();}});}
+
+		
+
+		function ajustar() { var ancho=document.getElementById('mensajeError_contenido_div').offsetWidth; var alto=document.getElementById('mensajeError_contenido_div').offsetHeight;	parent.$.modal.setDimentions(alto,ancho); }
+
+		
+
+		function setMensajesError(){
+
+			if(language=="esp"){
+
+				msg1 = "Es necesario seleccionar la cuenta retiro. Favor de verificar."; msg3 = "Digite un valor en el campo Importe."; msg4 = "El importe debe ser mayor a cero."; msg5 = "Información de Importe Invalida. Favor de verificar."; msg6 = "Seleccione una opción."; msg7 = "Solo se permiten datos numericos en este campo. Favor de verificar"; msg8 = "Importe mayor al permitido.";				
+
+			}else{
+
+				msg1 = "You have to select the withdrawal account. Please verify."; msg3 = "Enter a value in the Amount field."; msg4 = "Amount should be different to zero."; msg5 = "Invalid information in field Amount. Please verify."; msg6 = "Select an option."; msg7 = "The entered field must be numeric. Please verify."; msg8 = "Amount greater than allowed.";				
+
+			}
+
+		}
+
+		
+
+		function inicializaModal(){
+
+			//$("#ntarjeta").html(atajobestbanking.armaNombreModal());
+
+			/*var desMoneda = "";
+
+			var minpag = atajobestbanking.document.getElementById("minpag").value; minpag.trimtar();
+
+			var sigsuc = atajobestbanking.document.getElementById("sigsuc").value; sigsuc.trimtar();
+
+			var sdoulc = atajobestbanking.document.getElementById("sdoulc").value; sdoulc.trimtar();
+
+			var fechaprog = atajobestbanking.document.getElementById("fechaprog").value; fechaprog.trimtar();
+
+			var us_hora = atajobestbanking.document.getElementById("us_hora").value; us_hora.trimtar();
+
+			var us_minuto = atajobestbanking.document.getElementById("us_minuto").value; us_minuto.trimtar();
+
+			if(minpag != "No disponible" && minpag != "Not available"){ 
+
+				$("#pagoMinimo").html("<b>$&nbsp;"+ minpag + "&nbsp;</b>" + desMoneda);
+
+				$("#imppagmin").val(minpag.replace(/\$|\-|\+/g,""));
+
+			}
+
+			else{ 
+
+				$("#pagoMinimo").html("<b>$&nbsp;"+ minpag + "&nbsp;" +"</b>"); 
+
+				$("#imppagmin").val(0);
+
+			}
+
+			if(sdoulc != "No disponible" && sdoulc != "Not available"){
+
+				if(sigsuc == "+" || sigsuc == ""){sigsuc = ""; sdoulc = "0.00"}
+
+				var tmpsaldo = sigsuc == "" ? "&nbsp;":"&nbsp;"+sigsuc+"&nbsp;"
+
+				$("#pagoIntereses").html("<b>$"+ tmpsaldo + sdoulc + "&nbsp;</b>" + desMoneda); 
+
+				$("#imppagoint").val( sdoulc.replace(/\$|\-|\+/g,""));
+
+			}else{ 
+
+				$("#pagoIntereses").html("<b>$&nbsp;"+ sdoulc + "&nbsp;" + "</b>");
+
+				$("#imppagoint").val(0);
+
+			}			
+
+			var htmlcombo = atajobestbanking.document.getElementById("cboRetTB").innerHTML;			
+
+			if(htmlcombo != null){
+
+				$("#comboTB").append(htmlcombo);
+
+				$("#comboTB").css("widht","100%");
+
+			}else{
+
+				var tmp = "";
+
+				if(language=="esp") tmp = "Selecciona una opci&oacute;n"; else tmp = "Select an option";
+
+				$("#comboTB").append("<option id='opc0' value='PS' tipo='6'>"+tmp+"</option>");
+
+				$("#comboTB").css("widht","100%");
+
+			}*/
+
+			if(language=="esp"){
+
+				diasSemanaPagoT = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+				MesesPagoT = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+				fmtFechaPagoT = 'dd/mm/yy';
+
+			}else{
+
+				diasSemanaPagoT=['Sun','Mon','Tue','Wed','Thu','Fry','Sat'];	
+
+				MesesPagoT = ['Jan','Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+				fmtFechaPagoT = 'mm/dd/yy';
+
+			}
+
+			var fechaSer= new Date();
+
+				var anio = fechaSer.getFullYear();
+
+				var mes = fechaSer.getMonth();
+
+				var dia = fechaSer.getDate();
+
+				fechaIni = new Date(anio, mes, dia);
+
+			CrearCal("#txtFecha", Formato, diasSemana, Meses, fechaIni, fechaIni, 30, '150', '' );
+
+		}
+
+		
+
+		function cancelarPago(){
+
+			if(nomaspostmodal == 0){
+
+				nomaspostmodal++;
+
+				setTimeout('parent.$.modal.close()',600);				
+
+			}
+
+		}
+
+		
+
+		function validarPago(){
+
+			var warnings = 0;
+
+			var errores = 0;
+
+			setMensajesError();				
+
+			if($("#comboTB").val() == "PS" || $("#comboTB").val() == "" || $("#comboTB").val() == null){
+
+				errores++;
+
+				$("#errorcomboTB").html('<span class="errorLogin"></span><span class="errorLogintexto negrita">'+msg1+'</span>').show();
+
+				ajustar();
+
+			}else{
+
+				$("#errorcomboTB").html("").hide();
+
+				ajustar();
+
+			}
+
+			if($('input[name=opcionpago]:checked').val() == null || $('input[name=opcionpago]:checked').val() == ""){
+
+				errores++;
+
+				$("#erroropcionpago").css("text-align","left");
+
+				$("#erroropcionpago").html('<span class="errorLogin"></span><span class="errorLogintexto negrita">'+msg6+'</span>').show();
+
+				ajustar();
+
+			}else{
+
+				if($('input[name=opcionpago]:checked').val() == "PO"){
+
+					var tipocliente = atajobestbanking.document.getElementById("tipocliente").value;
+
+					var otroimporte = $("#otraCantidad").val();	otroimporte.trimtar();
+
+					if(otroimporte == "" || otroimporte == null){
+
+						errores++;
+
+						$("#erroropcionpago").css({"text-align":"right"});
+
+						$("#erroropcionpago").html('<span class="errorLogin"></span><span class="errorLogintexto negrita">'+msg3+'</span>').show();
+
+						ajustar();
+
+					}else{
+
+						if(!valImporte("otraCantidad") && !campoNumerico("otraCantidad")){
+
+							errores++;
+
+							$("#erroropcionpago").css({"text-align":"right"});
+
+							$("#erroropcionpago").html('<span class="errorLogin"></span><span class="errorLogintexto negrita">'+msg7+'</span>').show();
+
+							ajustar();
+
+						}else if(!valImporte("otraCantidad") && parseInt(otroimporte.replace(/,/g, "")) == 0 ){
+
+							errores++;
+
+							$("#erroropcionpago").css({"text-align":"right"});
+
+							$("#erroropcionpago").html('<span class="errorLogin"></span><span class="errorLogintexto negrita">'+msg4+'</span>').show();
+
+							ajustar();
+
+						}else if(!valImporte("otraCantidad")){
+
+							errores++;
+
+							$("#erroropcionpago").css({"text-align":"right"});
+
+							$("#erroropcionpago").html('<span class="errorLogin"></span><span class="errorLogintexto negrita">'+msg5+'</span>').show();
+
+							ajustar();
+
+						}else{
+
+							if(tipocliente == "56"){
+
+								$("#erroropcionpago").css({"text-align":"left"});
+
+								$("#erroropcionpago").html("").hide();
+
+								ajustar();
+
+							}else{
+
+								var importemaximo = parseFloat(atajobestbanking.document.getElementById("saldototal").value);
+
+								var importecliente = parseFloat(otroimporte);
+
+								if(importecliente > importemaximo){
+
+									errores++;
+
+									$("#erroropcionpago").css({"text-align":"right"});
+
+									$("#erroropcionpago").html('<span class="errorLogin"></span><span class="errorLogintexto negrita">'+msg8+'</span>').show();
+
+									ajustar();
+
+								}else{	
+
+									$("#erroropcionpago").css({"text-align":"left"});							
+
+									$("#erroropcionpago").html('').hide();
+
+									ajustar();
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}else{
+
+					if(errores == 0){
+
+						$("#erroropcionpago").html("").hide();
+
+						ajustar();
+
+					}
+
+				}
+
+			}
+
+			if(errores == 0){
+
+				procesarForm();
+
+				$("#errorcomboTB").html("").hide();
+
+				$("#erroropcionpago").html("").hide();
+
+				ajustar();
+
+			}
+
+		}
+
+		
+
+		function procesarForm(){
+
+			var importe = 0; var dia = 0; var mes = 0; var anio = ""; var num = 0; var AmPm = ""; var hora = 0; var minutos = 0; var fechacompleta = "";
+
+			var oppago = $('input[name=opcionpago]:checked').val();
+
+			if(oppago == "PM"){ importe = $("#imppagmin").val(); }else if(oppago == "PT"){ importe = $("#imppagoint").val();}else{ importe = $("#otraCantidad").val(); }
+
+			if( $("#txtFecha").val() != "" && $("#txtFecha").val() != null){
+
+				var params = $("#txtFecha").val().split('/');
+
+				dia = ( language=="esp" ) ? params[0] : params[1];
+
+				mes = ( language=="esp" ) ? params[1] : params[0];
+
+				anio = params[2];
+
+				num = parseInt( $("#combohrs option:selected").val(), 10 );
+
+				AmPm = ( isNaN( num ) ) ? "" : ( parseInt( $("#combohrs option:selected").val() ) >= 12 ) ? "PM" : "AM";
+
+				hora = $("#combohrs option:selected").val();
+
+				minutos = $("#combomin option:selected").val();
+
+				fechacompleta = dia+"/"+mes+"/"+anio;
+
+			}	
+
+			parent.document.getElementById("DATAAUX").value = oppago;
+
+			atajobestbanking.document.forms[0].DATA1.value = $("#comboTB").val();
+
+			atajobestbanking.document.forms[0].DATA2.value = atajobestbanking.document.getElementById("indicedestino").value;
+
+			atajobestbanking.document.forms[0].DATA3.value = importe; 
+
+			atajobestbanking.document.forms[0].DATA5.value = dia; 
+
+			atajobestbanking.document.forms[0].DATA6.value = mes; 
+
+			atajobestbanking.document.forms[0].DATA7.value = hora;
+
+			atajobestbanking.document.forms[0].DATA8.value = minutos;
+
+			atajobestbanking.document.forms[0].DATA9.value = AmPm;
+
+			atajobestbanking.document.forms[0].DATA18.value = fechacompleta;
+
+			$("#pagotarjetas", parent.document.getElementById("main").contentWindow.document).attr("src", "pagotarjetasconfir.html");
+
+		}
+
+		
+
+		function inicializaForm(){
+
+			var pagominimo = parseFloat( atajobestbanking.document.getElementById("minpag").value );
+
+			var sigsuc = atajobestbanking.document.getElementById("sigsuc").value; sigsuc.trimtar();
+
+			var pagoInt = parseFloat( atajobestbanking.document.getElementById("sdoulc").value )
+
+			var fechalimite = atajobestbanking.document.getElementById("feclimpag").value; fechalimite.trimtar();
+
+			var indretiro = atajobestbanking.document.getElementById("indretiro").value; indretiro.trimtar();
+
+			var importe = atajobestbanking.document.getElementById("importe").value; importe.trimtar(); importe = parseFloat(importe);
+
+			var tipopago = parent.document.getElementById("DATAAUX").value; tipopago.trimtar();
+
+			var flagmin = false; var flagint = false;
+
+			
+
+			if(indretiro != "" && indretiro != null){
+
+				$("#comboTB option[value='"+indretiro+"']").attr("selected",true);				
+
+			}else{
+
+				$("#comboTB option[value='PS']").attr("selected",true);
+
+			}
+
+			
+
+			if(fechalimite != "" && fechalimite != null){
+
+				$("#fechalimite").html(fechalimite);
+
+				$("#divfecha").show();
+
+			}
+
+			if(sigsuc == "+"){ pagoInt = 0;}
+
+			if(pagominimo == 0 || isNaN(pagominimo) ){
+
+				flagmin = true;
+
+				$("#pagmin").attr("disabled", true);
+
+			}
+
+			if(pagoInt == 0 || isNaN(pagoInt) ){
+
+				flagint = true;
+
+				$("#pagInt").attr("disabled", true);
+
+			}
+
+			
+
+			if(tipopago != "" && tipopago != null){
+
+				if(tipopago == "PM" && flagmin == false){
+
+					$("#pagmin").attr("checked", true);
+
+				}else if(tipopago == "PT" && flagint == false){
+
+					$("#pagInt").attr("checked", true);
+
+				}else if(tipopago == "PO"){
+
+					$("#pagoOtr").attr("checked", true);
+
+					if(isNaN(importe)){
+
+						$("#otraCantidad").val("1000");
+
+					}else{
+
+						$("#otraCantidad").val("");
+
+					}
+
+					changeImp();
+
+				}else{
+
+					$("input[name=opcionpago]:checked").attr("checked", false);
+
+					$("#otraCantidad").val("");
+
+				}
+
+				$("input[name=opcionpago] [value='"+tipopago+"']").attr("checked", true);
+
+			}else{
+
+				$("input[name=opcionpago]:checked").attr("checked", false);
+
+				$("#otraCantidad").val("");
+
+			}
+
+			habilitarImporte();
+
+		}
+
+		
+
+		function valImporte(ide){
+
+			var imp = $("#"+ide).val().replace(/,/g, "");
+
+			imp = imp.replace(/^\,$/g,"");
+
+			var expImp = /^[0-9]{1,16}(\.[0-9]{1,2}){0,1}$/;
+
+			if ( imp.match(expImp) != null && parseInt(imp) > 0 ){ return true; }
+
+			return false;
+
+		}
+
+		
+
+		function campoNumerico( idCampo, numCar ) {
+
+		  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+		  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+		  var valNum = $( "#"+idCampo+"").val().replace(/[,|.]/gi, "");
+
+		  return regexNum.test( valNum );
+
+		}
+
+		
+
+		function changeImp() {
+
+		  var valImpp;		  
+
+		  var valImp = $("#otraCantidad").val().replace(/,/gi,"");
+
+		  valImp.trimtar();
+
+		  valImp = compDec( valImp );
+
+		  $("#otraCantidad").val( valImp );
+
+		}
+
+		
+
+		function compDec( valImp ) {
+
+		  if( !isNaN( valImp ) && valImp!="" ) {
+
+			if( valImp.indexOf('.') > -1 ) {
+
+			  var ent = parseFloat(valImp.substring( 0, valImp.indexOf('.') ) );
+
+			  ent = ( isNaN( ent ) ) ? 0 : ent;
+
+			  var dec = valImp.substring( valImp.indexOf('.')+1 );
+
+			  var decl = valImp.substring( valImp.indexOf('.')+1 ).length;
+
+			  if( decl<2 ) {
+
+				for( var i=0; i<2-decl; i++ )
+
+				  dec = dec+'0';
+
+			  }
+
+			  valImp = ent+'.'+dec;
+
+			} else {
+
+			  valImp = parseFloat(valImp)+'.00';
+
+			}
+
+		  }
+
+		  return valImp;
+
+		}
+
+		
+
+ 		$(document).ready(function(){
+
+			inicializaModal();
+
+			//inicializaForm();
+
+			ajustar();
+
+			bindBackSpace();
+
+			$("input:text, input:password, textarea").focus(function(){ if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false) $(document).unbind('.backspace');});
+
+			$("input:text, input:password, textarea").blur(function(){ if($(this).attr("readonly") == "") bindBackSpace(); }); 
+
+		});
+
+	</script>
+
+</head>
+
+<body>
+
+<div id="mensajeError_contenido_div" style="background-color:#FFF; height:auto;">
+
+    <div id="t0" style="font-size:22px;">Pago de cr&eacute;ditos</div> 
+
+	<div id="t1" class="marginT8" style="font-size:12px; color:#666;">Has seleccionado realizar el pago<span id="tipoPago" style="font-size:12px; color:#666;">&nbsp;</span>de <span class="negrita f12">cr&eacute;ditos:</span></div>
+
+    <div id="ntarjeta" class="f14 negrita marginT10"></div>    
+
+    <div class="marginT10 borderDEDEDE">
+
+        <div class="paddingL15 paddingR15 paddingT15 paddingB15">
+
+        	<div id="t2" class="color333 ancho100p" style="font-size:11px">Selecciona la cuenta a la que se realizar&aacute; el retiro.</div>
+
+            <div class="marginT10 ancho100p">
+
+            	<select id="comboTB" onchange="valor=this.value; pValor()" class="selectp1 cboRet bmx ancho100p">
+
+                <option class="0" id="t3" value="PS">&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>
+
+                <option value="1">Cheques&nbsp;-&nbsp;002&nbsp;-&nbsp;MXN</option>
+
+                <option value="2">Cuenta Maestra - 490 - MXN</option>
+
+                <option value="3">D&eacute;bito - 678 - MXN</option>
+
+                <option value="4">Cheques- 888 - USD</option>
+
+                <option value="5">Tarjeta Cr&eacute;dito -  796 - MXN</option>
+
+                <option value="6"> Tarj. Premia Pre - 245 - MXN</option>
+
+                <option value="7">Mi cr&eacute;dito - 3014 - MXN</option>
+
+                <option value="8" selected="selected">Credicheque Perfiles Banamex - 502 - MXN</option>
+
+                <option value="9">Cr&eacute;dito Casa - 9014 - MXN</option>
+
+                <option value="10">Inversi&oacute;n Perfiles - 502 - MXN</option>
+
+                <option value="11">Inversi&oacute;n Plazo - 010 - MXN</option>
+
+                <option value="12">HORZONT - 746 - MXN</option>
+
+                <option value="13">Multiseries - 378 - MXN</option>
+
+                <option value="14">Mi afore NSS - 424 - MXN</option>
+
+                </select>
+
+            	<div id="errorcomboTB" class="displayN"></div>
+
+            </div>
+
+            <div id="divfecha" class="marginT10 ancho100p displayN">
+
+            	<span id="t4" class="color666" style="font-size:11px;">* Fecha l&iacute;mite de pago:&nbsp;&nbsp;</span><span id="fechalimite" class="color666" style="font-size:11px;"></span>
+
+            </div>
+
+            <div class="marginT10 ancho100p">
+
+				<div class="paddingL20 paddingR20">
+
+                    <table cellpadding="0" cellspacing="0" width="100%">
+
+                        <tr><td style="padding:2px;" align="left" width="60%" valign="middle">
+
+                                <input id="pagmin" type="radio" name="opcionpago" value="PM" onchange="habilitarImporte();" checked="checked">
+
+                                <label id="t5" class="color333">M&iacute;nimo a pagar:</label>
+
+                            </td><td style="padding:2px;" align="right" width="40%" valign="bottom">
+
+                                <label class="color333" id="pagoMinimo">$ 930.00</label>
+
+                                <input id="imppagmin" type="hidden" value=""/>
+
+                            </td>
+
+                       </tr>                  
+
+                       <tr><td style="padding:2px;" align="left" width="60%"  valign="middle">
+
+                                <input id="pagInt" type="radio" name="opcionpago" value="PT" onchange="habilitarImporte();">
+
+                                <label id="t6" class="color333">Pago para no generar intereses:</label>
+
+                            </td><td style="padding:2px;" align="right" width="40%" valign="bottom">
+
+                                <label class="color333" id="pagoIntereses">$ 15,897.00</label>
+
+                                <input id="imppagoint" type="hidden" value=""/>
+
+                            </td>
+
+                       </tr>
+
+                       <tr><td style="padding:2px;" align="left" width="60%"  valign="middle">
+
+                                <input id="pagoOtr" type="radio" name="opcionpago" value="PO" onchange="habilitarImporte();">
+
+                                <label id="t7" class="color333">Otra cantidad:</label>
+
+                            </td><td style="padding:2px;" align="right" width="40%" valign="bottom">
+
+                                <input id="otraCantidad"  style="text-align:right" class="input ancho125" maxlength="14" disabled="disabled" onblur="changeImp();" onmouseout="changeImp();" autocomplete="off" value=""/>
+
+                            </td>
+
+                       </tr>
+
+                    </table>
+
+                </div>
+
+                <div id="erroropcionpago" class="paddingL25 paddingR25 displayN"></div>
+
+            </div>
+
+            <div class="marginT27 ancho100p">
+
+                <div id="t8" class="color333" style="font-size:11px">Programar a fecha futura</div>
+
+                <div class="marginT10 ancho100p">
+
+                	<div class="paddingR20 paddingL20">
+
+                        <table cellpadding="0" cellspacing="0" width="100%">
+
+                        	<tr><td width="40%" align="left">
+
+                                    <label id="t9" class="color333" style="font-size:11px;">Fecha</label>
+
+                                </td><td width="60%" align="left">
+
+                                    <label id="t10" class="color333" style="font-size:11px; margin-left:10px;">Hora</label>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                            <td width="40%" align="left" valign="bottom">
+
+								<div class="clear">
+
+									<p class="floatL"><input type="text" class="yearpicker" readonly="readonly" value="24/09/2013" name="fecInicio" id="fecInicio" />
+
+									<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" /></p>
+
+								</div>                       
+
+                            </td>
+
+							<td width="60%" align="left" valign="middle">
+
+                                    <div class="marginT10" style="margin-left:10px">
+
+                                        <select id="combohrs" style="width:auto" value="">
+
+                                            <option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option>
+
+                                        </select>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;                     
+
+                                        <select id="combomin" style="width:auto" value="">
+
+                                            <option value="0">00</option><option value="15">15</option><option value="30">30</option><option value="45">45</option>
+
+                                        </select>&nbsp;&nbsp;<span class="color333" style="font-size:11px;">hrs</span>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>                
+
+        </div>       
+
+    </div>
+
+    <div class="ancho100p marginT20">
+
+    	<table cellpadding="0" cellspacing="0" width="100%">
+
+        <tr><td width="50%" align="left" valign="top">
+
+        	<input type="button" align="left" class="btnRJ86login" id="t11" value="Cancelar" onclick="javascript:cancelarPago();"/></td>
+
+        <td width="50%" align="right" valign="top">
+
+            <input type="button" align="right" class="btnAZ86login leyendaING" value="" onclick="javascript:avanza1();" id="btn1"/>
+
+            
+
+            <input type="button" align="right" class="btnAZ86login displayN leyendaING" value="" onclick="javascript:avanza2();" id="btn2"/>
+
+            
+
+            <input type="button" align="right" class="btnAZ86login displayN leyendaING" value="" onclick="javascript:avanza3();" id="btn3"/>
+
+            </td>
+
+        </tr></table>
+
+    </div>
+
+</div>
+
+<input type="hidden" id="tpcta" value="Credicheque Perfiles Banamex">
+
+<input type="hidden" id="combo" value="502 Saldo MXN">
+
+<script>
+
+valor = 8;
+
+
+
+function pValor(){
+
+	
+
+		if (valor == 1)
+
+		{
+
+			$('#tpcta').val('Cheques')
+
+			$('#combo').val('002 Saldo MXN')
+
+		}
+
+		if (valor == 2)
+
+		{
+
+			$('#tpcta').val('Cuenta Maestra')
+
+			$('#combo').val('490 Saldo MXN')
+
+		}
+
+		
+
+		if (valor == 3)
+
+		{
+
+			$('#tpcta').val('D\u00e9bito')
+
+			$('#combo').val('678 Saldo MXN')
+
+		}
+
+		if (valor == 4)
+
+		{
+
+			$('#tpcta').val('Cheques')
+
+			$('#combo').val('888 Saldo USD')
+
+		}
+
+		if (valor == 5)
+
+		{
+
+			$('#tpcta').val('Tarjeta C\u00e9dito')
+
+			$('#combo').val('796 Saldo MXN')
+
+		}
+
+		if (valor == 6)
+
+		{
+
+			$('#tpcta').val('Tarj. Premia Pre')
+
+			$('#combo').val('245 Saldo MXN')
+
+		}
+
+		if (valor == 7)
+
+		{
+
+			$('#tpcta').val('Mi cr&eacute;dito')
+
+			$('#combo').val('3014 Saldo MXN')
+
+		}
+
+		if (valor == 8)
+
+		{
+
+			$('#tpcta').val('Credicheque Perfiles Banamex')
+
+			$('#combo').val('502 Saldo MXN')
+
+		}
+
+		if (valor == 9)
+
+		{
+
+			$('#tpcta').val('Cr\u00e9dito Casa')
+
+			$('#combo').val('9014 Saldo MXN')
+
+		}
+
+		if (valor == 10)
+
+		{
+
+			$('#tpcta').val('Inversi\u00f3n Perfiles')
+
+			$('#combo').val('502 Saldo MXN')
+
+		}
+
+		if (valor == 11)
+
+		{
+
+			$('#tpcta').val('Inversi\u00f3n Plazo')
+
+			$('#combo').val('010 Saldo MXN')
+
+		}
+
+		if (valor == 12)
+
+		{
+
+			$('#tpcta').val('HORZONT')
+
+			$('#combo').val('746 Saldo MXN')
+
+		}
+
+		if (valor == 13)
+
+		{
+
+			$('#tpcta').val('Multiseries')
+
+			$('#combo').val('378 Saldo MXN')
+
+		}
+
+		if (valor == 14)
+
+		{
+
+			$('#tpcta').val('Mi afore NSS')
+
+			$('#combo').val('424 Saldo MXN')
+
+		}
+
+	}
+
+
+
+ function avanza1() {
+
+	 top.toma_datos1();
+
+	 parent.$.modal(
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:499,
+
+			heightDivIfrm:400,
+
+			srcIfrm:'bbAvatar/modal/pagocreditosconf.htm'
+
+		}
+
+	);}
+
+
+
+ function avanza2() {
+
+	 top.toma_datos1();
+
+	 parent.$.modal(
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:499,
+
+			heightDivIfrm:400,
+
+			srcIfrm:'bbAvatar/modal/pagocreditosconf2.htm'
+
+		}
+
+	);}
+
+
+
+ function avanza3() {
+
+	 top.toma_datos2();
+
+	 parent.$.modal(
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:499,
+
+			heightDivIfrm:400,
+
+			srcIfrm:'bbAvatar/modal/pagocreditosconf3.htm'
+
+		}
+
+	);}
+
+</script>
+
+</body>
+
+</html>

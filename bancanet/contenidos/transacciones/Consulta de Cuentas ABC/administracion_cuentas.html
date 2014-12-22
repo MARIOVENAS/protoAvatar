@@ -1,0 +1,2383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="562aa956-1822-448a-94b3-280691f8e264" ><input type=hidden name="EWF_SYS_1" value="JFAN0G1OMTV53K5FW@OSR2CFUJKHRSF6BB8B279K" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZABC-PAGINA DE CONSULTA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="bactas01.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="22"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script language="javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script language="javascript" src="../../bbAvatar/js/mando.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+<script type="text/javascript">
+
+var es= new Array("Other accounts Management",
+
+                  'To remove one or more of the  listed accounts, select the remove box and click "Remove", located at the end of the screen to the right. Or if you want to modify an account click on "Edit"',
+
+				"Bank Accounts ",
+
+				"Name",
+
+				"Nickname of account",
+
+				"Delete",
+
+				"Edit",
+
+				"Bank",
+
+				"Branch",
+
+				"Account Number",
+
+				"Currency",
+
+				"Maximum payment amount",			
+
+				"Payee's E-mail",
+
+				"Payee's Cell Number",
+
+				"Payee's Cell Number Company",
+
+				"Payee's RFC or CURP",
+
+				"Department and credit cards",
+
+				"Card Number",
+
+				"Emisor",
+
+				"Services",
+
+				"Number of establishment",
+
+				"Payment Orders",
+
+				"Economic Sector",
+
+				"Last modified",
+
+				"Sorry the transaction could not be completed",
+
+				"Account removal",
+
+				"Cause: You can only select a maximum of 10 accounts for deletion",
+
+				"Cell Number",
+
+				"Modify other accounts (update accounts)");
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+} 
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+function pm(event){
+
+
+
+
+
+
+
+/*	var d=document.getElementById("ndw").contentWindow.document;
+
+	var o=document.getElementsByName("APPS_FORM_MAIN");
+
+	var aux=d.getElementsByName("APPS_FORM_MAIN");
+
+	aux[0].action=o[0].action;
+
+	aux=d.getElementsByName("EWF_SYS_0");
+
+	o=document.getElementsByName("EWF_SYS_0");
+
+	aux[0].value=o[0].value;
+
+	aux=d.getElementsByName("EWF_SYS_1");
+
+	o=document.getElementsByName("EWF_SYS_1");
+
+	aux[0].value=o[0].value;
+
+	aux=d.getElementsByName("EWF_FORM_NAME");
+
+	o=document.getElementsByName("EWF_FORM_NAME");
+
+	aux[0].value=o[0].value;
+
+	aux=d.getElementsByName("DISPLAYPAGE");
+
+	o=document.getElementsByName("DISPLAYPAGE");
+
+	aux[0].value=o[0].value;
+
+	aux=d.getElementsByName("TEMPLATE_FILE");
+
+	o=document.getElementsByName("TEMPLATE_FILE");
+
+	aux[0].value=o[0].value;
+
+	aux=d.getElementsByName("SEQUENCE_NUMBER");
+
+	o=document.getElementsByName("SEQUENCE_NUMBER");
+
+	aux[0].value=o[0].value;
+
+	aux=d.getElementsByName("DATA1");
+
+	o=document.getElementsByName("DATA1");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA2");
+
+	o=document.getElementsByName("DATA2");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA3");
+
+	o=document.getElementsByName("DATA3");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA4");
+
+	o=document.getElementsByName("DATA4");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA5");
+
+	o=document.getElementsByName("DATA5");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA6");
+
+	o=document.getElementsByName("DATA6");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA7");
+
+	o=document.getElementsByName("DATA7");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA8");
+
+	o=document.getElementsByName("DATA8");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA9");
+
+	o=document.getElementsByName("DATA9");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA10");
+
+	o=document.getElementsByName("DATA10");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA11");
+
+	o=document.getElementsByName("DATA11");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA12");
+
+	o=document.getElementsByName("DATA12");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA13");
+
+	o=document.getElementsByName("DATA13");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA14");
+
+	o=document.getElementsByName("DATA14");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA15");
+
+	o=document.getElementsByName("DATA15");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA16");
+
+	o=document.getElementsByName("DATA16");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA17");
+
+	o=document.getElementsByName("DATA17");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA18");
+
+	o=document.getElementsByName("DATA18");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA19");
+
+	o=document.getElementsByName("DATA19");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA20");
+
+	o=document.getElementsByName("DATA20");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA21");
+
+	o=document.getElementsByName("DATA21");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA22");
+
+	o=document.getElementsByName("DATA22");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA23");
+
+	o=document.getElementsByName("DATA23");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA24");
+
+	o=document.getElementsByName("DATA24");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA25");
+
+	o=document.getElementsByName("DATA25");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA26");
+
+	o=document.getElementsByName("DATA26");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA27");
+
+	o=document.getElementsByName("DATA27");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA28");
+
+	o=document.getElementsByName("DATA28");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA29");
+
+	o=document.getElementsByName("DATA29");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("DATA30");
+
+	o=document.getElementsByName("DATA30");
+
+	aux[0].value=o.length>0?o[0].value:'';
+
+	aux=d.getElementsByName("EWFBUTTON");
+
+	aux[0].value=event;
+
+    aux=d.getElementsByName("EWFBUTTON");
+
+	aux[0].name='EWF_BUTTON_'+event;	
+
+    aux=d.getElementsByName("APPS_FORM_MAIN");
+
+    aux[0].submit();
+
+*/}
+
+</script>
+
+
+
+
+
+
+
+<script>parent.setFecha("10/04/12    16:09:43  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina.\n\n Esta Transacci&oacute;n no se efectuar&aacute;, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="160857  ";b$Cont="160943  "
+
+	//
+
+    </script> 
+
+
+
+<script language="javascript">
+
+	String.prototype.trim = function() {
+
+		return this.replace(/^\s+|\s+$/g,"");
+
+	}
+
+	
+
+	$(document).ready(function(){
+
+		formatoNombre();
+
+	});
+
+
+
+function formatoNombre(){	
+
+	$(".nombreCliente").each(function(){
+
+		var nombre = $(this).html();
+
+		nombre=nombre.replace(/,|\//g," ");		
+
+		$(this).html(nombre);		
+
+	});
+
+}
+
+
+
+function Initialize(){
+
+var checks=0;
+
+if(language== "eng")
+
+{
+
+	document.getElementById("BTNMODAL").value="Continue";
+
+	document.getElementById("Eliminar").value="Delete";
+
+}
+
+document.getElementById("Eliminar").disabled=true;
+
+$("#Eliminar").css({background:"url(../../bbAvatar/images/bloques_86_des.gif)  no-repeat"});
+
+		
+
+	if(""=="OK"){
+
+		DoSubmit("CONFIRMAR");
+
+	}
+
+		
+
+	
+
+	if('0'=="1")//GUARDA LOS VALORES DE LOS CHECKS
+
+	{
+
+	document.getElementById("Eliminar").disabled=false;
+
+	$("#Eliminar").css({background:"url(../../bbAvatar/images/marco.gif) -390px 0 no-repeat"});
+
+	checks='';
+
+	var datos = checks.split('|');
+
+	for (counter = 0; counter < datos.length; counter++)
+
+	{
+
+	if(datos[counter]=="")
+
+		{
+
+		counter=datos.length;
+
+		}
+
+	else
+
+		{
+
+		var datos2=datos[counter];
+
+		document.getElementById("ck"+datos2).checked=true;
+
+		}
+
+	}
+
+	}
+
+	
+
+	if(parent.document.getElementById('DATAAUX').value =='CONS_ABC_BACK' && '' != 'OK'){
+
+		Modificacion(1);
+
+		parent.document.getElementById('DATAAUX').value = '';
+
+	}
+
+	
+
+	$("td[name='celular16']").each(function(){
+
+		$(this).html( $(this).html().trim() == "" ? "" : ("044/045&nbsp;" + $(this).html()) );
+
+	});
+
+}
+
+
+
+var aw;
+
+var evento;
+
+function Modificacion(id){
+
+	//$("#"+id).attr("disabled", true);
+
+	parent.$.modal({opacity:60,overlayClose:false,flagDiv:false,widthDivIfrm:750,heightDivIfrm:410,
+
+	srcIfrm:'/spanishdir/if.htm'
+
+	});
+
+	aw = parent.document.getElementById("mensajeError_contenido_ifrm").contentWindow;
+
+	document.forms[0].DATA1.value=id;
+
+	evento="MODIFICA";
+
+	setTimeout("CheckDOM()",100);
+
+}
+
+
+
+function CheckDOM(){
+
+	if (aw.document.forms[0]+''=='undefined')
+
+		setTimeout("CheckDOM()",100);
+
+	else{
+
+		try {
+
+		var d=aw.document.forms[0];
+
+		var o=document.forms[0];
+
+		var event=evento;
+
+		d.action=o.action;
+
+		d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+		d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+		d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;	
+
+		d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+		d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+		d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+		d.DATA1.value = o.DATA1.value;
+
+		d.EWFBUTTON.value=event;
+
+		d.EWFBUTTON.name='EWF_BUTTON_'+event;
+
+		d.submit();	
+
+		} catch( ex ) {
+
+			setTimeout("CheckDOM()",100);
+
+		}
+
+	}
+
+}
+
+function ValidaCheck()
+
+	{
+
+	document.getElementById("Eliminar").disabled=false;
+
+	$("#Eliminar").css({background:"url(../../bbAvatar/images/marco.gif) -390px 0 no-repeat"});
+
+	chkbox_choice = false;
+
+	var ischeck=0;
+
+	var long = (document.forms[0].checkbox.length?document.forms[0].checkbox.length:1);
+
+		for (counter = 0; counter <= long-1 ; counter++)
+
+		{
+
+			if(ischeck > 10)
+
+			{
+
+			document.getElementById("Eliminar").disabled=true;
+
+			$("#Eliminar").css({background:"url(../../bbAvatar/images/bloques_86_des.gif)  no-repeat"});
+
+			$("#causa").css("height","auto");
+
+			$("#mensajeError_contenido_div", window.parent.document).html(
+
+			$("#divError").html());
+
+			parent.$.modal({
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:true,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:'auto'
+
+				});
+
+				return;
+
+			}
+
+			if(document.forms[0].checkbox.length){
+
+				var a=counter;
+
+				if (document.forms[0].checkbox[counter].checked)
+
+				{
+
+					chkbox_choice  = true; 
+
+					ischeck++;
+
+				}
+
+			}else{
+
+			        if (document.forms[0].checkbox.checked)
+
+				{
+
+				chkbox_choice  = true; 
+
+				ischeck++;
+
+				}
+
+			}
+
+
+
+		}
+
+		
+
+	
+
+		if(ischeck ==0)
+
+			{
+
+			document.getElementById("Eliminar").disabled=true;
+
+			$("#Eliminar").css({background:"url(../../bbAvatar/images/bloques_86_des.gif)  no-repeat"});
+
+			}
+
+	
+
+	}	
+
+	
+
+	function Cont()
+
+	{
+
+		var long = (document.forms[0].checkbox.length?document.forms[0].checkbox.length:1);
+
+		for (counter = 0; counter<long; counter++)
+
+		{	
+
+		   if(document.forms[0].checkbox.length)
+
+		   {
+
+			if (document.forms[0].checkbox[counter].checked)
+
+			{
+
+				document.forms[0].DATA1.value = document.forms[0].DATA1.value + document.forms[0].checkbox[counter].value +"|";		
+
+			}
+
+		   }else{
+
+		  		document.forms[0].DATA1.value = document.forms[0].DATA1.value + document.forms[0].checkbox.value +"|";
+
+		   }		
+
+		}
+
+			//debugger;
+
+			if($("#ck9").attr('checked') == true){
+
+					parent.cargaDocN("Consulta de Cuentas ABC/eliminar/elimCuentaJoel.htm");
+
+					}
+
+				if($("#ck18").attr('checked') == true){
+
+					parent.cargaDocN("Consulta de Cuentas ABC/eliminar/elimCuentaAlianza.htm");
+
+					}
+
+				if($("#ck25").attr('checked') == true){
+
+					parent.cargaDocN("Consulta de Cuentas ABC/eliminar/elimTarjetaJoel.htm");
+
+					}
+
+				if($("#ck59").attr('checked') == true){
+
+					parent.cargaDocN("Consulta de Cuentas ABC/eliminar/elimServCfe.htm");
+
+					}
+
+				if($("#ck11").attr('checked') == true){
+
+					parent.cargaDocN("Consulta de Cuentas ABC/eliminar/elimOtrasDhl.htm");
+
+					}
+
+	//	parent.DoSubmit("Consulta de Cuentas ABC/eliminar/elimOtrasDhl.htm");
+
+	}
+
+	
+
+	
+
+	var mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+
+
+
+
+$(document).ready
+
+
+
+(
+
+		function ()
+
+	{
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+					catch(e)
+
+					{
+
+					}
+
+			}
+
+		)	
+
+	}
+
+)
+
+
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+	
+
+	
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+				var hora = fecha.substring(10);
+
+				var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+				return fechaformateada + hora;
+
+}
+
+
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+			fecha = fecha.replace(/\-/gi," ");
+
+			var conversion = (fecha.substring(4,6)).toLowerCase();
+
+			var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+			return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[fecha8]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+			
+
+		if(splitFecha[0].length==1)
+
+		{
+
+			splitFecha[0]="0"+splitFecha[0];
+
+		}
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+function formato_dddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[Fecha]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+	
+
+	
+
+function formato_ddmmaaaaEBSJS(fecha)
+
+{
+
+	var indice;
+
+	var fechaAux;
+
+	var IdiomaAux="SPANISH";
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+	
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+	
+
+	if(indice!=-1)
+
+	{
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if(IdiomaAux=="SPANISH")
+
+		{
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+				
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+			else
+
+			{
+
+				mesFecha=fechaAux.substring(0,2);
+
+					if(mesFecha=="01")
+
+						{mesFecha1="Jan";}
+
+					if(mesFecha=="02")
+
+						{mesFecha1="Feb";}
+
+					if(mesFecha=="03")
+
+						{mesFecha1="Mar";}
+
+					if(mesFecha=="04")
+
+						{mesFecha1="Apr";}
+
+					if(mesFecha=="05")
+
+						{mesFecha1="May";}
+
+					if(mesFecha=="06")
+
+						{mesFecha1="Jun";}
+
+					if(mesFecha=="07")
+
+						{mesFecha1="Jul";}
+
+					if(mesFecha=="08")
+
+						{mesFecha1="Aug";}
+
+					if(mesFecha=="09")
+
+						{mesFecha1="Sep";}
+
+					if(mesFecha=="10")
+
+						{mesFecha1="Oct";}
+
+					if(mesFecha=="11")
+
+						{mesFecha1="Nov";}
+
+					if(mesFecha=="12")
+
+						{mesFecha1="Dec";}
+
+					
+
+				fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+				fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+			}
+
+		
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+
+
+function formateaFechaBB(formato, fecha)
+
+{	
+
+	
+
+	fechaFormateada="";
+
+	
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+		
+
+	if(fecha != '' &&  fecha != '&nbsp;'){
+
+		
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if("SPANISH"=="ENGLISH")
+
+							fechaFormateada = fecha.substring(3,5) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(0,2), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+
+
+function modificar(){
+
+$("#ndw").attr("src","challenge.htm");
+
+}
+
+function modificar0(){
+
+$("#ndw").attr("src","challenge0.htm");
+
+}
+
+function modificar1(){
+
+
+
+$("#ndw").attr("src","challenge1.htm");
+
+}
+
+function modificar2(){
+
+
+
+$("#ndw").attr("src","challenge2.htm");
+
+}
+
+function modificar3(){
+
+
+
+$("#ndw").attr("src","challenge3.htm");
+
+}
+
+</script>
+
+
+
+
+
+
+
+        <!-- bloque1 tabla  Pendientes de autorizar -->
+
+        <div class="float-left fonttit" id="t28">Modificaci&oacute;n de cuentas (Actualizar cuentas)</div>
+
+        <div class="panelIzEnca3_text2" id="t0">Administraci&oacute;n otras cuentas</div>
+
+        <div  class="color666 paddingT5 paddingB15 f11"id="t1">Para eliminar una o varias cuentas de las que se listan a continuaci&oacute;n, selecciona la casilla de eliminaci&oacute;n y da clic en el bot&oacute;n &quot;Eliminar&quot;, que est&aacute; ubicado al final de la pantalla del lado derecho. O si deseas modificar una de las cuentas da clic en la liga &quot;Modificar&quot;.</div>
+
+        <div id="baja_error" class="saldos_bloque2_f4_error_display_blanco"></div> 
+
+        <div class="saldos_bloque4 bordeInfContrae">
+
+        	<div class="saldos_bloque4_f1 ancho300">
+
+                <div class="saldos_bloque4_f1_btn" id="saldosbtn1" onclick="desplegable('saldosbtn1', 'saldosConte1', 1);"><div class="cortinabtnSaldos  bg7386ad"></div></div>
+
+				<div class="saldos_bloque4_f1_txt"id="t2">Cuentas bancarias</div>
+
+            </div>
+
+        </div>
+
+        <div class="saldos_bloque5 expand" id="saldosConte1">			
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            	<tr>
+
+                	<td class="paddingB10">
+
+                    <div class="saldos_bloque3_3 borderTNone overflow">
+
+                    	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4">
+
+                            <tr>
+
+                                <td class="borderRSolid ancho50p"><span id="t3">Nombre</span></td>
+
+                                <td class="borderRSolid ancho30p"><span id="t4">Alias</span></td>
+
+                                <td class="borderRSolid ancho10p"><span>&nbsp;</span></td> <!--modificar-->
+
+                                <td class=" ancho10p"><span id="t5">Eliminar</span></td>	                        
+
+                            </tr>
+
+				
+
+                            							
+
+                            <tr>
+
+							    <td class="borderRSolid bgF1F2F2 nombreCliente" align="left">JOEL,BRAVO/FLORES</td>
+
+                                <td class="borderRSolid bgF1F2F2">Joel</td>
+
+                                <td class="borderRSolid bgF1F2F2 exclamaT1"><a href="#" onclick="modificar();"><label id="t6">Modificar</label></a></td>
+
+                                <td class=" bgF1F2F2"><input id="ck9" type="checkbox" name="checkbox" value='9' onclick="ValidaCheck()"/></td>
+
+                            </tr> 
+
+							<!--termina llena datos-->
+
+                            <tr>
+
+                                <td colspan="4" class="tablaSaldos_filaG1"><!--cuenta maestra-->
+
+                                	<table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                    	<tr>
+
+                                        	<td class="ancho50p">
+
+                                            	<table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                                	<tr>
+
+                                                        <td class="borderBDotted ancho25p" id="t7">Banco:</td>
+
+                                                        <td class="borderBDotted ancho25p">Banamex</td>
+
+                                                    </tr>
+
+													<script type="text/javascript" language="javascript">
+
+														var sucursal = "0";
+
+														sucursal.trim();
+
+														if(sucursal != "" && sucursal != "0"){
+
+															document.write('<tr class="sucursalbanamex"><td class="borderBDotted" id="t8">Sucursal:</td><td class="borderBDotted">0</td></tr>');
+
+														}														
+
+													</script>
+
+													<tr>
+
+                                                        <td class="borderBDotted"><script>if("52" == "52")document.write("<div class='f11' id='t27'>N&uacute;mero de Celular</div>");else document.write("<div class='f11' id='t9'>N&uacute;mero de Cuenta</div>");</script></td>
+
+                                                        <td class="borderBDotted">194</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t10">Moneda:</td>
+
+                                                        <td class="borderBDotted">MXN</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t11">Importe m&aacute;ximo por pago:</td>
+
+                                                        <td class="borderBDotted">$4,400.00</td>
+
+                                                    </tr>
+
+													<tr>
+
+                                                        <td class="borderBDotted" id="t23">Fecha de &uacute;ltima modificaci&oacute;n</td>
+
+                                                        <td class="borderBDotted" name="FECHA_BNP_ddmmaa">21/11/11</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </td>
+
+                                            <td class="ancho50p" valign="top">
+
+                                           	  <table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+													<tr>
+
+                                                        <td class="borderBDotted ancho25p" id="t12">Correo electr&oacute;nico del beneficiario:</td>
+
+                                                        <td class="borderBDotted ancho25p"></td>
+
+                                                    </tr>
+
+													<!--
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t13">N&uacute;mero celular del beneficiario:</td>
+
+                                                        <td class="borderBDotted" name="celular16"></td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t14">Telefon&iacute;a:</td>
+
+                                                        <td class="borderBDotted"></td>
+
+                                                    </tr>
+
+													-->
+
+                                                </table>
+
+                                            </td>
+
+                                        </tr>
+
+                                    </table>
+
+                                </td>
+
+                            </tr>
+
+							
+
+                            <tr>
+
+                                <td class="borderRSolid bgF1F2F2 nombreCliente" align="left" >ALMACENES ALIANZA</td>
+
+                                <td class="borderRSolid bgF1F2F2">IntPMmodif</td>
+
+                                <td class="borderRSolid bgF1F2F2 exclamaT1"><a href="#" onclick="modificar0();"><label id="t6">Modificar</label></a></td>
+
+                                <td class=" bgF1F2F2"><input id="ck18" type="checkbox" name="checkbox" value='18' onclick="ValidaCheck()"/></td>
+
+                                
+
+                            </tr>
+
+							<tr>
+
+                                <td colspan="4" class="tablaSaldos_filaG1"><!--celular-->
+
+                                	<table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                    	<tr>
+
+                                        	<td class="ancho50p">
+
+                                            	<table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                                	<tr>
+
+                                                        <td class="borderBDotted ancho25p" id="t7">Banco:</td>
+
+                                                        <td class="borderBDotted ancho25p">BANORTE</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t9">N&uacute;mero de cuenta:</td>
+
+                                                        <td class="borderBDotted">5318</td>
+
+                                                    </tr>
+
+                                                   <tr>
+
+                                                        <td class="borderBDotted" id="t10">Moneda:</td>
+
+                                                        <td class="borderBDotted">MXN</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t11">Importe m&aacute;ximo por pago:</td>
+
+                                                        <td class="borderBDotted">$1,000.00</td>
+
+                                                    </tr>
+
+													<tr>
+
+                                                        <td class="borderBDotted" id="t23">Fecha de &uacute;ltima modificaci&oacute;n</td>
+
+                                                        <td class="borderBDotted"  name="FECHA_BNP_ddmmaa">23/05/11</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </td>
+
+                                            <td class="ancho50p" valign="top">
+
+                                           	  <table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted ancho25p" id="t15">RFC &oacute; CURP del beneficiario</td>
+
+                                                        <td class="borderBDotted ancho25p">AAA010101000</td>
+
+                                                    </tr>
+
+													<tr>
+
+                                                        <td class="borderBDotted" id="t12">Correo electr&oacute;nico del beneficiario:</td>
+
+                                                        <td class="borderBDotted">intpm1modif@banamex.com</td>
+
+                                                    </tr>
+
+													<!--
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted"id="t13">N&uacute;mero celular del beneficiario:</td>
+
+                                                        <td class="borderBDotted" name="celular16">5540506080</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t14">Telefon&iacute;a:</td>
+
+                                                        <td class="borderBDotted">TELCEL</td>
+
+                                                    </tr>
+
+													-->
+
+                                                </table>
+
+                                            </td>
+
+                                        </tr>
+
+                                    </table>
+
+                                </td>
+
+                            </tr>
+
+							
+
+                            							
+
+                              
+
+                        </table>                
+
+                      	</div>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <!-- bloque2 tabla  Cuentas de efectivo -->
+
+        <div class="saldos_bloque4 bordeInfContrae">
+
+        	<div class="saldos_bloque4_f1 ancho550 ">
+
+                <div class="saldos_bloque4_f1_btn" id="saldosbtn5" onclick="desplegable('saldosbtn1', 'saldosConte1', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+                <div class="saldos_bloque4_f1_txt" id="t16">Tarjetas de cr&eacute;dito otros bancos y departamentales</div>
+
+            </div>
+
+        </div>        <div class="saldos_bloque5 expand" id="saldosConte5">			
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            	<tr>
+
+                	<td colspan="3">
+
+                   	  	<div class="saldos_bloque3_3 borderTNone overflow">
+
+                   	  	  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4">
+
+                   	  	      <tr>
+
+                   	  	        <td class="borderRSolid ancho50p"><span id="t3">Nombre</span></td>
+
+                   	  	        <td class="borderRSolid ancho30p"><span id="t4">Alias</span></td>
+
+                   	  	        <td class="borderRSolid ancho10p"><span>&nbsp;</span></td>
+
+                   	  	        <td class=" ancho10p"><span id="t5">Eliminar</span></td>
+
+               	  	          </tr>
+
+							  							  
+
+							  							  
+
+                   	  	      <tr>
+
+                   	  	        <td class="borderRSolid bgF1F2F2 nombreCliente" align="left">JOEL BRAVO FLORES</td>
+
+                   	  	        <td class="borderRSolid bgF1F2F2">PGO TENENCIA</td>
+
+                   	  	        <td class="borderRSolid bgF1F2F2 exclamaT1"><a href="#" onclick="modificar1();"><label id="t6">Modificar</label></a></td>
+
+                   	  	        <td class=" bgF1F2F2"><input id="ck25" type="checkbox" name="checkbox" value='25' onclick="ValidaCheck()"/></td>
+
+               	  	          </tr>
+
+                   	  	      <tr>
+
+                   	  	        <td colspan="4" class="tablaSaldos_filaG1"><table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                   	  	          <tr>
+
+                   	  	            <td class="ancho50p"><table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                   	  	              <tr>
+
+                   	  	                <td class="borderBDotted ancho25p" id="t7">Banco:</td>
+
+                   	  	                <td class="borderBDotted ancho25p">CCB</td>
+
+               	  	                  </tr>
+
+                   	  	              <tr>
+
+                                        <td class="borderBDotted" id="t17">N&uacute;mero de tarjeta:</td>
+
+                                        <td class="borderBDotted">777</td>
+
+               	  	                  </tr>
+
+                   	  	              <tr>
+
+                   	  	                <td class="borderBDotted" id="t10">Moneda:</td>
+
+                   	  	                <td class="borderBDotted">MXN</td>
+
+               	  	                  </tr>
+
+                   	  	              <tr>
+
+                   	  	                <td class="borderBDotted" id="t11">Importe m&aacute;ximo por pago:</td>
+
+                   	  	                <td class="borderBDotted">$500.00</td>
+
+               	  	                  </tr>
+
+									  <tr>
+
+                                        <td class="borderBDotted" id="t23">Fecha de &uacute;ltima modificaci&oacute;n</td>
+
+                                        <td class="borderBDotted"  name="FECHA_BNP_ddmmaa">28/07/09</td>
+
+                                      </tr>
+
+                 	  	              </table></td>
+
+                   	  	            <td class="ancho50p" valign="top"><table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                   	  	              <tr>
+
+                   	  	                <td class="borderBDotted ancho25p" id="t15">RFC &oacute; CURP del beneficiario</td>
+
+                   	  	                <td class="borderBDotted ancho25p"></td>
+
+               	  	                  </tr>
+
+                   	  	              <tr>
+
+                   	  	                <td class="borderBDotted" id="t12">Correo electr&oacute;nico del beneficiario:</td>
+
+                   	  	                <td class="borderBDotted">tamosel@yahoo.com</td>
+
+               	  	                  </tr>
+
+                   	  	              <!--
+
+									  <tr>
+
+                   	  	                <td class="borderBDotted" id="t13">N&uacute;mero celular del beneficiario:</td>
+
+                   	  	                <td class="borderBDotted" name="celular16"></td>
+
+               	  	                  </tr>
+
+                   	  	              <tr>
+
+                   	  	                <td class="borderBDotted" id="t14">Telefon&iacute;a:</td>
+
+                   	  	                <td class="borderBDotted"></td>
+
+               	  	                  </tr>
+
+									  -->
+
+                 	  	              </table></td>
+
+               	  	              </tr>
+
+                 	  	          </table></td>
+
+               	  	          </tr>
+
+							     
+
+								 
+
+								 
+
+							  							  
+
+								 
+
+							  
+
+               	  	        </table>
+
+                   	  	</div>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="saldos_bloque4 bordeInfContrae">
+
+        	<div class="saldos_bloque4_f1 ancho300">
+
+                <div class="saldos_bloque4_f1_btn" id="saldosbtn2" onclick="desplegable('saldosbtn2', 'saldosConte2', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+                <div class="saldos_bloque4_f1_txt" id="t19">Servicios</div>
+
+            </div>
+
+        </div>
+
+        <div class="saldos_bloque5 expand" id="saldosConte2">			
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            	<tr>
+
+                	<td class="paddingB10">
+
+                    <div class="saldos_bloque3_3 borderTNone overflow">
+
+                    	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4">
+
+                            <tr>
+
+                                <td class="borderRSolid ancho50p"><span id="t3"> Nombre</span></td>
+
+                                <td class="borderRSolid ancho30p"><span id="t4">Alias</span></td>
+
+                                <td class="borderRSolid ancho10p"><span>&nbsp;</span></td>
+
+                                <td class=" ancho10p"><span id="t5">Eliminar</span></td>	                        
+
+                            </tr>
+
+														
+
+                            							
+
+                            							
+
+                            							
+
+                            <tr>
+
+                                <td class="borderRSolid bgF1F2F2 nombreCliente" align="left">COMISION FEDERAL DE ELECTRICIDAD</td>
+
+                                <td class="borderRSolid bgF1F2F2">CFE</td>
+
+                                <td class="borderRSolid bgF1F2F2 exclamaT1"><a href="#" onclick="modificar2();"><label id="t6">Modificar</label></a></td>
+
+                                <td class=" bgF1F2F2"><input id="ck59" type="checkbox" name="checkbox" value='59' onclick="ValidaCheck()"/></td>
+
+                                
+
+                            </tr>
+
+                            <tr>
+
+                                <td colspan="4" class="tablaSaldos_filaG1">
+
+                                	<table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                    	<tr>
+
+                                        	<td class="ancho50p">
+
+                                            	<table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                                	<tr>
+
+                                                        <td class="borderBDotted ancho25p"id="t20">N&uacute;mero de establecimiento:</td>
+
+                                                        <td class="borderBDotted ancho25p">0002</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted"id="t11">Importe m&aacute;ximo por pago:</td>
+
+                                                        <td class="borderBDotted">$110.00</td>
+
+                                                    </tr> 
+
+													<tr>
+
+                                                        <td class="borderBDotted" id="t23">Fecha de &uacute;ltima modificaci&oacute;n</td>
+
+                                                        <td class="borderBDotted"  name="FECHA_BNP_ddmmaa">18/05/11</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </td>
+
+                                            <td class="ancho50p" valign="top">
+
+                                           	  
+
+                                            </td>
+
+                                        </tr>
+
+                                    </table>
+
+                                </td>
+
+                            </tr>
+
+                            
+
+                        </table>                
+
+                      	</div>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div  class="saldos_bloque4 bordeInfContrae">
+
+        	<div  class="saldos_bloque4_f1 ancho300">
+
+                <div class="saldos_bloque4_f1_btn" id="saldosbtn3" onclick="desplegable('saldosbtn3', 'saldosConte3', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+                <div class="saldos_bloque4_f1_txt"id="t21">&Oacute;rdenes de Pago</div>
+
+            </div>
+
+        </div>
+
+        <div class="saldos_bloque5 expand" id="saldosConte3">			
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+            	<tr>
+
+                	<td>
+
+                    <div class="saldos_bloque3_3 borderTNone overflow">
+
+                    	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4">
+
+                            <tr>
+
+                                <td class="borderRSolid ancho50p"><span id="t3">Nombre</span></td>
+
+                                <td class="borderRSolid ancho30p"><span id="t4">Alias</span></td>
+
+                                <td class="borderRSolid ancho10p"><span>&nbsp;</span></td>
+
+                                <td class=" ancho10p"><span id="t5">Eliminar</span></td>	                        
+
+                            </tr>
+
+														
+
+                            							
+
+                            							
+
+                            							
+
+                            <tr>
+
+                                <td class="borderRSolid bgF1F2F2 nombreCliente" align="left">DHL</td>
+
+                                <td class="borderRSolid bgF1F2F2">DHL cambio</td>
+
+                                <td class="borderRSolid bgF1F2F2 exclamaT1"><a href="#" onclick="modificar3();"><label id="t6">Modificar</label></a></td>
+
+                                <td class=" bgF1F2F2"><input id="ck11" type="checkbox" name="checkbox" value='11'onclick="ValidaCheck()"/></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td colspan="4" class="tablaSaldos_filaG1">
+
+                                	<table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                    	<tr>
+
+                                        	<td class="ancho50p">
+
+                                            	<table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                                	<tr>
+
+                                                        <td class="borderBDotted ancho50p" id="t22">Sector Econ&oacute;mico:</td>
+
+                                                        <td class="borderBDotted ancho50p">Externo Empresas y Particulares</td>
+
+
+
+                                                    </tr>
+
+                                                    
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted ancho50p" id="t11">Importe m&aacute;ximo por pago:</td>
+
+                                                        <td class="borderBDotted ancho50p">4,000</td>
+
+                                                    </tr> 
+
+													<tr>
+
+                                                        <td class="borderBDotted ancho50p" id="t23">Fecha de &uacute;ltima modificaci&oacute;n</td>
+
+                                                        <td class="borderBDotted ancho50p"  name="FECHA_BNP_ddmmaa">18/05/11</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                            </td>
+
+                                            <td class="ancho50p" valign="top">
+
+                                           	    <table cellpadding="0" cellspacing="0" border="0" class="ancho100p">
+
+                                                	<tr>
+
+                                                        <td class="borderBDotted" id="t15">RFC o CURP del beneficiario</td>
+
+                                                        <td class="borderBDotted">BNM840515BV1</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t12">Correo electr&oacute;nico del beneficiario:</td>
+
+                                                        <td class="borderBDotted">dhl@banamex.com</td>
+
+                                                    </tr>
+
+													<!--
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t13">N&uacute;mero celular del beneficiario:</td>
+
+                                                        <td class="borderBDotted" name="celular16">5550607808</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td class="borderBDotted" id="t14">Telefon&iacute;a:</td>
+
+                                                        <td class="borderBDotted">TELCEL</td>
+
+                                                    </tr>
+
+													-->
+
+                                                </table>
+
+                                            </td>
+
+                                        </tr>
+
+                                    </table>
+
+                                </td>
+
+                            </tr>
+
+							
+
+							
+
+                            							
+
+                                
+
+                        </table>                
+
+                      	</div>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+<div id="divError" class="displayN">
+
+	<div class="mensajeError_contenidoIn">
+
+		<div class="mensajeError_Fila1">
+
+			<div class="mensajeError_titulo1" id="t24">Disculpa, la operaci&oacute;n no se ha podido completar</div>
+
+			<div class="mensaje_btn1">
+
+		</div></div>
+
+		
+
+				
+
+		<div class="mensajeError_Fila2">
+
+			<div id="causa" class="mensajeError_txt1"><label id="t25">Baja de Cuentas</label><br><label id="t26">
+
+			Causa:&nbsp;&nbsp;S&oacute;lo puede seleccionar un m&aacute;ximo de 10 cuentas para borrar.</label><br/>
+
+			</div>
+
+		</div>
+
+
+
+			<div class="color666 clear">
+
+			</div>
+
+	
+
+		<div class="mensajeError_Fila2">
+
+			<div class="floatR paddingT10"><input type="button" id="BTNMODAL" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+        
+
+      <div class="marginT20 overflow">
+
+       <input type="button" class="btnAZ86 floatR" id="Eliminar"value="Eliminar" onclick="Cont()"/>
+
+	  </div>
+
+	  
+
+<iframe id="ndw" src="" style="display:none"></iframe>
+
+<INPUT TYPE="HIDDEN" NAME="DATA1" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA2" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA3" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA4" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA5" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA6" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA7" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA8" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA9" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="DATA10" VALUE="">
+
+
+
+<INPUT TYPE="HIDDEN" NAME="EWFBUTTON" VALUE="">
+
+<INPUT TYPE="HIDDEN" NAME="PAGEBUTTON" VALUE="">		
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Consulta de Cuentas ABC|bactas01.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+	<title></title>
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+	.contenido7 {font-family: Verdana;font-size: 12px;font-weight: normal;color: #000000; text-decoration: none;}
+	.lbl{color:#666666;font-family:Verdana;font-size:11px;font-weight:bold;}
+	.contenido5{font-family:Verdana, Arial, Helvetica, sans-serif;font-size: 12px;font-weight: bold;color: #CC0033;text-decoration: none;text-align: left;}
+				.dateandtime {font-family: Verdana;	font-size: 10px;	font-weight: normal;	color: #000000;}
+	.style1 {font-size: 16pt}
+	.style2 {font-size: 12pt}
+	a {font-family: Verdana;font-size: 11px;color: #000000;}
+	body,td,th {
+	font-family: Verdana;
+	font-size: 12px;
+	}
+	.style5 {
+	font-size: 11px;
+	font-weight: bold;
+	}
+	</style>
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+	<script>
+		/*******/
+		/*** proto */
+		 // ponerlo en el jquery
+		/* jQuery doTimeout: Like setTimeout, but better! - v1.0 - 3/3/2010*/
+		(function($) {
+		    var a = {},
+		        c = "doTimeout",
+		        d = Array.prototype.slice;
+		    $[c] = function() {
+		        return b.apply(window, [0].concat(d.call(arguments)))
+		    };
+		    $.fn[c] = function() {
+		        var f = d.call(arguments),
+		            e = b.apply(this, [c + f[0]].concat(f));
+		        return typeof f[0] === "number" || typeof f[1] === "number" ? this : e
+		    };
+
+		    function b(l) {
+		        var m = this,
+		            h, k = {},
+		            g = l ? $.fn : $,
+		            n = arguments,
+		            i = 4,
+		            f = n[1],
+		            j = n[2],
+		            p = n[3];
+		        if (typeof f !== "string") {
+		            i--;
+		            f = l = 0;
+		            j = n[1];
+		            p = n[2]
+		        }
+		        if (l) {
+		            h = m.eq(0);
+		            h.data(l, k = h.data(l) || {})
+		        } else {
+		            if (f) {
+		                k = a[f] || (a[f] = {})
+		            }
+		        }
+		        k.id && clearTimeout(k.id);
+		        delete k.id;
+
+		        function e() {
+		            if (l) {
+		                h.removeData(l)
+		            } else {
+		                if (f) {
+		                    delete a[f]
+		                }
+		            }
+		        }
+
+		        function o() {
+		            k.id = setTimeout(function() {
+		                k.fn()
+		            }, j)
+		        }
+		        if (p) {
+		            k.fn = function(q) {
+		                if (typeof p === "string") {
+		                    p = g[p]
+		                }
+		                p.apply(m, d.call(n, i)) === true && !q ? o() : e()
+		            };
+		            o()
+		        } else {
+		            if (k.fn) {
+		                j === undefined ? e() : k.fn(j === false);
+		                return true
+		            } else {
+		                e()
+		            }
+		        }
+		    }
+		})(jQuery);
+
+		function cronometroMinutos(idTime, segundosCronometro, id, callback) {
+		    var cadMinutos = "";
+		    var minutos = 0;
+		    var segundos = 0;
+		    $.doTimeout(idTime, 1000, function() {
+		        segundosCronometro--
+		        if (segundosCronometro == 0) {
+		            try {
+		                eval('(' + callback + ')();')
+		            } catch (e) {}
+		            return false;
+		        }
+		        minutos = segundosCronometro / 60;
+		        cadMinutos = minutos.toString();
+		        if (cadMinutos.indexOf('.'))
+		            minutos = cadMinutos.split(".")[0];
+		        segundos = segundosCronometro % 60;
+		        if (minutos <= 9)
+		            minutos = '0' + minutos;
+		        if (segundos <= 9)
+		            segundos = '0' + segundos;
+		        $(id).html(minutos + ":" + segundos + " (mm:ss)");
+		        return true;
+		    });
+		}
+		/* fecha y hora*/
+		function fechaHora() {
+		    var dias = {
+		        esp: ['Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles', 'Jueves', 'Viernes', 'Sabado'],
+		        eng: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+		    };
+		    var meses = {
+		        esp: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Juilio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+		        eng: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+		    };
+		    var fecha = new Date();
+		    var diaTexto = dias[language][fecha.getDay()];
+		    var dia = fecha.getDate();
+		    var mesTexto = meses[language][fecha.getMonth()];
+		    var year = fecha.getFullYear();
+		    var hora = fecha.getHours();
+		    var minuto = fecha.getMinutes();
+		    var segundo = fecha.getSeconds();
+		    if (hora <= 1)
+		        hora = '0' + hora;
+		    if (minuto <= 9)
+		        minuto = '0' + minuto;
+		    if (segundo <= 9)
+		        segundo = '0' + segundo;
+		    if (isEnglishSel) {
+		        var stgDate = diaTexto + ", " + mesTexto + " " + dia + ", " + year + ", " + hora + ":" + minuto + ":" + segundo + " Mexico City";
+		    } else {
+		        var stgDate = " " + diaTexto + " " + dia + " de " + mesTexto + " de " + year + ", " + hora + ":" + minuto + ":" + segundo + " Centro de M&eacute;xico"
+		    }
+		    return stgDate;
+		}
+
+		function llenarValores(obj, id, cadena) {
+		    var textAux = "";
+		    var fin = cadena.length - 1;
+		    var contador = 0;
+		    if (obj == 'input')
+		        if ($(id).val() != '')
+		            return false;
+		    $.doTimeout(80, function() {
+		        textAux = $(id).val();
+		        $(id).val(textAux + cadena.charAt(contador))
+		        if (contador <= fin) {
+		            contador++;
+		            return true;
+		        }
+		        return false;
+		    });
+		}
+		/***** flujos */
+		/***/
+		$(document).ready(function() {
+		    /*$("#horaactual").html(obtenerHora());
+		    $('#anioActual').html(function() {
+		        var anio = new Date();
+		        var anioAux = anio.getFullYear();
+		        return anioAux;
+		    });*/
+		    /*labelTooltip();
+		    showtooltipLogin();
+		    slide(".activaflecha2", 5, 0);
+		   /* setTimeout(function() {
+		        $('#bancanet').trigger('click');
+		    }, 800);*/
+		    setTimeout(function() {
+		        llenarValores('input', '#DATA1', '12345678');
+		    }, 1000);
+		    setTimeout(function() {
+		        $('#t16').trigger('click');
+		    }, 2200);
+		});
+	</script>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#006060" onload="if(window.Initialize != null)Initialize();" class="bg_demo">
+	<form method="POST"  name="APPS_FORM_MAIN">
+		<input type="hidden" name="EWF_SYS_0" value="aa0cf85a-af21-4344-bce4-e56fe7dca4ea"><input type="hidden" name="EWF_SYS_1" value="C@XDKHS5RJ6A3Z@595AVUNEGQZSN58H583SQSF2T">
+		<input type="hidden" name="EWF_FORM_NAME" value="LEV2 Main">
+		<div id="wrapper_div"><input type="HIDDEN" size="10" maxlength="100" name="DISPLAYPAGE" value="ZDEC-PAG AUT CHR"><input type="HIDDEN" size="10" maxlength="100" name="TEMPLATE_FILE" value="autChR.htm"><input type="HIDDEN" size="10" maxlength="100" name="SEQUENCE_NUMBER" value="1"><table width="100%"><tbody><tr><td width="95%" align="bottom"></td><td></td><td></td><td></td></tr></tbody></table>
+		<script type="text/javascript">
+		var pagMax = 3;
+		var pagMin = 1;
+		var pagAct = 1;
+		var images = new Array();
+		images[1] = "../../bbAvatar/images/netkey1.gif";
+		images[2] = "../../bbAvatar/images/netkey2.gif";
+		images[3] = "../../bbAvatar/images/netkey3.gif";
+		var es = new Array('Dynamic code', 'How to use your Banamex NetKey', '1. Turn on your Banamex NetKey', 'Turn on your Banamex NetKey pressing &quot;ON&quot;', 'How to use your Banamex NetKey', '2. Enter the Challenge code', 'When the word &quot;CHALLNG?&quot; appears, enter the Code that appears in the screen of Banamex NetKey and press &quot;ENT&quot;', 'How to use your Banamex NetKey', '3. Enter the dynamic Code', 'Your Banamex NetKey generates a Code, which you must enter in the &quot;Dynamic Code&quot; field, click &quot;Continue&quot;', 'Previous', 'Next', 'Please turn on your Banamex NetKey Challenge and enter the appearing code', 'Press &quot;ENT&quot; and your Banamex NetKey Challenge will generate a numerical code which you shall enter in the next field', 'Dynamic code', 'Cancel', 'Continue', 'All Rights Reserved 1998 - 2011 Grupo Financiero Banamex, S.A.', 'For questions or doubts, contact us at phone number 1226 3990 o 01 800 110 3990 ', 'Terms, Conditions and Privacy', 'Branch office' );
+		function displayDate() {
+		if( isEnglishSel ) {
+		var this_month = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+		var this_day_e = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+		} else {
+		var this_month = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+		var this_day_e = new Array("Domingo","Lunes","Martes","Mi&eacute;rcoles","Jueves","Viernes","S&aacute;bado");
+		}
+		var today = new Date();
+		var day   = today.getDate();
+		var month = today.getMonth();
+		var year  = today.getFullYear();
+		var dia = today.getDay();
+		var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+		var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+		var seconds = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+		if( isEnglishSel ) {
+		var stgDate = this_day_e[dia] + ", " + this_month[month] + " " + day + ", " + year + ", " + hour + ":" + minute  + ":" + seconds + " Mexico City";
+		} else {
+		var stgDate = " " + this_day_e[dia] + " " + day + " de " + this_month[month] + " de " + year + ", " + hour + ":" + minute  + ":" + seconds + " Centro de M&eacute;xico"
+		}
+		return stgDate;
+		}
+		function DoSubmit( value ) {
+		document.forms[0].EWFBUTTON.value = value;
+		document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+		document.forms[0].submit();
+		}
+		$(document).ready(
+		function(){
+				bindBackSpace()
+		$("input:text, input:password, textarea").focus(function(){
+		if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+		$(document).unbind('.backspace');
+		});
+		$("input:text, input:password, textarea").blur(function(){
+		if($(this).attr("readonly") == "")
+		bindBackSpace();
+		});
+		$("a").each(function(){
+		if($(this).attr("href") == "#"){
+		$(this).attr("href","javascript:void(0)");
+		}
+		});
+		}
+		);
+		function bindBackSpace()
+		{
+		$(document).bind('keydown.backspace keyup.backspace',
+		function(event){
+		if(event.keyCode==8)
+						{
+		event.preventDefault();
+			}
+		}
+		);
+		}
+		function Valida_CaracteresTokens( cvedin ){
+		var ms1 = "";
+		var ms2 = "";
+		var ms3 = "";
+		var e=document.getElementById("error");
+		if( language!="eng" ) {
+		ms1='Es necesario que ingrese una clave din&aacute;mica (NetKey)';
+		ms2='La Clave Din&aacute;mica debe ser de 8 caracteres Num&eacute;ricos';
+		ms3='Se introdujeron caracteres inv&aacute;lidos. Favor de verificar.';
+		ms4='La Clave Din&aacute;mica debe ser de 8 caracteres';
+		} else {
+		ms1='It is necessary that a dynamic key enters (NetKey)';
+		ms2='Dynamic Code must be 8 Numeric Characters';
+		ms3='Invalid characters were introduced. Please to Verify.';
+		ms4='Dynamic Code must be 8 Characters';
+		}
+		if(cvedin==''){e.innerHTML='<div class="ancho100p marginT10 error" id="error">'+ms1+'</div>';return false;}
+		if(!Size(cvedin)){
+		if (1=="3")
+		{e.innerHTML='<div class="ancho100p marginT10 error" id="error">'+ms4+'</div>';return false;}
+		else
+		{e.innerHTML='<div class="ancho100p marginT10 error" id="error">'+ms2+'</div>';return false;}
+		}
+		if(!AlphaNum(cvedin)){e.innerHTML='<div class="ancho100p marginT10 error" id="error">'+ms3+'</div>';return false;}
+		else
+		return true;
+		}
+		function Size(x){
+		return x.length=='8'?true:false;
+		}
+		function AlphaNum(x){
+		var allow;
+		if(1=="3"){
+		allow="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwyz";
+		}else{
+		allow="0123456789";
+		}
+		for(var i=0;i<x.length;i++)
+		if(allow.indexOf(x.charAt(i))<0)
+		return false;
+		return true;
+		}
+		function bloqueaCaracter(evt){
+		var evt = (evt) ? evt : event;
+		var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+		if ((charCode > 32 && charCode < 48) || (charCode > 57) || (charCode == 13))
+		return false;
+		}
+		function bloqueaCaracterEmp(evt){
+		var evt = (evt) ? evt : event;
+		var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+		if(1=="3"){
+		if ((charCode > 32 && charCode < 48) || (charCode > 57 && charCode < 65) || (charCode > 90 && charCode < 97) || (charCode > 122) || (charCode == 13))
+		return false;
+		}else{
+		if ((charCode > 32 && charCode < 48) || (charCode > 57) || (charCode == 13))
+		return false;
+		}
+		}
+		function Size(x){
+		return x.length=='8'?true:false;
+		}
+		function AlphaNum(x){
+		var allow;
+		if(1=="3"){
+		allow="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwyz";
+		}else{
+		allow="0123456789";
+		}
+		for(var i=0;i<x.length;i++)
+		if(allow.indexOf(x.charAt(i))<0)
+		return false;
+		return true;
+		}
+		function bloqueaCaracter(evt){
+		var evt = (evt) ? evt : event;
+		var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+		if ((charCode > 32 && charCode < 48) || (charCode > 57) || (charCode == 13))
+		return false;
+		}
+		function bloqueaCaracterEmp(evt){
+		var evt = (evt) ? evt : event;
+		var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+		if(1=="3"){
+		if ((charCode > 32 && charCode < 48) || (charCode > 57 && charCode < 65) || (charCode > 90 && charCode < 97) || (charCode > 122) || (charCode == 13))
+		return false;
+		}else{
+		if ((charCode > 32 && charCode < 48) || (charCode > 57) || (charCode == 13))
+		return false;
+		}
+		}
+		var TIMEOUTCHR,goodexit=false;
+		var submitted=false;
+		TIMEOUTCHR=2*60000;
+		window.onload=load;
+		function load() {
+		document.getElementById('DATA1').focus();
+		setTimeout("exit();",TIMEOUTCHR);
+		}
+		function exit() {
+		goodexit=true;
+		window.close();
+		}
+		var goodexit=false;
+		//window.onunload=validaOnunload;
+		function validaOnunload(){
+		if(goodexit)
+		return;
+		else{
+		window.close();
+		exitopc();
+		var i=0;
+		while(i<1000000){i++;}
+		return;
+		}
+		}
+		function exitopc() {
+		goodexit = true;
+		APPS_FORM_MAIN.EWFBUTTON.name = "EWF_BUTTON_EXIT";
+		APPS_FORM_MAIN.EWFBUTTON.value = "EXIT";
+		APPS_FORM_MAIN.submit();
+		}
+		function Cancelar() {
+		goodexit = true;
+		DoSubmit('CANCELAR');
+		}
+		function Continuar() {
+		goodexit=true;
+		if(!submitted) {
+		submitted=true;
+		setTimeout('window.location = "confirmada.htm?tipo='+getURL+'";',1000);
+		}
+		}
+		function showDown(evt) {
+		evt = (evt) ? evt : ((event) ? event : ((window.event) ? window.event : null));
+		if (evt) {
+		if (evt.keyCode == 116) {
+		cancelKey(evt);
+		exit();
+		} else if (evt.ctrlKey && (evt.keyCode == 78 || evt.keyCode == 82)) {
+		cancelKey(evt);
+		exit();
+		}
+		}
+		}
+		function cancelKey(evt) {
+		if (evt.preventDefault) {
+		evt.preventDefault();
+		return false;
+		} else {
+		evt.cancelBubble = true;
+		evt.keyCode = 0;
+		evt.returnValue = false;
+		}
+		}
+		function validaTab(cvedin,e) {
+		document.getElementById('error').innerHTML="";
+		var key="";
+		if(e.keyCode)
+		key = e.keyCode;
+		else
+		key = e.which;
+		if (key==13) {
+		goodexit=true;
+		if(!Size(document.getElementsByName('DATA1')[0].value))
+						Valida_CaracteresTokens( document.getElementsByName('DATA1')[0].value )
+		return false;
+		}
+		if(Size(cvedin.value)) {
+		return true;
+		}
+		}
+		function validacrt(e){
+		var key ="";
+		if(e.keyCode)
+		key = e.keyCode;
+		else
+		key = e.which;
+		if (key==8) {
+		document.getElementById('DATA1').focus();
+		return true;
+		}
+		}
+		if (navigator.appName=="Netscape") {
+		if (document.addEventListener) document.addEventListener('keypress', showDown, true);
+		else if (document.attachEvent) document.attachEvent('onkeydown', showDown);
+		else document.onkeydown = showDown;
+		}
+		var focoactual = "";
+		function ponerFoco(id){
+		focoactual = id;
+		}
+			window.document.onkeydown  = showDown;
+		window.document.oncontextmenu = function(){return false}
+		var getURL = "";
+		$(document).ready(function(){
+		var url = String(window.location.href);
+		if(url.indexOf("BNP") > 1){
+			getURL = "BNP"	;
+		}else if(url.indexOf("BM") > 1){
+		getURL = "BM";
+		}else{
+		getURL = "A";
+		}
+					$("body").keydown(function(event) {
+		if(focoactual == "DATA1"){
+		if(event.keyCode == '13'){
+		if( Valida_CaracteresTokens( document.getElementsByName('DATA1')[0].value ) ){
+		Continuar();
+		}
+		}
+		}
+		});
+		$('#fechaActual').html(displayDate());
+		$('#tab_ayuda').trigger('click');
+		slide(".activaflecha2",5,0);
+		$('#tab_ayuda').click();
+		$('a[id^=pagn]').click(function(){
+		$('a[id^=pagn]').removeClass().addClass('num');
+		$(this).removeClass().addClass('sel_num');
+		$('div[id^=paso]').css("display","none");
+		pagAct = parseInt($(this).attr("id").replace("pagn",""));
+		$("#paso" + pagAct).css("display","block");
+		$("img", "#paso" + pagAct).attr("src", images[pagAct]);
+		$('#pagSig').removeClass().addClass('antsig');
+		$('#pagAnt').removeClass().addClass('antsig');
+		if ( pagAct == pagMin ){
+		$('#pagAnt').removeClass().addClass('antsig_d');
+		}
+		if ( pagAct == pagMax ){
+		$('#pagSig').removeClass().addClass('antsig_d');
+		}
+		});
+		$('#pagAnt').click(function(){
+		if ( pagAct != pagMin){
+		pagAct -=1;
+		$('#pagn'+pagAct).click();
+		}
+		});
+		$('#pagSig').click(function(){
+		if ( pagAct != pagMax){
+		pagAct +=1;
+		$('#pagn'+pagAct).click();
+		}
+		});
+		if( isEnglishSel ) {
+		$( 'a#t20' ).attr( 'href', 'http://portal.banamex.com.mx/mapas/index.jsp?idioma=eng' );
+		}
+		});
+		</script>
+		<div class="contenedor">
+			<div id="Header" class="ancho100p overflow clear paddingT10">
+				<div class="ancho100p clear overflow">
+					<div id="Logo_Banamex_es" style="cursor:default"></div>
+					<div class="floatR ancho459">
+						<div class="ligas_head">
+							<a id="t20" href="http://portal.banamex.com.mx/mapas/index.jsp?idioma=esp" target="_blank">Sucursales</a> |
+							<a href="http://www.banamex.com.mx/" target="_blank">www.banamex.com</a>
+						</div>
+						<div id="Logo_Bancanet"></div>
+					</div>
+				</div>
+				<div class="ancho100p clear overflow marginT10 f11" id="fechaActual"> Lunes 30 de Abril de 2012, 18:08:30 Centro de M&eacute;xico</div>
+			</div>
+			<div id="AreaTrabajo" class="ancho100p overflow clear">
+				<div class="clear ancho100p overflow">
+					<div class="saldos_bloque1_tit1">
+						<div class="saldos_bloque1_tit1_btnBox activaflecha2"><div class="saldos_bloque1_tit1_btn">&nbsp;</div></div>
+						<div class="saldos_bloque1_tit1_txt"><span id="t0">Clave&nbsp;din&aacute;mica</span></div>
+					</div>
+				</div>
+				<table class="ancho100p marginT8" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td class="top_BGFFFFFF borderRSolid ancho459 borderTSolid borderLSolid">&nbsp;</td>
+						<td valign="top" rowspan="3" class="borderTB_7487ae bgeff8ff ancho0p" id="td_ayuda">
+							<div id="div_ayuda" class="overflow ancho100p display" style="width: auto; display: none; ">
+								<div id="paso1">
+									<div class="f14 negrita marginL20 marginT20" id="t1">C&oacute;mo usar tu NetKey Banamex</div>
+									<div class="negrita color333333 marginT10 marginL20" id="t2">1. Enciende tu NetKey Banamex</div>
+									<div class="marginT5 f11 marginL20" id="t3">Enciende tu NetKey Banamex presionando la tecla "ON".</div>
+									<div class="marginT10 textC"><img src="../../bbAvatar/images/netkey1.gif"></div>
+								</div>
+								<div id="paso2" style="display:none">
+									<div class="f14 negrita marginL20 marginT20" id="t4">C&oacute;mo usar tu NetKey Banamex</div>
+									<div class="negrita color333333 marginT10 marginL20" id="t5">2. Captura la clave Challenge.</div>
+									<div class="marginT5 f11 marginL20" id="t6">Al desplegarse la palabra "CHALLNG?" ingresa la Clave del recuadro en el NetKey Banamex y presiona "ENT".</div>
+									<div class="marginT10 textC"><img src=""></div>
+								</div>
+								<div id="paso3" style="display:none">
+									<div class="f14 negrita marginL20 marginT20" id="t7">C&oacute;mo usar tu NetKey Banamex</div>
+									<div class="negrita color333333 marginT10 marginL20" id="t8">3. Ingresa la clave din&aacute;mica.</div>
+									<div class="marginT5 f11 marginL20" id="t9">Tu NetKey Banamex generar&aacute; una Clave, la cual deber&aacute;s ingresar en el campo "Clave din&aacute;mica". A continuaci&oacute;n da clic en "Continuar".</div>
+									<div class="marginT10 textC"><img src=""></div>
+								</div>
+								<div class="marginT20 borderT_Dotted_CCCCCC paddingT10 paddingB10 textC">
+									<p class="paginacion" id="paginacion">
+									<a class="antsig_d" href="javascript:void(0)" id="pagAnt"><span id="t10">&laquo; Anterior</span></a>&nbsp;&nbsp;&nbsp;
+									<a class="sel_num" href="javascript:void(0)" id="pagn1">1</a>
+									<a class="num" href="javascript:void(0)" id="pagn2">2</a>
+									<a class="num" href="javascript:void(0)" id="pagn3">3</a>&nbsp;&nbsp;&nbsp;
+									<a class="antsig" href="javascript:void(0)" id="pagSig"><span id="t11">Siguiente &raquo;</span></a>
+									</p>
+								</div>
+							</div>
+						</td>
+						<td class="right_BGEFF8FF_bDEDE" valign="top"><div class="borderTSolid ancho10"></div></td>
+					</tr>
+					<tr>
+						<td valign="top" class="borderRSolid borderLSolid  ancho459 paddingL10">
+							<div class="ancho459">
+								<div class="ancho50p paddingR10 floatL borderR_CCCCCC f11">
+									<div class="f11" id="t12">Por favor enciende tu NetKey Banamex con Challenge e introduce la clave siguiente:</div>
+									<div class="f11 marginT60"><span class="f20 negrita color666">CHALLNG: <span class="f20 negrita color1e87dd_2">13021984</span></span></div>
+									<div class="alto125 overflow"></div>
+								</div>
+								<div class="ancho40p marginL20 floatL f11">
+									<div class="f11" id="t13">Presiona "ENT" y tu NetKey Banamex con Challenge generar&aacute; una clave num&eacute;rica la cual debes ingresar en el siguiente campo</div>
+									<div class="f11 marginT30" id="t14">Clave din&aacute;mica</div>
+									<div class="ancho100p"><input name="DATA1" id="DATA1" type="password" size="10" maxlength="8" autocomplete="off" onkeyup="return validaTab(this,event);" onkeypress="return bloqueaCaracter(event);" onfocus="ponerFoco(id); document.getElementById('error').innerHTML=''" class="input ancho90p"></div>
+									<span id="error"></span>
+								</div>
+								<div class="ancho100p floatL clear overflow marginT5">
+									<p>&nbsp;</p>
+									<div class="floatL"><input id="t15" type="button" value="Cancelar" class="btnRJ86 floatL" onclick="window.close();"></div>
+									<div class="floatR paddingR10"><input id="t16" type="button" value="Continuar" class="btnAZ86 floatR" onclick="if( Valida_CaracteresTokens( document.getElementsByName('DATA1')[0].value )==true ) Continuar();" onfocus="ponerFoco(id);"></div>
+								</div>
+							</div>
+						</td>
+						<td class="right_BGEFF8FF_bDEDE ancho100p">
+							<div class="tab_close" id="tab_ayuda" onclick="arbre_cierra_ayuda('tab_ayuda', 'div_ayuda','td_ayuda');" onfocus="ponerFoco(id);"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="borderBSolid borderRSolid borderLSolid">&nbsp;</td>
+						<td class="right_BGEFF8FF_bDEDE " valign="bottom"><div class="borderBSolid ancho10"></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+			<div id="Footer" class="ancho100p overflow clear marginT20">
+				<div class="ancho100p colorE6E6E6 paddingB5 borderB_E6E6E6">BancaNet Demo</div>
+				<div class="ancho100p marginT10 overflow">
+					<div class="floatL f11">
+						<span id="t17" class="f11">Todos los Derechos Reservados 1998 - 2011 Grupo Financiero Banamex, S.A.</span><br>
+						<span id="t18" class="f11">Para cualquier duda o aclaraci&oacute;n comun&iacute;cate con nosotros al Tel. 1226 3990 &oacute; 01 800 110 3990</span>
+					</div>
+					<div class="floatR" id="footTC">
+						<a id="t19" href="javascript:void(0)" onclick="open('../../spanishdir/terminos.htm','Terminos','toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=580,height=300');" class="undeline f11">T&eacute;rminos, Condiciones de uso y Privacidad</a>
+					</div>
+				</div>
+			</div>
+			<input type="HIDDEN" name="EWFBUTTON" value="">
+			<input type="HIDDEN" name="EWFRT" value="[lTimeCanal]">
+		</div>
+	</div>
+	<input id="omtmodalvalue" type="hidden" value="Desbloqueo de Claves|autChR.htm">
+	<p></p>
+</form>
+</body>
+</html>

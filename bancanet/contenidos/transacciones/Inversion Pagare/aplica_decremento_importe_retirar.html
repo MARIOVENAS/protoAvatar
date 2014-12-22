@@ -1,0 +1,2433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" style="background:#FFF">
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="16344a72-93f7-4c59-93b4-695d3488e253" ><input type=hidden name="EWF_SYS_1" value="OR31SSJVZK3ME247MS4U8@3L39KTXSWVL947ULSP" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZIVP-PAG APLICADA CANCELACION"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="AplicadaCancelacion.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="12"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<!-- <link href="/bbAvatar/css/mando.css" rel="stylesheet" type="text/css" /> -->
+
+<link href="../../bbAvatar/css/skin.css" rel="stylesheet" type="text/css" />
+
+<link href="../../bbAvatar/css/skin2.css" rel="stylesheet" type="text/css" />
+
+
+
+<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/motor.js"></script>
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../bbAvatar/css/estilos.css">
+
+
+
+<style type="text/css">
+
+body{
+
+background: transparent;
+
+}
+
+</style>
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script language="JavaScript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+<script language="JavaScript">
+
+
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+function Verifica_CampoVacio(Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if ($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}
+
+		return true;
+
+}
+
+
+
+function Verifica_Combos_Vacios (Combo1, Combo2)
+
+{
+
+var Valor1 = "";
+
+var Valor2 = "";
+
+Num_Opcion1 = Combo1.selectedIndex;
+
+Valor1 = Combo1.options[Num_Opcion1].value;
+
+Num_Opcion2 = Combo2.selectedIndex;
+
+Valor2 = Combo2.options[Num_Opcion2].value;
+
+
+
+if (Valor1 == "PS" || Valor1 == "AC" || Valor1 == "NS")
+
+	{
+
+       if (Valor2 == "PS" || Valor2 == "AC" || Valor2 == "NS")
+
+	   {
+
+	      return false;
+
+	   }
+
+       else
+
+           {
+
+             Combo1.focus();
+
+	     alert("Seleccione el dia");	
+
+   	     return true;
+
+           }          
+
+        }
+
+   else
+
+     {
+
+       if (Valor2 == "PS" || Valor2 == "AC" || Valor2 == "NS")
+
+	   {
+
+	       Combo2.focus();
+
+	       alert("Seleccione el mes");	
+
+               return true;
+
+           }
+
+       else
+
+           {
+
+   	     return false;
+
+           }
+
+     }
+
+}
+
+
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+function Valida_CSS2 (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg)
+
+{
+
+   var Numeros="";
+
+   var Letras="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzñÑ@-_$., ";
+
+   var Validos="";
+
+   var Txt_MAY = Campo_Txt.value;
+
+   var invalidos = 0;	
+
+
+
+if (Req == "SI" && Txt_MAY.length==0)
+
+    {
+
+    //alert ("Msg");
+
+    Campo_Txt.focus();
+
+    return false;
+
+    }	
+
+else
+
+   {
+
+   (Tipo_Validacion == 1) ?
+
+    	Validos = Numeros:
+
+
+
+   		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+
+
+   Validos = Validos + Caracteres_Extras;
+
+		
+
+   for (i=0; i < Txt_MAY.length; i++)
+
+	 for (j=0; j < Validos.length; j++)
+
+
+
+	   	if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+			if (j+1 < Validos.length)
+
+	 			continue;
+
+	 		else
+
+	 		    {
+
+	                        //alert (Msg);
+
+				document.forms[0].DATA1.focus();
+
+	 			return true
+
+	 		    }
+
+		else 
+
+   			break;	
+
+   return false;
+
+   }
+
+}
+
+
+
+var LengConf;
+
+function Conf_Msg(id_msg)
+
+{
+
+  var msg;
+
+
+
+    switch(id_msg)
+
+    {
+
+      case 1: msg='Cuenta Origen: ';
+
+	      break;
+
+      case 2: msg='Cuenta Destino: ';
+
+	      break;
+
+      case 3: msg='Importe: $';
+
+	      break;
+
+      case 4: msg='Solicito comprobante fiscal:SI ';
+
+	      break;
+
+      case 5: msg='RFC: ';
+
+	      break;
+
+      case 6: msg='IVA: $';
+
+	      break;
+
+      case 7: msg='Su operaci\u00F3n fu\u00E9 programada para: ';
+
+	      break;
+
+      case 8: msg='Fecha: ';
+
+	      break;
+
+      case 9: msg='Hora: ';
+
+	      break;
+
+      case 10: msg='Compraventa: ';
+
+	      break;
+
+      case 11: msg='Tipo de Pago: ';
+
+	      break;
+
+      case 12: msg='Folio: ';
+
+	      break;
+
+      case 13: msg='Nombre del Cliente/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 14: msg='Formulario: ';
+
+	      break;
+
+      case 15: msg='N\u00FAmero de Tarjeta: ';
+
+	      break;
+
+      case 16: msg='N\u00FAmero de cuenta: ';
+
+	      break;
+
+      case 17: msg='Referencia Alfan\u00FAmerica: ';
+
+	      break;
+
+      case 18: msg='Referencia N\u00FAmerica: ';
+
+	      break;
+
+      case 19: msg='N\u00FAmero de Chequeras: ';
+
+	      break;
+
+      case 20: msg='Su operaci\u00F3n: ';
+
+	      break;
+
+      case 21: msg='La siguiente p\u00E1gina le mostrar\u00E1 los datos de su operaci\u00F3n, verifique que est\u00E9n correctos y haga clic en el bot\u00F3n aceptar para que se aplique su operaci\u00F3n.';
+
+	      break;
+
+      case 22: msg='Tipo de Persona: ';
+
+	      break;
+
+      case 23: msg='Su envi\u00F3 ser\u00E1 en: ';
+
+	      break;
+
+      case 24: msg='Mismo d\u00EDa. ';
+
+	      break;
+
+      case 25: msg='24 horas. ';
+
+	      break;
+
+      case 26: msg='48 horas. ';
+
+	      break;
+
+      case 27: msg='No. Contrato: ';
+
+	      break;
+
+      case 28: msg='Sucursal Destino: ';
+
+              break;
+
+      case 29: msg='Tipo de Inversi\u00F3n: ';
+
+              break;
+
+      case 30: msg='Tipo de Operaci\u00F3n: ';
+
+              break;
+
+      case 31: msg='Importe en D\u00F3lares: ';
+
+              break;
+
+      case 32: msg='Cheque inicial: ';
+
+              break;
+
+      case 33: msg='Cheque final: ';
+
+              break;
+
+      case 34: msg='No. de Contrato de Inversi\u00F3n: ';
+
+              break;
+
+      case 35: msg='No. Klick Card Cr\u00E9dito: ';
+
+              break;
+
+      case 36: msg='No. Klick Card D\u00E9bito: ';
+
+              break;
+
+      case 37: msg='L\u00EDnea de Consumo: ';//hay que revisarla
+
+              break;
+
+      case 38: msg='Tipo de Entrega: '
+
+	      break;
+
+      case 39: msg='Acciones: ';
+
+              break;
+
+      case 40: msg='Fecha de Alta: ';
+
+              break;
+
+      case 41: msg='Tipo de Inversi\u00F3n / No. de Contrato: ';
+
+              break;
+
+      case 42: msg='No. de Inversi\u00F3n: ';
+
+              break;
+
+      case 43: msg='Plazo: ';
+
+              break;
+
+      case 44: msg='Instrucciones al Vencimiento: ';
+
+              break;
+
+      case 45: msg='Cuenta de Rembolso: ';
+
+              break;
+
+      case 46: msg='Traspaso a: ';
+
+              break;
+
+      case 47: msg='Abono a:';
+
+	      break;
+
+      case 48: msg='El tipo de cambio que se aplique, ser\u00E1 el vigente en el d\u00EDa y hora en que se realice la operaci\u00F3n.';
+
+	      break;
+
+      case 49: msg='Importe en d\u00F3lares:';
+
+	      break;
+
+	      
+
+      case 50: msg='Tarjeta: ';   							
+
+	      break;
+
+      case 51: msg='Importe a Parcializar: $';  
+
+	      break;
+
+      case 52: msg='Interes: $';  							
+
+	      break;
+
+      case 53: msg='Interes Diferido: $';  			
+
+	      break;
+
+      case 54: msg='Monto Diferido: $';  				
+
+	      break;
+
+      case 55: msg='Pago Mensual: $';  				
+
+	      break;
+
+      case 56: msg='Tarjeta Premia:  ';
+
+	      break;
+
+      case 57: msg='Cuenta a Incorporar:  ';
+
+	      break;
+
+      case 58: msg='Tarjeta de Credito Titular:  ';
+
+	      break;	      
+
+      case 59: msg='No. de Tarjeta: ';
+
+	      break;	
+
+      case 60: msg='Límite a Asignar: ';
+
+	      break;	
+
+      case 61: msg='Tipo de Retiro: ';
+
+	      break;	
+
+      case 62: msg='Monto a Retirar: ';
+
+	      break;
+
+		case 63: msg='Afore NSS: ';
+
+	      break;
+
+	  case 64: msg='Beneficiario: ';
+
+	      break;
+
+	  case 65: msg='RFC/CURP: ';
+
+	      break;
+
+	  case 66: msg='Sector Económico: ';
+
+	      break;
+
+	  case 67: msg='Nombre/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 150: msg='Una vez aceptada no podr\u00E1 cancelar su operaci\u00F3n.';
+
+              break;
+
+      case 151: msg='Una vez recibida su instrucci\u00F3n no podr\u00E1 cancelar su operaci\u00F3n.';
+
+	      break;
+
+      case 152: msg='Correo Electr\u00F3nico del Beneficiario: ';
+
+	      break;
+
+	    case 200: msg="Verifica los datos de tu operación."; 
+
+	    	break;
+
+	    case 201: msg="Paso 2 de 3"; 
+
+	    	break;
+
+	    case 202: msg="Paso 3 de 3"; 
+
+	    	break;	    	
+
+	    case 203: msg="Paso 3 de 4";  /*YA NO SE UTILIZA*/ 
+
+	    	break;
+
+	    case 204: msg="Paso 2 de 2"; 
+
+	    	break;
+
+	    case 205: msg="Número Celular del Beneficiario: "; 
+
+	    	break;
+
+	    case 206: msg="Compañía Celular: "; 
+
+	    	break;	    	
+
+	    default: msg='Verifique que sus datos est\u00E9n correctos antes de enviar su operaci\u00F3n.';
+
+    } 
+
+  return(msg);
+
+}
+
+
+
+var z=new Array();
+
+var answ;
+
+var myDate=new Date();
+
+
+
+function Conf_Main(id_tran)
+
+{
+
+  var mensaje='';
+
+  var programada;
+
+  programada=Conf_VP(z[6],z[7],z[8],z[9],z[10]);
+
+  if(programada=='') mensaje=Conf_Msg(200) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+  else mensaje=Conf_Msg(200) + '\n' + Conf_Msg(151) + '\n\n' ;
+
+  
+
+  switch(id_tran)
+
+  {
+
+	case 'TPT'://traspaso pago a terceros
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(67) + z[16] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12]  + '\n' + Conf_Msg(152) + z[13] + '\n' + Conf_Msg(205) + z[14] + '\n' + Conf_Msg(206) + z[15] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      break;
+
+    case 'TCVDP': //traspaso compraventa de divisas cuentas propias 
+
+      if(programada=='') mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(2) + z[3] + '\n' + Conf_Msg(31) + z[4] + '\n' + programada;
+
+      break;
+
+    case 'TCVDT': //traspaso compraventa de divisas terceros
+
+      if(programada=='') mensaje=Conf_Msg(200) + '\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + '\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(2) + z[3] + '\n' + Conf_Msg(31) + z[4] + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12] + '\n' + programada;
+
+      break;
+
+    case 'CCB': //pago tarjeta CCB
+
+      if(programada=='') mensaje=Conf_Msg(200) +"\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + "\t\t" + Conf_Msg(201)+'\n\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(49) + z[3] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      break;
+
+    case 'PI': //pago interbancario cheques y tarjeta de debito
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n';
+
+      if (z[21]==true)//cheques
+
+      {
+
+        mensaje=mensaje + Conf_Msg(16) ;
+
+      }
+
+      else
+
+      {
+
+        mensaje=mensaje + Conf_Msg(15); 
+
+      }
+
+      mensaje=mensaje + z[3] + '\n' +  Conf_Msg(22);
+
+      if (z[7]=="Fisica")
+
+      {
+
+
+
+		z[7]="Fisica";
+
+
+
+	mensaje=mensaje + z[7] + '\n' + Conf_Msg(13) + z[8] + '\n';
+
+      }
+
+      else
+
+      {
+
+	
+
+		z[7]="Moral";
+
+
+
+	mensaje=mensaje + z[7] + '\n' + Conf_Msg(13) + z[9] + '\n';
+
+      }
+
+
+
+      mensaje=mensaje + Conf_Msg(17) + z[10] + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(3) + FormatCurrency(z[12]) + '\n' + Conf_Msg(152) + z[14] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + Conf_ValidaPlazo(z[13]);
+
+      break;
+
+    //case 'PS': //pago de servicios
+
+      //mensaje=Conf_Msg(21);
+
+      break;
+
+    case 'FRECC': //operaciones frecuentes
+
+      break;
+
+    case 'PC': //pago de creditos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(27) + z[2] + '\n' + Conf_Msg(11) + z[3] + '\n' + Conf_Msg(12) + z[4] + '\n' + Conf_Msg(3) + FormatCurrency(z[5]);
+
+      break;
+
+    case 'POP': //pago ordenes de pago
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + z[2] + '\n' + Conf_Msg(64) + z[12] + '\n' + Conf_Msg(28) + z[3] + '\n' + Conf_Msg(66) + z[16] + '\n' + Conf_Msg(3) + FormatCurrency(z[4]) + '\n' + Conf_Msg(65) + z[17] + '\n' + Conf_Msg(152) + z[13] + '\n' + Conf_Msg(205) + z[14] + '\n' + Conf_Msg(206) + z[15];
+
+      break;
+
+    case 'PIMP': //pago de impuestos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(11) + z[2] + '\n' + Conf_Msg(14) + z[3] + '\n' + Conf_Msg(38) + z[4] + '\n' + z[5] + '\n' + z[12] + '\n' + Conf_Msg(13) + z[13] + '\n' + Conf_Msg(5) + z[14] + '\n' + Conf_Msg(3) + FormatCurrency(z[15]);
+
+      break;
+
+    case 'PA': //pago Accitrade
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12] + '\n' + programada;
+
+      break;
+
+    case 'PDB': //pago domiciliacion baja
+
+    case 'PDA': //pago domiciliacion activacion
+
+      mensaje=mensaje + z[3] +'\n' + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(47) + z[2] + '\n' + Conf_Msg(40) + z[4];
+
+      break;
+
+    case 'II': //inversion integral
+
+      if( /*DNBF*/ (document.getElementById("checkCalendario").checked==true) && z[4].value != "0" && z[5].value.length != 0) 
+
+      { 
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(29) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[4].value + '/' + z[5].value + '/' + myDate.getFullYear();
+
+			}
+
+      else
+
+      {  
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + z[1] + '\n' + Conf_Msg(29) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      } 
+
+      break;
+
+      
+
+    case 'IFI': //fondo inversion horizontes cobertura
+
+
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) &&  z[11].value != "0" && z[12].value != "0") 
+
+      { 
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + '\n\n' ;
+
+      }
+
+
+
+      if(z[3].value.length!=0 && z[3].value.length!=0)
+
+      {
+
+        //mensaje=mensaje + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3].value);
+
+      }
+
+      else
+
+      {
+
+        //mensaje=mensaje + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(39) + z[4].value;
+
+      }
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value!="0" && z[12].value!="0") 
+
+      { 
+
+       // mensaje=mensaje + '\n' + '\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[11].value + '/' + z[12].value + '/' + myDate.getFullYear();
+
+      }
+
+      break;
+
+    case 'IFH': //fondo inversion horizontes banamex
+
+      if(z[3].value.length!=0 && z[3].value.length!=0)
+
+      {
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3].value);
+
+      }
+
+      else
+
+      {
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(39) + z[4].value;
+
+      }
+
+      break;
+
+    case 'IE': //inversion empresarial
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value == "0" && z[12].value == "0") 
+
+      { 
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' ;
+
+      }
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value != "0" && z[12].value != "0") 
+
+      { 
+
+        mensaje=mensaje + '\n\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[11].value + '/' + z[12].value + '/' + myDate.getFullYear();
+
+      }
+
+      break;
+
+    case 'IPAIN': //inversion a plazo A/I
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(34) + z[3] + '\n' + Conf_Msg(42) + z[5] + '\n' + Conf_Msg(29) + z[4] + '\n' + Conf_Msg(43) + z[11] + '\n' + Conf_Msg(44)  + z[12] + '\n' + Conf_Msg(3) + FormatCurrency(z[13]) + '\n' + Conf_Msg(45) + z[14];
+
+      break;
+
+    case 'IPDC': //inversion a plazo D/C
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(34) + z[2] + '\n' + Conf_Msg(42) + z[3] + '\n' + Conf_Msg(29) + z[4] + '\n' + Conf_Msg(2) + z[5] + '\n' + Conf_Msg(3) + FormatCurrency(z[11]) + '\n' + Conf_Msg(44) + z[12] + '\n' + Conf_Msg(43)  + z[13] + '\n' + Conf_Msg(45) + z[14];
+
+      break;
+
+    case 'SCH': //solicitud chequera
+
+      if(z[1]=="01" || z[1]=="03")
+
+      {
+
+        mensaje=mensaje + z[2] + '\n' + Conf_Msg(1) + z[3];
+
+      }
+
+      else
+
+      {
+
+        mensaje=mensaje + z[2] + '\n' + Conf_Msg(1) + z[3] + '\n' + Conf_Msg(19) + z[4];
+
+      }
+
+      break;
+
+    case 'KCTLC': //klic card traspaso de linea de consumo credito y debito
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(20) + '\n' ;
+
+      if (z[11]=='credito')
+
+      {
+
+	mensaje=mensaje + Conf_Msg(35) + z[1] + '\n' + Conf_Msg(37) + z[2];
+
+      }
+
+      else
+
+      {
+
+	mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(46) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      }
+
+      break;
+
+    case 'PT':// Pago tarjetas Banamex
+
+    	if (programada=="")
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+"\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]);
+
+      }
+
+      else
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+"\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      } 
+
+    	break;
+
+    	
+
+     case 'AUT':// Activación o Ubicación de Plástico
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+"\n" + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1];
+
+    	break;
+
+
+
+    case 'LIT':// Limite de crédito Titular
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+"\n" + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1] + '\n\n' + Conf_Msg(3) + z[2];
+
+    	break;
+
+    	
+
+    case 'ROBO': // Robo o Extravio
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1];
+
+      break;
+
+    case 'IPRE': // Inscripcion Premia
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(1)+ z[1] + '\n';
+
+      break;
+
+
+
+    case 'INCPRE': // Incorporacion Premia
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(56)+ z[1] + '\n\n' + Conf_Msg(57) + z[2];
+
+      break;
+
+    
+
+    case 'INSLIB': // Inscripcion Libra Arsa
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(58)+ z[1] + '\n';
+
+      break;
+
+
+
+    case 'PPP':		//Plan Personal de Pagos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(50) + z[1] + '\n' + Conf_Msg(51) + z[2] + '\n' + Conf_Msg(43) + z[3] + '\n' + Conf_Msg(52) + z[4] + '\n' + Conf_Msg(53) + z[5]  + '\n' + Conf_Msg(54) + z[11] + '\n' + Conf_Msg(55) + z[12] + '\n';
+
+      break;
+
+
+
+    case 'LTA':	//Limite de Tarjetas Adicionales Modificar
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n";
+
+			for(k=0,j=10; k<CtasModif; k++) { 
+
+				mensaje=mensaje + Conf_Msg(59) + z[++j] + '\t\t' + Conf_Msg(60) + z[++j] + '\n' ;
+
+      	} 
+
+      break;
+
+      
+
+    case 'LTAr':	//Limite de Tarjetas Adicionales Reestablecer
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n";
+
+				mensaje=mensaje + Conf_Msg(59) + z[1] + '\n' ;
+
+      break;      
+
+    
+
+		case 'ZAAP': //Aportaciones Afore 
+
+      mensaje=Conf_Msg(21);
+
+      break;
+
+
+
+    case 'ARL': // Retiro por Ley Afore
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(203)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(63)+ z[1]+'\n'+ Conf_Msg(2)+ z[2]+ '\n'+ Conf_Msg(61)+ z[3]+ '\n'+ Conf_Msg(62)+ z[4]+ '\n';
+
+	  break;
+
+	  
+
+    default: //
+
+      if (programada=="")
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]);
+
+      }
+
+      else
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      }
+
+  }
+
+  answ=confirm(mensaje);
+
+}
+
+
+
+function Conf_AV(objeto,tipo)
+
+{
+
+  var Num_Opcion;
+
+  var Valor=99;
+
+
+
+  if ((typeof objeto)=='undefined')
+
+  {
+
+    return Valor;
+
+  }
+
+  else if (tipo==1)
+
+  {
+
+    Num_Opcion = objeto.selectedIndex;
+
+    Valor = objeto.options[Num_Opcion].text;
+
+    return Valor;
+
+  }
+
+  else if (tipo==2)
+
+  {
+
+    Num_Opcion = objeto.selectedIndex;
+
+    Valor = objeto.value;
+
+    return Valor;
+
+  }
+
+  else
+
+  {
+
+    var numradios=objeto.length;
+
+    for(var i=0; i<numradios; i++)
+
+     {
+
+       if (objeto[i].checked)
+
+	{
+
+	  Valor=objeto[i].value;	
+
+	}
+
+      }
+
+      return Valor;
+
+   }
+
+}
+
+
+
+function Conf_Comprobante(bcom,rfc,iva)
+
+{
+
+  var msgcom='';
+
+  if(bcom==true)
+
+  {
+
+    msgcom='\n' + Conf_Msg(4) + '\n' + Conf_Msg(5) + rfc + '\n' + Conf_Msg(6) + iva;
+
+  }
+
+  return msgcom;
+
+}
+
+
+
+function Conf_VP(dia,mes,hora,minuto,ampm)
+
+{
+
+  if((typeof dia)=='undefined')
+
+  {
+
+    return("");
+
+  }
+
+  /*BFDN*/
+
+  minuto.value = (minuto.value.length=1 ? document.getElementById('MINS').options[document.getElementById('MINS').selectedIndex].value : minuto.value);
+
+  hora.options[hora.selectedIndex].value = (hora.options[hora.selectedIndex].value.length > 2) ? hora.options[hora.selectedIndex].value.substring(0,2) : hora.options[hora.selectedIndex].value;
+
+  if(document.getElementById("checkCalendario").checked==false)
+
+   { /* DNBF*/
+
+      return ("");
+
+  }
+
+
+
+  var msgprog='';
+
+  
+
+  if (dia.value != "0"  
+
+     &&   mes.value != "0"  
+
+     &&   (hora.options[hora.selectedIndex].value != "0"  /*hora.selectedIndex > 0  DNBF*/ 
+
+     ||   minuto.value != "0"))
+
+  { 
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + dia.value + '/' + mes.value + '/' + myDate.getFullYear() + '\n' + Conf_Msg(9) + hora.value + ':' + minuto.value + ' ' + ampm.value;
+
+  }
+
+  else if( dia.value != "0"  
+
+     &&   mes.value != "0")
+
+  { 
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + dia.value + '/' + mes.value + '/' + myDate.getFullYear() ;
+
+  }
+
+  else if (hora.options[hora.selectedIndex].value != "0"  /*DNBF*/ 
+
+     &&   minuto.value != "0" )
+
+  { 
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + getFechaActual("DDMMYY") +'\n' + Conf_Msg(9) + hora.value + ':' + minuto.value + ' ' + Conf_AV(ampm,3);
+
+  }
+
+  return msgprog;
+
+}
+
+
+
+function Conf_ValidaPlazo(valor)
+
+{
+
+  var plaz='';
+
+  
+
+  if(valor==99)
+
+  {
+
+    return plaz;
+
+  }
+
+
+
+  if(valor=="0")
+
+  {
+
+    plaz=Conf_Msg(23) + '\n' + Conf_Msg(24);
+
+  }
+
+  else if (valor=="24")
+
+  {
+
+   plaz=Conf_Msg(23) + '\n' + Conf_Msg(25);
+
+  }
+
+  else
+
+  {
+
+   plaz=Conf_Msg(23) + '\n' + Conf_Msg(26);
+
+  }
+
+  return plaz;
+
+}
+
+
+
+function getFechaActual(mode)
+
+{
+
+   var now = new Date();
+
+   var dayNr = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+
+   if (mode=="DDMMYY")
+
+      var MonthDayYear =(dayNr+"/"+(now.getMonth()+1)+"/"+now.getFullYear());
+
+   else
+
+      var MonthDayYear =((now.getMonth()+1)+"/"+dayNr+"/"+now.getFullYear());
+
+
+
+   return MonthDayYear;
+
+}
+
+
+
+function FormatClean(num)
+
+{
+
+     var sVal='';
+
+     var nVal = num.length;
+
+     var sChar='';
+
+     var sPoint='.';
+
+
+
+   try
+
+   {
+
+       for(i=0;i<nVal;i++)
+
+      {
+
+         sChar = num.charAt(i);
+
+         nChar = sChar.charCodeAt(0);
+
+         if (((nChar >=48) && (nChar <=57)) || (nChar == sPoint.charCodeAt(0)) ) { sVal += num.charAt(i);   }
+
+      }
+
+   }
+
+    catch (exception) { AlertError("Format Clean",e); }
+
+    return sVal;
+
+}
+
+
+
+function FormatCurrency(num)
+
+{
+
+        var sVal='';
+
+        var minus='';
+
+        var Decimal='.';
+
+
+
+        if (num.lastIndexOf("-") == 0) { minus='-'; }
+
+   		num = FormatClean(num);
+
+        sVal = minus + FormatDollar(num,',') + '.' + FormatCents(num);
+
+        return sVal;
+
+}
+
+
+
+function FormatCents(amount)
+
+{
+
+	var cents = '';
+
+
+
+	try
+
+	{
+
+		amount = parseFloat(amount);
+
+        	if (isNaN(amount)) amount = 0;
+
+
+
+		var samount = new String(amount);
+
+		var pos;
+
+
+
+		pos = samount.lastIndexOf('.') + 1;
+
+
+
+		if (pos == 0 || pos == -1)
+
+				cents = '';
+
+		else	cents =  samount.substring(pos);
+
+
+
+		if (cents.length == 0) { return '00'; }
+
+		if (cents.length == 1) { return cents + '0'; }
+
+		if (cents.length == 2) { return cents; }
+
+	}
+
+	catch (exception) { AlertError("Format Cents",e); }
+
+	return cents;
+
+}
+
+
+
+function FormatDollar(amount,CommaDelimiter)
+
+{
+
+   try
+
+   {
+
+        amount = parseInt(amount, 10);
+
+        
+
+        if (isNaN(amount)) amount = 0;
+
+
+
+        var samount = new String(amount);
+
+
+
+        if (samount.length <= 0) { return 0; }
+
+
+
+        samount =  samount.substring(0,samount.length);
+
+
+
+        for (var i = 0; i < Math.floor((samount.length-(1+i))/3); i++)
+
+        {
+
+           samount = samount.substring(0,samount.length-(4*i+3)) + CommaDelimiter + samount.substring(samount.length-(4*i+3));
+
+         }
+
+   }
+
+    catch (exception) { AlertError("Format Comma",e); }
+
+    return samount;
+
+}
+
+
+
+function AlertError(MethodName,e)
+
+{
+
+    if (e.description == null) { alert(MethodName + " Exception: " + e.message); }
+
+    else {  alert(MethodName + " Exception: " + e.description); }
+
+}
+
+
+
+function Inversion_Plazo() {  
+
+
+
+	mens1 = "Seleccione alguna de las opciones disponibles";
+
+	mens2 = "Es necesario seleccionar la cuenta origen. Favor de verificar.";
+
+	mens3 = "Es necesario seleccionar el no de contrato de inversión. Favor de verificar.";     
+
+	mens4 = "Seleccione algún tipo de inversión"; 
+
+	mens5 = "Se requiere indicar el Plazo o un valor diferente de cero"; 
+
+	mens6 = "Se requiere seleccionar las instrucciones al Vencimiento. Favor de verificar";
+
+	mens7 = "Se requiere teclear la cantidad en el campo importe";
+
+	mens7_1 = "El importe debe ser numérico";
+
+	mens8 = "El Plazo debe ser numerico. Favor de verificar";
+
+	mens9 = "La firma digital debe ser numerica. Favor de verificar";
+
+	mens10 = "El campo de No. de inversion debe estar vacio";
+
+	mens11 = "El campo de No. de Inversion debe contener un valor";
+
+	mens12 = "Se requiere seleccionar la Cuenta de Reembolso. Favor de verificar.";
+
+	z[1]="Apertura";
+
+	if(Conf_AV(document.forms[0].DATA1)=="incremento")
+
+	{
+
+		z[1]="Incremento";
+
+	}
+
+
+
+z[2]=Conf_AV(document.forms[0].DATA2,1);
+
+z[3]=Conf_AV(document.forms[0].DATA3,1);
+
+z[4]=Conf_AV(document.forms[0].DATA4,1);
+
+z[5]=Conf_AV(document.forms[0].DATA10,2);
+
+z[11]=Conf_AV(document.forms[0].DATA5,2);
+
+z[12]=Conf_AV(document.forms[0].DATA6,1);
+
+z[13]=Conf_AV(document.forms[0].DATA7,2);
+
+z[14]=Conf_AV(document.forms[0].DATA8,1);
+
+
+
+    vacio = "";
+
+    bandera = false;
+
+
+
+    if(!RdioChk_Vacio(document.forms[0].DATA1, mens1, "SI")) {
+
+     if(!Combo_Vacio(document.forms[0].DATA2, mens2, "SI")) {
+
+      if(!Combo_Vacio(document.forms[0].DATA3, mens3, "SI")) {
+
+       if(!Combo_Vacio(document.forms[0].DATA4, mens4, "SI")) { 
+
+        if(Verifica_CampoVacio(document.forms[0].DATA5, mens5,"SI")) {  
+
+	  if(Valida_Caracteres(document.forms[0].DATA5,vacio,1,'SI',mens8)) {
+
+            if(!Combo_Vacio(document.forms[0].DATA6, mens6, "SI")) { 
+
+             if(document.forms[0].DATA6.value == "03") 
+
+             {
+
+             	
+
+				if(Verifica_CampoVacio(document.forms[0].DATA7, mens7,"SI")) {  
+
+					if(Valida_Caracteres(document.forms[0].DATA7,",.",1,"SI",mens7_1)) {   
+
+						bandera = true;
+
+					}
+
+				}
+
+           }
+
+           else {
+
+           	
+
+               if(!Combo_Vacio(document.forms[0].DATA8, mens12, "SI"))    
+
+              if(Verifica_CampoVacio(document.forms[0].DATA7, mens7,"SI"))  
+
+                if(Valida_Caracteres(document.forms[0].DATA7,",.",1,"SI",mens7_1))  
+
+                   bandera = true;
+
+                  } 
+
+          }
+
+         }
+
+        }    
+
+	     }
+
+      }
+
+    }
+
+  } 
+
+
+
+    if (bandera == true) {
+
+	   if(Verifica_Transaccion(document.forms[0].DATA1,document.forms[0].DATA10, mens10, mens11)) {
+
+	   	
+
+	      Conf_Main('IPAIN');
+
+	      if (answ==true)
+
+	      {
+
+	              DoSubmit('OK'); 
+
+	      }
+
+       }        
+
+    }
+
+}
+
+
+
+function Verifica_Transaccion(opcion,campo, mensaje1, mensaje2)
+
+{
+
+    if(Verifica_CampoVacio(campo, "NO")) {       
+
+      if(opcion[0].checked == true) {
+
+         alert(mensaje1);
+
+         campo.focus();
+
+         return false;
+
+      } else {
+
+         return true;
+
+        }
+
+    } else {
+
+        if(opcion[1].checked  == true) {
+
+          alert(mensaje2);
+
+          campo.focus();
+
+  	  return false;
+
+        } else {
+
+       	    return true;
+
+          }
+
+      }
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+</script>
+
+
+
+<script language="JavaScript">
+
+function MM_openBrWindow(theURL,winName,features)
+
+{ 
+
+  var URL;
+
+  for (iCount=0; iCount<document.forms[0].length; iCount++)
+
+   {
+
+     if (document.forms[0].elements[iCount].name == theURL)
+
+       URL=document.forms[0].elements[iCount].value;
+
+   }
+
+  window.open(URL, winName, features);
+
+}
+
+</script>
+
+
+
+<script>parent.setFecha("26/04/12    20:51:50  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	a$Cont="205150  ";b$Cont="205150  "
+
+	//
+
+    </script>
+
+
+
+<script>
+
+function enviaDatosTx (Transaccion, TipoCta) {
+
+
+
+	document.forms[0].DATA1.value = Transaccion + TipoCta;
+
+	DoSubmit('DETALLE');
+
+}
+
+
+
+function enviaTx (Transaccion) {
+
+	if ("ZIVP"== 'Z3SP'&& ContadorSeq != -1){
+
+	      ContadorSeq += 1;
+
+	      document.forms[0].SEQUENCE_NUMBER.value = eval(document.forms[0].SEQUENCE_NUMBER.value) + ContadorSeq;
+
+	      DoSubmit('LIGA'+ Transaccion);
+
+	    }
+
+	else{
+
+		document.forms[0].DATA1.value = Transaccion;
+
+		DoSubmit("DETALLE");
+
+		}
+
+}
+
+var winImp;
+
+var fecha;
+
+var lugar;
+
+
+
+function Impresion() {
+
+  var fechaComp = $("#fecha",window.parent.document).html().split(',');
+
+  var lugarComp = $("#fecha2",window.parent.document).html().split('|');
+
+  fecha = ( "SPANISH"=="ENGLISH" ) ? fechaComp[0]+', '+fechaComp[1]+', '+fechaComp[2] : fechaComp[0];
+
+  lugar = lugarComp[0];
+
+  if(navigator.userAgent.indexOf("MSIE") > 0 ){
+
+winImp=window.open("../../bbAvatar/impresion/ImpresionRecibo.html","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+}else{
+
+		winImp=window.open("bbAvatar/impresion/ImpresionRecibo.html","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+}
+
+ winImp.moveTo(0,0);
+
+}
+
+
+
+function llenar(){
+
+  var txtCtaret="";
+
+  var txtCtadep="";
+
+  var dCtar, dCtad, aCtar, aCtad, nCtar, nCtad;
+
+  
+
+  $('#divCom', winImp.document).html( $('#impComp').html() );
+
+  if( txtCtaret!="" ) { $('#lblRet', winImp.document).html( txtCtaret ); }
+
+  if( txtCtadep!="" ) { $('#lblDep', winImp.document).html( txtCtadep ); }
+
+  $('.nosimp', winImp.document).html('');
+
+  $('.nosimp', winImp.document).hide();
+
+  $('#lblNom', winImp.document).html( "Jose Rivera Lopez" );
+
+  $('#lblFec', winImp.document).html( fecha );
+
+  $('#lblHor', winImp.document).html( "8:51:50 PM"+lugar );
+
+}
+
+
+
+var es=new Array('Investments with interest payment at maturity of the term',
+
+				'Your deposit has been',
+
+				'applied',
+
+				'with approval number ',
+
+				'Accounts',
+
+				'Origin account',
+
+				'Updated balance',
+
+				'Investment Contract',
+
+				'Investment <br/> data',
+
+				'Transaction type',
+
+				'Investment Type',
+
+				'Term in days',
+
+				'Amount MXN',
+
+				'Directions to the end of the term',
+
+				'Deposit Account at maturity',
+
+				'Frequent transaction',
+
+				'TIME DEPOSITS');
+
+				
+
+jQuery(document).ready(function(){
+
+	top.impayuda();
+
+	var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+	rutaAyuda += 'Pagare.htm';
+
+
+
+	var cuentaCargo = "Cheques~Cheques~MXN~002";
+
+	var cuentaInversion = "  Inv. Plazo~Mi inversion~  MXN~  010";
+
+	var cuentaReembolso = "Cheques~Cheques~MXN~002";
+
+	var cuenta = '';
+
+	var nombreCuenta = '';
+
+	var alpha = /[A-Za-a0-9]/;
+
+	var tipoInversion = "01";
+
+	var instruccion = "01";
+
+	var tipoOperacion = (language=='eng')? 'Decrement' : 'Decremento';
+
+	var mensajeNumero;
+
+
+
+	mensajeNumero = (language=='eng')? 'Investment number' : 'N&uacute;mero de inversi&oacute;n';
+
+	if(tipoOperacion == 'Decremento' || tipoOperacion == 'Decrement')
+
+		tipoOperacion = (language=='eng')? 'Decrement' : 'Decremento';
+
+	else
+
+		tipoOperacion = 'Cancelaci&oacute;n';
+
+	
+
+	if(language=="eng"){
+
+		var tiposInversion = [
+
+			["04","Promissory Note (Pesos)"],
+
+			["07","Deposit Certificate (Pesos)"],
+
+			["01","Promissory Note (Dlls)"],
+
+			["02","Deposit Certificate (Dlls)"],
+
+			["05","Promissory Note (UDIS)"],
+
+			["03","Deposit Certificate (UDIS)"],
+
+			["08","Promissory Note"],
+
+			["09","Deposit Certificate"],
+
+			["01","DLS IOU with capital and interests available at the maturity of term"],
+
+			["02","DLS Deposit certificates with monthly available returns"]
+
+		];
+
+
+
+		var instrucciones = [
+
+			["01","Total Reimbursement"],
+
+			["02","Capital Reinvestment"],
+
+			["03","Total Reinvestment"]
+
+		];
+
+	}else{
+
+		var tiposInversion = [
+
+			["04","Pagar&eacute; M.N."],
+
+			["07","Certificados de dep&oacute;sito M.N."],
+
+			["01","Pagar&eacute; Dls"],
+
+			["02","Certificados de dep&oacute;sito Dls"],
+
+			["05","Pagar&eacute; UDIS"],
+
+			["03","Certificados de dep&oacute;sito UDIS"],
+
+			["08","Pagar&eacute;"],
+
+			["09","Constancia de dep&oacute;sito"],
+
+			["01","Pagar&eacute; DLS con capital e intereses disponibles al final del plazo"],
+
+			["02","Certificados de dep&oacute;sito DLS con rendimientos disponibles mensualmente"]
+
+		];
+
+
+
+		var instrucciones = [
+
+			["01","Reembolso total"],
+
+			["02","Reinversi&oacute;n de capital"],
+
+			["03","Reinversi&oacute;n total"]
+
+		];
+
+	}
+
+
+
+	$("#numInversion").html(mensajeNumero);
+
+	
+
+	$("#tipoOperacion").html(tipoOperacion);
+
+	
+
+	cuenta = cuentaCargo.split("~");
+
+	if(alpha.test(cuenta[1]))
+
+		nombreCuenta = cuenta[1] + " " + cuenta[2] + " - **" + cuenta[3];
+
+	else
+
+		nombreCuenta = cuenta[0] + " " + cuenta[2] + " - **" + cuenta[3];
+
+
+
+	$("#desCuentaCargo").html(nombreCuenta);
+
+
+
+	var saldoActualizado = "&nbsp;("+cuenta[2]+"): + $ 99,999";
+
+	$("#saldoActualizado").html(saldoActualizado);
+
+	
+
+	cuenta = cuentaInversion.split("~");
+
+	if(alpha.test(cuenta[1]))
+
+		nombreCuenta = cuenta[1] + " " + cuenta[2] + " - **" + cuenta[3].replace(/^\s*|\s*$|\s|-/g,"");
+
+	else
+
+		nombreCuenta = cuenta[0] + " " + cuenta[2] + " - **" + cuenta[3].replace(/^\s*|\s*$|\s|-/g,"");
+
+	
+
+	$("#desCuentaInversion").html(nombreCuenta);
+
+	
+
+	for(i=0;i<tiposInversion.length;i++){
+
+		if(tiposInversion[i][0] == tipoInversion){
+
+			tipoInversion = tiposInversion[i][1];
+
+			break;
+
+		}
+
+	}
+
+
+
+	$("#tipoInversion").html(tipoInversion);
+
+
+
+	if(cuentaReembolso != "NO"){
+
+		cuenta = cuentaReembolso.split("~");
+
+		if(alpha.test(cuenta[1]))
+
+			nombreCuenta = cuenta[1] + " " + cuenta[2] + " - **" + cuenta[3];
+
+		else
+
+			nombreCuenta = cuenta[0] + " " + cuenta[2] + " - **" + cuenta[3];
+
+
+
+		$("#desCuentaReembolso").html(nombreCuenta);
+
+		$("#trCuentaReembolso").show();
+
+	}
+
+	
+
+	for(i=0;i<instrucciones.length;i++){
+
+		if(instrucciones[i][0] == instruccion){
+
+			var tipoInstruccion = instrucciones[i][1];
+
+			break
+
+		}
+
+	}
+
+	$("#instruccionVencimiento").html(tipoInstruccion);
+
+});
+
+</script>
+
+
+
+<div class="float-left fonttit" id="t16">A PLAZO</div>
+
+<div id="impComp">
+
+
+
+<div class="panelIzEnca3_text2" id="t0">Inversiones con pagos de intereses al vencimiento del plazo</div>
+
+     
+
+<div class="saldos_bloque3_verde">
+
+	<div class="f13">
+
+		<span id="t1">Tu retiro ha sido</span> <span class="negrita" id="t2">aplicado</span> <span id="t3">con n&uacute;mero de autorizaci&oacute;n </span><span class="negrita">160378</span>.
+
+	</div>
+
+</div>
+
+
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20" valign="top"><span class="f12" id="t4">Cuentas</span></td>
+
+			<td valign="top" class="padding20 paddingL15 paddingR15">
+
+				<div class=" paddingB5 borderBSolid"><div class="negrita color333 f12b" id="t5">Cuenta retiro</div></div>
+
+
+
+				<div class="ancho100p clear overflow paddingT5">
+
+					<div id="desCuentaInversion" class="floatL ancho40p f11"> </div>
+
+
+
+					<div class="floatR ancho50p f11">&nbsp;</div>
+
+				</div>
+
+
+
+				<div class="paddingB5 borderBSolid marginT20"><div class="negrita color333 f12b " id="t6">Cuenta de dep&oacute;sito</div></div>
+
+				<div class="ancho100p clear overflow paddingT5">
+
+					<div id="desCuentaCargo" class="floatL ancho40p f11"> </div>
+
+					<div class="floatR ancho50p f11 nosimp"><span id="t6" class="normal f11 color666">Saldo actualizado </span><span id="saldoActualizado" class="normal f11 color666"></span></div>
+
+				</div>
+
+			</td>
+
+		</tr>
+
+	</table>
+
+</div>
+
+
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20" valign="top"><span class="f12" id="t8">Datos de <br /> la Inversi&oacute;n</span></td>
+
+
+
+			<td valign="top" class=" paddingB13 padding20 paddingL15 paddingR15">
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+					<tr>
+
+						<td class=" bgF1F2F2 ancho50p" align="left"><span id="t9">Tipo de operaci&oacute;n</span></td>
+
+						<td class="bgF1F2F2 paddingL0  ancho50p" id="tipoOperacion"></td>						
+
+					</tr>
+
+					<tr>
+
+						<td class="" align="left"><span id="numInversion"> </span></td>
+
+
+
+						<td class="paddingL0">900001</td>
+
+					</tr>
+
+					<tr>
+
+						<td class=" bgF1F2F2" align="left"><span id="t10">Tipo de inversi&oacute;n</span></td>
+
+						<td class="bgF1F2F2 paddingL0"><div class="f11 color666" id="tipoInversion"></div></td>
+
+					</tr>
+
+						
+
+					<tr>
+
+						<td class="" align="left"><span id="t11">Plazo en d&iacute;as</span></td>
+
+						<td class="paddingL0">100</td>
+
+					</tr>
+
+					<tr>
+
+						<td class=" bgF1F2F2" align="left"><span id="t12">Importe MXN</span></td>
+
+						<td class="bgF1F2F2 paddingL0">1,000.00</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="" align="left"><span id="t13">Instrucciones al vencimiento</span></td>
+
+						<td class="paddingL0"><div id="instruccionVencimiento" class="f11 color666"></div></td>						
+
+					</tr>
+
+					<tr id="trCuentaReembolso" class="displayN">
+
+						<td class=" bgF1F2F2" align="left"><span id="t14">Cuenta dep&oacute;sito al vencimiento</span></td>
+
+						<td class="bgF1F2F2 paddingL0"><div id="desCuentaReembolso" class="f11 color666"></div></td>						
+
+					</tr>
+
+					<tr>
+
+						<td class=" " align="left"><span id="t15">Operaci&oacute;n frecuente</span></td>
+
+						<td class=" paddingL0"><div id="divFrecuente" class="f11 color666">
+
+							No
+
+						</div></td>
+
+					</tr>
+
+				</table>
+
+				<div class="padding4"></div>
+
+			</td>
+
+		</tr>
+
+	</table>      
+
+</div>
+
+
+
+</div>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Inversion Pagare|AplicadaCancelacion.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+
+
+</body>
+
+</html>

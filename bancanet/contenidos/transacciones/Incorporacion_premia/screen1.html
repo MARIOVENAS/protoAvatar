@@ -1,0 +1,213 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Capture',
+			'Confirmation',
+			'Verification',
+			'Incorporate to Banamex Premia',
+			'Select the card you want to register at Banamex Premia and click "Continue"',
+			'Premia Card:',
+			'&nbsp;&nbsp;Select a card',
+			'Card:',
+			'&nbsp;&nbsp;Select a card',
+			'Register other cards',
+			'CONTINUE',
+			'Cancel');
+    </script>
+    
+
+    <script type="text/javascript">
+	$(document).ready(function(){
+		top.hideyuda(); 
+		top.hideimp();
+		setTimeout(function(){top.ajustarP();},800);
+		setTimeout(function(){llena();},1000);
+	});
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+<div class="width691 floatL">
+		
+        <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura"  class="selected"><strong>1</strong> <span id="t23">Captura</span> </li>
+            <li id="opcVerifica"><strong>2</strong>  <span id="t24">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t25">Respuesta</span> </li>
+        </ul>
+        </div>
+          
+        <!--  <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+          	<td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsqB" id="t23">Captura</td>
+              </tr>
+               <tr>
+                <td class="esq_LB">&nbsp;</td>
+                <td class="esq_B"></td>
+                <td class="esq_RB">&nbsp;</td>
+              </tr>
+              </table>
+          </td>
+          <td class="width20">&nbsp;</td>
+          <td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t24">Confirmaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+            <td class="width20">&nbsp;</td>
+            <td width="32%">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t25">Verificaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+          </tr>
+          </table> -->
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t26">Incorporaci&oacute;n a Banamex Premia</h3>
+
+            </div>
+
+			<p class="instructions margin-botom0" id="t27"  style="margin-bottom:18px !important; *margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Selecciona una tarjeta que deseas incorporar a Banamex Premia y da clic en "Continuar"</p>
+
+						<div class="width141 clear">
+							<div class="form-row margin-right0">
+                                <div class="floatLI overflow width-146" style="padding-top:3px !important; *padding-top:9px; padding-top:9px\0/;">
+                                	<div class="floatLI" id="t28">Tarjeta Premia:</div>
+                                </div>
+                                
+                                <div class="floatLI paddingL5">
+                                <select id="sol1" class="width220 paddingL0" onChange="valor1=this.value; cambiaCancelar();">
+									<option selected="selected" value="0" id="t29">Selecciona una tarjeta</option>
+									<option  value="1">Mi tarjeta - Tarj. Cl&aacute;sica - MXN - 12780 - $ 15,987.13</option>
+								</select>
+                                </div>
+                                
+                                <div class="clear"></div>
+                            </div>
+                            <div class="form-row margin-right0">
+                                <div class="floatLI overflow width-146" style="padding-top:3px !important; *padding-top:9px; padding-top:9px\0/;">
+                                	<div class="floatLI" id="t30">Tarjeta:</div>
+                                </div>
+                                
+                                <div class="floatLI paddingL5">
+                                <select id="sol2" class="width220 paddingL0" onChange="valor=this.value;">
+									<option selected="selected" value="0" id="t31">Selecciona una tarjeta</option>
+									<option  value="1">Mi tarjeta - Tarj. Cl&aacute;sica - MXN - 12780 - $ 15,987.13</option>
+								</select>
+                                </div>
+                                
+                                <div class="floatLI marginL10 width205" style="padding-top:1px !important; *padding-top:5px; padding-top:5px\0/;">
+                                <ul class="cN-primaryNav width205">
+                                <li class="cN-primaryNav">
+									<div id="flechaLinks">
+										<span class="flechaazul float-left"></span>
+										<a href="javascript:top.modalCuentas();" class="sinBold" id="t32">Incorporar m&aacute;s de una tarjeta</a>
+									</div>
+								</li>
+							</ul>
+                            </div>
+                                
+                                <div class="clear"></div>
+                            </div>
+
+                        </div><!-- Fin width141 -->
+
+						
+						<div id="btns"> <!-- Botones -->
+                        
+						<div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT0">
+                        
+                            <div class="floatLI overflow width-146">&nbsp;</div>
+
+							<ul class="cN-primaryNav paddingL5">
+
+								<li class="cM-spriteBase cN-primaryNavButton">
+                                	<a href="javascript:void(0);" onClick="javascript:continuar();" id="t33">CONTINUAR</a>
+                                </li>	
+                                <li class="cN-primaryNav">
+									<div id="flechaLinks" class="cancelarX displayNi">
+										<span class="flechaazul float-left"></span>
+										<a id="t34" href="javascript:cancelar();" class="sinBold">Cancelar</a>
+									</div>
+								</li>
+
+							</ul>
+
+						 </div>	
+                         
+                         </div><!-- BTN -->
+
+						<div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript">
+	
+	function llena(){
+		setTimeout(function(){$("#sol1 option[value='1']").attr("selected",true);},900);
+		setTimeout(function(){
+			$("#sol2 option[value='1']").attr("selected",true);
+			valor=1;
+		},1000);
+		setTimeout(function(){ $('.cancelarX').removeClass('displayNi');},1100);
+		
+	}
+	var valor=0;
+	function continuar(){
+		if(valor==1){
+			top.cargaDocN('Incorporacion_premia/screen1_C1.html');
+		}
+	}
+	var valor1=0;
+	function cambiaCancelar(){
+		if(valor1!=1){
+			$('.cancelarX').addClass('displayNi');
+		}else{
+			$('.cancelarX').removeClass('displayNi');
+		}
+	}
+	
+	function cancelar(){
+		$("#sol1 option[value='0']").attr("selected",true);
+		$("#sol2 option[value='0']").attr("selected",true);
+		$('.cancelarX').addClass('displayNi');
+		//setTimeout(function(){llena();},1800);
+	}
+	</script>
+</body>
+</html>

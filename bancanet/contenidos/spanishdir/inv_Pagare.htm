@@ -1,0 +1,163 @@
+<html>
+
+<script type="text/javascript" src="../bbAvatar/js/motor.js"></script>
+
+<script>
+
+function Initialize(){
+
+	var d=window.parent.document.forms[0];
+
+	var o=document.forms[0];
+
+	//d.action=o.action;
+
+	d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+	d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+	d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+	d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+	d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+	d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+	window.parent.document.getElementById('NumeroFolios').value = [NumofRows];
+
+	window.parent.document.getElementById('EventoFolios').value = "[EVENTO_FOLIOS]";
+
+	if("[EVENTO_FOLIOS]" == "RPTA INV PLAZO FIJO" || "[EVENTO_FOLIOS]" == "OK"){
+
+		window.parent.document.getElementById('foliosDiv').innerHTML = document.getElementById('divFolios').innerHTML;
+
+	}else{
+
+		window.parent.document.getElementById('foliosDiv').innerHTML = document.getElementById('divError').innerHTML;
+
+	}
+
+	
+
+	if([NumofRows] >= 0){
+
+		var cuentaCorta = ("[CTACORTA]").replace(/^\s*|\s*$|\s*/g,"");
+
+		var longActual = cuentaCorta.length;
+
+		
+
+		for(i=longActual;i<5;i++){
+
+			cuentaCorta = '*' + cuentaCorta;
+
+		}
+
+		if(("[ALIAS]").replace(/^\s*|\s*$|\s*/g,"") != "")
+
+			var descripcion = "[ALIAS] - " + cuentaCorta;
+
+		else
+
+			var descripcion = "[DESCORTA] - " + cuentaCorta;
+
+			
+
+		document.getElementById('divDescrip').innerHTML = descripcion;
+
+	}
+
+	
+
+	window.parent.mostrarFolios();
+
+}
+
+</script>
+
+<body>
+
+<form  method="POST" action="" name="APPS_FORM_MAIN">
+
+<input type="hidden" name="EWF_SYS_0">
+
+<input type="hidden" name="EWF_SYS_1">
+
+<input type="hidden" name="EWF_FORM_NAME" value="LEV2 Main">
+
+<input type="hidden" name="DISPLAYPAGE">
+
+<input type="hidden" name="TEMPLATE_FILE">
+
+<input type="hidden" name="SEQUENCE_NUMBER">
+
+<input type="hidden" name="EWFBUTTON">
+
+
+
+<input type="hidden" id="EventoFolios" />
+
+<input type="hidden" id="NumeroFolios" value="[NumofRows]"/>
+
+<input id="tipoInversion" value="[codigoInst]"><br>
+
+<input id="tipoReembolso" value="[codigoreemb]"><br>
+
+<input id="plzovig" value="[plzovig]"><br>
+
+
+
+<input id="tipoCuenta" value="[codtipceje]"><br>
+
+<input id="numCuenta" value="[numcuenta]"><br>
+
+<input id="saldoFinal" value="[sdovenc]">
+
+<input id="saldoInicial" value="[invinicial2]">
+
+<input id="POSIBLESOLUCION" value="[POSIBLESOLUCION]" >
+
+
+
+
+
+
+
+<input type="hidden" id="DATA1" name="DATA1" />
+
+<input type="hidden" id="DATA2" name="DATA2" />
+
+<input type="hidden" id="DATA3" name="DATA3" />
+
+<input type="hidden" id="DATA4" name="DATA4" />
+
+<input type="hidden" id="DATA5" name="DATA5" />
+
+<input type="hidden" id="DATA6" name="DATA6" />
+
+<input type="hidden" id="DATA7" name="DATA7" />
+
+<input type="hidden" id="DATA8" name="DATA8" />
+
+<input type="hidden" id="DATA9" name="DATA9" />
+
+<input type="hidden" id="DATA10" name="DATA10" />
+
+<input type="hidden" id="DATA11" name="DATA11" />
+
+<input type="hidden" id="DATA12" name="DATA12" />
+
+<input type="hidden" id="DATA13" name="DATA13" />
+
+<input type="hidden" id="DATA14" name="DATA14" />
+
+<input type="hidden" id="DATA15" name="DATA15" />
+
+
+
+</form>
+
+</body>
+
+</html>

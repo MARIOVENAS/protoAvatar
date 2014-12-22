@@ -1,0 +1,459 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+       
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Account statement',
+	
+			'Online balance report',
+			
+			'Afore Account:',
+			'Balance report:',
+			'30 Aug 2014',
+			
+			'GENERAL SUMMARY DETAIL',
+			'Concept',
+			'Balance at the beginning of the period',
+			'Net Contributions',
+			'Withdrawals',
+			'Balance at the end of the period',
+			
+			'Concept',
+			'Balance at the beginning of the period',
+			'Net Contributions',
+			'Withdrawals',
+			'Balance at the end of the period',
+			
+			'Concept',
+			'Balance at the beginning of the period',
+			'Net Contributions',
+			'Withdrawals',
+			'Balance at the end of the period',
+			
+			'The consult shows the latest available balance report, which is only for informative purposes, does not have recognition as official or tax receipt.',
+			
+			/**etiquetas primera fila resumen General **/
+			'GENERAL SUMMARY',
+			'Concept',
+			'Balance at the beginning of the period',
+			'Quarter operations transactions',
+			'Balance at the end of the period'
+												
+			);
+			
+			
+    </script>
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+		
+	setTimeout(function(){top.tamano8();},1000);
+	
+	top.set_imprimir('transacciones/Edo_Cta_Afore/screenA1_print.html',850, 950);
+		
+	});
+	</script>
+</head>
+
+<body class="bg_demo cont_demo2" style="height:100%;">
+
+<div class="floatL width100p">
+
+		<div id="cont-chequeras">
+
+                <h3 id="t23" class="float-left">Estado de cuenta</h3>
+
+            </div>
+            
+            <div class="clear">
+            	<p class="instructions margin-bottom20" id="t24">Informe de saldos en l&iacute;nea.</p>
+            </div>
+            
+            <div class="form-row margin-bottom10">
+						<label id="t25" class="for-table sinBold float-left">Cuenta Afore:</label>
+                        <label class="for-table sinBold float-left">Mi retiro - Afore NSS - MXN - 12345</label>
+						<div class="clear"></div>
+			</div>
+            
+            <div class="form-row">
+						<label class="for-table sinBold float-left" id="t26">Informe de saldos al:</label>
+                        <label class="for-table sinBold float-left" id="t27">30 Ago 2014</label>
+						<div class="clear"></div>
+			</div>
+            	
+            <div class="border-top clear"></div>
+            
+            <div class="width141 clear">
+           	  <div id="subapp-box" class="ancho100p" style="min-height:315px !important;  margin-top:0px !important; margin-bottom:0px !important;">
+            	
+                <p class="bold" id="t45">RESUMEN GENERAL</p>
+                <table cellspacing="0" cellpadding="0" border="0" class="margin-botom0 margin-top5 back_white ancho100p">
+                   <tbody>
+                      <tr class="ada">
+                        <th width="40%" scope="col" class="borderLabels alto37" style="vertical-align:top !important;">
+                            <span class="strong float-left paddingL10 marginT5" id="t46">Concepto</span>
+                        </th> 
+                        <th width="20%" scope="col" class="borderLabels alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t47" >Saldo al inicio del<br>per&iacute;odo</span>
+                        </th> 
+                        <th width="20%" scope="col" class="borderLabels alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t48">Movimientos en el<br>cuatrimestre</span>
+                        </th>
+                         <th width="20%" scope="col" class="borderLabels alto37 padding-right10" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t49">Saldo al final del<br>per&iacute;odo</span>
+                        </th>                   
+                      </tr>
+                      <tr class="degrade">
+                        <td class=""><span class="paddingL10">Tu Ahorro para el Retiro</span></td>
+                        <td class="paddingR5 textR">$ 37,158.17 MXN +</td>
+                        <td class="paddingR5 textR">$ 14,439.49 MXN +</td>
+                        <td class="padding-right10 textR">$ 51,597.66 MXN +</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class=""><span class="paddingL10">Tu Ahorro para la Vivienda</span></td>
+                        <td class="paddingR5 textR">$ 22,079.58 MXN +</td>
+                        <td class="paddingR5 textR">$ 8,422.76 MXN +</td>
+                        <td class="padding-right10 textR">$ 30,502.34 MXN +</td>
+                      </tr>
+                      <tr>
+                        <td class=""><span class="paddingL10">Tu Ahorro Voluntario</span></td>
+                        <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                        <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                        <td class="padding-right10 textR">$ 0.00 MXN +</td>
+                      </tr> 
+                      <tr class="greyBack">
+                        <td class="borderB1solidCCC"><span class="paddingL10 bold">Total de tu ahorro</span></td>
+                        <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 59,237.75 MXN +</span></td>
+                        <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 22,862.25 MXN +</span></td>
+                        <td class="padding-right10 borderB1solidCCC textR"><span class="bold">$ 82,100.00 MXN +</span></td>
+                      </tr>
+                    </tbody>
+                </table>
+                
+                <p class="bold marginT30" id="t28">DETALLE DEL RESUMEN GENERAL</p>
+                <table cellspacing="0" cellpadding="0" border="0" class="margin-botom0 margin-top5 back_white ancho100p altura37px">
+                  <tr class="">
+                    <td class="borderB1solidCCC paddingL0" colspan="5">
+                    <span class="strong float-left">TU AHORRO PARA EL RETIRO</span>
+                    </td>
+                   </tr>
+                   <tbody>
+                      <tr class="ada">
+                        <th width="30%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-left paddingL10 marginT5" id="t29">Concepto</span>
+                        </th> 
+                        <th width="15%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t30">Saldo al inicio del<br>per&iacute;odo</span>
+                        </th>
+                        <th width="15%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t31">Aportaciones<br>Netas</span>
+                        </th>
+                        <th width="13%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t32">Retiros</span>
+                        </th>
+                         <th width="17%" scope="col" class="borderB1solidCCC alto37 padding-right10" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t33">Saldo al final del<br>per&iacute;odo</span>
+                        </th>                   
+                      </tr>
+                      </tbody>
+                      <tr class="degrade">
+                        <td class="" colspan="5">
+                        <span class="bold paddingL10">IMSS</span>
+                        <br>
+                        <span class="paddingL10">Retiro Cesant&iacute;a en Edad Avanzada y Vejez (RCV)</span> <span class="bold">(1)</span>
+                        </td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class=""><span class="paddingL10">Retiro 1997</span></td>
+                        <td class="paddingR5 textR">$ 8,325.79 MXN +</td>
+                        <td class="paddingR5 textR">$ 4,015.51 MXN +</td>
+                        <td class="paddingR5 textR">$ 65.51 MXN +</td>
+                        <td class="padding-right10 textR">$ 12,275.79 MXN +</td>
+                      </tr>
+                      <tr>
+                        <td class=""><span class="paddingL10">Cesant&iacute;a y Vejez</span></td>
+                        <td class="paddingR5 textR">$ 27,241.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 10,549.83 MXN +</td>
+                        <td class="paddingR5 textR">$ 205.63 MXN +</td>
+                        <td class="padding-right10 textR">$ 37,585.60 MXN +</td>
+                      </tr> 
+                      <tr class="greyBack">
+                        <td class=""><span class="paddingL10">Cuota Social</span></td>
+                        <td class="paddingR5 textR">$ 1,590.98 MXN +</td>
+                        <td class="paddingR5 textR">$ 155.87 MXN +</td>
+                        <td class="paddingR5 textR">$ 10.58 MXN +</td>
+                        <td class="padding-right10 textR">$ 1,736.27 MXN +</td>
+                      </tr>
+                      <tr class="">
+                        <td class="borderB1solidCCC" id="t36"><span class="paddingL10">SAR - IMSS 1992</span> <span class="bold">(2)</span></td> 
+                        <td class="paddingR5 textR borderB1solidCCC">$ 19,495.72 MXN +</td>
+                        <td class="paddingR5 textR borderB1solidCCC">$ 8,342.31 MXN +</td>
+                        <td class="paddingR5 textR borderB1solidCCC">$ 0.00 MXN +</td>
+                        <td class="padding-right10 textR borderB1solidCCC">$ 27,838.03 MXN +</td>
+                      </tr>
+                      <!-- ISSSTE -->
+                       <tr>
+                   		<td class="height25 borderB1solidCCC" valign="middle" colspan="5">&nbsp;
+                        
+                        </td>
+                  	  </tr>
+                      <tbody>
+                      <tr class="ada">
+                        <th width="30%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-left paddingL10 marginT5" id="t29">Concepto</span>
+                        </th> 
+                        <th width="15%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t30">Saldo al inicio del<br>per&iacute;odo</span>
+                        </th>
+                        <th width="15%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t31">Aportaciones<br>Netas</span>
+                        </th>
+                        <th width="13%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t32">Retiros</span>
+                        </th>
+                         <th width="17%" scope="col" class="borderB1solidCCC alto37 padding-right10" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t33">Saldo al final del<br>per&iacute;odo</span>
+                        </th>                   
+                      </tr>
+                      </tbody>
+                      <tr class="degrade">
+                        <td class="" colspan="5">
+                        <span class="bold paddingL10">ISSSTE</span>
+                        <br>
+                        <span class="paddingL10">Retiro Cesant&iacute;a en Edad Avanzada y Vejez (RCV)</span> <span class="bold">(3)</span>
+                        </td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class=""><span class="paddingL10">Retiro 1992</span></td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                        <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                      </tr>
+                      <tr>
+                        <td class=""><span class="paddingL10">Cesant&iacute;a y Vejez</span></td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                        <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                      </tr> 
+                      <tr class="greyBack">
+                        <td class=""><span class="paddingL10">Cuota Social</span></td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                        <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                      </tr>
+                      <tr class="">
+                        <td class=""><span class="paddingL10">SAR - IMSS 1992</span> <span class="bold">(4)</span></td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                        <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class=""><span class="paddingL10">Ahorro Solidario</span> <span class="bold">(5)</span></td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                        <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                      </tr>
+                      <tr class="">
+                        <td class=""><span class="paddingL10">Bono de Pensi&oacute;n</span> <span class="bold">(6)</span></td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                        <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                        <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="borderB1solidCCC">
+                        <span class="paddingL10 bold">Subtotal de tu ahorro para el</span>
+                        <br>
+                        <span class="paddingL10 bold">retiro (1+2+3+4+5+6)</span>
+                        </td>
+                        <td class="paddingR5 textR borderB1solidCCC"><span class="bold">$ 4,874.40 MXN +</span></td>
+                        <td class="paddingR5 textR borderB1solidCCC"><span class="bold">$ 4,874.40 MXN +</span></td>
+                        <td class="paddingR5 textR borderB1solidCCC"><span class="bold">$ 0.00 MXN +</span></td>
+                        <td class="padding-right10 textR borderB1solidCCC"><span class="bold">$ 4,874.40 MXN +</span></td>
+                      </tr>
+                      
+                   <!-- TU AHORRO PARA LA VIVIENDA -->
+                    
+                   <tr>
+                   		<td class="height25" valign="middle" colspan="5">&nbsp;
+                        
+                        </td>
+                   </tr>  
+                   <tr class="">
+                    <td class="borderB1solidCCC paddingL0" colspan="5">
+                    <span class="strong float-left">TU AHORRO PARA LA VIVIENDA</span>
+                    </td>
+                   </tr>
+                   <tbody>
+                       <tr class="ada">
+                        <th width="30%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-left paddingL10 marginT5" id="t34">Concepto</span>
+                        </th> 
+                        <th width="15%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t35">Saldo al inicio del<br>per&iacute;odo</span>
+                        </th>
+                        <th width="15%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t36">Aportaciones<br>Netas</span>
+                        </th>
+                        <th width="13%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t37">Retiros</span>
+                        </th>
+                         <th width="17%" scope="col" class="borderB1solidCCC alto37 padding-right10" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t38">Saldo al final del<br>per&iacute;odo</span>
+                        </th>                   
+                      </tr>
+                      </tbody>
+                  <tr class="degrade">
+                  <td class=""><span class="paddingL10">INFONAVIT (1997)</span> <span class="bold">(1)</span></td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                    <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                  </tr>
+                  <tr class="greyBack">
+                    <td class=""><span class="paddingL10">INFONAVIT (1992)</span> <span class="bold">(2)</span></td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                    <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                  </tr>
+                  <tr>
+                    <td class=""><span class="paddingL10">FOVISSSTE (2008)</span> <span class="bold">(3)</span></td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                    <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                  </tr> 
+                  <tr class="greyBack">
+                    <td class=""><span class="paddingL10">FOVISSSTE (1992)</span> <span class="bold">(4)</span></td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                    <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                  </tr>
+                  <tr>
+                    <td class="borderB1solidCCC">
+                    <span class="paddingL10 bold">Subtotal de tu ahorro para la</span>
+                    <br>
+                    <span class="paddingL10 bold">vivienda (1+2+3+4)</span>
+                    </td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 4,874.40 MXN +</span></td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 4,874.40 MXN +</span></td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 0.00 MXN +</span></td>
+                    <td class="padding-right10 borderB1solidCCC textR"><span class="bold">$ 4,874.40 MXN +</span></td>
+                  </tr>
+                      
+                  <!-- TU AHORRO VOLUNTARIO -->
+                    
+                   <tr>
+                   		<td class="height25" valign="middle" colspan="5">&nbsp;</td>
+                   </tr>  
+                   <tr class="">
+                    <td class="borderB1solidCCC paddingL0" colspan="5">
+                    <span class="strong float-left">TU AHORRO VOLUNTARIO</span>
+                    </td>
+                   </tr>
+                   <tbody>
+                       <tr class="ada">
+                        <th width="30%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-left paddingL10 marginT5" id="t39">Concepto</span>
+                        </th> 
+                        <th width="15%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t40">Saldo al inicio del<br>per&iacute;odo</span>
+                        </th>
+                        <th width="15%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t41">Aportaciones<br>Netas</span>
+                        </th>
+                        <th width="13%" scope="col" class="borderB1solidCCC alto37" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t42">Retiros</span>
+                        </th>
+                         <th width="17%" scope="col" class="borderB1solidCCC alto37 padding-right10" style="vertical-align:top !important;">
+                            <span class="strong float-right textR marginT5" id="t43">Saldo al final del<br>per&iacute;odo</span>
+                        </th>                   
+                      </tr>
+                      </tbody>
+                  <tr class="degrade">
+                  <td class=""><span class="paddingL10">Aportaciones Voluntarias</span> <span class="bold">(1)</span></td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                    <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                  </tr>
+                  <tr class="greyBack">
+                    <td class="">
+                    <span class="paddingL10">Aportaciones Complementarias</span> 
+                    <br>
+                    <span class="paddingL10">de Retiro</span> <span class="bold">(2)</span></td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                    <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                  </tr>
+                  <tr>
+                    <td class="">
+                    <span class="paddingL10">Aportaciones de Ahorro a Largo</span>
+                    <br>
+                    <span class="paddingL10">Plazo</span> <span class="bold">(3)</span></td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 4,874.40 MXN +</td>
+                    <td class="paddingR5 textR">$ 0.00 MXN +</td>
+                    <td class="padding-right10 textR">$ 4,874.40 MXN +</td>
+                  </tr> 
+                  <tr class="greyBack">
+                    <td class="borderB1solidCCC">
+                    <span class="paddingL10 bold">Subtotal de tu ahorro</span>
+                    <br>
+                    <span class="paddingL10 bold">voluntario (1+2+3)</span>
+                    </td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 4,874.40 MXN +</span></td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 4,874.40 MXN +</span></td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 0.00 MXN +</span></td>
+                    <td class="padding-right10 borderB1solidCCC textR"><span class="bold">$ 4,874.40 MXN +</span></td>
+                  </tr>
+                  <tr>
+                   		<td class="height25 borderB1solidCCC" valign="middle" colspan="5">&nbsp;</td>
+                   </tr>
+                   <tr class="greyBack">
+                    <td class="borderB1solidCCC">
+                    <span class="paddingL10 bold">TOTAL DE TU AHORRO</span>
+                    </td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 59,237.75 MXN +</span></td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 23,143.97 MXN +</span></td>
+                    <td class="paddingR5 borderB1solidCCC textR"><span class="bold">$ 0.00 MXN +</span></td>
+                    <td class="padding-right10 borderB1solidCCC textR"><span class="bold">$ 82,100.00 MXN +</span></td>
+                  </tr>
+                </table>
+                </div><!-- id="subapp-box"  -->
+            </div><!-- Fin width141 -->
+
+						
+            <div class="clear margin-top10 margin-left5">
+				<p class="instructions" id="t44">La consulta presenta el &uacute;ltimo informe de Saldos disponible, el cual es s&oacute;lo de car&aacute;cter informativo, no tiene validez oficial como comprobante oficial o fiscal.</p>
+            </div>
+
+	  <div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript" src="../Activacion_tarjetas/prototipo_BancaNetAvatar/js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../Activacion_tarjetas/prototipo_BancaNetAvatar/js/plugins.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+</body>
+</html>

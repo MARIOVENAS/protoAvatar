@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="NZYB3519BQCVB31PTV8MO9VQ1GORNDVM@GHHUD19" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZDOA-PaginaPoliticas"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="dpoliti01.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="31"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>      
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+<script language="javascript">
+
+var es=new Array('Direct-bill-payment registration','Below are the payment policies for the selected bill. If you want to continue with the direct bill-payment, click "Accept".','Payment Policies for GMAC, GMAC MEXICANA S.A DE C.V','Return','Accept','Direct Debit','<ul><li>IN ORDER TO HAVE THIS SERVICE YOU WILL NEED TO HAVE YOUR ACCOUNT INCORPORATED TO ELECTRONIC BANKING<br><li>IN CASE OF CANCELLATION AND/ OR CHANGE OF ACCOUNT, THE PAYMENT INSTRUCTION  WILL BE CANCELLED AUTOMATICALLY, IN ORDER TO KEEP THE SERVICE ACTIVE YOU MUST NOTIFY BANAMEX OF THESE MODIFICATIONS<br><li>THIS NOTIFICATION MUST BE DONE AT LEAST 10 DAYS BEFORE YOUR NEXT DUE DATE; OTHERWISE YOU WILL HAVE TO MAKE THE DEPOSIT DIRECTLY AT THE BANK<br><li>THIS SERVICE APPLIES ONLY TO CHECK ACCOUNT OR DEBIT CARD<br><li>THE PAYMENT OF THE SERVICE WILL BE APPLIED IN THE PERIODS AND AMOUNTS ESTABLISHED IN THE AGREEMENTS SIGNED BY GMAC AND THE CUSTOMER. FOR THIS REASON, YOU MUST HAVE ENOUGH FUNDS IN YOUR ACCOUNT<br><li>IN THE EVENT OF INSUFFICIENT FUNDS, THE CHARGE WILL BE PROCESSED AGAIN TWO DAYS LATER. IF AFTER THIS SECOND TRY YOU DO NOT HAVE ENOUGH FUNDS, YOU WILL HAVE TO MAKE YOUR PAYMENT DIRECTLY IN THE BANK<br><li>YOU MUST COMPLETE THE DATA AND THE APPLICATION FOR THE SERVICE AT LEAST 10 LABOR DAYS BEFORE YOUR NEXT DUE DATE IN ORDER TO REALIZE THE CHARGE IN THE SAME MONTH. OTHERWISE YOU WILL HAVE TO MAKE THE DEPOSIT DIRECTLY AT THE BANK<br><li>YOUR BANK4S STATEMENT WILL SHOW THE CHARGES MADE BY GMAC WITH THE FOLLOWING DESCRIPTION: "PAGO A CONTRATO GMAC (NUMERO DE CONTRATO)" WHICH MEANS "GMAC CONTRAC PAYMENT (ACCOUNT NUMBER)"<br><li>FOR INFORMATION ABOUT YOUR CHANGES, PLEASE CONTAC GMAC IN THE FOLLOWING NUMBER: 01 800 710 96 82. BANAMEX WILL ONLY PROVIDE YOU INFORMATION ABOUT THE CHARGED AMOUNT<br><li>IN ORDER TO PROCESS PROPERLY THE CHARGE TO YOUR ACCOUNT, YOU MUST COMPLETE CORRETLY THE REQUESTED INFORMATION<br><li>BOTH THE DEBIT ACCOUNT AND GMAC\'S CONTRACT MUST BE UNDER THE SAME NAME<br><li>IF THE DUE DATE FOR THE CHARGE IS A NOT LABOR DAY, THEN THE CHARGE WILL BE PROCESSED THE NEXT LABOR DAY<br></ul>');
+
+
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+</script> 
+
+
+
+<script>parent.setFecha("20/04/12    11:51:24  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="115122  ";b$Cont="115124  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+if(""=="E"){
+
+$("#mensajeError_contenido_div", window.parent.document).html($("#idErr").html());	
+
+parent.$.modal({
+
+opacity:60, 
+
+overlayClose:false, 
+
+flagDiv:true,
+
+widthDivIfrm:600});
+
+}
+
+
+
+
+
+
+
+
+
+ 
+
+top.ajustar();
+
+
+
+});
+
+	
+
+</script> 
+
+
+
+
+
+<div class="float-left fonttit" id="t5">Domiciliaci&oacute;n</div>
+
+
+
+<div class="panelIzEnca3_text2" id="t0">
+
+Alta de pagos domiciliados
+
+</div>
+
+<div class="color666 paddingT5 f11" id="t1">
+
+A continuaci&oacute;n se muestran las pol&iacute;ticas de pago aplicables al servicio seleccionado. Si desea continuar con el servicio de domiciliaci&oacute;n, da clic en &quot;Aceptar&quot;.
+
+</div>
+
+
+
+<div class="saldos_bloque3 overflow">
+
+<div class="panelIzEnca3_text2" id="t2">Pol&iacute;ticas de pago para GMAC, GMAC MEXICANA S.A DE C.V</div>
+
+
+
+<div class="saldos_bloque2_f3inb paddingT5">
+
+<div class="saldos_bloque2_f4_txt ancho100p floatL" id="t6">
+
+<ul><li>PARA EL ALTA DE ESTE SERVICIO DEBERA TENER INCORPORADAS SUS CUENTAS AL SERVICIO DE BANCA ELECTRONICA SI QUIERE DARSE DE ALTA POR MEDIO DE INTERNET<br><li>EN CASO DE CANCELACION Y/O CAMBIO DE LAS CUENTAS, LA INSTRUCCION DE PAGO SE CANCELARA AUTOMATICAMENTE. PARA CONTINUAR CON EL SERVICIO DEBERA NOTIFICAR A BANAMEX PARA QUE SE MODIFIQUEN SUS DATOS Y PUEDA LLEVARSE A CABO LA DOMICILIACION<br><li>EL CARGO PARA EFECTUAR EL PAGO DE ESTE SERVICIO ES A CUENTA DE CHEQUES Y TARJETAS DE DEBITO EXCLUSIVAMENTE.                            EBERA NOTIFICAR A BANAMEX PARA QUE SE MODIFIQUEN SUS DATOS Y PUEDA LLEVARSE A CABO LA DOMICILIACION<br><li>EL PAGO DE SU SERVICIO SE APLICARA EN LA PERIODICIDAD Y MONTOS ESTABLECIDOS EN LOS ACUERDOS FIRMADOS POR EL CLIENTE Y GMAC. POR LO QUE DEBERA CONTAR CON FONDOS SUFICIENTES, DE LO CONTRARIO NO SE EFECTUARA EL PAGO<br><li>EN CASO DE NO CONTAR CON FONDOS SUFICIENTES EL DIA DEL VENCIMINETO, SE INTENTARA NUEVAMNETE REALIZAR EL CARGO DOS DIAS DESPUES DE SU VENCIMIENTO. SI AUN DESPUES DE ESTE PERIODO NO SE CUENTA CON FONDOS SUFICIENTES, DEBERA REALIZAR SU PAGO DIRECTAMENTE EN LA SUCURSAL<br><li>EL ALTA DE SUS DATOS PARA DOMICILIACION DEBERA EFECTUARSE AL MENOS 10 DIAS HABILES, DE ANTICIPACION A LA FECHA LIMITE DE PAGO PARA QUE SE REALICE LA OPERACION DE CARGO EN EL MISMO MES<br><li>ASI MISMO, EN CASO DE CANCELACION Y/O  CAMBIO DE LAS CUENTAS, DEBERA HACER LA NOTIFICACION A BANAMEX AL MENOS CON 10 DIAS HABILES DE ANTICIPACION A SU PROXIMA FECHA LIMITE DE PAGO. EN CASO DE QUE SU FECHA DE CORTE SEA MENOR A LOS 10 DIAS ESTIPULADOS,DEBERA REALIZAR SU PAGO EN LA SUCURSAL<br><li>EL ESTADO DE CUENTA BANCARIO LE MOSTRARA LOS CARGOS REALIZADOS POR GMAC CON LA SIGUIENTE DESCRIPCION: "PAGO A CONTRATO GMAC (NUMERO DE CONTRATO)"<br><li>EN CASO DE REQUERIR ALGUNA ACLARACION REFERENTE A SUS CARGOS, DEBERA CONTACTAR DIRECTAMENTE A GMAC MEDIANTE EL SIGUIENTE NUMERO: 01 800 710 96 82. EL BANCO SOLO LE PROPORCIONARA INFORMACION SOBRE EL IMPORTE DEL PAGO REALIZADO<br><li>PARA QUE SE LLEVE A CABO ADECUADAMENTE EL CARGO POR DOMICILIACION, DEBERA COMPLETAR CORRECTAMENTE LA INFORMACION SOLICITADA<br><li>LA CUENTA A LA QUE SE REALICE EL DEBITO DEBE CORRESPONDER AL TITULAR DEL CONTRATO FIRMADO CON GMAC<br><li>SI LA FECHA REQUERIDA PARA EFECTUAR EL DEPOSITO ES DIA INHABIL, EL CARGO SE EFECTUARA AL SIGUIENTE DIA HABIL BANCARIO<br></ul>
+
+</div>
+
+</div>           	
+
+
+
+</div>
+
+<div class="marginT20 overflow">
+
+<input type="button"  id="t3" class="btnRJ86 floatL" value="Regresar" onClick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/domiciliar_Pago.html')"/>
+
+<input type="button"  id="t4" class="btnAZ86 floatR" value="Aceptar" onClick="parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/solicitud_pago_GMAC.html')"/>
+
+</div> 
+
+<INPUT type="hidden" name="EWFBUTTON" value="" />
+
+
+
+
+
+<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Causa:&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Domiciliacion Alta|dpoliti01.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

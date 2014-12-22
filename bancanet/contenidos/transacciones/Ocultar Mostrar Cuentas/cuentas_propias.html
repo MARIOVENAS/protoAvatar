@@ -1,0 +1,1983 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="aa0cf85a-af21-4344-bce4-e56fe7dca4ea" ><input type=hidden name="EWF_SYS_1" value="P004SXSKLCBFWBNEQSQL3SE8WFKQS347CZFLA8FV" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZOMC-Pagina Solicitud"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="showhide01.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="6"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../bbAvatar/css/estilos.css">
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		
+
+		agregarTodas();
+
+		mostrarGrupos();
+
+		setTimeout(function(){top.ajustarP();},1100);
+
+	}
+
+	);
+
+</script>
+
+
+
+ <script>
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+es=new Array(
+
+					"Personalized accounts",
+
+					"Enter an alias for your accounts and if you wish hide or show the Banamex accounts you need.",
+
+					"Cash accounts",
+
+					"Account",
+
+					"# Account",
+
+					"Nickname",
+
+					"Show Account",
+
+					"Dollars",
+
+					"Investments",
+
+					"At sight",
+
+					"Fixed term pesos",
+
+					"Fixed term Dollar",
+
+					"Mutual funds",
+
+					"Credit Cards",
+
+					"Premia Card",
+
+					"Credits",
+
+					"Save Changes",
+
+					"What do you want to do?",
+
+					"Make transfers",
+
+					"Bill payments",
+
+					"Fondos Banamex");
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+} 
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+} 
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+	var conInput=0;
+
+	
+
+	var leyVisibles,leyOcultas,leyAlias;
+
+	
+
+		leyVisibles="visibles";
+
+		leyOcultas="ocultas";
+
+		leyAlias = "Ingresa el alias";
+
+		var msgCarac = "El campo no puede contener caracteres especiales";
+
+	
+
+	
+
+	var isIE = (window.navigator.userAgent.indexOf("MSIE")> 0);
+
+	var cuentaActual=100;
+
+	var cont01=0.0, cont0101V =0.0,cont0101O =0.0, cont0102O=0.0, cont0102V=0.0,cont02=0.0,cont0201V=0.0,cont0201O=0.0,cont0202V=0.0,cont0202O=0.0,cont0203V=0.0,cont0203O=0.0,cont0204V=0.0,cont0204O=0.0,cont03=0.0,cont0301V=0.0,cont0301O=0.0,cont0302V=0.0,cont0302O=0.0,cont04=0.0,cont0401V=0.0,cont0401O=0.0,cont0402V=0.0,cont0402O=0.0,cont05=0.0,cont05V=0.0,cont05O=0.0;
+
+ 
+
+function agregarTodas(){
+
+
+
+try{agregarCuenta("2", "Cheques", "M.N", "873", "002", "Cheques","DEMO", "00000000000007069002","1", "1", "1", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("4", "Inv. Plazo", "M.N", "0", "  010", "Mi inversion","DEMO", "00000000005489506010","2", "87", "35", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("5", "Inv Integral", "M.N", "0", "872", "Inv Integral","DEMO", "00000000009004707872","4", "84", "19", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("6", "Cta. Maestra Opc.", "M.N", "507", "  501", "Mi maestra","DEMO", "00000000009010042501","6", "66", "7", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("9", "Tarjeta Credito", "M.N", "0", "  796", "Tarjeta Credito","DEMO", "00004540570010032796","3", "111", "1", "Activa", "1", "Propia","1");}catch(err){}
+
+try{agregarCuenta("10", "Credito", "M.N", "0", "  256", "Credito","DEMO", "00004540570010032256","7", "100", "1", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("11", "Inv Integral A", "M.N", "0", "  299", "Inv Integral A","DEMO", "00004540570010032299","4", "84", "18", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("12", "Inv Emp Banamex", "M.N", "0", "  699", "Inv Emp Banamex","DEMO", "00004540570010032699","4", "84", "14", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("13", "Cta Maestra Emp", "M.N", "0", "  899", "Cta Maestra Emp","DEMO", "00004540570010032899","4", "84", "12", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("14", "HORZCOB", "M.N", "0", "  999", "HORZCOB","DEMO", "00004540570010032999","4", "84", "16", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("16", "Cheques", "Dls.", "117", "888", "Cheques","DEMO", "00000000000007069888","1", "1", "5", "Activa", "5", "Propia","");}catch(err){}
+
+try{agregarCuenta("17", "HORZONT", "M.N", "0", "  746", "HORZONT","DEMO", "00000000009025912746","4", "84", "22", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("18", "Tarj Premia Pre", "M.N", "0", "793", "Tarj Premia Pre","DEMO", "00004295221094130793","3", "113", "4", "Activa", "1", "Propia","2");}catch(err){}
+
+try{agregarCuenta("19", "Cuenta Perfiles ", "M.N", "0", "502", "Cuenta Perfiles","DEMO", "0011111111111111","6", "66", "8", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("20", "Inversion Perfiles ", "M.N", "0", "502", "Inversion Perfiles","DEMO", "0022222222222222","4", "84", "26", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("21", "Credicheque Perfiles Banamex ", "M.N", "0", "502", "Credicheque Perfiles Banamex","DEMO", "0000881137003502","3", "111", "27", "Activa", "1", "Propia","1");}catch(err){}
+
+try{agregarCuenta("22", "Credito Personal Perfiles Banamex", "M.N", "0", "502", "Credito Personal Perfiles Banamex","DEMO", "0000881137013502","3", "111", "28", "Activa", "1", "Propia","1");}catch(err){}
+
+try{agregarCuenta("24", "Afore NSS", "M.N", "0", "424", " Mi afore NSS","DEMO", "0044444444444424","5", "336", "1", "Activa", "1", "Propia","");}catch(err){}
+
+try{agregarCuenta("25", "Tarj Premia Pre", "M.N", "0", "245", "Tarj Premia Pre","DEMO", "00004295221084763245","3", "113", "4", "Activa", "1", "Propia","2");}catch(err){}
+
+try{agregarCuenta("26", "Clasica", "M.N", "0", "199", "Clasica","DEMO", "00004540690834670199","3", "113", "4", "Activa", "1", "Propia","1");}catch(err){}
+
+try{agregarCuenta("27", "Banca Inversi\u00f3n", "M.N", "0", "378", "Multiseries","DEMO", "00000000009004717378","8", "99", "2", "Activa", "1", "Propia","");}catch(err){}
+
+
+
+  
+
+	
+
+	$("#con01").html(' ('+cont01+')');
+
+	$("#con0101").html(cadenaTitulo(cont0101O, cont0101V));
+
+	$("#con0102").html(cadenaTitulo(cont0102O, cont0102V));
+
+	$("#con02").html(' ('+cont02+')');
+
+	$("#con0201").html(cadenaTitulo(cont0201O, cont0201V));
+
+	$("#con0202").html(cadenaTitulo(cont0202O, cont0202V));
+
+	$("#con0203").html(cadenaTitulo(cont0203O, cont0203V));
+
+	$("#con0204").html(cadenaTitulo(cont0204O, cont0204V));
+
+	$("#con03").html(' ('+cont03+')');
+
+	$("#con0301").html(cadenaTitulo(cont0301O, cont0301V));
+
+	$("#con0302").html(cadenaTitulo(cont0302O, cont0302V));
+
+	$("#con04").html(' ('+cont04+')');
+
+	$("#con0401").html(cadenaTitulo(cont0401O, cont0401V));
+
+	$("#con0402").html(cadenaTitulo(cont0402O, cont0402V));
+
+	$("#con05").html(' ('+cont05+')');
+
+	$("#con0501").html(cadenaTitulo(cont05O, cont05V));
+
+}
+
+	
+
+function agregarCuenta(C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15){
+
+	var trEncabezado = document.createElement('tr');
+
+	trEncabezado.className="claseActiva";
+
+
+
+	var resultados = obtenerIdDivPadre(C1, C2, C3, C4, C5, C6, C7,C8,C9, C10, C11, C12, C13, C14,C15,trEncabezado);
+
+	idDivPadre = resultados[0];
+
+	if(!idDivPadre)
+
+		return;
+
+	var divPadre = document.getElementById(idDivPadre);
+
+	if (!divPadre.getElementsByTagName("tbody")[0]) {
+
+		divPadre.appendChild(document.createElement("tbody"));
+
+	}
+
+	divPadre = divPadre.getElementsByTagName("tbody")[0];
+
+	divPadre.appendChild(trEncabezado);
+
+	cuentaActual++;
+
+}
+
+
+
+function obtenerIdDivPadre(C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,C14,C15,trEncabezado) {
+
+	var contImpar;
+
+	var retdivpadre;
+
+	C9=parseInt(C9);
+
+	switch(C9)
+
+	{
+
+		case 1:
+
+			if (C13 == "1"){
+
+				retdivpadre = "contenedor010101";	
+
+				(C12=="Activa" || C12=="Active") ? cont0101V++ : cont0101O++;
+
+			} 
+
+			if (C13 == "5"){
+
+				 retdivpadre = "contenedor010201";
+
+				(C12=="Activa" || C12=="Active") ? cont0102V++ : cont0102O++;			
+
+			}
+
+			llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+			cont01++;
+
+		break;	
+
+		
+
+		case 2:
+
+			if( C10 == '87'  ||  C10 == '190'){
+
+				if (C13 == '1'){
+
+					retdivpadre = "contenedor0202";
+
+					(C12=="Activa"|| C12=="Active") ? cont0202V++ : cont0202O++;	
+
+				}
+
+				 if (C13 == '5'){
+
+					retdivpadre = "contenedor0203";
+
+					(C12=="Activa" || C12=="Active") ? cont0203V++ : cont0203O++;	
+
+				}
+
+				llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+				cont02++;
+
+			}
+
+		break;	
+
+		
+
+		case 3:
+
+			var primeros6 = C8.substring(4, 10);
+
+			if((C15 == '2' && !(primeros6 == '429522' || primeros6 == '529028'))){
+
+				retdivpadre = "contenedor010103";
+
+				llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+				(C12=="Activa" || C12=="Active") ? cont0101V++ : cont0101O++;
+
+				cont01++;
+
+			}
+
+				
+
+			if((C15 == '1' && !( (primeros6 == '881137') ||
+
+				(primeros6 == '882203') || 
+
+				( primeros6 == '882290') ||
+
+				(primeros6 == '882218') ||
+
+				(primeros6 == '882272')))){
+
+				retdivpadre = "contenedor0301";
+
+				llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+				(C12=="Activa" || C12=="Active") ? cont0301V++ : cont0301O++;
+
+				cont03++;
+
+			}
+
+			
+
+			if(primeros6 == '429522' || primeros6 == '529028') {
+
+				retdivpadre = "contenedor0302";
+
+				llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+				(C12=="Activa"|| C12=="Active") ? cont0302V++ : cont0302O++;
+
+				cont03++;
+
+			}	
+
+			if((primeros6 == '881137') ||(primeros6 == '882203')){
+
+					if (C13 == '1'){ 
+
+						 retdivpadre = "contenedor0401";
+
+						(C12=="Activa"|| C12=="Active") ? cont0401V++ : cont0401O++; 
+
+					}
+
+					if (C13 == '3'){ 
+
+						 retdivpadre = "contenedor0402";
+
+						(C12=="Activa"|| C12=="Active") ? cont0402V++ : cont0402O++; 
+
+					} 
+
+					llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+				cont04++;
+
+			}	
+
+			if((primeros6 == '882290') ||(primeros6 == '882218') ||(primeros6 == '882272')){
+
+					if (C13 == '1'){
+
+						retdivpadre = "contenedor0401";
+
+						(C12=="Activa"|| C12=="Active") ? cont0401V++ : cont0401O++; 
+
+					 } 
+
+					if (C13 == '3'){
+
+						 retdivpadre = "contenedor0402";
+
+						 (C12=="Activa" || C12=="Active") ? cont0402V++ : cont0402O++; 
+
+					} 
+
+					llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+					cont04++;
+
+			}
+
+		break;	
+
+		case 4:
+
+			if(C10 == '84' && (C11 == '16' || C11 == '22' || C11 == '23' || C11 == '24' || C11 == '25')){
+
+					retdivpadre = "contenedor0204";
+
+					(C12=="Activa"|| C12=="Active") ? cont0204V++ : cont0204O++;
+
+				}
+
+			else if(C10 == '84' && !(C11 == '16' || C11 == '22' || C11 == '23' || C11 == '24' || C11== '25')){
+
+					 retdivpadre = "contenedor0201";
+
+					(C12=="Activa"|| C12=="Active") ? cont0201V++ : cont0201O++;	
+
+					
+
+				}	
+
+				llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+			cont02++;
+
+		break;
+
+		case 5:
+
+			retdivpadre = "contenedor05";
+
+			llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+			(C12=="Activa" || C12=="Active") ? cont05V++ : cont05O++;
+
+			cont05++;
+
+		break;
+
+		case 6:
+
+			retdivpadre = "contenedor010102";
+
+			llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+			(C12=="Activa" || C12=="Active") ? cont0101V++ : cont0101O++;
+
+			cont01++;
+
+		break;
+
+		case 7:
+
+			if (C13 == '1'){ 
+
+				retdivpadre = "contenedor0401";
+
+				(C12=="Activa" || C12=="Active") ? cont0401V++ : cont0401O++; 
+
+			} 
+
+			if (C13== '3'){
+
+				 retdivpadre = "contenedor0402";
+
+				 (C12=="Activa" || C12=="Active") ? cont0402V++ : cont0402O++;
+
+			}
+
+			llenaDivEncabezado(trEncabezado,C1,C2, C4, C5, C6,C9, C10, C11,C12);
+
+			cont04++;
+
+		break;
+
+		default:
+
+		break;
+
+	}
+
+	return([retdivpadre, contImpar]);
+
+}
+
+
+
+ function mostrarGrupos(){
+
+	if(cont0101V>0 || cont0101O>0){
+
+		$("#bloqueCEfectivo").show();
+
+		$("#bloqueCEfectivoPesos1").show();
+
+		$("#saldosConte1").show();
+
+		
+
+	}
+
+	if(cont0102V>0 || cont0102O>0){
+
+		$("#bloqueCEfectivo").show();
+
+		$("#bloqueCEfectivoDolares1").hide();
+
+		$("#saldosConte2").hide();
+
+	}
+
+	if(cont0201V>0 || cont0201O>0){
+
+		$("#bloqueInversiones").show();
+
+		$("#bloqueVista1").show();
+
+		$("#saldosConte3").show();
+
+	}
+
+	if(cont0202V>0 || cont0202O>0){
+
+		$("#bloqueInversiones").show();
+
+		$("#bloquePlazo1").show();
+
+		$("#saldosConte4").show();
+
+	}
+
+	if(cont0203V>0 || cont0203O>0){
+
+		$("#bloqueInversiones").show();
+
+		$("#bloquePlazo2").show();
+
+		$("#saldosConte5").show();
+
+	}
+
+	if(cont0204V>0 || cont0204O>0){
+
+		$("#bloqueInversiones").show();
+
+		$("#bloqueFondos1").show();
+
+		$("#saldosConte6").show();
+
+	}  
+
+	if(cont0301V>0 || cont0301O>0){
+
+		$("#bloqueTarjetas").show();
+
+		$("#bloqueTCredito1").show();
+
+		$("#saldosConte7").show();
+
+	}
+
+	if(cont0302V>0 || cont0302O>0){
+
+		$("#bloqueTarjetas").show();
+
+		$("#bloqueTPremia1").show();
+
+		$("#saldosConte8").show();
+
+	}
+
+	if(cont0401V>0 || cont0401O>0){
+
+		$("#bloqueCreditos").show();
+
+		$("#bloqueCreditosPesos").show();
+
+		$("#saldosConte9").show();
+
+	}
+
+	if(cont0402V>0 || cont0402O>0){
+
+		$("#bloqueCreditos").show();
+
+		$("#bloqueCreditosUDIS").show();
+
+		$("#saldosConte10").show();
+
+	}
+
+	if(cont05V>0 || cont05O>0){
+
+		$("#bloqueAfore").show();
+
+		$("#bloqueAfore1").show();
+
+		$("#saldosConte11").show();
+
+	}
+
+} 
+
+
+
+function llenaDivEncabezado(trEncabezado,C1,C2,C4,C5, C6,C9, C10, C11,C12){
+
+	conInput++;
+
+	var tdNombreCuenta = document.createElement("td");
+
+	tdNombreCuenta.className = "borderRSolid bgF1F2F2 ancho45p";
+
+	tdNombreCuenta.innerHTML = C2;
+
+	
+
+	var tdNoCuenta = document.createElement("td");
+
+	tdNoCuenta.innerHTML = '**' + C5;
+
+	tdNoCuenta.className = "borderRSolid bgF1F2F2 ancho10p";
+
+	
+
+	var tdAlias = document.createElement("td");
+
+	tdAlias.className = "borderRSolid bgF1F2F2 ancho25p";
+
+	
+
+	var iAlias= document.createElement("input"); 
+
+	iAlias.className ="input";
+
+	iAlias.setAttribute("type","text");
+
+	iAlias.setAttribute("maxLength","20");
+
+	iAlias.name= "iAlias";
+
+	iAlias.setAttribute("id","id"+conInput);
+
+	iAlias.setAttribute("autocomplete","off");
+
+	if($.trim(C6)!="")iAlias.value = $.trim(C6);
+
+	else iAlias.value = leyAlias;
+
+	tdAlias.appendChild(iAlias);
+
+	
+
+	var iEstatus = document.createElement("input"); 
+
+	iEstatus.name = "estat";
+
+	iEstatus.type = "hidden";
+
+	iEstatus.style.display = "none";
+
+	iEstatus.value = C12;
+
+	
+
+	var iAliasOriginal= document.createElement("input"); 
+
+	iAliasOriginal.value = C6;
+
+	iAliasOriginal.name= "iAliasOriginal"
+
+	iAliasOriginal.style.display = "none";
+
+	tdAlias.appendChild(iAliasOriginal);
+
+	
+
+	var tdCheck = document.createElement("td");
+
+	tdCheck.className = "bgF1F2F2 ancho15p";
+
+	var cb = document.createElement("input");  
+
+	cb.type = "checkbox"; 
+
+	cb.name ="nradio";
+
+	if (!isIE)cb.setAttribute("onclick","cambiaEstatus(this)");
+
+	else{cb.onclick=function(){cambiaEstatus(this)}	}
+
+	
+
+	cb.value = C1;
+
+	cb.td = new Array();
+
+	cb.td[0] = tdNombreCuenta;
+
+	cb.td[1] = tdNoCuenta;
+
+	cb.td[2] = tdAlias;
+
+	cb.td[3] = tdCheck;
+
+	cb.td[4] = iAlias;
+
+	tdCheck.appendChild(cb);
+
+	if(C12 == "Activa" || C12=="Active"){	
+
+		cb.checked = true;
+
+	}
+
+	else{ 
+
+		cb.checked = false;
+
+		tdNombreCuenta.className="borderRSolid colorCCC ancho45p";
+
+		tdNoCuenta.className="borderRSolid colorCCC ancho10p";
+
+		tdCheck.className=" colorCCC ancho15p";
+
+		tdAlias.className="borderRSolid colorCCC ancho25p";
+
+		iAlias.className="bgE5E5E colorCCC input";
+
+		iAlias.disabled = true;
+
+	}
+
+	 tdCheck.appendChild(cb);
+
+	 tdCheck.appendChild(iEstatus);
+
+	 trEncabezado.appendChild(tdNombreCuenta);
+
+	 trEncabezado.appendChild(tdNoCuenta);
+
+	 trEncabezado.appendChild(tdAlias);
+
+	 trEncabezado.appendChild(tdCheck);
+
+	 
+
+}
+
+
+
+function cambiaEstatus(cb){
+
+	if(cb.checked == true){
+
+		cb.td[0].className = "borderRSolid bgF1F2F2 ancho45p";
+
+		cb.td[1].className = "borderRSolid bgF1F2F2 ancho10p";
+
+		cb.td[2].className = "borderRSolid bgF1F2F2 ancho25p";
+
+		cb.td[3].className = "bgF1F2F2 ancho15p";
+
+		cb.td[4].className = "input";
+
+		cb.td[4].disabled = false;
+
+	}
+
+	else{
+
+		cb.td[0].className = "borderRSolid colorCCC ancho45p";
+
+		cb.td[1].className = "borderRSolid colorCCC ancho10p";
+
+		cb.td[2].className = "borderRSolid colorCCC ancho25p";
+
+		cb.td[3].className = "colorCCC ancho15p";
+
+		cb.td[4].className = "input bgE5E5E colorCCC";
+
+		cb.td[4].disabled = true;
+
+	}
+
+}
+
+
+
+function cadenaTitulo(ocultas, visibles){
+
+	var cadena;
+
+	if(ocultas>0 && visibles>0){
+
+		cadena = " ( " + visibles +' '+leyVisibles +" y "+ ocultas +' '+ leyOcultas+')';
+
+	}else if(visibles>0){
+
+		cadena = " ( "+visibles +' '+leyVisibles+")";
+
+	}else if(ocultas>0){
+
+		cadena =' ( '+ocultas +' '+leyOcultas+')';
+
+	}
+
+	return cadena;
+
+}
+
+
+
+function validaOcultar(){
+
+	if(language == "eng"){msgCarac = "Hola";}
+
+	var flagvalidaAlias = true;
+
+	var activa = 'Activa';
+
+	var oculta = 'Inactiva';
+
+	var aux2='',aux='', cont=0, alias='';
+
+	
+
+	$("input[name='iAlias']").each(function(index){
+
+		id= this.id;
+
+		var palabraClave = $(this).val();
+
+		$('#'+id+'_error').remove();
+
+		var alpha = /^[a-zA-Z0-9 ]*$/;
+
+		if(alpha.test(palabraClave)){
+
+			top.ajustarP();
+
+		}else{
+
+			divError = document.createElement('div');
+
+			divError.className = "saldos_bloque2_f4_error_display_azul f10";
+
+			divError.innerHTML = msgCarac;
+
+			divError.id=id+'_error';
+
+			divError.style.display="block";
+
+			$(divError).insertAfter('#'+id);
+
+			flagvalidaAlias = false;
+
+			top.ajustarP();	
+
+		}
+
+	});
+
+
+
+	var aux = $("[id*='_error']:first").attr('id');
+
+	if(aux){
+
+		aux = aux.split('_');
+
+		$('#'+aux[0]).focus();
+
+	}
+
+	
+
+	if(flagvalidaAlias == true){
+
+		top.ajustarP();
+
+		$("input[name='iAlias']").each(function(index){
+
+		alias = $(this).val();
+
+		aux = '';
+
+		radio = $("input:checkbox[name='nradio']:eq("+index+")");
+
+		estat = $("input[name='estat']:eq("+index+")");
+
+		aliasOriginal = $("input[name='iAliasOriginal']:eq("+index+")").val();
+
+		indice = $(radio).val();
+
+		if( $(radio).attr("checked") == true &&  $(estat).val() != activa ){
+
+			aux = indice + ":mostrada" + "$" + aliasAEnviar(aliasOriginal,alias) + "|";
+
+			cont++;
+
+			top.ajustarP();
+
+		}else if( $(radio).attr("checked") == false && $(estat).val() != oculta){
+
+			aux = indice + ":oculta" + "$" + aliasAEnviar(aliasOriginal,alias) + "|"; 	
+
+			cont++;
+
+			top.ajustarP();
+
+		}else{
+
+			if( aliasReal(alias) !=  aliasReal(aliasOriginal) ){
+
+				aux = indice + ":cambio" + "$" + aliasReal(alias) + "|";
+
+				cont++;
+
+				top.ajustarP();
+
+			}
+
+		}
+
+		aux2+=aux;
+
+		top.ajustarP();
+
+		});
+
+		document.forms[0].DATA1.value = cont + '|' + aux2;
+
+		//DoSubmit('OK'); 
+
+		top.ajustarP();	
+
+		top.principio();
+
+		//window.parent.SaltoTransaccion(0,0);	
+
+	}
+
+}
+
+
+
+
+
+function aliasReal(alias)
+
+{
+
+  if(alias == leyAlias)
+
+    return "";
+
+  else
+
+    return $.trim(alias);
+
+}
+
+
+
+function aliasAEnviar(aliasOriginal, alias){
+
+	if(aliasReal(aliasOriginal)==aliasReal(alias)){
+
+		return "";
+
+	}else if(aliasReal(alias)==""){
+
+		return "#";
+
+	}
+
+	else{
+
+		return aliasReal(alias);
+
+	}
+
+}
+
+
+
+
+
+function validaAlias(valida){
+
+	top.ajustarP();
+
+	palabraClave=valida.value;
+
+	id=valida.id;
+
+	$('#'+id+'_error').remove();
+
+	var alpha = /^[a-zA-Z0-9 ]*$/;u
+
+	if(alpha.test(palabraClave)){
+
+		flagvalidaAlias = true;
+
+		top.ajustarP();
+
+	}else{
+
+		divError = document.createElement('div');
+
+		divError.className = "saldos_bloque2_f4_error_display_azul f10";
+
+		divError.innerHTML = msgCarac;
+
+		divError.id=id+'_error';
+
+		divError.style.display="block";
+
+		$(divError).insertAfter('#'+id);
+
+		flagvalidaAlias = false;
+
+		top.ajustarP();
+
+	}
+
+}
+
+
+
+function posFocus(){
+
+	
+
+	$("[id=id"+i+"]").each(function(){
+
+		if(this.tagName.toUpperCase()=="INPUT")
+
+			this.value = es[i];
+
+		else
+
+			this.innerHTML = es[i];});
+
+	
+
+	top.ajustarP();
+
+}
+
+ 
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+ </script> 
+
+ <script>parent.setFecha("09/04/12 14:24:06");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="142401  ";b$Cont="142406  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>	
+
+<script>
+
+		
+
+	 function Initialize(){
+
+		var ruta = rutaAyuda + 'CuentasPropiasBanamex-Cuentas.htm';
+
+	
+
+		
+
+	}
+
+</script>
+
+<div>
+
+	<div class="panelIzEnca3_text2" id="t0">Personalizaci&oacute;n de cuentas</div>
+
+	<div class="color666 paddingT5 f11" id="t1">Escribe un alias a tus cuentas y si lo deseas oculta o muestra las cuentas Banamex que requieras.</div>    
+
+
+
+	<div id="bloqueCEfectivo" class="saldos_bloque1b" style="display:none;">
+
+		<div class="panelIzEnca4">
+
+			<div class="activaflecha"><div class="flecha3"></div></div>
+
+			<div class="panelIzEnca3_text"><span id="t2">Cuentas de efectivo</span><span id="con01"></span></div>
+
+		</div>
+
+	</div>
+
+	<div id="bloqueCEfectivoPesos1" class="saldos_bloque4 bordeInfContrae" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn1" onclick="desplegable('saldosbtn1', 'saldosConte1', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt">Pesos&nbsp;<span id="con0101"></span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte1" style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone  paddingL25 paddingR25 overflow paddingB20 ">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							<td class=" borderRSolid ancho25p"><span  id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"><span  id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+					</table>  
+
+						<table id="contenedor010101" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table>
+
+						<table id="contenedor010102"width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table>
+
+						<table id="contenedor010103"width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table>
+
+					
+
+					
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+
+	<div id="bloqueCEfectivoDolares1"  class="saldos_bloque4 bordeInfContrae borderBSolid" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn2" onclick="desplegable('saldosbtn2', 'saldosConte2', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt" id="t7">D&oacute;lares&nbsp;</div><div class="saldos_bloque4_f1_txt"><span id="con0102"></span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte2" style="display:none;">			
+
+		<table  width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td class="paddingB10">
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25 overflow paddingB20">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span class="f11 negrita" id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>     
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+					</table>
+
+						<table id="contenedor010201" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+					</table>
+
+					
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+
+
+	<!-- Inversiones (3) -->
+
+	<div id="bloqueInversiones" class="saldos_bloque1b" style="display:none;">
+
+		<div class="panelIzEnca4">
+
+			<div class="activaflecha"><div class="flecha3"></div></div>
+
+			<div class="panelIzEnca3_text"><span id="t8">Inversiones</span><span id="con02"></span></div>
+
+		</div>
+
+	</div>
+
+	
+
+	<div id="bloqueVista1" class="saldos_bloque4 bordeInfContrae" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn3" onclick="desplegable('saldosbtn3', 'saldosConte3', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt" id="t9">A la vista</div><div class="saldos_bloque4_f1_txt"><span id="con0201"> </span></div>
+
+		</div>
+
+	</div>
+
+	<div class="expand" id="saldosConte3" style="display:none;">			
+
+		<table  width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone  paddingL25 paddingR25 overflow paddingB20">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span class="f11 negrita" id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							
+
+						   
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+						</table> 
+
+					  <table id="contenedor0201" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table>
+
+					
+
+				
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<div id="bloquePlazo1" class="saldos_bloque4 bordeInfContrae" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn4" onclick="desplegable('saldosbtn4', 'saldosConte4', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt" id="t10">A plazo pesos</div><div class="saldos_bloque4_f1_txt"><span id="con0202"></span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte4" style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25 overflow  paddingB20">
+
+
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span class="f11 negrita" id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>   
+
+						</tr>
+
+					</table>  
+
+						<table id="contenedor0202" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table>
+
+						</tr>
+
+					
+
+					
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	 <div id="bloquePlazo2" class="saldos_bloque4 bordeInfContrae" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn5" onclick="desplegable('saldosbtn5', 'saldosConte5', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt" id="t11">A plazo dolares	</div><div class="saldos_bloque4_f1_txt" ><span id="con0203"> </span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte5" style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25 overflow  paddingB20">
+
+
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid"><span class="f11 negrita" id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							
+
+						   
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+						</tr>
+
+					</table>
+
+						 <table id="contenedor0203" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table> 
+
+		 
+
+
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+
+	
+
+	<div id="bloqueFondos1" class="saldos_bloque4 bordeInfContrae borderBSolid" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn6" onclick="desplegable('saldosbtn6', 'saldosConte6', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt" id="t12">Fondos de inversi&oacute;n</div><div class="saldos_bloque4_f1_txt"><span id="con0204"> </span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte6" style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td class="paddingB10">
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25 overflow paddingB20">
+
+
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span class="f11 negrita" id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+							</table>
+
+						 <table id="contenedor0204" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table> 
+
+			
+
+
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+
+
+	
+
+	<div id="bloqueTarjetas" class="saldos_bloque1b" style="display:none;">
+
+		<div class="panelIzEnca4">
+
+			<div class="activaflecha"><div class="flecha3"></div></div>
+
+			<div class="panelIzEnca3_text"><span id="t13">Tarjetas de cr&eacute;dito</span> <span id="con03"></span></div>
+
+		</div>
+
+	</div>
+
+	
+
+	<div id="bloqueTCredito1"class="saldos_bloque4 bordeInfContrae" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn7" onclick="desplegable('saldosbtn7', 'saldosConte7', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt" id="t13">Tarjetas de cr&eacute;dito</div><div class="saldos_bloque4_f1_txt" ><span id="con0301" ></span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte7" style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25  overflow paddingB20">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							
+
+						   
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+					</table>
+
+						<table id="contenedor0301" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table>
+
+						
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+
+	<div id="bloqueTPremia1" class="saldos_bloque4 bordeInfContrae borderBSolid" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn8" onclick="desplegable('saldosbtn8','saldosConte8', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt" id="t14">Tarjeta Premia</div><div class="saldos_bloque4_f1_txt" ><span id="con0302" ></span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte8" style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25 overflow paddingB20">
+
+
+
+					<table id="contenedor0302"width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							
+
+						   
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+					</table>
+
+						<table id="contenedor0302" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table> 
+
+							
+
+
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+
+	<div id="bloqueCreditos" class="saldos_bloque1b" style="display:none;">
+
+		<div class="panelIzEnca4">
+
+			<div class="activaflecha"><div class="flecha3"></div></div>
+
+			<div class="panelIzEnca3_text"><span id="t15">Cr&eacute;ditos</span> <span id="con04"></span></div>
+
+		</div>
+
+	</div>
+
+	<div id="bloqueCreditosPesos" class="saldos_bloque4 bordeInfContrae" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn9" onclick="desplegable('saldosbtn9', 'saldosConte9', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt">Pesos<span id="con0401"></span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte9" style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25 overflow paddingB20">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							
+
+						   
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+					</table>
+
+						<table id="contenedor0401" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table>                            
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+
+	<div id="bloqueCreditosUDIS" class="saldos_bloque4 bordeInfContrae borderBSolid" style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn10" onclick="desplegable('saldosbtn10', 'saldosConte10', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt">UDIS<span id="con0402"> </span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte10" style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25 overflow paddingB20">
+
+
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							
+
+						   
+
+							<td class="borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+						</table>
+
+						<table id="contenedor0402" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table> 
+
+				 
+
+
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+
+	
+
+	<div  id="bloqueAfore" class="saldos_bloque1b"  style="display:none;">
+
+		<div class="panelIzEnca4">
+
+			<div class="activaflecha"><div class="flecha3"></div></div>
+
+			<div class="panelIzEnca3_text"><span>Afore <span id="con05"></span></span></div>
+
+		</div>
+
+	</div>
+
+	<div  id="bloqueAfore1" class="saldos_bloque4 bordeInfContrae borderBSolid"  style="display:none;">
+
+		<div class="saldos_bloque4_f1 ">
+
+			<div class="saldos_bloque4_f1_btn" id="saldosbtn11" onclick="desplegable('saldosbtn11', 'saldosConte11', 1);"><div class="cortinabtnSaldos bg7386ad"></div></div>
+
+			<div class="saldos_bloque4_f1_txt">Afore<span id="con0501"></span></div>
+
+		</div>
+
+	</div>
+
+	<div class=" expand" id="saldosConte11"  style="display:none;">			
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td>
+
+				<div class="saldos_bloque3_3 borderTNone paddingL25 paddingR25 overflow paddingB20">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						<tr>
+
+							<td class="borderRSolid ancho45p"><span id="t3">Cuenta</span></td>
+
+							<td class="borderRSolid ancho10p"><span id="t4">#&nbsp;Cuenta</span></td>
+
+							
+
+						   
+
+							<td class=" borderRSolid ancho25p" ><span id="t5">Alias</span></td>	                        
+
+							<td class="ancho15p"  ><span id="t6">Mostrar&nbsp;cuenta</span></td>                                
+
+						</tr>
+
+						</table>
+
+						<table id="contenedor05" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos4 paddingL0 paddingR0">
+
+						</table> 
+
+					</div>
+
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+
+	 <div class="marginT20 overflow">
+
+			<input id="t16"type="button" class=" btnAZ135 floatR" value="Guardar cambios" onclick="Javascript:validaOcultar();">
+
+	</div>	
+
+</div>
+
+	
+
+
+
+
+
+<INPUT TYPE=HIDDEN NAME=DATA1 VALUE="">
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Ocultar Mostrar Cuentas|showhide01.htm" />
+
+<p></p>
+
+
+
+</form>
+
+
+
+</body>
+
+</html>

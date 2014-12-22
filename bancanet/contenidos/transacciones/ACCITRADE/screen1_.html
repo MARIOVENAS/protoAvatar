@@ -1,0 +1,261 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+	
+
+    <script type="text/javascript">
+	
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+
+	es.push(
+			'Capture', //t23
+			'Verify', //t24
+			'Response', //t25
+			
+			'Voluntary saving contributions', //t26
+			
+			'Select a withdrawal account. Complete the data related to the contribution and click "Continue".', //t27
+			
+			'Withdrawal account:', //t28
+			'Select an option', //t29
+			
+			'Afore account:', //t30
+			'Select an option', //t31
+			
+			'Afore sub-account:', //t32
+			'Select an option', //t33
+			
+			'Afore SIEFORE:', //t34
+			'Select an option', //t35
+			
+			'Amount MXN:', //t36
+			
+			'CONTINUE' //t37
+	);
+	</script>
+</head>
+<body class="bg_demo padding-left11">
+        
+		<div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t23">Captura</span> </li>
+            <li id="opcVerifica"><strong>2</strong>  <span id="t24">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t25">Respuesta</span> </li>
+        </ul>
+        </div>
+
+		<div>
+  			<div class="cH-appPanelHead">
+            <h3 id="t26">Dep&oacute;sito AcciTrade</h3>
+        </div>
+        
+        <p class="instructions" id="t27">Selecciona una cuenta de retiro. Indica los datos de la transferencia y da clic en "Continuar".</p>
+
+        <div class="width141">
+
+            <div class="form-row margin-bottom20">
+                <label  class="for-table width139i margin-top4" id ="t28">Cuenta de retiro:</label>
+
+                <select class="width315">
+                    <option  id="t29">Selecciona una opci&oacute;n</option>
+                    <option  selected="selected">Mi cuenta - Cheques - MXN - 67890 - $45,000.00</option>
+                </select>
+            </div>
+
+            <div class="border-top clear"></div>
+            
+            <div class="form-row margin-bottom20 overflow">
+                <label  class="for-table width139i margin-top4" id="t30">Cuenta Dep&oacute;sito o<br>Beneficiario:</label>
+				<label  class="for-table margin-top4">Cuenta AcciTrade - MXN - 547001</label>
+            </div>
+
+            <div class="border-top clear"></div>
+
+            <div class="form-row2 margin-bottom20">
+                <label  class="for-table width139i margin-top4" id="t30">Importe MXN:</label>
+                <input type="text" class="text width120" value="$ 2,000.00">
+            </div>
+            
+            <div class="form-row2 margin-bottom20">
+                <label  class="for-table width139i margin-top4" id="t34">Contrato AcciTrade:</label>
+                <input type="text" class="text width70" value="12345">
+            </div>
+            
+            <div class="border-top clear"></div>
+            
+            <div class="form-row margin-bottom20 overflow">
+                <label  class="for-table width139i" id="t36">Opciones adicionales:</label>
+
+            <!-- -->
+            
+            <div class="floatLI" style="width:460px !important;">
+            
+            <div class="margin-bottom10">
+            <input type="checkbox"  name="guardar" id="progFecha" value="progFecha" onClick="pFecha();" checked="checked" />
+            <label><span id="t15" class="paddingL10">Programar a fecha futura</span></label>
+            </div>
+            
+          	<div class="pagos_cal_scroll">
+            <input type="text" id="fechaFut" class="calendario1 input_calendar floatLI padding0 f12" readonly onFocus="focusFechafut();">		<span class="cal_icon floatLI">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <div class="comboH">
+              <input type="text" id="selHoras" class="selhoras f12" readonly onFocus="HorasSel();focusSelhoras();" style="padding:0 0 0 5px;" /> 
+            
+              <div id="drpList" class="list_abs">
+                <div id="listaHoras2">
+                  <div class="scroll_y">
+                    <div class="scrollbar paddingR1"><div class="track"><div class="thumb"><div class="end"></div><div class="grip"></div></div></div></div>
+                    <div class="viewport height90">
+                      <div class="overview">
+                        
+                        
+                        <!-- You can add all your contents here -->
+                        <div id="horasM">
+                              
+                          
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- end of updateHolder //-->
+                </div>
+              
+              </div>
+            </div>
+            
+            <!-- Guardar -->
+            
+            <div class="clear overflow margin-top10">
+                <div class="floatLI">
+                <input type="checkbox"  name="guardar" id="guardaOp" />
+                </div>
+                <div class="floatLI paddingL10">
+                  <p id="t16">Guardar como operaci&oacute;n frecuente<br>
+                  Las operaciones programadas no pueden ser almacenadas como frecuentes.</p>
+                 </div>
+            </label> 
+            </div> 
+            <!-- Guardar -->
+            
+            </div> <!-- 360 -->
+            </div> <!-- form-row -->
+
+        </div>
+
+						
+
+						<div class="cF-sideBySide border-topSolid ancho100p paddingT10 margin-top5">
+
+							<div class="width139i left marginR10">&nbsp;</div>
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton"><a onClick="continuar();" id="t37">CONTINUAR</a></li>	
+
+							</ul>
+
+						 </div>	
+
+						<div class="clear"></div>
+
+
+
+      </div>
+
+	  
+
+<script type="text/javascript">
+ $(document).ready(function(){
+	 
+	 
+
+var diasSemana = ['D','L','M','M','J','V','S'];
+        var Meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+        var MesesShort = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];   
+      if(top.language == "eng") {
+        diasSemana = ['S','M','T','W','Th','F','Sa']; 
+        Meses = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        MesesShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      }
+      
+        
+        $('#fechaFut').datepicker({
+          dayNamesMin:diasSemana,
+          monthNames:Meses,
+          monthNamesShort: MesesShort,
+          beforeShow: function(){
+            $(this).removeClass('ui-corner-all');
+            
+          },
+          showAnim: '',
+          showOtherMonths: true,
+          selectOtherMonths: false,
+          minDate: 'y',
+          maxDate: '30d',
+          dateFormat:"d M yy",
+          disabled: false
+        });
+        
+        $('#fechaFut').focus(
+          function(){
+            if( $(this).hasClass('modal_calendar') ){
+              $('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+            }else{
+              $('.ui-widget').css({'top':($(this).offset().top-63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+            }
+            if( $('.ui-datepicker .close').length == 0){
+              $('.ui-datepicker').append("<div class='close'></div>");
+            }
+            $('.ui-datepicker').find('.close').click(function(){
+              $('.input_calendar').datepicker( "hide" );
+            });
+            if( $('.ui-datepicker .flecha').length == 0){
+              $('.ui-datepicker').prepend("<div class='flecha'></div>");
+            }
+            
+          }
+        );
+        
+         $(".cal_icon").click(function(){
+            $('#fechaFut').datepicker('show');
+         });
+       
+       
+            
+   	$("input[name='guardar']").imageTick({ 
+      tick_image_path: "../../../../JFP/regional/images/check_1.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+    });
+       
+ 
+   setTimeout(function(){top.$('#iframeConte').css({'height':(500)+'px'});},800);
+   setTimeout("$('#listaHoras2').hide();",200);
+   setTimeout("$('.scroll_y').tinyscrollbar({scroll:true,sizethumb: '36' });grip_scroll();",100);
+   setTimeout("$('.scroll_y .overview').css({'width':$('.scroll_y .viewport').width()+'px'});ajusta_caja_popup_scroll();alto_popup();",200);
+   
+   
+   
+   });
+
+
+
+function continuar(){
+	top.cargaDocN('Aportaciones_Afore/screen2.html');
+}
+</script>
+
+
+
+</body>
+
+</html>	

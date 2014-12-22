@@ -1,0 +1,1030 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+    	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    	<title>Banamex</title>
+
+        <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+        
+
+       
+
+    	<script type="text/javascript">
+
+			
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+			
+
+	$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);
+
+	setTimeout('window.parent.ajustarIframe()', 1000);});
+
+		
+
+		
+
+function Initialize(){
+
+	var tabla = document.getElementById("datos"); 
+
+	var filas = tabla.getElementsByTagName("tr"); 
+
+	for(var i in filas){ 
+
+		if ((i%2)==1)  
+
+		filas[i].className = "bgF1F2F2"; 
+
+    }
+
+	if("SPANISH"=="ENGLISH"){
+
+	
+
+		es=["Consult the status of requests","Account Details","Account","Branch Number","Checkbooks available at branch","Number of checks per checkbook",
+
+		"Requests of the Day","Previous Requests","Checksbook type","Request date","Handout date","Initial Folio","Final Folio","Delivered","Return","Checkbooks management"];
+
+		swap();
+
+	}
+
+	else{
+
+
+
+	}
+
+}  		
+
+
+
+			
+
+function DoSubmit( value ){
+
+	document.forms[0].EWFBUTTON.value = value;
+
+	document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+	document.forms[0].submit();
+
+}
+
+
+
+function regresar(){
+
+	DoSubmit("REGRESA");
+
+}
+
+
+
+
+
+	var mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+
+
+
+
+$(document).ready
+
+
+
+(
+
+		function ()
+
+	{
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+					catch(e)
+
+					{
+
+					}
+
+			}
+
+		)	
+
+	}
+
+)
+
+
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+	
+
+	
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+				var hora = fecha.substring(10);
+
+				var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+				return fechaformateada + hora;
+
+}
+
+
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+			fecha = fecha.replace(/\-/gi," ");
+
+			var conversion = (fecha.substring(4,6)).toLowerCase();
+
+			var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+			return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[fecha8]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+			
+
+		if(splitFecha[0].length==1)
+
+		{
+
+			splitFecha[0]="0"+splitFecha[0];
+
+		}
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+function formato_dddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[Fecha]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+	
+
+	
+
+function formato_ddmmaaaaEBSJS(fecha)
+
+{
+
+	var indice;
+
+	var fechaAux;
+
+	var IdiomaAux="SPANISH";
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+	
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+	
+
+	if(indice!=-1)
+
+	{
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if(IdiomaAux=="SPANISH")
+
+		{
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+				
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+			else
+
+			{
+
+				mesFecha=fechaAux.substring(0,2);
+
+					if(mesFecha=="01")
+
+						{mesFecha1="Jan";}
+
+					if(mesFecha=="02")
+
+						{mesFecha1="Feb";}
+
+					if(mesFecha=="03")
+
+						{mesFecha1="Mar";}
+
+					if(mesFecha=="04")
+
+						{mesFecha1="Apr";}
+
+					if(mesFecha=="05")
+
+						{mesFecha1="May";}
+
+					if(mesFecha=="06")
+
+						{mesFecha1="Jun";}
+
+					if(mesFecha=="07")
+
+						{mesFecha1="Jul";}
+
+					if(mesFecha=="08")
+
+						{mesFecha1="Aug";}
+
+					if(mesFecha=="09")
+
+						{mesFecha1="Sep";}
+
+					if(mesFecha=="10")
+
+						{mesFecha1="Oct";}
+
+					if(mesFecha=="11")
+
+						{mesFecha1="Nov";}
+
+					if(mesFecha=="12")
+
+						{mesFecha1="Dec";}
+
+					
+
+				fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+				fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+			}
+
+		
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+
+
+function formateaFechaBB(formato, fecha)
+
+{	
+
+	
+
+	fechaFormateada="";
+
+	
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+		
+
+	if(fecha != '' &&  fecha != '&nbsp;'){
+
+		
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if("SPANISH"=="ENGLISH")
+
+							fechaFormateada = fecha.substring(3,5) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(0,2), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+
+
+			
+
+</script>
+
+<script>parent.setFecha("13/04/12    13:54:33  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="135400  ";b$Cont="135433  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+</head>
+
+	<body>
+
+        <div id="t15"class="panelIzEnca3_text2">Administraci&oacute;n de chequeras</div>
+
+		<div class=" ">
+
+        <div class=" borderLSolid borderBSolid borderRSolid borderTSolid   marginT17">
+
+        
+
+        
+
+                <div id="t0" class="panelIzEnca3_text2 paddingL20  paddingT18 margin_menosT1  overflow" >	Consulta de estatus de solicitudes</div>
+
+        
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2  margin0 padding0  ">
+
+                <tr>
+
+                    
+
+                  <td valign="top" class=" paddingL20 paddingT15 paddingR20 paddingB20">
+
+                    <div class="paddingB10">
+
+                    <div id="t1" class="negrita color333 f11 paddingB5 borderBSolid">Detalle de la cuenta</div>
+
+                    </div>
+
+                    
+
+                      
+
+                             <div class="ancho100p overflow paddingT10 marginT0">
+
+              <table cellpadding="0" cellspacing="0" border="0" class="ancho100p" >
+
+                   	<tr>
+
+                      	<td class="ancho50p ">
+
+                             		<div class="ancho100p floatL paddingT0">
+
+                                       	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 ">
+
+                                      	   <tr>
+
+                                                        <td id="t2" class=" bgF1F2F2 ancho60p negrita color333" >Cuenta</td>
+
+                                                       <td class=" bgF1F2F2 borderLSolid" align="left">Cheques M.N 002 Cheques</td>
+
+                                         </tr>
+
+                                         <tr>
+
+                                                        <td id="t3" class="  ancho60p negrita color333" >N&uacute;mero de sucursal</td>
+
+                                                       <td class="  borderLSolid" align="left">4337</td>
+
+                                         </tr>
+
+                                         <tr>
+
+                                                        <td id="t4" class=" bgF1F2F2 ancho60p negrita color333" >Chequera disponible en sucursal</td>
+
+                                                       <td class=" bgF1F2F2 borderLSolid" align="left">2</td>
+
+                                         </tr>
+
+                                        </table>
+
+                                   </div>
+
+                                   
+
+                         </td>
+
+                         <td class=" bgFFF"><div class=" ancho30"></div></td>
+
+                         <td class="ancho50p ">
+
+                                   <div class="ancho100p floatR paddingT0">
+
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3  ">
+
+                                       <tr>
+
+                                             <td id="t5" class=" bgF1F2F2 ancho60p color333 negrita">N&uacute;mero de cheques por chequeras</td>
+
+                                             <td class=" bgF1F2F2 borderLSolid " align="left">50</td>
+
+                                      </tr>
+
+                                       <tr>
+
+                                                        <td id="t6" class="  ancho60p negrita color333" >Solicitudes del d&iacute;a</td>
+
+                                                       <td class="  borderLSolid" align="left">0</td>
+
+                                         </tr>
+
+                                         <tr>
+
+                                                        <td class="  ancho60p negrita color333" >   </td>
+
+                                                       <td class="" align="left">&nbsp; </td>
+
+                                         </tr>
+
+                   				     </table>
+
+                                  </div>
+
+                          </td>
+
+                     </tr>
+
+              	</table>
+
+         </div>
+
+                        
+
+                      <p>&nbsp;</p>
+
+                      <p>&nbsp;</p>
+
+                    <div class="paddingB10">
+
+                      <div id="t7" class="negrita color333 f11 paddingB5 borderBSolid">Solicitudes previas</div>
+
+                    </div>
+
+                      <table  id="datos" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3" >
+
+                      <thead>
+
+						  <tr>
+
+							<td class="color000  borderRSolid"><span id="t8" >Tipo de chequera</span></td>
+
+							<td class="color000 borderRSolid"><span id="t9">Fecha de solicitud</span></td>
+
+							<td class="color000 borderRSolid"><span id="t10">Fecha de entrega</span></td>
+
+							<td class="color000 borderRSolid"><span id="t11">Folio inicial</span></td>
+
+							<td class="color000  borderRSolid"><span id="t12">Folio final</span></td>  
+
+							<td class="color000  "><span id="t13">Estatus</span></td>                         
+
+							</tr>
+
+						</thead>
+
+                        <tbody>
+
+							<tr>  
+
+								<td class="borderRSolid">CUENTA DE CHEQUES</td>
+
+								<td class="borderRSolid"  name = "FECHA_BNP_ddmmaaaEsp">12/03/2001</td>
+
+								<td class="borderRSolid"  name = "FECHA_BNP_ddmmaaaEsp">-</td>
+
+								<td class="borderRSolid">61</td>
+
+								<td class="borderRSolid">110</td>
+
+								<td>DOTADA</td>
+
+							</tr><tr>  
+
+								<td class="borderRSolid">CUENTA DE CHEQUES</td>
+
+								<td class="borderRSolid"  name = "FECHA_BNP_ddmmaaaEsp">14/02/2000</td>
+
+								<td class="borderRSolid"  name = "FECHA_BNP_ddmmaaaEsp">-</td>
+
+								<td class="borderRSolid">11</td>
+
+								<td class="borderRSolid">60</td>
+
+								<td>SUCURSAL</td>
+
+							</tr><tr>  
+
+								<td class="borderRSolid">CUENTA DE CHEQUES</td>
+
+								<td class="borderRSolid"  name = "FECHA_BNP_ddmmaaaEsp">16/12/1999</td>
+
+								<td class="borderRSolid"  name = "FECHA_BNP_ddmmaaaEsp">14/02/2000</td>
+
+								<td class="borderRSolid">1</td>
+
+								<td class="borderRSolid">10</td>
+
+								<td>ENTREGADA</td>
+
+							</tr>
+
+						</tbody></table>
+
+
+
+                      
+
+                    </td>
+
+                </tr>
+
+                
+
+                
+
+            </table>
+
+     </div>
+
+                <div class=" overflow">
+
+         <div class="saldos_regresar">
+
+        	<div>&laquo;&nbsp;</div>
+
+            <div class="paddingT2"><a  id="t14" href="javascript:void(0)" onclick="parent.DoSubmit('Solicitud_de_Chequeras/Chequeras.html')">Regresar</a></div>
+
+        </div>
+
+        
+
+        
+
+        
+
+        </div>
+
+        
+
+        </div>
+
+    <INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+    <input id="omtmodalvalue" type="hidden" value="Solicitud de Chequeras|06-Consulta_Solicitud.html" />
+
+	</body>
+
+</html>
+
+
+
+
+

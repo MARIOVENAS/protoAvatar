@@ -1,0 +1,239 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Report lost or stolen cards','If you want to report your credit or debit card, select a card and follow the directions:','Select a credit or debit card','Specify the type of report and click "Continue".','Type of report:','Select','Stolen','Lost','Select a type of report','CONTINUE','Erase','Capture','Confirmation','Verification');
+    </script>
+    
+
+    <script type="text/javascript">
+	$(document).ready(function(){
+		setTimeout(function(){top.ajustarP();},800);
+		$('.errorB').css('display','none');
+		top.ayuda(); 
+	});
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+<div class="width691 floatL">
+		
+        <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t34">Captura</span> </li>
+            <li id="opcVerifica"><strong>2</strong>  <span id="t35">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t36">Respuesta</span> </li>
+        </ul>
+        </div>
+          
+         <!-- <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+          	<td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsqB" id="t34">Captura</td>
+              </tr>
+               <tr>
+                <td class="esq_LB">&nbsp;</td>
+                <td class="esq_B"></td>
+                <td class="esq_RB">&nbsp;</td>
+              </tr>
+              </table>
+          </td>
+          <td class="width20">&nbsp;</td>
+          <td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t35">Confirmaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+            <td class="width20">&nbsp;</td>
+            <td width="32%">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t36">Verificaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+          </tr>
+          </table> -->
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t23">Reporte por robo o extrav&iacute;o</h3>
+
+            </div>
+			
+            <div class="border-topSolid"></div>
+
+			<p class="instructions margin-botom0" id="t24"  style="margin-bottom:18px !important; *margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Si deseas realizar el reporte de tu tarjeta de cr&eacute;dito o d&eacute;bito, selecciona una tarjeta y sigue las instruccciones:</p>
+			
+           
+                         
+
+						<div class="width141 clear">
+							<div class="form-row margin-right0">
+
+                                <div class="floatLI height30 overflow" style="width:90px !important; padding:0px !important;" id="Horo">
+                                	<div class="tajOro displayNone floatLI" id="Oro"></div>
+                                </div>
+
+                                <div class="height30 floatLI">
+                                <select id="sol1" class="width-600" onChange="valor1=this.value;selector1();">
+									<option selected="selected" value="0" id="t25">&nbsp;&nbsp;Selecciona una tarjeta de cr&eacute;dito o d&eacute;bito</option>
+									<option  value="1">&nbsp;&nbsp;Mi tarjeta - Tarj. Oro - MXN - 12680</option>
+								</select>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+							<div id="step" class="displayNone"> <!-- Step -->
+                            <div class="border-top"></div>
+                            
+                            <div class="form-row margin-bottom13">
+                            	 <div class="overflow">
+                                <label id="t26" class="for-table ancho100p">Indica el tipo de reporte que deseas hacer y da clic en "Continuar".</label>
+                                </div>
+                                
+                                <div class="overflow marginT15 clear">
+                                <label id="t27" class="for-table width-240">Tipo de reporte:</label>
+                                </div>
+                                <div class="clear margin-top10 overflow">
+            					<div class="floatLI">
+                                <select id="sol2" class="width-146" onChange="valor2=this.value;selector3()">
+									<option selected="selected" value="0" id="t28">&nbsp;Selecciona</option>
+									<option  value="1" id="t29">&nbsp;Por robo</option>
+                                    <option  value="2" id="t30">&nbsp;Por extrav&iacute;o</option>
+								</select>
+                                </div>
+                                <div class="floatLI" style="margin-left:5px; *margin-left:10px;">
+                                
+                                <span class="errorB displayNone error-sel_comp display-inline2">
+                                    <span class="flecha2"></span>
+                                    <span class="content_big"  id="t31">Selecciona un tipo de reporte.</span>
+                                </span>
+                                </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+						</div><!-- Step -->
+                              
+
+                        </div><!-- Fin width141 -->
+
+						
+						<div id="btns" class="displayNone"> <!-- Botones -->
+                        
+						<div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT0">
+
+							<!-- <div class="width156">&nbsp;</div> -->
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton">
+                                	<a href="javascript:void(0);" onClick="javascript:selector2();" id="t32">CONTINUAR</a>
+                                </li>	
+                                <li class="cN-primaryNav">
+									<div id="flechaLinks">
+										<span class="flechaazul float-left"></span>
+										<a id="t33" href="javascript:borrar();" class="sinBold">Borrar</a>
+									</div>
+								</li>
+
+							</ul>
+
+						 </div>	
+                         
+                         </div><!-- BTN -->
+
+						<div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript">
+	valor1 = 0;
+	function selector1(){
+		if (valor1==0){
+			$('#Oro').hide();
+			$('#step').hide();
+			$('#btns').hide();
+			$('#Horo').removeClass('height50').addClass('height30');
+			$('.errorB').hide();
+			$('#sol2').removeClass('errorbg');
+			$("#sol2 option[value='0']").attr("selected",true);
+		}else{
+			$('#Oro').show();
+			$('#step').show();
+			$('#btns').show();
+			$('#Horo').removeClass('height30').addClass('height50');
+		}
+	}
+	
+	valor2 = 0;
+	function selector2(){
+		if (valor2==0){
+			$('.errorB').show();
+			$('#sol2').addClass('errorbg');
+		}
+		if (valor2==1){
+			$('.errorB').hide();
+			$('#sol2').removeClass('errorbg');
+			top.cargaDocN('ZADT/screen1_repC1.html');
+		}
+		if (valor2==2){
+			$('.errorB').hide();
+			$('#sol2').removeClass('errorbg');
+			top.cargaDocN('ZADT/screen1_repC2.html');
+		}
+	}
+	
+	function selector3(){
+		if (valor2==0){
+			$('.errorB').show();
+			$('#sol2').addClass('errorbg');
+		}else{
+			$('.errorB').hide();
+			$('#sol2').removeClass('errorbg');
+		}
+	}
+	
+	function borrar(){
+		
+		$('#Oro').hide();
+		$('#step').hide();
+		$('#btns').hide();
+		$('#Horo').removeClass('height50').addClass('height30');
+		$("#sol1 option[value='0']").attr("selected",true);
+		$("#sol2 option[value='0']").attr("selected",true);
+		$('.errorB').hide();
+		$('#sol2').removeClass('errorbg');
+	}
+	</script>
+</body>
+</html>

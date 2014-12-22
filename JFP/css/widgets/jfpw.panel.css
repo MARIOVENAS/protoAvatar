@@ -1,0 +1,106 @@
+/* Default Panel Configuration, DO NOT MODIFY, Please Override if necessary
+
+----------------------------------*/
+
+.ui-panel {text-align:left;z-index:1;}
+
+.ui-panel .ui-panel-header {background: none #EEEEEE; margin:2;padding:0;width:100%;}
+
+.ui-panel .ui-panel-header .ui-icon {border:0;float:left;margin-top:0.2em;}
+
+.ui-panel .ui-panel-title {margin:0.3em 0;}
+
+.ui-panel .ui-panel-title-text {margin-left:0.3em;}
+
+.ui-panel .ui-panel-title-text,.ui-panel .ui-icon {cursor:pointer;}
+
+.ui-panel .ui-panel-rightbox {float:right;}
+
+.ui-panel .ui-panel-rightbox .ui-icon {margin-right:0.1em;}
+
+.ui-panel .ui-panel-controls {float:left;margin:0.2em 0.7em 0 0;}
+
+.ui-panel .ui-panel-content {padding:0;width:100%;border-top:0;}
+
+.ui-panel .ui-panel-content-text {padding:0.7em 0.4em;}
+
+.ui-panel .ui-panel-clps-pnl {float:left;padding:0.1em 0.25em 0.3em;position:relative;top:-0.1em;}
+
+.ui-panel .ui-panel-vtitle {overflow:hidden;position:relative;white-space:nowrap;}
+
+.ui-panel .ui-panel-vtext {display:block;}
+
+.ui-panel .ui-panel-vtext-ie {bottom:1.5em;filter:flipv() fliph();left:0.2em;position:absolute;writing-mode:tb-rl;}
+
+.ui-panel .ui-panel-vtext-webkit-slide-left  {-webkit-transform:rotate(-90deg); display:block; text-align:left;margin-left:3px;vertical-align:bottom}
+
+.ui-panel .ui-panel-vtext-webkit-slide-right {-webkit-transform:rotate(-90deg); display:block; text-align:left;margin-left: 5px;vertical-align:top}
+
+
+
+.ui-panel .ui-panel-secondary-icon { float:left; background-image: url('/JFP/images/glbl_sprite.png'); width:15px; height:15px; }
+
+.ui-panel .ui-icon-collapse{ background-position: -1px -411px; }
+
+.ui-panel .ui-icon-expand{ background-position: -1px -427px; }
+
+.ui-panel .ui-hide-primary-icon { background: none transparent !important; }
+
+
+
+/* Default Avatar Panel Configuration, DO NOT MODIFY, Please Override if necessary
+
+----------------------------------*/
+
+.ui-panel.jfpw-panel .ui-panel-header {background: none #A1CBE5; margin:2;padding:0;width:100%;}
+
+
+
+/* Custom Panel Configuration, only override the needed classes.
+
+----------------------------------*/
+
+.ui-panel.jfpw-panel-gray .ui-panel-header {background: none #AAAAAA;margin:2;padding:0;width:100%;}
+
+
+
+/* Russia Custom Style Panel, White with the icon to the right and when selected blue with the content on gray background.
+
+----------------------------------*/
+
+.ui-panel.jfpw-panel-white {border-bottom: none; border-top: 1px solid gray; border-left: none; border-right: none;}
+
+.ui-panel.ui-panel-closed.jfpw-panel-white .ui-panel-header {background: none white; border: none;}
+
+.ui-panel.ui-panel-opened.jfpw-panel-white .ui-panel-header {background: none #A8C8E0; border: none;}
+
+.ui-panel.jfpw-panel-white .ui-panel-secondary-icon{float: right !important;margin-right: 5px; background-image: url('/JFP/images/widgets/jfpw-panel-toggle-sprite-white.png');}
+
+.ui-panel.jfpw-panel-white .ui-panel-title{	padding-left: 5px;padding-top: 8px;	padding-bottom: 8px; margin-top: 0px; margin-bottom: 0px; }
+
+.ui-panel.jfpw-panel-white .ui-panel-content {border: none; background: none #F0F0F0;}
+
+.ui-panel.jfpw-panel-white .ui-panel-content-text {padding-left: 25px; padding-right: 25px; padding-top: 25px; padding-bottom: 15px; }
+
+
+
+.ui-panel.jfpw-panel-white .ui-icon-collapse { background-position: 0px 0px;}
+
+.ui-panel.jfpw-panel-white .ui-icon-expand {background-position: 0px 15px;}
+
+
+
+/* Accoun list Style Panel, White background with icon to the left and black bottom border. 
+
+----------------------------------*/
+
+.ui-panel.jfpw-panel-black-white {border: none;}
+
+.ui-panel.jfpw-panel-black-white .ui-panel-header {background: none white; border: none; border-bottom: solid 2px gray;}
+
+.ui-panel.jfpw-panel-black-white .ui-panel-secondary-icon{margin-left: 5px; margin-right: 10px; }
+
+.ui-panel.jfpw-panel-black-white .ui-panel-content {border: none; background: none white;}
+
+
+

@@ -1,0 +1,139 @@
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/jscript">
+
+	es=new Array( 
+		'Capture', //t0
+		'Verify', //t1
+		'Response', //t2
+		
+		'Deposit to AcciTrade',
+
+		'Your transfer has been received under the instruction number 001002.',
+		
+		'Withdrawal Account:',
+		
+		'Deposit Account or Beneficiary:',
+		
+		'Amount MXN:',
+		
+		'AcciTrade Agreement:',
+		
+		'Schedule date:',
+		
+		'Schedule time:',
+		
+		'Frequent operation:'
+	 );
+     </script>
+</head>
+<body class="bg_demo" style="padding-left:10px;">
+
+     <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">  
+     
+     <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura"><strong class="f11">1</strong> <span id="t0" class="f11">Captura</span> </li>
+            <li id="opcVerifica"><strong class="f11">2</strong>  <span id="t1" class="f11">Verifica</span> </li>
+            <li id="opcRespuesta" class="selected"><strong class="f11">3</strong>  <span id="t2" class="f11">Respuesta</span> </li>
+        </ul>
+        </div>
+
+                    <div class="cH-appPanelHead">
+
+                        <h3 id="t3">Dep&oacute;sito AcciTrade</h3>
+
+                    </div>
+
+                    <div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%">
+
+					  <div class="width98">
+							
+                            <div class="form-row margin-botom0">
+                        		<div class="greenCheck"></div>
+								<p class="sinMarginTop topNotes margin-left17 bold" style="margin-bottom:20px\0/ !important;">
+                                <span id="t4" class="bold">Tu transferencia ha sido recibida con n&uacute;mero de instrucci&oacute;n 001002.</span>
+                                </p>
+								<div class="clear"></div>
+                			</div>
+                             <div class="border-top clear"></div>
+                            <div class="form-row margin-bottom20">
+                            <label  class="for-table width139i margin-top4" id="t5">Cuenta de Retiro:</label>
+                            <label  class="for-table width300 margin-top4">Mi cuenta - Cheques - MXN - 67890 - $45,000.00</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            
+                            <div class="border-top clear"></div>
+                            
+                            <div class="form-row margin-bottom15">
+                            <label  class="for-table width139i" id="t6">
+                            Cuenta Dep&oacute;sito o<br>Beneficiario:
+                            </label>
+                            <label  class="for-table width300">Cuenta AcciTrade - MXN - 547001</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="border-top clear"></div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i" id="t7">Importe MXN:</label>
+                             <label  class="for-table width300">$ 2,000.00</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t8">Contrato AcciTrade:</label>
+                            <label  class="for-table width300 margin-top4">12345</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t9">Fecha programada:</label>
+                            <label  class="for-table width300 margin-top4">09 Sep 2014</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom18">
+                            <label  class="for-table width139i margin-top4" id="t10">Hora programada:</label>
+                            <label  class="for-table width300 margin-top4">15:30 h.</label>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom20">
+                            <label  class="for-table width139i margin-top4" id="t11">Operaci&oacute;n frecuente:</label>
+                            <label  class="for-table width300 margin-top4">No</label>
+                                <div class="clear"></div>
+                            </div>
+                    <!--  termina rango de cheques-->
+
+				</div><!--termina 98-->
+				
+                </div>	
+               
+               </div>
+                 
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	top.scrollTo(0,0);
+	
+	top.set_imprimir('transacciones/ACCITRADE/screen1_print.html',850, 950);
+	
+	setTimeout(function(){top.$('#iframeConte').css({'height':(470)+'px'});},850);
+	
+});
+
+</script>                
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <link rel="stylesheet" href="/bbAvatar/css/mando.css" type="text/css" />
+
+  <link rel="stylesheet" href="/bbAvatar/css/estilos.css" type="text/css" />
+
+  <link rel="stylesheet" href="/bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+  <script type="text/javascript" src="/bbAvatar/js/motor.js"></script>
+
+  <script type="text/javascript" src="/bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script> 
+
+  <script type="text/javascript" src="/bbAvatar/js/calendar.js"></script>
+
+  <script type="text/javascript" src="/bbAvatar/js/opciones2.js"></script>
+
+  <script>
+
+    var lngApp;
+
+	var trnApp;
+
+	
+
+	jQuery(document).ready(function(){
+
+	  var params;
+
+	  params = $("#Params", parent.frames.main.document).val().split("~");
+
+	  lngApp = params[5];
+
+	  if( lngApp=="ENGLISH" ) {
+
+	    var en = new Array('Important Notice','The transaction you are trying to make is out of business hours:','Do you want to pay some other day? - Please check the due date of your payment,<br/>which must be minor than the date on which you want to program it','Date','Hour','Cancel','Continue');
+
+		for( var i=0; i<en.length; i++ ){
+
+		  if( $('#t'+i).is(':input') )
+
+		    $('#t'+i).val( en[i] );
+
+		  else
+
+		    $('#t'+i).html( en[i] );  
+
+		}
+
+	  }
+
+	  trnApp = params[7];
+
+	  var hrsIni = params[0];
+
+	  var minIni = params[1];
+
+	  var hrsFin = params[2];
+
+	  var minFin = params[3];
+
+	  var datSer = params[4];
+
+	  var weeknd = params[6];
+
+	  showTime( hrsIni, minIni, hrsFin, minFin );
+
+	  InitializeCal( datSer, lngApp, weeknd );
+
+	  ajustar();
+
+	});
+
+
+
+	function showTime( hrsIni, minIni, hrsFin, minFin ) {
+
+	  $('#hrsIni').text( hrsIni );
+
+	  $('#minIni').text( minIni );
+
+	  $('#hrsFin').text( hrsFin );
+
+	  $('#minFin').text( minFin );
+
+	}
+
+	
+
+	function InitializeCal( date, lngApp, weekend ) {
+
+	  var Formato    = ( lngApp=="SPANISH" ) ? "dd/mm/yy" : "mm/dd/yy";
+
+	  var diasSemana = ( lngApp=="SPANISH" ) ? ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'] : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+	  var Meses      = ( lngApp=="SPANISH" ) ? ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'] : ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+	  
+
+	  var dia  = date.substring(3,5);
+
+	  var mes  = date.substring(0,2);
+
+	  var anio = date.substring(6);
+
+	  
+
+	  var fecha = new Date( anio, mes-1, dia );
+
+	  var dia  = fecha.getDay();
+
+	  var dOff = ( dia==5 && weekend=="A" ) ? 3*24*3600*1000 : 24*3600*1000;
+
+	  
+
+	  var fechaIni = new Date( fecha.getTime()+dOff );
+
+	  
+
+	  CrearCal("#yearpicker1", Formato, diasSemana, Meses, fechaIni, fechaIni, 30, '90', weekend);
+
+	}
+
+
+
+	function ajustar() {
+
+	  var ancho=document.getElementById('mensajeError_contenido').offsetWidth;
+
+	  var alto=document.getElementById('mensajeError_contenido').offsetHeight;
+
+	  parent.$.modal.setDimentions(alto,ancho);
+
+	}
+
+
+
+	function validar() {
+
+	  var errores = false;
+
+	  $('#yearpicker1_error').hide().text('');
+
+	  $('#horario_error').hide().text('');
+
+	  
+
+	  var errorFecha = ( lngApp == 'SPANISH' ) ? 'Seleccione una fecha' : 'Select a date';
+
+	  var errorHoras = ( lngApp == 'SPANISH' ) ? 'Fuera de horario' : 'Out of time';
+
+	  
+
+	  var horIni = parseFloat( $('#hrsIni').text() + $('#minIni').text() );
+
+	  var horFin = parseFloat( $('#hrsFin').text() + $('#minFin').text() );
+
+	  var horSel = parseFloat( $('#HRS option:selected').text() + $('#MINS option:selected').text() );
+
+	  
+
+	  if( $('#yearpicker1').val() == '' ) {
+
+		$('#yearpicker1_error').text( errorFecha );
+
+		$('#yearpicker1_error').show();
+
+		errores = true;
+
+	  }
+
+	  if( horSel>horFin || horSel<horIni ) {
+
+		$('#horario_error').text( errorHoras );
+
+		$('#horario_error').show();
+
+		errores = true;
+
+	  }
+
+	  
+
+	  ajustar();
+
+	  
+
+	  if( !errores )
+
+		continuar();
+
+	}
+
+		
+
+	function continuar(){
+
+	  if( trnApp=="TP" ) {
+
+	    var hrsPrg = $('#HRS').val();
+
+		var minPrg = $('#MINS').val();
+
+	    $("#cboHrs option[value="+hrsPrg+"]", parent.frames.main.document).attr('selected',true);
+
+		$("#cboMin option[value="+minPrg+"]", parent.frames.main.document).attr('selected',true);
+
+		$("#txtFecha", parent.frames.main.document).val( $('#yearpicker1').val() );
+
+		$("#Programar", parent.frames.main.document).show();
+
+		$("#checkProgramar", parent.frames.main.document).attr('checked',true);
+
+		parent.ajustar();
+
+	  } else {
+
+	    parent.document.getElementById('main').contentWindow.document.getElementById('opciones_adicionales').style.display='block';
+
+	    parent.document.getElementById('main').contentWindow.document.getElementById('checkCalendario').checked=true;
+
+	    parent.document.getElementById('main').contentWindow.activaCheck('checkCalendario','Programar');
+
+	    parent.document.getElementById('main').contentWindow.document.getElementById('yearpicker1').value=document.getElementById('yearpicker1').value;
+
+	    parent.document.getElementById('main').contentWindow.document.getElementById('HRS1').selectedIndex=document.getElementById('HRS').selectedIndex;
+
+	    parent.document.getElementById('main').contentWindow.document.getElementById('HRS').value = document.getElementById('HRS').options[document.getElementById('HRS').selectedIndex].value;
+
+	    parent.document.getElementById('main').contentWindow.document.getElementById('MINS').selectedIndex=document.getElementById('MINS').selectedIndex;
+
+	    parent.document.getElementById('main').contentWindow.document.getElementById('MIN').value = document.getElementById('MINS').options[document.getElementById('MINS').selectedIndex].value;
+
+	  }
+
+	  parent.$.modal.close();
+
+	}
+
+
+
+	function cerrar() {
+
+	  parent.$.modal.close();
+
+	}
+
+  </script>
+
+</head>
+
+
+
+<body>
+
+<div id="mensajeError_contenido" style="display:block">
+
+<div class="mensajeError_contenidoIn" style="display:block">
+
+  <div id="t0" class="panelIzEnca3_text2 padding0">Aviso importante</div><br/>
+
+	<div id="t1" class="mensajeError_Fila2 color666">
+
+	  La operaci&oacute;n que intentas realizar se encuentra fuera de horario:</div>
+
+	  <div class="color666  panelIzEnca3_text2 margin0 paddingL0 paddingT10 paddingB10 ">
+
+		<label id="hrsIni"></label>:<label id="minIni"></label>&nbsp;-&nbsp;
+
+		<label id="hrsFin"></label>:<label id="minFin"></label>&nbsp;(hh:mm)
+
+	  </div>
+
+	  <div id="t2" class="color666 f11 paddingT10 paddingB10">
+
+		¿Deseas realizar tu pago otro d&iacute;a? - Favor de verificar la fecha l&iacute;mite de tu pago,<br />
+
+		la cual deber&aacute; ser menor a la fecha en que deseas programarlo.
+
+	  </div>                                                      
+
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT10">
+
+		<tr>
+
+		  <td class="ancho50p borderRSolid"><div id="t3" class="negrita color333 f11 paddingB5">Fecha</div></td>
+
+		  <td class="ancho50p"><div id="t4" class="negrita color333 f11 paddingB5">Hora</div></td>
+
+		</tr>
+
+		<tr valign="bottom">
+
+		  <td class="borderRSolid">
+
+			<input id="yearpicker1" type="text" class="yearpicker" readonly="readonly" />
+
+		  </td>
+
+		  <td>
+
+			<div id="horario" class="ancho125">
+
+			  <select name="HRS" id="HRS">
+
+				<option value="00">00</option>
+
+				<option value="01">01</option>
+
+				<option value="02">02</option>
+
+				<option value="03">03</option>
+
+				<option value="04">04</option>
+
+				<option value="05">05</option>
+
+				<option value="06">06</option>
+
+				<option value="07">07</option>
+
+				<option value="08" selected>08</option>
+
+				<option value="09">09</option>
+
+				<option value="10">10</option>
+
+				<option value="11">11</option>
+
+				<option value="12">12</option>
+
+				<option value="13">13</option>
+
+				<option value="14">14</option>
+
+				<option value="15">15</option>
+
+				<option value="16">16</option>
+
+				<option value="17">17</option>
+
+				<option value="18">18</option>
+
+				<option value="19">19</option>
+
+				<option value="20">20</option>
+
+				<option value="21">21</option>
+
+				<option value="22">22</option>
+
+				<option value="23">23</option>
+
+			  </select>:
+
+			  <select name="MINS" id="MINS">
+
+				<option value="00" selected>00</option>
+
+				<option value="15">15</option>
+
+				<option value="30">30</option>
+
+				<option value="45">45</option>
+
+			  </select>&nbsp;hrs                                                                         
+
+			</div>
+
+		  </td>     
+
+		</tr>
+
+		<tr>
+
+		  <td class="bordeR"><div id="yearpicker1_error" class="saldos_bloque2_f4_error_display_blanco"></div></td>
+
+		  <td><div id="horario_error" class="saldos_bloque2_f4_error_display_blanco"></div></td>
+
+		</tr>
+
+	  </table>
+
+	  <div class="mensajeError_Fila3">
+
+		<div class="floatL"><input id="t5" type="button" value="Cancelar" class="btnRO86 CerrarVentanaEmergente" onclick="cerrar();" /></div>
+
+		<div class="floatR"><input id="t6" type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" onclick="javascript:validar();"/></div>
+
+	  </div>
+
+	</div>
+
+  </div>
+
+</div>  
+
+</body>
+
+
+
+</html>

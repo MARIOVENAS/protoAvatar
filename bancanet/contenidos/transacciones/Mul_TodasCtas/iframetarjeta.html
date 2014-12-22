@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html><head>
+
+<meta http-equiv="Pragma" content="no-cache">
+
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+
+<meta http-equiv="Expires" content="-1">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css">
+
+</head>
+
+
+
+<body text="#000000" bgcolor="#FFFFFF" link="#006060" onload="if(window.Initialize != null)Initialize();">
+
+<form method="POST"name="APPS_FORM_MAIN">
+
+<input type="hidden" name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359"><input type="hidden" name="EWF_SYS_1" value="GFTXRP8IZCC751AD0HVBIDXT5S8BS89R8B1WVBWY">
+
+<input type="hidden" name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><input type="HIDDEN" size="10" maxlength="100" name="DISPLAYPAGE" value="ZMVS-PAGINA COMBO"><input type="HIDDEN" size="10" maxlength="100" name="TEMPLATE_FILE" value="tarjetasmodal.htm"><input type="HIDDEN" size="10" maxlength="100" name="SEQUENCE_NUMBER" value="28"><table width="100%"><tbody><tr><td width="95%" align="bottom"></td><td></td><td></td><td></td></tr></tbody></table>
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" language="javascript">
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+String.prototype.trimtar = function(){ return this.replace(/^\s+|\s+$/g,"");}
+
+function setCbosret() {
+
+	var ctaVal = [[],[]];
+
+	var ctaDesc = [[],[]];
+
+	var ctaAls = [[],[]];
+
+	var ctaNum = [[],[]];
+
+	var ctaCur = [[],[]];
+
+	var ctaTip = [[],[]];
+
+	var ctaAmt = [[],[]];		
+
+	var $cboRetTB = $('#cboRetTB'); 
+
+ 	  
+
+	ctaVal[0].push( 'PS' );
+
+	ctaNum[0].push( 'Selecciona una opci&oacute;n' );
+
+	ctaDesc[0].push( '' );
+
+	ctaAls[0].push( '' );
+
+	ctaCur[0].push( '' );
+
+	ctaTip[0].push( '6' );
+
+	ctaAmt[0].push( '7' );	  
+
+      
+
+	ctaVal[0].push( '2' );
+
+	ctaNum[0].push( '002' );
+
+	ctaDesc[0].push( 'Cheques' );
+
+	ctaAls[0].push( 'Cheques' );
+
+	ctaCur[0].push( 'MXN' );
+
+	ctaTip[0].push( '1' );
+
+	ctaAmt[0].push( '40,000.00' );  
+
+    
+
+    armaComboRetiro( $cboRetTB, ctaVal[0], ctaNum[0], ctaDesc[0], ctaAls[0], ctaCur[0], ctaTip[0], ctaAmt[0] );
+
+}
+
+function armaComboRetiro( combo, vals, nums, descs, als, curs, tips, amts ){
+
+  var i=0;
+
+  for( i=0; i<descs.length; i++ ) {
+
+	var contenido;
+
+	var alsTemp = als[i].replace(/^\s*|\s*$/g,"");
+
+	var desCort = descs[i].replace(/^\s*|\s*$/g,"");
+
+	var desc = ( alsTemp == "" ) ? desCort : alsTemp;
+
+	var $opt = $('<option></option>');
+
+	$opt.attr('id','opc'+i+'');
+
+	$opt.attr('value',vals[i] );
+
+	$opt.attr('tipo',tips[i]);
+
+	if( isNaN( parseInt( nums[i] ) ) )
+
+	  contenido = nums[i];
+
+	else
+
+	  contenido = Combo_Propias( desc, nums[i], curs[i], amts[i] );
+
+	$opt.html( contenido );
+
+	combo.append( $opt );
+
+  }
+
+}
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var screen_height = screen.height;
+
+	var screen_width = screen.width;	
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+function regresarTarjetas(){
+
+	var doc = parent.document.forms[0];
+
+	var tar = document.forms[0];
+
+	doc.target = "_self";
+
+	doc.action = tar.action;
+
+	doc.EWF_SYS_0.value = tar.EWF_SYS_0.value;
+
+	doc.EWF_SYS_1.value = tar.EWF_SYS_1.value;
+
+	doc.EWF_FORM_NAME.value = tar.EWF_FORM_NAME.value;
+
+	doc.DISPLAYPAGE.value = tar.DISPLAYPAGE.value;
+
+	doc.TEMPLATE_FILE.value = tar.TEMPLATE_FILE.value;
+
+	doc.SEQUENCE_NUMBER.value = tar.SEQUENCE_NUMBER.value;
+
+	parent.DoSubmit("REGRESAR");
+
+}
+
+function armaNombreModal(){
+
+	var regreso = "";
+
+	var desCorta = "Tarjeta Cr&eacute;dito"; desCorta.trimtar();
+
+	var alias = "Tarjeta Cr&eacute;dito"; alias.trimtar();
+
+	var desMoneda = "MXN"; desMoneda.trimtar();
+
+	var ctacorta = "  796"; ctacorta.trimtar();
+
+	var signo = $("#sigsal").val();	signo.trimtar(); if(signo == "+"){signo = "";}
+
+	var saldototal = $("#sdoact").val(); saldototal.trimtar();
+
+	if(alias.trimtar() != ""){
+
+		regreso = desCorta.trimtar() + "&nbsp;-&nbsp;" + alias.trimtar() +  "&nbsp;-&nbsp;"+  desMoneda.trimtar() + "&nbsp;-&nbsp;**" + ctacorta.trimtar() + "&nbsp;-&nbsp;$" + signo + saldototal;
+
+	}else{		
+
+		regreso =  desCorta.trimtar() + "&nbsp;-&nbsp;" + desMoneda.trimtar() + "&nbsp;-&nbsp;**" + ctacorta.trimtar() + "&nbsp;-&nbsp;$" + signo + saldototal;
+
+	}
+
+	return regreso;
+
+}
+
+function bancanetLight(){
+
+	var signo = $("#sigsal").val();	signo.trimtar();
+
+	if(signo == "+" || signo == ""){ multi = 1; }else{ multi = -1; }	
+
+	var saldototal = parseFloat($("#sdoact").val().trimtar().replace(/,/g,""));
+
+	if(!isNaN(saldototal)){
+
+		saldototal = (saldototal) + (saldototal * 0.1);
+
+		var saldofinal = Math.round(saldototal * Math.pow(10, 2)) / Math.pow(10, 2);
+
+		$("#saldototal").val(saldototal);
+
+		return saldototal * multi;
+
+	}else{
+
+		return -1;
+
+	}	
+
+}
+
+$(document).ready(function(){	
+
+	var doc = parent.document.forms[0];// doc.target = "_self";
+
+	//$('input[name="EWF_BUTTON_COMBO PAGO"]', parent.document).attr("name","EWFBUTTON");
+
+	setCbosret();
+
+	if($("#tipocliente").val() == "56" ){
+
+		bancanetLight();
+
+		parent.parent.$.modal({
+
+			opacity:60, 
+
+			overlayClose:false, 
+
+			flagDiv:false,
+
+			heightDivIfrm:300,
+
+			widthDivIfrm:450,
+
+			srcIfrm: "bbAvatar/modal/pagotarjetas.htm"
+
+		});
+
+		$("#divCargando", parent.document).hide();
+
+	}else{
+
+		if(parseFloat(bancanetLight())<=0){
+
+			parent.parent.$.modal({ opacity:60, overlayClose:false, flagDiv:false, heightDivIfrm:300, widthDivIfrm:430, srcIfrm: "bbAvatar/modal/pagotarjetas.htm"});
+
+			$("#divCargando", parent.document).hide();
+
+		}else{
+
+			$('#mensajeError_contenido_div', parent.parent.document).html( $('#idErr1').html() );
+
+			parent.parent.$.modal({ opacity:60, overlayClose:false, flagDiv:true, widthDivIfrm:670 });
+
+			$("#divCargando", parent.document).hide();
+
+		}
+
+	}
+
+	
+
+});
+
+</script>
+
+
+
+
+
+<div id="idErr1" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+		<div id="me1">Causa: TARJETA DE CR&Eacute;DITO SIN ADEUDO</div>
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">¿Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &aacute;rea Metropolitana) &oacute; al<br>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br>
+
+	</div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" onclick="document.getElementById('main').contentWindow.document.getElementById('pagotarjetas').contentWindow.regresarTarjetas(); setTimeout('$.modal.close()',500)" class="btnAZ86"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+<select id="cboRetTB" class="ancho100p selectp1 cboRet bmx"></select>
+
+<input id="desMoneda" type="hidden" value="MXN">
+
+<input id="feclimpag" type="hidden" value="">
+
+<input id="minpag" type="hidden" value="0.00">
+
+<input id="sigsuc" type="hidden" value="-">
+
+<input id="sdoulc" type="hidden" value="0.00">
+
+<input id="sigsal" type="hidden" value="+">
+
+<input id="sdoact" type="hidden" value="113.01">
+
+<input id="idioma" type="hidden" value="SPANISH">
+
+<input id="fecserv" type="hidden" value="05/03/2012">
+
+<input id="tipocliente" type="hidden" value="56">
+
+<input id="indicedestino" type="hidden" value="9">
+
+<input id="saldototal" type="hidden" value="124.311">
+
+<input id="indretiro" type="hidden" value="">
+
+<input id="importe" type="hidden" value="">
+
+<input id="fechaprog" type="hidden" value="">
+
+<input id="us_hora" type="hidden" value="">
+
+<input id="us_minuto" type="hidden" value="">
+
+<input type="hidden" name="DATA1" value="">
+
+<input type="hidden" name="DATA2" value="">
+
+<input type="hidden" name="DATA3" value="">
+
+<input type="hidden" name="DATA4" value="">
+
+<input type="hidden" name="DATA5" value="">
+
+<input type="hidden" name="DATA6" value="">
+
+<input type="hidden" name="DATA7" value="">
+
+<input type="hidden" name="DATA8" value="">
+
+<input type="hidden" name="DATA9" value="">
+
+<input type="hidden" name="DATA10" value="">
+
+<input type="hidden" name="DATA11" value="">
+
+<input type="hidden" name="DATA12" value="">
+
+<input type="hidden" name="DATA13" value="">
+
+<input type="hidden" name="DATA14" value="">
+
+<input type="hidden" name="DATA15" value="">
+
+<input type="hidden" name="DATA16" value="">
+
+<input type="hidden" name="DATA17" value="">
+
+<input type="hidden" name="DATA18" value="">
+
+<input type="hidden" name="DATA19" value="">
+
+<input type="hidden" name="EWFBUTTON" value="">
+
+<input type="hidden" id="Params" name="Params" value="">
+
+<input id="omtmodalvalue" type="hidden" value="Consulta Movimientos|tarjetasmodal.htm">
+
+</div><p></p>
+
+
+
+</form>
+
+
+
+
+
+</body></html>

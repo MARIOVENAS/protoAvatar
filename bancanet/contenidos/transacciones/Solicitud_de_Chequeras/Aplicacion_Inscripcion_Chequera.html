@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+
+
+</head>
+
+
+
+<body  TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION="https://uattmp.boveda.banamex.com.mx/scripts/cgiclntcbbbnp3/TRVYZ38KB167PZP0B6D6IEB/ND001__"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="351ff9d2-3d6c-458a-9dad-06c2b78f8532" ><input type=hidden name="EWF_SYS_1" value="R2G293OQIDJMS0I2SHWKGOI6L32XO69WSDE3S2UC" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZSCH-PAG APLIC PROTEGIDA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="26-Aplicacion_Inscripcion_Chequera.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="15"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    	<title>Banamex</title>
+
+        <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+       <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+
+
+	   <script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+        
+
+
+
+    	<script type="text/javascript">
+
+		
+
+$(document).ready(
+
+	function(){
+
+		top.impayuda();
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+		
+
+		$("a").each(function(){
+
+			if($(this).attr("href") == "#"){
+
+				$(this).attr("href","javascript:void(0)");
+
+			}
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function swap(){
+
+	for (var i=0;i<es.length;i++){
+
+		$("[id=t"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = es[i];
+
+			else
+
+				this.innerHTML = es[i];});
+
+	}
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+			
+
+	$(document).ready(function(){optieneAlturas();pintaTablas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+		
+
+			
+
+function Initialize(){
+
+	if("SPANISH"=="ENGLISH"){
+
+		
+
+		es=["Your registry has been","Accounts","received",/*"with instruction number",*/"Account","Checkbooks management",
+
+		"Protected Checkbook service will enable the next business day.","<span class='negrita'>Important:</span> After enabling the department must release all checks issued, and any checks that are still in transit (issued and not paid)."];
+
+		swap();
+
+		ley1="Your Protected Checkbook registration";
+
+		ley2="is not completed.";
+
+	}
+
+	else{
+
+	
+
+		ley1="Tu Inscripcion a Chequera Protegida";
+
+		ley2="no se ha completado.";
+
+	}
+
+	if(""=="1"){
+
+		document.getElementById("t0").innerHTML=ley1;
+
+		document.getElementById("t2").innerHTML=ley2;
+
+		//document.getElementById("t3").innerHTML="";
+
+		document.getElementById("bloq").className="saldos_bloque3_rojo";
+
+		document.getElementById("leyenda").innerHTML="";
+
+		//document.getElementById("tt0").innerHTML="";
+
+		
+
+		
+
+	}
+
+}
+
+		</script>
+
+<script>parent.setFecha("30/04/12    17:47:35  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="174735  ";b$Cont="174735  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+    </head>
+
+    <body>
+
+        <div id="t4"class="panelIzEnca3_text2 ">Administraci&oacute;n de chequeras</div>
+
+
+
+        
+
+        
+
+        <div id="bloq" class="saldos_bloque3_verde paddingL20  marginT17" > <label id="t0">Tu inscripci&oacute;n ha sido</label>  <span  id="t2" class="negrita font_13">recibida </span><!-- <label id="t3">con n&uacute;mero de instrucci&oacute;n</label> <span  id="tt0" class="negrita font_13">123546</span> --></div>
+
+        
+
+        <div class=" borderBSolid  borderRSolid borderTSolid borderLSolid   marginT20">
+
+        	<table width="100%" border="" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p  paddingL20 paddingT18" valign="top"><p id="t1" class="f12">Cuentas</p></td>
+
+                    <td valign="top" class=" padding20">
+
+
+
+                    
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                        	
+
+                        	<tr>
+
+                            	<td class="ancho50p bgF1F2F2"><span id="t3">Cuenta</span></td>
+
+                                <td class="ancho50p bgF1F2F2">Cheques M.N 002 Cheques</td>
+
+                            </tr>
+
+                            
+
+                        </table>
+
+                        </td>
+
+                </tr>
+
+
+
+                <tr>
+
+					
+
+					<td  colspan="2" class="  bgF1F2F2  alto25 borderTDotted  center f11">
+
+					
+
+						<label id="leyenda" class="f11"><label id="t5" class="f11 color666">El servicio de Chequera Protegida quedar&aacute; habilitado al siguiente d&iacute;a h&aacute;bil.</label><br>  
+
+						<label id="t6" class="f11 color666"><span class="negrita">Importante:</span> A partir de la habilitaci&oacute;n del servicio deber&aacute; liberar todos los cheques que expida,
+
+						as&iacute; como todos los cheques que a&uacute;n se encuentren en tr&aacute;nsito (expedidos y no cobrados).</label></label></td>
+
+
+
+				</tr>
+
+            </table>        	
+
+        </div>
+
+    </body>
+
+</html>
+
+
+
+<script type="text/javascript" language="javascript" src="https://www.banamex.com/recursos/js/mx_citi_s_code.js"></script>
+
+<script type="text/javascript" language="javascript">
+
+String.prototype.trimomt = function(){return this.replace(/^\s+|\s+$/g,"")};
+
+try{ var moduleeval = "ZSCH"; if(!parent.document.getElementById("main") && (moduleeval == "ZLOG" || moduleeval == "["+"CURRENT MODULE"+"]")){ OmnitureBNP2(); } if(parent.document.getElementById("main") && moduleeval != "["+"CURRENT MODULE"+"]" && moduleeval != "ZRUT"){ OmnitureBNP2();} }catch(exp){}
+
+function OmnitureBNP2(){ try{s.eVar21 = "BNP2"; var idusuario_omt = "DEMO"; idusuario_omt.trimomt(); var idusuariomemoria_omt = "["+"USERID"+"]"; if(idusuario_omt != "" && idusuario_omt != idusuariomemoria_omt){ s.prop5 = idusuario_omt; } var tipousuario_omt = "56"; tipousuario_omt.trimomt(); var tipousuariomemoria_omt = "["+"StatusToken"+"]"; if(tipousuario_omt == tipousuariomemoria_omt){ s.prop6 = "anon"; } else if(tipousuario_omt == "56"){ s.prop6 = "CHALLENGE"; }else if(tipousuario_omt == "06"){ s.prop6 = "PASSCODE"; } else{ s.prop6 = "LIGHT"; } var language_omt = "SPANISH"; if(language_omt == "SPANISH"){ s.prop10="ES"; }else if(language_omt == "ENGLISH"){ s.prop10="EN";} var pagenameomt = ""; var indicetable = "Solicitud de Chequeras|26-Aplicacion_Inscripcion_Chequera.html"; indicetable.trimomt(); var valuehashtableOmt = hashtableOmtRim[indicetable]; if(valuehashtableOmt != null && valuehashtableOmt != ""){ pagenameomt = "MX|BNP2|" + valuehashtableOmt; }else{ pagenameomt="MX|BNP2|ZSCH|Solicitud de Chequeras|26-Aplicacion_Inscripcion_Chequera.html"; } s.pageName = pagenameomt; var s_code=s.t();if(s_code)document.write(s_code); }catch(exp){} }
+
+</script>
+
+<input id="omtmodalvalue" type="hidden" value="Solicitud de Chequeras|26-Aplicacion_Inscripcion_Chequera.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+
+
+</body>
+
+</html>
+

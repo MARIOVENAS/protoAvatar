@@ -1,0 +1,2457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+</head>
+
+
+
+<body TEXT="#000000" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" style="background:#FFF">
+
+<form  METHOD="POST" ACTION="https://boveda.banamex.com.mx/scripts/cgiclnt.exe/WFBOUQENV1J2P7U09XW8IC/ND001__"  NAME="APPS_FORM_MAIN" >
+
+
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="REBQ00TSBSW23NZSDD@ZLNFW0LZLMSIS602SQ384" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZCVI-PAG RECIBIDA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="PagRecibida.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="17"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<!-- <link href="../../bbAvatar/css/mando.css" rel="stylesheet" type="text/css" /> -->
+
+<link href="../../bbAvatar/css/skin.css" rel="stylesheet" type="text/css" />
+
+<link href="../../bbAvatar/css/skin2.css" rel="stylesheet" type="text/css" />
+
+
+
+<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/motor.js"></script>
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../bbAvatar/css/estilos.css">
+
+
+
+<style type="text/css">
+
+body{
+
+background: transparent;
+
+}
+
+</style>
+
+
+
+<script language="JavaScript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script language="JavaScript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+<script language="JavaScript">
+
+var es=new Array('Mutual Funds',
+
+				'Your security sale has been ',
+
+				'&nbsp; received ',
+
+				'with instruction number ',
+
+				'Accounts',
+
+				'Investment Contract',
+
+				'Investment </br> Data',
+
+				'Operation Type',
+
+				'Mutual Fund / Serie',
+
+				'Amount ',
+
+				'Stocks', 
+
+				'Market Price', 
+
+				'Liquidation',
+
+				'Accounts',
+
+				'This transaction was processed according yours instructions, without any Banamex Officer advisory',
+
+				'Banco Nacional de México, S.A., member of the  Grupo Financiero Banamex will not be liable for the <br> investment to be made, which is subject to the availability of existing recourses at the time the said <br>investment is made, in the account of the Client, or enough Titles in the investment account, under the <br>terms and conditions, established in the agreement, and in the respective placement prospect.',
+
+				'Same Day',
+
+				'INVESTMENT FUNDS');
+
+				
+
+function RdioChk_Vacio (Objeto,Msg_Error){
+
+	$("#"+Objeto+"_error").css("display","none");
+
+	var Seleccionado = false;
+
+	$("input[name='"+Objeto+"']").each(function(){
+
+		if(Seleccionado != true){
+
+			if(this.checked)
+
+			Seleccionado = true;
+
+			else
+
+			Seleccionado = false;
+
+		}
+
+	});
+
+	if(Seleccionado != true){
+
+		$("#"+Objeto+"_error").css("display","block").html(Msg_Error);
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+function Verifica_CampoVacio(Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if ($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}
+
+		return true;
+
+}
+
+
+
+function Verifica_Combos_Vacios (Combo1, Combo2)
+
+{
+
+var Valor1 = "";
+
+var Valor2 = "";
+
+Num_Opcion1 = Combo1.selectedIndex;
+
+Valor1 = Combo1.options[Num_Opcion1].value;
+
+Num_Opcion2 = Combo2.selectedIndex;
+
+Valor2 = Combo2.options[Num_Opcion2].value;
+
+
+
+if (Valor1 == "PS" || Valor1 == "AC" || Valor1 == "NS")
+
+	{
+
+       if (Valor2 == "PS" || Valor2 == "AC" || Valor2 == "NS")
+
+	   {
+
+	      return false;
+
+	   }
+
+       else
+
+           {
+
+             Combo1.focus();
+
+	     alert("Seleccione el dia");	
+
+   	     return true;
+
+           }          
+
+        }
+
+   else
+
+     {
+
+       if (Valor2 == "PS" || Valor2 == "AC" || Valor2 == "NS")
+
+	   {
+
+	       Combo2.focus();
+
+	       alert("Seleccione el mes");	
+
+               return true;
+
+           }
+
+       else
+
+           {
+
+   	     return false;
+
+           }
+
+     }
+
+}
+
+
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var criterio = "COMPRA";
+
+var inParm = "||1|1000|01|05|0|0|1|VENTA|2012|||||||||||||||||||||||||||||";
+
+var regresaMultiseries = "SI";
+
+var numeroSeries;
+
+var eventoSeries
+
+var tamanioPagina = 10;
+
+var paginaSeleccionada = 1;
+
+
+
+var msj1 = "Es necesario seleccionar el No. de Contrato";
+
+var msj2;
+
+if(criterio == "VENTA")
+
+		msj2 = "Digite un valor en el campo T\u00edtulos";
+
+	else
+
+		msj2 = "Digite un valor en el campo Importe";
+
+var msj3 = "Es necesario seleccionar un Fondo / Serie";
+
+var msj4 = "S\u00f3lo se permiten datos num\u00e9ricos en este campo. Favor de verificar";
+
+var msj5 = "Es necesario seleccionar Compra o Venta";
+
+var msj6 = "Importe";
+
+var msj7 = "N\u00famero de T\u00edtulos";
+
+var msj8 = "La compra ser\u00e1 cargada de la cuenta eje a la que est\u00e1 ligada la inversi\u00f3n";
+
+var msj9 = "El importe de la venta ser\u00e1 depositado a la cuenta eje que esta ligada a la inversi\u00f3n";
+
+var msj10= "Seleccione una fecha";
+
+
+
+jQuery(document).ready(function(){
+
+	
+
+	top.impayuda();
+
+	crearCombo();
+
+	cambiarMensaje();
+
+	formaTituloImporte();
+
+	
+
+	if("SI" == "SI"){
+
+		var inParmMultiseries = ("||1|1000|01|05|0|0|1|VENTA|2012|||||||||||||||||||||||||||||").split("|");
+
+		$("[name='compraVenta']").attr("checked","");
+
+		$("[name='compraVenta'][value='"+inParmMultiseries[9]+"']").attr("checked","checked");
+
+		criterio = inParmMultiseries[9];
+
+		paginaSeleccionada = inParmMultiseries[8];
+
+		var IndiceOrigen = '27';
+
+		$("#comboContratos").find("option[value='"+IndiceOrigen+"']").attr("selected","selected");
+
+		paginarTabla("tablaSeries", tamanioPagina,paginaSeleccionada);
+
+		$("input[name='radioSerie'][value='"+inParmMultiseries[2]+"']").attr("checked","checked");
+
+		$("#importe").val(inParmMultiseries[3]);
+
+		$("#divCargando").hide();
+
+		$("#divSeries").show();
+
+		$("#tablaImporte").addClass("marginT20");
+
+		var aux = $("#tablaCaptura").length;
+
+
+
+		var aux2 = inParmMultiseries[4];
+
+		
+
+		if(aux!=0 && isProgramada(aux2) ){
+
+			$('#checkCalendario').attr("checked","checked");
+
+			$("#divInputFecha").removeClass("displayN");
+
+			parent.ajustarIframe();
+
+			if("SPANISH" =="SPANISH" ){
+
+				var dia= inParmMultiseries[4];
+
+				var mes = inParmMultiseries[5];
+
+				var fecha = dia +"/"+ mes + "/" + "2012";
+
+				$("#inputFecha").val(fecha);
+
+			}else{
+
+				var dia= inParmMultiseries[4];
+
+				var mes = inParmMultiseries[5];
+
+				var fecha = mes +"/"+ dia + "/" + "2012";
+
+				$("#inputFecha").val(fecha);	
+
+			}
+
+			inciaCalendario();
+
+			$("#inputFecha").focus(function(){$("#inputFecha").val("");});
+
+		}
+
+		if("INSTRUCCIONRECIBIDA" == "ERROR"){
+
+			
+
+			$("#causa").css("height","auto");
+
+			$("#mensajeError_contenido_div", window.parent.document).html(
+
+				$("#divError").html()
+
+			);
+
+			
+
+			setTimeout(function(){
+
+				parent.$.modal(				
+
+						{
+
+							closeHTML: '',
+
+							opacity:60,
+
+							overlayClose:false,
+
+							flagDiv:true,
+
+							widthDivIfrm:600,
+
+							heightDivIfrm:'auto'
+
+						}
+
+					);
+
+			},600);
+
+		}
+
+	}
+
+	$("input[name='compraVenta']").click(function(){
+
+		$("#comboContratos").find("option:eq(0)").attr("selected","selected");
+
+		$("#divCargando").hide();
+
+		$("#divSeries").hide();
+
+		$("#tablaImporte").removeClass("marginT20");
+
+		$("#importe").val('');
+
+		criterio = $(this).val();
+
+		cambiarMensaje();
+
+		formaTituloImporte();
+
+		ocultaErrores();
+
+		reiniciarCalendario();
+
+	});
+
+	$("#comboContratos").change(function(){
+
+		var indice = $(this).find("option:selected").val();
+
+		var event;
+
+		ocultaErrores();
+
+		
+
+		event = criterio == "COMPRA" ? "TRAE SERIES COMPRA" : "TRAE SERIES VENTA";
+
+		if(indice != "PS"){
+
+			$("#divSeries").hide();
+
+			$("#divNoSeries").hide();
+
+			$("#divCargando").show();
+
+			parent.ajustarIframe();
+
+			traeFolios(criterio, indice,event);
+
+		}else{
+
+			$("#divSeries").hide();
+
+			$("#divNoSeries").hide();
+
+			$("#tablaImporte").removeClass("marginT20");
+
+			$("#divCargando").hide();
+
+			parent.ajustarIframe();
+
+			reiniciarCalendario();
+
+		}
+
+	});
+
+	$("#checkCalendario").change(function(){
+
+		var mostrarInputFecha = $('#checkCalendario').attr("checked");
+
+		if(mostrarInputFecha){
+
+			$("#divInputFecha").removeClass("displayN");
+
+			inciaCalendario();
+
+			$("#inputFecha").focus(function(){$("#inputFecha").val("");});
+
+		}
+
+		else{
+
+			$("#divInputFecha").addClass("displayN");
+
+			EliminarCal("#inputFecha");
+
+		}
+
+		parent.ajustarIframe();
+
+	});
+
+});
+
+
+
+function crearCombo(){
+
+	var cuentasCombo = new Array();
+
+	var stringCuentas = '';
+
+			stringCuentas += '6-PS--Selecciona una opci&oacute;n---7|';
+
+			stringCuentas += '8-27-Multiseries-378-Banca Inversi\u00f3n-MXN-40,000.00|';
+
+	
+
+	cuentasCombo = stringCuentas.split('|');
+
+	
+
+	var option = "<option value='PS'>Selecciona una opci&oacute;n</option>";
+
+	
+
+	
+
+	var alpha = /[A-Za-a0-9]/;
+
+	for(i=1;i<cuentasCombo.length-1;i++){
+
+		cuentaTemp = cuentasCombo[i].split('-');
+
+		if(alpha.test(cuentaTemp[2]))
+
+			nombreCuenta = cuentaTemp[2].replace(/^\s*|\s*$/g,"") + '&nbsp;&nbsp;-&nbsp;&nbsp;**' + cuentaTemp[3].replace(/^\s*|\s*$/g,"") + "&nbsp;&nbsp;-&nbsp;&nbsp;" + cuentaTemp[5].replace(/^\s*|\s*$/g,"");
+
+		else
+
+			nombreCuenta = cuentaTemp[4].replace(/^\s*|\s*$/g,"") + '&nbsp;&nbsp;-&nbsp;&nbsp;**' + cuentaTemp[3].replace(/^\s*|\s*$/g,"") + "&nbsp;&nbsp;-&nbsp;&nbsp;" + cuentaTemp[5].replace(/^\s*|\s*$/g,"");
+
+		option += "<option class='"+cuentaTemp[0]+"' value='"+cuentaTemp[1]+"'>"+nombreCuenta+"</option>";
+
+	}
+
+	
+
+	$("#comboContratos").html('');
+
+	$("#comboContratos").append(option);
+
+}
+
+
+
+function traeFolios(compraVenta, indice,event){
+
+	var d=document.getElementById('ndw').contentWindow.document.forms[0];
+
+	var o=document.forms[0];
+
+	d.action=o.action;
+
+	d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+	d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+	d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+	d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+	d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+	d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+	d.DATA1.value = compraVenta;
+
+	d.DATA2.value = indice;
+
+	d.EWFBUTTON.value = event;
+
+	d.EWFBUTTON.name = 'EWF_BUTTON_'+event;
+
+	d.submit();
+
+}
+
+
+
+function muestraSeries(){
+
+
+
+	eventoSeries = $("#EventoSeries").val();
+
+	
+
+	if(eventoSeries == "OK"){
+
+		var links = '';
+
+		
+
+		paginarTabla("tablaSeries", tamanioPagina,1);
+
+		
+
+		$("#divCargando").hide();
+
+		$("#divSeries").show();
+
+		$("#tablaImporte").addClass("marginT20");	
+
+	}else if(eventoSeries == "NOSERIES"){
+
+		$("#divCargando").hide();
+
+		$("#divNoSeries").show();
+
+		$("#tablaImporte").addClass("marginT20");
+
+	}else{
+
+		var contexto = document.getElementById('ndw').contentWindow.document;
+
+		
+
+		$('#divError').html(
+
+			$("#divError", contexto).html()
+
+		);
+
+		$('#mensajeError_contenido_div', window.parent.document).html(
+
+			$("#divError").html()
+
+		);
+
+		
+
+		$("#divCargando").hide();
+
+		
+
+		setTimeout(function(){
+
+			parent.$.modal(				
+
+					{
+
+						closeHTML: '',
+
+						opacity:60,
+
+						overlayClose:false,
+
+						flagDiv:true,
+
+						widthDivIfrm:600,
+
+						heightDivIfrm:'auto'
+
+					}
+
+				);
+
+		},200);
+
+	}
+
+
+
+	parent.ajustarIframe();
+
+	reiniciarCalendario();
+
+}
+
+
+
+function ocultaErrores(){
+
+	$("div[id$='error']").hide();
+
+	parent.ajustarIframe();
+
+}
+
+
+
+function formaTituloImporte(){
+
+	var tituloImporte = criterio == "COMPRA" ? msj6 : msj7;
+
+	$("#tituloImporte").html(tituloImporte);
+
+}
+
+
+
+function cambiarMensaje(){
+
+	var mensaje = criterio == "COMPRA" ? msj8 : msj9;
+
+	$("#mensajeCompra").html(mensaje);
+
+}
+
+
+
+function inciaCalendario(){
+
+
+
+		var Formato = "dd/mm/yy";
+
+		var diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+		var Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+
+
+	var fechaIni= new Date();
+
+	var p = $("#divInputFecha");
+
+	var position = p.position();
+
+	CrearCal("#inputFecha", Formato, diasSemana, Meses, fechaIni,  fechaIni,30,position.top-120 , 'A',position.left-275);
+
+}
+
+
+
+function reiniciarCalendario(){
+
+
+
+var mostrarInputFecha = $('#checkCalendario').attr("checked");
+
+if(mostrarInputFecha){
+
+		EliminarCal("#inputFecha");
+
+		inciaCalendario();
+
+		}
+
+}
+
+
+
+function isProgramada(dato){
+
+if(dato=="" ||dato=="0")
+
+	return false;
+
+return true;
+
+}
+
+
+
+function paginarTabla(tabla, tamanio, pagina){
+
+
+
+	var numeroSeries = $("#"+ tabla + " TBODY").find("tr").length;
+
+	var paginas = Math.round( (numeroSeries / tamanio) + .5 );
+
+	var links = "";
+
+	paginaSeleccionada = pagina;
+
+	
+
+	if(numeroSeries > tamanio){
+
+		
+
+		$("#"+tabla+" TBODY").find("tr").css("display","none");
+
+		
+
+		for(i=1;i<=paginas;i++){
+
+			links += '<a id="linkPagina'+i+'" class="num" onclick="paginarTabla(\''+tabla+'\','+tamanio+','+i+')" style="cursor:pointer;">'+i+'</a>';			
+
+		}
+
+		$("#"+tabla+"_bloque").html(links);
+
+		
+
+		var min = (pagina*tamanio)-tamanio;
+
+		var max = (pagina*tamanio)-1;
+
+		
+
+		$("#"+tabla+" TBODY").find("tr").each(function(index){		
+
+			if(index >= min && index <= max){
+
+				$(this).show();
+
+			}
+
+		});
+
+		
+
+		$("#divSeries :radio").attr("checked","");
+
+		$("#"+tabla+"_Paginacion a").removeClass().addClass("num");
+
+		$("#linkPagina"+pagina).removeClass("num").addClass("sel_num");
+
+		
+
+		$("#"+tabla+"_Paginacion").show();
+
+	}
+
+	
+
+	$("#"+ tabla +" tr:odd td").addClass("bgF1F2F2");
+
+	parent.ajustarIframe();
+
+}
+
+
+
+function Radio_Vacio(Radio,Msg_Error,Req){
+
+	var seleccionado = false;
+
+	$("#"+Radio+"_error").css("display","none");
+
+	$("input[name='"+Radio+"']:radio").each(function(){
+
+		if($(this).is(":checked"))
+
+			seleccionado = true;
+
+	});
+
+	
+
+	if(!seleccionado && Req != "NO"){
+
+		$("#"+Radio+"_error").css("display","block").html(Msg_Error);
+
+		$("input[name='"+Radio+"']:eq(0)").focus();
+
+	}
+
+
+
+	return seleccionado;
+
+}
+
+
+
+function valida(){
+
+	
+
+	var flagCorrecto = true;
+
+	if(!Combo_Vacio("comboContratos",msj1,"SI"))
+
+		flagCorrecto = false;
+
+	if(!Radio_Vacio("radioSerie",msj3,""))
+
+		flagCorrecto = false;
+
+		
+
+	if(criterio == "COMPRA"){
+
+		if(!Valida_Caracteres("importe",".,",1,"SI",msj2))
+
+		flagCorrecto = false;
+
+	}else{
+
+		if(!Valida_Caracteres("importe","",1,"SI",msj2))
+
+		flagCorrecto = false;
+
+	}
+
+	
+
+	var fechaProg = $('#checkCalendario').attr("checked");
+
+	if(fechaProg){
+
+		if(!Campo_Vacio("inputFecha",msj10,"SI"))
+
+		flagCorrecto = false;
+
+	}
+
+	if(flagCorrecto){
+
+		var serie = $("input[name='radioSerie']:checked").val();
+
+		var importe = $("#importe").val();
+
+		var fecha = $("#inputFecha").val();
+
+		
+
+		var  arreglo = fecha.split("/");
+
+
+
+			var dia = arreglo[0];
+
+			var mes = arreglo[1];
+
+		
+
+			var anio = arreglo[2];
+
+
+
+		$("input[name='DATA3']").val(serie);
+
+		$("input[name='DATA4']").val(importe);
+
+		if(fechaProg){
+
+			$("input[name='DATA5']").val(dia);
+
+			$("input[name='DATA6']").val(mes);
+
+			$("input[name='DATA11']").val(anio);
+
+		}
+
+		else{
+
+			$("input[name='DATA5']").val("0");
+
+			$("input[name='DATA6']").val("0");
+
+			$("input[name='DATA11']").val("");
+
+		}
+
+		
+
+		$("input[name='DATA9']").val(paginaSeleccionada);
+
+		$("input[name='DATA10']").val(criterio);
+
+		var evento = criterio == "COMPRA" ? "FUNCION PREVALIDA COMPRA" : "FUNCION PREVALIDA VENTA";
+
+		DoSubmit(evento);
+
+	}
+
+	
+
+	parent.ajustarIframe();
+
+}
+
+
+
+var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+var iframe = "";
+
+var banderaBoton = "";
+
+
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+</script>
+
+
+
+<script language="JavaScript">
+
+
+
+function MM_openBrWindow(theURL,winName,features)
+
+{ 
+
+  var URL;
+
+  for (iCount=0; iCount<document.forms[0].length; iCount++)
+
+   {
+
+     if (document.forms[0].elements[iCount].name == theURL)
+
+       URL=document.forms[0].elements[iCount].value;
+
+   }
+
+  window.open(URL, winName, features);
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>parent.setFecha("28/04/12    23:05:07  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit\u00f3 la funci\u00f3n de back, para poder continuar operando elija del menú la opci\u00f3n deseada u oprima el bot\u00f3n(es) al final de la p\u00e1gina.\n\n Esta Transacci\u00f3n no se efectuar\u00e1, recuerde imprimir el comprobante de la transacci\u00f3n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opci\u00f3n deseada u oprima el bot\u00f3n(es) al final de la p\u00e1gina. Recuerde imprimir el comprobante de la transacci\u00f3n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="230507  ";b$Cont="230507  "
+
+	//
+
+    </script>
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+function enviaDatosTx (Transaccion, TipoCta) {
+
+
+
+	document.forms[0].DATA1.value = Transaccion + TipoCta;
+
+	DoSubmit('DETALLE');
+
+}
+
+
+
+function enviaTx (Transaccion) {
+
+	if ("ZCVI"== 'Z3SP'&& ContadorSeq != -1){
+
+	      ContadorSeq += 1;
+
+	      document.forms[0].SEQUENCE_NUMBER.value = eval(document.forms[0].SEQUENCE_NUMBER.value) + ContadorSeq;
+
+	      DoSubmit('LIGA'+ Transaccion);
+
+	    }
+
+	else{
+
+		document.forms[0].DATA1.value = Transaccion;
+
+		DoSubmit("DETALLE");
+
+		}
+
+}
+
+</script>
+
+
+
+
+
+<script>parent.setFecha("28/04/12    23:05:07  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit\u00f3 la funci\u00f3n de back, para poder continuar operando elija del menú la opci\u00f3n deseada u oprima el bot\u00f3n(es) al final de la p\u00e1gina.\n\n Esta Transacci\u00f3n no se efectuar\u00e1, recuerde imprimir el comprobante de la transacci\u00f3n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opci\u00f3n deseada u oprima el bot\u00f3n(es) al final de la p\u00e1gina. Recuerde imprimir el comprobante de la transacci\u00f3n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="230507  ";b$Cont="230507  "
+
+	//
+
+    </script>
+
+
+
+
+
+<script language="javascript">
+
+var winImp;
+
+var fecha;
+
+var lugar;
+
+
+
+function Impresion() {
+
+  var fechaComp = $("#fecha",window.parent.document).html().split(',');
+
+  var lugarComp = $("#fecha2",window.parent.document).html().split('|');
+
+  fecha = ( "SPANISH"=="ENGLISH" ) ? fechaComp[0]+', '+fechaComp[1]+', '+fechaComp[2] : fechaComp[0];
+
+  lugar = lugarComp[0];
+
+  winImp = window.open("../../bbAvatar/impresion/ImpresionRecibo.html","","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+  winImp.moveTo(0,0);
+
+}
+
+
+
+function llenar(){
+
+  var txtCtaret="";
+
+  var txtCtadep="";
+
+  var dCtar, dCtad, aCtar, aCtad, nCtar, nCtad;
+
+
+
+    dCtar = "Banca Inversi\u00f3n".replace(/^\s*|\s*$/g,"");
+
+	aCtar = "Multiseries".replace(/^\s*|\s*$/g,"");
+
+	nCtar = "378".replace(/^\s*|\s*$/g,"");
+
+    txtCtaret = dCtar+" - "+aCtar+" - **"+nCtar;
+
+
+
+  $('#divCom', winImp.document).html( $('#impComp').html() );
+
+  if( txtCtaret!="" ) { $('#lblRet', winImp.document).html( txtCtaret ); }
+
+  if( txtCtadep!="" ) { $('#lblDep', winImp.document).html( txtCtadep ); }
+
+  $('.nosimp', winImp.document).html('');
+
+  $('.nosimp', winImp.document).hide();
+
+  $('#lblNom', winImp.document).html( "Jose Rivera Lopez" );
+
+  $('#lblFec', winImp.document).html( fecha );
+
+  $('#lblHor', winImp.document).html( "11:05:07 p.m."+lugar );
+
+}
+
+
+
+	if(language== "eng"){
+
+		var mesesFecha_BB = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+	}else{
+
+		var mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+	}
+
+
+
+$(document).ready
+
+
+
+(
+
+		function ()
+
+	{
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+					catch(e)
+
+					{
+
+					}
+
+			}
+
+		)	
+
+	}
+
+)
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+		alert(e);
+
+	}	
+
+	return fechafinal;
+
+}
+
+
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+				// Saco la hora la almaceno
+
+				var hora = fecha.substring(10);
+
+				// saco la seccion de la fecha y le aplico el formato
+
+				var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+				// le cocateno la hora
+
+				return fechaformateada + hora;
+
+}
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+			//ejemplo 16-MAR-2007
+
+			fecha = fecha.replace(/\-/gi," ");
+
+			var conversion = (fecha.substring(4,6)).toLowerCase();
+
+			var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+			return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha)
+
+	{
+
+		//ejemplo 5 de Abril de 2003
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[fecha8]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+			
+
+		if(splitFecha[0].length==1)
+
+		{
+
+			splitFecha[0]="0"+splitFecha[0];
+
+		}
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+	
+
+function formato_dddemesdeaaaa(Fecha)
+
+	{
+
+		//ejemplo 30 de Diciembre de 2010
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[Fecha]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+function formateaFechaBB(formato, fecha)
+
+{	
+
+	if(language== "eng"){
+
+		var mesesFecha_BB = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+	}else{
+
+		var mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+	}
+
+	fechaFormateada="";
+
+	if(fecha != '')
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+							//Esto quita los espacios solo aplicable cunado se necesite
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if(language== "eng")
+
+							fechaFormateada = fecha.substring(3,5) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(0,2), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			//la o se lo puse por opcional ya que cuando solo muestra u digito en los primero 9 dias.
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+		
+
+	return fechaFormateada; 
+
+}
+
+
+
+	var alpha = /[A-Za-a0-9]/;
+
+	function Initialize() 
+
+	{
+
+	
+
+		var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+		rutaAyuda += 'Multiseries.htm';
+
+
+
+		var nombreCuenta;
+
+		var cuenta = ("Banca Inversi\u00f3n~Multiseries~378").split("~");
+
+		if(alpha.test(cuenta[1]))
+
+			nombreCuenta = cuenta[1] +  " - **" + cuenta[2].replace(/^\s*|\s*$/g,"");
+
+		else
+
+			nombreCuenta = cuenta[0] +  " - **" + cuenta[2].replace(/^\s*|\s*$/g,"");
+
+			
+
+		$(".descripCuenta").html(nombreCuenta);
+
+
+
+			$("#desTrans").html((language=='eng') ? "Sale" : "Venta");
+
+			var msjTit1 = (language=='eng') ? "Your security sale has been " : "Tu venta de t&iacute;tulos ha sido ";
+
+			var msjTit2 = "";
+
+
+
+		$("#t1").html(msjTit1);
+
+		
+
+		var fecha = $("#DATAAUX", window.parent.document).val();
+
+		
+
+		if(fecha != ""){
+
+			fecha = formateaFechaBB("ddmmaaaa", fecha);
+
+			$("#fechaProg").html((language=='eng') ? "Scheduled date" : "Fecha programada");
+
+			$("#valorfechaProg").html(fecha);
+
+			$("#operProgramada").show();
+
+			$("#DATAAUX", window.parent.document).val("");
+
+		}
+
+	}
+
+
+
+</script>
+
+<div class="float-left fonttit" id="t17">FONDOS DE INVERSI&Oacute;N</div>
+
+<div id="impComp">
+
+
+
+<div class="panelIzEnca3_text2" id="t0">Fondos de Inversi&oacute;n Horizonte Multiseries</div>
+
+        
+
+	
+
+<div class="saldos_bloque3_verde">
+
+	<span id="t1">Tu venta de t&iacute;tulos ha sido </span><span class="negrita" id="t2">recibida </span><span id="t3">con n&uacute;mero de instrucci&oacute;n </span><span class="negrita">123345</span>.
+
+</div>
+
+
+
+ <div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20 paddingL15" valign="top"><span class="f12" id="t4">Cuentas</span></td>
+
+			<td valign="top" class="padding20 paddingL15 paddingR15">
+
+				<div class=" paddingB5 borderBSolid"><div class="negrita color333 f12b" id="t5">Contrato de inversi&oacute;n</div></div>
+
+				<div class="ancho100p clear overflow paddingT5">
+
+					<div class="floatL ancho40p f11 descripCuenta" id="lblRet"></div>
+
+				</div>
+
+			</td>
+
+		</tr>
+
+	</table>    	
+
+</div>
+
+
+
+<div class="saldos_bloque3_2">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+
+
+		<tr>
+
+			<td class="borderRDotted ancho25p padding20 paddingL15" valign="top"><span class="f12" id="t6">Datos de <br /> la Inversi&oacute;n</span></td>
+
+			<td valign="top" class=" paddingB13 padding20 paddingL15 paddingR15">
+
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+					<tr>
+
+						<td class="bgF1F2F2" align="left"><span id="t7">Tipo de operaci&oacute;n</span></td>
+
+						<td class="bgF1F2F2" id="desTrans">Venta</td>
+
+						</tr>
+
+						<tr>
+
+							<td align="left"><span id="t8">Fondo / Serie</span></td>
+
+							<td>HZDIA&nbsp;M2-C&nbsp;-&nbsp; 378</td>
+
+						</tr>
+
+					   <tr>
+
+							<td align="left" class="bgF1F2F2"><span id="t9">Importe </span></td>
+
+							<td class="bgF1F2F2">12,300</td>
+
+						</tr>
+
+						<tr>
+
+							<td  align="left"><span id="t10">T&iacute;tulos</span></td>
+
+							<td>1,000</td>
+
+						</tr>
+
+						<tr>
+
+							<td class="bgF1F2F2" align="left"><span id="t11">Precio de mercado</span></td>
+
+							<td class="bgF1F2F2">8.871718</td>
+
+						</tr>
+
+						<tr>
+
+							<td  align="left"><span id="t12">Liquidaci&oacute;n</span></td>
+
+							<td id="t16">Mismo d&iacute;a.</td>
+
+						</tr>
+
+						<tr>
+
+							<td class="bgF1F2F2" align="left"><span id="t13">Cuenta eje n&uacute;mero</span></td>
+
+							<td class="bgF1F2F2">813 198</td>
+
+						</tr>
+
+						<tr id="operProgramada" style="display:none;">
+
+							<td align="left"><span id="fechaProg"></span></td>
+
+							<td id="valorfechaProg"></td>
+
+                        </tr>
+
+				</table>
+
+			   <div class="padding4"></div>
+
+			</td>
+
+		</tr>
+
+	</table>        	
+
+</div>
+
+
+
+</div>
+
+
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

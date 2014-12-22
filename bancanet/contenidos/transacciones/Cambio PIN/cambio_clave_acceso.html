@@ -1,0 +1,1868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"   NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="4f4659af-c9d7-4c5e-b3dc-9ef248f0a7e1" ><input type=hidden name="EWF_SYS_1" value="UJE00@CRS8XPADVM5QDI1ZFBNGPFM52D7BT931Y7" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="Z2CP-CAPTURA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="pin01.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="5"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+
+
+		<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>		
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+        
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+<!-- 
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+$(document).ready(function(){
+
+	top.ayuda();
+
+	optieneAlturas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+
+
+
+
+function swap(){return;}
+
+
+
+
+
+
+
+
+
+
+
+var ax=new Array('Cambio de claves de acceso','/ayudasbb/spanishdir/CambioNumeroSecreto.htm');
+
+
+
+
+
+
+
+function Initialize(){
+
+swap();
+
+
+
+
+
+
+
+	if(""=="ERROR")
+
+	{
+
+		
+
+		muestraModal();	
+
+		
+
+		
+
+	}
+
+	
+
+	
+
+top.ajustarIframe();
+
+}
+
+
+
+
+
+
+
+function muestraModal()
+
+{
+
+				//document.getElementById('applet').style.display='none';
+
+				
+
+				$("#causa").css("height","auto");
+
+				
+
+				parent.parent.$("#mensajeError_contenido_div").html($("#mensajeError_contenido").html());
+
+				parent.parent.$.modal(				
+
+				{
+
+					closeHTML: '',
+
+					opacity:60,
+
+					overlayClose:false,
+
+					flagDiv:true,
+
+					widthDivIfrm:640,
+
+					heightDivIfrm:'auto'
+
+				}
+
+				);
+
+}
+
+
+
+
+
+function muestraModal_2()
+
+{
+
+				//document.getElementById('applet').style.display='none';
+
+				
+
+				$("#causa").css("height","auto");
+
+				
+
+				parent.parent.$("#mensajeError_contenido_div").html($("#mensajeError_contenido_2").html());
+
+				parent.parent.$.modal(				
+
+				{
+
+					closeHTML: '',
+
+					opacity:60,
+
+					overlayClose:false,
+
+					flagDiv:true,
+
+					widthDivIfrm:640,
+
+					heightDivIfrm:'auto'
+
+				}
+
+				);
+
+}
+
+
+
+function cancela()
+
+{
+
+	document.forms[0].DATA1.value="";
+
+	document.forms[0].DATA2.value="";
+
+	document.forms[0].DATA3.value="";
+
+	
+
+	$("#DATA1_error").hide();
+
+	$("#DATA2_error").hide();
+
+	$("#DATA3_error").hide();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+
+
+
+
+
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+function IsNum(Campo_Txt)
+
+{
+
+  var Numeros = "0123456789";
+
+  var Val = Campo_Txt.value;
+
+
+
+  for(i=0; i < Val.length; i++)
+
+     for(j=0; j < Numeros.length; j++)
+
+  	if(Val.charAt(i) != Numeros.charAt(j))
+
+  	  if(j+1 < Numeros.length)
+
+	    continue;
+
+	  else
+
+	    return false
+
+	else 
+
+   	  break;
+
+return true;
+
+}
+
+
+
+function ValidaCambioPIN() {
+
+
+
+mens1="Es necesario llenar todos los campos para solicitar su Clave de acceso.";
+
+mens2="La longitud del campo debe ser de 8 d&iacute;gitos";
+
+mens3="El campo debe ser n&uacute;merico. Favor de verificar";
+
+mens4="El campo debe ser alfanum&eacute;rico. Favor de verificar";
+
+mens5="Se introdujeron caracteres inv&aacute;lidos";
+
+
+
+
+
+
+
+Actual  =  $("#DATA1").attr("id"); //document.forms[0].DATA1;
+
+Nuevo   =  $("#DATA2").attr("id"); //document.forms[0].DATA2;
+
+Confirm =  $("#DATA3").attr("id"); //document.forms[0].DATA3;
+
+imgen = $("#img1").attr("id");
+
+
+
+Actual_2 = document.forms[0].DATA1;
+
+Nuevo_2 = document.forms[0].DATA2;
+
+Confirm_2 = document.forms[0].DATA3;
+
+var val_img;
+
+
+
+$("#"+Actual+"_error").hide();
+
+$("#"+Nuevo+"_error").hide();
+
+$("#"+Confirm+"_error").hide();
+
+
+
+	if((Campo_Vacio(Actual,mens1,"SI"))==false)
+
+	{
+
+			document.forms[0].DATA1.focus();
+
+			top.ajustarIframe();			
+
+			return false;
+
+	}
+
+  
+
+   
+
+   if(val_img=validaLongitud_1(Actual,mens2) == false)   { 
+
+    top.ajustarIframe();
+
+	return;
+
+	
+
+	}
+
+
+
+
+
+
+
+if(IsNum(Actual_2)) {
+
+    TipoFirma=1;
+
+}  else  {
+
+    TipoFirma=2;
+
+}   
+
+
+
+
+
+
+
+
+
+if(TipoFirma=="1")   {  
+
+    
+
+	if (!Valida_Caracteres (Actual,"",1,"SI",mens3)){
+
+	document.forms[0].DATA1.focus();
+
+	top.ajustarIframe();
+
+	return false;
+
+	}
+
+
+
+    if(ValidaNumSecreto(Nuevo_2,Confirm_2)== false)    {
+
+        return;
+
+    }
+
+}
+
+
+
+
+
+if(TipoFirma=="2")   {
+
+    
+
+	if (Valida_Caracteres (Actual,"1234567890",2,"SI",mens4) == false){
+
+	document.forms[0].DATA1.focus();
+
+	top.ajustarIframe();
+
+	return false;
+
+	}
+
+
+
+    if(ValidaPASS(Nuevo_2,Confirm_2) == false) {
+
+        return;
+
+    }
+
+}
+
+
+
+parent.cargaDocN('Cambio PIN/resultado_cambio_acceso.html');
+
+}
+
+function validaLongitud_1(clave,mje){
+
+	if ( $('#'+clave).val().length != 8 ){
+
+		$("#"+clave+"_error").css("display","none");
+
+		$("#"+clave+"_error").css("display","block").html(mje);
+
+		$("#"+clave).focus();				
+
+		top.ajustarIframe();
+
+		return false;
+
+	}
+
+	return true;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------- VALIDA NUMERO SECRETO ----------------------------------------//
+
+
+
+
+
+
+
+function ValidaSubCad(Cad1,Cad2) 
+
+  {
+
+   Cad1 = Cad1.toLowerCase(); 
+
+   if(Cad1.search(Cad2) != -1)
+
+     return false;
+
+   return true;
+
+  }
+
+
+
+function ValidaInst(Cad1,Cad2) 
+
+  {
+
+  Cad1 = Cad1.toLowerCase(); 
+
+  if(Cad1.indexOf(Cad2) != -1)
+
+     return false;
+
+   return true;
+
+  }
+
+
+
+function ValidaNumSecreto(Campo1_Txt, Campo2_Txt)
+
+ {
+
+  
+
+  
+
+  //CveNva   =  $("#DATA2").attr("id");
+
+  //Confir =  $("#DATA3").attr("id");
+
+  
+
+  
+
+  CveNva = Campo1_Txt.value;
+
+  Confir = Campo2_Txt.value;
+
+  Carac1 = CveNva.substring(0,1);
+
+  Carac2 = CveNva.substring(0,2);
+
+
+
+   
+
+
+
+	mens1 = "Es necesario llenar todos los campos para solicitar su Clave de acceso.\n\t\tFavor de verificar.";
+
+	mens2 = "La Confirmaci&oacute;n de la Clave de acceso es diferente. Favor de verificar.";
+
+	mens3 = "La longitud de la Nueva Clave de acceso debe ser igual a la Actual.";
+
+	mens41 = "El primer d&iacute;gito de su Clave de acceso no puede ser cero.";
+
+	mens42 = "Los dos primeros d&iacute;gitos de su Nueva Clave de acceso no pueden ser cero.";
+
+	mens8 = "Su nueva Clave de acceso debe ser de 8 d&iacute;gitos.";
+
+	mens9="El campo debe ser n&uacute;merico. Favor de verificar";
+
+	mens1x = "No se permite ingresar el identificador de cliente en la Clave de acceso, por favor intente nuevamente.";
+
+	mens2x = "No se permiten m&aacute;s de dos caracteres id&eacute;nticos en forma consecutiva en la Clave de acceso, por favor intente nuevamente.";
+
+	mens3x = "No se permiten m&aacute;s de dos caracteres consecutivos num&eacute;ricos o alfab&eacute;ticos en la Clave de acceso, por favor intente nuevamente.";
+
+	mens4x = "No se permite ingresar el nombre de la instituci&oacute;n en la Clave de acceso, por favor intente nuevamente.";
+
+
+
+   
+
+	
+
+   
+
+
+
+ 
+
+ /*if(Campo_Vacio(Campo1_Txt,mens1) == true) 
+
+   {     
+
+    return false;   
+
+   } 
+
+*/
+
+if((Campo_Vacio(Nuevo,mens1,"SI"))== false)
+
+{
+
+			document.forms[0].DATA2.focus(); 
+
+			top.ajustarIframe();
+
+			return false;
+
+}   
+
+ 
+
+if(validaLongitud_1(Nuevo,mens3) == false)   { 
+
+top.ajustarIframe();
+
+    return false;
+
+}
+
+	
+
+
+
+if (Valida_Caracteres (Nuevo,"",1,"SI",mens9) == false){
+
+	document.forms[0].DATA2.focus();
+
+	top.ajustarIframe();
+
+	return false;
+
+}
+
+
+
+
+
+	
+
+ if(Carac2 == "00")
+
+   {        
+
+	$("#"+Nuevo+"_error").css("display","none");
+
+	$("#"+Nuevo+"_error").css("display","block").html(mens42);    
+
+    Campo1_Txt.focus();
+
+	top.ajustarIframe();
+
+    return false;
+
+   }
+
+
+
+ if(Carac1 == "0")
+
+   {
+
+	$("#"+Nuevo+"_error").css("display","none");
+
+	$("#"+Nuevo+"_error").css("display","block").html(mens41);   
+
+    Campo1_Txt.focus();
+
+	top.ajustarIframe();
+
+    return false;
+
+   }
+
+
+
+ 
+
+ 
+
+ 
+
+ if(!ValidaSubCad(CveNva,"DEMO"/1))
+
+   {
+
+    
+
+	$("#"+Nuevo+"_error").css("display","none");
+
+	$("#"+Nuevo+"_error").css("display","block").html(mens1x);
+
+    Campo1_Txt.value="";
+
+    Campo1_Txt.focus();
+
+	top.ajustarIframe();
+
+    return false;
+
+   }
+
+ if(!ValidaInst(CveNva,"banamex"))
+
+   {
+
+    
+
+	$("#"+Nuevo+"_error").css("display","none");
+
+	$("#"+Nuevo+"_error").css("display","block").html(mens4x);
+
+    Campo1_Txt.value="";
+
+    Campo1_Txt.focus();
+
+	top.ajustarIframe();
+
+    return false;
+
+   }
+
+
+
+ if(ValidaCarsConsIg(Campo1_Txt,2,mens2x,mens3x) == false) 
+
+   {
+
+   top.ajustarIframe();
+
+    return false;
+
+   }
+
+ 
+
+
+
+
+
+if((Campo_Vacio(Confirm,mens1,"SI"))== false)
+
+	{
+
+			document.forms[0].DATA3.focus(); 
+
+			top.ajustarIframe();
+
+			return false;
+
+	}
+
+ /*if(Campo_Vacio(Campo2_Txt,mens1) == true) 
+
+   {     
+
+    return false;   
+
+   }     */
+
+ if(CveNva != Confir)
+
+   {
+
+    Campo2_Txt.value="";
+
+    Campo2_Txt.focus();
+
+	$("#"+Confirm+"_error").css("display","none");
+
+	$("#"+Confirm+"_error").css("display","block").html(mens2);    
+
+	top.ajustarIframe();
+
+    return false;		                         
+
+   }
+
+ }
+
+ 
+
+ 
+
+ 
+
+function ValidaCarsConsIg(Campo_Txt, MaxCarIg, Msg_Error, Msg_Error_2)
+
+{
+
+   var Cad=Campo_Txt.value;
+
+   Cad = Cad.toUpperCase();
+
+   var IndCar;
+
+   var CarIg = 1;
+
+   var Cascii1="",Cascii2="",Cascii3="";
+
+   var valAbs1=0,valAbs2=0;
+
+
+
+   for(IndCar = 0; IndCar < Cad.length; IndCar++ )
+
+     {
+
+      if(Cad.charAt(IndCar) == Cad.charAt(IndCar + 1))
+
+        {
+
+         CarIg++;
+
+         if(CarIg >= MaxCarIg){
+
+			$("#"+Nuevo+"_error").css("display","none");
+
+			$("#"+Nuevo+"_error").css("display","block").html(Msg_Error);
+
+	   //alert (Msg_Error);
+
+           Campo_Txt.focus();
+
+	   Campo_Txt.value="";
+
+	   top.ajustarIframe();
+
+           return false;}
+
+        }
+
+      else
+
+        CarIg = 1;
+
+     }
+
+	for(IndCar = 0; IndCar < (Cad.length-2); IndCar++ )
+
+	{	
+
+		
+
+		Cascii1=Cad.charCodeAt(IndCar);		
+
+		Cascii2=Cad.charCodeAt(IndCar+1);
+
+		Cascii3=Cad.charCodeAt(IndCar+2);
+
+		valAbs1=Math.abs(Cascii1-Cascii2);
+
+		valAbs2=Math.abs(Cascii2-Cascii3);
+
+		if (valAbs1==1 && valAbs2==1){
+
+			$("#"+Nuevo+"_error").css("display","none");
+
+			$("#"+Nuevo+"_error").css("display","block").html(Msg_Error_2);
+
+			//alert(Msg_Error_2);
+
+			Campo_Txt.focus();
+
+	   		Campo_Txt.value="";
+
+			top.ajustarIframe();
+
+			return false;
+
+			}
+
+		}
+
+   return true;
+
+  }
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  //----------------------------- VALIDA PASSWORD ---------------------------------//
+
+  
+
+  
+
+  
+
+
+
+function ValidaPASS(Campo1_Txt, Campo2_Txt)
+
+ {
+
+  Password = Campo1_Txt.value;
+
+  Confirmacion = Campo2_Txt.value;
+
+
+
+
+
+   
+
+
+
+	mens1 =  "Es necesario llenar todos los campos para solicitar su Clave de acceso.\n\t\tFavor de verificar. ";
+
+	mens2 =  "La Confirmaci&oacute;n de la Clave de acceso es diferente. Favor de verificar.";
+
+	mens41 = "El primer caracter de su Clave de acceso debe ser Alfab&eacute;tico.";
+
+	mens42 = "Al menos uno de los caracteres de la Clave de acceso de la posici&oacute;n 2 a 8 debe ser Num&eacute;rico.";
+
+   	mens6 =  "El campo debe ser Alfa-Numerico. Favor de verificar";
+
+	mens8 =  "Su nueva Clave de acceso debe ser de 8 caracteres.";
+
+	mens1x = "No se permite ingresar el identificador de cliente en la Clave de acceso, por favor intente nuevamente.";
+
+	mens2x = "No se permiten m&aacute;s de dos caracteres id&eacute;nticos en forma consecutiva en la Clave de acceso, por favor intente nuevamente.";
+
+	mens3x = "No se permiten m&aacute;s de dos caracteres consecutivos num&eacute;ricos o alfab&eacute;ticos en la Clave de acceso, por favor intente nuevamente.";
+
+	mens4x = "No se permite ingresar el nombre de la instituci&oacute;n en la Clave de acceso, por favor intente nuevamente.";
+
+
+
+   
+
+	
+
+   
+
+/*
+
+ if(Campo_Vacio(Campo1_Txt,mens1) == true) 
+
+   {     
+
+    return false;   
+
+   }      
+
+ if(Valida_Longitud(Campo1_Txt,8,8,mens8) == false)
+
+   { 
+
+    return false;
+
+   }
+
+ if(Valida_Caracteres(Campo1_Txt,'',3,'SI',mens6) == false)
+
+   {     
+
+    return false;   
+
+   }      
+
+   */
+
+   
+
+   
+
+if((Campo_Vacio(Nuevo,mens1,"SI"))== false)
+
+{
+
+			document.forms[0].DATA2.focus(); 
+
+			top.ajustarIframe();
+
+			return false;
+
+}   
+
+ 
+
+if(validaLongitud_1(Nuevo,mens8) == false)   
+
+{ 
+
+top.ajustarIframe();
+
+    return false;
+
+}
+
+	
+
+if (Valida_Caracteres (Nuevo,"1234567890",2,"SI",mens6) == false)
+
+{
+
+	document.forms[0].DATA2.focus();
+
+	top.ajustarIframe();
+
+	return false;
+
+}
+
+   
+
+   
+
+   
+
+ if(ValidaPrimerCaracter(Campo1_Txt,'',2,'SI',mens41) == false)
+
+ {
+
+ top.ajustarIframe();
+
+    return false;
+
+ }
+
+
+
+ if(!ValidaSubCad(Password,"DEMO"/1))
+
+   {
+
+    //alert(mens1x);
+
+	$("#"+Nuevo+"_error").css("display","none");
+
+	$("#"+Nuevo+"_error").css("display","block").html(mens1x);
+
+    Campo1_Txt.value="";
+
+    Campo1_Txt.focus();
+
+	top.ajustarIframe();
+
+    return false;
+
+   }
+
+ 
+
+ if(!ValidaInst(Password,"banamex"))
+
+   {
+
+    //alert(mens4x);
+
+	$("#"+Nuevo+"_error").css("display","none");
+
+	$("#"+Nuevo+"_error").css("display","block").html(mens4x);
+
+    Campo1_Txt.value="";
+
+    Campo1_Txt.focus();
+
+	top.ajustarIframe();
+
+    return false;
+
+   }
+
+
+
+
+
+ if(ValidaCarsConsIg(Campo1_Txt,2,mens2x,mens3x) == false) 
+
+   {
+
+   top.ajustarIframe();
+
+    return false;
+
+   }
+
+ if(ValidaUnCaracterNumerico(Campo1_Txt,2,8,mens42,Nuevo) == false)
+
+   {
+
+   top.ajustarIframe();
+
+    return false;
+
+   }
+
+ 
+
+/* if(Campo_Vacio(Campo2_Txt,mens1) == true) 
+
+   {     
+
+    return false;   
+
+   }
+
+*/
+
+if((Campo_Vacio(Confirm,mens1,"SI"))== false)
+
+{
+
+			document.forms[0].DATA3.focus(); 
+
+			top.ajustarIframe();
+
+			return false;
+
+}   
+
+ if(Password != Confirmacion)
+
+   {
+
+    Campo2_Txt.value="";
+
+    Campo2_Txt.focus();
+
+	$("#"+Confirm+"_error").css("display","none");
+
+	$("#"+Confirm+"_error").css("display","block").html(mens2);    
+
+	top.ajustarIframe();
+
+    return false;		                         
+
+   }
+
+   
+
+  
+
+}
+
+  
+
+  
+
+  
+
+  
+
+  
+
+function ValidaPrimerCaracter(Campo_Txt, Caracteres_Extras, Tipo_Validacion, Req, Msg_Error)
+
+{
+
+    var Numeros="0123456789";
+
+    var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    var Validos="";
+
+
+
+    var Txt_MAY=Campo_Txt.value.toUpperCase();
+
+    var PrimerCar=Txt_MAY.substring(0,1); 	
+
+
+
+if (Req == "SI" && Txt_MAY.length==0)
+
+    {
+
+	$("#"+Nuevo+"_error").css("display","none");
+
+	$("#"+Nuevo+"_error").css("display","block").html(Msg_Error);    
+
+    Campo_Txt.focus();
+
+	top.ajustarIframe();
+
+    return false;
+
+    }	
+
+else
+
+    {
+
+	(Tipo_Validacion == 1) ?
+
+    	Validos = Numeros:
+
+
+
+   		(Tipo_Validacion == 2) ?
+
+		Validos = Letras:
+
+		
+
+			(Tipo_Validacion == 3) ?
+
+				Validos = Numeros + Letras:
+
+				Validos = Validos;
+
+			
+
+     Validos = Validos + Caracteres_Extras;
+
+
+
+	 for (i=0; i < Validos.length; i++)
+
+	   	if (PrimerCar != Validos.charAt(i))
+
+			if (i+1 < Validos.length)
+
+	 			continue;
+
+	 		else
+
+	 		    {
+
+				$("#"+Nuevo+"_error").css("display","none");
+
+				$("#"+Nuevo+"_error").css("display","block").html(Msg_Error);	 		    
+
+			    Campo_Txt.focus();
+
+				top.ajustarIframe();
+
+	 	            return false
+
+	 		    }
+
+		else 
+
+			break;	
+
+
+
+   return true;
+
+   }
+
+}
+
+
+
+function ValidaUnCaracterNumerico(Campo_Txt,long1, long2, Msg_Error, i_d)
+
+{
+
+    var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+
+    var Numeros="0123456789 "
+
+    var Txt_PWD=Campo_Txt.value;
+
+    var Caracteres=Txt_PWD.substring(long1,long2);
+
+    var Num=0; 	
+
+
+
+   for (i=0; i < Caracteres.length; i++)
+
+      for (j=0; j < Numeros.length; j++)
+
+	if (Caracteres.charAt(i) == Numeros.charAt(j))
+
+		Num++;
+
+    if (Num==0)
+
+      {      
+
+		$("#"+i_d+"_error").css("display","none");
+
+		$("#"+i_d+"_error").css("display","block").html(Msg_Error);
+
+      Campo_Txt.focus();
+
+	  top.ajustarIframe();
+
+      return false
+
+      }
+
+   return true;
+
+}
+
+
+
+
+
+//-->
+
+</script>    
+
+    <div class="float-left fonttit">CAMBIO DE CLAVES DE ACCESO</div>       
+
+						
+
+            <div id="AreaTrabajo" class="ancho100p overflow clear">
+
+            	
+
+            	<table class="ancho100p" cellpadding="0" cellspacing="0">
+
+                	<tr>
+
+                        <td class="top_BGFFFFFF borderRSolid ancho459 borderTSolid borderLSolid">&nbsp;</td>                        
+
+                        <td valign="top" rowspan="3" class="borderRSolid borderTSolid borderBSolid bgeff8ff ancho100p" id="td_ayuda">
+
+                        <div id="div_ayuda" class="overflow ancho100p display">
+
+                        	<div class="marginL20 marginT20">
+
+                            	<div class="alto320 scroll_Y" id="t3">
+
+                                	<div class="f11 color333333"><span class="negrita f11">Para crear tus claves de acceso utiliza el teclado virtual que se presenta en tu pantalla;</span>este te habilitar&aacute; las letras o n&uacute;meros disponibles para cada casilla en base al cumplimiento de las reglas que abajo se indican.<br /><br />
+
+
+
+                                Posiciona el cursor de tu mouse en cada una de las casillas y selecciona uno a uno el caracter deseado. 
+
+                                	</div><br/>
+
+									<div class="f11 negrita color333333">Clave de acceso alfanum&eacute;rica:</div>
+
+                                    <div class="f11 marginT20">
+
+                                    	- Debe contener tanto n&uacute;meros como letras, y ser de 8 posiciones<br />
+
+                                        - Se permite el uso de letras may&uacute;sculas y min&uacute;sculas. Ya que se valida la diferencia en las claves de acceso.(ej. es diferente "<span class="negrita f11">h</span>ola1357" que "<span class="negrita f11">H</span>OLA1357")<br />
+
+                                        - El primer caracter debe ser una letra<br />
+
+										- Las letras v&aacute;lidas son de la "A" a la "Z" may&uacute;sculas y min&uacute;sculas<br />
+
+                                        - El N&uacute;mero de Cliente no debe estar contenido en la clave de acceso<br />
+
+										- No debe contener m&aacute;s de 2 n&uacute;meros iguales consecutivos, (ej. A<span class="negrita f11">222</span>zbis)<br />
+
+										- No debe contener m&aacute;s de 2 letras iguales en forma consecutiva. (ej. A<span class="negrita f11">bbb</span>4189)<br />
+
+										- No debe de contener m&aacute;s de 2 caracteres consecutivos, ya sea en forma ascendente o descendente. (ej. <span class="negrita f11">Abc</span>dh481 o b<span class="negrita f11">432</span>djya)<br/>
+
+										- No debe contener el nombre de la instituci&oacute;n (Banamex)
+
+                                    </div>                                    
+
+                                    <div class="f11 marginT20 negrita color333333">Clave de acceso num&eacute;rica:</div>
+
+                                    <div class="f11 marginT20">
+
+                                    	- Debe estar formado por 8 n&uacute;meros, pueden ser seleccionados entre 0 y 9<br />
+
+                                        - No debe iniciar con cero "0"<br />                            
+
+                                        - El N&uacute;mero de Cliente no debe estar contenido en la clave de acceso<br />
+
+                                        - No debe contener m&aacute;s de 2 n&uacute;meros iguales consecutivos (ej. 1<span class="negrita f11">222</span>3445)<br />
+
+                                        - No debe contener m&aacute;s de 2 n&uacute;meros consecutivos, ya sea en forma ascendente o descendente (ej. <span class="negrita f11">123</span>49876 o 8371<span class="negrita f11">987</span>0)
+
+                                        <br /><br /><br /><br />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        </td>
+
+                        <td class="right_BGEFF8FF_bDEDE " valign="top"><div class="borderTSolid ancho10"></div></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td valign="top" class="borderRSolid  borderLSolid  ancho459 paddingL10">
+
+                        	<div class="f11" id="t4">Captura los datos solicitados y da clic en &quot;Continuar&quot;.</div>
+
+                        	<div class="ancho459 marginT20">
+
+                                <div class="ancho50p paddingR10 floatL f11">
+
+                                    
+
+									<div class="f11 paddingB5" id="t0">Digita tu clave de acceso actual</div>
+
+									<div class="ancho100p"><input type="password" maxlength="8" class="input ancho85p" name="DATA1" id="DATA1" /><bmxdato ENN035>
+
+									
+
+									
+
+									<div id="DATA1_error" class="saldos_bloque2_f4_error_display_blanco_yo"></div>
+
+									</div>
+
+									
+
+									
+
+									<div class="f11 marginT10 paddingB5" id="t1">Asigna tu nueva clave de acceso <br />(8 caracteres)</div>
+
+                                    <div class="ancho100p"><input type="password" maxlength="8" class="input ancho85p" value="" name="DATA2" id="DATA2" /> <bmxdato ENN036>
+
+									<!--<img src="/bbAvatar/images/icoCheck1.gif" />-->
+
+									<div id="DATA2_error" class="saldos_bloque2_f4_error_display_blanco_yo"></div>
+
+									</div>
+
+                                   
+
+									<div class="f11 marginT10 paddingB5" id="t2">Confirma tu nueva clave de acceso<br />(8 caracteres)</div>
+
+                                    <div class="ancho100p"><input type="password" maxlength="8" class="input ancho85p" value="" name="DATA3" id="DATA3" /> <bmxdato OPI032>
+
+									<!--<img src="/bbAvatar/images/icoCheck1.gif" />-->
+
+									<div id="DATA3_error" class="saldos_bloque2_f4_error_display_blanco_yo"></div>
+
+									</div>
+
+                                    
+
+									<div class="alto124 overflow"></div>
+
+
+
+                                </div>
+
+                                <div class="ancho100p floatL clear overflow marginT10">
+
+                                    <div class="floatL"><input type="button" value="Cancelar" class="btnRJ86 floatL" id="t5" onclick="cancela()" /></div>
+
+                                    <div class="floatR paddingR10"><input type="button" value="Continuar" class="btnAZ86 floatR" href="#" onclick="ValidaCambioPIN()" id="t6"/></div>
+
+                                </div>
+
+                            </div>
+
+
+
+							<div id="datos_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+
+
+						</td>
+
+                        <td class="right_BGEFF8FF_bDEDE ancho100p">
+
+                        	<div class="tab_open" id="tab_ayuda" onclick="Javascript: arbre_cierra_ayuda('tab_ayuda', 'div_ayuda','td_ayuda');"></div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                    	<td  class="borderBSolid borderRSolid borderLSolid">&nbsp;
+
+                        </td>
+
+                        <td class="right_BGEFF8FF_bDEDE " valign="bottom"><div class="borderBSolid ancho10"></div>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            
+
+                              
+
+        <script type="text/javascript">
+
+			$(document).ready(
+
+				function(){
+
+					$('#tab_ayuda').trigger('click');
+
+					slide(".activaflecha2",5,0);
+
+					ir_pag(1,3,0,0);	
+
+				}
+
+			);
+
+		</script>
+
+    
+
+
+
+
+
+	
+
+	
+
+<div id="mensajeError_contenido" style="display:none;">
+
+	
+
+	<!--MODAL-->
+
+
+
+<div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me"></div>
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+	
+
+	
+
+	
+
+<div id="mensajeError_contenido_2" style="display:none;">
+
+	<div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Sorry, the transaction could not be completed</div>
+
+	  <div class="saldos_btn2" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me"></div>
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">What can I do?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+	  You can contact the customer service
+
+	  at 1226 3990 (D.F. and Metropolitan area) or<br/>
+
+	  01 800 110 3990 (rest of the Republic).<br/>
+
+	  It is important to have the following code at hand:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continue" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<INPUT TYPE=HIDDEN NAME=AYUDA VALUE="/spanishdir/ayudas/apin01.htm">
+
+<INPUT TYPE=HIDDEN NAME=INFO VALUE="/spanishdir/ayudas/amkpwd01.htm">
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Cambio PIN|pin01.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

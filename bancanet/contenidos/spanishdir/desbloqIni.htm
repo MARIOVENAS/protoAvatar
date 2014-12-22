@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Solicitud de Desbloqueo de Clave</title>
+		<link href="../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+		html{
+			display:none;
+		}
+		.contenedorTitulo{
+			min-width:925px;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top: -20px;
+			height:35px;
+			width:auto;
+		}
+		.contenedorTitulo_tit1 {
+			font-size:30px;
+			color:#09347a;
+			line-height:24px;
+			float:left;
+			padding-top:0px;
+			font-weight:bold;
+		}
+		.contenedorTitulo_tit1_btnBox {
+			float:left;
+			width:22px;
+			padding-left:2px;
+			height:19px;
+			cursor:default;
+			padding-top:5px;
+		}
+		.contenedorTitulo_tit1_btn {
+			background:#FFFFFF url(../bbAvatar/images/marco.gif) right -29px no-repeat;
+			width:13px;
+			height:14px;
+			cursor:default;
+			margin-top:2px;
+		}
+		.contenedorTitulo_tit1_txt {
+			float:left;
+			cursor:default;
+		}
+		.contenedorTitulo_tit1_txt span {
+			font-size:24px;
+			color:#000000;
+			line-height:27px;
+			padding:0;
+			cursor:default;
+			font-weight:bold;
+		}
+		.contenedorTitulo_tit1_txt p {
+			font-size:11px;
+			color:#09347a;
+			cursor:default;
+		}
+		.contenedorTitulo_box1 {
+			float:right;
+			width:180px;
+			height:21px;
+		}
+		</style>
+		<script type="text/javascript" src="../bbAvatar/js/motor.js"></script>
+		<script type="text/javascript" src="../bbAvatar/js/opciones.js"></script>
+		<script type="text/javascript" src="../bbAvatar/js/swap.js"></script>
+		<script type="text/javascript" language="javascript">
+		if (self == top) {
+		    document.documentElement.style.display = 'block';
+		} else {
+		    top.location = self.location;
+		}
+		wm1 = "BancaNet Demo";
+		var ide = "";
+		var es = new Array('Code Unblocking Request', 'BancaNet Code Unblocking Request', 'Note: This transaction can only be carried out with your NetKey Banamex with Challenge.', 'Select the channel (method) you want to install: ', 'Alphanumerical password', 'Numerical password', 'Key in your Customer Number:', 'Continue', 'For more information please call our Customer Service Center From Mexico City call 1226-3990 or', 'tool free number 01800-110-3990 from Monday to Saturday from 7 to 21 Hrs.', 'Write to us at <span class="negrita f11">www.banamex.com</span> clicking <span class="negrita f11">"Contact Us"</span>', 'All Rights Reserved.');
+
+		function limpiaCampos() {
+		    var i = 0;
+		    for (i; i < document.forms[0].medioDes.length; i++)
+		        document.forms[0].medioDes[i].checked = false;
+		    document.getElementById('idcte').value = "";
+		    var langOldHelpPath = (isEnglishSel) ? 'englishdir' : 'spanishdir';
+		    document.getElementById('pagAYUDA').value = 'https://bancanet.boveda.banamex.com.mx/' + langOldHelpPath + '/ayudas/adesbloq01.htm';
+		    var OpenerClosed;
+		    try {
+		        OpenerClosed = opener.closed
+		    } catch (ex) {
+		        OpenerClosed = true;
+		    }
+		    if (OpenerClosed.toString() == 'false') {
+		        var o = opener.document.forms[0];
+		        if ((o != undefined) && (o != undefined)) {
+		            if (o.name == 'intFall') {
+		                ide = o.identif.value;
+		                document.getElementById('titmedios').style.display = 'none';
+		                document.getElementById('medios').style.display = 'none';
+		                document.getElementById('pagAYUDA').value = 'ayudas/adesbloq11.htm';
+		                document.getElementById('tit').innerHTML = '<span id="t1">&nbsp;Solicitud de Desbloqueo de Clave de BancaNet</span>';
+		            }
+		        }
+		    }
+		}
+
+		function obtenerHora() {
+		    limpiaCampos();
+		    if (isEnglishSel) {
+		        var this_month = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+		        var this_day_e = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+		    } else {
+		        var this_month = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+		        var this_day_e = new Array("Domingo", "Lunes", "Martes", "Mi&eacute;rcoles", "Jueves", "Viernes", "S&aacute;bado");
+		    }
+		    var today = new Date();
+		    var day = today.getDate();
+		    var month = today.getMonth();
+		    var year = today.getFullYear();
+		    var dia = today.getDay();
+		    var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+		    var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+		    var seconds = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+		    if (isEnglishSel) {
+		        var stgDate = this_day_e[dia] + ", " + this_month[month] + " " + day + ", " + year + ", " + hour + ":" + minute + ":" + seconds + " Mexico City";
+		    } else {
+		        var stgDate = " " + this_day_e[dia] + " " + day + " de " + this_month[month] + " de " + year + ", " + hour + ":" + minute + ":" + seconds + " Centro de M&eacute;xico"
+		    }
+		    return stgDate;
+		}
+
+		function MM_openBrWindow(theURL, winName, features) {
+		    var URL;
+		    for (iCount = 0; iCount < document.forms[0].length; iCount++) {
+		        if (document.forms[0].elements[iCount].name == theURL)
+		            URL = document.forms[0].elements[iCount].value;
+		    }
+		    window.open(URL, winName, features);
+		}
+
+		function numericCheck(value) {
+		    var VALID_DIGITS = "0123456789";
+		    var ch, i;
+		    for (i = 0; i < value.length; i++) {
+		        ch = value.charAt(i);
+		        if (VALID_DIGITS.indexOf(ch) < 0)
+		            return (false);
+		    }
+		    return (true);
+		}
+
+		function radioCheckVacio(Objeto) {
+		    seleccionado = false;
+		    for (i = 0; i < Objeto.length; i++) {
+		        if (Objeto[i].checked == true)
+		            seleccionado = true;
+		    }
+		    return seleccionado;
+		}
+
+		function bloqueaCaracter(evt) {
+		    evt = (evt) ? evt : event;
+		    var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+		    if ((charCode == 86 && evt.ctrlKey) || (charCode == 67 && evt.ctrlKey) || (charCode == 88 && evt.ctrlKey) || (charCode > 32 && charCode < 48) || (charCode > 57 && charCode < 65) || (charCode > 90 && charCode < 96) || (charCode > 122) || (charCode == 13))
+		        return false;
+		}
+
+		function completa(objeto) {
+		    valTexto = objeto.value;
+		    if (valTexto.length >= 1) {
+		        while (valTexto.length < 6)
+		            valTexto = "0" + valTexto;
+		        objeto.value = valTexto;
+		    }
+		}
+
+		function DoSubmit() {
+		    var tipo = $("input[name='medioDes']:checked").val();
+		    var d = document.forms[0];
+		    d.EXTRA1.value = d.EXTRA1.value + d.marcaAgua.value + "|";
+		    d.EXTRA1.value = d.EXTRA1.value + "" + "|";
+		    var idCte = d.idcte.value;
+		    var medioDes;
+		    for (i = 0; i < d.medioDes.length; i++) {
+		        if (d.medioDes[i].checked == true)
+		            medioDes = d.medioDes[i].value;
+		    }
+		    setTimeout('window.location = "../transacciones/Desbloqueo de Claves/challenge.htm?tipo=' + tipo + '";', 1000);
+		}
+
+		function ProcessForm() {
+		    var errores = 0;
+		    var numCte;
+		    var msgErr1 = (isEnglishSel) ? 'It is necessary to enter the customer number, please verify.' : 'Es necesario ingresar el No. de Cliente, favor de verificar.';
+		    var msgErr2 = (isEnglishSel) ? 'The entered field must be numeric. Please Verify.' : 'El campo debe ser Num&eacute;rico. Favor de verificar';
+		    var msgErr3 = (isEnglishSel) ? 'It is necessary to specify the service you wish to reset, please verify.' : 'Es necesario indicar el medio que deseas desbloquear, favor de verificar.';
+		    numCte = $('#idcte').val();
+		    if (numCte == '' || numCte == null) {
+		        $("#errorcte").html('<span class="errorLogin"></span><span class="errorLogintexto">' + msgErr1 + '</span>').fadeIn();
+		        document.getElementById('idcte').focus();
+		        errores++;
+		    } else {
+		        $("#errorcte").html("").hide();
+		        if (!numericCheck(numCte)) {
+		            $("#errorcte").html('<span class="errorLogin"></span><span class="errorLogintexto">' + msgErr2 + '</span>').fadeIn();
+		            document.getElementById('idcte').focus();
+		            errores++;
+		        } else {
+		            $("#errorcte").html("").hide();
+		        }
+		    }
+		    if (ide != 'BNP') {
+		        if (!radioCheckVacio(document.forms[0].medioDes)) {
+		            $("#errorsel").html('<span class="errorLogin"></span><span class="errorLogintexto">' + msgErr3 + '</span>').fadeIn();
+		            errores++;
+		        } else {
+		            $("#errorsel").html("").hide();
+		        }
+		    } else {
+		        document.forms[0].medioDes[0].checked = true;
+		    }
+		    if (errores == 0) {
+		        DoSubmit();
+		    }
+		}
+
+		function showDown(evt) {
+		    evt = (evt) ? evt : ((event) ? event : ((window.event) ? window.event : null));
+		    if (evt) {
+		        if (evt.keyCode == 116) {
+		            // When F5 is pressed
+		            cancelKey(evt);
+		        } else if (evt.ctrlKey && (evt.keyCode == 78 || evt.keyCode == 82)) {
+		            // When ctrl is pressed with R or N
+		            cancelKey(evt);
+		        }
+		    }
+		}
+
+		function cancelKey(evt) {
+		    if (evt.preventDefault) {
+		        evt.preventDefault();
+		        return false;
+		    } else {
+		        evt.cancelBubble = true;
+		        evt.keyCode = 0;
+		        evt.returnValue = false;
+		    }
+		}
+
+		function slide(navegacion_id, pad_out, pad_in) {
+		    var listaElementos = $(navegacion_id + ' div');
+		    var claseTexto = $(navegacion_id).parent().find('div:eq(2)').attr('class');
+		    $(listaElementos).each(
+		        function(i) {
+		            if (!detectaDispositivoMobile()) {
+		                $(this).hover(
+		                    function() {
+		                        $(this).animate({
+		                            paddingLeft: pad_out,
+		                            opacity: 0.7
+		                        }, {
+		                            duration: 150,
+		                            "easin": "easein",
+		                            complete: function() {}
+		                        });
+		                    },
+		                    function() {
+		                        $(this).animate({
+		                            paddingLeft: pad_in,
+		                            opacity: 1
+		                        }, {
+		                            duration: 150,
+		                            "easin": "elasinout",
+		                            complete: function() {}
+		                        });
+		                    }
+		                );
+		            }
+		        }
+		    );
+		    $('.' + claseTexto + ' span').each(
+		        function(i) {
+		            if (!detectaDispositivoMobile()) {
+		                $(this).hover(
+		                    function() {
+		                        $(this).parent().parent().find('div:eq(0)').find('div').animate({
+		                            paddingLeft: pad_out,
+		                            opacity: 0.7
+		                        }, {
+		                            duration: 150,
+		                            "easin": "easein",
+		                            complete: function() {}
+		                        });
+		                    },
+		                    function() {
+		                        $(this).parent().parent().find('div:eq(0)').find('div').animate({
+		                            paddingLeft: pad_in,
+		                            opacity: 1
+		                        }, {
+		                            duration: 150,
+		                            "easin": "elasinout",
+		                            complete: function() {}
+		                        });
+		                    }
+		                );
+		            }
+		        }
+		    );
+		}
+
+		function labelTooltip() {
+		    var lblTooltipPrint = (isEnglishSel) ? 'Print' : 'Imprimir';
+		    var lblTooltipHelp = (isEnglishSel) ? 'Help' : 'Ayuda';
+		    var classPrint = document.getElementById('btn_imp').className;
+		    var classHelp = document.getElementById('btn_ayuda').className;
+		    document.getElementById('btn_imp').className = lblTooltipPrint + ' ' + classPrint;
+		    document.getElementById('btn_ayuda').className = lblTooltipHelp + ' ' + classHelp;
+		}
+		/*******/
+		/*** proto */
+		 // ponerlo en el jquery
+		/* jQuery doTimeout: Like setTimeout, but better! - v1.0 - 3/3/2010*/
+		(function($) {
+		    var a = {},
+		        c = "doTimeout",
+		        d = Array.prototype.slice;
+		    $[c] = function() {
+		        return b.apply(window, [0].concat(d.call(arguments)))
+		    };
+		    $.fn[c] = function() {
+		        var f = d.call(arguments),
+		            e = b.apply(this, [c + f[0]].concat(f));
+		        return typeof f[0] === "number" || typeof f[1] === "number" ? this : e
+		    };
+
+		    function b(l) {
+		        var m = this,
+		            h, k = {},
+		            g = l ? $.fn : $,
+		            n = arguments,
+		            i = 4,
+		            f = n[1],
+		            j = n[2],
+		            p = n[3];
+		        if (typeof f !== "string") {
+		            i--;
+		            f = l = 0;
+		            j = n[1];
+		            p = n[2]
+		        }
+		        if (l) {
+		            h = m.eq(0);
+		            h.data(l, k = h.data(l) || {})
+		        } else {
+		            if (f) {
+		                k = a[f] || (a[f] = {})
+		            }
+		        }
+		        k.id && clearTimeout(k.id);
+		        delete k.id;
+
+		        function e() {
+		            if (l) {
+		                h.removeData(l)
+		            } else {
+		                if (f) {
+		                    delete a[f]
+		                }
+		            }
+		        }
+
+		        function o() {
+		            k.id = setTimeout(function() {
+		                k.fn()
+		            }, j)
+		        }
+		        if (p) {
+		            k.fn = function(q) {
+		                if (typeof p === "string") {
+		                    p = g[p]
+		                }
+		                p.apply(m, d.call(n, i)) === true && !q ? o() : e()
+		            };
+		            o()
+		        } else {
+		            if (k.fn) {
+		                j === undefined ? e() : k.fn(j === false);
+		                return true
+		            } else {
+		                e()
+		            }
+		        }
+		    }
+		})(jQuery);
+
+		function cronometroMinutos(idTime, segundosCronometro, id, callback) {
+		    var cadMinutos = "";
+		    var minutos = 0;
+		    var segundos = 0;
+		    $.doTimeout(idTime, 1000, function() {
+		        segundosCronometro--
+		        if (segundosCronometro == 0) {
+		            try {
+		                eval('(' + callback + ')();')
+		            } catch (e) {}
+		            return false;
+		        }
+		        minutos = segundosCronometro / 60;
+		        cadMinutos = minutos.toString();
+		        if (cadMinutos.indexOf('.'))
+		            minutos = cadMinutos.split(".")[0];
+		        segundos = segundosCronometro % 60;
+		        if (minutos <= 9)
+		            minutos = '0' + minutos;
+		        if (segundos <= 9)
+		            segundos = '0' + segundos;
+		        $(id).html(minutos + ":" + segundos + " (mm:ss)");
+		        return true;
+		    });
+		}
+		/* fecha y hora*/
+		function fechaHora() {
+		    var dias = {
+		        esp: ['Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles', 'Jueves', 'Viernes', 'Sabado'],
+		        eng: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+		    };
+		    var meses = {
+		        esp: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Juilio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+		        eng: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+		    };
+		    var fecha = new Date();
+		    var diaTexto = dias[language][fecha.getDay()];
+		    var dia = fecha.getDate();
+		    var mesTexto = meses[language][fecha.getMonth()];
+		    var year = fecha.getFullYear();
+		    var hora = fecha.getHours();
+		    var minuto = fecha.getMinutes();
+		    var segundo = fecha.getSeconds();
+		    if (hora <= 1)
+		        hora = '0' + hora;
+		    if (minuto <= 9)
+		        minuto = '0' + minuto;
+		    if (segundo <= 9)
+		        segundo = '0' + segundo;
+		    if (isEnglishSel) {
+		        var stgDate = diaTexto + ", " + mesTexto + " " + dia + ", " + year + ", " + hora + ":" + minuto + ":" + segundo + " Mexico City";
+		    } else {
+		        var stgDate = " " + diaTexto + " " + dia + " de " + mesTexto + " de " + year + ", " + hora + ":" + minuto + ":" + segundo + " Centro de M&eacute;xico"
+		    }
+		    return stgDate;
+		}
+
+		function llenarValores(obj, id, cadena) {
+		    var textAux = "";
+		    var fin = cadena.length - 1;
+		    var contador = 0;
+		    if (obj == 'input')
+		        if ($(id).val() != '')
+		            return false;
+		    $.doTimeout(80, function() {
+		        textAux = $(id).val();
+		        $(id).val(textAux + cadena.charAt(contador))
+		        if (contador <= fin) {
+		            contador++;
+		            return true;
+		        }
+		        return false;
+		    });
+		}
+		/***** flujos */
+		/***/
+		$(document).ready(function() {
+		    $("#horaactual").html(obtenerHora());
+		    $('#anioActual').html(function() {
+		        var anio = new Date();
+		        var anioAux = anio.getFullYear();
+		        return anioAux;
+		    });
+		    labelTooltip();
+		    showtooltipLogin();
+		    slide(".activaflecha2", 5, 0);
+		    setTimeout(function() {
+		        $('#bancanet').trigger('click');
+		    }, 800);
+		    setTimeout(function() {
+		        llenarValores('input', '#idcte', '123456789123');
+		    }, 1000);
+		    setTimeout(function() {
+		        $('#t7').trigger('click');
+		    }, 2000);
+		});
+		</script>
+	</head>
+	<body style="background:#FFFFFF" class="bg_demo">
+		<div class="contenedor">
+			<form name="formDesbloqDemo" method="POST">
+				<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359">
+				<input type=hidden name="EWF_FORM_NAME" value="aBegin">
+				<table cellpadding="0" cellspacing="0" align="center" width="800px" style="margin:auto; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#666666">
+					<thead>
+						<tr height="45px">
+							<td valign="middle" align="left">
+								<div id="Logo_Banamex_es" onclick="javascript:ligasNegocio('http://www.banamex.com')"></div>
+							</td>
+							<td valign="middle" align="right">
+								<div id="Logo_Bancanet"></div>
+							</td>
+						</tr>
+						<tr height="10px"><td colspan="2"></td></tr>
+						<tr>
+							<td valign="middle" align="left" colspan="2">
+								<span id="horaactual" name="horactual" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#666666"></span>
+							</td>
+						</tr>
+						<tr height="15px"><td colspan="2"></td></tr>
+						<tr height="25px">
+							<td  colspan="1" valign="top" width="80%" align="right">
+								<div id="tituloSeccion">
+									<div class="contenedorTitulo_tit1">
+										<div class="contenedorTitulo_tit1_btnBox activaflecha2"><div class="contenedorTitulo_tit1_btn">&nbsp;</div></div>
+										<div id="tit" class="contenedorTitulo_tit1_txt" style="margin-top:-1px"><span id="t0">&nbsp;Solicitud de Desbloqueo de Claves</span></div>
+									</div>
+								</div>
+							</td>
+							<td colspan="1" valign="top" width="20%" align="left">
+								<table cellpadding="0" cellspacing="0" width="100%" align="left">
+									<tr>
+										<td valign="middle" width="100%" align="right">
+											<div style="display:inline-block;">
+												<div class="showtooltipLogin saldos_btn1" id="btn_ayuda" onClick="javascript:MM_openBrWindow('AYUDA','Ayuda','toolbar=NO,directories=NO,menubar=NO,status=NO,scrollbars=YES, width=580,height=300')"></div>
+												<div class="showtooltipLogin saldos_btn2" id="btn_imp" onClick="javascript:window.print()"></div>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr height="25px"><td colspan="2"></td></tr>
+						<tr>
+							<td valign="middle" align="center" colspan="2">
+								<span id="t2" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; color:#333333">
+								Nota: Esta operaci&oacute;n se puede realizar &uacute;nicamente si cuentas con tu NetKey Banamex con Challenge.
+								</span>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr height="30px"><td colspan="2"></td></tr>
+						<tr id="titmedios">
+							<td valign="middle" align="left" colspan="2">
+								<span id="t3" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333">
+								Selecciona el medio que deseas desbloquear:
+								</span>
+							</td>
+						</tr>
+						<tr height="15px"><td colspan="2"></td></tr>
+						<tr id="medios">
+							<td>
+								<div style="width:100%; display:inline-block; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; margin-left:20px">
+									<input id="bancanet" 	 name="medioDes" type="radio" value="BNP" onKeyPress="return bloqueaCaracter(event);"/>&nbsp;<span id="t4">Clave alfanum&eacute;rica</span><br />
+									<input id="banamexmovil" name="medioDes" type="radio" value="BM" onKeyPress="return bloqueaCaracter(event);"/>&nbsp;<span id="t5">Clave num&eacute;rica</span><br />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td valign="bottom" align="left" colspan="2">
+								<span id="errorsel" style="display:none; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ee2e24;"></span>
+							</td>
+						</tr>
+						<tr height="30px"><td colspan="2"></td></tr>
+						<tr height="25px">
+							<td valign="top" align="left" colspan="2">
+								<span id="t6" style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; color:#333333">
+								Digita tu No. de Cliente
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td valign="bottom" align="left" colspan="2">
+								<input id="idcte" name="idcte" type="password" autocomplete="off" size="13" maxlength="12" onKeyPress="return bloqueaCaracter(event);" onBlur="completa(this)" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; height:15px; width:150px; border:1px solid #666666;"/>
+							</td>
+						</tr>
+						<tr>
+							<td valign="bottom" align="left" colspan="2">
+								<span id="errorcte" style="display:none; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ee2e24;"></span>
+							</td>
+						</tr>
+						<tr height="15px"><td colspan="2"></td></tr>
+						<tr>
+							<td valign="middle" align="center" colspan="2">
+								<input id="t7" type="button" class="btnAZ86" value="Continuar" onClick="javascript:ProcessForm()"/>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+					<tr height="30px"><td colspan="2"></td></tr>
+					<tr>
+						<td valign="bottom" align="center" colspan="2">
+							<span id="t8" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+							Ponemos a tu disposici&oacute;n nuestros tel&eacute;fonos para m&aacute;s informaci&oacute;n o cualquier aclaraci&oacute;n.
+							</span><br />
+							<span id="t9" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+							Del D.F. al 1226-3990 o del interior al 01800-110-3990 de Lunes a S&aacute;bado de 7 a 21hrs.
+							</span><br />
+							<span id="t10" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+							Escr&iacute;benos a <span class="negrita f11">&quot;Cont&aacute;ctanos&quot;</span> dentro de <span class="negrita f11">www.banamex.com</span>
+							</span>
+						</td>
+					</tr>
+					<tr height="25px"><td colspan="2"></td></tr>
+					<tr>
+						<td valign="top" align="center" colspan="2">
+							<span style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">
+							D.R. &copy; Copyright
+							<span id="anioActual" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333"></span>,
+							<span id="t11" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333">Derechos Reservados.</span>
+							</span>
+						</td>
+					</tr>
+					</tfoot>
+				</table>
+				<div id="tooltipLogin">
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td class="tooltipTLLogin"></td>
+							<td class="tooltipTLogin"></td>
+							<td class="tooltipTRLogin"></td>
+						</tr>
+						<tr>
+							<td class="tooltipLLogin">&nbsp;</td>
+							<td class="tooltipCLogin">&nbsp;</td>
+							<td class="tooltipRLogin">&nbsp;</td>
+						</tr>
+						<tr>
+							<td class="tooltipBLLogin"></td>
+							<td class="tooltipBLogin"><div class="tooltipPLogin"></div></td>
+							<td class="tooltipBRLogin"></td>
+						</tr>
+					</table>
+				</div>
+				<input type="hidden" name="USERID">
+				<input type="hidden" name="PASSWORD">
+				<input type="hidden" name="AYUDA" id="pagAYUDA" value="">
+				<input type="hidden" name="EWFBUTTON">
+				<input type="hidden" value="EBS" name="PRODUCT NAME">
+				<input type="hidden" value="EDIFY" name="BANK ID">
+				<input type="hidden" name="NETKEY">
+				<input type="hidden" name="EXTRA1" value="SPANISH|0735|10|/menu_group.htm|">
+				<input type="hidden" name="EXTRA2">
+				<input type="hidden" name="EXTRA3">
+				<input type="hidden" value="NO_ERROR" name="EXTRA4">
+				<input type="hidden" value=1 name="LANGUAGE ID">
+				<input type="hidden" name="GROUP" value="">
+				<input type="hidden" name="PIN" value="1111">
+				<input type="hidden" name="MODULE" value="ZRUT">
+				<font color="#C0C0C0" size="1" face="Arial">
+				<script>
+				document.write(wm1);
+				</script>
+				</font>
+				<input type="hidden" name="marcaAgua" id="marcaAgua">
+			</form>
+		</div>
+	</body>
+</html>

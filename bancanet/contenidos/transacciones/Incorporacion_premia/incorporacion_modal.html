@@ -1,0 +1,142 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+       
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			
+		//setTimeout(function(){top.ajustarP();},1000);
+		setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},1000);
+		
+		
+		});
+	</script>
+	<script type="text/javascript">
+			
+	$(document).ready(function() {
+		$.imageTick.logging = true;
+		$("input[name='cuentas']").imageTick({ 
+		  tick_image_path: "../../../../JFP/regional/images/check_1.png", 
+		  no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+		});
+		
+		//En el caso de los checkboxs se cambiará la imagen teniendo en cuenta el tipo de input, sin especificar su name.
+		//setTimeout("$('.scroll_y').tinyscrollbar({scroll:true,sizethumb:'auto',size:auto });",100);
+	 	$('#scrollbar').tinyscrollbar({ size: 'auto' });
+		$('#scrollbar').tinyscrollbar({ sizeThumb: 'auto' });
+		var autoHeight = $('#thumb').css("height");
+		$('#grip').css("height",autoHeight);
+	});
+	</script>
+</head>
+<body>  
+            <!-- style="width:500px !important; padding:0px !important; margin:0px !important; height:200px;" -->
+            
+    <div id="scrollbar" class="float-left marginT9" style="height:215px !important; width:468px !important; *width:493px; width:493px\0/; ">
+        
+        <div class="scroll_y width100p" style="height:200px !important; border:none !important; padding:0px !important;">
+            <div class="scrollbar" style="width:24px !important; *width:47px; width:35px\0/; margin-left:0px !important;">
+                <div class="track">
+                    <div class="thumb" id="thumb">
+                        <div class="end"></div>	
+                        <div id="grip" class="grip"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="viewport" style="height:200px !important;">
+                <div class="overview" id="subapp-box" style="margin-left:0px !important; margin-top:1px !important;">
+                    <div class="width409">
+                    <p style="padding-left:22px;" id="t0"  class="bold">Selecciona una o varias cuentas y da clic en "Continuar"</p>
+<table cellspacing="0" cellpadding="0" border="0" class="widthOverlay" style="width:409px !important; margin-left:22px; margin-top:5px !important;">
+    <tbody>
+        <tr>
+        	<td colspan="3" class="border9A height0">&nbsp;</td>
+        </tr>
+        <tr>
+            <th class="borderLabels alignLeft paddingL5" width="25%" scope="col" id="t1">Seleccionar</th>
+            <th class="borderLabels alignLeft paddingL45" width="35%" scope="col" id="t2">Producto</th>
+            <th class="borderLabels alignLeft paddingL45" width="40%" scope="col" id="t3">#Cuenta</th>
+        </tr>
+        <tr class="degrade">
+            <td class="align-left paddingL20">
+                <input type="checkbox" checked="checked" name="cuentas" id="investment1" />
+            </td>
+            <td class="alignLeft paddingL45">Tarjeta MXN</td>
+            <td class="alignLeft paddingL45">12345</td>
+        </tr>
+        <tr class="greyBack">
+            <td class="align-left paddingL20"><input type="checkbox" checked="checked" name="cuentas" id="investment2" /></td>
+            <td class="alignLeft paddingL45">Tarjeta MXN</td>
+            <td class="alignLeft paddingL45">23456</td>
+        </tr>
+        <tr>
+            <td class="align-left paddingL20" ><input type="checkbox" name="cuentas" id="investment3" /></td>
+            <td class="alignLeft paddingL45">Tarjeta MXN</td>
+            <td class="alignLeft paddingL45">45678</td>
+        </tr>
+        <tr class="greyBack">
+            <td class="align-left paddingL20" ><input type="checkbox" name="cuentas" id="investment4" /></td>
+            <td class="alignLeft paddingL45">Tarjeta MXN</td>
+            <td class="alignLeft paddingL45">12345</td>
+        </tr>
+        <tr>
+            <td class="align-left paddingL20" ><input type="checkbox" name="cuentas" id="investment5" /></td>
+            <td class="alignLeft paddingL45">Tarjeta MXN</td>
+            <td class="alignLeft paddingL45">23456</td>																	</tr>
+        <tr class="greyBack">
+            <td class="align-left paddingL20" ><input type="checkbox" name="cuentas" id="investment6" /></td>
+            <td class="alignLeft paddingL45">Tarjeta MXN</td>
+            <td class="alignLeft paddingL45">45678</td>
+        </tr>
+        <tr>
+            <td class="align-left paddingL20"><input type="checkbox" name="cuentas" id="investment7" /></td>
+            <td class="alignLeft paddingL45">Tarjeta MXN</td>
+            <td class="alignLeft paddingL45">12345</td>
+        </tr>
+    </tbody>
+</table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>								
+										<div class="cF-sideBySide cF-bottomNav sinMarginBottom paddingR20IE78" style="background:none !important; margin-top:0px !important; padding-top:0px !important; width:412px !important; margin-left:20px;">
+                                        <div class="border-top" style="height:10px !important;"></div>
+											<ul class="cN-primaryNav floatRI">
+												<li class="">
+													<div id="flechaLinks">
+														<span class="flechaazul float-left"></span>
+														<a class="sinBold" href="javascript:top.$.modal.close();" id="t5">Cancelar</a>
+													</div>
+												</li>
+                                                <li class="cM-spriteBase cN-primaryNavButton margin-right0"><a href="javascript:continua();" id="t4">CONTINUAR</a></li>	
+											</ul>
+										</div>
+		
+         <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+         <script type="text/javascript">
+		 function continua(){
+			top.cargaDocN('Incorporacion_premia/screen1_C1.html');
+			top.$.modal.close();
+		 }
+		 var es = new Array(
+		 		'Select one or several accounts and click "Continue".',
+				'Select',
+				'Product',
+				'Account',
+				'CONTINUE',
+				'Cancel'
+				);
+		 </script>
+</body>
+</html>

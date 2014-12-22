@@ -1,0 +1,436 @@
+
+
+
+
+    
+
+    <div class="ancho100p floatRI">
+
+    <div class="floatRI"><div class="minus">&nbsp;</div>Contraer todo</div>
+
+    <div class="floatRI width10">&nbsp;</div>
+
+    <div class="floatRI"><div class="plus">&nbsp;</div>Expandir todo</div>
+
+    </div>
+
+    
+
+   <div class="cH-appPanelHead">
+
+   <h4>B&Uacute;SQUEDA ESPEC&Iacute;FICA</h4>
+
+   </div>
+
+    <div class="width640 height300">
+
+         
+
+	<div class="float-left width132">
+
+        <div class="form-row">
+
+		
+
+        <label class="for-table">Buscar:</label>
+
+    	<select class="width136">
+
+		<option selected="selected">Por rango de d&iacute;as</option>							
+
+		</select>
+
+		<div class="clear"></div>
+
+	</div>
+
+
+
+
+
+
+
+    <div class="form-row">
+
+    <label class="for-table4">Fecha:</label>
+
+    <label class="float-left margin-right5"> De:</label>
+
+        <input class="width70 float-left" id="fechaFut" value="12 Jul 2012" />
+
+    <div class="icon-calendar float-left margin-left10 margin-top2"></div>
+
+    <label class="float-left margin-right5 margin-left20"> Al:</label>
+
+    <input class="width70 float-left" id="fechaFut2"  value="01 Ago 2012"/>
+
+    <div class="icon-calendar2 float-left margin-left10 margin-top2"></div>
+
+    <div class="clear"></div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="form-row">
+
+    <label class="for-table">Estatus del movimiento:</label>
+
+        <select class="width136">
+
+        <option selected="selected">Todas</option>                               
+
+        </select>
+
+        
+
+        <div class="width141 margin-top15">
+
+	         <div class="form-row">
+
+               <label class="for-table">&nbsp;</label>
+
+	                 <ul class="cN-primaryNav float-left">
+
+	 		<li>
+
+                <div id="flechaLinks">
+
+	            <span class="flechaazul float-left"></span>
+
+  	            <a href="#" class="sinBold">Borrar</a>
+
+	      		</div>
+
+	 		</li>	
+
+	 <li class="cM-spriteBase cN-primaryNavButton"><a href="#">BUSCAR</a></li>
+
+                  </ul>
+
+	                  <div class="clear"></div>
+
+	         </div>
+
+         </div>
+
+    <div class="clear"></div>
+
+    </div>
+
+    </div><!-- Termina el primer div a la izquierda-->
+
+</div>
+
+    <!-- Termina el segundo div a la izquierda (espacio)-->
+
+    <div class="float-left margin-left20">
+
+    	<div class="lineaVertical">&nbsp;</div>
+
+    <div class="floatLI" id="flechaLinksOpcoes"><p class="strong">¿QU&Eacute; DESEAS HACER?</p>
+
+    
+
+    <div class="margin-top6" >
+
+                <span class="flechaGris float-left">&nbsp;</span>
+
+                <a href="#">Pagar mi tarjeta de cr&eacute;dito</a>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="margin-top6" >
+
+                <span class="flechaGris float-left">&nbsp;</span>
+
+                <a href="#">Invertir mi dinero</a>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    
+
+    
+
+    <!-- Termina el tercer div a la izquierda -->
+
+	<div class="clear"></div>
+
+    
+
+	
+
+
+
+
+
+<div class="ancho100p">
+
+<div class="float-left strong">MOVIMIENTOS</div>
+
+<div class="containerPag height56">&nbsp;</div>
+
+</div>
+
+
+
+ 
+
+
+
+
+
+<div class="ancho100p floatLI margin-topmie10">
+
+<table width="100%">
+
+<tr>
+
+<td width="2%" class="strong borderLabels"></td>
+
+<td width="13%" class="strong borderLabels"><div class="float-left">Fecha de solicitud</div> <div class="sort_black "></div>
+
+</td>
+
+<td width="16%" class="strong borderLabels"><div class="float-left">Descripci&oacute;n</div><div class="sort_grey"></div></td>
+
+<td width="19%" class="strong borderLabels"><div class="float-left">#Autorizaci&oacute;n / Instrucci&oacute;n</div><div class="sort_grey"></div></td>
+
+<td width="19%" class="strong borderLabels"><div class="float-left">Estatus</div><div class="sort_grey"></div></td>
+
+<td width="20%" class="strong borderLabels paddingL120"><div class="float-left">Importe</div><div class="sort_grey"></div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td colspan="6" class=" first_last solid-bottom "><div class="no_movimientos">No se encontraron movimientos.</div></td>
+
+</tr>
+
+<tr>
+
+<td><div class="width20">&nbsp;</div></td>
+
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+<script type="text/javascript">
+
+            $(document).ready(function(){
+
+	 	
+
+				$('#fechaFut').datepicker({
+
+					dayNamesMin:['D','L','M','M','J','V','S'],
+
+					monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+
+					beforeShow: function(){
+
+						$(this).removeClass('ui-corner-all');
+
+						
+
+					},
+
+					showAnim: '',
+
+					showOtherMonths: true,
+
+					selectOtherMonths: false,
+
+					minDate: 'y',
+
+					maxDate: '30d',
+
+					dateFormat:"d M yy",
+
+					disabled: false
+
+				});
+
+				
+
+				$('#fechaFut').focus(
+
+					function(){
+
+						if( $(this).hasClass('modal_calendar') ){
+
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}else{
+
+							$('.ui-widget').css({'top':($(this).offset().top-55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}
+
+						if( $('.ui-datepicker .close').length == 0){
+
+							$('.ui-datepicker').append("<div class='close'></div>");
+
+						}
+
+						$('.ui-datepicker').find('.close').click(function(){
+
+							$('.input_calendar').datepicker( "hide" );
+
+						});
+
+						
+
+					}
+
+				);
+
+				
+
+			   $(".icon-calendar").click(function(){
+
+    				$('#fechaFut').datepicker('show');
+
+			   });
+
+			   
+
+				
+
+				
+
+             });
+
+ 
+
+        </script>
+
+        
+
+        
+
+        
+
+        
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+				
+
+				$('#fechaFut2').datepicker({
+
+					dayNamesMin:['D','L','M','M','J','V','S'],
+
+					monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+
+					beforeShow: function(){
+
+						$(this).removeClass('ui-corner-all');
+
+						
+
+					},
+
+					showAnim: '',
+
+					showOtherMonths: true,
+
+					selectOtherMonths: false,
+
+					minDate: '-4m',
+
+					maxDate: '30d',
+
+					dateFormat:"d M yy",
+
+					disabled: false
+
+				});
+
+				
+
+				$('#fechaFut2').focus(
+
+					function(){
+
+						if( $(this).hasClass('modal_calendar') ){
+
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}else{
+
+							$('.ui-widget').css({'top':($(this).offset().top-55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}
+
+						if( $('.ui-datepicker .close').length == 0){
+
+							$('.ui-datepicker').append("<div class='close'></div>");
+
+						}
+
+						$('.ui-datepicker').find('.close').click(function(){
+
+							$('.input_calendar').datepicker( "hide" );
+
+						});
+
+						
+
+					}
+
+				);
+
+				
+
+			   $(".icon-calendar2").click(function(){
+
+    				$('#fechaFut2').datepicker('show');
+
+			   });
+
+			   
+
+				
+
+				
+
+             });
+
+ 
+
+        </script>
+

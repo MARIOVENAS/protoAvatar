@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>Banamex</title>
+		
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+			<script type="text/javascript">
+			
+			var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('ACCOUNT DETAIL','See all accounts','Investment number:','Instrument:','Term:','Opening / reinvestment date: ','Maturity date:','Maturity today:','Instructions on maturity: ','Initial balance:','Reimbursement accounts:');
+			
+            <!--
+			$(document).ready(function(){
+			setTimeout(function(){top.ajustarP();},800);
+			
+			});
+			-->
+			</script>
+</script>
+</head>
+
+<body >
+    <div class=" width926 bg_demo2">
+    <div id="title-section" class="cH-appPageHead height20 paddingT0 margin-bottom20">
+                    <div class="float-left">
+                      <h1 id="t23">DETALLE DE LA CUENTA</h1></div>
+                        
+               <div id="ayuda">  
+                <div class="margin-top6 titulo " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0)" onclick="top.dash()" class="float-left" id="t24">&nbsp;Ver todas las cuentas</a>
+                </div>
+                </div>   
+             
+             <div id="imp" class="displayNone">
+               <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+                </div>
+                </div>
+                </div>
+    
+    <div class="clear"></div>
+
+<div class="noleftmenu margintop0" id="subapp-box">
+    
+    <div class="form-row">
+        <select name="select" id="select" onchange="valor2=this.value;Cta3();">
+            				<option value="0" >Mi Chequera - Cheques - MXN - 12680</option>
+                          <option value="1">Cta Maestra - Mi maestra - MXN - 12681</option>
+                          <option value="2">Pagom&aacute;tico - BNM - Mi d&eacute;bito - MXN - 12680</option>
+                          <option value="3">Mi Chequera - Cheques - USD - 12680</option>
+                          <option value="4">Tarj. Oro - Mi tarjeta - MXN - 12680</option>
+                          <option value="5">Tarj. Premia - Ptos Premia - MXN 12244</option>
+                          <option value="6">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="7">Credicheques - Mi cr&eacute;dito - MXN - 12300</option>
+                          <option value="8">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="9">Mi inversi&oacute;n - Inv. Integral - MXN - 12299</option>
+                          <option selected="selected">Mi plazo - Inv. Plazo - MXN - 12282</option>
+                          <option value="11">Horzcob - MXN - 123456 - Horzcob</option>
+                          <option value="12">Banca Inversi&oacute;n - MXN - 123456 - Multiseries</option>
+                          <option value="13">Mi retiro - AFORE NSS - MXN - 12312</option>
+        </select>
+        <div class="clear"></div>
+    </div>
+
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top5">
+                   <tbody>
+                      <tr class="ie7BgFFF">
+                        <th width="10%" valign="middle" scope="col" class="borderLabels pad15">
+                            <span class="strong float-left" id="t25">Número de <br />inversión</span>
+                        </th> 
+                        <th width="9%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t26">Instrumento</span>
+                        </th> 
+                        <th width="5%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t27">Plazo</span>
+                        </th> 
+                        <th width="13%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t28">Fecha apertura <br />/ reinversión</span>
+                        </th> 
+                        <th width="10%" valign="middle" scope="col" class="borderLabels padding-right10">
+                            <span class="strong float-left" id="t29">Fecha de<br />vencimiento</span>
+                        </th> 
+                        <th width="8%" valign="middle" scope="col" class="borderLabels padding-right10">
+                            <span class="strong float-left" id="t30">Vence hoy</span>
+                        </th>   
+                        <th width="16%" valign="middle" scope="col" class="borderLabels padding-right10">
+                            <span class="strong float-left" id="t31">Instrucciones al<br />vencimiento</span>
+                        </th>   
+                        <th width="12%" valign="middle" scope="col" class="borderLabels padding-right10">
+                            <span class="strong float-left" id="t32">Saldo inicial</span>
+                        </th>
+                        <th width="17%" valign="middle" scope="col" class="borderLabels padding-right10">
+                            <span class="strong float-left" id="t33">Cuentas de reembolso</span>
+                        </th>                 
+                    </tr>
+                      <tr class="greyBack">
+                        <td class="pad15"><a href="40-AccountDetail_plazo.html" class="border-link color00589d">900001</a></td>
+                        <td>Pagaré</td>
+                        <td>150</td>
+                        <td>15 Ene 2012</td>
+                        <td>15 Feb 2012</td>
+                        <td>Si</td>
+                        <td>Reinversión de Capital</td>
+                        <td>$ 150,000,000.00</td>
+                        <td>Cheques</td>
+                      </tr>
+                       <tr class="ie7BgFFF">
+                        <td class="pad15"><a href="40-AccountDetail_plazo.html" class="border-link color00589d">900001</a></td>
+                        <td>Pagaré</td>
+                        <td>150</td>
+                        <td>15 Ene 2012</td>
+                        <td>15 Feb 2012</td>
+                        <td>Si</td>
+                        <td>Reinversión de Capital</td>
+                        <td>$ 150,000,000.00</td>
+                        <td>Contrato Cuenta Maestra</td>
+                      </tr>
+                       <tr class="greyBack">
+                        <td class="pad15"><a href="40-AccountDetail_plazo.html" class="border-link color00589d">900001</a></td>
+                        <td>Pagaré</td>
+                        <td>150</td>
+                        <td>15 Ene 2012</td>
+                        <td>15 Feb 2012</td>
+                        <td>Si</td>
+                        <td>Reinversión de Capital</td>
+                        <td>$ 150,000,000.00</td>
+                        <td>Cheques</td>
+                      </tr>
+                      <tr class="ie7BgFFF">
+                        <td class="pad15"><a href="40-AccountDetail_plazo.html" class="border-link color00589d">900001</a></td>
+                        <td>Pagaré</td>
+                        <td>150</td>
+                        <td>15 Ene 2012</td>
+                        <td>15 Feb 2012</td>
+                        <td>Si</td>
+                        <td>Reinversión de Capital</td>
+                        <td>$ 150,000,000.00</td>
+                        <td>Contrato Cuenta Maestra</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="pad15"><a href="40-AccountDetail_plazo.html" class="border-link color00589d">900001</a></td>
+                        <td>Pagaré</td>
+                        <td>150</td>
+                        <td>15 Ene 2012</td>
+                        <td>15 Feb 2012</td>
+                        <td>Si</td>
+                        <td>Reinversión de Capital</td>
+                        <td>$ 150,000,000.00</td>
+                        <td>Cheques</td>
+                      </tr> 
+                      <tr class="ie7BgFFF">
+                        <td class="pad15"><a href="40-AccountDetail_plazo.html" class="border-link color00589d">900001</a></td>
+                        <td>Pagaré</td>
+                        <td>150</td>
+                        <td>15 Ene 2012</td>
+                        <td>15 Feb 2012</td>
+                        <td>Si</td>
+                        <td>Reinversión de Capital</td>
+                        <td>$ 150,000,000.00</td>
+                        <td>Contrato Cuenta Maestra</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="pad15 border9A"><a href="40-AccountDetail_plazo.html" class="border-link color00589d">900001</a></td>
+                        <td class="border9A">Pagaré</td>
+                        <td class="border9A">150</td>
+                        <td class="border9A">15 Ene 2012</td>
+                        <td class="border9A">15 Feb 2012</td>
+                        <td class="border9A">Si</td>
+                        <td class="border9A">Reinversión de Capital</td>
+                        <td class="border9A">$ 150,000,000.00</td>
+                        <td class="border9A">Cheques</td>
+                      </tr>
+                    </tbody>
+                </table>
+<script>
+	var valor2=0;
+	
+	function Cta3(){
+		
+			if(valor2==0)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==1)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Maestra.html'
+			}
+			if(valor2==2)
+			{
+			top.cargando_movimientos();
+			window.location.href='Tarjeta-de-Debito.html'
+			}
+			if(valor2==3)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==4)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta-de-Credito.html'
+			}
+			if(valor2==5)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta_premia.html'
+			}
+			if(valor2==6)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==7)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Credicheque.html'
+			}
+			if(valor2==8)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==9)
+			{
+			top.cargando_movimientos();	
+			window.location.href='39-AccountDetail_integral.html'
+			}
+			if(valor2==10)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_plazo_folio.html'
+			}
+			if(valor2==11)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_fondos.html'
+			}
+			if(valor2==12)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_multiseries.html'
+			}
+			if(valor2==13)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail.html'
+			}
+		}
+	</script>
+</div>
+
+     </div>        
+</body>
+</html>
+             

@@ -1,0 +1,73 @@
+/**** GLOBAL MENU****/
+
+
+
+.global-menu-container
+
+{
+
+	width: 100%;	
+
+	position: absolute;
+
+	background: url('/JFP/images/widgets/jfpw.menu.globalmenu.png') repeat-x scroll 0 0 transparent;
+
+	z-index: 100;
+
+}
+
+
+
+.sf-menu.jfpw-menu-global {
+
+	background:	none transparent ;
+
+	float: right;
+
+	margin-bottom: 0;
+
+	padding-right: 40px;
+
+	font-size: 8pt;
+
+	font-weight: normal;
+
+}
+
+
+
+.sf-menu.jfpw-menu-global li {
+
+	background:	none transparent ;
+
+}
+
+
+
+.sf-menu.jfpw-menu-global li:hover, .sf-menu.jfpw-menu-global li.sfHover, .sf-menu.jfpw-menu-global a:focus, .sf-menu.jfpw-menu-global a:hover, .sf-menu.jfpw-menu-global a:active {
+
+    background:	none transparent ;
+
+}
+
+
+
+.sf-menu.jfpw-menu-global a ,.sf-menu.jfpw-menu-global a:visited{
+
+	color: #fff;
+
+	border: 0px;
+
+	font-size: 7.5pt;
+
+	
+
+	padding: .6em 1em .3em 1em;
+
+}
+
+
+
+
+
+/**** TOP NAV ****/

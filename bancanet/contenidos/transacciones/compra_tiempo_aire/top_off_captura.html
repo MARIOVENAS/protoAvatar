@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <title>Banamex</title>
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>  
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/> 
+ 		<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+		<script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    </head>
+    <body class="bg_demo" style="background-color:#FFF !important">
+    	<div id="subapp-box" class="float-left">
+			<div class="contentSteps margin-topm18">
+				<div id="t0" class="step1 active"><b>1</b> Captura</div>
+				<div id="t1" class="step2"><b>2</b> Verifica</div>
+				<div id="t2" class="step3"><b>3</b> Respuesta</div>
+				<div class="barrita">&nbsp;</div>
+			</div>                 
+			<div class="clear"></div>
+			<div class="cH-appPanelHead">
+				<h3 id="t3">Compra de tiempo aire</h3>
+			</div>
+			<p id="t4" class="margin-bottom20" style="line-height:18px !important">
+				Recarga tiempo aire para Telcel, Movistar, Iusacell o Unefon con cargo a tu cuenta de cheques, tarjeta de débito o tarjeta de crédito (sin comisión extra). Para esta operación necesitarás tu NetKey, seleccionar tu cuenta de retiro y los datos de la compra.
+			</p>
+			<div class="border-top"></div>	
+			<div class="width139">
+				<div class="form-row margin-bottom10">
+					<label class="for-table display-inline" id="t5">Cuenta de retiro:</label>
+					<select class="sel_cuenta display-inline">
+						<option value="0" id="t6">Selecciona una cuenta</option>
+						<option value="15978.13">Mi tarjeta - Tarj. Clásica - MXN - 12780 - $ 15,987.13</option>
+						<option value="98.70">Mi tarjeta - Tarj. Clásica - MXN - 12780 - $ 98.70</option>
+					</select>
+					<span class="errorB displayNone error-sel_cuenta1 display-inline2">
+						<span class="flecha2"></span>
+						<span class="content_big"  id="t16">Por favor seleccione una cuenta de retiro.</span>
+					</span>
+					<span class="errorB displayNone error-sel_cuenta2 display-inline2">
+						<span class="flecha2"></span>
+						<span class="content_big"  id="t17">Fondos insuficientes.</span>
+					</span>
+					<div class="clear"></div>
+				</div>
+				<div class="form-row margin-bottom10">
+					<label class="for-table">&nbsp;</label>
+					<div class="info_icon"></div>
+					<p class="font-size11px color666 float-left margin-left5 margin-top2" id="t7">
+						Si realizas la compra con tu tarjeta de crédito, no generará comisión por disposición de efectivo.
+					</p>
+					<div class="clear"></div>
+				</div>
+				<div class="form-row">
+					<label class="for-table display-inline" id="t8">Número celular:</label>
+					<label class="display-inline">044 / 045</label>
+					<input type="text" class=" display-inline width80 text margin-left10 input_tel" onKeyPress="soloNumeros();" maxlength="10" />
+					<span class="errorB displayNone error-input_tel display-inline2">
+						<span class="flecha2"></span>
+						<span class="content_big"  id="t18">Por favor ingrese un N&uacute;mero celular.</span>
+					</span>
+					<a class="tooltip_q margin-left7 tooltip display-inline valignmiddle marginL07IE" id="t15" href="#"  title="Ingresa los 10 dígitos de tu celular."></a>
+					<div class="clear"></div>
+				</div>
+				<div class="form-row">
+					<label  class="for-table display-inline" id="t9">Compañía celular:</label>
+					<select class="sel_comp display-inline">
+						<option id="t10" value="0">Selecciona</option>
+						<option>Telcel</option>
+						<option>Movistar</option>
+						<option>Iusacell</option>
+						<option>Unefon</option>
+					</select>
+					<span class="errorB displayNone error-sel_comp display-inline2">
+						<span class="flecha2"></span>
+						<span class="content_big"  id="t19">Por favor seleccione una Compa&ntilde;&iacute;a.</span>
+					</span>
+					<div class="clear"></div>
+				</div>
+				<div class="form-row margin-bottom5">
+					<label  class="for-table sinMarginRight display-inline" id="t11">Importe MXN:</label>
+					<label class="margin-right3 display-inline">$</label>
+					<select class="sel_importe display-inline">
+						<option id="t12" value="0">Selecciona</option>
+						<option>200.00</option>
+					</select>
+					<span class="errorB displayNone error-sel_importe display-inline2">
+						<span class="flecha2"></span>
+						<span class="content_big"  id="t20">Por favor seleccione un Importe.</span>
+					</span>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="cF-sideBySide cF-bottomNav border-top">
+				<div class="width139">&nbsp;</div>
+				<ul class="cN-primaryNav">
+					<li class="cM-spriteBase cN-primaryNavButton">
+				    	<a  href="javascript:valida_compra_aire('valida');" id="t13">CONTINUAR</a>
+					</li>
+				    <li id="flechaLinksOpcoes" class="titulo margin-top3 float-left">
+				        <span class="flechaGris float-left">&nbsp;</span>
+				        <a  class="float-left" href="javascript:valida_compra_aire('clear');" id="t14">Borrar</a>
+				    </li>	
+				</ul>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<script type="text/javascript">	
+			var es = new Array(
+                '<b>1</b> Capture',
+                '<b>2</b> Verify',
+                '<b>3</b> Response',
+                'Mobile top up',
+                'Buy mobile top up for Telcel, Movistar, Iusacell or Unefon charged to your checking account, debit card or credit card (without extra fee). To perform this operation, it is necessary to have your NetKey, selecting your withdrawal account and the purchase data.',
+                'Withdrawal account:',
+                'Select an account',
+                'If you make your purchase with credit card, it will not generate cash withdrawal fee.',
+                'Mobile number:',
+                'Carrier:',
+                'Select',
+                'Amount MXN:',
+                'Select',
+                'CONTINUE',
+                'Erase',
+                'Enter your 10 digit Mobile number.',
+                'Please select a withdrawal account.',
+                'Not enough funds.',
+                'Please select a mobile phone number.',
+                'Please select a carrier',
+                'Please select an amount'
+            );
+			$(document).ready(function(){
+				var url_ayuda = 'javascript:void(0);';
+				if( isEnglishSel ) {
+					url_ayuda = 'https://bancanet.banamex.com/ayudas/en/pagos-y-transferencias/tiempo-aire.htm';
+				}else{
+					url_ayuda = 'https://bancanet.banamex.com/ayudas/es/pagos-y-transferencias/tiempo-aire.htm';
+				}
+				top.set_ayuda(url_ayuda);
+				addTooltip();
+				tooltips_compra_aire();
+			});
+			function tooltips_compra_aire(){
+				$('.errorB').css('display','none');
+				$('.sel_cuenta').change(function(){
+					$('.error-sel_cuenta1,.error-sel_cuenta2').css('display','none');
+					if( $(this).hasClass('error1') ){
+						if($(this).val() != '0'){
+							$(this).removeClass('errorbg').removeClass('error1');
+							$(this).find('option').css('background','#FFFFFF');
+						}
+						if( $('.input_tel').hasClass('errorbg') ){
+							$('.error-input_tel').css('display','inline');
+						}else{
+							if( $('.sel_comp').hasClass('errorbg') ){
+								$('.error-sel_comp').css('display','inline');
+							}else{
+								if( $('.sel_importe').hasClass('errorbg') ){
+									$('.error-sel_importe').css('display','inline');
+								}
+							}
+						}
+					}
+					if( $(this).hasClass('error2') ){
+						if( parseFloat( $(this).val() ) >= 200 ){
+							$(this).removeClass('errorbg').removeClass('error2');
+							$(this).find('option').css('background','#FFFFFF');
+						}
+						if( $('.input_tel').hasClass('errorbg') ){
+							$('.error-input_tel').css('display','inline');
+						}else{
+							if( $('.sel_comp').hasClass('errorbg') ){
+								$('.error-sel_comp').css('display','inline');
+							}else{
+								if( $('.sel_importe').hasClass('errorbg') ){
+									$('.error-sel_importe').css('display','inline');
+								}
+							}
+						}
+					}
+				});
+				$('.input_tel').keydown(function(){
+					$('.error-input_tel').css('display','none');
+					if($(this).val() != ''){
+						$(this).removeClass('errorbg');
+						if( $('.sel_comp').hasClass('errorbg') ){
+							$('.error-sel_comp').css('display','inline');
+						}else{
+							if( $('.sel_importe').hasClass('errorbg') ){
+								$('.error-sel_importe').css('display','inline');
+							}
+						}
+					}
+				});
+				$('.sel_comp').change(function(){
+					$('.error-sel_comp').css('display','none');
+					if($(this).val() != '0'){
+						$(this).removeClass('errorbg');
+						$(this).find('option').css('background','#FFFFFF');
+						if( $('.sel_importe').hasClass('errorbg') ){
+							$('.error-sel_importe').css('display','inline');
+						}
+					}
+				});
+				$('.sel_importe').change(function(){
+					$('.error-sel_importe').css('display','none');
+					if($(this).val() != '0'){
+						$(this).removeClass('errorbg');
+						$(this).find('option').css('background','#FFFFFF');
+					}
+				});
+			}
+			function valida_compra_aire(tipo){
+				switch(tipo){
+					case 'valida':{
+						var valida_ok = true;
+						var tooltip_show = false;
+						//Valida Cuenta
+						if( ( parseFloat( $('.sel_cuenta').val() ) < 200 ) || ($('.sel_cuenta').val() == '0') ) {
+							valida_ok = false;
+							if( parseFloat( $('.sel_cuenta').val() ) < 200 ){
+								$('.sel_cuenta').addClass('errorbg').addClass('error2');	
+								$('.error-sel_cuenta2').css('display','inline');
+								$('.sel_cuenta').find('option').css('background','transparent');
+								tooltip_show = true;
+							}
+							if($('.sel_cuenta').val() == '0'){
+								$('.sel_cuenta').addClass('errorbg').addClass('error1').removeClass('error2');
+								$('.error-sel_cuenta2').hide();
+								$('.error-sel_cuenta1').css('display','inline');
+								$('.sel_cuenta').find('option').css('background','transparent');
+								tooltip_show = true;
+							}
+						}
+						//Valida Tel
+						if($('.input_tel').val() == ''){
+							$('.input_tel').addClass('errorbg');
+							valida_ok = false;
+						}
+						if((!valida_ok)&&(!tooltip_show)){
+							$('.error-input_tel').css('display','inline');
+							tooltip_show = true;
+						}
+						//Valida Compañia
+						if($('.sel_comp').val() == '0'){
+							$('.sel_comp').addClass('errorbg');
+							$('.sel_comp').find('option').css('background','transparent');
+							valida_ok = false;
+						}
+						if((!valida_ok)&&(!tooltip_show)){
+							$('.error-sel_comp').css('display','inline');
+							tooltip_show = true;
+						}
+						//Valida Importe
+						if($('.sel_importe').val() == '0'){
+							$('.sel_importe').addClass('errorbg');
+							$('.sel_importe').find('option').css('background','transparent');
+							valida_ok = false;
+						}
+						if((!valida_ok)&&(!tooltip_show)){
+							$('.error-sel_importe').css('display','inline');
+							tooltip_show = true;
+						}
+						if(valida_ok){
+							top.cargaDocN('compra_tiempo_aire/top_off_confirmacion.html');
+						}
+						break;
+					}
+					case 'clear':{
+						$('.sel_cuenta,.input_tel,.sel_comp,.sel_importe').removeClass('errorbg')
+						$('.sel_cuenta').val('0');
+						$('.input_tel').val('');
+						$('.sel_comp').val('0');
+						$('.sel_importe').val('0');
+						$('.errorB').css('display','none');
+						break;
+					}
+				}
+			}
+			function posicionarTooltip(link, tooltip){
+				var posLink = link.offset();
+				//If tooltip's position is bigger than body's width
+				if(posLink.left + link.outerWidth() + tooltip.outerWidth() + 15 < $("body").outerWidth()){
+					tooltip.css({
+						'left': posLink.left + link.outerWidth() + 15,
+						'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+					});
+				}else{
+				tooltip.css({
+					'left': posLink.left - link.outerWidth() - 225,
+					'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+				})
+					.find(".tt_arrow")
+					.addClass("tt_arrow_right");
+				}
+			}
+			function addTooltip(){
+				$('.tooltip').click(function(e){
+					e.preventDefault();
+					var tt_container = $('<div id="tt_container" class="medium"></div>'),
+					flecha = $('<div class="tt_arrow"></div>'),
+					actions = $('<div class="tt_actions"></div>'),
+					title_content = $(this).attr("title");
+					//Si ya había un tooltip lo elimino
+					if($('body').find('#tt_container')){
+						$('#tt_container').remove(); 
+					}
+					//Agrego la flechita
+					flecha.appendTo(tt_container);
+					//Agrego el boton de cerrar
+					$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container);
+					//Agrego el texto indicativo
+					$('<p class="p_tooltip"></p>').appendTo(tt_container);
+					//Agrego el tooltip
+					tt_container.appendTo('body');
+					$('.p_tooltip').html(title_content);
+					//Acomodo la fecha a la mitad del tooltip
+					flecha.css({
+						'top' : (tt_container.outerHeight() - flecha.outerHeight())/2
+					})
+					posicionarTooltip($(this), tt_container);
+					$('#tt_container .tt_cancel, #tt_container .tt_close, #tt_container .tt_continue').click(function(){
+						$('#tt_container').remove();
+					});			
+				});
+			}
+		</script>
+    </body>
+</html>

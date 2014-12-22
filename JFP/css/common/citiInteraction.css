@@ -1,0 +1,406 @@
+/*Section 3 - Interaction (buttons, Menues, etc)*/
+
+
+
+
+
+/* 3.1 Buttons - This section contains all styles related to navigation buttons */
+
+
+
+/*  Primary button styles - requires the following styles included: .colorTextWhite, colorGradientSprite, .colorBGBlueButton, and .fontSize11px */
+
+ul.appNav a, ul.appNav p {
+
+		margin: 2px 6px 2px 0;
+
+		padding-left: 10px;    /* Ui Fix */
+
+		padding-right: 10px;   /* Ui Fix */
+
+		padding-top: 1px;     /* Ui Fix */
+
+		padding-bottom: 2px;  /* Ui Fix */
+
+		text-decoration:none;
+
+		font-weight:bold;
+
+}
+
+
+
+ul.appNav, ul#appNav {
+
+	list-style: none outside none;
+
+	margin: 5px 0;
+
+	padding: 10px 0;
+
+}
+
+
+
+ul.appNav li {
+
+	font-size:1px;
+
+	margin:0;
+
+	padding:3px 0;
+
+	text-align: left;
+
+	vertical-align: bottom;
+
+	white-space: nowrap;
+
+	display: inline;
+
+}
+
+
+
+li.appNavPos a {
+
+	
+
+}
+
+
+
+/* Secondary button  */
+
+li.appNavNeg span { 
+
+	padding: 3px 4px;
+
+	margin:4px 0px 0px 0px ;
+
+	float:left;
+
+	display:inline-block;
+
+}
+
+
+
+html.vIE6 li.appNavNeg span { 
+
+	margin:6px 0px 0px 0px ;
+
+}
+
+
+
+html.vIE7 li.appNavNeg span { 
+
+	margin:6px 0px 0px 0px ;
+
+}
+
+
+
+ul li.appNavNeg a {
+
+	padding:0;
+
+}
+
+
+
+/* Side by side navigations buttons */
+
+
+
+.appNavFloat {
+
+	float:left;
+
+	margin-right: 20px;
+
+}
+
+
+
+
+
+/* 3.2 text links - This section is used for all text based links */
+
+a.interActLink{
+
+	border-bottom: 1px solid #000;
+
+	text-decoration:none;
+
+}
+
+
+
+a:hover.interActLink {
+
+	color: #05589D;
+
+	border-bottom: 1px solid #05589D;
+
+}
+
+
+
+a.interActLinkDotted, li.interActLinkDotted, span.interActLinkDotted {
+
+	border-bottom: 1px dotted #333333;
+
+	text-decoration:none;
+
+}
+
+
+
+a:hover.interActLinkDotted, .interActLinkDotted:hover {
+
+	border-bottom: 1px dotted #3399CC;
+
+	text-decoration:none;
+
+}
+
+
+
+a.interActDottedBorderTop, li.interActDottedBorderTop, span.interActDottedBorderTop, div.interActDottedBorderTop {
+
+	border-top: 1px dotted #333;
+
+	text-decoration: none;
+
+}
+
+
+
+a.interActLinkBlueTxt {
+
+	text-decoration:none;
+
+}
+
+
+
+
+
+/* 3.3 misc. additons - This section is used for misc styles such as borders, box shadows, html rule dividers, etc. */
+
+.interActGrayBdr {
+
+	border: 1px solid #CCC;
+
+}
+
+
+
+hr.appTickRuler {
+
+	background-color: #DDD;
+
+	border:medium none;
+
+	color: #DDD;
+
+	height:2px;
+
+}
+
+
+
+.interActDividerBlk {
+
+	border-right: 1px solid #000;
+
+	padding: 0 10px 0 0;
+
+}
+
+
+
+/* Styles for dashboard hover bubbles */
+
+.interActBublHead {
+
+	font-weight:bold;
+
+	padding: 0px 10px 5px;
+
+}
+
+
+
+.interActBublMain {
+
+	padding: 0px 10px 10px;
+
+}
+
+
+
+/* stand alone display none class */
+
+.appShowNone {
+
+	display:none;
+
+}
+
+
+
+/* stand alone display block class */
+
+.appShow {
+
+	display:block;
+
+}
+
+
+
+/* 3.4 ICONS - This section calls the icons sprite and gives each one positioning, height and width, along with hover; if applicable. */
+
+
+
+/* Commented out, and added to citiClolor.css for the global sprite */
+
+/*.interactIconSprite, li.appNavNeg span {
+
+	background-image:url('/JFP/images/citiIcons.gif');
+
+	background-repeat:no-repeat;
+
+}*/
+
+
+
+.interactSnapShot {
+
+	background-position: -1px -224px;
+
+}
+
+
+
+.interactSnapShot:hover {
+
+	background-position: -1px -235px;
+
+}
+
+
+
+.interactMyProfile {
+
+	background-position: -0px -0px;
+
+}
+
+
+
+.interactMyProfile:hover {
+
+	background-position: -0px -11px;
+
+}
+
+
+
+.interactSignOff {
+
+	background-position: -0px -24px;
+
+}
+
+
+
+.interactSignOff:hover {
+
+	background-position: -0px -37px;
+
+}
+
+
+
+.interactViewBill {
+
+	background-position: -0px -72px;
+
+}
+
+
+
+.interactButtonCarat, li.appNavNeg span {
+
+	background-position: -8px -398px;
+
+	display: inline-block;
+
+        width: 6px;
+
+        height: 8px;
+
+        #height: 9px;
+
+        height: 6\9px;
+
+}
+
+
+
+.interactCloseButton {
+
+	background-position: -0px -91px;
+
+
+
+}
+
+
+
+.interactCloseButton:hover {
+
+	background-position: -0px -108px;
+
+}
+
+/* End Icons section */
+
+
+
+
+
+/* 3.5 Mobile legacy - This section is reserved for legacy mobile styles */
+
+
+
+/* End Mobile Legacy */
+
+
+
+/* CONTACT US OVERLAY FOOTER LINKS */
+
+
+
+a#cmlink_LiveChatLink:hover, a#cmlink_SendMessageLink:hover, a#cmlink_CallUsLink:hover { color: #05589D; }
+
+
+
+/* END: CONTACT US OVERLAY FOOTER LINKS */
+
+
+
+/* End Interaction section */
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,270 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Modify spending limit',
+			'Select a card, enter the new limit you wish to modify and click "Continue".',
+			'Select a credit card',
+			'Account credit line: $ 200,000.00',
+			'Current spending limit  pesos MXN: $ 12,000.00',
+			'New spending limit pesos MXN:',
+			'Current spending limit  pesos MXN: $ 12,000.00',
+			'New spending limit pesos MXN:',
+			'CONTINUE',
+			'Cancel',
+			'Capture',
+			'Confirmation',
+			'Verification');
+    </script>
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+	
+	top.ayuda();
+	setTimeout(function(){top.$('#iframeConte').removeClass('alto525').removeClass('alto610').addClass('alto550');},800);
+		
+	});
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+<div class="width691 floatL">
+		
+        <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t33">Captura</span> </li>
+            <li id="opcVerifica"><strong>2</strong>  <span id="t34">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t35">Respuesta</span> </li>
+        </ul>
+        </div>
+          
+        <!-- <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+          	<td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsqB" id="t33">Captura</td>
+              </tr>
+               <tr>
+                <td class="esq_LB">&nbsp;</td>
+                <td class="esq_B"></td>
+                <td class="esq_RB">&nbsp;</td>
+              </tr>
+              </table>
+          </td>
+          <td class="width20">&nbsp;</td>
+          <td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t34">Confirmaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+            <td class="width20">&nbsp;</td>
+            <td width="32%">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t35">Verificaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+          </tr>
+          </table> -->
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t23">Modificaci&oacute;n de l&iacute;mite de gastos</h3>
+
+            </div>
+			
+            <div class="border-topSolid"></div>
+
+			<p class="instructions margin-botom0" id="t24"  style="margin-bottom:18px !important; *margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Selecciona una tarjeta, indica el nuevo l&iacute;mite que deseas modificar y da clic en "Continuar".</p>
+			
+           
+                         
+
+						<div class="width141 clear">
+							<div class="form-row margin-right0">
+
+                                <div class="floatLI height30 overflow" style="width:90px !important; padding:0px !important;" id="Horo">
+                                	<div class="tajOro displayNone floatLI" id="Oro"></div>
+                                </div>
+
+                                <div class="height30 floatLI">
+                                <select id="sol1" class="width-600" onChange="valor1=this.value;selector1();">
+									<option selected="selected" value="0" id="t25">&nbsp;&nbsp;Selecciona una tarjeta de cr&eacute;dito</option>
+									<option  value="1">&nbsp;&nbsp;Mi tarjeta - Tarj. Oro - MXN - 12680</option>
+								</select>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+							<div id="step" class="displayNone"> <!-- Step -->
+                            <div class="border-top"></div>
+                            
+                            <div class="form-row margin-bottom13">
+                            	 <div class="overflow">
+                                <label id="t26" class="for-table width-360 bold">L&iacute;nea de cr&eacute;dito de la cuenta: $ 200,000.00</label>
+                                </div>
+                                
+                                <div class="overflow marginT15 clear">
+                                    <div class="float-left">
+                                        <input type="checkbox" class="float-left" id="checkbox1" name="cuentas">
+                                    </div>
+                                    <div class="float-left">
+                                        <label class="for-table width400 paddingL7">
+                                        Jos&eacute; Francisco Fern&aacute;ndez - 12680
+                                        <br>
+                                        <span id="t27">L&iacute;mite de gastos actual MXN: $ 12,000.00</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="overflow marginT15 marginL20 clear BGEEE height40 paddingT15 paddingB15 paddingL15 width-70p displayNone">
+                                <label id="t28" class="for-table widthAuto">Nuevo l&iacute;mite de gastos actual MXN:</label>
+                                <input type="text" id="input1" value="" class="width100 float-left margin-topm5IE">
+                                </div>
+                                
+                                <div class="overflow marginT15 clear">
+                                    <div class="float-left">
+                                        <input type="checkbox" class="float-left" id="checkbox2" name="cuentas">
+                                    </div>
+                                    <div class="float-left">
+                                        <label class="for-table width400 paddingL7">
+                                        Jos&eacute; Manuel Fern&aacute;ndez - 12564
+                                        <br>
+                                        <span id="t29">L&iacute;mite de gastos actual MXN: $ 2,000.00</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="overflow marginT15 marginL20 clear BGEEE height40 paddingT15 paddingB15 paddingL15 width-70p displayNone">
+                                    <label id="t30" class="for-table widthAuto">Nuevo l&iacute;mite de gastos actual MXN:</label>
+                                    <input type="text" id="input2" value="" class="width100 float-left margin-topm5IE">
+                                </div>
+                                
+                               
+                                <div class="clear"></div>
+                            </div>
+						</div><!-- Step -->
+                              
+
+                        </div><!-- Fin width141 -->
+
+						
+						<div id="btns" class="displayNone"> <!-- Botones -->
+                        
+						<div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT5">
+
+							<!-- <div class="width156">&nbsp;</div> -->
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton">
+                                	<a href="javascript:void(0);" onClick="javascript:continuar();" id="t31">CONTINUAR</a>
+                                </li>	
+                                <li class="cN-primaryNav">
+									<div id="flechaLinks">
+										<span class="flechaazul float-left"></span>
+										<a id="t32" href="javascript:borrar();" class="sinBold">Cancelar</a>
+									</div>
+								</li>
+
+							</ul>
+
+						 </div>	
+                         
+                         </div><!-- BTN -->
+
+						<div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript">
+	
+	$(function(){
+    
+    $.imageTick.logging = true;
+    
+    $("input[name='cuentas']").imageTick({ 
+      tick_image_path: "../../../../JFP/regional/images/check_1.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+    });
+        
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+  });
+	
+	valor1 = 0;
+	function selector1(){
+		if (valor1==0){
+			$('#Oro').hide();
+			$('#step').hide();
+			$('#btns').hide();
+			$('#Horo').removeClass('height50').addClass('height30');
+			$('#tick_img_checkbox1, #tick_img_checkbox2').trigger('click');
+			$('#input1, #input2').val('');
+			$('.BGEEE').hide();
+			
+		}else{
+			$('#Oro').show();
+			$('#step').show();
+			$('#btns').show();
+			$('#Horo').removeClass('height30').addClass('height50');
+			setTimeout(function(){$('#tick_img_checkbox1, #tick_img_checkbox2').trigger('click');},900);
+			setTimeout(function(){$('.BGEEE').show();},1100);
+			setTimeout(function(){llena()},1500);
+		}
+	}
+	
+	function llena(){
+		setTimeout(function(){llenarValores('input','#input1','$ 7,500.00');},1000);
+		setTimeout(function(){llenarValores('input','#input2','$ 4,500.00');},2100);
+	}
+	
+	
+	function borrar(){
+		$("#sol1 option[value='0']").attr("selected",true);
+		$('#Oro').hide();
+		$('#step').hide();
+		$('#btns').hide();
+		$('#Horo').removeClass('height50').addClass('height30');
+		$('#tick_img_checkbox1, #tick_img_checkbox2').trigger('click');
+		$('#input1, #input2').val('');
+		$('.BGEEE').hide();
+	}
+	
+	function continuar(){
+		top.cargaDocN('Modificar_limite_gastos/screen1_modC1.html');
+	}
+	
+	
+	</script>
+</body>
+</html>

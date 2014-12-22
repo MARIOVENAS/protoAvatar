@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <title>Banamex</title>
+        <link href="../Transferencia y Pagos Tarjetas/prototipo_BancaNetAvatar/css/estilo.css" rel="stylesheet" type="text/css">
+	
+		<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+  
+     <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp2.css"/>  
+     <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+     <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/> 
+     
+     <script type="text/javascript">
+	 var es = new Array(
+	   
+	'Capture',
+	'Verify',
+	'Response',
+	
+	'Deposit to AcciTrade',
+	
+	'Select a withdrawal account. Provide the transference data an click "Continue".',
+	
+	'Withdrawal Account:',
+	'Select an option',
+	
+	'Deposit Account or Beneficiary:',
+	
+	'Amount MXN:',
+	'AcciTrade Agreement:',
+	
+	'Additional options:',
+	
+	'Schedule for future date',
+	'Save as frequent transactions.<br>The schedule transactions cannot be saved as frequent.',
+	
+	'CONTINUE'
+	   
+	);
+	</script>
+	 
+   
+ 
+    </head>
+    <body  class="bg_demo" style="background-color:#FFF !important; padding-left:10px;">
+        <div class="overlay"></div>
+        <div class="overlay_trans"></div>
+        <div class="width691 floatL">
+                  <ul class="pagos_opc">
+                    <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t0">Captura</span> </li>
+                    <li id="opcVerifica"><strong>2</strong>  <span id="t1">Verifica</span> </li>
+                    <li id="opcRespuesta" class="respuesta"><strong>3</strong>  <span id="t2">Respuesta</span> </li>
+                  </ul>
+                  <div class="clear"></div>
+                  <div style="overflow:hidden;">
+<div class="pagos_tit" style="width:50%; float:left;" id="t3">Dep&oacute;sito AcciTrade</div>
+<div style="width:49%; float:left; margin: 5px 0 0;">
+				
+                
+                </div>
+				 </div>
+                 <div class="clear"></div>
+<div id="captura">
+  <div class="pagos_txt" id="t4">Selecciona una cuenta de retiro. Indica los datos de la transferencia y da clic en "Continuar".</div>                 
+  <div>
+    <table class="pagos_table">
+      <tr >
+        <td width="149" id="t5">Cuenta de Retiro:</td>
+        <td><label for="textfield"></label>
+          	<select class="width315 marginL2" name="select3">
+            <option id="t6">Selecciona una opci&oacute;n</option>
+            <option selected="selected">Mi cuenta - Cheques - MXN - 67890 - $45,000.00</option>
+            </select>
+          </td>
+        </tr>
+        <tr> 
+        	<td colspan="2" class=" paddingB0">
+            <div class="border-top clear"></div>
+            </td>
+        </tr>
+      <tr>
+        <td id="t7">Cuenta Dep&oacute;sito o<br>Beneficiario:</td>
+        <td style="vertical-align:top !important;">Cuenta AcciTrade - MXN - 547001</td>
+      </tr>
+      <tr> 
+            <td colspan="2" class=" paddingB0">
+            <div class="border-top clear"></div>
+            </td>
+      </tr>
+      <tr>
+        <td height="22" id="t8">Importe MXN:</td>
+        <td><input type="text" class="width120 paddingL5" value="$ 2,000.00"></td>
+      </tr>
+       <tr>
+        <td height="22" id="t9">Contrato AcciTrade:</td>
+        <td><input type="text" class="width70 paddingL5" value="12345"></td>
+      </tr>
+       <tr> 
+        	<td colspan="2" class=" paddingB0">
+            <div class="border-top clear"></div>
+            </td>
+        </tr>
+      <tr>
+        <td class="valign_top" id="t10"><p>Opciones adicionales:</p></td>
+        <td width="530">
+          <div>
+            <input type="checkbox"  name="guardar" id="progFecha" value="progFecha" disabled checked="checked" />
+            <label for="progFecha" id="lbProg"><span id="t11">Programar a fecha futura</span></label>
+            </div>
+          <div class="pagos_cal_scroll margin-left0">
+            <input type="text" id="fechaFut" class="calendario1 input_calendar floatL width105 f12 color000 paddingL5" value="09 Sep 2014" readonly onFocus="focusFechafut();" style="margin-right:12px !important;"><span class="cal_icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          
+         
+            
+            <div class="comboH">
+              <input type="text" id="selHoras" class="selhoras f12 color000" readonly value="15:30" onFocus="HorasSel();focusSelhoras();" style="padding:0 0 0 5px;" /> 
+            
+              <div id="drpList" class="list_abs">
+                <div id="listaHoras2">
+                  <div class="scroll_y">
+                    <div class="scrollbar paddingR1"><div class="track"><div class="thumb"><div class="end"></div><div class="grip"></div></div></div></div>
+                    <div class="viewport height90">
+                      <div class="overview">
+                        
+                        
+                        <!-- You can add all your contents here -->
+                        <div id="horasM">
+                          
+                          
+                              
+                          
+                          </div>
+                        
+                        
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div><!-- end of updateHolder //-->
+                </div>
+              
+              
+              
+              </div>
+            </div>
+              
+          </td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <li class="check_guardar">
+            <input type="checkbox"  name="guardar2" disabled="disabled" id="guardaOp" value="guardaOp" /> <label for="guardaOp"> 
+            <div class="guardaOp">
+              <p id="t12">Guardar como operaci&oacute;n frecuente<br>Las operaciones programadas no pueden ser almacenadas como frecuentes </p>
+              </div>
+            </label> 
+            </li> 
+          </td>
+        </tr>
+      </table>
+  </div>
+  
+  
+  <div class="cF-sideBySide border-topSolid ancho100p paddingT12 margin-top5">
+                        
+                            <div class="floatLI overflow width151">&nbsp;</div>
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton paddingL0">
+                                	<a href="javascript:void(0);" onClick="javascript:continuar();" id="t13" class="btn_az paddingT3 paddingB3">CONTINUAR</a>
+                                </li>
+							</ul>
+
+						 </div>
+ 
+		</div>
+   </div>
+   
+        <script type="text/javascript" src="../Transferencia y Pagos Tarjetas/prototipo_BancaNetAvatar/js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="../Transferencia y Pagos Tarjetas/prototipo_BancaNetAvatar/js/plugins.js"></script>
+        <script type="text/javascript" src="../Transferencia y Pagos Tarjetas/prototipo_BancaNetAvatar/js/script.js"></script>
+        
+
+          
+        
+        <script type="text/javascript">
+        $(document).ready(function(){      	
+        
+		top.scrollTo(0,0);
+        
+		ajustarOverlay();
+        ajusta_tooltpis();
+                
+      setTimeout(function(){top.$('#iframeConte').css({'height':(500)+'px'});},850);
+      
+        var diasSemana = ['D','L','M','M','J','V','S'];
+        var Meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+        var MesesShort = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];   
+      if(top.language == "eng") {
+        diasSemana = ['S','M','T','W','Th','F','Sa']; 
+        Meses = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        MesesShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      }
+      
+        
+        $('#fechaFut').datepicker({
+          dayNamesMin:diasSemana,
+          monthNames:Meses,
+          monthNamesShort: MesesShort,
+          beforeShow: function(){
+            $(this).removeClass('ui-corner-all');
+            
+          },
+          showAnim: '',
+          showOtherMonths: true,
+          selectOtherMonths: false,
+          minDate: 'y',
+          maxDate: '30d',
+          dateFormat:"d M yy",
+          disabled: false
+        });
+        
+        $('#fechaFut').focus(
+          function(){
+            if( $(this).hasClass('modal_calendar') ){
+              $('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+            }else{
+              $('.ui-widget').css({'top':($(this).offset().top-63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+            }
+            if( $('.ui-datepicker .close').length == 0){
+              $('.ui-datepicker').append("<div class='close'></div>");
+            }
+            $('.ui-datepicker').find('.close').click(function(){
+              $('.input_calendar').datepicker( "hide" );
+            });
+            if( $('.ui-datepicker .flecha').length == 0){
+              $('.ui-datepicker').prepend("<div class='flecha'></div>");
+            }
+            
+          }
+        );
+        
+         $(".cal_icon").click(function(){
+            $('#fechaFut').datepicker('show');
+         });
+	});
+       
+       
+ 
+ $(document).ready(function(){
+	 
+   setTimeout("$('#listaHoras2').hide();",200);
+   setTimeout("$('.scroll_y').tinyscrollbar({scroll:true,sizethumb: '36' });grip_scroll();",100);setTimeout("$('.scroll_y .overview').css({'width':$('.scroll_y .viewport').width()+'px'});ajusta_caja_popup_scroll();alto_popup();",200);
+   
+   });
+          
+
+  $(function(){
+    
+    $.imageTick.logging = true;
+	
+    $("input[name='guardar']").imageTick({ 
+      tick_image_path: "../../../../JFP/regional/images/check_1.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/check_1.png"
+    });
+	
+	 $("input[name='guardar2']").imageTick({ 
+      tick_image_path: "../../../../JFP/regional/images/check_1.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/check_des.png"
+    });
+        
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+  });
+  
+  function continuar(){
+		top.cargaDocN('ACCITRADE/screen1C.html');
+  }
+
+</script> 
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+            google.load('search', '1', {language : 'es'});
+      
+    
+        </script> 
+    </body>
+</html>

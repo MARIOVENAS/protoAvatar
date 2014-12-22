@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/jscript">
+    es=new Array(
+    'Capture',
+    'Verify',
+    'Response',
+    'Notificaciones Banamex',
+    'The change to your password was applied with authorization number 76823.',
+    'New password:',
+    'Confirm new password:',
+    'Withdrawal type:',
+    'Voluntary Contributions',
+    'By Law',
+    'CONTINUE'
+    );
+    </script>
+  </head>
+  <body class="bg_demo">
+    <div class="width100p overflow margin-bottom5">
+      <ul class="pagos_opc">
+        <li id="opcCaptura"><strong>1</strong> <span id="t0">Captura</span> </li>
+        <li id="opcVerifica"><strong>2</strong>  <span id="t1">Verifica</span> </li>
+        <li id="opcRespuesta" class="selected"><strong>3</strong>  <span id="t2">Respuesta</span> </li>
+      </ul>
+    </div>
+    <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">
+      <div class="cH-appPanelHead">
+        <h3 id="t3">Notificaciones Banamex</h3>
+      </div>
+      <div class="ancho100p float-left">
+        <div class="greenCheck"></div>
+        <p class="instructions margin-bottom24 strong" id="t4">El cambio de tu contrase&ntilde;a ha sido aplicado con n&uacute;mero de autorizaci&oacute;n 76823.</p>
+      </div>
+      <div class="border-top float-left ancho100p"></div>
+      <div class="form-row margin-bottom10">
+        <label class="for-table" id="t5" style="width:140px">Nueva contrase&ntilde;a:</label>
+        <p class="float-left"/>********</p>
+        <div class="clear"></div>
+      </div>
+      <div class="form-row margin-bottom20">
+        <label class="for-table" id="t6" style="width:140px">Confirma la nueva <br> contrase&ntilde;a:</label>
+        <p class="float-left"/>********</p>
+        <div class="clear"></div>
+      </div>
+      <div class="width100p">
+        <div class="clear"></div>
+        
+        
+        
+        <div class="width141">
+          
+        </div>
+        <br>
+      </div><!--termina 98-->
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          top.tamano1_3();
+          $.imageTick.logging = true;
+          $("input[name='cuenta']").imageTick({
+              tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png",
+              no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+              image_tick_class: "radios"
+          });
+          $("input[name='cuenta2']").imageTick({
+              tick_image_path: "../../../../JFP/regional/images/check_1.png",
+              no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+          });
+          top.set_imprimir('transacciones/Notificaciones_Banamex/screen_print4.html', 800, 670);
+      });
+
+      function aceptar() {
+          top.cargaDocN('Notificaciones_Banamex/screenR1.html');
+      }
+
+      function regresar() {
+          top.cargaDocN('Notificaciones_Banamex/screenC1.html');
+      }
+    </script>
+  </body>
+</html>

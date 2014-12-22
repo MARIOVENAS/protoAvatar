@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+        <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+        <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+        <script type="text/ecmascript" src="../../../../JFP/js/script.js"></script>
+        <script type="text/javascript" src="../../../../JFP/js/script3.js"></script>
+        <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+        <script type="text/jscript">
+        es = new Array(
+        'Capture',
+        'Verify',
+        'Response',
+        'Notificaciones Banamex',
+        'Enter your new password, confirm it, and click "Continue".',
+        'New password:',
+        'Password should have 8 characters (letters and numbers) and it is caption and small letters sensitive.',
+        'Confirm new password:',
+        'Remember the new password will be activated 48 hours after this modification and you need it to open the account statements you receive. Therefore, it is important that you don´t forget the previous password, since you will need it to open the account statements previously received.',
+        'CONTINUE',
+        'Cancel'
+        );
+        </script>
+    </head>
+    <body class="bg_demo">
+        <div class="width100p overflow margin-bottom5">
+            <ul class="pagos_opc">
+                <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t0">Captura</span> </li>
+                <li id="opcVerifica"><strong>2</strong>  <span id="t1">Verifica</span> </li>
+                <li id="opcRespuesta"><strong>3</strong>  <span id="t2">Respuesta</span> </li>
+            </ul>
+        </div>
+        <div id="subapp-box"style="margin:0px !important;  width:100% !important; min-height:0px !important">
+            <div class="clear"></div>
+            <div class="cH-appPanelHead float-left margin-top-2">
+                <h3 id="t3">Notificaciones Banamex</h3>
+            </div>
+            <div class="clear"></div>
+            <p class="instructions margin-bottom24" id="t4">Captura tu nueva contrase&ntilde;a, confirmala y da click en "Continuar".</p>
+            <!--<span class="strong">Instruç&otilde;es</span>-->
+            <div class="width141">
+                <div class="form-row margin-bottom10 ancho100p" style="position:relative">
+                    <label class="for-table" id="t5" >Nueva contrase&ntilde;a:</label>
+                    <input class="float-left" type="password" id="newPassword" maxlength="8" style="width:124px !important"/>
+                    <a hrefhref="javascript:void(0);" style="float:left; margin-top:3px; *margin-top:6px">
+                        <div id="passhint" class="tooltip_q active top4 margin-left10 tool_left" style="cursor:pointer" onclick="javascript:showTooltipAbs(1)"></div>
+                    </a>
+                    <div class="clear"></div>
+                    <div class="tooltip_left tooltip_left_abs" id="tooltip1" style="width:270px;">
+                        <div class="flecha2"></div>
+                        <div class="boxt box-shadow-666" style="width: 190px;position:relative; padding-top:25px !important;padding-left:21px; padding-bottom:25px; z-index:-1 !important">
+                            <div class="close2"></div>
+                            <p id="t6">La contrase&ntilde;a debe estar formada por 8 caracteres alfanum&eacute;ricos (letras y n&uacute;meros) y es sensible al uso de may&uacute;sculas y min&uacute;sculas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+                <div class="form-row margin-bottom20 ancho100p">
+                    <label class="for-table" id="t7">Confirma la nueva contrase&ntilde;a:</label>
+                    <input type="password" id="confirmPassword" maxlength="8" style="width:124px !important"/>
+                    <div class="clear"></div>
+                </div>
+                <div class="border-top"></div>
+                <p class="margin-bottom24" id="t8">Recuerda que la nueva contrase&ntilde;a estar&aacute; activa 48 horas despu&eacute;s de esta modificaci&oacute;n y te servir&aacute; para abrir los estados de cuenta que recibas. Por ello, es importante que no olvides tu contrase&ntilde;a anterior, ya que con ella podr&aacute;s abrir los estados de cuenta recibidos previamente.</p>
+                <div class="cF-sideBySide border-topSolid ancho100p margin-top1 paddingT3">
+                    <div class="floatLI" style="width:151px !important">&nbsp;</div>
+                    <ul class="cN-primaryNav paddingT10">
+                        <li class="cM-spriteBase cN-primaryNavButton" class="btn-continuar"><a href="javascript:void(0)" onclick="continuar();" id="t9">CONTINUAR</a></li>
+                        <li class="cN-primaryNav">
+                            <div id="flechaLinks">
+                                <span class="flechaazul float-left"></span>
+                                <a href="javascript:void(0)" class="sinBold" id="t10" onclick="cancelar();">Cancelar</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+         var flag;
+        $(document).ready(function() {
+            top.tamano1_3();
+             top.ligaNotificaciones();
+            $.imageTick.logging = true;
+            $("input[name='investment']").imageTick({
+                tick_image_path: "../../../../JFP/regional/images/check_1.png",
+                no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+            });
+
+            setTimeout(function() {
+                llenarValores('input', '#newPassword', 'nuevopas');
+            }, 1000);
+            setTimeout(function() {
+                llenarValores('input', '#confirmPassword', 'nuevopas');
+            }, 2800);
+            setTimeout(function() {
+                $("#passhint").removeClass("active").addClass("inactive");
+                flag = 1
+            }, 3900);
+
+            $('.tooltip_left .close2').click(function() {
+                $(this).parent().parent().hide();
+            });
+
+        });
+
+        
+
+        function continuar() {
+            if (flag==1){
+                top.cargaDocN('Notificaciones_Banamex/screenV4.html');
+            }
+
+            else{
+                return false
+            }
+        }
+
+        function cancelar() {
+            top.cargaDocN('Notificaciones_Banamex/screenC.html');
+        }
+
+        function showTooltipAbs(ttnumber){
+            $('.tooltip_left').hide();
+            $("#tooltip"+ttnumber).show();
+        }
+    </script>
+</body>
+</html>

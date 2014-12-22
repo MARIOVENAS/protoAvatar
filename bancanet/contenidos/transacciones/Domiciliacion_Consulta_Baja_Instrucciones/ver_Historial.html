@@ -1,0 +1,3902 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="562aa956-1822-448a-94b3-280691f8e264" ><input type=hidden name="EWF_SYS_1" value="3KQGCFQF3V2UCBHDIITT7@BJ2EHPUE9EEPIPNSUU" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZDCB-Ver Historico"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="drchip02.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="18"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><link rel="stylesheet" href="/bbAvatar/css/estilos.css" type="text/css" /> 
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>      
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+        
+
+<style type="text/css">
+
+.ancho298{
+
+	width:298px;
+
+}
+
+.ancho165{
+
+width:165px;
+
+	 }
+
+.ancho155{
+
+width:155px;
+
+	 }	
+
+</style>
+
+
+
+ <script type="text/javascript">           
+
+ var es=new Array('Direct-bill-payment','Direct bill payment service:','Payment up to:','Date','Withdrawal type','Accounts','Status','Return','Amount','Direct Debit');
+
+ 
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+// JavaScript Document
+
+
+
+function EscribeNombre() {
+
+	
+
+	var ServAct="Servicios Activos";
+
+    var ServCan="Servicios Cancelados";
+
+	
+
+	$('#ServAct').text(ServAct);
+
+	$('#ServCan').text(ServCan);
+
+		
+
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function TipocuentaActivos() {
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrglo = new Array();
+
+	      
+
+	
+
+	if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+
+
+
+
+if(TiposCuentasArrglo.length==0){
+
+	$('#activos').hide();
+
+	
+
+}
+
+
+
+$('.TipoCuentaA').each(function(i){
+
+							   $(this).text(TiposCuentasArrglo[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+if(language=="eng"){
+
+$('.Tipodecuenta').each(function(i){
+
+							   $(this).text('Account type');
+
+							   });
+
+$('.Cuentaretiro').each(function(i){
+
+							   $(this).text('Withdrawal Account');
+
+							   });
+
+$('.Pagoa').each(function(i){
+
+							   $(this).text('Payment up to');
+
+							   });
+
+$('.Fechadealta').each(function(i){
+
+							   $(this).text('Registration date');
+
+							   });
+
+$('.FechadeModificacion').each(function(i){
+
+							   $(this).text('Last modification');
+
+							   });
+
+
+
+$('.Verhistorial').each(function(i){
+
+							   $(this).html(' &raquo; See History');
+
+							   });
+
+$('.Modificar').each(function(i){
+
+							   $(this).html(' &raquo; Modify');
+
+							   });
+
+$('.Dardebaja').each(function(i){
+
+							   $(this).html(' &raquo; Unsubscribe');
+
+							   });
+
+
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   
+
+							   });
+
+
+
+
+
+}
+
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TipocuentaCancelados() {
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrgloC = new Array();
+
+	      
+
+
+
+
+
+	if(TiposCuentasArrgloC.length==0){
+
+		$('#cancelados').hide();
+
+	}
+
+
+
+$('.TipoCuentaC').each(function(i){
+
+							   $(this).text(TiposCuentasArrgloC[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   
+
+							   });
+
+
+
+
+
+
+
+if(language=="eng"){
+
+$('.TipodecuentaC').each(function(i){
+
+							   $(this).text('Account type');
+
+							   });
+
+$('.CuentaretiroC').each(function(i){
+
+							   $(this).text('Withdrawal Account');
+
+							   });
+
+$('.PagoaC').each(function(i){
+
+							   $(this).text('Payment up to');
+
+							   });
+
+$('.FechadealtaC').each(function(i){
+
+							   $(this).text('Registration date');
+
+							   });
+
+$('.FechadeModificacionC').each(function(i){
+
+							   $(this).text('Last modification');
+
+							   });
+
+
+
+$('.VerhistorialC').each(function(i){
+
+							   $(this).html(' &raquo; See History');
+
+							   });
+
+$('.ReactivarC').each(function(i){
+
+							   $(this).html(' &raquo; Reactivate');
+
+							   });
+
+$('.FechaFormatoC').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   
+
+							   });
+
+
+
+
+
+}
+
+
+
+
+
+
+
+		
+
+	
+
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Tipocuentas() {
+
+	
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrglo = new Array();
+
+	
+
+	
+
+	
+
+	     
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("T"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("T"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("T"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="T";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+
+
+
+
+$('.TipoCuentas').each(function(i){
+
+							   $(this).text(TiposCuentasArrglo[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+if(language=="eng"){
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+}else{
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+}
+
+
+
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TipocuentaActivosOF() {
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrglo = new Array();
+
+	var SaldosDomiciliacion = new Array();
+
+	      
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	var Saldo=AgregaSaldoDomiciliacion('CH');
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+	SaldosDomiciliacion.push('$ '+ Saldo); 
+
+
+
+
+
+
+
+
+
+
+
+	    if(TiposCuentasArrglo.length==0){		
+
+		  $('#Domiciliacion').hide();
+
+
+
+     }
+
+
+
+if(language=="eng"){
+
+	var sAct="Active Bill(";
+
+	$('#NoDomiciliacion').text(sAct+TiposCuentasArrglo.length+")");
+
+}else{
+
+	var sAct="Servicios activos (";
+
+	$('#NoDomiciliacion').text(sAct+TiposCuentasArrglo.length+")");
+
+}
+
+
+
+
+
+$('.TipoCuentaA').each(function(i){
+
+							   $(this).text(TiposCuentasArrglo[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+$('.SaldoDom').each(function(j){
+
+							   $(this).text(SaldosDomiciliacion[j]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+
+
+	if(language=="eng"){
+
+		
+
+		
+
+
+
+		$('.Historial').each(function(i){
+
+							   $(this).html('See History');
+
+							   });
+
+		$('.SaldoCR').each(function(i){
+
+							   $(this).html('Withdrawal account balance (MXN)');
+
+							   });
+
+		$('.TipoCuentaR').each(function(i){
+
+							   $(this).html('Withdrawal account type');
+
+							   });
+
+		$('.PagoA').each(function(i){
+
+							   $(this).html('Payment up to');
+
+							   });
+
+		$('.FechaMod').each(function(i){
+
+							   $(this).html('Last modification');
+
+							   });
+
+		$('.ModificarD').each(function(i){
+
+							   $(this).html('&raquo; Modify this direct bill payment');
+
+							   });
+
+		$('.BajaD').each(function(i){
+
+							   $(this).html('&raquo; Unsubscribe this direct bill payment');
+
+							   });
+
+		$('.FechaFormatoA').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+	
+
+	
+
+	
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////saldo///
+
+
+
+function AgregaSaldoDomiciliacion(Indice) {
+
+
+
+	
+
+	var indiceSaldo = new Array();
+
+	var ValoresSaldo = new Array();	
+
+     
+
+	indiceSaldo.push( '1' );
+
+	ValoresSaldo.push( 'No disponible' );
+
+    
+
+
+
+			for(k=0; k<=indiceSaldo.length; k++){
+
+		          if(Indice==indiceSaldo[k]){
+
+			       return ValoresSaldo[k];
+
+				 		      
+
+				  
+
+				  }
+
+			
+
+		}
+
+		     
+
+						
+
+
+
+}
+
+
+
+
+
+function Tipocuentas2() {
+
+	
+
+	
+
+	
+
+	var TipoCuenta;
+
+	var TiposCuentasArrglo = new Array();
+
+	
+
+	
+
+	
+
+	     
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CM"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CM"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CM"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CM";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("T"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("T"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("T"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="T";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+    
+
+	
+
+if("CH"=="CH")
+
+		{
+
+			if(language=="eng"){
+
+				TipoCuenta="Checkbooks";
+
+			}else{
+
+				TipoCuenta="Cheques";
+
+			}
+
+		}
+
+	else if("CH"=="CM")
+
+	{   
+
+			if(language=="eng"){
+
+		TipoCuenta="Account Master";
+
+			}else{
+
+		TipoCuenta="Cuenta Maestra";
+
+			}
+
+	}
+
+	else if("CH"=="T")
+
+	{
+
+		if(language=="eng"){
+
+		TipoCuenta="Card";
+
+		}else{
+
+		TipoCuenta="Tarjeta";
+
+		}
+
+	
+
+	}
+
+	else{
+
+		TipoCuenta="CH";
+
+	}
+
+	
+
+	
+
+	TiposCuentasArrglo.push( TipoCuenta);
+
+
+
+
+
+
+
+
+
+
+
+if(TiposCuentasArrglo.length==0){	
+
+$('#paginas').hide();
+
+
+
+}
+
+
+
+$('.TipoCuentas').each(function(i){
+
+							   $(this).text(TiposCuentasArrglo[i]);
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+if(language=="eng"){
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).text(' (mmddyyyy)');
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+}else{
+
+$('.FechaFormatoA').each(function(i){
+
+							   $(this).addClass('f11 color666');
+
+							   });
+
+
+
+}
+
+
+
+
+
+	
+
+}
+
+
+
+
+
+// JavaScript Document
+
+
+
+function AlternarColumnas(id) {
+
+	
+
+    if(document.getElementsByTagName){ 
+
+       var tabla = document.getElementById(id);  
+
+       var rows = tabla.getElementsByTagName("tr");
+
+          for(i = 1; i < rows.length; i++){        
+
+            if(i % 2 == 0){
+
+			  rows[i].className = "tablaSaldos2_bordeR";
+
+              }else{
+
+              rows[i].className = "tablaSaldos2_bordeR bgF0F4F9";
+
+              }       
+
+          }
+
+    }
+
+
+
+	
+
+	
+
+}
+
+function AlternarColumnasExp(){
+
+	
+
+	$('.TablaAlternar').each(function(){
+
+									 //$(this).find('.trExpan:odd').children('td').addClass('');
+
+									  $(this).find('.trExpan:even').children('td').addClass('bgF1F2F2');
+
+									  });
+
+
+
+	 
+
+	/*var fila=$('.trExpan');
+
+	$(fila).each(function(i){
+
+						
+
+				if(i>0)
+
+				{
+
+					if( $(this).is(':odd') )
+
+						$(this).addClass('tablaSaldos2_bordeR bgF0F4F9');
+
+					else if( $(this).is(':even') )
+
+						$(this).addClass('tablaSaldos2_bordeR');
+
+				}
+
+											   
+
+				});*/
+
+						  
+
+						  
+
+}
+
+
+
+
+
+
+
+
+
+function AlternarColumnasExp1(id) {
+
+	
+
+   	
+
+	
+
+    if(document.getElementsByTagName){ 
+
+       var tabla = document.getElementById(id);  
+
+       var rows = tabla.getElementsByTagName("trExpan");
+
+          for(i = 0; i < rows.length; i++){        
+
+            if(i % 2 == 0){
+
+			  rows[i].className = "tablaSaldos2_bordeR bgF0F4F9";
+
+              }else{
+
+              rows[i].className = "tablaSaldos2_bordeR";
+
+              }       
+
+          }
+
+    }
+
+
+
+	
+
+	
+
+}
+
+function EPagingGotoPage(form, table, pageNum){
+
+	value = "SYS PAGING GOTO PAGE " + table+ ":" + pageNum;
+
+	return (ESubmitForm(form, value))
+
+}
+
+function ESubmitForm(form, value){
+
+	form.PAGEBUTTON.value = value;
+
+	form.PAGEBUTTON.name = "EWF_BUTTON_" + value;
+
+	form.submit()
+
+}
+
+function EPagingPrevious(form, table)
+
+{
+
+value = "SYS PAGING PREVIOUS " + table;
+
+return (ESubmitForm(form, value));
+
+} 
+
+
+
+function EPagingNext(form, table)
+
+{
+
+value = "SYS PAGING NEXT " + table;
+
+return (ESubmitForm(form, value));
+
+} 
+
+$(document).ready(
+
+	function(){
+
+		top.impayuda();
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+	var mesesFecha_BB;
+
+
+
+
+
+$(document).ready
+
+
+
+(
+
+		function ()
+
+	{
+
+	
+
+		if(language=="eng")
+
+			mesesFecha_BB = ['Jan','Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+		else
+
+			mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+			
+
+		$('[name^="FECHA_BNP_"]').each(
+
+			function ()
+
+			{
+
+
+
+				try
+
+				{
+
+					$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+				}
+
+					catch(e)
+
+					{
+
+					}
+
+			}
+
+		)	
+
+	}
+
+)
+
+
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+	
+
+	
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+				var hora = fecha.substring(10);
+
+				var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+				return fechaformateada + hora;
+
+}
+
+
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+			fecha = fecha.replace(/\-/gi," ");
+
+			var conversion = (fecha.substring(4,6)).toLowerCase();
+
+			var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+			return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="00000000";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+			
+
+		if(splitFecha[0].length==1)
+
+		{
+
+			splitFecha[0]="0"+splitFecha[0];
+
+		}
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+function formato_dddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[Fecha]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+	
+
+	
+
+function formato_ddmmaaaaEBSJS(fecha)
+
+{
+
+	var indice;
+
+	var fechaAux;
+
+	var IdiomaAux="SPANISH";
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+	
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+	
+
+	if(indice!=-1)
+
+	{
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if(IdiomaAux=="SPANISH")
+
+		{
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+				
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+			else
+
+			{
+
+				mesFecha=fechaAux.substring(0,2);
+
+					if(mesFecha=="01")
+
+						{mesFecha1="Jan";}
+
+					if(mesFecha=="02")
+
+						{mesFecha1="Feb";}
+
+					if(mesFecha=="03")
+
+						{mesFecha1="Mar";}
+
+					if(mesFecha=="04")
+
+						{mesFecha1="Apr";}
+
+					if(mesFecha=="05")
+
+						{mesFecha1="May";}
+
+					if(mesFecha=="06")
+
+						{mesFecha1="Jun";}
+
+					if(mesFecha=="07")
+
+						{mesFecha1="Jul";}
+
+					if(mesFecha=="08")
+
+						{mesFecha1="Aug";}
+
+					if(mesFecha=="09")
+
+						{mesFecha1="Sep";}
+
+					if(mesFecha=="10")
+
+						{mesFecha1="Oct";}
+
+					if(mesFecha=="11")
+
+						{mesFecha1="Nov";}
+
+					if(mesFecha=="12")
+
+						{mesFecha1="Dec";}
+
+					
+
+				fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+				fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+			}
+
+		
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+
+
+function formateaFechaBB(formato, fecha)
+
+{	
+
+	
+
+	fechaFormateada="";
+
+	
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+		
+
+	if(fecha != '' &&  fecha != '&nbsp;'){
+
+		
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if(language=="eng")
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+
+
+
+
+ </script>
+
+         
+
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+	Tipocuentas2();
+
+	AlternarColumnasExp();
+
+	top.ajustar();
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+			});
+
+
+
+			function Initialize(){
+
+				document.getElementById('SPAN1').innerHTML="1"
+
+				document.getElementById('SPAN1').className="sel_num";
+
+
+
+if("[NL_SORT_ORDER]"=="D")
+
+        {
+
+            $('#flecha').removeClass('saldos_btn6').addClass('saldos_btn6Alta');
+
+        }
+
+        $('#flecha').click(function(){
+
+            if("[NL_SORT_ORDER]"=="A") 
+
+             {
+
+                DoSort('9~MT_DomConsInstr_Total~D~DI');
+
+             }
+
+                else
+
+                {
+
+                    DoSort('9~MT_DomConsInstr_Total~A~DI');
+
+                }
+
+                                    });
+
+
+
+
+
+			}
+
+function DoSort(sortField){
+
+	$("#DATA12").val(sortField);
+
+	DoSubmit('Sort_BEGIN');
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>parent.setFecha("04/04/12    15:46:48  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina.\n\n Esta Transacci&oacute;n no se efectuar&aacute;, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="154648  ";b$Cont="154648  "
+
+	//
+
+    </script>
+
+
+
+
+
+    	<div class="saldos_bloque3_2 marginT0">
+
+        	<div class="padding20152015">
+
+            <div class="float-left fonttit" id="t9">Domiciliaci&oacute;n</div>
+
+                <div class="panelIzEnca3_text2  overflow padding0 paddingB12" id="t0">
+
+
+
+                    Pagos domiciliados
+
+                </div>
+
+                <div class="paddingT0 overflow">
+
+                <div class="f11">
+
+                    <table class="marginT10">
+
+                        <tr>
+
+                            <td class="ancho155">
+
+                                <span class = "f11 negrita" id="t1"> Servicio domiciliado:</span>
+
+
+
+                            </td>
+
+                            <td class="ancho165" align="left">
+
+                                <span class = "f11 "> TELMEX</span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="ancho155">
+
+                                <span class = "f11 negrita" id="t2"> Pago a:</span>
+
+
+
+                            </td>
+
+                            <td class="ancho165" align="left">
+
+                                <span class= "f11">  5548291004</span>
+
+                            </td>                                
+
+                        </tr>                            
+
+                    </table>
+
+                </div>     
+
+                <div class="paddingB5">&nbsp;</div>                   
+
+                
+
+                    <table width="100%"   border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 TablaAlternar">
+
+                     <THEAD> 
+
+                        <tr>
+
+
+
+                            <td class="borderRSolid"><span class="floatL" id="t3">Fecha</span><div class="saldos_btn6 floatR" id="flecha"></div></td>
+
+                            <td class="borderRSolid"><span id="t4">Tipo de cuenta</span></td>
+
+                            <td class="borderRSolid"><span id="t5">Cuenta</span></td>
+
+                            <td class="borderRSolid"><span id="t6">Estatus</span></td>                                                                        
+
+                            <td><span id="t8">Importe</span></td>
+
+                        </tr>
+
+                          </THEAD> 
+
+                                 <TBODY> 
+
+                        <tr class="trExpan">
+
+
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**091</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**058</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+
+
+                            <td class="borderRSolid " valign="top">**054</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**022</td>
+
+
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**474</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**091</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">01/10/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**058</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$15.82</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">01/10/2001</td>
+
+
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**054</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$1.20</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+
+
+                            <td class="borderRSolid " valign="top">**022</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**474</td>
+
+
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**091</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr><tr class="trExpan">
+
+                            <td class="borderRSolid" valign="top" name="FECHA_BNP_ddmmaaaa">03/04/2001</td>
+
+                            <td class="borderRSolid "> <div class="TipoCuentas"></div></td>
+
+                            <td class="borderRSolid " valign="top">**058</td>
+
+                            <td class="borderRSolid " valign="top">HISTORICO</td>
+
+                            <td class="" valign="top">$0.00</td>                                                                        
+
+                        </tr>
+
+
+
+                           </TBODY></table>  
+
+                </div> 
+
+            </div>     
+
+            <div class="bgF1F2F2 borderTDotted ancho100p clear overflow">
+
+           <div class="paddingT10 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL"></div>
+
+           <div id="paginas" class="paddingT10 paddingR10 paddingB5 paddingL10 f11 borderRDotted floatL paginacion">
+
+                             <SPAN ID="SPAN1">
+
+        		 <A ID="PAG1" class="num" HREF="JavaScript:EPagingGotoPage(document.APPS_FORM_MAIN,'MT_DomConsInstr_Total',1)"> &nbsp;1&nbsp;</A>
+
+                 </SPAN>
+
+
+
+    							
+
+                                
+
+                           
+
+                                
+
+                               
+
+                </div>
+
+
+
+<div class="f11 floatL"><input  type="hidden" class="btnAZ45" value="Ir" /></div>
+
+	</div>  
+
+</div>
+
+<div class="saldos_regresar">
+
+	<div>&laquo;&nbsp;</div>
+
+	<div class="paddingT2"><a href="javascript:parent.cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/Domiciliacion.html');" id="t7">Regresar</a></div>
+
+</div>
+
+        
+
+        
+
+<INPUT  type="hidden" NAME="EWFBUTTON" VALUE="">
+
+<INPUT type="hidden" NAME="PAGEBUTTON" VALUE="">
+
+
+
+<INPUT TYPE="HIDDEN" NAME="DATA12" ID="DATA12" VALUE=""> 
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Domiciliacion Consulta Baja Instrucciones|drchip02.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

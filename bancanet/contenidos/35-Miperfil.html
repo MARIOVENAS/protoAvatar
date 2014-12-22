@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Banamex</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+    <link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css" />
+	<link rel="stylesheet" type="text/css" href="../../JFP/css/widgets/jquery.qtipW3.css" />
+	<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css" />
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css" />
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+    <script type="text/javascript" src="../../JFP/js/jquery/jquery-1.5.1.js"></script>
+	<script type="text/javascript" src="../../JFP/js/widgets/jquery.dcjqaccordion.2.7.min.js"></script>
+    <script type="text/javascript" src="../../JFP/js/widgets/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/left_menu_multilevel.js"></script>
+	<script type="text/javascript" src="../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="bbAvatar/js/menuSpanish.js"></script>
+	<script type="text/javascript" src="bbAvatar/js/swap.js"></script>
+</head>
+
+<body>
+<!--inicia contenedor principal-->
+	<div id="wrap" class="cS-structMainContainer">
+    <!--inicia header-->
+		<div id="header">
+			<div class="utilities_nav" id="navegacionPrincipal"></div>
+			<div class="citibank-containerImg">
+				<a href="#"><div id="citibank-logo"></div></a>
+				<div id="citibank-image"></div>
+			</div>
+			<div class="main_nav" id="menuw"></div>
+			<div id="user-info">
+				<div class="userInfo-content" id="msj_bienvenido"></div>
+			</div>
+<!--termina header-->
+		</div>
+		<div class="cS-structBodyContainer">
+			<div id="title-section" class="cH-appPageHead height20">
+				<div class="float-left"><h1 id="t23">MI PERFIL</h1></div>
+				<div id="ayuda">
+					<div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="liga"><a id="t24" href="javascript:void(0);" class="float-left">&nbsp;Ayuda</a></div>
+					</div>
+				</div>
+				<div id="imp" class="displayNone">
+					<div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a id="t25" href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+					</div>
+				</div>
+			</div>
+            <div class="bg_demo" style="padding-bottom:15px;">
+				<div id="content">
+					<!-- The left menu divs are inserted by javascript if it is necessary -->
+					<div id="left-menu" class="float-left margin-top25"></div>
+		            <div id="shadow" class="width14">&nbsp;</div>
+					<!-- Cuando no lleva menu izquierdo  <div id="subapp-box" class="noleftmenu float-left margin-top1"> -->
+					<div id="subapp-box" class="float-left" style="margin-bottom:-15px !important">
+						<iframe id="iframeConte" name="main" class="ifrContenedor" scrolling="no" frameborder="0" src="transacciones/miperfil/14-Log-in-CambioClaves-Dentro.html" height="550" width="765"></iframe>
+					</div>
+				</div>
+				<div class="clear"></div>
+            </div>
+			<div id="footer"></div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('MY PROFILE','&nbsp;Help','&nbsp;Print','CHANGE PASSWORDS','CHANGE PIN ON DEBIT <br/> OR CREDIT CARDS','VIEW ELECTRONIC <br/> BANKING CONTRACT');
+
+	$(document).ready(function(){
+		cambiaP1();
+		ajustarOverlay();
+		ajusta_tooltpis();
+		funciones_loginML7();
+		account_summary();
+		//click_topmenu();
+		
+		setTimeout(function(){ajustarP();},800);
+	});
+	$( document ).ajaxStop( function(){
+		if( isEnglishSel ) {
+			$( '#lstAccDate' ).html( '03/24/2010' );
+		}
+	});
+	function cambiaP1(){
+		$('#link1').trigger('click');
+		cargaDocN('miperfil/14-Log-in-CambioClaves-Dentro.html');
+		tamano5();
+		setTimeout('liga1();', 880);
+		ayuda();
+	}
+	function cambiaP2(){
+		cargaDocN('Cambio PIN - TC/cambio_pin_tc.html');
+		ayuda();
+		setTimeout('liga2();', 880);
+	}
+	function cambiaP3(){
+		window.open('transacciones/pdf/contrato_marzo_2011.pdf','','height='+(screen.height-100)+',width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+		ayuda
+	}
+	function cambiaP4(){
+		cargaDocN('miperfil/16b-Log-in-CambioClaves-Dentro-Correcta.html');
+		ayuda();
+	}
+	function Layuda(){
+		window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda1(){
+		window.open(rutaAyudaAv+'CambiodeClavesdeAcceso.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda2(){
+		window.open(rutaAyudaAv+'inversiones/CambioPIN-Tarjetas.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Limprimir(){
+		window.print();
+	}
+</script>
+
+<!--<IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="../bancanet_demo/contenidos/menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>-->
+    <input type="hidden" id="objs" value="1" />
+    <input type="hidden" id="TIMEOUT" value="" />
+    <input type="hidden" name="LASTRESET" value="" />
+    <input type="hidden" id="segRestan" value="" />
+    <input type="button" name="exit" style="display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');" />
+    <input type="hidden" id="DATAAUX"  name="DATAAUX" value="" />
+	<input type="hidden" id="DATADEMO" name="DATADEMO" value="" />
+	<input type="hidden" id="REGRESADEMO" name="REGRESADEMO" value="" />
+	<input type="hidden" id="CONTINUADEMO" name="CONTINUADEMO" value="" />
+    <input type="hidden" id="titHdn" name="titHdn" value="" />
+
+<!--termina contenedor principal-->
+	<div id="cortinaOverlay" class="cerrarOverlay" style="display:none;"></div>
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+			<tbody><tr><td>
+				<div id="mensajeError_contenido_div"></div>
+				<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+			</td></tr></tbody>
+			</table>
+		</div>
+	</div>
+	<iframe id="nwd" src="if.htm" name="ndw" style="display:none"></iframe>
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+	<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+		<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+			<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+				<tbody>
+					<tr>
+						<td>
+							<div id="mensajeError_contenido_divEspecial"></div>
+							<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+    
+</body>
+</html>

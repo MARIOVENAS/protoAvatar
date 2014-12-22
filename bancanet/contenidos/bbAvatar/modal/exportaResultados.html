@@ -1,0 +1,285 @@
+<html>
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" href="../../bbAvatar/css/mando.css" type="text/css" />
+
+	<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+	<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script> 
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+var es = new Array('Export results','Excel','Text','Select an option','Cancel','Download',"The guard of all the information downloaded is responsability of the user","Separated by");
+
+jQuery(document).ready(function(){
+
+	$("input[name='radio_formato']").click(function(){
+
+		if($(this).val() == "Texto"){
+
+			$("#combo_separador").attr("disabled", "");
+
+		}else{
+
+			$("#combo_separador option:eq(0)").attr("selected", "selected");
+
+			$("#combo_separador").attr("disabled", "disabled");
+
+		}
+
+	});
+
+});
+
+function validaComboVacioModal(object){
+
+	if($(object).find("option:selected").val() != ""){
+
+		return true;
+
+	}else{
+
+		$('.'+$(object).attr('id')+'_div_error').slideDown('fast', 
+
+			function(){
+
+				$('.'+$(object).attr('id')+'_div_error span').show();
+
+			}
+
+		)
+
+		return false;
+
+	}
+
+}
+
+function exportarResultados(){
+
+	var flagCorrecto = true;
+
+	if($("input[name='radio_formato']:checked").val() == "Texto"){
+
+		flagCorrecto = validaComboVacioModal($("#combo_separador"));
+
+	}
+
+	if(flagCorrecto == true){
+
+		
+
+		if($("input[name='radio_formato']:checked").val() == "Texto"){
+
+			var nwin=window.open('../../impresiones/trans.txt','','location=yes,height=320px,width=320px,top=0,left=0,resizable=yes,menubar=no,scrollbars=no,titlebar=no,toolbar=no,status=yes');
+
+			nwin.focus();
+
+		}else{
+
+			var nwin=window.open('../../impresiones/trans.csv','','location=yes,height=320px,width=320px,top=0,left=0,resizable=yes,menubar=no,scrollbars=no,titlebar=no,toolbar=no,status=yes');
+
+			nwin.focus();
+
+		}
+
+		$("#ventanaEmergente").hide();
+
+		setTimeout( function(){parent.$.modal.close();},2000 );
+
+	}
+
+}
+
+function cerrar(){
+
+	parent.$.modal.close();
+
+	parent.$("#ventanaEmergente").css("height", "auto");
+
+	parent.$("#ventanaEmergente-contenido").css("height", "auto");
+
+}
+
+</script>
+
+<style type="text/css">
+
+.saldos_btn2-2 {
+
+background: url(../../../../JFP/images/marco.gif) no-repeat scroll -289px 0 #FFFFFF;
+
+cursor: pointer;
+
+float: right;
+
+height: 21px;
+
+margin-right: 10px;
+
+width: 23px;
+
+}
+
+.saldos_btn2-2:hover {
+
+	background: url(../../../../JFP/images/marco.gif) no-repeat scroll -312px 0 #FFFFFF;
+
+}
+
+.btnRJ86-2 {
+
+background: url(../../../../JFP/images/marco.gif) no-repeat scroll -390px -21px transparent;
+
+border: 0 none;
+
+color: #FFFFFF;
+
+cursor: pointer;
+
+height: 20px;
+
+margin: 0;
+
+padding: 0 0 2px;
+
+width: 86px;
+
+}
+
+.btnRJ86-2:hover {
+
+	background: url(../../../../JFP/images/marco.gif) no-repeat scroll -476px -21px transparent;
+
+}
+
+.btnAZ86-2{
+
+background:url(../../../../JFP/images/marco.gif) -390px 0 no-repeat;
+
+border: 0 none;
+
+color: #FFFFFF;
+
+cursor: pointer;
+
+height: 20px;
+
+margin: 0;
+
+padding: 0 0 2px;
+
+width: 86px;
+
+}
+
+.btnAZ86-2:hover{
+
+background:url(../../../../JFP/images/marco.gif) -476px 0 no-repeat;
+
+}
+
+.paddingL0{
+
+	padding-left:0 !important;
+
+}
+
+
+
+.panelIzEnca3_text2 {
+
+	font-size: 14px;
+
+	font-weight: bold;
+
+	padding-top: 4px;
+
+}
+
+.margin20 {
+
+	margin:20px;
+
+}
+
+.tablaSaldos3 {
+
+font-size: 11px;
+
+color:#666;
+
+}
+
+.ancho640{ width:640px;}
+
+.f11-2{
+
+	font-size:11px !important;
+
+	color:#333 !important;}
+
+</style>
+
+<div id="divExportar">
+
+	<div class="mensajeError_contenidoInb" style="height:auto;">
+
+		<div id="t0" class="panelIzEnca3_text2">Exportar resultados</div>
+
+		<br />
+
+		<div class="color666 clear">
+
+			<div><input type="radio" name="radio_formato" value="Excel" checked><img id="m0" src="../../bbAvatar/images/xls.gif"/> <span id="t1">Excel</span></div>
+
+			<div>
+
+				<input type="radio" name="radio_formato" value="Texto"/><img id="m1" src="../../bbAvatar/images/txt.gif"/> <span id="t2" class="marginR10">Texto</span>
+
+				<select class="select1" id="combo_separador" disabled="disabled">
+
+					<option id="t7" value="">Separado por</option>
+
+					<option value="1">Coma</option>
+
+					<option value="2">Pipe</option>
+
+					<option value="3">Tab</option>
+
+				</select>
+
+			</div>
+
+		</div>
+
+		<div id="errormodal" class="combo_separador_div_error clear marginT10"><span id="t3">Seleccione un separador</span></div>
+
+		<div class="mensajeError_Fila3 clear">
+
+			<input type="button" id="t4" value="Cancelar" class="btnRJ86-2 CerrarVentanaEmergente floatL" onClick="JavaScript:cerrar();"/>
+
+			<input type="button" id="t5" value="Descargar" class="btnAZ86-2 floatR" onclick="exportarResultados();" />
+
+        </div></br>
+
+		<div class="f11" id="t6" style="background-color:#FAE5E5; color:#333">Es responsabilidad del usuario el resguardo de toda la información que sea exportada.</div>
+
+	</div>
+
+</div>
+
+</body>
+
+</html>

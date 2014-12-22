@@ -1,0 +1,1107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<meta http-equiv="pragma" content="no-cache"/>
+
+	<meta http-equiv="cache-control" content="no-cache"/>
+
+	<meta http-equiv="expires" content="-1"/>
+
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+	<link href="../../bbAvatar/css/estilosmulti.css" rel="stylesheet" type="text/css" />	
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/plugins.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/script.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery.tablesorter.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script type="text/javascript">
+
+var arrs=new Array('Balance','Summary from','Pending deposits','Previous balance','Deposits subject to due payment','Deposits','Overdraft line','Withdrawals','Balance to','Checks drawn','Exempt checks','This period','Average Balance','Days passed','Gross rate','Held tax','Net rate','Paid interests','This year','Average Balance','Days passed','Gross rate','Held tax','Net rate','Paid interests','What do you want to do?','Pay my credit card','Make a transfer','Direct-bill-payment','Pay utilities & services','Invest my money','Request a checkbook','Activate Banamex Mobile','Activate Banamex Notifications','Manage my checkbook','Unlock a check','Report a check');
+
+var es=new Array('BILL PAYMENTS','Apply filter','See direct-bill-payments','Export','Date','Description','Deposits','Withdrawals','Balance','Next','Apply filter','See direct-bill-payments','Export','See Balance',"Wait a moment please ...","ACCOUNT DETAIL","See account summary","Current Period","Previous Period","By day","By range of days","Next", 'Previous',"Go to Transactions"," - Select an option - ",'The transaction query is for information purposes only, not as legal or tax official recognition');
+
+$(document).ready(function(){optieneAlturas();parent.ajustar();window.parent.$('.panelDerecho').hide();$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});	
+
+function Layuda1(){
+
+	window.open(rutaAyudaAv+'Estados-de-cuenta-y-Movimientos.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+}	
+
+parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+function regresar(){
+
+	$("#divCargando").show();
+
+	setTimeout(function() { 
+
+		var pag = parent.document.getElementById("REGRESACUENTAS").value;
+
+		pag+=".htm";
+
+		window.location=pag;
+
+	}, 2000);
+
+}
+
+$(document).ready(function(){
+
+	$.tablesorter.defaults.sortList = [[0,1]]; 
+
+	$.tablesorter.defaults.widgets = ['zebra']; 
+
+	$("table").tablesorter({
+
+        headers: {
+
+			4: { sorter: false },
+
+			0: { sorter: 'DD-MMM-YY' },
+
+			3: { sorter: 'currency' }
+
+        }
+
+    });
+
+	$("#fech1").click(function(){
+
+		if ( $(this).hasClass("headerSortDown") )
+
+			$("#fldown").addClass("flechaabajong")
+
+        .removeClass("flechaarriba")
+
+               
+
+    });
+
+	if(language == "eng"){
+
+		for (var i=0;i<arrs.length;i++){
+
+			$("[id=s"+i+"]").each(function(){
+
+				if(this.tagName.toUpperCase()=="INPUT")
+
+					this.value = arrs[i];
+
+				else
+
+					this.innerHTML = arrs[i];});
+
+		}
+
+	}	
+
+	$("#fech1").click(function(){
+
+		if ( $(this).hasClass("headerSortUp") )
+
+			$("#fldown").addClass("flechaarriba")
+
+        .removeClass("flechaabajong")
+
+	          
+
+    });	
+
+	labelTooltip();
+
+});
+
+function DoSubmit(value){
+
+	$("#divCargando").show();
+
+	setTimeout("parent.cargaDocN('"+value+"');",1000);
+
+}
+
+function filtrar(){
+
+	parent.$.modal(			
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:244,
+
+			srcIfrm:'bbAvatar/modal/filtraMovimientos.html'
+
+		}
+
+	);
+
+}
+
+function exportar(){
+
+	parent.$.modal({
+
+		closeHTML: '',
+
+		opacity:60,
+
+		overlayClose:false,
+
+		flagDiv:false,
+
+		widthDivIfrm:308,
+
+		heightDivIfrm:210,
+
+		srcIfrm:'bbAvatar/modal/exportaResultados.html'
+
+	});	
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="resumen_enca ancho100p">
+
+	<div class="floatR marginT7 paddingR7 ancho40p">
+
+	   <div class="saldos_btn1 showtooltip margin_menosT3" id="btn_ayuda" onclick="Javascript:Layuda1();"></div>
+
+	   <div class="saldos_btn2 showtooltip margin_menosT3" id="btn_imp" onclick="imprimirMain();"></div>
+
+	   <div class="floatR">
+
+	   <div class="resumen_flecha"></div>
+
+	   <a id="t16" href="javascript:top.dash();">Ver resumen de cuentas</a></div>
+
+	</div>
+
+	<div class="floatL">
+
+		<div class="floatL"><h1 id="t15">DETALLE DE LA CUENTA</h1> </div>
+
+		<div class="floatL marginL10 marginT2">
+
+			<select name="select" id="cboCritReg" class="select" onchange="valor1=this.value;Cta1();">
+
+				<option class="0" id="t24" value="PS">&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>
+
+				<option value="1" selected="selected" >Cheques&nbsp;-&nbsp;002&nbsp;-&nbsp;MXN</option>
+
+				<option class="2" value="2" >Cuenta Maestra - 490 - MXN</option>
+
+				<option class="3" value="3">D&eacute;bito - 678 - MXN</option>
+
+				<option class="4" value="4" >Cheques- 888 - USD</option>
+
+				<option class="5"  value="5">Tarjeta Cr&eacute;dito -  796 - MXN</option>
+
+				<option class="6"  value="6"> Tarj. Premia Pre - 245 - MXN</option>
+
+				<option class="7"  value="7">Mi cr&eacute;dito - 3014 - MXN</option>
+
+				<option class="8" value="8">Credicheque Perfiles Banamex - 502 - MXN</option>
+
+				<option class="9" value="9" >Cr&eacute;dito Casa - 9014 - MXN</option>
+
+				<option class="10" value="10" >Inversi&oacute;n Perfiles - 502 - MXN</option>
+
+				<option class="11" value="11" >Inversi&oacute;n Plazo - 010 - MXN</option>
+
+				<option class="12" value="12" >HORZONT - 746 - MXN</option>
+
+				<option class="13" value="13" >Multiseries - 378 - MXN</option>
+
+				<option class="14" value="14" >Mi afore NSS - 424 - MXN</option>
+
+			</select>
+
+		</div>
+
+	</div>
+
+	<div class="clear"></div>
+
+</div>
+
+<div class="floatL ancho70p marginT15">
+
+  <div class="floatR">
+
+	<select name="select" id="cboCritReg" class="select ancho150" onchange="valor1=this.value;Cta2();">
+
+	  <option id="t17" value="1">Periodo actual</option>
+
+	  <option id="t18" value="2" selected="selected">Periodo anterior</option>
+
+	  <option id="t19" value="3">Por d&iacute;a </option>
+
+	  <option id="t20" value="4">Rango de dias </option>
+
+    </select>
+
+  </div>
+
+  <div class="boldText f14 floatL paddingT4">Cheques MXN **002 - Cheques</div>
+
+</div>
+
+<div class="floatL ancho70p marginT37 paddingT3">
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+		<tr>
+
+			<td id="s0" class="paddingT2 paddingB2" width="25%">Saldo</td>
+
+			<td width="12%" class="alignRight color8f paddingT2 paddingB2">$ 0.00</td>
+
+			<td class="paddingT2 paddingB2" width="9%">&nbsp;</td>
+
+			<td id="s1" class="paddingT2 paddingB2" width="23%">Resumen al</td>
+
+			<td width="25%" class="alignRight color8f paddingT2 paddingB2">17 dic 2012</td>
+
+		</tr>
+
+		<tr>
+
+			<td id="s2" class="paddingT2 paddingB2">Dep&oacute;sitos pendientes</td>
+
+			<td class="alignRight color8f paddingT2 paddingB2">$ 0.00</td>
+
+			<td class="paddingT2 paddingB2">&nbsp;</td>
+
+			<td id="s3" class="paddingT2 paddingB2">Saldo anterior<br /></td>
+
+			<td class="alignRight color8f paddingT2 paddingB2">$ 19,436.00</td>
+
+		</tr>
+
+		<tr>
+
+			<td id="s4" class="paddingT2 paddingB2">Dep&oacute;sitos salvo buen cobro</td>
+
+			<td class="alignRight color8f paddingT2 paddingB2">$ 1,714.24</td>
+
+			<td class="paddingT2 paddingB2">&nbsp;</td>
+
+			<td class="paddingT2 paddingB2">(+) 13 <span id="s5">Dep&oacute;sitos</span></td>
+
+			<td class="alignRight color8f paddingT2 paddingB2">$ 13,198.79</td>
+
+		</tr>
+
+		<tr>
+
+			<td id="s6" class="paddingT2 paddingB2">L&iacute;nea de sobregiro</td>
+
+			<td class="alignRight color8f paddingT2 paddingB2">$ 0.00</td>
+
+			<td class="paddingT2 paddingB2">&nbsp;</td>
+
+			<td class="paddingT2 paddingB2">(-) 12 <span id="s7">Retiros</span></td>
+
+			<td class="alignRight color8f paddingT2 paddingB2">$ 7,925.00</td>
+
+		</tr>
+
+		<tr>
+
+			<td class="paddingT2 paddingB2">CLABE</td>
+
+			<td class="alignRight color8f paddingT2 paddingB2">002180433700241550</td>
+
+			<td class="paddingT2 paddingB2">&nbsp;</td>
+
+			<td class="paddingT2 paddingB2">&nbsp;</td>
+
+			<td width="15%" class="alignRight color8f paddingT2 paddingB2">&nbsp;</td>
+
+		</tr>
+
+	</table>
+
+	<div class="borderTSolid borderBDotted marginT24">
+
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+		<tr>
+
+		  <td class="boldText paddingB3 paddingT10"><span id="s8">Saldo al</span> 24 Dic </td>
+
+		  <td class="paddingB3 paddingT10 color8f" align="right">$ 1000.00</td>
+
+		  <td class="paddingB3 paddingT10" width="8%">&nbsp;</td>
+
+		  <td class="paddingB3 paddingT10" width="30%">&nbsp;</td>
+
+		  <td width="15%" class="alignRight color8f paddingB3 paddingT10">&nbsp;</td>
+
+		  </tr>
+
+		<tr>
+
+		  <td class="paddingB10 paddingT3" width="25%"><span id="s9" class="paddingB2 paddingT4">Cheques girados</span></td>
+
+		  <td width="22%" class="alignRight color8f paddingB3 paddingT3">0</td>
+
+		  <td class="paddingB10 paddingT3">&nbsp;</td>
+
+		  <td id="s10" class="paddingB10 paddingT3">Cheques exentos</td>
+
+		  <td class="alignRight color8f paddingB10 paddingT3">0</td>
+
+		  </tr>
+
+	  </table>
+
+	</div>
+
+	<div class="marginT5 borderBDotted">
+
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+		<tr>
+
+		  <td id="s11" class="boldText paddingB2 paddingT3" colspan="2">En el periodo</td>
+
+		  <td class="paddingB2 paddingT3" width="8%">&nbsp;</td>
+
+		  <td class="paddingB2 paddingT3" width="30%">&nbsp;</td>
+
+		  <td width="15%" class="alignRight color8f paddingB2 paddingT3">&nbsp;</td>
+
+		  </tr>
+
+		<tr>
+
+		  <td id="s12" class="paddingB2 paddingT2">Saldo promedio</td>
+
+		  <td class="alignRight color8f paddingB2 paddingT2">$ 5,644.39</td>
+
+		  <td class="paddingB2 paddingT2">&nbsp;</td>
+
+		  <td id="s13" class="paddingB2 paddingT2">Dias transcurridos</td>
+
+		  <td class="alignRight color8f paddingB2 paddingT2">31</td>
+
+		  </tr>
+
+		<tr>
+
+		  <td id="s14" class="paddingB2 paddingT2" width="25%">Tasa bruta</td>
+
+		  <td width="22%" class="alignRight color8f paddingB2 paddingT2">0.00 %</td>
+
+		  <td class="paddingB2 paddingT2">&nbsp;</td>
+
+		  <td id="s15" class="paddingB2 paddingT2">Impuesto retenido</td>
+
+		  <td class="alignRight color8f paddingB2 paddingT2">$ 0.00</td>
+
+		  </tr>
+
+		<tr>
+
+		  <td id="s16" class="paddingB10 paddingT2">Tasa neta</td>
+
+		  <td class="alignRight color8f paddingB10 paddingT2">0.00 %</td>
+
+		  <td class="paddingB10 paddingT2">&nbsp;</td>
+
+		  <td id="s17" class="paddingB10 paddingT2">Intereses pagados</td>
+
+		  <td class="alignRight color8f paddingB10 paddingT2">$ 0.00</td>
+
+		  </tr>
+
+	  </table>
+
+	</div>
+
+	<table class="marginT5" width="100%" border="0" cellspacing="0" cellpadding="0">
+
+	  <tr>
+
+		<td id="s18" class="boldText paddingB2 paddingT3" colspan="2">En el a&ntilde;o</td>
+
+		<td class="paddingB2 paddingT3" width="8%">&nbsp;</td>
+
+		<td class="paddingB2 paddingT3" width="30%">&nbsp;</td>
+
+		<td width="15%" class="alignRight color8f paddingB2 paddingT3">&nbsp;</td>
+
+	  </tr>
+
+	  <tr>
+
+		<td id="s19" class="paddingB2 paddingT2">Saldo promedio</td>
+
+		<td class="alignRight color8f paddingB2 paddingT2">$ 8,750.63</td>
+
+		<td class="paddingB2 paddingT2">&nbsp;</td>
+
+		<td id="s20" class="paddingB2 paddingT2">Dias transcurridos</td>
+
+		<td class="alignRight color8f paddingB2 paddingT2">10</td>
+
+	  </tr>
+
+	  <tr>
+
+		<td id="s21" class="paddingB2 paddingT2" width="25%">Tasa bruta</td>
+
+		<td width="22%" class="alignRight color8f paddingB2 paddingT2">0.00 %</td>
+
+		<td class="paddingB2 paddingT2">&nbsp;</td>
+
+		<td id="s22" class="paddingB2 paddingT2">Impuesto retenido</td>
+
+		<td class="alignRight color8f paddingB2 paddingT2">$ 0.00</td>
+
+	  </tr>
+
+	  <tr>
+
+		<td id="s23" class="paddingB2 paddingT2">Tasa neta</td>
+
+		<td class="alignRight color8f paddingB2 paddingT2">0.00 %</td>
+
+		<td class="paddingB2 paddingT2">&nbsp;</td>
+
+		<td id="s24" class="paddingB2 paddingT2">Intereses pagados</td>
+
+		<td class="alignRight color8f paddingB2 paddingT2">$ 0.00</td>
+
+		</tr>
+
+	</table>
+
+</div>
+
+<div class="floatL marginL30 paddingL25 ancho20p borderlSolid9 marginT27">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tbody><tr> 
+
+      <td class=" f14 boldText paddingB10" id="s25">&iquest;QU&Eacute; DESEAS HACER?</td>
+
+    </tr>
+
+	<tr class="ligaPesos" style="display: table-row; ">
+
+      <td class="paddingT3 paddingB3"><div class="resumen_flecha"></div>
+
+      <a href="javascript:void(0)"  onclick="javascript:saltoInversiones()" id="s30">Invertir mi dinero</a></td>
+
+    </tr>
+
+    <tr class="ligaPesos" style="display: table-row; ">
+
+      <td class="paddingT3 paddingB3 ">  
+
+        <div class="resumen_flecha"></div> 
+
+        <a href="javascript:void(0)"  onclick="javascript:pagoTarjetas()" id="s26">Pagar mi tarjeta de cr&eacute;dito</a>
+
+    </td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingT3 paddingB3 "><div class="resumen_flecha"></div>
+
+      <a href="javascript:void(0)" onclick="javascript:transferencias()" id="s27">Realizar transferencia</a></td>
+
+    </tr>
+
+     <tr class="ligaPesos" style="display: table-row; ">
+
+      <td class="paddingT3 paddingB3"><div class="resumen_flecha"></div>
+
+      <a href="javascript:void(0)" onclick="javascript:pagoServicios()" id="s29">Pagar servicios</a></td>
+
+    </tr>
+
+	<tr>
+
+      <td class="paddingT3 paddingB3"><div class="resumen_flecha"></div>
+
+      <a href="javascript:void(0)" onclick="javascript:chequeras()" id="s34">Administrar mi chequera</a></td>
+
+    </tr>
+
+  </tbody></table>
+
+</div>
+
+<div class="clear"></div>
+
+<div class="clear"></div>
+
+<div id="t0" class="panelIzEnca3_text2 marginT24">PAGOS DOMICILIADOS</div><div id="movimientos_cargados">
+
+<div class=" paddingT15">
+
+  <div class="floatL marginT5">
+
+  <div class="resumen_flecha1 displayN" id="pre1"></div>
+
+  <div class="floatL">
+
+  <div class="floatL displayN" onclick="javascript:prevpage();" id="pre2"><a id="t22" href="javascript:void(0);">Anterior </a></div>
+
+    <div class="floatL marginL8 boldText" id="p1" onclick="javascript:page1();"><a href="javascript:void(0);">1</a></div>
+
+    <div class="floatL marginL8" id="p2" onclick="javascript:page2();"><a href="javascript:void(0);">2</a></div>
+
+    <div class="floatL marginL8" id="p3" onclick="javascript:page3();"><a href="javascript:void(0);">3</a></div>
+
+    <div class="floatL marginL8" id="p4" onclick="javascript:page4();"><a href="javascript:void(0);">4</a> </div>
+
+    <div class="floatL marginL8" onclick="javascript:nextpage();" id="sig1"><a id="t21" href="#">Siguiente</a></div>
+
+    </div>
+
+  <div class="resumen_flecha" id="sig2">&nbsp;</div>
+
+   </div>
+
+<div class="floatR">
+
+<div class="floatL marginR1 bm"></div>
+
+<a id="t1" class="floatL marginR10 paddingT5 boldText" href="javascript:void(0);" onclick="javascript:filtrar();">Filtrar movimientos</a>
+
+<div class="resumen_flecha1 marginT7"></div>
+
+<a id="t23" class="floatL marginR10 paddingT5" href="javascript:void(0);" onclick="javascript:regresar();">Regresar a movimientos</a>
+
+<div class="resumen_flecha marginT7"></div><a id="t3" class="floatL marginR10 paddingT5" onclick="javascript:exportar();">Exportar</a>
+
+  </div>
+
+ 
+
+ <div class="clear"></div>
+
+</div>
+
+
+
+<div>
+
+<table class="tablesorter" border="0" cellpadding="0" cellspacing="0">
+
+  <thead>
+
+  <tr>
+
+    <th id="fle" align="left" class="paddingL20 borderBSolid borderTSolid9" onclick="javascript:ocultasaldos();"> Fecha </th>
+
+    <th class="borderBSolid borderTSolid9" align="left" onclick="javascript:ocultasaldos();">Descripci&oacute;n</th>
+
+    <th id="dep" class="borderBSolid borderTSolid9 paddingR10" align="right" onclick="javascript:ocultasaldos();"> Importe MXN</th>
+
+    <th id="est" class="borderBSolid borderTSolid9 paddingR35" width="12%" align="right"> Estatus</th>
+
+  </tr>
+
+  </thead>
+
+ <tfoot>    
+
+  <tr>
+
+    <td id="t25" colspan="4" class="paddingB10 paddingT10 borderBSolid9 borderTSolid boldText paddingL20">La consulta de movimientos es s&oacute;lo de car&aacute;cter informativo, no tiene validez oficial como comprobante legal o fiscal </td>
+
+    </tr>
+
+    </tfoot>
+
+  <tbody>
+
+    <tr>
+
+      <td class="paddingB10 paddingT10 paddingL20"  valign="top">27 Dic 2011</td>
+
+      <td><div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2"><span class="color8b paddingT10 paddingB2">Emisor:</span></div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">519TELEFONOS DE MEXICO SA DE CV</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">RFC/CURP:</div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">TME840315KT6</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Leyenda Emisor:</div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">PAGO DOMICILIACION TELEFONO</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Referencia Emisor:</div>
+
+          <div class="floatL ancho70p  paddingB2 paddingT2">5557487143</div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Autorizaci&oacute;n</div>
+
+          <div class="floatL ancho70p  paddingB2 paddingT2">8632038</div>
+
+          </div>
+
+      </div></td>
+
+      <td valign="top" class="padding10 alignRight">$213.00</td>
+
+      <td valign="top" class="paddingB10 paddingT10 alignRight paddingR35">Aplicado</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingB10 paddingT10 paddingL20" valign="top">09 Dic 2011</td>
+
+      <td><div>
+
+        
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2"><span class="color8b paddingT10 paddingB2">Emisor:</span></div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">COMISION FEDERAL DE ELECTRICIDAD</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">RFC/CURP:</div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">CFE370814QI0</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Leyenda Emisor:</div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">PAGO DOMICILIACION CFE</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Referencia Emisor:</div>
+
+          <div class="floatL ancho70p  paddingB2 paddingT2">985051100987</div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Autorizaci&oacute;n</div>
+
+          <div class="floatL ancho70p  paddingB2 paddingT2">4535395</div>
+
+          </div>
+
+      </div></td>
+
+      <td valign="top" class="padding10 alignRight">$52.00</td>
+
+      <td valign="top" class="paddingB10 paddingT10 alignRight paddingR35">Aplicado</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingB10 paddingT10 paddingL20" valign="top">09 Dic 2011</td>
+
+      <td><div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2"><span class="color8b paddingT10 paddingB2">Emisor:</span></div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">COMISION FEDERAL DE ELECTRICIDAD</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">RFC/CURP:</div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">CFE370814QI0</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Leyenda Emisor:</div>
+
+          <div class="floatL ancho70p paddingB2 paddingT2">PAGO DOMICILIACION CFE</div>
+
+          </div>
+
+        <div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Referencia Emisor:</div>
+
+          <div class="floatL ancho70p  paddingB2 paddingT2">985051101100</div>
+
+          <div class="floatL ancho30p paddingB2 paddingT2">Autorizaci&oacute;n</div>
+
+          <div class="floatL ancho70p  paddingB2 paddingT2">4535396</div>
+
+          </div>
+
+      </div></td>
+
+      <td valign="top" class="padding10 alignRight">$246.00</td>
+
+      <td valign="top" class="paddingB10 paddingT10 alignRight paddingR35">Aplicado</td>
+
+      </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<div class="marginB5 borderTSolid paddingT2">
+
+  <div class="floatL marginT5">
+
+  <div class="resumen_flecha1 displayN" id="pre1_2">&nbsp;</div>
+
+  <div class="floatL">
+
+  <div class="floatL displayN" onclick="javascript:prevpage();" id="pre2_2"><a id="t22" href="javascript:void(0);">Anterior </a></div>
+
+    <div class="floatL marginL8 boldText" id="p1_2" onclick="javascript:page1();"><a href="javascript:void(0);">1</a></div>
+
+    <div class="floatL marginL8" id="p2_2" onclick="javascript:page2();"><a href="javascript:void(0);">2</a></div>
+
+    <div class="floatL marginL8" id="p3_2" onclick="javascript:page3();"><a href="javascript:void(0);">3 </a></div>
+
+    <div class="floatL marginL8" id="p4_2" onclick="javascript:page4();"><a href="javascript:void(0);">4</a> </div>
+
+    <div class="floatL marginL8" onclick="javascript:nextpage();" id="sig1_2"><a  id="t21" href="#">Siguiente</a></div>
+
+    </div>
+
+  <div class="resumen_flecha" id="sig2_2"></div>
+
+   </div>
+
+	  <div class="floatR">
+
+			<div class="floatL marginR1 bm"></div>
+
+			<a id="t1" class="floatL marginR10 paddingT5 boldText" href="javascript:void(0);" onclick="javascript:filtrar();">Filtrar movimientos</a>
+
+			<div class="resumen_flecha marginT7"></div><a id="t23" class="floatL marginR10 paddingT5" href="javascript:void(0);" onclick="javascript:regresar();">Regresar a movimientos</a>
+
+			<div class="resumen_flecha marginT7"></div><a id="t3" class="floatL marginR10 paddingT5" href="javascript:void(0);" onclick="javascript:exportar();">Exportar</a>
+
+	  </div>
+
+ <div class="clear"></div>
+
+</div>
+
+</div>
+
+<div class="clear">&nbsp;</div>
+
+<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+<script type="text/javascript">	
+
+$(document).ready(function(){
+
+	optieneAlturas();
+
+	top.window.scrollTo(0,0);
+
+	$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();
+
+});
+
+parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+var valor1=0;   
+
+function Cta1(){
+
+	$("#divCargando").show();
+
+	setTimeout(function() {	
+
+		if(valor1==1){
+
+			window.location="14-Cheques_mes_actual_real.htm";
+
+		}
+
+		if(valor1==2){
+
+			window.location="maestra_mes_actual.htm";
+
+		}   
+
+		if(valor1==3){
+
+			window.location="26-TDD-MesActual-REAL.htm";
+
+		}   
+
+		if(valor1==4){
+
+			window.location="ChequesUSD_mes_actual.htm";
+
+		}   
+
+		if(valor1==5){
+
+			window.location="04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm";
+
+		}  
+
+		if(valor1==6){
+
+			window.location="premia_mes_actual.htm";
+
+		}   
+
+		if(valor1==7){
+
+			window.location="credito_infonavit.html";
+
+		}   
+
+		if(valor1==8){
+
+			window.location="credicheques_perfiles_actual.htm";
+
+		}   
+
+		if(valor1==9){
+
+			window.location="credito_hipotecario.htm";
+
+		}   
+
+		if(valor1==10){
+
+			window.location="inversion_perfiles.htm";
+
+		}   
+
+		if(valor1==11){
+
+			window.location="Resumen-de-inversiones_6.htm";
+
+		}   
+
+		if(valor1==12){
+
+			window.location="inversionesdetalle_horizonte.htm";
+
+		}   
+
+		if(valor1==13){
+
+			window.location="Multiseries.htm";
+
+		}   
+
+		if(valor1==14){
+
+			window.location="Afore.htm";
+
+		} 
+
+		if(valor1==15){
+
+			window.location="20-Cheques_mes_anterior_real.htm";
+
+		}
+
+	}, 2000);
+
+}
+
+function Cta2(){	
+
+	$("#divCargando").show();
+
+	setTimeout(function() {
+
+		if(valor1==1){
+
+			window.location="14-Cheques_mes_actual_real.htm";
+
+		}
+
+		if(valor1==2){
+
+			window.location="20-Cheques_mes_anterior_real.htm";
+
+		}
+
+		if(valor1==3){
+
+			window.location="20-Cheques_mes_anterior_reala.htm";
+
+		}
+
+		if(valor1==4){
+
+			window.location="20-Cheques_mes_anterior_realb.htm";
+
+		}
+
+	}, 2000);
+
+}
+
+function pagoTarjetas(){
+
+	top.open('../../30-Transferencias_pagos.html?ifrContenedor=0&link=pagos' , '_self')
+
+}
+
+
+
+function saltoInversiones(){
+
+	top.open('../../31-Inversiones.html?ifrContenedor=6&link=pagos' , '_self')		
+
+}
+
+	
+
+function transferencias(){
+
+	top.open('../../30-Transferencias_pagos.html?ifrContenedor=1&link=pagos' , '_self')
+
+}
+
+
+
+function pagoServicios(){		
+
+	top.open('../../30-Transferencias_pagos.html?ifrContenedor=3&link=servicios' , '_self')
+
+}
+
+	
+
+function chequeras(){
+
+	top.open('../../34-Servicios.html?ifrContenedor=7&link=mischequeras' , '_self')
+
+}
+
+function imprimirMain(){
+
+	parent.document.getElementById("iframeConte").contentWindow.focus();
+
+	parent.document.getElementById("iframeConte").contentWindow.print();
+
+}
+
+</script>
+
+<div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayN">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src='../../bbAvatar/images/loader.gif'/></div>
+
+    <div id="t14" style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'>Espere un momento por favor ...</div>
+
+</div>
+
+</body>
+
+</html>

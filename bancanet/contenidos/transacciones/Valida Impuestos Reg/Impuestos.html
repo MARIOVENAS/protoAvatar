@@ -1,0 +1,3588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="4f4659af-c9d7-4c5e-b3dc-9ef248f0a7e1" ><input type=hidden name="EWF_SYS_1" value="ROFZIS0UU85HM1LTWFBUJU4Y6MNQL9U9VOA6L@1A" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZVIM-PAGO IMPUESTO"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="impuesto_select.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="8"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+<style type="text/css" >
+
+	.btnAZ86imp_des{
+
+       margin:10px;
+
+       padding:0px;
+
+       color:#FFF;
+
+       padding-bottom:2px;
+
+       height:20px;
+
+       width:86px;
+
+       background:url(../../bbAvatar/images/bloques_86_des.gif)  no-repeat;
+
+       border:0px;
+
+       cursor:pointer;
+
+}
+
+</style>
+
+
+
+	
+
+
+
+<script>
+
+try
+
+{
+
+parent.setFecha("30/03/12    16:40:10  ");
+
+}
+
+
+
+catch(e){parent.parent.setFecha("30/03/12    16:40:10  ");}
+
+
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="163819  ";b$Cont="164010  "
+
+	if (a$Cont==b$Cont)
+
+	{
+
+		try{
+
+			parent.scd();
+
+		}
+
+		catch(e)
+
+		{
+
+			parent.parent.scd();
+
+		}
+
+	}
+
+	
+
+</script>
+
+			<script language="javascript">
+
+			function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+
+
+function select_impuesto()
+
+{
+
+	var flag=true;
+
+	
+
+	var mensaje1 = ( language=='eng' ) ? "You must select the withdrawal account. Please check" : "Es necesario seleccionar la cuenta retiro. Favor de verificar";
+
+	var mensaje2 = ( language=='eng' ) ? "Select a tax" : "Seleccione un impuesto";
+
+	var mensaje3 = ( language=='eng' ) ? "Empty field" : "Campo vac&iacute;o";
+
+	var mensaje4 = ( language=='eng' ) ? "Line SAT contains 20 alphanumeric characters" : "L&iacute;nea SAT contiene 20 caracteres alfanum&eacute;ricos";
+
+	var mensaje5 = ( language=='eng' ) ? "Line SAT should be composed of alphanumeric characters" : "L&iacute;nea SAT debe estar conformada por caracteres alfanum&eacute;ricos";	
+
+	var mensaje6 = ( language=='eng' ) ? "The amount contains  <br/> invalid characters" : "El importe contiene  <br/> caracteres inv&aacute;lidos";
+
+	var mensaje7 = ( language=='eng' ) ? "The amount must be <br/>greater than zero": "El importe debe ser <br/>mayor a cero";
+
+	
+
+	
+
+	
+
+			if(Combo_Vacio("combonCtas",mensaje1,"SI")!=true)
+
+			{
+
+				flag = false; 
+
+			}
+
+			
+
+			if(Combo_Vacio("impuestos",mensaje2,"SI")!=true)
+
+			{
+
+				flag = false;
+
+			}
+
+				
+
+			if(document.getElementById('impuestos').value==6)
+
+			{
+
+				if(Campo_Vacio("LineaSAT",mensaje3,"SI")!=true)
+
+				{
+
+					flag = false;
+
+				}
+
+				
+
+				else
+
+				{	
+
+					if(Valida_Caracteres ("LineaSAT","",3,"SI",mensaje5)!=true)
+
+						{   
+
+							flag = false;
+
+						}
+
+					
+
+					else
+
+					{
+
+						if(ValidaLongitud ("LineaSAT",20,2,mensaje4)!=true)
+
+						flag = false;
+
+					}
+
+				}
+
+				
+
+					if(Campo_Vacio("Importe",mensaje3,"SI")!=true)
+
+					{
+
+						flag = false;
+
+					}
+
+				
+
+				else
+
+				{
+
+					if(Valida_Caracteres ("Importe",".,",1,"SI",mensaje6)!=true)
+
+						{   
+
+							flag = false;
+
+						}
+
+					if(document.getElementById('Importe').value=="0")
+
+						{
+
+							document.getElementById('Importe_error').style.display='block';
+
+							document.getElementById('Importe_error').innerHTML=mensaje7;
+
+							flag = false;
+
+						}
+
+				}
+
+			}	
+
+				
+
+				
+
+			
+
+		
+
+		if(flag){
+
+			document.getElementById('DATA1').value = $("#impuestos option:selected").val();
+
+			document.getElementById('DATA3').value = $("#combonCtas option:selected").val();
+
+			document.getElementById('DATA5').value=document.getElementById('combonCtas').selectedIndex;
+
+			document.getElementById('DATA6').value=document.getElementById('impuestos').selectedIndex;
+
+			
+
+			if ( modalPromocion=="APLICA" || PagoTotal=="OK"){
+
+				muestraModalPromocion();
+
+			}
+
+			else{
+
+				//DoSubmit("OK");
+
+				var opcion = $('#impuestos option:selected').val();
+
+				switch(opcion){
+
+					case '1':	parent.cargaDocN("Valida Impuestos Reg/impuestos_provisionales.html");
+
+								break;
+
+					case '2':	parent.cargaDocN("Valida Impuestos Reg/impuestos_anuales.html");
+
+								break;
+
+					case '3':	parent.cargaDocN("Valida Impuestos Reg/impuestos_creditos_fiscales.html");
+
+								break;
+
+					case '4':	parent.cargaDocN("Valida Impuestos Reg/impuestos_entidades_federativas.html");
+
+								break;
+
+					case '5':	parent.cargaDocN("Valida Impuestos Reg/impuestos_der_prod_aprov.html");
+
+								break;
+
+					case '6':	parent.cargaDocN("Valida Impuestos Reg/confirma_pago_referenciado_impuestos.html");
+
+								break;
+
+					//default:
+
+				}
+
+				/*if($('#cboDep option:selected').val()=="1"){
+
+						parent.DoSubmit("Valida Impuestos Reg/impuestos_provisionales.html");
+
+					/*if($('#cboDep option:selected').val()=="2"){
+
+							parent.DoSubmit("Valida Impuestos Reg/impuestos_anuales.html");
+
+					}
+
+					if($('#cboDep option:selected').val()=="3"){
+
+							parent.DoSubmit("Valida Impuestos Reg/impuestos_creditos_fiscales.html");
+
+					}
+
+					if($('#cboDep option:selected').val()=="4"){
+
+							parent.DoSubmit("Valida Impuestos Reg/impuestos_entidades_federativas.html");
+
+					}
+
+					if($('#cboDep option:selected').val()=="5"){
+
+							parent.DoSubmit("Valida Impuestos Reg/impuestos_der_prod_aprov.html");
+
+					}
+
+				}
+
+
+
+				else{
+
+						parent.DoSubmit("Valida Impuestos Reg/impuestos_pago_referenciado.html");
+
+				}*/
+
+			}
+
+		}
+
+		else{
+
+			parent.Expandir();
+
+		}
+
+}
+
+		
+
+function Regreso_Seleccion()
+
+{
+
+DoSubmit("REGRESO");
+
+}
+
+
+
+function agregaISR_Datos_DPA()
+
+{
+
+	var j=1;
+
+	var flag=false;
+
+	var k=1;
+
+	var num=1;
+
+	var cadena="[Cadena_ISR]";
+
+	var cad_aux=cadena.split("|");
+
+	var aux=cad_aux.length;
+
+	
+
+	var aux2=cad_aux[4].indexOf(":");
+
+	var aux3=cad_aux[6].indexOf(":");
+
+	var aux4=cad_aux[5].indexOf(":");
+
+	var aux5=cad_aux[7].indexOf(":");
+
+
+
+	if(aux2==-1)
+
+	{
+
+		var indiceImp=4;
+
+		document.getElementById('c').style.display='none';
+
+		
+
+	}
+
+	
+
+	if(aux3==-1)
+
+	{
+
+		var indiceImp=6;
+
+		var C=cad_aux[0].split(':');
+
+		if(C[0]=="CURP")
+
+		{
+
+			document.getElementById('curp').innerHTML=C[1];
+
+		}
+
+		else
+
+		{
+
+			document.getElementById('c').style.display='none';
+
+		}
+
+		
+
+			
+
+	}
+
+	
+
+	if(aux4==-1)
+
+	{
+
+		var indiceImp=5;
+
+		document.getElementById('c').style.display='none';
+
+	}
+
+	
+
+	if(aux5==-1)
+
+	{
+
+		var indiceImp=7;
+
+		var C=cad_aux[1].split(':');
+
+		if(C[0]=="CURP")
+
+		{
+
+			document.getElementById('curp').innerHTML=C[1];
+
+		}
+
+		else
+
+		{
+
+			document.getElementById('c').style.display='none';
+
+		}
+
+	}
+
+	
+
+	for(var i=indiceImp;i<aux-1;i++)
+
+	{
+
+	
+
+		k=j;
+
+		num=j;
+
+		var titulo=cad_aux[i].split(":");
+
+		if(titulo.length<2)
+
+		{
+
+			if(cad_aux[i]!="EOF")
+
+			{			
+
+				cad_aux[i]=cad_aux[i].toUpperCase();
+
+
+
+				if(cad_aux[i]=="IVA ACTOS ACCIDENTALES")
+
+				{
+
+					$("#IVA"+(num-1)).css("display","");
+
+					$("#IVA"+(num-1)).html(cad_aux[i]);	
+
+					num++;
+
+					k++;
+
+					flag=true;
+
+					
+
+				}
+
+					else
+
+					{
+
+						$("#pago"+j).css("display","");
+
+						$("#Pago"+j).html(cad_aux[i]);
+
+						j++;
+
+						flag=false;
+
+					}
+
+			}
+
+		}
+
+		else
+
+		{
+
+			if(flag)
+
+			{
+
+				var x=document.getElementById("iv"+(k-1)).insertRow(-1);
+
+				var y=x.insertCell(0);
+
+				var z=x.insertCell(1);
+
+				y.innerHTML="<span>"+titulo[0]+"</span>";
+
+				z.innerHTML=titulo[1];
+
+			}
+
+				else
+
+				{
+
+					if(titulo[0]=="Clave de Referencia del DPA")
+
+					{
+
+						var clave=titulo[0];
+
+						var claveV=titulo[1];
+
+					}
+
+					if(titulo[0]=="Cadena de la dependencia")
+
+					{
+
+						var cadenaDep=titulo[0];
+
+						var cadenaDepV=titulo[1];
+
+					}
+
+					var x=document.getElementById("tbl"+(j-1)).insertRow(-1);
+
+					var y=x.insertCell(0);
+
+					var z=x.insertCell(1);
+
+					y.innerHTML="<span>"+titulo[0]+"</span>";
+
+					z.innerHTML=titulo[1];
+
+				}
+
+			
+
+		}
+
+	}
+
+	
+
+	if(indiceImp==4)
+
+		{
+
+			
+
+			var titulo1=cad_aux[3].split(":");
+
+			for(var z=1;z<=5;z++)
+
+			{
+
+				$('<tr><td><span>'+clave+'</span></td> <td>'+claveV+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+				$('<tr><td><span>'+cadenaDep+'</span></td> <td>'+cadenaDepV+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+				$('<tr><td><span>'+titulo1[0]+'</span></td> <td>'+titulo1[1]+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+			}
+
+			
+
+		}
+
+
+
+			else
+
+			{
+
+				if(indiceImp==6)
+
+				{
+
+					var titulo1=cad_aux[5].split(":");
+
+				
+
+						for(var z=1;z<=5;z++)
+
+						{
+
+							$('<tr><td><span>'+clave+'</span></td> <td>'+claveV+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+							$('<tr><td><span>'+cadenaDep+'</span></td> <td>'+cadenaDepV+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+							$('<tr><td><span>'+titulo1[0]+'</span></td> <td>'+titulo1[1]+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+						}
+
+				}
+
+					else
+
+					{
+
+						if(indiceImp==5)
+
+						{
+
+							var titulo1=cad_aux[4].split(":");
+
+						
+
+								for(var z=1;z<=5;z++)
+
+								{
+
+									$('<tr><td><span>'+clave+'</span></td> <td>'+claveV+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+									$('<tr><td><span>'+cadenaDep+'</span></td> <td>'+cadenaDepV+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+									$('<tr><td><span>'+titulo1[0]+'</span></td> <td>'+titulo1[1]+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+								}
+
+						}
+
+						else
+
+						{
+
+							var titulo1=cad_aux[6].split(":");
+
+				
+
+							for(var z=1;z<=5;z++)
+
+							{
+
+								$('<tr><td><span>'+clave+'</span></td> <td>'+claveV+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+								$('<tr><td><span>'+cadenaDep+'</span></td> <td>'+cadenaDepV+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+								$('<tr><td><span>'+titulo1[0]+'</span></td> <td>'+titulo1[1]+'</td></tr>').insertBefore($('#tbl'+z+' tr:eq(1)'));
+
+							}
+
+						}
+
+						
+
+					}
+
+				
+
+			}
+
+	
+
+		$('.tbl').each(function(){
+
+		$(this).find('tr:odd td').css('background-color','#F1F2F2');
+
+		$(this).find('tr:even td').css('background-color','#FFFFFF');
+
+		});	
+
+		
+
+		$('.tabla_2').each(function(){
+
+		try{
+
+				var curp = $("#c").attr("style").match("none");
+
+				if(curp[0]=="none"){
+
+					$(this).find('tr:not(#c):even td').css('background-color','#F2F2F2');
+
+					$(this).find('tr:not(#c):odd td').css('background-color','#FFFFFF');
+
+					}
+
+				else{
+
+					$(this).find('tr:even td').css('background-color','#F2F2F2');
+
+					$(this).find('tr:odd td').css('background-color','#FFFFFF');
+
+					}
+
+				}
+
+			catch(e){
+
+				$(this).find('tr:even td').css('background-color','#F2F2F2');
+
+				$(this).find('tr:odd td').css('background-color','#FFFFFF');
+
+			}
+
+		});	
+
+	
+
+		
+
+		$('.tablaCont').each(function(){
+
+		$(this).find('tr').eq(-1).remove();
+
+		$(this).find('tr').eq(-1).remove();
+
+		});	
+
+}
+
+
+
+function agregaISR_Datos()
+
+{	
+
+	var j=1;
+
+	var cad="[Cadena_ISR]";
+
+	var cad_aux=cad.split("|");
+
+	var aux=cad_aux.length;
+
+	
+
+	var aux2=cad_aux[5].indexOf(":");
+
+	
+
+	if(aux2!=-1)
+
+	{
+
+		var indiceImp=3;
+
+	}
+
+	
+
+	else
+
+	{
+
+		var indiceImp=5;
+
+	}
+
+	
+
+	
+
+	for(var i=indiceImp;i<aux-1;i++)
+
+	{
+
+		var titulo=cad_aux[i].split(":");
+
+		if(titulo.length<2)
+
+		{
+
+			if(cad_aux[i]!="EOF")
+
+			{			
+
+			cad_aux[i]=cad_aux[i].toUpperCase();
+
+			$("#pago"+j).css("display","");
+
+			$("#Pago"+j).html(cad_aux[i]);
+
+			j++;
+
+			}
+
+		}
+
+		
+
+
+
+		else
+
+		{
+
+			var x=document.getElementById("tbl"+(j-1)).insertRow(-1);
+
+			var y=x.insertCell(0);
+
+			var z=x.insertCell(1);
+
+			y.innerHTML="<span>"+titulo[0]+"</span>";
+
+			z.innerHTML=titulo[1];
+
+			
+
+		}
+
+	}	
+
+		
+
+		$('.tbl').each(function(){
+
+		$(this).find('tr:odd td').addClass("bgF1F2F2");
+
+		$(this).find('tr:even td').css('background-color','#FFFFFF');
+
+		});	
+
+}
+
+
+
+
+
+jQuery(document).ready(function(){
+
+		$("#t10").click(function(){
+
+			select_impuesto();
+
+		});
+
+		$("#impuestos,#combonCtas").change(function(){
+
+		/*
+
+		var  impuestoSelect = $("#impuestos option:selected").val();
+
+		var tarjetaSelect = $("#combonCtas option:selected").val();
+
+		if(impuestoSelect!="PS" && impuestoSelect!="" && tarjetaSelect!="PS" && tarjetaSelect!=""){
+
+			$('#t10').attr('disabled',true);
+
+			$('#t10').removeClass('btnAZ86imp').addClass('btnAZ86imp_des');
+
+			$("#combonCtas,#impuestos").attr("disabled",true);
+
+			pm_Promocion('BUSCA_PROMOCION');
+
+			}
+
+		else
+
+		{
+
+			$('#divPromocion').addClass('displayN');
+
+		}
+
+		*/
+
+		});
+
+	});
+
+function pm_Promocion(ev){
+
+	  var d=document.getElementById('ndw').contentWindow.document.forms[0];
+
+	  var o=document.forms[0];
+
+	 //d.action=o.action;
+
+	  d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+	  d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+	  d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+	  d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+	  d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;	
+
+	  d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+	  d.DATA1.value = $("#impuestos option:selected").val();
+
+	  d.DATA3.value = $("#combonCtas option:selected").val();
+
+	  d.EWFBUTTON.value=ev;
+
+	  d.EWFBUTTON.name='EWF_BUTTON_'+ev;
+
+	 // d.submit();
+
+	}
+
+
+
+function llenarcboMeses(){
+
+	var meses=new Array();
+
+	
+
+	var max = meses.length;
+
+	for(var j = 0; j < max; j ++){
+
+		for(var i = 0; i < max-1; i ++){
+
+			if(parseInt(meses[i]) > parseInt(meses[i+1])){
+
+				aux = meses[i];
+
+				meses[i] = meses[i+1];
+
+				meses[i+1] = aux;
+
+			}
+
+		}
+
+	}
+
+	var html="";
+
+	for(var i=0;i < max;i++){
+
+		var mes = meses[i]=="1"?"mes":"meses";
+
+		html+="<option value='"+meses[i]+"'>"+meses[i]+" "+mes+"</option>";
+
+	}
+
+	parent.$("#cboPlazo").html(html);
+
+}
+
+			
+
+function validaImporte(objeto, msg, msg1) {
+
+
+
+cad=objeto.value;
+
+
+
+if (importeValido(cad)) {
+
+    if (validaPunto(cad)) {
+
+        if (validaComas(cad)) { 
+
+            return true;
+
+        } else {
+
+            //alert(msg);
+
+        }
+
+    } else {
+
+       // alert(msg1);
+
+    }
+
+} else {
+
+   // alert(msg);
+
+}
+
+
+
+objeto.focus(); 
+
+return false;
+
+}
+
+
+
+function validaComas(cade) {
+
+
+
+fin = 0; 
+
+ant = 0; 
+
+ban = 1; 
+
+cadindices = new Array(cade.length);
+
+
+
+if (cade.indexOf(",") == -1) { 
+
+    return(1); 
+
+}                                              //no hay comas
+
+for (i=0,j=0; i<cade.length+1; i++) {
+
+    indice=cade.indexOf(",",i);
+
+    if(ant != -1) {
+
+        i = indice; 
+
+    }
+
+    if (ant == -1) { 
+
+        fin=j; 
+
+        break;
+
+    }
+
+    cadindices[j] = indice;
+
+    j++;
+
+    ant = indice;
+
+}                                              //llena arreglo de posicion de comas
+
+if (cadindices[0] == 0) {
+
+    return false; 
+
+}                                              //coma al inicio 
+
+if (cadindices[0]>3) {
+
+    return false; 
+
+}                                              //puso mas de 3 num antes de coma 
+
+indice = cadindices[fin-2]+1;
+
+if (indice == cade.length) {
+
+    return false;
+
+}                                              //coma al final
+
+if (indice+3 != cade.length) {
+
+    return false;
+
+}                                             //ultima coma
+
+for (i=1; i<fin-1; i++) {
+
+    if (cadindices[i] != cadindices[i-1]+4) {
+
+        ban=0; 
+
+    }                                          //esta bien pos coma
+
+}
+
+if (ban==0) {
+
+    return false;
+
+} else {
+
+    return true;
+
+}
+
+}
+
+
+
+function validaPunto(cadena)
+
+{
+
+ if (cadena.indexOf(".")==-1)
+
+ 	return true;
+
+ else
+
+    return false;
+
+}
+
+
+
+function importeValido(cadena) {
+
+cadena=cadena.replace(/,/gi,"");
+
+numero=parseInt(cadena);
+
+
+
+if (numero > 0){
+
+	return true;
+
+} else {
+
+    return false;
+
+}
+
+}
+
+
+
+			
+
+
+
+function comboVacio (Combo,Msg_Error,Req)
+
+{
+
+var Valor = "";
+
+
+
+
+
+Num_Opcion = Combo.selectedIndex;
+
+
+
+Valor = Combo.options[Num_Opcion].value;
+
+
+
+if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0")
+
+	{
+
+	if (Req == "SI")
+
+		{
+
+		alert (Msg_Error);
+
+		Combo.focus();
+
+		}
+
+	return true;
+
+	}
+
+else
+
+	return false;
+
+}
+
+
+
+			function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+			
+
+/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+
+
+
+
+
+
+			var LengConf;
+
+function Conf_Msg(id_msg)
+
+{
+
+  var msg;
+
+
+
+  
+
+    switch(id_msg)
+
+    {
+
+      case 1: msg='Cuenta Origen: ';
+
+	      break;
+
+      case 2: msg='Cuenta Destino: ';
+
+	      break;
+
+      case 3: msg='Importe: $';
+
+	      break;
+
+      case 4: msg='Solicito comprobante fiscal:SI ';
+
+	      break;
+
+      case 5: msg='RFC: ';
+
+	      break;
+
+      case 6: msg='IVA: $';
+
+	      break;
+
+      case 7: msg='Su operaci\u00F3n fu\u00E9 programada para: ';
+
+	      break;
+
+      case 8: msg='Fecha: ';
+
+	      break;
+
+      case 9: msg='Hora: ';
+
+	      break;
+
+      case 10: msg='Compraventa: ';
+
+	      break;
+
+      case 11: msg='Tipo de Pago: ';
+
+	      break;
+
+      case 12: msg='Folio: ';
+
+	      break;
+
+      case 13: msg='Nombre del Cliente/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 14: msg='Formulario: ';
+
+	      break;
+
+      case 15: msg='N\u00FAmero de Tarjeta: ';
+
+	      break;
+
+      case 16: msg='N\u00FAmero de cuenta: ';
+
+	      break;
+
+      case 17: msg='Referencia Alfan\u00FAmerica: ';
+
+	      break;
+
+      case 18: msg='Referencia N\u00FAmerica: ';
+
+	      break;
+
+      case 19: msg='N\u00FAmero de Chequeras: ';
+
+	      break;
+
+      case 20: msg='Su operaci\u00F3n: ';
+
+	      break;
+
+      case 21: msg='La siguiente p\u00E1gina le mostrar\u00E1 los datos de su operaci\u00F3n, verifique que est\u00E9n correctos y haga clic en el bot\u00F3n aceptar para que se aplique su operaci\u00F3n.';
+
+	      break;
+
+      case 22: msg='Tipo de Persona: ';
+
+	      break;
+
+      case 23: msg='Su envi\u00F3 ser\u00E1 en: ';
+
+	      break;
+
+      case 24: msg='Mismo d\u00EDa. ';
+
+	      break;
+
+      case 25: msg='24 horas. ';
+
+	      break;
+
+      case 26: msg='48 horas. ';
+
+	      break;
+
+      case 27: msg='No. Contrato: ';
+
+	      break;
+
+      case 28: msg='Sucursal Destino: ';
+
+              break;
+
+      case 29: msg='Tipo de Inversi\u00F3n: ';
+
+              break;
+
+      case 30: msg='Tipo de Operaci\u00F3n: ';
+
+              break;
+
+      case 31: msg='Importe en D\u00F3lares: ';
+
+              break;
+
+      case 32: msg='Cheque inicial: ';
+
+              break;
+
+      case 33: msg='Cheque final: ';
+
+              break;
+
+      case 34: msg='No. de Contrato de Inversi\u00F3n: ';
+
+              break;
+
+      case 35: msg='No. Klick Card Cr\u00E9dito: ';
+
+              break;
+
+      case 36: msg='No. Klick Card D\u00E9bito: ';
+
+              break;
+
+      case 37: msg='L\u00EDnea de Consumo: ';//hay que revisarla
+
+              break;
+
+      case 38: msg='Tipo de Entrega: '
+
+	      break;
+
+      case 39: msg='Acciones: ';
+
+              break;
+
+      case 40: msg='Fecha de Alta: ';
+
+              break;
+
+      case 41: msg='Tipo de Inversi\u00F3n / No. de Contrato: ';
+
+              break;
+
+      case 42: msg='No. de Inversi\u00F3n: ';
+
+              break;
+
+      case 43: msg='Plazo: ';
+
+              break;
+
+      case 44: msg='Instrucciones al Vencimiento: ';
+
+              break;
+
+      case 45: msg='Cuenta de Rembolso: ';
+
+              break;
+
+      case 46: msg='Traspaso a: ';
+
+              break;
+
+      case 47: msg='Abono a:';
+
+	      break;
+
+      case 48: msg='El tipo de cambio que se aplique, ser\u00E1 el vigente en el d\u00EDa y hora en que se realice la operaci\u00F3n.';
+
+	      break;
+
+      case 49: msg='Importe en d\u00F3lares:';
+
+	      break;
+
+	      
+
+      case 50: msg='Tarjeta: ';   							
+
+	      break;
+
+      case 51: msg='Importe a Parcializar: $';  
+
+	      break;
+
+      case 52: msg='Interes: $';  							
+
+	      break;
+
+      case 53: msg='Interes Diferido: $';  			
+
+	      break;
+
+      case 54: msg='Monto Diferido: $';  				
+
+	      break;
+
+      case 55: msg='Pago Mensual: $';  				
+
+	      break;
+
+      case 56: msg='Tarjeta Premia:  ';
+
+	      break;
+
+      case 57: msg='Cuenta a Incorporar:  ';
+
+	      break;
+
+      case 58: msg='Tarjeta de Credito Titular:  ';
+
+	      break;	      
+
+      case 59: msg='No. de Tarjeta: ';
+
+	      break;	
+
+      case 60: msg='Límite a Asignar: ';
+
+	      break;	
+
+      case 61: msg='Tipo de Retiro: ';
+
+	      break;	
+
+      case 62: msg='Monto a Retirar: ';
+
+	      break;
+
+		case 63: msg='Afore NSS: ';
+
+	      break;
+
+	  case 64: msg='Beneficiario: ';
+
+	      break;
+
+	  case 65: msg='RFC/CURP: ';
+
+	      break;
+
+	  case 66: msg='Sector Económico: ';
+
+	      break;
+
+	  case 67: msg='Nombre/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 150: msg='Una vez aceptada no podr\u00E1 cancelar su operaci\u00F3n.';
+
+              break;
+
+      case 151: msg='Una vez recibida su instrucci\u00F3n no podr\u00E1 cancelar su operaci\u00F3n.';
+
+	      break;
+
+      case 152: msg='Correo Electr\u00F3nico del Beneficiario: ';
+
+	      break;
+
+	    case 200: msg="Verifica los datos de tu operación."; 
+
+	    	break;
+
+	    case 201: msg="Paso 2 de 3"; 
+
+	    	break;
+
+	    case 202: msg="Paso 3 de 3"; 
+
+	    	break;	    	
+
+	    case 203: msg="Paso 3 de 4";  /*YA NO SE UTILIZA*/ 
+
+	    	break;
+
+	    case 204: msg="Paso 2 de 2"; 
+
+	    	break;
+
+	    case 205: msg="Número Celular del Beneficiario: "; 
+
+	    	break;
+
+	    case 206: msg="Compañía Celular: "; 
+
+	    	break;	    	
+
+	    default: msg='Verifique que sus datos est\u00E9n correctos antes de enviar su operaci\u00F3n.';
+
+    }
+
+
+
+
+
+  
+
+  return(msg);
+
+}
+
+			/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+
+
+
+
+
+
+/* Funcion que verifica si el campo tiene los caracteres validos
+
+ * Parametros
+
+ * @Campo_Txt: Id del campo que se pretende validar
+
+ * @Caracteres_Extras: Permitir otros caracteres como validos
+
+ * @Tipo_Validacion: El tipo de validacion 1=Numerico 2=Alfanumerico
+
+ * @Req: Cadena que nos valida si debe de ser requerido
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+
+
+/* Funcion que verifica si el combo esta vacio
+
+ * Parametros
+
+ * @Combo: Id del Combo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es diferente a "NO", lo omite
+
+**/
+
+
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+
+
+/* Funcion que verifica si el campo tenga la longitud requerida
+
+ * Parametros
+
+ * @Campo: Id del campo que se pretende validar
+
+ * @Longitud: Longitud a evaluar
+
+ * @TipoRel: Indice del tipo de comparacion 1(<=) 2(<) 3(>=) 4(>) 5(!=)
+
+ * @Msg: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function ValidaLongitud (Campo,Longitud,TipoRel,Msg){ 
+
+	$("#"+Campo+"_error").css("display","none");
+
+	var Error = 0;
+
+	switch(TipoRel){
+
+		case 1: if($("#"+Campo).val().length <= Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 2: if($("#"+Campo).val().length < Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 3: if($("#"+Campo).val().length >= Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 4: if($("#"+Campo).val().length > Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 5: if($("#"+Campo).val().length != Longitud)
+
+			Error = 1;
+
+			break;
+
+		default: Error = 1;
+
+	}
+
+	if(Error == 1){
+
+		$("#"+Campo+"_error").css("display","block").html(Msg);
+
+		$("#"+Campo).focus();
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+
+
+/* Funcion que verifica si el campo esta activo
+
+ * Parametros
+
+ * @Objeto: Id del campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function RdioChk_Vacio (Objeto,Msg_Error){
+
+	$("#"+Objeto+"_error").css("display","none");
+
+	var Seleccionado = false;
+
+	$("input[name='"+Objeto+"']").each(function(){
+
+		if(Seleccionado != true){
+
+			if(this.checked)
+
+			Seleccionado = true;
+
+			else
+
+			Seleccionado = false;
+
+		}
+
+	});
+
+	if(Seleccionado != true){
+
+		$("#"+Objeto+"_error").css("display","block").html(Msg_Error);
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+
+
+
+
+	
+
+			var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+			
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+									
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}	
+
+			$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+		    
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+			var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+			function cambiaMayus(objeto)
+
+{  
+
+   cad = objeto.value;
+
+   objeto.value = cad.toUpperCase();  
+
+}
+
+			var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+		</script>
+
+        
+
+    	<script type="text/javascript">
+
+		
+
+			var titulo="Pagos";
+
+			rutaAyuda=rutaAyuda+"Impuestos.htm";
+
+			
+
+			var es= new Array("Tax payments",
+
+							  "Select a withdrawal account, a type of tax payment, indicated the payment data and click &quot;Continue&quot;", 
+
+			                  "Account",
+
+							  "Origin account",
+
+							  "Taxes",
+
+							  "Tax type",
+
+							  "Select an option",
+
+							  "Payment data",
+
+							  "SAT capture line",
+
+							  "Amount MXN",
+
+							  "Continue",
+
+							  "Provisional Ones",
+
+							  "Annual",
+
+							  "Fiscal Taxes",
+
+							  "Federal Entities",
+
+							  "Rights Products and Revenues",
+
+							  "Referenced Payment",
+
+							  "Sorry, the transaction could not be completed",
+
+					          "Tax payments",
+
+						      "Possible solution",
+
+							  "Origin account: [descorta] [desc_moneda] - [ctacorta] - [alias]",
+
+					          "What can I do&#63;",
+
+							  "You can use online help or contact the",
+
+							  "customer service",
+
+							  "at 1226 3990 (D.F. and Metropolitan area) or 01 800 110 3990 (rest of the Republic).",
+
+							  "It is important to have the following code:",
+
+							  "Cause",
+
+							  "Continue",
+
+							  "Taxes");
+
+			
+
+			function muestraSat()
+
+			{
+
+				var sel = document.getElementById('impuestos').value;
+
+				
+
+				if(sel=="6")
+
+				{
+
+				document.getElementById('pagoRef').style.display='block';
+
+				}
+
+				else
+
+				{
+
+				
+
+				document.getElementById('pagoRef').style.display='none';
+
+				}
+
+			}
+
+			
+
+			function prueba()
+
+			{
+
+				DoSubmit('LimpiaFlag');
+
+			}
+
+			
+
+			function cerrarModal(){
+
+				parent.$.modal.close();
+
+			}
+
+			
+
+			function validaImporte(){
+
+			if(modalPromocion=="APLICA"){
+
+				$('#DATA7').val(parent.$("#cboPlazo option:selected").val());
+
+			}
+
+			else{
+
+				$('#DATA7').val("NO PROMOCION");
+
+			}
+
+			$('#DATA8').val(parent.$('[name="radioPromocion"]:checked').val());
+
+			cerrarModal();
+
+			DoSubmit("OK");
+
+			}
+
+
+
+			function muestraModal()
+
+			{
+
+				parent.parent.$("#mensajeError_contenido_div").html($("#mensajeError_contenido").html());
+
+				parent.parent.$.modal(				
+
+				{
+
+					opacity:60, 
+
+					overlayClose:false, 
+
+					flagDiv:true,
+
+					widthDivIfrm:600,
+
+					heightDivIfrm:"auto"
+
+				}
+
+				);
+
+			}
+
+			function muestraModalError()
+
+			{
+
+				parent.parent.$("#mensajeError_contenido_div").html($("#mensajeError_Promocion").html());
+
+				parent.parent.$.modal(				
+
+				{
+
+					opacity:60, 
+
+					overlayClose:false, 
+
+					flagDiv:true,
+
+					widthDivIfrm:600,
+
+					heightDivIfrm:"auto"
+
+				}
+
+				);
+
+			}
+
+			
+
+				function ajustar() {
+
+	  var ancho=document.getElementById('mensajeError_contenido_div').offsetWidth;
+
+	  var alto=document.getElementById('mensajeError_contenido_div').offsetHeight;
+
+	  parent.$.modal.setDimentions(alto,ancho);
+
+	}
+
+
+
+			function muestraModalPromocion(){
+
+				parent.parent.$("#mensajeError_contenido_div").html($("#modal_Promocion").html());
+
+				
+
+				parent.parent.$.modal(				
+
+				{
+
+					opacity:60, 
+
+					overlayClose:false, 
+
+					flagDiv:true,
+
+					widthDivIfrm:390,
+
+					heightDivIfrm:'auto'
+
+				}
+
+				);
+
+				if(modalPromocion=="APLICA"){
+
+					parent.$("#Radio1").attr("checked",true);
+
+					parent.$('#tdSelecione').css("visibility","visible");
+
+					parent.$('#tdPagoTotal').attr('colspan','1').attr('align','left');
+
+					parent.$('#tdMeses').removeClass('displayN');
+
+					parent.$('#tdComboMeses').css("visibility","visible");
+
+				}
+
+				if(PagoTotal=="OK"){
+
+					parent.$("#Radio2").attr("checked",true);
+
+					parent.$('#tdSelecione').css("visibility","hidden");
+
+					parent.$('#tdPagoTotal').attr('colspan','2').attr('align','center');
+
+					parent.$('#tdMeses').addClass('displayN');
+
+					parent.$('#tdComboMeses').css("visibility","hidden");
+
+				}
+
+			}
+
+			var modalPromocion ="";
+
+			var PagoTotal = "";
+
+			var Regreso= "[Regreso]";
+
+			function Initialize(){
+
+				
+
+				try{
+
+					parent.document.forms[0].SEQUENCE_NUMBER.value = document.forms[0].SEQUENCE_NUMBER.value;
+
+					parent.modalPromocion = "";
+
+					parent.PagoTotal = "";
+
+					parent.$("#combonCtas,#impuestos").attr("disabled",false);
+
+					parent.$("#t10").attr("disabled",false);
+
+					parent.$('#t10').removeClass('btnAZ86imp_des').addClass('btnAZ86imp');
+
+					if(parent.modalPromocion=="APLICA"){
+
+						parent.$("#divPromocion").removeClass("displayN");
+
+						llenarcboMeses();
+
+						parent.parent.Expandir();
+
+					}
+
+					else{
+
+						parent.$("#divPromocion").addClass("displayN");
+
+						parent.parent.Expandir();
+
+						}
+
+					}
+
+				catch(e){}
+
+				
+
+				LlenaCombo();
+
+					document.getElementById('impuestos').selectedIndex="0"==""?0:"0";   
+
+					document.getElementById('combonCtas').selectedIndex="0"==""?0:"0"; 
+
+					if(document.getElementById('impuestos').value==6){
+
+						document.getElementById('pagoRef').style.display='block';
+
+						}	
+
+					else{
+
+						document.getElementById('pagoRef').style.display='none';
+
+					}
+
+				if(""=="error"){
+
+					muestraModal();		
+
+				}
+
+				$("#combonCtas").trigger("change");
+
+			}
+
+			
+
+			function LlenaCombo()
+
+			{	
+
+				var i=0;
+
+				var cuentas= document.getElementById('combonCtas');
+
+				
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","PS");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					opcion.setAttribute("tipoTarj","6");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="".replace(/^\s*|\s*$/g,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+						 desc="";
+
+						}
+
+						else
+
+						{
+
+						 desc=alias;
+
+						}
+
+					if("PS"=="PS")
+
+					{
+
+					    if(language == 'eng')
+
+							document.getElementById("opc" + i + "").innerHTML = "Select an option";
+
+						else
+
+							document.getElementById("opc" + i + "").innerHTML = "Selecciona una opci&oacute;n";		
+
+					
+
+					}
+
+					else
+
+					{
+
+					    if(language == 'eng')
+
+							document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, "Select an option" , "" ,"7");	
+
+						else
+
+							document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, "Selecciona una opci&oacute;n" , "" ,"7");		
+
+					}
+
+					i++;
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","2");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					opcion.setAttribute("tipoTarj","1");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="Cheques".replace(/^\s*|\s*$/g,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+						 desc="Cheques";
+
+						}
+
+						else
+
+						{
+
+						 desc=alias;
+
+						}
+
+					if("2"=="PS")
+
+					{
+
+						document.getElementById("opc" + i + "").innerHTML = "002";		
+
+					
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, "002" , "MXN" ,"40,000.00");		
+
+					}
+
+					i++;
+
+									var opcion = document.createElement("option");
+
+					/*opcion.setAttribute("value","9");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					opcion.setAttribute("tipoTarj","3");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="Tarjeta Crédito".replace(/^\s*|\s*$/g,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+						 desc="Tarjeta Crédito";
+
+						}
+
+						else
+
+						{
+
+						 desc=alias;
+
+						}
+
+					if("9"=="PS")
+
+					{
+
+						document.getElementById("opc" + i + "").innerHTML = "  796";		
+
+					
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, "  796" , "MXN" ,"45,000.00");		
+
+					}
+
+					i++;
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","21");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					opcion.setAttribute("tipoTarj","3");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="Credicheque Perfiles Banamex".replace(/^\s*|\s*$/g,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+						 desc="Credicheque Perfiles Banamex ";
+
+						}
+
+						else
+
+						{
+
+						 desc=alias;
+
+						}
+
+					if("21"=="PS")
+
+					{
+
+						document.getElementById("opc" + i + "").innerHTML = "502";		
+
+					
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, "502" , "MXN" ,"50,000.00");		
+
+					}
+
+					i++;
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","22");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					opcion.setAttribute("tipoTarj","3");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="Crédito Personal Perfiles Banamex".replace(/^\s*|\s*$/g,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+						 desc="Crédito Personal Perfiles Banamex";
+
+						}
+
+						else
+
+						{
+
+						 desc=alias;
+
+						}
+
+					if("22"=="PS")
+
+					{
+
+						document.getElementById("opc" + i + "").innerHTML = "502";		
+
+					
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, "502" , "MXN" ,"54,000.00");		
+
+					}
+
+					i++;
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","26");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					opcion.setAttribute("tipoTarj","3");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="Clasica".replace(/^\s*|\s*$/g,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+						 desc="Clasica";
+
+						}
+
+						else
+
+						{
+
+						 desc=alias;
+
+						}
+
+					if("26"=="PS")
+
+					{
+
+						document.getElementById("opc" + i + "").innerHTML = "199";		
+
+					
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias(desc, "199" , "MXN" ,"60,000.00");		
+
+					}
+
+					i++;*/
+
+				
+
+			}
+
+			
+
+		</script>
+
+		
+
+	 <div class="float-left fonttit" id="t28">Impuestos</div>
+
+	     <div class="panelIzEnca3_text2" id="t0">
+
+                Pago de  impuestos </div>
+
+            <div class="color666 paddingT5 f11" id="t1">
+
+                Selecciona una cuenta de retiro, un tipo de impuesto, indica los datos del pago y da clic en &quot;Continuar&quot;.
+
+    	</div>
+
+
+
+        
+
+        
+
+        <div class="saldos_bloque3_2 paddingT3_pag">
+
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                  <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t2">Cuentas</span></td>
+
+                  <td valign="top" class="padding20152015"><div class="negrita color333 f11 paddingB5" id="t3">Cuenta retiro</div>
+
+                    <select id="combonCtas" class="ancho100p">
+
+					</select>	
+
+					 <div id="combonCtas_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+
+
+				  </td>
+
+                </tr>
+
+              </table>
+
+        </div>    
+
+
+
+		<div class="saldos_bloque3_2">
+
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                  <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t4">Impuestos</span></td>
+
+                  <td valign="top" class="padding20152015"><div class="negrita color333 f11 paddingB5" id="t5">Tipo de impuesto</div>
+
+
+
+                    <select class="ancho100p" id="impuestos" onchange="muestraSat(); parent.Expandir();">
+
+                      <option value="" id="t6"> Selecciona una opci&oacute;n</option>
+
+					  <!--<option value="1" id="t11">Provisionales</option>-->
+
+					  <option value="2" id="t12">Anuales</option>
+
+					  <!--<option value="3" id="t13">Cr&eacute;ditos Fiscales</option>-->
+
+
+
+					  <!--<option value="4" id="t14">Entidades Federativas</option>-->
+
+					  <option value="5" id="t15">Derechos, Productos y Aprovechamientos</option>
+
+					  <option value="6" id="t16">Pago Referenciado</option>
+
+                  </select>
+
+				  <div id="impuestos_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+				  <div id="divPromocion" style="font:12;" class=" color666 negrita paddingT20 displayN" >Este servicio lo puedes pagar a meses sin intereses con Tarjeta de Cr&eacute;dito.</div>
+
+
+
+				  </td>
+
+                </tr>
+
+				<div>
+
+			</div>
+
+              </table>
+
+        </div>        
+
+		 <div class="saldos_bloque3_2" id="pagoRef" style="display:none;">
+
+        	   <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                                <tr>
+
+
+
+                                    <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t7">Datos del pago</span></td>
+
+                                    <td valign="top" class="padding20152015">
+
+                                       	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                                            <tr>
+
+                                                 <td class="ancho33p">
+
+													
+
+                                                    <div class=" referencia floatL overflow"  style="width:200px;">
+
+														 <div class="floatL overflow paddingL10" >
+
+															<div class="negrita color333 f11 paddingB5" id="t8">Linea de captura SAT</div>
+
+
+
+															<input type="text" class="input" value="" name="DATA2" id="LineaSAT" maxlength="20" style="width:170px;" onChange="cambiaMayus( this );"/>
+
+															<div id="LineaSAT_error" class="saldos_bloque2_f4_error_display_blanco" style="width:90%;"></div>
+
+														 </div>
+
+                                                    </div>
+
+															
+
+                                                    <div class=" referencia floatL overflow" style="width:165px;">
+
+														<div class="floatL overflow alto31 paddingL0  borderRSolid"></div>
+
+															<div class="floatL overflow paddingL10" >
+
+																 <div class="negrita color333 f11 paddingB5"  id="t9">Importe MXN</div>
+
+
+
+															     <input type="text" class="input" value="" name="DATA4" id="Importe" maxlength="18"/>
+
+																 <div id="Importe_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+															</div>
+
+													</div>
+
+
+
+			                                    </td>
+
+                                             </tr>                                           
+
+                                        </table>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                            </table>   	
+
+        </div>
+
+        <div class="marginT20 overflow">
+
+            <input type="button" class="btnAZ86imp floatR" value="Continuar" id="t10"/>			
+
+        </div>
+
+		<iframe id="ndw" src="../../spanishdir/tarjetas.htm" style="display:none; width:500px; height:500px;"></iframe>
+
+<div id="mensajeError_contenido" style="display:none;">
+
+		<div class="mensajeError_contenidoIn">
+
+            <div class="mensajeError_Fila1">
+
+                <div class="mensajeError_titulo1" id="t17">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+
+
+                <div class="mensaje_btn1">
+
+					<div class="saldos_btn2 margin0" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+				</div>
+
+            </div>
+
+            <div class="mensajeError_Fila1_2  ">
+
+                <div class="color666 paddingT5 paddingL25 f11"> <span class="color666 paddingT5 f11" id="t18">Pago de impuestos</span></br>
+
+				
+
+					&nbsp;&nbsp;<label id="me"></label><br/>
+
+							
+
+				
+
+				</div>
+
+
+
+            </div>
+
+			
+
+			<div class="mensajeError_Fila2 color333 negrita paddingL25" id="t21">&iquest;Qu&eacute; puedo hacer?</div>
+
+			
+
+				<div class="mensajeError_Fila2 color666 paddingL25" >
+
+				<span class="color666 paddingT5 f11" id="t22">Si deseas comun&iacute;cate a</span> <span  class="f11" id="t23">servicio a clientes</span> 
+
+				<span class="color666 paddingT5 f11" id="t24">al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br>
+
+
+
+				01 800 110 3990 (Del interior de la Rep&uacute;blica).<br></span> 
+
+				</div>
+
+				
+
+					<div class="mensajeError_Fila2 color666 paddingL25" id="t25">
+
+						Es importante tener a la mano el siguiente c&oacute;digo:
+
+					</div>
+
+					<div id="ne" class="coloree2e24 mensajeError_Fila2 paddingL25"></div>
+
+				
+
+			
+
+            <div class="mensajeError_Fila3">
+
+                <div class="floatR"><input type="button" id="t27" value="Continuar" class="floatR btnAZ86 CerrarVentanaEmergente" onclick="parent.Expandir();"/></div>
+
+
+
+            </div>
+
+		 </div>
+
+		</div>
+
+		
+
+<div id="modal_Promocion" style="display:none;">
+
+	<div class="contenido_modal_Promocion">
+
+        <div id="contenido" class="mensajeError_contenidoInc" style="display:block">
+
+            <table width="100%" border="1">
+
+                <tr>
+
+                    <td colspan="2" height="30">
+
+
+
+                        <span class="color333 f12b negrita">Pago a meses sin intereses</span>
+
+                    </td>
+
+				</tr>
+
+				<tr>
+
+					<td id="tdSelecione" colspan="2" height="30">
+
+                        <span class="color666 f11">Selecciona el plazo en el que deseas hacer tu pago y da clic en "Continuar" .</span>
+
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+
+                    <td id="tdMeses" class="borderRPunteado" height="30">
+
+                       <input type="radio" value="1" name="radioPromocion" id="Radio1"/>
+
+			<span style="position:relative; top:-2px" class="f11 color666">Meses</span>
+
+                    </td>
+
+                    <td id="tdPagoTotal" height="30">
+
+                        <input type="radio" value="2" name="radioPromocion" id="Radio2"/>
+
+			<span class="f11 color666" style="position:relative; top:-2px">Pago total</span>	
+
+                    </td>
+
+
+
+                </tr>
+
+                <tr>
+
+                    <td id="tdComboMeses" colspan="2" height="30">   
+
+						<select id="cboPlazo" class="ancho20p ancho20p f11 color666" selected="[plazoGuradado]">
+
+						</select>
+
+					</td>
+
+                </tr>
+
+				<tr>
+
+                    <td>
+
+
+
+                        <input type="button" id="t33" value="Cancelar" class="btnRJ86 floatL" 
+
+                        onclick="parent.document.getElementById('main').contentWindow.cerrarModal(); parent.Expandir();"/>
+
+                    </td>
+
+                    <td>
+
+                        <input type="button" id="t34" value="Continuar" class="btnAZ86 floatR" 
+
+                        onclick="parent.document.getElementById('main').contentWindow.validaImporte(); parent.Expandir();"/>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div></div>
+
+
+
+</div>
+
+<iframe id="ndw" src="../../spanishdir/if.htm" frameborder="0" allowtransparency="true" style="display:none;top:10;left:60;z-Index=1018;position:absolute;"></iframe>
+
+		<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+		<INPUT TYPE=HIDDEN ID=DATA1  NAME=DATA1 VALUE="">
+
+		<INPUT TYPE=HIDDEN ID=DATA2  NAME=DATA2 VALUE="">
+
+		<INPUT TYPE=HIDDEN ID=DATA3  NAME=DATA3 VALUE="">
+
+		<INPUT TYPE=HIDDEN ID=DATA4  NAME=DATA4 VALUE="">
+
+		<INPUT TYPE=HIDDEN ID=DATA5  NAME=DATA5 VALUE="">
+
+		<INPUT TYPE=HIDDEN ID=DATA6  NAME=DATA6 VALUE="">
+
+
+
+		<INPUT TYPE=HIDDEN ID=DATA7  NAME=DATA7 VALUE="">
+
+		<INPUT TYPE=HIDDEN ID=DATA8  NAME=DATA8 VALUE="">
+
+<input id="omtmodalvalue" type="hidden" value="Valida Impuestos Reg|impuesto_select.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>Banamex</title>
+		
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+			<script type="text/javascript">
+            <!--
+			$(document).ready(function(){
+			setTimeout(function(){top.ajustarP();},800);
+			
+			});
+			-->
+			</script>
+</head>
+
+<body >
+
+<div class=" width926 bg_demo2">
+
+<div id="title-section" class="cH-appPageHead height20 paddingT0 margin-bottom20 width926">
+                    <div class="float-left">
+                      <h1 id="t23">DETALLE DE LA CUENTA</h1></div>
+                        
+               <div id="ayuda">  
+                <div class="margin-top6 titulo " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0)" onclick="top.dash()" class="float-left" id="t24">&nbsp;Ver todas las cuentas</a>
+                </div>
+                </div>   
+             
+             <div id="imp" class="displayNone">
+               <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+                </div>
+                </div>
+                </div>
+
+<div class="clear"></div>
+
+<div class="noleftmenu margintop0" id="subapp-box">
+
+
+    
+  <div class="form-row">
+        <select name="select" id="select" onchange="valor2=this.value;Cta3();">
+            				<option value="0" >Mi Chequera - Cheques - MXN - 12680</option>
+                          <option value="1">Cta Maestra - Mi maestra - MXN - 12681</option>
+                          <option value="2">Pagom&aacute;tico - BNM - Mi d&eacute;bito - MXN - 12680</option>
+                          <option value="3">Mi Chequera - Cheques - USD - 12680</option>
+                          <option value="4">Tarj. Oro - Mi tarjeta - MXN - 12680</option>
+                          <option value="5">Tarj. Premia - Ptos Premia - MXN 12244</option>
+                          <option value="6">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="7">Credicheques - Mi cr&eacute;dito - MXN - 12300</option>
+                          <option value="8">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="9">Mi inversi&oacute;n - Inv. Integral - MXN - 12299</option>
+                          <option value="10">Mi plazo - Inv. Plazo - MXN - 12282</option>
+                          <option value="11">Horzcob - MXN - 123456 - Horzcob</option>
+                          <option value="12">Banca Inversi&oacute;n - MXN - 123456 - Multiseries</option>
+                          <option selected="selected">Mi retiro - AFORE NSS - MXN - 12312</option>
+        </select>
+        <div class="clear"></div>
+  </div>
+
+<div class="widthOpt2 float-left padding-right35" >
+
+				<table width="100%" cellspacing="0" cellpadding="0" border="0" >
+                   <tbody >
+                      <tr class="noborder height20">
+                        <td class="height20" width="25%" id="t25">Estatus</td>
+                        <td class="color666 height20 alignRight" width="25%">NORMAL</td>
+                        <td class="height20 pad15" width="25%" id="t26">Saldo:</td>
+                        <td class="color666 height20 alignRight" width="25%">$ 123,456,789.00</td>
+                      </tr>
+                      <tr>
+                        <td class="border9A height20 padding-bottom10" id="t27">Fecha de corte:</td>
+                        <td class="border9A color666 height20 alignRight padding-bottom10">06</td>
+                        <td class="border9A height20 pad15 padding-bottom10">&nbsp;</td>
+                        <td class="border9A color666 height20 alignRight padding-bottom10">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="noborder">
+                        <td class="height20 padding-top10"><span class="strong" id="t28">Desglose de la cuenta</span></td>
+                        <td class="color666 padding-top10 height20">&nbsp;</td>
+                        <td class="height20 padding-top10 pad15">&nbsp;</td>
+                        <td class="color666 padding-top10 height20">&nbsp;</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20" id="t29">Retiro IMSS:</td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                        <td class="height20 pad15"><a href="#" class="border-dotted-link tooltip" id="t30" title="Aportacion voluntaria<br> (corto y largo plazo)">Aportación Vol.:</a></td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20"><a href="#" class="border-dotted-link tooltip" id="t31">CV IMSS:</a></td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                        <td class="height20 pad15"><a href="#" class="border-dotted-link" id="t32">ACR:</a></td>
+                        <td class="color666 height20 alignRight">$ 500,000.00</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20"><a href="#" class="border-dotted-link tooltip" id="t33">CS IMSS:</a></td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                        <td class="height20 pad15"><a href="#" class="border-dotted-link" id="t34">ALP:</a></td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20 border9A padding-bottom10" id="t35">SAR 92 IMSS:</td>
+                        <td class="color666 height20 border9A alignRight padding-bottom10">$ 3,456,789.00</td>
+                        <td class="height20 border9A pad15 padding-bottom10">&nbsp;</td>
+                        <td class="color666 height20 border9A alignRight padding-bottom10">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="noborder">
+                        <td class="height26 border9A valignmiddle"><span class="strong" id="t36">Subtotal IMSS</span></td>
+                        <td class="color666 height26 border9A alignRight valignmiddle">$ 13,456,789.00</td>
+                        <td class="height26 border9A pad15 valignmiddle"><span class="strong" id="t37">Subtotal aportación</span></td>
+                        <td class="color666 height26 border9A alignRight valignmiddle">$ 7,456,789.00</td>
+                      </tr>
+                      
+                      <tr class="noborder height20">
+                        <td class="height20 padding-top10" id="t38">Retiro ISSSTE:</td>
+                        <td class="color666 padding-top10 height20 alignRight">$ 3,456,789.00</td>
+                        <td class="height20 padding-top10 pad15"><a href="#" class="border-dotted-link" id="t39">INFONAVIT 92:</a></td>
+                        <td class="color666 padding-top10 height20 alignRight">$ 500,000.00</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20"><a href="#" class="border-dotted-link tooltip" id="t40">CV ISSSTE:</a></td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                        <td class="height20 pad15"><a href="#" class="border-dotted-link" id="t41">INFONAVIT 97:</a></td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20"><a href="#" class="border-dotted-link tooltip" id="t42">CS ISSSTE:</a></td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                        <td class="height20 pad15"><a href="#" class="border-dotted-link" id="t43">FOVISSSTE 92</a>:</td>
+                        <td class="color666 height20 alignRight">$ 500,000.00</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20" id="t44">SAR 92 ISSSTE:</td>
+                        <td class="color666 height20 alignRight">$ 3,456,789.00</td>
+                        <td class="height20 pad15"><a href="#" class="border-dotted-link" id="t45">FOVISSSTE 08:</a></td>
+                        <td class="color666 height20 alignRight">$ 500,000.00</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20" id="t46">Ahorro solidario:</td>
+                        <td class="color666 height20 alignRight">$ 500,000.00</td>
+                        <td class="height20 pad15">&nbsp;</td>
+                        <td class="color666 height20 alignRight">&nbsp;</td>
+                      </tr>
+                      <tr class="noborder height20">
+                        <td class="height20 border9A padding-bottom10" id="t47">Bono pensión:</td>
+                        <td class="color666 height20 border9A alignRight padding-bottom10">$ 500,000.00</td>
+                        <td class="height20 pad15 border9A padding-bottom10">&nbsp;</td>
+                        <td class="color666 height20 border9A alignRight padding-bottom10">&nbsp;</td>
+                      </tr>
+                      
+                      <tr class="noborder">
+                        <td class="height26 valignmiddle"><span class="strong" id="t48">Subtotal ISSSTE</span></td>
+                        <td class="color666 height26 alignRight valignmiddle">$ 14,456,789.00</td>
+                        <td class="height26 pad15 valignmiddle"><span class="strong" id="t49">Subtotal vivienda</span></td>
+                        <td class="color666 height26 alignRight valignmiddle">$ 4,456,789.00</td>
+                      </tr>
+
+                  </tbody>
+                </table>
+
+</div>
+<div class="float-left  padding-left20" style="width:220px !important;">
+  <h4 class="margin-bottom10 f14p" id="t50">&iquest;QU&Eacute; DESEAS HACER?</h4>
+    <div class="clear"></div> 
+    <div id="flechaLinksOpcoes" class="float-left height36 width-180" style="*height:30px !important; height:34px !important; width:210px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.afore_cuenta()" id="t51">Ver estado de cuenta y<br />movimientos</a>
+    </div>
+    <div class="clear"></div>
+    <div id="flechaLinksOpcoes" class="float-left height20 width-180" style="*height:14px !important; width:210px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.afore_cuenta_ahorro()" id="t52">Aportar voluntariamente</a>
+    </div>
+    <div class="clear"></div> 
+    <div id="flechaLinksOpcoes" class="float-left height20 width-180" style="*height:14px !important; width:210px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.afore_cuenta_retiros()" id="t53">Realizar un retiro</a>
+    </div>
+    <div class="clear"></div>
+    <div id="flechaLinksOpcoes" class="float-left height20 width-180" style="*height:14px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.afore_cuenta_domicilio()" id="t54">Actualizar domicilio</a>
+    </div>
+   
+   
+</div>
+
+<div class="clear"></div>
+
+</div>    
+  </div>           
+<!-- Script para tootltips-->
+
+
+
+<script type="text/javascript">
+
+var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('ACCOUNT DETAIL','See all accounts','Status:','Balance:','Cutoff date:','Account broken down','IMSS retirement:','Vol. contribution:','IMSS CV:','ACR:','IMSS CS:','ALP:','SAR 92 IMSS:','IMSS subtotal:','Contribution subtotal:','ISSSTE retirement:','INFONAVIT 92:','ISSSTE CV:','INFONAVIT 97:','ISSSTE CS:','FOVISSSTE 92:','SAR 92 ISSSTE:','FOVISSSTE 08:','Joint savings:','Pension bonus:','ISSSTE CV subtotal','Housing subtotal','WHAT DO YOU WISH TO DO?','See account statements<br>and transactions','Voluntary contributions','Make a withdrawal from your Afore','Update address of your Afore','The balances shown are only informative, this is not valid as an official or fiscal receipt.');
+				
+				$(document).ready(function(){
+					addTooltip();
+				});
+				
+	function posicionarTooltip(link, tooltip){
+		var posLink = link.offset();
+		//If tooltip's position is bigger than body's width
+		if(posLink.left + link.outerWidth() + tooltip.outerWidth() + 15 < $("body").outerWidth()){
+			tooltip.css({
+				'left': posLink.left + link.outerWidth() + 15,
+				'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+			});
+		}else{
+		tooltip.css({
+			'left': posLink.left - link.outerWidth() - 225,
+			'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+		})
+			.find(".tt_arrow")
+			.addClass("tt_arrow_right");
+		}
+	}
+
+	function addTooltip(){
+	
+		$('.tooltip').click(function(e){
+					
+			e.preventDefault();
+			
+			var tt_container = $('<div id="tt_container" class="medium"></div>'),
+			flecha = $('<div class="tt_arrow"></div>'),
+			actions = $('<div class="tt_actions"></div>'),
+			title_content = $(this).attr("title");
+					
+			//Si ya había un tooltip lo elimino
+			if($('body').find('#tt_container')){
+				$('#tt_container').remove(); 
+			}
+			
+			//Agrego la flechita
+			flecha.appendTo(tt_container);
+			//Agrego el boton de cerrar
+			$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container);
+			
+			//Agrego el texto indicativo
+			$('<p class="p_tooltip"></p>').appendTo(tt_container);
+
+			//Agrego el tooltip
+			tt_container.appendTo('body');
+			$('.p_tooltip').html(title_content);
+			
+			//Acomodo la fecha a la mitad del tooltip
+			flecha.css({
+				'top' : (tt_container.outerHeight() - flecha.outerHeight())/2
+			})
+			
+			posicionarTooltip($(this), tt_container);
+				
+			
+			
+			$('#tt_container .tt_cancel, #tt_container .tt_close, #tt_container .tt_continue').click(function(){
+				$('#tt_container').remove();
+			});
+			
+			
+		});
+	}
+
+			 
+			 
+        </script>
+        <script>
+	var valor2=0;
+	
+	function Cta3(){
+		
+			if(valor2==0)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==1)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Maestra.html'
+			}
+			if(valor2==2)
+			{
+			top.cargando_movimientos();
+			window.location.href='Tarjeta-de-Debito.html'
+			}
+			if(valor2==3)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==4)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta-de-Credito.html'
+			}
+			if(valor2==5)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta_premia.html'
+			}
+			if(valor2==6)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==7)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Credicheque.html'
+			}
+			if(valor2==8)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==9)
+			{
+			top.cargando_movimientos();	
+			window.location.href='39-AccountDetail_integral.html'
+			}
+			if(valor2==10)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_plazo_folio.html'
+			}
+			if(valor2==11)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_fondos.html'
+			}
+			if(valor2==12)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_multiseries.html'
+			}
+			if(valor2==13)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail.html'
+			}
+		}
+	</script>
+        
+</body>
+</html>

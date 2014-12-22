@@ -1,0 +1,147 @@
+<div class="modal height351" id="modal_error_inactividad">
+
+	<div class="top"></div>
+
+    <div class="content">
+
+    	<div class="padding30T15B0">
+
+            <div class="clear overflow">
+
+                <div class="close" onClick="cerrar_modal( 'modal_error_inactividad' )"></div>
+
+            </div>
+
+            <div class="titulo modaltitulo"><p id="m0">SESI&Oacute;N FINALIZADA POR INACTIVIDAD</p></div>
+
+            <div class="contenido">
+
+            	<div class="puntos">
+
+                    <div class="titulocontenido_ico">
+
+                        <p id="m1">&iquest;Qu&eacute; puedo hacer?</p>
+
+                    </div>
+
+                </div>
+
+                <div class="textocontenido">
+
+                    <p class="paddingT15" id="m2">Para ingresar de nuevo a <span class="bold">Banca</span>Net, ingresa tu número de cliente y clave de acceso y da clic en entrar.</p>
+
+
+
+                    <p class="paddingT18" id="m3">Si deseas comunícate a Servicio a Clientes al 1226 3990 (D.F. y Área Metropolitana) o al 01 800 110 3990 (Del interior de la República).</p>
+
+                </div>
+
+                <div class="paddingT10 puntos_foot clear overflow">
+
+                    <input type="button" id="btnContinuar" onclick="javascript:cerrar_modal( 'modal_error_inactividad' );" class="btn_az floatR" value="CONTINUAR" />
+
+                </div>
+
+            </div>
+
+            <div class="sello"><p>0000000000000001</p></div>
+
+        </div>
+
+        <div class="bottom_contenido">
+
+            <p class="titulo" id="m4">CONT&Aacute;CTANOS</p>
+
+            <div class="links">
+
+            	<a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" class="enviar" id="m5">MENSAJES</a> <span class="paddingL10">|</span> 
+
+                <a href="popup-a.html" class="llamar popup_" id="m6">LL&Aacute;MANOS</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="bottom"></div>
+
+</div>
+
+<script type="text/javascript">
+
+var esmod = new Array(
+
+		'SESSION TIMED OUT DUE TO INACTIVITY',
+
+		'What can I do?',
+
+		'To log into <span class="bold">Banca</span>Net, again enter your Customer number and access code and click enter',
+
+		'If you wish to contact Customer Service dial: 12263990 (From Mexico City and Metro Area) or 018001103990(Del from any other location nationwide)',
+
+		'CONTACT US',
+
+		'MESSAGES',
+
+		'CALL US'
+
+	);
+
+	$('.enviar').popupWindow({ 
+
+		height:500, 
+
+		width:760,
+
+		resizable:'yes',
+
+		scrollbars:'yes',
+
+		windowName:'popup',
+
+		centerBrowser:1 
+
+	}); 
+
+</script>
+
+<script type="text/javascript">
+
+            function swap(){
+
+	for (var i=0;i<esmod.length;i++){
+
+		$("[id=m"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = esmod[i];
+
+			else
+
+				this.innerHTML = esmod[i];});
+
+	}
+
+}
+
+            $(document).ready(function(){
+
+			    if(language == "eng")
+
+				{
+
+					swap();
+
+					$('#btnContinuar').val('CONTINUE');
+
+				}
+
+               
+
+                 setTimeout("$('.scroll_y').tinyscrollbar();grip_scroll();",1500);
+
+             });
+
+        </script>

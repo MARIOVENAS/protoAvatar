@@ -1,0 +1,246 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push(
+	'Enroll to Libra Plus',
+	
+	'Select a credit card to register it in the Libra Plus service and click "Continue".',
+	
+	'Select a card',
+	'Select a card.',
+	'Register this card in the Libra Plus Service',
+	'Check the box.',
+	'If you already have the Libra Plus service available in some of your Banamex cards, you are already protected.',
+	'CONTINUE',
+	'Cancel'
+	);
+    </script>
+    
+
+    <script type="text/javascript">
+	$(document).ready(function(){
+		setTimeout(function(){top.ajustarP();},800);
+		$('.errorB').css('display','none');
+		$('#tick_img_check2').css('display','none');
+		top.ayuda();
+	});
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+<div class="width691 floatL">
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t23">Inscripci&oacute;n a Libra Plus</h3>
+
+            </div>
+			
+            <div class="border-topSolid"></div>
+
+			<p class="instructions margin-botom0" id="t24"  style="margin-bottom:18px !important; *margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Selecciona una tarjeta de cr&eacute;dito para inscribirla al servicio de Libra Plus y da clic en "Continuar".</p>
+			
+           
+                         
+
+						<div class="width141 clear">
+							<div class="form-row margin-right0">
+
+                                <div class="floatLI height50 overflow" style="width:90px !important; padding:0px !important;" id="Horo">
+                                	<div class="tajOro displayNone floatLI" id="Oro"></div>
+                                </div>
+
+                                <div class="height30 floatLI">
+                                <select id="sol1" class="width-360" onChange="valor1=this.value;selector1();">
+									<option selected="selected" value="0" id="t25">&nbsp;&nbsp;Selecciona una tarjeta</option>
+									<option  value="1">&nbsp;&nbsp;Mi tarjeta - Tarj. Oro - MXN - 12680</option>
+								</select>
+                                </div>
+                                <div class="floatLI" style="margin-left:5px; *margin-left:10px;">
+                                
+                                <span class="errorB displayNone error-sel_comp display-inline2" id="Error1">
+                                    <span class="flecha2"></span>
+                                    <span class="content_big"  id="t26">Selecciona una tarjeta.</span>
+                                </span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+							<div id="step"> <!-- Step -->
+                            <div class="border-topSolid"></div>
+                            
+                            <div class="form-row margin-bottom18 overflow">
+                                <div class="clear paddingT2 overflow" style="padding-bottom:0px !important; *padding-bottom:13px; padding-bottom:13px\0/;">
+                                
+            					<div class="floatLI check_guardar">
+                                    <input type="checkbox" name="check1" id="check1" class="floatLI" onClick="quitaE2();">
+                                    <input type="checkbox" name="check2" id="check2" class="floatLI" onClick="quitaE2();">
+                                    <span class="errorB" id="Error2" style="left:25px ! important; position:absolute;">
+                                    <span class="flecha2"></span>
+                                    <span class="content_big"  id="t28">Debes seleccionar la casilla.</span>
+                                	</span>
+                                </div>
+                                <!--<div class="floatLI" style="margin-left:5px; *margin-left:10px; position:absolute; *position:absolute;" >
+                                </div>-->
+                                <div class="floatLI check_guardar">
+                                    <label id="t27" class="for-table floatLI width-260 paddingL10">
+                                    Inscribir &eacute;sta tarjeta al Servicio de Libra Plus
+                                    </label>
+                                </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="border-top"></div>
+                            
+                            <div class="form-row  margin-bottom18 paddingT2">
+                            	 <div class="overflow">
+                                <label id="t29" class="for-table ancho100p">Si ya tienes el servicio Libra Plus en alguna tarjeta Banamex, ya est&aacute;s protegido.</label>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+						</div><!-- Step -->
+                              
+
+                        </div><!-- Fin width141 -->
+
+						
+						<div id="btns"> <!-- Botones -->
+                        
+						<div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT0">
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton">
+                                	<a href="javascript:void(0);" onClick="javascript:validar();" id="t30">CONTINUAR</a>
+                                </li>	
+                                <li class="cN-primaryNav displayNi" id="cancelar">
+									<div id="flechaLinks">
+										<span class="flechaazul float-left"></span>
+										<a id="t31" href="javascript:borrar();" class="sinBold">Cancelar</a>
+									</div>
+								</li>
+
+							</ul>
+
+						 </div>	
+                         
+                         </div><!-- BTN -->
+
+						<div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript">
+	valor1 = 0;
+	function selector1(){
+		if (valor1==0){
+			$('#Oro').hide();
+			$('#Error1').hide();
+			$('#Error2').hide();
+			$('#sol1').removeClass('errorbg');
+			$("#sol2 option[value='0']").attr("selected",true);
+			$('#tick_img_check2').hide();
+			$('#tick_img_check1').show();
+		}else{
+			$('#Oro').show();
+			$('#Error1').hide();
+			$('#sol1').removeClass('errorbg');
+			$('#cancelar').removeClass('displayNi');
+		}
+	}
+	
+	
+	valor1 = 0;
+	function validar(){
+		if (valor1==0){
+			$('#Error1').show();
+			$('#sol1').addClass('errorbg');
+			}
+			else{
+				validar2();
+				}
+			
+	}
+	function validar2(){
+		if($("#check1").is(':checked') || $("#check2").is(':checked')){
+			
+			//Cambio de Page
+			top.cargaDocN('Libra_Plus/screen1_plusA.html');
+			
+		}else{
+			$('#tick_img_check1').hide();
+			$('#tick_img_check2').show();
+			$('#Error2').show();
+			}
+	}
+	
+	function quitaE2(){
+		$('#Error2').hide();
+		$('#cancelar').removeClass('displayNi');
+		/*$('#tick_img_check2').hide();
+		$('#tick_img_check1').show();
+		$("#tick_img_check1").trigger('click');
+		$("#check1").attr('checked',true);*/
+	}
+	
+	
+	
+	function borrar(){
+		valor1 = 0;
+		$('#Oro').hide();
+		$('#Error1').hide();
+		$('#Error2').hide();
+		$('#sol1').removeClass('errorbg');
+		$("#sol1 option[value='0']").attr("selected",true);
+		$('#tick_img_check2').hide();
+		$('#tick_img_check1').show();
+		$('#cancelar').addClass('displayNi');
+		borrar2();
+	}
+	
+	function borrar2(){
+		
+		if($("#check1").is(':checked')){
+			$("#tick_img_check1").trigger('click');
+			
+		}
+		else if($("#check2").is(':checked')){
+			$("#tick_img_check2").trigger('click');
+			
+			
+		}
+	}
+	
+	$("input[name='check1']").imageTick({ 
+      tick_image_path: "../../../../JFP/regional/images/check_1.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/no_check_1.png"
+    });
+	
+	$("input[name='check2']").imageTick({ 
+      tick_image_path: "../../../../JFP/regional/images/check_1.png", 
+      no_tick_image_path: "../../../../JFP/regional/images/disabled.png"
+    });
+	</script>
+</body>
+</html>

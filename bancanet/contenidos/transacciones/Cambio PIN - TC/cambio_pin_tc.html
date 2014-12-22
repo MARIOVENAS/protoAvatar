@@ -1,0 +1,1104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title></title>
+
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Banamex</title>
+
+	<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(
+
+	function(){		
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+		
+
+		$("a").each(function(){
+
+			if($(this).attr("href") == "#"){
+
+				$(this).attr("href","javascript:void(0)");
+
+			}
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+var es=new Array("Card","Present Card's PIN","New Card's PIN","Confirmation","Change of Card's PIN","Capture the information requested","Change of PIN", "Continue","PIN CREDIT OR DEBIT CARD CHANGE", "&nbsp;- Select an option -");
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function validaSegFactor1(data,eventOK) {
+
+    var dat=document.getElementsByName(data);
+
+	var sgf=document.getElementsByName('challenge');
+
+	dat[0].value=sgf[0].value;
+
+    if( dat[0].value=='' | /~CHR/.test(sgf[0].value) | /~PRO/.test(sgf[0].value) | /~ERROR/.test(sgf[0].value)){
+
+		if ( /~ERROR/.test(sgf[0].value)) {
+
+		    muestraModal();
+
+			document.getElementsByName('challenge')[0].value="";
+
+		} else
+
+			pm("CHECKSS");
+
+	}else{
+
+		if(dat[0].value=="NOTREQUIRED")
+
+			dat[0].value="";
+
+ 	}
+
+}
+
+function pm(event){
+
+		$("#ndw").attr("src", "challenge.htm");
+
+	if($("#tarjetasCombo").val() == "9"){
+
+		$("#nextpage").val("Cambio PIN - TC/resultado_cambio1_pin.html");
+
+	}else{
+
+		$("#nextpage").val("Cambio PIN - TC/resultado_cambio2_pin.html");
+
+	}
+
+	
+
+
+
+}
+
+function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected" ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "" ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"").val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([a-zA-Z]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"" ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[^@ ]+@([a-zA-Z]+)\.([a-zA-Z]{2,6})$/;
+
+  var valMail = $("#"+idCampo).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"").val().replace(/,/gi,"");
+
+  var regexImp = /^([1-9])([0-9]{0,10})((.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"").val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"" ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	var test = regexRFC.test( valRfc )
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"").val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"").val().replace(/,/gi,"") );
+
+  if( valIva >= valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+/////////////////////////////////////validaciones CHEQUERAS
+
+
+
+function personaFoM(idtxtbox){
+
+	if(tipo_persona=="001551" || tipo_persona=="001521"){
+
+		if($("#"+idtxtbox).val()>5)
+
+		return true;
+
+	else
+
+		return false;
+
+	}
+
+	else{
+
+		if($("#"+idtxtbox).val()>10)
+
+		return true;
+
+	else
+
+		return false;
+
+	}
+
+}
+
+
+
+function radbutton4(idbut1, idbut2, idbut3, idbut4){
+
+	if($("#"+idbut1).attr("checked")==false && $("#"+idbut2).attr("checked")==false && $("#"+idbut3).attr("checked")==false	&& $("#"+idbut4).attr("checked")==false)
+
+		return true;
+
+	else
+
+		return false;
+
+}
+
+
+
+function radbutton3(idcheck1,idcheck2,idcheck3){
+
+	if($("#"+idcheck1).attr("checked")==false && $("#"+idcheck2).attr("checked")==false && $("#"+idcheck3).attr("checked")==false)
+
+		return true;
+
+	else
+
+		return false;
+
+}
+
+
+
+function radbutton2(idcheck1,idcheck2){
+
+	if($("#"+idcheck1).attr("checked")==false && $("#"+idcheck2).attr("checked")==false)
+
+		return true;
+
+	else
+
+		return false;
+
+}
+
+
+
+function rango(idtxtbox1,idtxtbox2){
+
+	var a=$("#"+idtxtbox1).val();
+
+	var b=$("#"+idtxtbox2).val();
+
+	if(parseFloat(a) > parseFloat(b))
+
+		return true;
+
+	else
+
+		return false;
+
+}
+
+
+
+function validaChecks(){
+
+	var i;
+
+	var ne=0;
+
+	if(document.getElementsByName("checkbox").length=="1"){
+
+		if(document.getElementById("check"+document.forms[0].checkbox.value).checked){
+
+			var ne=1;
+
+		}
+
+	}
+
+	else{
+
+		for (i=0; i<document.getElementsByName("checkbox").length; i++){
+
+			if (document.getElementById("check"+document.forms[0].checkbox[i].value).checked){
+
+				var ne=1;
+
+				i=document.getElementsByName("checkbox").length;
+
+			}
+
+		}
+
+	}
+
+	if(ne==1)
+
+		return false;
+
+	else
+
+		return true;
+
+}
+
+
+
+///////////////////////////////////////Funciones generales!!!!!!!
+
+function showErrorChe( idElem, msgErr) {
+
+  hasError = true;
+
+  var $divErr = $('<div class="error_formulario"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'').after( $divErr );
+
+  window.parent.ajustar();
+
+}
+
+
+
+function hideErrorsChe(){
+
+	hasError = false;
+
+	$('div.error_formulario').remove();
+
+}
+
+
+
+//var ctasProp = true;
+
+var hasError = false;
+
+
+
+function validateForm1(){
+
+	hideErrorsChe();
+
+	if( comboVacio("comboCuentas") ) 
+
+		showErrorChe( "comboCuentas", msg1 );
+
+	if(radbutton4("ch1", "ch2", "ch3", "ch4"))
+
+		showErrorChe("err_radios",msg5);
+
+	if(document.getElementById("ch1").checked==true){
+
+		if(campoVacio("txtbox1")){
+
+			showErrorChe("err_txt1",msg11);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox1") || importeCero("txtbox1"))
+
+				showErrorChe("err_txt1",msg2);
+
+			if(personaFoM("txtbox1"))
+
+				showErrorChe("err_txt1",msg4);
+
+		}
+
+		if(document.getElementById("bloque1")){
+
+			if(radbutton3("op1","op2","op3"))
+
+				showErrorChe("tiposChequera1",msg5);
+
+		}
+
+	}
+
+	if(document.getElementById("ch3").checked==true){
+
+		if(campoVacio("txtbox2")){
+
+			showErrorChe("err_txt2",msg11);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox2") || importeCero("txtbox2"))
+
+				showErrorChe("err_txt2",msg2);
+
+			if(personaFoM("txtbox2"))
+
+				showErrorChe("err_txt2",msg4);
+
+		}
+
+		if(document.getElementById("bloque2")){
+
+			if(radbutton3("op4","op5","op6"))
+
+				showErrorChe("tiposChequera3",msg5);
+
+		}
+
+	}
+
+	if(document.getElementById("ch4").checked==true){
+
+		if(document.getElementById("bloque3")){
+
+			if(radbutton3("op7","op8","op9"))
+
+				showErrorChe("tiposChequera2",msg5);
+
+		}
+
+	}
+
+
+
+	if( !hasError ){
+
+		DoSubmit( 'VARIABLES' );
+
+	}
+
+	window.parent.ajustar();
+
+}
+
+
+
+function validateForm2(){
+
+	hideErrorsChe();
+
+	if( comboVacio( "comboCuentas2" ) ) 
+
+		showErrorChe( "comboCuentas2", msg3);
+
+	if(radbutton2("ch5", "ch6"))
+
+		showErrorChe("err_radios2",msg5);
+
+	if(document.getElementById("ch5").checked==true){
+
+		if(campoVacio("txtbox3")){
+
+			showErrorChe("err_txt3",msg6);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox3") || importeCero("txtbox3")){
+
+				showErrorChe("err_txt3",msg7);
+
+			}
+
+		}
+
+	}
+
+	if(document.getElementById("ch6").checked==true){
+
+		if(campoVacio("txtbox4") || campoVacio("txtbox5") ){
+
+			showErrorChe("err_txt4",msg8);
+
+		}
+
+		else{
+
+			if(campoNumerico("txtbox4") || importeCero("txtbox4") || campoNumerico("txtbox5")  || importeCero("txtbox5")){
+
+				showErrorChe("err_txt4",msg9);
+
+			}
+
+			else{
+
+				if(rango("txtbox4","txtbox5"))
+
+					showErrorChe("err_txt4",msg10);
+
+			}
+
+		}
+
+	}
+
+	if( !hasError ){
+
+		DoSubmit( 'MOD ESTATUS' );
+
+	}
+
+	window.parent.ajustar();
+
+}
+
+
+
+function validateForm3(){
+
+	hideErrorsChe();
+
+	if(validaChecks()){
+
+		showErrorChe("tablas",msg12);
+
+	}
+
+	if(comboVacio("estatus"))
+
+		showErrorChe("opciones",msg13);
+
+	if(document.getElementById("estatus").value=="Liberado con importe"){
+
+		if(campoVacio("txtimporte") || importeCero("txtimporte")){
+
+			showErrorChe("ff",msg15);
+
+		}
+
+		else{	
+
+			if(importeValido("txtimporte")){}
+
+			else{showErrorChe("ff",msg15);}
+
+		}
+
+	}
+
+}
+
+function validateForm4(){
+
+	hideErrorsChe();
+
+	if(comboVacio( "comboCuentas3" ) ) 
+
+		showErrorChe( "leyen_err3", msg1);
+
+	if(!hasError){
+
+		DoSubmit("PROTEGIDA");
+
+	}
+
+}
+
+
+
+
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+$(document).ready(function(){optieneAlturas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);
+
+setTimeout('window.parent.ajustarIframe()', 1000);});
+
+
+
+function DoSubmit( value ){
+
+	document.forms[0].EWFBUTTON.value = value;
+
+	document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+	document.forms[0].submit();
+
+}
+
+
+
+function verificados(){
+
+var msg1 = (language != "eng" ) ? "Seleccione al menos una Cuenta." : "Choose at least onte account.";
+
+var msg2 = (language != "eng" ) ? "Asegurese de completar todos los campos" : "Be sure to complete all the fields and the must be numerics.";;
+
+var msg3 = (language != "eng" ) ? "El valor ingresado debe de ser num&eacute;rico. Por favor verifique" : "The entered field must be numeric. Please verify";
+
+var msg4 = (language != "eng" ) ? "El nuevo PIN que ingres&oacute; es igual a su antiguo PIN." : "The new PIN you entered is equal to your old PIN.";
+
+var msg5 = (language != "eng" ) ? "El nuevo n&uacute;mero secreto y la confirmaci&oacute;n deben ser iguales." : "The New PIN and the Confirmation must be equals.";
+
+
+
+	hideErrorsChe();
+
+	if( comboVacio( "tarjetasCombo" )){	
+
+		showErrorChe( "cuenta", msg1 );
+
+		return;
+
+	}
+
+	if(campoVacio("txtbox1") || campoVacio("txtbox2") || campoVacio("txtbox3")){
+
+		showErrorChe("box3",msg2);
+
+		return;
+
+	}
+
+	if(!hasError){
+
+		if(nip("txtbox1"))
+
+			showErrorChe("box1",msg3);
+
+		if(nip("txtbox2"))
+
+			showErrorChe("box2",msg3);
+
+		if(nip("txtbox3"))
+
+			showErrorChe("box3",msg3);
+
+	}
+
+	if(!hasError){
+
+		if(document.getElementById("txtbox1").value==document.getElementById("txtbox2").value)
+
+			showErrorChe("box2",msg4);
+
+		if(document.getElementById("txtbox2").value != document.getElementById("txtbox3").value)
+
+			showErrorChe("box3",msg5);
+
+	}
+
+	if(!hasError){
+
+		validaSegFactor1("DATA15","OK");
+
+	}
+
+}
+
+
+
+function nip( txtImp) {
+
+  var valImp = $( "#"+txtImp+"").val();
+
+  var regexImp = /^([0-9]+)$/;
+
+  if( regexImp.test( valImp ) ) 
+
+	{return false;} 
+
+	else{return true;}
+
+}
+
+function muestraModal() {
+
+    $('#mensajeError_contenido_div', window.parent.document).html( $('#idErr').html() );
+
+	parent.$.modal({ opacity:60, overlayClose:false, flagDiv:true, widthDivIfrm:670 });
+
+  }
+
+</script>
+
+<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Causa:&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Sorry, the transaction could not be completed</div>
+
+	  <div class="saldos_btn2" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Cause:&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">What can I do?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+	  You can contact the customer service
+
+	  at 1226 3990 (D.F. and Metropolitan area) or<br/>
+
+	  01 800 110 3990 (rest of the Republic).<br/>
+
+	  It is important to have the following code at hand:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continue" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<script>parent.setFecha("09/04/12    12:38:11  ");</script>
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="123804  ";b$Cont="123811  ";
+
+
+
+//if(a$Cont==b$Cont)parent.scd();</script>
+
+</head>
+
+<body>
+
+<div id="t8" class="float-left fonttit">CAMBIO DE PIN DE TARJETA DE CR&Eacute;DITO O D&Eacute;BITO</div>
+
+   	<div id="t4" class="panelIzEnca3_text2">Cambio de PIN de Tarjetas</div>
+
+    <div id="t5" class="color666 paddingT5 f11">Captura la informaci&oacute;n solicitada</div>
+
+    <div class="saldos_bloque3_2">
+
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+            <tr>
+
+                <td class="borderRDotted ancho25p padding20152015" valign="top"><span id="t6" class="f12">Cambio de PIN</span></td>
+
+                <td valign="top" class="padding20152015">
+
+                    <div id="t0" class="negrita color333 f11 paddingB5">Tarjeta</div>
+
+                    <select id="tarjetasCombo" name="DATA1" >							
+
+						<option id="t9" VALUE='PS'>&nbsp;&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>	
+
+						<option VALUE='9'>Tarjeta Cr&eacute;dito&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**  796&nbsp;&nbsp;-&nbsp;&nbsp;Tarjeta Cr&eacute;dito</option>
+
+						<option VALUE='18'>Tarj Premia Pre&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;**793&nbsp;&nbsp;-&nbsp;&nbsp;Tarj Premia Pre</option>
+
+					</select><div id="cuenta"></div>
+
+					<div id="t1" class="negrita color333 marginT20 f11 paddingB5">No. de PIN de Tarjeta Actual</div>
+
+                    <input id="txtbox1" type="password" class="input ancho190" size="10" 	maxlength="4" AUTOCOMPLETE="off" name="DATA2"/><div id="box1"></div>
+
+                    <div id="t2" class="negrita color333 marginT20 f11 paddingB5">Nuevo No. de PIN de Tarjeta</div>
+
+                    <input id="txtbox2" type="password" class="input ancho190" size="10" maxlength="4" AUTOCOMPLETE="off" name="DATA3"/><div id="box2"></div>
+
+                    <div id="t3" class="negrita color333 marginT20 f11 paddingB5">Confirmaci&oacute;n</div>
+
+                    <input id="txtbox3" type="password" class="input ancho190" size="10" maxlength="4" AUTOCOMPLETE="off" name="DATA4"/><div id="box3"></div>
+
+                </td>
+
+            </tr>
+
+        </table>       	
+
+    </div>
+
+    <div class="marginT20 overflow">
+
+        <input id="t7" type="button" class="btnAZ86 floatR" value="Continuar" onclick="verificados()"/>
+
+    </div>
+
+	<iframe id="ndw" src="../../spanishdir/if.htm" frameborder="0" allowtransparency="true" style="display:none;top:10;left:60;z-Index=1018;position:absolute;"></iframe>
+
+	<script>
+
+		if(navigator.userAgent.indexOf('Mobile')>0){
+
+			document.write('<iframe id="chr_mobile" src="" style="display:none;position:relative; margin-left:100px" width="500" height="300" frameborder="1"></iframe>');
+
+		}
+
+	</script>	
+
+	<input type="hidden" name="DATA15" value="" /> 
+
+	<input type="hidden" name="challenge" value="" /> 
+
+	<input type="hidden" id="cr" value="challenge" />
+
+	<input type="hidden" id="but" value="t19" />
+
+
+
+</body>
+
+
+
+	<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+	<input type=hidden name="DATA1" value="">
+
+	<input type=hidden name="DATA2" value="">
+
+	<input type=hidden name="DATA3" value="">
+
+	<input type=hidden name="DATA4" value="">
+
+    <input id="nextpage" type="hidden" value=""/>
+
+</html>
+
+
+
+
+
+
+

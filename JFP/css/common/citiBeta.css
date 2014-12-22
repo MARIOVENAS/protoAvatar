@@ -1,0 +1,1333 @@
+/*From citiInteraction.css*/
+
+ul.appNav a, ul.appNav p {
+
+		margin: 2px 6px 2px 0;
+
+		padding-left: 10px;    /* Ui Fix */
+
+		padding-right: 10px;   /* Ui Fix */
+
+		padding-top: 1px;     /* Ui Fix */
+
+		padding-bottom: 2px;  /* Ui Fix */
+
+		text-decoration:none;
+
+		font-weight:bold;
+
+}
+
+
+
+ul.appNav, ul#appNav {
+
+	list-style: none outside none;
+
+	margin: 5px 0;
+
+	padding: 10px 0;
+
+}
+
+
+
+ul.appNav li {
+
+	font-size:1px;
+
+	margin:0;
+
+	padding:3px 0;
+
+	text-align: left;
+
+	vertical-align: bottom;
+
+	white-space: nowrap;
+
+	display: inline;
+
+}
+
+
+
+li.appNavPos a {
+
+	
+
+}
+
+
+
+/* Secondary button  */
+
+li.appNavNeg span { 
+
+	padding: 3px 4px;
+
+	margin:4px 0px 0px 0px ;
+
+	float:left;
+
+	display:inline-block;
+
+}
+
+
+
+html.vIE6 li.appNavNeg span { 
+
+	margin:6px 0px 0px 0px ;
+
+}
+
+
+
+html.vIE7 li.appNavNeg span { 
+
+	margin:6px 0px 0px 0px ;
+
+}
+
+
+
+ul li.appNavNeg a {
+
+	padding:0;
+
+}
+
+
+
+/* Side by side navigations buttons */
+
+
+
+.appNavFloat {
+
+	float:left;
+
+	margin-right: 20px;
+
+}
+
+
+
+
+
+/* 3.2 text links - This section is used for all text based links */
+
+a.interActLink{
+
+	border-bottom: 1px solid #000;
+
+	text-decoration:none;
+
+}
+
+
+
+a:hover.interActLink {
+
+	color: #05589D;
+
+	border-bottom: 1px solid #05589D;
+
+}
+
+
+
+a.interActLinkDotted, li.interActLinkDotted, span.interActLinkDotted {
+
+	border-bottom: 1px dotted #333333;
+
+	text-decoration:none;
+
+}
+
+
+
+a:hover.interActLinkDotted, .interActLinkDotted:hover {
+
+	border-bottom: 1px dotted #3399CC;
+
+	text-decoration:none;
+
+}
+
+
+
+a.interActDottedBorderTop, li.interActDottedBorderTop, span.interActDottedBorderTop, div.interActDottedBorderTop {
+
+	border-top: 1px dotted #333;
+
+	text-decoration: none;
+
+}
+
+
+
+a.interActLinkBlueTxt {
+
+	text-decoration:none;
+
+}
+
+
+
+
+
+/* 3.3 misc. additons - This section is used for misc styles such as borders, box shadows, html rule dividers, etc. */
+
+.interActGrayBdr {
+
+	border: 1px solid #CCC;
+
+}
+
+
+
+hr.appTickRuler {
+
+	background-color: #DDD;
+
+	border:medium none;
+
+	color: #DDD;
+
+	height:2px;
+
+}
+
+
+
+.interActDividerBlk {
+
+	border-right: 1px solid #000;
+
+	padding: 0 10px 0 0;
+
+}
+
+
+
+/* Styles for dashboard hover bubbles */
+
+.interActBublHead {
+
+	font-weight:bold;
+
+	padding: 0px 10px 5px;
+
+}
+
+
+
+.interActBublMain {
+
+	padding: 0px 10px 10px;
+
+}
+
+
+
+/* stand alone display none class */
+
+.appShowNone {
+
+	display:none;
+
+}
+
+
+
+/* stand alone display block class */
+
+.appShow {
+
+	display:block;
+
+}
+
+
+
+/* 3.4 ICONS - This section calls the icons sprite and gives each one positioning, height and width, along with hover; if applicable. */
+
+
+
+/* Commented out, and added to citiClolor.css for the global sprite */
+
+/*.interactIconSprite, li.appNavNeg span {
+
+	background-image:url('/JFP/images/citiIcons.gif');
+
+	background-repeat:no-repeat;
+
+}*/
+
+
+
+.interactSnapShot {
+
+	background-position: -1px -224px;
+
+}
+
+
+
+.interactSnapShot:hover {
+
+	background-position: -1px -235px;
+
+}
+
+
+
+.interactMyProfile {
+
+	background-position: -0px -0px;
+
+}
+
+
+
+.interactMyProfile:hover {
+
+	background-position: -0px -11px;
+
+}
+
+
+
+.interactSignOff {
+
+	background-position: -0px -24px;
+
+}
+
+
+
+.interactSignOff:hover {
+
+	background-position: -0px -37px;
+
+}
+
+
+
+.interactViewBill {
+
+	background-position: -0px -72px;
+
+}
+
+
+
+.interactButtonCarat, li.appNavNeg span {
+
+	background-position: -8px -398px;
+
+	display: inline-block;
+
+        width: 6px;
+
+        height: 8px;
+
+        #height: 9px;
+
+        height: 6\9px;
+
+}
+
+
+
+.interactCloseButton {
+
+	background-position: -0px -91px;
+
+
+
+}
+
+
+
+.interactCloseButton:hover {
+
+	background-position: -0px -108px;
+
+}
+
+/* End Icons section */
+
+
+
+
+
+/* 3.5 Mobile legacy - This section is reserved for legacy mobile styles */
+
+
+
+/* End Mobile Legacy */
+
+
+
+/* CONTACT US OVERLAY FOOTER LINKS */
+
+
+
+a#cmlink_LiveChatLink:hover, a#cmlink_SendMessageLink:hover, a#cmlink_CallUsLink:hover { color: #05589D; }
+
+
+
+/* END: CONTACT US OVERLAY FOOTER LINKS */
+
+
+
+/* End Interaction section */
+
+
+
+
+
+/*From citiTypography.css*/
+
+body {
+
+	font-family:Arial, Verdana, sans-serif !important; 
+
+	font-weight:normal;
+
+}
+
+
+
+/* End Font Family */
+
+
+
+/* 1.2 Font size - all font sizes reside with in this section  */
+
+
+
+/* Body tag is the base font size, all other sizes will overide. Note: moved to US citiLayout.css */
+
+/*body {
+
+	font-size:11px; 
+
+}*/
+
+/* Font size used for disclaimer text */
+
+.fontSize8px, .disclaimerBodyFntSize {
+
+	font-size:8px;
+
+}
+
+
+
+/* Font size used for all inline links  */
+
+.inlineLinkTxtFntSize {
+
+	font-size:9px;
+
+}
+
+
+
+/* Font size used for secondary buttons and optional for top nav branding. Current top nav font size is coming from branding_dashboard.css */
+
+.fontSize10px, ul li.appNavNeg a, .topBarNavFntSize {
+
+	font-size:10px;
+
+}
+
+
+
+/* Font size used for primary buttons, application form feild labels, and optional for base body copy font size. Current base body copy font size is used in the body element */
+
+.fontSize11px, li.appNavPos a, .appLabel, .appLabelAlt, .secondaryBodyFntSize {
+
+	font-size:11px;
+
+}
+
+
+
+/* Font size used for table headers, optional for welcome branding font size, main navigation font size, and footer disclaimer body text. */
+
+.fontSize12px, .tableHeaderFntSize, .welcomeTxtFntSize, .mainNavTxtSize, .disclaimerBodyFntSizeLrg, .baseBodyFntSize {
+
+	font-size:12px;
+
+}
+
+
+
+/* Font size used for dashboard panel titles  */
+
+.fontSize13px, .tertiaryHeaderFntSize  {
+
+	font-size:13px;
+
+}
+
+
+
+/* not currently used.*/
+
+.fontSize14px {
+
+	font-size:14px;
+
+}
+
+
+
+/* Font size used for larger font sized table headers */
+
+.fontSize15px, .secondaryHeaderFntSize  {
+
+	font-size:15px;
+
+}
+
+
+
+/* Font size used for form headers */
+
+.formHeaderFntSize {
+
+	font-size:17px;
+
+}
+
+
+
+/* Font size used for overlays titles and other panel titles */
+
+.fontSize20px, .primaryHeaderFntSize {
+
+	font-size:20px;
+
+}
+
+
+
+/* End font size */
+
+
+
+/* End Typography section */
+
+
+
+/*From citiColor.css*/
+
+/* The default background color for the components would be white. */
+
+body {
+
+	background-color:#fff;
+
+}
+
+
+
+/* 1. Text color section - these styles apply to all text colors */
+
+
+
+
+
+/* Base text color will be black. All other colors will override the base. */
+
+
+
+body {
+
+	color:#000;
+
+}
+
+
+
+.colorTextBlack, .baseBodyColorTxt {
+
+	color:#000;
+
+}
+
+.colorTextLightGray {
+
+	color:#999;
+
+}
+
+
+
+.colorTextGray {
+
+	color:#666;
+
+}
+
+
+
+.colorTextDarkGray {
+
+	color:#333;
+
+}
+
+
+
+.colorTextWhite, .secondaryNavText {
+
+	color:#FFF;
+
+}
+
+
+
+.colorTextBlue, a:hover.interActLinkBlueTxt, .primaryAmtColorTxt{
+
+	color:#05589D;
+
+}
+
+
+
+.colorTextRed, .colorTextErr {
+
+	color:#FF0000;
+
+}
+
+
+
+.primaryOnHoverColorTxt {
+
+	color: #3399CC;
+
+}
+
+
+
+
+
+/* 2. Solid background colors - these styles are used for a solid color backgrounds */
+
+
+
+div table td tr ul li.colorNavBlueD, .primaryColorBack {
+
+	background-color: #05589D;
+
+}
+
+
+
+/* could be removed in place of using border bottom style. */
+
+div table td tr ul li.colorNavBlueL, .secondaryColorBack { 
+
+	background-color: #3399CC;
+
+}
+
+
+
+div table td tr ul li.colorBGGray, .tertiaryColorBack {
+
+	background-color: #E2E2E2;
+
+}
+
+
+
+/* End solid baground colors */
+
+
+
+
+
+/* 3. Image sprite section - applies to all gradients for buttons, navigation, alerts, etc.*/
+
+
+
+/* Global Sprites */
+
+
+
+/* required style class to call the global sprite. */
+
+.citiGlobalImgSprite, .interactOverlaySprite{
+
+background-image:url('/JFP/images/glbl_sprite.png') !important;
+
+background-repeat:repeat;
+
+}
+
+
+
+/* End global Sprites */
+
+
+
+/* repeat sprite for gradient background images */
+
+.colorGradientSprite, .interactIconSprite, li.appNavNeg span {
+
+	background-image:url('/JFP/images/glbl_sprite.png');
+
+	background-repeat:repeat-x;
+
+}
+
+
+
+/* used for all button styles */
+
+.colorBGBlueButton {
+
+	background-position: -0px -74px;
+
+}
+
+
+
+.colorBGBlueButton:hover {
+
+	background-position: 0 -95px;
+
+}
+
+
+
+/* Below style is not used */
+
+
+
+/*.colorBGPrimaryButton {
+
+	background-position: -0px -95px;
+
+}*/
+
+
+
+.colorBGSecondaryButton {
+
+	background-position: -0px -116px;
+
+}
+
+
+
+/* Used to call the red alert icon */
+
+.colorErrExclmIcn {
+
+     	background-position: -1px -210px;           
+
+}
+
+
+
+
+
+/* STYLES - NOT USED replaced by branding.css */
+
+
+
+/* Used for main navigation background */
+
+.colorBGBlueNav{
+
+	background-position: -0px -30px;
+
+}
+
+
+
+/* Used for alerts icon background */
+
+.colorBGRedAlert{
+
+	background-position: -1px -247px;
+
+	height: 10px;
+
+	width: 11px;
+
+	display: inline-block;
+
+}
+
+
+
+/* Used for top navigation bar background */
+
+.colorBGBlackNav{
+
+	background-position: -0px -90px;
+
+}
+
+
+
+/* Used for message center alerts background */
+
+.colorBGMessageAlert{
+
+	background-position: -1px -258px;
+
+	height: 10px;
+
+	width: 11px;
+
+	display: inline-block;
+
+}
+
+
+
+.interactCardStar{
+
+	background-position: -1px -269px;
+
+	display: inline-block;
+
+    height: 12px;
+
+    width: 13px;
+
+}
+
+/* END: STYLES - NOT USED */
+
+
+
+
+
+
+
+
+
+/* End Background gradients section */
+
+
+
+
+
+/* Start override for widget styles - background for the drop down widget */
+
+
+
+/* Removed for the highlight issue */
+
+
+
+/*
+
+
+
+.ui-selectmenu-menu.jfpw-select li, .ui-selectmenu-menu.jfpw-select li a, .ui-selectmenu-status {
+
+
+
+background-color: #FFFFFF !important;
+
+
+
+}
+
+
+
+*/
+
+
+
+/* End override for widget styles */
+
+
+
+/* calls the blue alert icon */
+
+.interactAlertExclmIcon{
+
+	background-position: -1px -1px;
+
+	height: 12px;
+
+	width: 12px;
+
+	padding-right:5px;
+
+	display:inline-block;
+
+
+
+}
+
+
+
+.interactLargeBlueError{
+
+	background-position: -1px -526px;
+
+	display: inline-block;
+
+	width: 17px;
+
+	height: 18px;
+
+}
+
+
+
+
+
+
+
+/* 4. The Styles below refer to the footer part of the Account Snapshot, Bill Pay And Transfers Overlay. This will be the common element across these overlays */
+
+
+
+
+
+
+
+/* Image Sprites */
+
+
+
+/* Global style to call the striped backgoround overlay image */
+
+.colorOverlayBackground{
+
+            background-image:url('/JFP/images/overlay_stripe_bg.png') !important;
+
+            background-repeat:repeat;
+
+            background-color: #F7F7F7
+
+}
+
+
+
+
+
+/* Commented out due to repeat usage, style name was bolted on to .citiGlobalImagSprite to not redo jsp's 
+
+.interactOverlaySprite {
+
+            background-image:url('/JFP/images/glbl_sprite.png');
+
+            background-repeat:no-repeat;
+
+}*/
+
+
+
+
+
+
+
+/* Calls the chat icon  */
+
+.interactLiveChatOn{
+
+         background-position: -1px -304px;
+
+            display: inline-block;
+
+   			height: 15px;
+
+}
+
+
+
+/* Calls the send message icon */
+
+.interactSendMessage{
+
+            background-position: -1px -282px;
+
+                display: inline-block;
+
+    height: 10px;
+
+}
+
+
+
+/* Calls the call us icon  */
+
+.interactCallUs{
+
+            background-position: -1px -335px;
+
+    display: inline-block;
+
+    height: 14px;
+
+}
+
+
+
+/* on hover state for live chat icon */
+
+.interactLiveChatOn:hover{
+
+            background-position: -1px -320px;
+
+}
+
+
+
+/* on hover state for send message icon */
+
+.interactSendMessage:hover{
+
+            background-position: -1px -293px;
+
+}
+
+
+
+/* on hover state for call us icon */
+
+.interactCallUs:hover{
+
+            background-position: -1px -350px;
+
+}
+
+
+
+/* displays minimize button*/
+
+.interactMinimizeButton{
+
+            background-position: -1px -411px;
+
+        	height: 15px;
+
+        	width: 15px;
+
+        	display: inline-block;
+
+}
+
+
+
+/* displays maximize button*/
+
+.interactMaximizeButton{
+
+            background-position: -1px -427px;
+
+			height: 15px;
+
+      		width: 15px;
+
+      		display: inline-block;
+
+}
+
+
+
+/* minimize hover state*/
+
+.interactMinimizeButton:hover{
+
+      background-position: -1px -443px;
+
+      height: 15px;
+
+      width: 15px;
+
+      display: inline-block;
+
+}
+
+
+
+/* maximize hover state*/
+
+.interactMaximizeButton:hover{
+
+      background-position: -1px -459px;
+
+      height: 15px;
+
+      width: 15px;
+
+        display: inline-block;
+
+}
+
+
+
+/* style to show disabled maximize button */
+
+.interactMaximizeButtonDisabled {
+
+ background-position: -1px -459px;
+
+ height: 15px;
+
+ width: 15px;
+
+ display: inline-block;
+
+} 
+
+
+
+/* style to show disabled mminimize button */
+
+.interactMinimizeButtonDisabled {
+
+ background-position: -1px -443px;
+
+ height: 15px;
+
+ width: 15px;
+
+ display: inline-block;
+
+}
+
+
+
+/* displays the ebill eligible icon */
+
+.interactEligible{
+
+        background-position: -1px -14px;
+
+        height: 16px;
+
+        width: 14px;
+
+        display: inline-block;
+
+}
+
+
+
+/* displays the ebill view ebill icon */
+
+.interactViewEbill{
+
+        background-position: -1px -31px;
+
+        height: 15px;
+
+        width: 14px;
+
+        display: inline-block;
+
+}
+
+
+
+/* displays the ebill enrolled icon */
+
+.interactEnrolled{
+
+        background-position: -1px -47px;
+
+        height: 14px;
+
+        width: 14px;
+
+        display: inline-block;
+
+}
+
+
+
+/* displays the sheild icon */
+
+
+
+.interactShield{
+
+        background-position: -1px -62px;
+
+        height: 11px;
+
+        width: 12px;
+
+        display: inline-block;
+
+}
+
+
+
+/* displays the table heading gradient */
+
+.colorHeadingGradient{
+
+        background-position: -0px -74px;
+
+        background-repeat: repeat-x;
+
+        height: 13px;
+
+}
+
+
+
+
+
+/* displays the recuring icon */
+
+
+
+.interactRecurring{
+
+      background-position: -1px -475px;
+
+      height: 12px;
+
+        width: 10px;
+
+        display: inline-block;
+
+}
+
+
+
+/* Display left arrow for payments and transfer; can be re-used. */
+
+.structLinkleftArrow {  
+
+    background-position: -8px -398px; 
+
+    display: inline-block; 
+
+    height: 8px;                
+
+    padding-left: 7px;      
+
+} 
+
+
+
+
+
+/* Styles for the left column shadow sprite. */
+
+
+
+/* calls the left column shadow sprite image */
+
+.interactDividerSprite{
+
+        background-image:url('/JFP/images/left_column_shdw_sprite.png');
+
+        background-repeat:repeat-y;
+
+}
+
+
+
+
+
+/* displays top shadow. This is used incase of stretching of the page */
+
+.interactTopShadow{
+
+        background-position: -1px 0px;
+
+        height: 400px;
+
+        width: 11px;
+
+        display: inline-block;
+
+}
+
+
+
+/* displays the bottom part of the shadow. This is static */
+
+.interactBottomShadow{
+
+        background-position: -13px 0px;
+
+        height: 400px;
+
+        width: 11px;
+
+        display: inline-block;
+
+}
+
+
+
+/* Displays revised question mark icon */
+
+
+
+.interactInfoBubbleIcon 
+
+{ 
+
+background-position: -1px -304px; 
+
+display: inline-block; 
+
+height: 16px; 
+
+width: 13px; 
+
+} 
+
+
+
+.interactInfoBubbleIcon:hover 
+
+{ 
+
+background-position: -1px -320px; 
+
+display: inline-block; 
+
+height: 16px; 
+
+width: 13px; 
+
+} 
+
+
+
+/* Style Being added for Green Check Mark */
+
+
+
+.interactCheckIcon {
+
+	background-position: -1px -545px;
+
+	display: inline-block;
+
+    width: 13px;
+
+    height: 12px;
+
+}
+
+
+
+/* End Citi Color */

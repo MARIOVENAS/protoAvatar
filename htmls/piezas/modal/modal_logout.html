@@ -1,0 +1,213 @@
+<div class="modal" id="modal_logout">
+
+        	<div class="top"></div>
+
+            <div class="content">
+
+            	<div class="padding30T15B0">
+
+                    <div class="clear overflow">
+
+                        <div class="close" onClick="cerrar_modal( 'modal_logout' )"></div>
+
+                    </div>
+
+                    <br />
+
+                    <br />
+
+                    <div class="titulo modaltitulo float-left margin-topm16"><p class="modaltitulo " id="m0">SESI&Oacute;N FINALIZADA</p></div>
+
+                    <div class="contenido paddingT0">
+
+                    	<div class="scroll_y height228b">
+
+                        	<div class="scrollbar left18"><div class="track"><div class="thumb"><div class="end"></div><div class="grip"></div></div></div></div>
+
+                            <div class="viewport height228b">
+
+                                <div class="overview ">
+
+                                
+
+                                    <div class="overflow paddingT30 noborder">
+
+                                    	<div class="puntos">
+
+                                            <div class="titulocontenido">
+
+                                                <p id="m1">Mensaje:</p>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="textocontenido noborder">
+
+                                           <p class="paddingT15">
+
+											<span id="m2">¡Queremos saber tu opini&oacute;n!</span><br />
+
+                                            <span id="m3">Ay&uacute;danos contestando las siguientes preguntas:</span>&nbsp;
+
+											<a id="m4" href="javascript:void(0);">Haz clic aqu&iacute;</a>
+
+										   </p>
+
+                                            <p class="paddingT18">
+
+												<span id="m5">Recuerda</span><br />
+
+												<span id="m6">Banamex NUNCA te solicitar&aacute; informaci&oacute;n espec&iacute;fica de tus cuentas Bancarias o Claves de acceso, v&iacute;a correo electr&oacute;nico ni por p&aacute;ginas electr&oacute;nicas referenciadas desde un correo electr&oacute;nico.</span>
+
+											</p>
+
+                                            <p id="m7" class="paddingT15">Si deseas cominicarte a Servicio a Clientes:</p>
+
+                                            <div class="paddingL10 ">
+
+                                                <p class="paddingT15">&bull; <span id="m8">De la ciudad de M&eacute;xico:</span> 1226 3990</p>
+
+                                                <p class="paddingT10">&bull; <span id="m9">Del interior sin costo:</span> 01800 110 3990</p>
+
+                                            </div>
+
+                                            
+
+                                        </div>
+
+                                    </div>
+
+                            	</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="paddingT10 puntos_foot clear overflow">
+
+    <input type="button" id="btnContinuar" onClick="javascript:cerrar_modal( 'modal_logout' );" class="btn_az floatR" value="CONTINUAR" />
+
+                        </div>
+
+                    </div>
+
+                    <div class="sello"><p>0000000000000001</p></div>
+
+                </div>
+
+                <div class="bottom_contenido">
+
+                    <p class="titulo" id="m11">CONT&Aacute;CTANOS</p>
+
+                    <div class="links">
+
+                    	<a href="#" class="enviar" id="m12">MENSAJES</a> <span class="paddingL10">|</span> 
+
+                        <a href="#" class="llamar" id="m13">LL&Aacute;MANOS</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="bottom"></div>
+
+        </div>
+
+
+
+
+
+<script type="text/javascript">
+
+    var esmod = new Array(
+
+		'SESSION FINALIZED',
+
+		'Message',
+
+		'We want to hear your opinion!',
+
+		'Help us by answering the following questions',
+
+		'Click here',
+
+		'Remember',
+
+		'Banamex will NEVER request any especific information about your bank card or access codes, via e-mail, neither using electronic pages with links or referenced from an e-mail',
+
+		'If you wish to contact Customer Service',
+
+		'From Mexico City please dial:',
+
+		'From any other location nationwide please dial:',
+
+		'Continue',
+
+		'CONTACT US',
+
+		'MESSAGES',
+
+		'CALL US'
+
+	);
+
+	$('.enviar').popupWindow({ 
+
+		height:500, 
+
+		width:760,
+
+		resizable:'yes',
+
+		scrollbars:'yes',
+
+		windowName:'popup',
+
+		centerBrowser:1 
+
+	}); 
+
+</script>
+
+<script type="text/javascript">
+
+            function swap(){
+
+	for (var i=0;i<esmod.length;i++){
+
+		$("[id=m"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = esmod[i];
+
+			else
+
+				this.innerHTML = esmod[i];});
+
+	}
+
+}
+
+            $(document).ready(function(){
+
+			    if(language == "eng")
+
+				{
+
+					swap();
+
+					$('#btnContinuar').val('CONTINUE');
+
+				}
+
+               
+
+                 setTimeout("$('.scroll_y').tinyscrollbar();grip_scroll();",1500);
+
+             });
+
+        </script>

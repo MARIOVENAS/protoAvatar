@@ -1,0 +1,795 @@
+
+
+    
+
+    <div class="ancho100p floatRI">
+
+    <div class="floatRI"><div class="minus">&nbsp;</div>Contraer todo</div>
+
+    <div class="floatRI width10">&nbsp;</div>
+
+    <div class="floatRI"><div class="plus">&nbsp;</div>Expandir todo</div>
+
+    </div>
+
+    
+
+   <div class="cH-appPanelHead">
+
+   <h4>B&Uacute;SQUEDA ESPEC&Iacute;FICA</h4>
+
+   </div>
+
+   
+
+      <div class="width640 height300">     
+
+	<div class="float-left width132">
+
+        <div class="form-row">
+
+		
+
+        <label class="for-table">Buscar:</label>
+
+    	<select class="width136">
+
+		<option selected="selected">Por rango de d&iacute;as</option>							
+
+		</select>
+
+		<div class="clear"></div>
+
+	</div>
+
+
+
+
+
+
+
+    <div class="form-row">
+
+    <label class="for-table4">Fecha:</label>
+
+       <label class="float-left margin-right5"> De:</label>
+
+        <input class="width70 float-left" id="fechaFut" value="12 Jul 2012"/>
+
+     
+
+    <div class="icon-calendar float-left margin-left10 margin-top2"></div>
+
+    <label class="float-left margin-right5 margin-left20"> Al:</label>
+
+    <input class="width70 float-left" id="fechaFut2" value="01 Ago 2012" />
+
+    <div class="icon-calendar2 float-left margin-left10 margin-top2"></div>
+
+    <div class="clear"></div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="form-row">
+
+    <label class="for-table">Estatus del movimiento:</label>
+
+        <select class="width136">
+
+        <option selected="selected">Todas</option>                               
+
+        </select>
+
+        
+
+        <div class="width141 margin-top15">
+
+	         <div class="form-row">
+
+               <label class="for-table">&nbsp;</label>
+
+	                 <ul class="cN-primaryNav float-left">
+
+	 		<li>
+
+                <div id="flechaLinks">
+
+	            <span class="flechaazul float-left"></span>
+
+  	            <a href="#" class="sinBold">Borrar</a>
+
+	      		</div>
+
+	 		</li>	
+
+	 <li class="cM-spriteBase cN-primaryNavButton"><a href="#">BUSCAR</a></li>
+
+                  </ul>
+
+	                  <div class="clear"></div>
+
+	         </div>
+
+         </div>
+
+    <div class="clear"></div>
+
+    </div>
+
+    </div><!-- Termina el primer div a la izquierda-->
+
+</div>
+
+   
+
+   
+
+<!-- Termina el segundo div a la izquierda (espacio)-->
+
+   <div class="float-left margin-left20" >
+
+    	<div class="lineaVertical">&nbsp;</div>
+
+    <div class="floatLI" id="flechaLinksOpcoes"><p class="strong">¿QU&Eacute; DESEAS HACER?</p>
+
+    
+
+    <div class="margin-top6" >
+
+                <span class="flechaGris float-left">&nbsp;</span>
+
+                <a href="#">Pagar mi tarjeta de cr&eacute;dito</a>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="margin-top6" >
+
+                <span class="flechaGris float-left">&nbsp;</span>
+
+                <a href="#">Invertir mi dinero</a>
+
+    </div>
+
+    </div>
+
+    </div>
+
+
+
+    
+
+    
+
+<!-- Termina el tercer div a la izquierda -->
+
+	<div class="clear"></div>
+
+    
+
+	
+
+                        
+
+
+
+
+
+
+
+<div class="ancho100p">
+
+<div class="float-left strong">MOVIMIENTOS</div>
+
+<div class="clear margin-bottom20">&nbsp;</div>
+
+</div>
+
+<!--paginacion-->  
+
+<div class="containerPag paddingB10"> 
+
+	<a href="#"><div class="prevBlue"></div></a> 
+
+	<div class="numberPageBlue"><a href="#">1</a></div>
+
+                  <div class="float-left margin-top-4">&nbsp;&nbsp;</div>
+
+                  <div class="numberPageBlue"><a href="#">2</a></div>
+
+	<div class="selectedPage">3</div>
+
+	<div class="numberPageBlue"><a href="#">4</a></div>
+
+                  <div class="float-left margin-top-4">&nbsp;&nbsp;</div>
+
+                  <div class="numberPageBlue"><a href="#">5</a></div>
+
+                  <a href="#"><div class="nextBlue"></div></a>
+
+</div> 
+
+<!--paginacion-->  
+
+      <div class="float-right margin-topm5">
+
+    
+
+    <div id="flechaLinks" class="float-right margin-left10">
+
+								<span class="flechaGris float-left">&nbsp;</span>
+
+								<a href="#">Exportar</a>
+
+						</div>
+
+    
+
+    <div id="flechaLinks" class="float-right margin-left10">
+
+								<span class="flechaGris float-left">&nbsp;</span>
+
+								<a href="#">Imprimir</a>
+
+						</div>
+
+    <div class="float-right filtrar">
+
+								<span class="float-left">&nbsp;</span>
+
+								<a href="#">Filtrar movimientos</a>
+
+						</div>
+
+                        
+
+ 	
+
+  </div>
+
+
+
+<div class="ancho100p floatLI margin-topmie10">
+
+<table width="100%">
+
+<tr>
+
+<td width="2%" class="strong borderLabels"></td>
+
+<td width="13%" class="strong borderLabels"><div class="float-left">Fecha de solicitud</div> <div class="sort_black "></div>
+
+</td>
+
+<td width="16%" class="strong borderLabels"><div class="float-left">Descripci&oacute;n</div><div class="sort_grey"></div></td>
+
+<td width="19%" class="strong borderLabels"><div class="float-left">#Autorizaci&oacute;n / Instrucci&oacute;n</div><div class="sort_grey"></div></td>
+
+<td width="19%" class="strong borderLabels"><div class="float-left">Estatus</div><div class="sort_grey"></div></td>
+
+<td width="20%" class="strong borderLabels paddingL120"><div class="float-left">Importe</div><div class="sort_grey"></div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td class="first"><div class="minus">&nbsp;</div></td>
+
+<td class="first">01 Ago 2012 - 19:55</td>
+
+<td class="first">PAG.IMP.CAR.CHS</td>
+
+<td class="first">308651</td>
+
+<td class="first">Cancelada por rechazo</td>
+
+<td class="first"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td colspan="6" class="borderBottomLabels">
+
+										<div class="div_descripcion">
+
+                                          <table class="tabla_descripcion" border="0" cellpadding="0" cellspacing="0">
+
+                                                    <tr>
+
+                                                        <td class="strong">Referencia alfanum&eacute;rica:</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td width="16%">&nbsp;</td>
+
+                                                        <td width="188" class="strong">Origen</td>
+
+                                                        <td class="strong">Destino</td>
+
+                                                        
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td colspan="2" class="f12">Jos&eacute; Francisco Fern&aacute;ndez Mart&iacute;n del Campo<br /><br /></td>
+
+                                                        <td width="167" class="strong">Tipo:</td>
+
+                                                        <td>CHQSS</td>
+
+                                                        <td>CMAES</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td width="147" class="strong">Referencia num&eacute;rica:</td>
+
+                                                      <td width="218" class="f12">2447411</td>
+
+                                                     
+
+                                                        <td class="strong">Sucursal:</td>
+
+                                                       
+
+                                                      <td>7000</td>
+
+                                                        <td>1000</td>
+
+                                                        <td>&nbsp;</td>
+
+                                            </tr>
+
+                                                    <tr>
+
+                                                      <td class="strong">Fecha de autorizaci&oacute;n:</td>
+
+                                                      <td>02 Ago 2012 - 09:34</td>
+
+                                                        <td class="strong">Cuenta:</td>
+
+                                                      <td>063</td>
+
+                                                        <td>862</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="strong">Tipo de cambio:</td>
+
+                                                      <td>10,000,000,000,000</td>
+
+                                                        <td class="strong">Tipo de instrumento:</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                        <td>&Oacute;rdenes de pago al extranjero</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                      <td class="strong">Servicio:</td>
+
+                                                      <td>BCO/CASA INTERNET</td>
+
+                                                        <td class="strong">Importe:</td>
+
+                                                        <td>$ 600,000,000,000.00 MXN</td>
+
+                                                        <td>$ 600,000,000,000.00 USD</td>
+
+                                                    </tr>
+
+                                                    <tr>
+
+                                                        <td>&nbsp;</td>
+
+                                                      <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                        <td>&nbsp;</td>
+
+                                                    </tr>
+
+                                                </table>
+
+                                                </div></td>
+
+</tr>
+
+
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels">308651</td>
+
+<td class="borderBottomLabels">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+<tr>
+
+<td class="borderBottomLabels last"><div class="plus">&nbsp;</div></td>
+
+<td class="borderBottomLabels last">01 Ago 2012 - 19:55</td>
+
+<td class="borderBottomLabels last">PAG.IMP.CAR.CHS</td>
+
+<td class="borderBottomLabels last">308651</td>
+
+<td class="borderBottomLabels last">Cancelada por rechazo</td>
+
+<td class="borderBottomLabels last"><div class="margin-left59">$ 600,000,000,000.00</div></td>
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="clear margin-bottom10">&nbsp;</div>
+
+<div class="ancho100p">
+
+<!--paginacion-->  
+
+<div class="containerPag paddingB10 margin-top2"> 
+
+	<a href="#"><div class="prevBlue"></div></a> 
+
+	<div class="numberPageBlue"><a href="#">1</a></div>
+
+                  <div class="float-left margin-top-4">&nbsp;&nbsp;</div>
+
+                  <div class="numberPageBlue"><a href="#">2</a></div>
+
+	<div class="selectedPage">3</div>
+
+	<div class="numberPageBlue"><a href="#">4</a></div>
+
+                  <div class="float-left margin-top-4">&nbsp;&nbsp;</div>
+
+                  <div class="numberPageBlue"><a href="#">5</a></div>
+
+                  <a href="#"><div class="nextBlue"></div></a>
+
+</div> 
+
+<!--paginacion-->  
+
+    <div class="float-right margin-top-4">
+
+    
+
+    <div id="flechaLinks" class="float-right margin-left10">
+
+								<span class="flechaGris float-left">&nbsp;</span>
+
+								<a href="#">Exportar</a>
+
+						</div>
+
+    
+
+    <div id="flechaLinks" class="float-right margin-left10">
+
+								<span class="flechaGris float-left">&nbsp;</span>
+
+								<a href="#">Imprimir</a>
+
+						</div>
+
+    <div class="float-right filtrar">
+
+								<span class="float-left">&nbsp;</span>
+
+								<a href="#">Filtrar movimientos</a>
+
+						</div>
+
+                        
+
+ 	
+
+  </div>
+
+</div>
+
+  <br><br><br><br><br><br>
+
+  <div class="clear margin-bottom25">&nbsp;</div>
+
+
+
+<script type="text/javascript">
+
+            $(document).ready(function(){
+
+				
+
+				$('#fechaFut').datepicker({
+
+					dayNamesMin:['D','L','M','M','J','V','S'],
+
+					monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+
+					beforeShow: function(){
+
+						$(this).removeClass('ui-corner-all');
+
+						
+
+					},
+
+					showAnim: '',
+
+					showOtherMonths: true,
+
+					selectOtherMonths: false,
+
+					minDate: 'y',
+
+					maxDate: '30d',
+
+					dateFormat:"d M yy",
+
+					disabled: false
+
+				});
+
+				
+
+				$('#fechaFut').focus(
+
+					function(){
+
+						if( $(this).hasClass('modal_calendar') ){
+
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}else{
+
+							$('.ui-widget').css({'top':($(this).offset().top-55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}
+
+						if( $('.ui-datepicker .close').length == 0){
+
+							$('.ui-datepicker').append("<div class='close'></div>");
+
+						}
+
+						$('.ui-datepicker').find('.close').click(function(){
+
+							$('.input_calendar').datepicker( "hide" );
+
+						});
+
+						
+
+					}
+
+				);
+
+				
+
+			   $(".icon-calendar").click(function(){
+
+    				$('#fechaFut').datepicker('show');
+
+			   });
+
+			   
+
+				
+
+				
+
+             });
+
+ 
+
+        </script>
+
+        
+
+        
+
+        
+
+        
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+				setTimeout( function(){$('#fechaFut2').focus();}, 400);
+
+				$('#fechaFut2').datepicker({
+
+					dayNamesMin:['D','L','M','M','J','V','S'],
+
+					monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+
+					beforeShow: function(){
+
+						$(this).removeClass('ui-corner-all');
+
+						
+
+					},
+
+					showAnim: '',
+
+					showOtherMonths: true,
+
+					selectOtherMonths: false,
+
+					minDate: 'y',
+
+					maxDate: '30d',
+
+					dateFormat:"d M yy",
+
+					disabled: false
+
+				});
+
+				
+
+				$('#fechaFut2').focus(
+
+					function(){
+
+						if( $(this).hasClass('modal_calendar') ){
+
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}else{
+
+							$('.ui-widget').css({'top':($(this).offset().top-55)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+
+						}
+
+						if( $('.ui-datepicker .close').length == 0){
+
+							$('.ui-datepicker').append("<div class='close'></div>");
+
+						}
+
+						$('.ui-datepicker').find('.close').click(function(){
+
+							$('.input_calendar').datepicker( "hide" );
+
+						});
+
+						
+
+					}
+
+				);
+
+				
+
+			   $(".icon-calendar2").click(function(){
+
+    				$('#fechaFut2').datepicker('show');
+
+			   });
+
+			   
+
+				
+
+				
+
+             });
+
+ 
+
+        </script>
+
+
+
+        

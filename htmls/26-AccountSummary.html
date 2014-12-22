@@ -1,0 +1,956 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Layout Avatar</title>
+
+		
+
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css"/>      
+
+	<link rel="stylesheet" type="text/css" href="../JFP//css/widgets/jquery.qtipW3.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css"/>
+
+<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css"/>
+
+	
+
+    <script type="text/javascript" src="../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/script.js"></script>
+
+     <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+    
+
+
+
+
+
+	
+
+	
+
+	
+
+
+
+	
+
+    
+
+    
+
+
+
+</head>
+
+<body>
+
+<!--inicia contenedor principal-->
+
+	<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+		<div id="header">
+
+<div class="utilities_nav" id="navegacionPrincipal">
+
+ 
+
+</div>
+
+
+
+<div class="citibank-containerImg">
+
+    <a href="#"><div id="citibank-logo"></div></a>
+
+    <div id="citibank-image"></div>
+
+</div>
+
+
+
+<div class="main_nav" id="menuw">
+
+</div>
+
+
+
+<div id="user-info">
+
+    <div class="userInfo-content" id="msj_bienvenido">
+
+       
+
+        
+
+    </div>
+
+</div>
+
+<!--termina header-->
+
+  </div>
+
+  <div class="cS-structBodyContainer"> 				
+
+			<div id="title-section" class="cH-appPageHead height20">
+
+				<div class="float-left"><h1>MULTISALDOS</h1></div>
+
+                
+
+                
+
+                
+
+                
+
+              <div class=" float-left paddingL15 paddingT3">
+
+                    <p class="f11">
+
+                    
+
+                       <li class="check_guardar">
+
+						<input type="checkbox"  name="pagInicio" id="guardaOp" checked="checked" />
+
+        				<span class="f11 floatL marginT3 margin-left7"> Establecer como p&aacute;gina de inicio</span>
+
+       
+
+	</li> 
+
+                    
+
+                    
+
+                    </p>
+
+                    </div>
+
+                    
+
+               <div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="#" class="float-left">&nbsp;Ayuda</a>
+
+		</div>
+
+     
+
+      <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="#" class="float-left">&nbsp;Imprimir</a>
+
+		</div>
+
+        
+
+        
+
+        <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="#" class="float-left">&nbsp;Movimientos en Banca Electr&oacute;nica</a>
+
+		</div>
+
+			</div>
+
+		    <div id="content">		
+
+		        	<!-- The left menu divs are inserted by javascript if it is necessary -->
+
+				<!--div id="left-menu" class="float-left margin-top25"></div>
+
+		                <div id="shadow">&nbsp;</div-->
+
+			  <div id="subapp-box" class="noleftmenu float-left margin-top1">
+
+ 
+
+ 
+
+ 
+
+ <div >
+
+          
+
+              <div class="contenido paddingT9 borderBnone">
+
+                  <div class="contenido_account_summary">
+
+                    <div class="clear overflow">
+
+                    	<div class="floatL overflow">
+
+                        	<select>
+
+                            	<option>Selecciona una cuenta</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="expandir_contraer">
+
+                            <a href="javascript:void(0);" class="contraer deshabilitado">Contraer todo</a>
+
+                            <a href="javascript:void(0);" class="expandir habilitado">Expandir todo</a>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="titulo_cuentas marginT0 paddingL47" id="cuentas_efectivo_mxn">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir"></div>
+
+                            <div class="text">CUENTAS DE EFECTIVO MXN (4)</div>    
+
+                        </div>
+
+                       <div class="resumen_total"><p>Saldo total<br>
+
+                       <span class="error_cuenta">$2,000.00</span></p></div>
+
+                        <!--<div class="resumen_total"><p>Total disponible<br>$1,000,000,000.00</p></div>-->
+
+                    </div>
+
+                    <div class="contenido_cuentas cuentas_efectivo_mxn">
+
+                        <table cellpadding="0" cellspacing="0">
+
+                            <tr>
+
+                                <th class="descripcion bold textL"><p>Nombre de la cuenta</p></th>
+
+                                <th class="monto bold"><p>Disponible</p></th>
+
+                                <th class="monto last bold"><p>Saldo</p></th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="first descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);"> Mi chequera - CUENTA CHEQUES - MXN - **312</a><br>
+
+                                        Dep&oacute;sitos salvo buen cobro: $100,000.00 
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        Movimientos en el d&iacute;a: $100,000.00 
+
+                                    </p>
+
+                                </td>
+
+                                <td class="first monto"><p>&nbsp;</p></td>
+
+                                <td class="first monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">Cuenta de Ahorros - CTA. CHEQUES - MXN - **123</a><br>
+
+                                        Dep&oacute;sitos salvo buen cobro: $100,000.00 
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        Movimientos en el d&iacute;a: $100,000.00 
+
+                                    </p>
+
+                                </td>
+
+                                <td class="monto"><p>&nbsp;</p></td>
+
+                                <td class="monto last"> <p class="colorff0000"> - $2,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="descripcion">
+
+                                    <p >
+
+                                        <a href="javascrip:void(0);">Cuenta Maestra Casa - CTA. MAESTRA - MXN - **002</a><br>
+
+                                        Dep&oacute;sitos en el d&iacute;a: $100,000.00 
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        Retiros en el d&iacute;a: $100,000.00 
+
+                                    </p>
+
+                                </td>
+
+                                <td class="monto"><p>$1,000,000,000.00</p></td>
+
+                                <td class="monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">Mi Pagomatico - PAGOMÁTICO INT - MXN - **0056</a> <br>&nbsp;
+
+                                      
+
+                                    </p>
+
+                                   
+
+                                </td>
+
+                                <td class="monto"><p>$1,000,000,000.00</p></td>
+
+                                <td class="monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="foot descripcion"><p>&nbsp;</p></td>
+
+                                <td class="foot monto"><p>&nbsp;</p><!--<p>Total disponible<br>$4,000,000,000.00</p>--></td>
+
+                                <td class="foot monto last"><p>Saldo total<br>$4,000,000,000.00</p></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                  
+
+                    <div class="titulo_cuentas paddingL47" id="cuentas_efectivo_usd">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir"></div>
+
+                            <div class="text">CUENTAS DE EFECTIVO USD (1)</div>
+
+                        </div>
+
+                        <div class="resumen_total"><p>Saldo total<br>$1,000,000,000.00</p></div>
+
+                        <!--<div class="resumen_total"><p>Total disponible<br>$1,000,000,000.00</p></div>-->
+
+                    </div>
+
+                    <div class="contenido_cuentas cuentas_efectivo_usd">
+
+                        <table cellpadding="0" cellspacing="0">
+
+                            <tr>
+
+                                <th class="descripcion bold textL"><p>Nombre de la cuenta</p></th>
+
+                                <th class="monto bold"><p>&nbsp;</p></th>
+
+                                <th class="monto last bold"><p>Saldo</p></th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="first descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">Mi cuenta dolares - CTA. CHEQUES - USD - **102</a><br>
+
+                                        Dep&oacute;sitos salvo buen cobro: $100,000.00 
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        Movimientos en el d&iacute;a: $100,000.00 
+
+                                    </p>
+
+                                </td>
+
+                                <td class="first monto"><p>&nbsp;</p></td>
+
+                                <td class="first monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="foot descripcion"><p>&nbsp;</p></td>
+
+                                <td class="foot monto"><p>&nbsp;</p><!--<p>Total disponible<br>$4,000,000,000.00</p>--></td>
+
+                                <td class="foot monto last"><p>Saldo total<br> $1,000,000,000.00</p></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                    
+
+                    <div class="titulo_cuentas paddingL47" id="terjetas_credito">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir"></div>
+
+                            <div class="text">TARJETAS DE CR&Eacute;DITO (1)</div>
+
+                        </div>
+
+                                       <div class="resumen_total"><p>Saldo total<br>- $1,000,000,000.00</p></div>
+
+                        <div class="resumen_total widthauto paddingR5">
+
+                          <p>Crédito disponible total<br>
+
+                          $1,000,000,000.00</p></div>
+
+                    </div>
+
+                    <div class="contenido_cuentas terjetas_credito">
+
+                        <table cellpadding="0" cellspacing="0">
+
+                              <tr>
+
+                                <th class="descripcion bold textL"><p>Nombre de la cuenta</p></th>
+
+                                <th class="monto bold"><p>Disponible</p></th>
+
+                                <th class="monto last bold"><p>Saldo</p></th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="first descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">
+
+                                        Mi tarjeta - TARJ. CL&Aacute;SICA - MXN - **042
+
+       </a><br>
+
+                                        Fecha l&iacute;mite de pago: 20 Dic 2012 
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        M&iacute;nimo a pagar: $100,000.00 
+
+                                    </p>
+
+                                </td>
+
+                                <td class="first monto"><p>$1,000,000,000.00</p></td>
+
+                                <td class="first monto last"><p>$1,000,000,000.00<br>
+
+                                <input type="button" class="btn_az" value="REALIZAR UN PAGO" />
+
+                                </p></td>
+
+                            </tr>
+
+                            
+
+                            <tr>
+
+                                <td class="foot descripcion"><p>&nbsp;</p></td>
+
+                                <td class="foot monto"><p>&nbsp;</p></td>
+
+                                <td class="foot monto last"><p>Saldo total<br>- $1,000,000,000.00</p></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                    
+
+                      <div class="titulo_cuentas paddingL47" id="premia">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir"></div>
+
+                            <div class="text">TARJETA PREMIA (1)</div>
+
+                        </div>
+
+                        <div class="resumen_total"><p>Saldo total<br>$25,000.00</p></div>
+
+                    </div>
+
+                    <div class="contenido_cuentas premia">
+
+                        <table cellpadding="0" cellspacing="0">
+
+                            <tr>
+
+                                 <th class="descripcion bold textL"><p>Nombre de la cuenta</p></th>
+
+                                <th class="monto"><p>&nbsp;</p></th>
+
+                                <th class="monto last bold"><p>Saldo</p></th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="first descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">Mi tarjeta premia - TARJ. PREMIA PRE - MXN - *555</a><br>
+
+                                       Saldo en puntos: 2,500,000
+
+                                    </p>
+
+                                </td>
+
+                                <td class="first monto"><p>&nbsp;</p></td>
+
+                                <td class="first monto last"><p>$25,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="foot descripcion"><p>&nbsp;</p></td>
+
+                                <td class="foot monto"><p>&nbsp;</p></td>
+
+                                <td class="foot monto last"><p>Saldo total<br>$25,000.00</p></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    <div class="titulo_cuentas paddingL47" id="creditos">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir"></div>
+
+                            <div class="text">CR&Eacute;DITOS (1)</div>
+
+                        </div>
+
+                        <div class="resumen_total"><p>Saldo total<br>- $1,000,000,000.00</p></div>
+
+                    </div>
+
+                    <div class="contenido_cuentas creditos">
+
+                        <table cellpadding="0" cellspacing="0">
+
+                            <tr>
+
+                                 <th class="descripcion bold textL"><p>Nombre de la cuenta</p></th>
+
+                                <th class="monto"><p>&nbsp;</p></th>
+
+                                <th class="monto last bold"><p>Saldo</p></th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="first descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">
+
+                                        Mi credito automotriz - CRED. AUTO/PER - MXN - **302
+
+                      </a><br>
+
+                                        Folio: 0100
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        Día de corte 05 
+
+                                    </p>
+
+                                </td>
+
+                                <td class="first monto"><p>&nbsp;</p></td>
+
+                                <td class="first monto last"><p>- $1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="foot descripcion"><p>&nbsp;</p></td>
+
+                                <td class="foot monto"><p>&nbsp;</p></td>
+
+                                <td class="foot monto last"><p>Saldo total<br> - $1,000,000,000.00</p></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                    
+
+                    <div class="titulo_cuentas paddingL47" id="inver">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir"></div>
+
+                            <div class="text">INVERSIONES (4)</div>
+
+                        </div>
+
+                        <div class="resumen_total"><p>Saldo total<br>
+
+                          $4,000,000,000.00</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contenido_cuentas inver">
+
+                        <table cellpadding="0" cellspacing="0">
+
+                            <tr>
+
+                                 <th class="descripcion bold textL"><p>Nombre de la cuenta</p></th>
+
+                                <th class="monto"><p>&nbsp;</p></th>
+
+                                <th class="monto last bold"><p>Saldo</p></th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="first descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">Mi inversion perfiles - INV. PERFILES - MXN - **362</a><br>
+
+                                        &Oacute;rdenes pendientes: 0
+
+                                    </p>
+
+                                </td>
+
+                                <td class="first monto"><p>&nbsp;</p></td>
+
+                                <td class="first monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">Mi pagare - INV. PLAZO - MXN - **312</a><br>
+
+                                         Folio: 90002
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                        Fecha de vencimiento: 25 Ene 2012 
+
+                                    </p>
+
+                                </td>
+
+                                <td class="monto"><p>&nbsp;</p></td>
+
+                                <td class="monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="descripcion">
+
+                                    <p><a href="javascrip:void(0);">Mi fondo de inversion - HORZONT - MXN - **312</a><br>
+
+                                       &Oacute;rdenes pendientes: 0
+
+                                    </p>
+
+                                </td>
+
+                                <td class="monto"><p>&nbsp;</p></td>
+
+                                <td class="monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="descripcion">
+
+                                    <p><a href="javascrip:void(0);">Multiseries - MULTISERIES - MXN - **0078</a><br>&nbsp;&nbsp;
+
+                                   
+
+                                    </p>
+
+                                </td>
+
+                                <td class="monto"><p>&nbsp;</p></td>
+
+                                <td class="monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="foot descripcion"><p>&nbsp;</p></td>
+
+                                <td class="foot monto"><p>&nbsp;</p></td>
+
+                                <td class="foot monto last"><p>Saldo total<br>$4,000,000,000.00</p></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                    
+
+                    <div class="titulo_cuentas paddingL47" id="afore">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir"></div>
+
+                            <div class="text">AFORE (1)</div>
+
+                        </div>
+
+                        <div class="resumen_total"><p>Saldo total<br>$1,000,000,000.00</p></div>
+
+                    </div>
+
+                    <div class="contenido_cuentas afore">
+
+                        <table cellpadding="0" cellspacing="0">
+
+                            <tr>
+
+                                <th class="descripcion bold textL"><p>Nombre de la cuenta</p></th>
+
+                                <th class="monto"><p>&nbsp;</p></th>
+
+                                <th class="monto last bold"><p>Saldo</p></th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="first descripcion">
+
+                                    <p>
+
+                                        <a href="javascrip:void(0);">Mi retiro - AFORE NSS - MXN - **312</a><br>
+
+                                        &nbsp;
+
+                                    </p>
+
+                                </td>
+
+                                <td class="first monto"><p>&nbsp;</p></td>
+
+                                <td class="first monto last"><p>$1,000,000,000.00</p></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="foot descripcion"><p>&nbsp;</p></td>
+
+                                <td class="foot monto"><p>&nbsp;</p></td>
+
+                                <td class="foot monto last"><p>Saldo total<br> $1,000,000,000.00</p></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                  </div>
+
+              </div>
+
+              
+
+                
+
+            </div>
+
+                </div>  
+
+                
+
+                
+
+                </div>
+
+                
+
+               
+
+			  </div>
+
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="footer"></div>				
+
+		</div>
+
+
+
+  
+
+  </div>
+
+  <script type="text/javascript">
+
+            $(document).ready(function(){
+
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #miBancaNet").addClass('selected')} ,true)
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+				account_summary();
+
+				setTimeout(function(){$('#MiBancaNet').addClass('active')},900);
+
+            });
+
+        </script>
+
+               <script type="text/javascript">
+
+
+
+	$(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='pagInicio']").imageTick({ 
+
+			tick_image_path: "../JFP/regional/images/check_1.png", 
+
+			no_tick_image_path: "../JFP/regional/images/no_check_1.png",
+
+			image_tick_class: "chkpagInicio"
+
+		});
+
+        
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	
+
+	
+
+	
+
+</script>  
+
+
+
+   
+
+</body>
+
+<!--termina contenedor principal-->
+
+</html>
+

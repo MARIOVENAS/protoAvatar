@@ -1,0 +1,204 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Capture',
+			'Confirmation',
+			'Verification',
+			'Enroll to Banamex Premia',
+			'Select a card to register in Banamex Premia and click "Continue"',
+			'&nbsp;&nbsp;Select a card',
+			'&nbsp;&nbsp;Select a card',
+			'CONTINUE',
+			'Cancel',
+			'Credit Card:'
+			);
+    </script>
+    
+
+    <script type="text/javascript">
+	$(document).ready(function(){
+		setTimeout(function(){top.ajustarP();},800);
+		$('.errorB').css('display','none');
+		top.hideyuda(); 
+		top.hideimp();
+	});
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+<div class="width691 floatL">
+		
+        <div class="width100p overflow margin-bottom5">
+        <ul class="pagos_opc">
+            <li id="opcCaptura" class="selected"><strong>1</strong> <span id="t23">Captura</span> </li>
+            <li id="opcVerifica"><strong>2</strong>  <span id="t24">Verifica</span> </li>
+            <li id="opcRespuesta"><strong>3</strong>  <span id="t25">Respuesta</span> </li>
+        </ul>
+        </div>
+          
+        <!--  <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+          	<td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsqB" id="t23">Captura</td>
+              </tr>
+               <tr>
+                <td class="esq_LB">&nbsp;</td>
+                <td class="esq_B"></td>
+                <td class="esq_RB">&nbsp;</td>
+              </tr>
+              </table>
+          </td>
+          <td class="width20">&nbsp;</td>
+          <td width="32%">
+              <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t24">Confirmaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+            <td class="width20">&nbsp;</td>
+            <td width="32%">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="3" class="FEsq" id="t25">Verificaci&oacute;n</td>
+              </tr>
+               <tr>
+                <td colspan="3" class="esqBB">&nbsp;</td>
+              </tr>
+              </table>
+            </td>
+          </tr>
+          </table> -->
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t26">Inscripci&oacute;n a Banamex Premia</h3>
+
+            </div>
+
+			<p class="instructions margin-botom0" id="t27"  style="margin-bottom:18px !important; *margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Selecciona una tarjeta que deseas inscribir a Banamex Premia y da clic a "Continuar"  </p>
+			
+           
+                         
+
+						<div class="width141 clear">
+							<div class="form-row margin-right0">
+                            	
+                                <div class="floatLI">
+                                <label id="t32" class="for-table paddingT4">Tarjeta de cr&eacute;dito:</label>
+                                </div>
+
+                                <div class="floatLI">
+                                <select id="sol1" class="width330 paddingL0" onChange="valor1=this.value;selector1();">
+									<option selected="selected" value="0" id="t28">Selecciona una cuenta</option>
+									<option  value="1">Mi tarjeta - Tarj. Cl&aacute;sica - MXN - 12780 - $ 15,987.13</option>
+								</select>
+                                </div>
+                                <!-- Error -->
+                                <div class="floatLI" style="margin-left:5px; *margin-left:10px;">
+                                
+                                <span class="errorB displayNone error-sel_comp display-inline2">
+                                    <span class="flecha2"></span>
+                                    <span class="content_big"  id="t29">Selecciona una tarjeta.</span>
+                                </span>
+                                </div>
+                                <!-- Error -->
+                                <div class="clear"></div>
+                            </div>
+
+                        </div><!-- Fin width141 -->
+
+						
+						<div id="btns"> <!-- Botones -->
+                        
+						<div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT0">
+
+							<div class="width151">&nbsp;</div>
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton">
+                                	<a href="javascript:void(0);" onClick="javascript:selector2();" id="t30">CONTINUAR</a>
+                                </li>	
+                                <li class="cN-primaryNav">
+									<div id="flechaLinks" class="displayNi">
+										<span class="flechaazul float-left"></span>
+										<a id="t31" href="javascript:cancelar();" class="sinBold">Cancelar</a>
+									</div>
+								</li>
+
+							</ul>
+
+						 </div>	
+                         
+                         </div><!-- BTN -->
+
+						<div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript">
+	valor1 = 0;
+	function selector1(){
+		if (valor1==0){
+			$('#flechaLinks').addClass('displayNi');
+			
+			$('.errorB').hide();
+			$('#sol1').removeClass('errorbg');;
+		}else{
+			$('#flechaLinks').removeClass('displayNi');
+			
+			$('.errorB').hide();
+			$('#sol1').removeClass('errorbg');
+		}
+	}
+	
+	function selector2(){
+		if (valor1==0){
+			$('.errorB').show();
+			$('#sol1').addClass('errorbg');
+		}
+		if (valor1==1){
+			$('.errorB').hide();
+			$('#sol1').removeClass('errorbg');
+			//alert('cambia')
+			top.cargaDocN('Inscripcion_premia/screen1_C1.html');
+		}
+	}
+	
+	function cancelar(){
+		$("#sol1 option[value='0']").attr("selected",true);
+		$('.errorB').hide();
+		$('#sol1').removeClass('errorbg');
+		valor1=0;
+		
+		$('#flechaLinks').addClass('displayNi');
+	}
+	</script>
+</body>
+</html>

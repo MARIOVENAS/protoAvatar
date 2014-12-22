@@ -1,0 +1,1419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="pragma" content="no-cache"/>
+
+<meta http-equiv="cache-control" content="no-cache"/>
+
+<meta http-equiv="expires" content="-1"/>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+<link href="../../bbAvatar/css/estilosmulti.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/plugins.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/script.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery.tablesorter.js"></script>   
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>   
+
+<script type="text/javascript">
+
+$(document).ready(function(){optieneAlturas();parent.ajustar();window.parent.$('.panelDerecho').hide();$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	
+
+	function Layuda1(){
+
+		window.open(rutaAyudaAv + 'Estados-de-cuenta-y-Movimientos.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+parent.document.getElementById("REGRESACUENTAS").value="credicheques_perfiles_anterior";
+
+parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	cargando_movimientos();
+
+	$("#fech1").click(function(){
+
+      if ( $(this).hasClass("headerSortDown") )
+
+      	$("#fldown").addClass("flechaabajong")
+
+               .removeClass("flechaarriba")
+
+    });
+
+			$("#fech1").click(function(){
+
+    if ( $(this).hasClass("headerSortUp") )
+
+          $("#fldown").addClass("flechaarriba")
+
+               .removeClass("flechaabajong")
+
+    });
+
+            });
+
+</script>
+
+<script type="text/javascript">
+
+var es=new Array('See account summary',
+
+				'ACCOUNT DETAIL',
+
+				'Current Period',
+
+				'Previous Period',
+
+				'Balance',
+
+				'Purchases & withdrawals',
+
+				'Cut off date',
+
+				'Interests',
+
+				'Payment date',
+
+				'Deposits and Payments',
+
+				'Fees and VAT',
+
+				'&nbsp;Minimum payment:',
+
+				'&nbsp;Non-interest payment:',
+
+				'What do you want to do?',
+
+				'Transfer between own accounts',
+
+				'TRANSACTIONS',
+
+				'Apply filter',
+
+				'Export',
+
+				'Date',
+
+				'Description',
+
+				'Deposits and Payments',
+
+				'Purchases',
+
+				'Total:',
+
+				' - Select an option - ',
+
+				'Wait a moment please ...');
+
+				
+
+$(document).ready(function() { 
+
+	$.tablesorter.defaults.sortList = [[0,1]]; 
+
+	$.tablesorter.defaults.widgets = ['zebra']; 
+
+	$("table").tablesorter({
+
+		headers: {
+
+			4: { sorter: false },
+
+			0: { sorter: 'DD-MMM-YY' },
+
+			3: { sorter: 'currency' }
+
+		}
+
+	}); 
+
+
+
+	$("#versaldos1").click(function() {
+
+	    var sorting = [[0,1]]; 
+
+		$("table").trigger("sorton",[sorting]); 
+
+		return false; 
+
+	});
+
+	labelTooltip();
+
+});
+
+	</script>
+
+          <script type="text/javascript">
+
+function versaldos() {
+
+	$(" table tbody span").removeClass("displayN");
+
+	$(" #rf").removeClass("resumen_flecha").addClass("res_fl");
+
+	$(" #saldo").hide();
+
+	$("#saldo1").show();
+
+}
+
+
+
+function ocultasaldos() {
+
+			$("table tbody span").addClass("displayN");
+
+				$(" #rf").removeClass("res_fl").addClass("resumen_flecha");
+
+					$(" #saldo").show();
+
+			$("#saldo1").hide();
+
+}
+
+
+
+function filtrar(){
+
+	parent.$.modal(
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:600,
+
+			heightDivIfrm:244,
+
+			srcIfrm:'bbAvatar/modal/filtraMovimientos.html'
+
+		}
+
+	);
+
+}
+
+
+
+function exportar(){
+
+	parent.$.modal({
+
+		closeHTML: '',
+
+		opacity:60,
+
+		overlayClose:false,
+
+		flagDiv:false,
+
+		widthDivIfrm:308,
+
+		heightDivIfrm:210,
+
+		srcIfrm:'bbAvatar/modal/exportaResultados.html'
+
+	});	
+
+}
+
+
+
+function imprimirMain(){
+
+		parent.document.getElementById("iframeConte").contentWindow.focus();
+
+		parent.document.getElementById("iframeConte").contentWindow.print();
+
+	}
+
+</script>
+
+   <title></title>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="resumen_enca ancho100p">
+
+<div class="floatR marginT7 paddingR7 ancho40p">
+
+ <div class="saldos_btn1 showtooltip margin_menosT3" id="btn_ayuda" onclick="Javascript:Layuda1();"></div>
+
+   <div class="saldos_btn2 showtooltip margin_menosT3" id="btn_imp" onclick="imprimirMain();"></div>
+
+    
+
+    <div class="floatR">
+
+  <div class="resumen_flecha"></div>
+
+    <a href="javascript:top.dash();" id="t0">Ver resumen de cuentas</a></div>
+
+  </div>
+
+	<div class="floatL">
+
+		<div class="floatL"><h1 id="t1">DETALLE DE LA CUENTA</h1> </div>
+
+		<div class="floatL marginL10 marginT2">
+
+		  <select name="select" id="cboCritReg" class="select" onchange="valor1=this.value;Cta1();">
+
+			<option class="0" value="PS" id="t23">&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>
+
+			<option value="1" value="1" >Cheques&nbsp;-&nbsp;002&nbsp;-&nbsp;MXN</option>
+
+			<option class="2"  value="2" >Cuenta Maestra - 490 - MXN</option>
+
+			<option class="3"  value="3">D&eacute;bito - 678 - MXN</option>
+
+			<option class="4" value="4" >Cheques- 888 - USD</option>
+
+			<option class="5" value="5">Tarjeta Cr&eacute;dito -  796 - MXN</option>
+
+			<option class="6" value="6"  > Tarj. Premia Pre - 245 - MXN</option>
+
+			<option class="7"  value="7">Mi cr&eacute;dito - 3014 - MXN</option>
+
+			<option class="8" selected="selected">Credicheque Perfiles Banamex - 502 - MXN</option>
+
+			<option class="9" value="9" >Cr&eacute;dito Casa - 9014 - MXN</option>
+
+			<option class="10" value="10" >Inversi&oacute;n Perfiles - 502 - MXN</option>
+
+			<option class="11" value="11" >Inversi&oacute;n Plazo - 010 - MXN</option>
+
+			<option class="12" value="12" >HORZONT - 746 - MXN</option>
+
+			<option class="13" value="13" >Multiseries - 378 - MXN</option>
+
+			<option class="14" value="14" >Mi afore NSS - 424 - MXN</option>
+
+		  </select>
+
+		</div>
+
+	</div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+
+<div class="floatL ancho70p marginT15">
+
+  <div class="floatR">
+
+<select class="ancho150" name="select" id="select" onchange="valor1=this.value;Cta2();">
+
+  <option value="1" id="t2">Periodo actual</option>
+
+  <option selected="selected" id="t3">Periodo anterior</option>
+
+    </select>
+
+  </div>
+
+  <div class="boldText f14 floatL paddingT4">Credicheque Perfiles Banamex MXN **502 - Credicheque Perfiles Banamex</div>
+
+
+
+</div>
+
+
+
+<div class="floatL ancho70p marginT27" >
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td class="paddingT5" width="18%" rowspan="4" valign="top"><!--<div class="tarj2"></div>--></td>
+
+    <td>&nbsp;</td>
+
+    <td class=" color8f paddingB1 paddingT2">&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+    <td class=" color8f paddingB1 paddingT2">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB1 paddingT2" id="t4">Saldo:</td>
+
+    <td class="color8f  paddingB1 paddingT2">$ 113.01</td>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2" id="t5">Compras y disposiciones:</td>
+
+    <td class="alignRight color8f paddingB1 paddingT2">$ 1,314.99</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB1 paddingT2" id="t6">D&iacute;a de corte:</td>
+
+    <td class=" color8f paddingB1 paddingT2">05</td>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2" id="t7">Intereses:</td>
+
+    <td class="alignRight color8f paddingB1 paddingT2">$ 1,798.77</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB1 paddingT2" id="t8">Fecha l&iacute;mite de pago:</td>
+
+    <td class="color8f paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2" id="t9">Pagos y dep&oacute;sitos:</td>
+
+    <td class="alignRight color8f paddingB1 paddingT2">$ -2,170.00</td>
+
+    </tr>
+
+  <tr>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="color8f  paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="color8f  paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2" id="t10">Comisiones e IVA:</td>
+
+    <td class="alignRight color8f paddingB1 paddingT2">$ 447.30</td>
+
+  </tr>
+
+  </table>
+
+<div class="borderTSolid marginT10">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+   <tr>
+
+    <td class="paddingT5" width="18%" rowspan="4" valign="top">&nbsp;</td>
+
+	</tr> 
+
+   <tr>
+
+    <td class="paddingB1 paddingT10" id="t11">Pago m&iacute;nimo:</td>
+
+    <td class="color8f  paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="alignRight color8f paddingB1 paddingT10">$ 0.00</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB1 paddingT2" id="t12">Pago para no generar intereses:</td>
+
+    <td class=" color8f paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="paddingB1 paddingT2">&nbsp;</td>
+
+    <td class="alignRight color8f paddingB1 paddingT2">$ 0.00</td>
+
+  </tr>
+
+ </table>
+
+<div class="borderTSolid marginT10"> </div>
+
+</div>
+
+</div>
+
+<div class="floatL marginL30 paddingL25 ancho20p borderlSolid9 marginT5">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tr> 
+
+     <td class=" f14 boldText paddingB10" id="t13">&iquest;QU&Eacute; DESEAS HACER?</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingT3 paddingB3 ">  
+
+   
+
+        <div class="resumen_flecha"></div> 
+
+        <a href="javascript:void(0)" onclick="transferencias()" id="t14">Transferencias entre cuentas propias</a>
+
+    </td>
+
+    </tr>
+
+ </table>
+
+</div>
+
+<div class="clear"></div>
+
+
+
+<div class="panelIzEnca3_text2 marginT24" id="t15">MOVIMIENTOS</div>
+
+<div id="movimientos_cargados">
+
+<div class=" paddingT10">
+
+  <div class="floatL marginT5">
+
+   </div>
+
+<div class="floatR">
+
+<div class="floatL marginR1 bm"></div>
+
+<a class="floatL marginR10 paddingT5 boldText" href="javascript:void(0);" onclick="javascript:filtrar()" id="t16">Filtrar movimientos</a>
+
+<div class="resumen_flecha marginT7"></div><a class="floatL marginR10 paddingT5" href="#" id="t17" onclick="javascript:exportar();">Exportar</a>
+
+  </div>
+
+ 
+
+<div class="clear"></div>
+
+</div>
+
+
+
+<div>
+
+<table class="tablesorter" border="0" cellpadding="0" cellspacing="0">
+
+  <thead>
+
+  <tr>
+
+    <th id="fle" width="15%" align="left" class="paddingL20 borderBSolid borderTSolid9" id="t18">Fecha
+
+     </th>
+
+    <th id="des" class="borderBSolid borderTSolid9" align="left" onclick="javascript:ocultasaldos();" id="t19">Descripci&oacute;n</th>
+
+    <th id="dep" class="borderBSolid borderTSolid9" align="right" onclick="javascript:ocultasaldos();" id="t20">Pagos y Dep&oacute;sitos</th>
+
+    <th id="ret" class="borderBSolid borderTSolid9 paddingR10" align="right" onclick="javascript:ocultasaldos();">&nbsp; </th>
+
+  <th id="versaldos1" align="right" class="paddingR35 borderBSolid borderTSolid9 sinBold" onclick="javascript:versaldos();"><div class="floatR">
+
+    <div id="saldo" class="displayN">
+
+      <div class="resumen_flecha">&nbsp;</div>
+
+      <a href="javascript:versaldos();">&nbsp;</a></div>
+
+    <div id="saldo1" class="boldText color000 floatL" href="javascript:versaldos();" id="t21">
+
+      <div class="res_fl">&nbsp;</div>
+
+      Compras</div>
+
+  </div></th>
+
+  </tr>
+
+  </thead>
+
+  <tfoot>    
+
+  <tr>
+
+    <td class="paddingT10 paddingB5 borderBSolid9 borderTSolid">&nbsp;</td>
+
+    <td align="right" class="boldText paddingT10 paddingB5 borderBSolid9 borderTSolid"><span id="t22">Total:</span></td>
+
+    <td align="right" class=" paddingT10 paddingB5 borderBSolid9 borderTSolid"><span>$ 2,186.09</span></td>
+
+    <td align="right" class="paddingT10 paddingB5 borderBSolid9 borderTSolid"><span>&nbsp;</span></td>
+
+    <td align="right" class="paddingT10 paddingR35 borderBSolid9 borderTSolid"><span>$ 1,163.65</span></td>
+
+  </tr>
+
+  </tfoot>
+
+  <tbody>
+
+    <tr>
+
+      <td class=" paddingL20">13 Oct </td>
+
+      <td class="">SU ABONO ... GRACIAS</td>
+
+      <td align="right" class=""> 1.09</td>
+
+      <td align="right" class="paddingR35"> <span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">13 Oct</td>
+
+      <td>SU ABONO ... GRACIAS</td>
+
+      <td align="right" class=""> 15.00</td>
+
+      <td align="right" class="paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingL20">&nbsp;</td>
+
+      <td class="">MIGUEL, MONTERO/DE LA TORRE</td>
+
+      <td align="right" class="">&nbsp;</td>
+
+      <td align="right" class="paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingL20">13 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class="paddingR35"><span> 33.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingL20">&nbsp;</td>
+
+      <td >MARIA, COSTA/COSTA</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">13 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>12.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp;</td>
+
+      <td >MANUEL, LOPEZ/LOPEZ</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">10 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>108.04</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">10 Oct </td>
+
+      <td >SU ABONO ... GRACIAS</td>
+
+      <td align="right" >50.00</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp;</td>
+
+      <td >ANGEL, LOPEZ/PEREZ</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">10 Oct </td>
+
+      <td >SU ABONO ... GRACIAS</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>10.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp;</td>
+
+      <td >ANGEL, LOPEZ/PEREZ</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">10 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>10.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">07 Oct </td>
+
+      <td >SU ABONO ... GRACIAS</td>
+
+      <td align="right" >50.00</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp; </td>
+
+      <td >ANGEL, LOPEZ/LOPEZ</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">07 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>35.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp;</td>
+
+      <td >ANGEL, LOPEZ/PEREZ</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;  </td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">05 Oct </td>
+
+      <td >BCA. ELECTRONICA MTY.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>15.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp;</td>
+
+      <td >ANGEL, LOPEZ/PEREZ</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;  </td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>  
+
+    <tr>
+
+      <td class=" paddingL20">05 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>18.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">05 Oct </td>
+
+      <td >SU ABONO ... GRACIAS</td>
+
+      <td align="right" >120.00</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">05 Oct </td>
+
+      <td >SU ABONO ... GRACIAS</td>
+
+      <td align="right" >50.00</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>   
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp; </td>
+
+      <td >GLORIA, DE LA TORRE/PAREDES</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>    
+
+    <tr>
+
+      <td class=" paddingL20">05 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>2.00</span></td>
+
+    </tr>   
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp; </td>
+
+      <td >ROBERTO, MONTERO/DE LA TORRE</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">05 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>2.00</span></td>
+
+    </tr>   
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp; </td>
+
+      <td >MIGUEL, MONTERO/DE LA TORRE</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>  
+
+    <tr>
+
+      <td class=" paddingL20">05 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>2.00</span></td>
+
+    </tr>   
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp; </td>
+
+      <td >ANGELA, MORENO/MORENO</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">01 Oct </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>2.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">01 Oct </td>
+
+      <td >SU ABONO ... GRACIAS</td>
+
+      <td align="right" >1,600.00</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">01 Oct </td>
+
+      <td >COMIS. DISPOS. EFECTIVO</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>12.50</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">01 Oct </td>
+
+      <td >SISTEMAS BARRANCA I DISP. EFECTIVO</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>200.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">&nbsp; </td>
+
+      <td >ANGELA, MORENO/MORENO</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">28 Sep </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>300.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">28 Sep </td>
+
+      <td >SU ABONO ... GRACIAS</td>
+
+      <td align="right" >300.00</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">28 Sep </td>
+
+      <td >COMISION PAGO TARDIO</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>80.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">28 Sep </td>
+
+      <td >COMIS. DISPOS. EFECTIVO</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>21.75</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">28 Sep </td>
+
+      <td >BCA. ELECTRONICA MEX.</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>300.00</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td class=" paddingL20">28 Sep </td>
+
+      <td >*TASA ANUAL 63.43%</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" >&nbsp;</td>
+
+      <td align="right" class=" paddingR35"><span>&nbsp;</span></td>
+
+    </tr>
+
+
+
+  </tbody>
+
+
+
+</table>
+
+</div>
+
+
+
+<div class="marginB5 borderTSolid paddingT2">
+
+  <div class="floatL marginT5">
+
+   </div>
+
+<div class="floatR">
+
+<div class="floatL marginR1 bm"></div>
+
+<a class="floatL marginR10 paddingT5 boldText" href="javascript:void(0);" onclick="javascript:filtrar()" id="t16">Filtrar movimientos</a>
+
+<div class="resumen_flecha marginT7"></div><a class="floatL marginR10 paddingT5" href="#" id="t17" onclick="javascript:exportar();">Exportar</a>
+
+  </div>
+
+ <div class="clear"></div>
+
+</div>
+
+</div>
+
+
+
+<div class="clear">&nbsp;</div>
+
+	         <div class="div_cargando" id="movimientos_cargando">
+
+                       	  <img src='../../bbAvatar/images/loader.gif' alt="Cargando" /><br />
+
+                            <label id="t24">Espere un momento por favor ...</label>
+
+                        </div>
+
+<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){optieneAlturas();
+
+		top.window.scrollTo(0,0);
+
+		$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);
+
+		activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+	setTimeout("showtooltip2();",200);
+
+		var valor1=0;   
+
+function Cta1(){
+
+	$("#divCargando").show();
+
+setTimeout(function() {
+
+	
+
+	if(valor1==1){
+
+		window.location="14-Cheques_mes_actual_real.htm";
+
+	}
+
+	if(valor1==2){
+
+		window.location="maestra_mes_actual.htm";
+
+	}   
+
+	if(valor1==3){
+
+		window.location="26-TDD-MesActual-REAL.htm";
+
+	}   
+
+	if(valor1==4){
+
+		window.location="ChequesUSD_mes_actual.htm";
+
+	}   
+
+	if(valor1==5){
+
+		window.location="04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm";
+
+	}   
+
+	if(valor1==6){
+
+		window.location="premia_mes_actual.htm";
+
+	}   
+
+	
+
+	if(valor1==7){
+
+		window.location="credito_infonavit.html";
+
+	}   
+
+	
+
+	if(valor1==8){
+
+		window.location="credicheques_perfiles_actual.htm";
+
+	}   
+
+	
+
+	if(valor1==9){
+
+		window.location="credito_hipotecario.htm";
+
+	}   
+
+	
+
+	if(valor1==10){
+
+		window.location="inversion_perfiles.htm";
+
+	}   
+
+	
+
+	if(valor1==11){
+
+		window.location="Resumen-de-inversiones_6.htm";
+
+	}   
+
+	
+
+	if(valor1==12){
+
+		window.location="inversionesdetalle_horizonte.htm";
+
+	}   
+
+	
+
+	if(valor1==13){
+
+		window.location="Multiseries.htm";
+
+	}   
+
+	
+
+	if(valor1==14){
+
+		window.location="Afore.htm";
+
+	} 
+
+
+
+if(valor1==15){
+
+		window.location="20-Cheques_mes_anterior_real.htm";
+
+	}
+
+	}, 2000);
+
+}
+
+  
+
+function Cta2(){
+
+	
+
+	$("#divCargando").show();
+
+	setTimeout(function() {
+
+	if(valor1==1){
+
+		window.location="credicheques_perfiles_actual.htm";
+
+	}
+
+	if(valor1==2){
+
+		window.location="credicheques_perfiles_anterior.htm";
+
+	}
+
+	}, 2000);
+
+}
+
+
+
+function transferencias(){
+
+		top.open('../../30-Transferencias_pagos.html?ifrContenedor=1&link=t28' , '_self')
+
+	}
+
+</script>
+
+
+
+</body>
+
+</html>

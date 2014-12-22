@@ -1,0 +1,175 @@
+* {
+
+   margin: 0;
+
+   padding: 0;
+
+   border: 0;
+
+}
+
+body {
+
+   text-rendering: optimizelegibility;
+
+   font: normal 62.5% Arial, Verdana, Helvetica, sans-serif;
+
+   color:#000;
+
+   background: #fff url(/bbAvatar/images/bg_header.gif) center top no-repeat;
+
+}
+
+ul, ol {
+
+   list-style: none;
+
+}
+
+a:focus {
+
+   outline:0;
+
+}
+
+#contenedor {
+
+   margin:0 auto;
+
+   width:800px;
+
+   height:600px;
+
+   background:url(/bbAvatar/images/bg-contenedor.jpg) no-repeat left top;
+
+   text-align:center;
+
+}
+
+#contenedor h1 {
+
+   padding:26px 0 0;
+
+   font-size:2.7em;
+
+   color:#000;
+
+   font-weight:normal;
+
+}
+
+#contenedor h2 {
+
+   padding:13px 0 0;
+
+   line-height:1.2em;
+
+   font-size:2em;
+
+   color:#000;
+
+   font-weight:normal
+
+}
+
+#contenedor h3 {
+
+   padding:350px 0 0;
+
+   font-size:1.5em;
+
+   color:#000;
+
+}
+
+#contenedor p {
+
+   font-size:1.5em;
+
+   color:#000;
+
+}
+
+#contenedor p strong {
+
+   display:block;
+
+   font-size:1.1em;
+
+   color:#000;
+
+}
+
+#botones {
+
+   padding-top: 10px;
+
+   width: 570px;
+
+   margin: 0 auto;
+
+   display: block;
+
+}
+
+#botones li {
+
+   width: 285px;
+
+   float: left;
+
+}
+
+#botones li a {
+
+   width: 285px;
+
+   height: 63px;
+
+   display: block;
+
+   text-indent: -1000em;
+
+}
+
+#botones li a#actual {
+
+   background: url(/bbAvatar/images/btn_actual.gif) no-repeat bottom center;
+
+}
+
+#botones li a#nueva {
+
+   background: url(/bbAvatar/images/btn_nueva.gif) no-repeat bottom center;
+
+}
+
+#botones li a#actual:hover, #botones li a#nueva:hover {
+
+   background-position: center -63px;
+
+}
+
+#botones li a#actual.pressed, #botones li a#nueva.pressed, #botones li a#actual.pressed:hover, #botones li a#nueva.pressed:hover {
+
+   background-position: center top;
+
+   cursor:default;
+
+}
+
+#botones li span {
+
+   color:#d2392c;
+
+   display:none;
+
+   text-align:center;
+
+}
+
+#botones li span.visible {
+
+   display:block;
+
+}

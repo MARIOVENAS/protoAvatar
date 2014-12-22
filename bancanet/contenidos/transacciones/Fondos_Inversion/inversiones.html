@@ -1,0 +1,690 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+       
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+     <script type="text/javascript">
+			
+			var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push(
+			'Banamex investment funds',
+			'<a href="javascript:void(0);" onClick="javascript:Layuda1_ing();" class="float-left flechaLinksOpcoes">&nbsp;Help</a>',
+			'Select the type of transaction and the contract number, enter the investment data and click "Continue".',
+			'This operation can be performed from Monday to Friday from 9:00 to 13:00 h.',
+			'Transaction type:',
+			'Security purchase',
+			'Stock sell',
+			'<a href="#" class="tooltip border-dotted-link" title="The pruchase will be charged from the collection account 4337 / 001579.">Contract number:</a>',
+			'Select an option…',
+			'Investment account 8XXXX150 (Ref. CC5XXX515) - Available balance $ 520,261.47',
+			'Mutual Funds:',
+			'Select an option…',
+			'See yield history',
+			'Amount:',
+			'Maturity:',
+			'96 hours',
+			'Schedule for future date:',
+			'Important:',
+			'This transaction will be executed according to your instructions, without the advice of a Banamex Representative.<br>The value of the Investment Funds&lsquo; shares are subject to market risks including a possible loss of the principal amount invested.<br> These products are not guaranteed by Banamex or any of the Banamex Financial Group member companies or by Citigroup, or by any government agency.',
+			
+			//Segunda Parte
+			
+			'<a href="#" class="tooltip border-dotted-link" title="The sale&rsquo;s amount will be<br>deposited into the collection<br>account 4337 / 001570.">Contract number:</a>',
+			'Select an option…',
+			'Investment account 8XXXX150 (Ref. CC5XXX515) - Available balance $ 520,261.47',
+			'Fund / Serie:',
+			'Select an option…',
+			'Sell by:',
+			'Amount',
+			'Securities',
+			'Securities:',
+			'Market price:',
+			'Amount:',
+			'Maturity:',
+			'72 hours',
+			'Another amount MXN:',
+			'Total',
+			'Partial of MXN $',
+			'Important:',
+			'This transaction will be executed according to your instructions, without the advice of a Banamex Representative.<br>The value of the Investment Funds&lsquo; shares are subject to market risks including a possible loss of the principal amount invested.<br> These products are not guaranteed by Banamex or any of the Banamex Financial Group member companies or by Citigroup, or by any government agency.',
+			'CONTINUE',
+			'CONTINUE',
+			'CONTINUE'
+			);
+			
+			$(document).ready(function(){
+			
+				
+			displayDate();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(345)+'px'});},900);
+			setTimeout(function(){top.idiomaTool();},1100);
+			
+			});
+			
+			function espanolTool(){
+				addTooltip();
+			}
+			
+			function inglesTool(){
+				addTooltip2();
+			}
+
+			
+			function posicionarTooltip2(link, tooltip){
+				var posLink = link.offset();
+				//If tooltip's position is bigger than body's width
+				if(posLink.left + link.outerWidth() + tooltip.outerWidth() + 15 < $("body").outerWidth()){
+					tooltip.css({
+						'left': posLink.left + link.outerWidth() - 100,
+						'top' : (posLink.top + 65) - (tooltip.outerHeight() /2)
+					});
+				}else{
+				tooltip.css({
+					'left': posLink.left - link.outerWidth() - 100,
+					'top' : (posLink.top + 65) - (tooltip.outerHeight() /2)
+				})
+					.find(".tt_arrow2")
+					.addClass("tt_arrow_right");
+				}
+			}
+
+			function addTooltip2(){
+				$('.tooltip').click(function(e){
+							
+					e.preventDefault();
+					
+					var tt_container = $('<div id="tt_container" class="medium3"></div>'),
+					flecha = $('<div class="tt_arrow2"></div>'),
+					actions = $('<div class="tt_actions"></div>'),
+					title_content = $(this).attr("title");
+					//Si ya había un tooltip lo elimino
+					if($('body').find('#tt_container')){
+						$('#tt_container').remove(); 
+					}
+					//Agrego la flechita
+					flecha.appendTo(tt_container);
+					//Agrego el boton de cerrar
+					$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container);
+					//Agrego el texto indicativo
+					$('<p class="p_tooltip"></p>').appendTo(tt_container);
+					//Agrego el tooltip
+					tt_container.appendTo('body');
+					$('.p_tooltip').html(title_content);
+					//Acomodo la fecha a la mitad del tooltip
+					flecha.css({
+						'top' : (tt_container.outerHeight() - flecha.outerHeight())/2
+					})
+					posicionarTooltip2($(this), tt_container);
+					$('#tt_container .tt_cancel, #tt_container .tt_close, #tt_container .tt_continue').click(function(){
+						$('#tt_container').remove();
+					});
+				});
+			}
+			
+			function posicionarTooltip(link, tooltip){
+				var posLink = link.offset();
+				//If tooltip's position is bigger than body's width
+				if(posLink.left + link.outerWidth() + tooltip.outerWidth() + 15 < $("body").outerWidth()){
+					tooltip.css({
+						'left': posLink.left + link.outerWidth() - 120,
+						'top' : (posLink.top + 65) - (tooltip.outerHeight() /2)
+					});
+				}else{
+				tooltip.css({
+					'left': posLink.left - link.outerWidth() - 120,
+					'top' : (posLink.top + 65) - (tooltip.outerHeight() /2)
+				})
+					.find(".tt_arrow2")
+					.addClass("tt_arrow_right");
+				}
+			}
+
+			function addTooltip(){
+				$('.tooltip').click(function(e){
+							
+					e.preventDefault();
+					
+					var tt_container = $('<div id="tt_container" class="medium3"></div>'),
+					flecha = $('<div class="tt_arrow2"></div>'),
+					actions = $('<div class="tt_actions"></div>'),
+					title_content = $(this).attr("title");
+					//Si ya había un tooltip lo elimino
+					if($('body').find('#tt_container')){
+						$('#tt_container').remove(); 
+					}
+					//Agrego la flechita
+					flecha.appendTo(tt_container);
+					//Agrego el boton de cerrar
+					$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container);
+					//Agrego el texto indicativo
+					$('<p class="p_tooltip"></p>').appendTo(tt_container);
+					//Agrego el tooltip
+					tt_container.appendTo('body');
+					$('.p_tooltip').html(title_content);
+					//Acomodo la fecha a la mitad del tooltip
+					flecha.css({
+						'top' : (tt_container.outerHeight() - flecha.outerHeight())/2
+					})
+					posicionarTooltip($(this), tt_container);
+					$('#tt_container .tt_cancel, #tt_container .tt_close, #tt_container .tt_continue').click(function(){
+						$('#tt_container').remove();
+					});
+				});
+			}
+			
+			
+</script>
+
+</head>
+<body>
+<div class="bg_demo cont_demo margintop0" id="subapp-box" style="height:100% !important;">
+
+				<div class="cH-appPanelHead float-left">
+					<h3 id="t23">Fondos de inversi&oacute;n Banamex</h3>
+				</div>
+				<div class="margin-top6 titulo ancho100">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="t24">
+                        <a href="javascript:void(0);" onClick="javascript:Layuda1();" class="float-left flechaLinksOpcoes">&nbsp;Ayuda</a>
+                        </div>
+				</div>
+				<div class="clear"></div>
+                
+                <div id="titulo">
+                
+				<p class="topNotes margin-bottom30" id="t25">Selecciona el tipo de operaci&oacute;n y el contrato, completa los datos de la inversi&oacute;n y da clic en "Continuar".</p>
+                
+                <p class="topNotes bold" id="t26">Esta operaci&oacute;n puede ser realizada de lunes a viernes de 9:00 a 13:00 h.</p>
+                
+				<div class="ancho100p">
+					<div class="form-row2 float-left sinMarginRight">
+						<label class="for-table2 sinBold" id="t27">Tipo de operaci&oacute;n:</label>
+						<label class="for-table2 radioR">
+                        <input type="radio" name="typeOperation" id="typeOperation1" onClick="valor=this.value; ocultab2();" value="1" /></label>
+						<span class="float-left" id="t28">Compra de t&iacute;tulos</span>
+					</div>
+					<div class="form-row2 float-left margin-left13">
+						<label class="for-table2 radioR">
+                        <input type="radio" name="typeOperation" id="typeOperation2" onClick="valor=this.value; ocultab1();" value="2" /></label>
+						<span class="float-left" id="t29">Venta de t&iacute;tulos</span>
+					</div>
+                    <div class="clear"></div>
+                 </div><!-- Fin Titulo -->
+                 
+                 <div id="principal1" class="displayNone">
+                 
+                 <div class="border-top"></div>
+                 
+					<div class="form-row2">
+						<label class="for-table2 sinBold" id="t30">
+                        <a href="#" class="tooltip border-dotted-link" title="La compra ser&aacute; cargada<br>de la cuenta eje 4337 /<br>001579.">
+                        Contrato de inversi&oacute;n:</a>
+                        </label>
+						<select class="width357 margin-topIE7">
+                        <option id="t31">Selecciona una opci&oacute;n...</option>
+						<option selected="selected" id="t32">Mi inversi&oacute;n - Banca de Inversi&oacute;n - 34568 - MXN:$ 9,560.25</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row2">
+						<label class="for-table2 sinBold float-left" id="t33">Fondo de inversi&oacute;n:</label>
+						<select class="width161 margin-topIE7 float-left">
+                        <option id="t34">Selecciona una opci&oacute;n...</option>
+						<option selected="selected">BNM1LIQ</option>
+						</select>
+                        <div id="flechaLinks" class="float-left margin-left10">
+							<span class="flechaGris float-left">&nbsp;</span>
+							<a href="javascript:LinkHR();" id="t35">Ver hist&oacute;rico de rendimiento </a>
+						</div>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row">
+						<label class="for-table2 sinBold" id="t36">Importe:</label>
+						<input type="text" class="float-left width207 paddingL5" onKeyUp="javascript:teclea7(this.id);" id="import1" value="50,000.00"/>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row2">
+						<label class="for-table2 sinBold float-left" id="t37">Liquidaci&oacute;n:</label>
+                        <label class="for-table2 sinBold float-left" id="t38">96 horas</label>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table2" id="t39">Programar a fecha futura:</label>
+						<div class="float-left">
+							<input type="text" value="09 Oct 2014" readonly id="cale1" class="width207 paddingL5 float-left calendario1 margin-topIE7">                               
+							<a href="#" class="icon-calendar otra_c1 posRelative top2"></a>
+                            <div class="float-left color888">(dd mm yyyy)</div>
+						</div>						
+						<div class="clear"></div>	
+					</div>
+                    
+				<div class="border-top"></div>
+				<div class="form-row2 margin-bottom30 topNotes margin-right10">
+					<label class="for-table2 bold" id="t40">Importante:</label>
+					<div class="clear" id="t41">
+                    Esta operaci&oacute;n ser&aacute; realizada bajo sus instrucciones, sin la asesor&iacute;a de un Ejecutivo Banamex.
+                    <br />
+                    El valor de las acciones de Sociedades de Inversi&oacute;n conlleva un riesgo de mercado incluyendo una posible minusval&iacute;a del
+                    <br />
+                    capital invertido.
+                    <br />
+                    Estos productos no est&aacute;n garantizados por Banamex o por alguna entidad integrante del Grupo Financiero Banamex o por
+                    <br />
+                    Citigrup, ni por ninguna entidad gubernamental.
+                    </div>
+					<div class="clear"></div>
+				</div>
+                
+                </div><!-- Principal -->
+                
+                <div id="principal2" class="displayNone">
+                
+                <div class="border-top"></div>
+                
+                <div class="width146">
+                	
+                    
+					<div class="form-row2">
+						<label class="for-table2 sinBold" id="t42">
+                        <a href="#" class="tooltip border-dotted-link" title="El importe de la venta ser&aacute;<br>depositado a la cuenta eje<br> 4337 / 001570.">
+                        Contrato de inversi&oacute;n:</a>
+                        </label>
+						<select class="width357 margin-topIE7">
+                        	<option id="t43">Selecciona una opci&oacute;n</option>
+							<option selected="selected" id="t44">Mi inversi&oacute;n - Banca de Inversi&oacute;n - 34568 - MXN:$ 9,560.25</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row2">
+						<label class="for-table2 sinBold float-left" id="t45">Fondo / Serie:</label>
+						<select class="width161 margin-topIE7 float-left">
+                        	<option id="t46">Selecciona una opci&oacute;n</option>
+							<option selected="selected">BNM1LIQ</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row2 margin-bottom10">
+						<label class="for-table2 sinBold" id="t47">Venta por:</label>
+						<label class="for-table2 radioR">
+                        <input type="radio" name="typeOperation2" id="typeRedemption1" checked="checked"></label>
+						<span class="float-left" id="t48">Por importe</span>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row margin-bottom20">
+						<label class="for-table2 sinBold">&nbsp;</label>
+						<label class="for-table2 radioR">
+                        <input type="radio" name="typeOperation2" id="typeRedemption2"></label>
+						<span class="float-left" id="t49">Por t&iacute;tulos</span>
+						<div class="clear"></div>
+					</div>
+                    
+                    <div class="form-row2">
+						<label class="for-table2 sinBold float-left" id="t50">T&iacute;tulos:</label>
+                        <label class="for-table2 sinBold float-left">4.000</label>
+						<div class="clear"></div>
+					</div>
+                    
+                    <div class="form-row2">
+						<label class="for-table2 sinBold float-left" id="t51">Precio de mercado:</label>
+                        <label class="for-table2 sinBold float-left">MXN $ 4.178900</label>
+						<div class="clear"></div>
+					</div>
+                    
+                    <div class="form-row2">
+						<label class="for-table2 sinBold float-left" id="t52">Saldo:</label>
+                        <label class="for-table2 sinBold float-left">MXN $ 1,512.87</label>
+						<div class="clear"></div>
+					</div>
+                    
+                    <div class="form-row2">
+						<label class="for-table2 sinBold float-left" id="t53">Liquidaci&oacute;n:</label>
+                        <label class="for-table2 sinBold float-left" id="t54">72 horas</label>
+						<div class="clear"></div>
+					</div>
+                    
+                    <div class="form-row2 margin-bottom10">
+						<label class="for-table2 sinBold" id="t55">Importe:</label>
+						<label class="for-table2 radioR">
+                        <input type="radio" name="typeOperation3" id="typeRedemption3"></label>
+						<span class="float-left" id="t56">Total</span>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row margin-bottom20">
+						<label class="for-table2">&nbsp;</label>
+						<label class="for-table2 radioR paddingT2"><input type="radio" name="typeOperation3" id="typeRedemption4" checked="checked"></label>
+						<span class="float-left paddingT2" id="t57">Otro importe MXN $</span>
+						<input type="text" class="width207 paddingL5 margin-left10 float-left" onKeyUp="javascript:teclea7(this.id);" id="import2" value="2,000.00"/>
+						<div class="clear"></div>
+					</div>
+                    
+                    <div class="border-top"></div>
+				<div class="form-row2 margin-bottom30 topNotes margin-right10">
+					<label class="for-table2 bold" id="t58">Importante:</label>
+					<div class="clear" id="t59">
+                    Esta operaci&oacute;n ser&aacute; realizada bajo sus instrucciones, sin la asesor&iacute;a de un Ejecutivo Banamex.
+                    <br />
+                    El valor de las acciones de Sociedades de Inversi&oacute;n conlleva un riesgo de mercado incluyendo una posible minusval&iacute;a del
+                    <br />
+                    capital invertido.
+                    <br />
+                    Estos productos no est&aacute;n garantizados por Banamex o por alguna entidad integrante del Grupo Financiero Banamex o por
+                    <br />
+                    Citigrup, ni por ninguna entidad gubernamental.
+                    </div>
+					<div class="clear"></div>
+				</div>
+                    
+					
+				</div><!-- ancho -->
+                
+				<div class="clear"></div>
+                
+                </div><!-- Principal2 -->
+                
+                
+                <div class="cF-sideBySide cF-bottomNav" style="margin-top:10px !important; *margin-top:0px !important; margin-top:0px !important\0/;">
+					<ul class="cN-primaryNav paddingL148 clear marginT10">
+						<li class="cM-spriteBase cN-primaryNavButton btn0"><a href="javascript:void(0);" onClick="javascript:continuar();" id="t60">CONTINUAR</a></li>
+                        <li class="cM-spriteBase cN-primaryNavButton displayNi btn1"><a href="javascript:void(0);" onClick="javascript:continuar1();" id="t61">CONTINUAR</a></li>
+                        <li class="cM-spriteBase cN-primaryNavButton displayNi btn2"><a href="javascript:void(0);" onClick="javascript:continuar2();" id="t62">CONTINUAR</a></li>
+					</ul>
+				</div>
+                
+				<div class="clear"></div>
+                
+                </div>
+                </div>
+                
+						
+<!-- Script para radio buttons y checkboxs-->
+        <script type="text/javascript">
+
+	$(document).ready(function(){
+		
+				var diasSemana = ['D','L','M','M','J','V','S'];
+			    var Meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+			    var MesesShort = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];		
+				if(top.language=="eng") {
+					diasSemana = ['S','M','T','W','Th','F','Sa'];	
+					Meses = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+					MesesShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+				}
+				$('.calendario1,.calendario2').datepicker({
+					dayNamesMin: diasSemana,
+					monthNames: Meses,
+					monthNamesShort: MesesShort,
+					beforeShow: function(){
+						$(this).removeClass('ui-corner-all');
+						
+					},
+					showAnim: '',
+					showOtherMonths: true,
+					selectOtherMonths: false,
+					minDate: 'y',
+					maxDate: '30d',
+					dateFormat:"d M yy",
+					disabled: false
+				});
+				$('.calendario1,.calendario2').focus(
+			      function(){
+			        if( $('.ui-datepicker .flecha').length == 0){
+			          $('.ui-datepicker').prepend("<div class='flecha'></div>");
+			        }
+			      }
+			    );
+				$('.calendario1,.calendario2').focus(
+					function(){
+						if( $(this).hasClass('modal_calendar') ){
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+						}else{
+							$('.ui-widget').css({'top':($(this).offset().top-67)+'px','left':($(this).offset().left+240)+'px', 'z-index':'99999999'});
+						}
+						if( $('.ui-datepicker .close').length == 0){
+							$('.ui-datepicker').append("<div class='close'></div>");
+						}
+						$('.ui-datepicker').find('.close').click(function(){
+							$('.input_calendar').datepicker( "hide" );
+						});
+						
+					}
+				);
+				
+			   $(".otra_c1").click(function(){
+    				$('.calendario1').datepicker('show');
+			   });
+			   $(".otra_c2").click(function(){
+    				$('.calendario2').datepicker('show');
+			   });
+				
+		
+		$.imageTick.logging = true;
+
+		//Por cada grupo de radio buttons repetir el siguiente código cambiando el name. Ademas ir cambiando la clase radios, para diferenciarla de los demas grupos.
+		//Radio Type of operation
+		$("input[name='typeOperation']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios1" 
+		});
+		
+		$("input[name='typeOperation2']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios2" 
+		});
+		
+		$("input[name='typeOperation3']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios3" 
+		});
+		
+		//En el caso de los checkboxs se cambiará la imagen teniendo en cuenta el tipo de input, sin especificar su name.
+
+		$("input[type='checkbox']").imageTick({ 
+			tick_image_path: "../../../../JFP/regional/images/img_form/check_1.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/no_check_1.png"
+		});
+
+
+	 });
+	/* Valida Letras*/
+	function has_letras(text){ var letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-+°";
+				   for(i=0; i<text.length; i++){
+					  if (letters.indexOf(text.charAt(i),0)>-1){
+						 return false;
+					  }
+				   }
+				   return true;
+				}
+ 
+	function has_numeros(text){ var numbers="1234567890";
+	   for(i=0; i<text.length; i++){
+		  if (numbers.indexOf(text.charAt(i),0)>-1){
+			 return false;
+		  }
+	   }
+	   return true;
+	}
+					
+	function teclea(iden){
+	var cadena;
+	var tamano;
+	
+	cadena=document.getElementById(iden).value;
+	tamano=cadena.length;
+	
+		if (has_letras(cadena)!=false && tamano<3){
+			document.getElementById(iden).value=cadena;
+			
+			} else {
+			document.getElementById(iden).value=cadena.substr(0,tamano-1);
+		}
+	}
+
+	function teclea7(iden){
+		var cadena;
+		var tamano;
+		cadena=document.getElementById(iden).value;
+		tamano=cadena.length;
+		if (has_letras(cadena)!=false && tamano<8){
+			document.getElementById(iden).value=cadena;
+		} else {
+			document.getElementById(iden).value=cadena.substr(0,tamano-1);
+		}
+	}
+	   
+		
+	function makeArray(n) {
+				this.length = n;
+				for (i = 1; i <= n; i++) {
+					this[i] = 0;
+				}
+				return this;
+			}
+			
+		var FechaActual;
+		var FechaInicial;
+		
+			function displayDate() {
+				var this_month = new makeArray(12);
+				this_month[0] = "01";
+				this_month[1] = "02";
+				this_month[2] = "03";
+				this_month[3] = "04";
+				this_month[4] = "05";
+				this_month[5] = "06";
+				this_month[6] = "07";
+				this_month[7] = "08";
+				this_month[8] = "09";
+				this_month[9] = "10";
+				this_month[10] = "11";
+				this_month[11] = "12";
+				var this_day_e = new makeArray(day);
+				var today = new Date();
+				var day = today.getDate();
+				var month = today.getMonth();
+				month = month + 1;
+				var year = today.getYear();
+				var dia = today.getDay();
+				if (year < 1000) {
+					year += 1900;
+				}
+				if (month < 10) {
+					month = '0' + month;
+				}
+				if (day < 10) {
+					day = '0' + day;
+				}
+				var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+				var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+				var seconds = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+				FechaActual = (year + "" + month + "" + day);
+				FechaInicial = (year-1 + "" + month + "" + day);
+				$('#fechaActual').html(FechaActual);
+				$('#fechaInicial').html(FechaInicial);
+				//return (" " + day + "/" + month + "/" + year + " ");
+			} 
+			
+	function ocultab2(){
+		
+		$('a.tt_close').click();
+		$('#principal2').hide(); 
+		setTimeout(function(){top.$('#iframeConte').css({'height':(345)+'px'});},900); 
+	}
+	
+	function ocultab1(){
+		
+		$('a.tt_close').click();
+		$('#principal1').hide(); 
+		setTimeout(function(){top.$('#iframeConte').css({'height':(345)+'px'});},900); 
+	}
+	 	
+	var valor=0;
+	function continuar(){
+		//alert(valor)
+		if(valor==1){
+		$('#principal1').show();
+		$('#principal2').hide();
+		$('.btn1').removeClass('displayNi');
+		$('.btn0, .btn2').addClass('displayNi');
+		setTimeout(function(){top.$('#iframeConte').css({'height':(560)+'px'});},1000);
+		}
+		if(valor==2){
+		$('#principal2').show();
+		$('#principal1').hide();
+		$('.btn2').removeClass('displayNi');
+		$('.btn0, .btn1').addClass('displayNi');
+		setTimeout(function(){top.$('#iframeConte').css({'height':(740)+'px'});},1000);
+		}
+	}
+	
+	function continuar1(){
+		
+		if(valor==1){
+		//alert('Page 1');
+		top.cargaDocN('Fondos_Inversion/inversiones_C1.html');
+		}
+		if(valor==2){
+		$('#principal2').show();
+		$('#principal1').hide();
+		$('.btn2').removeClass('displayNi');
+		$('.btn0, .btn1').addClass('displayNi');
+		setTimeout(function(){top.$('#iframeConte').css({'height':(740)+'px'});},1000);
+		}
+		
+		
+	}
+	function continuar2(){
+		
+		if(valor==1){
+		$('#principal1').show();
+		$('#principal2').hide();
+		$('.btn1').removeClass('displayNi');
+		$('.btn0, .btn2').addClass('displayNi');
+		setTimeout(function(){top.$('#iframeConte').css({'height':(560)+'px'});},1000);
+		}
+		if(valor==2){
+		//alert('Page 2');
+		top.cargaDocN('Fondos_Inversion/inversiones_C2.html');
+		}
+	}
+	
+	function LinkHR(){
+		
+		var url = "https://www.bancanetempresarial.banamex.com.mx/bestbanking/spanishdir/grafica.html?Emisora=BNMPLUS&Serie=&FecIni=";
+		var urlActual= url+FechaInicial+"&FecFin="+FechaActual;
+		
+		window.open(urlActual,'','height=786,width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+   }
+   
+   function Layuda1(){
+		
+		 window.open("https://bancanet.banamex.com/ayudas/es/inversiones/Multiseries.htm", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=786");
+   }
+   
+   function Layuda1_ing(){
+		
+		 window.open("https://bancanet.banamex.com/ayudas/en/inversiones/Multiseries.htm", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=786");
+   }
+	   </script>
+      <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+        
+      </div>
+	</body>
+</html>

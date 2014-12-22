@@ -1,0 +1,1332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body  TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION="https://uattmp.boveda.banamex.com.mx/scripts/cgiclntcbbbnp8/0DH@AE7NWQA1P3WVT2B0LQK/ND001__"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="aa0cf85a-af21-4344-bce4-e56fe7dca4ea" ><input type=hidden name="EWF_SYS_1" value="KBMIQNMSO6IMGO1Q@15WQF6GD7LRTSEXWJ7VK0OE" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZABC-PAG MODINTER"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="modal_InterMod.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="7"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><link href="/bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script src="../../bbAvatar/js/motor.js"></script>
+
+<script src="../../bbAvatar/js/opciones.js"></script>
+
+<script src="../../bbAvatar/js/swap.js"></script>
+
+<script src="../../bbAvatar/js/mando.js"></script>
+
+<script language="JavaScript">
+
+var es= new Array("Bank Accounts","Enter the modification data and click Continue","Account Data","Bank","Name","Account Type","Card Number","Nickname of account","Maximum payment amount","Payee's data (optional)","Payee's RFC or CURP","Payee's E-mail","Payee's Cell Number","Cancel","Continue",
+
+				"CLABE Account","Debit Card","Company Name","Interbank CLABE");
+
+var o = document.forms[0];
+
+var flag=true;
+
+/* Funcion que verifica si el campo tiene los caracteres validos
+
+ * Parametros
+
+ * @Campo_Txt: Id del campo que se pretende validar
+
+ * @Caracteres_Extras: Permitir otros caracteres como validos
+
+ * @Tipo_Validacion: El tipo de validacion 1=Numerico 2=Alfanumerico
+
+ * @Req: Cadena que nos valida si debe de ser requerido
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+
+
+/* Funcion que verifica si el combo esta vacio
+
+ * Parametros
+
+ * @Combo: Id del Combo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es diferente a "NO", lo omite
+
+**/
+
+
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+function bloqueaCaracter(evt){
+
+    var evt = (evt) ? evt : event;
+
+    var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+
+    if ((charCode > 32 && charCode < 48) || (charCode > 57) || (charCode == 13))
+
+        return false;
+
+}
+
+
+
+
+
+/* Funcion que verifica si el campo tenga la longitud requerida
+
+ * Parametros
+
+ * @Campo: Id del campo que se pretende validar
+
+ * @Longitud: Longitud a evaluar
+
+ * @TipoRel: Indice del tipo de comparacion 1(<=) 2(<) 3(>=) 4(>) 5(!=)
+
+ * @Msg: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function ValidaLongitud (Campo,Longitud,TipoRel,Msg){ 
+
+	$("#"+Campo+"_error").css("display","none");
+
+	var Error = 0;
+
+	switch(TipoRel){
+
+		case 1: if($("#"+Campo).val().length <= Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 2: if($("#"+Campo).val().length < Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 3: if($("#"+Campo).val().length >= Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 4: if($("#"+Campo).val().length > Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 5: if($("#"+Campo).val().length != Longitud)
+
+			Error = 1;
+
+			break;
+
+		default: Error = 1;
+
+	}
+
+	if(Error == 1){
+
+		$("#"+Campo+"_error").css("display","block").html(Msg);
+
+		$("#"+Campo).focus();
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+
+
+/* Funcion que verifica si el campo esta activo
+
+ * Parametros
+
+ * @Objeto: Id del campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function RdioChk_Vacio (Objeto,Msg_Error){
+
+	$("#"+Objeto+"_error").css("display","none");
+
+	var Seleccionado = false;
+
+	$("input[name='"+Objeto+"']").each(function(){
+
+		if(Seleccionado != true){
+
+			if(this.checked)
+
+			Seleccionado = true;
+
+			else
+
+			Seleccionado = false;
+
+		}
+
+	});
+
+	if(Seleccionado != true){
+
+		$("#"+Objeto+"_error").css("display","block").html(Msg_Error);
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+/* ************************************************************** */
+
+function validaMailModi(idCampo, mensaje){
+
+	if(document.getElementById(idCampo+"_error").style.display=="block"){
+
+		$("#"+idCampo+"_error").css("display","none");
+
+	}
+
+	var mailTest =  /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/;
+
+	var valMail = $("#"+idCampo).val();
+
+	if(mailTest.test(valMail)==false && $("#"+idCampo).val() != ""){
+
+		$("#"+idCampo+"_error").css("display","block").html(mensaje);
+
+		return false;
+
+	}else{
+
+		$("#"+idCampo+"_error").css("display","none");
+
+		return true;
+
+	}
+
+}
+
+function verif_celularModi( idCampo,mensaje) {
+
+	if(document.getElementById(idCampo+"_error").style.display=="block"){
+
+		$("#"+idCampo+"_error").css("display","none");
+
+	}
+
+	var num_cel = /^([0-9]{10})$/;
+
+	var numero = $( "#"+idCampo+"").val();
+
+	if( num_cel.test( numero )==false && $("#"+idCampo).val() != ""){
+
+		$("#"+idCampo+"_error").css("display","block").html(mensaje);
+
+		return false;
+
+	}else{
+
+		$("#"+idCampo+"_error").css("display","none");
+
+		return true;
+
+	}
+
+}
+
+
+
+function cambiaMayus( obj ) {
+
+	obj.value = obj.value.toUpperCase();
+
+}
+
+function comboVacio( idCombo,mensaje) {
+
+	var val = $( "#" + idCombo + " option:selected" ).val();
+
+	if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" || val=="undefined"){
+
+		var $divErr = $('<div class="error_formulario"><span>' + mensaje + '</span></div>');
+
+		$( '#'+idCombo+'').after( $divErr );
+
+	}
+
+}
+
+/*// ///////////////////////////Mensajes Altas//////////////////////
+
+var msg1="Seleccione un tipo de Cuenta.";
+
+var msg2="Ingrese un valor válido.";
+
+var msg3="Dato inválido, ingrese solo números.";
+
+var msg4="Importe inválido, favor de verificar.";
+
+var msg5="Email incorrecto.";
+
+var msg6="Teléfono incorrecto.";
+
+var msg7="Nombre incorrecto.";
+
+var msg8="Apellido incorrecto.";
+
+var msg9="RFC incorrecto";
+
+var msg10="Valor incorrecto";*/
+
+
+
+
+
+
+
+function importeValidoModi(id,mensaje){
+
+	if(document.getElementById(id+"_error").style.display=="block"){
+
+		$("#"+id+"_error").css("display","none");
+
+	}
+
+	var valImp = $( "#"+id+"").val();
+
+	var regexImp = /^\d{1,3}(,?\d{3}){0,6}$/;
+
+	if( valImp.match(regexImp) == null || valImp == 0){
+
+		$("#"+id+"_error").html(mensaje).css("display","block");		
+
+		return false;
+
+	}else{
+
+		return true;
+
+	}
+
+}
+
+function validaAlfabeticoModi( id,mensaje){
+
+	if(document.getElementById(id+"_error").style.display=="block"){
+
+		$("#"+id+"_error").css("display","none");
+
+	}
+
+	var valorAlfa = $("#"+id).val();
+
+	var alfanumTest = new RegExp( "^[0-9]+$");
+
+	if(alfanumTest.test( valorAlfa )!=false){
+
+		$("#"+id+"_error").html(mensaje).css("display","block");		
+
+	}
+
+}
+
+
+
+function rfcValidoModi( idTxt,mensaje) {
+
+		if(document.getElementById(idTxt+"_error").style.display=="block"){
+
+		$("#"+idTxt+"_error").css("display","none");
+
+	}
+
+	rfc = $( "#"+idTxt+"" ).val();
+
+	valRFC= rfc.toUpperCase();
+
+	document.getElementById(idTxt).value=valRFC;
+
+	
+
+	if ("02"!="01"){
+
+	
+
+		if(valRFC.length==12){
+
+			regexRFC = /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/; 
+
+			var resul=regexRFC.test(valRFC);
+
+			if(regexRFC.test(valRFC)!=true){
+
+				$("#"+idTxt+"_error").css("display","block").html(mensaje);
+
+			flag=false;
+
+			}
+
+		}
+
+	
+
+	}else{	
+
+		
+
+		if(valRFC.length==13 || valRFC.length==18 || valRFC.length==10){
+
+		if(valRFC.length==10){
+
+			regexRFC = /^([A-Z&]{4})([0-9]{6})$/; 
+
+			var resul=regexRFC.test(valRFC);
+
+			if(regexRFC.test(valRFC)!=true){
+
+				$("#"+idTxt+"_error").css("display","block").html(mensaje);
+
+			flag=false;
+
+			}
+
+		}		
+
+		if(valRFC.length==13){
+
+			regexRFC = new RegExp (/^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/); 
+
+			var resul=regexRFC.test(valRFC);
+
+			if(regexRFC.test(valRFC)!=true){
+
+				$("#"+idTxt+"_error").css("display","block").html(mensaje);
+
+			flag=false;
+
+			}
+
+		}
+
+		if(valRFC.length==18){
+
+			regexRFC = /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{6})([0-9]{2})$/; 
+
+			var resul=regexRFC.test(valRFC);
+
+			if(regexRFC.test(valRFC)!=true){
+
+				$("#"+idTxt+"_error").css("display","block").html(mensaje);
+
+			flag=false;
+
+			}
+
+		}
+
+	}
+
+	    else{
+
+		$("#"+idTxt+"_error").css("display","block").html(mensaje);
+
+		flag=false;
+
+	}
+
+}
+
+}
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+
+
+
+
+
+
+function validaComas(cade)
+
+{
+
+	fin = 0; 
+
+	ant = 0; 
+
+	ban = 1; 
+
+	cadindices = new Array(cade.length);
+
+	
+
+	if (cade.indexOf(",") == -1)
+
+	{ 
+
+		return(1); 
+
+	}                                             
+
+	for (i=0,j=0; i<cade.length+1; i++)
+
+	{
+
+		indice=cade.indexOf(",",i);
+
+		if(ant != -1)
+
+		{
+
+			i = indice; 
+
+		}
+
+		if (ant == -1)
+
+		{ 
+
+			fin=j; 
+
+			break;
+
+		}
+
+		cadindices[j] = indice;
+
+		j++;
+
+		ant = indice;
+
+	}                                             
+
+	if (cadindices[0] == 0)
+
+	{
+
+		return false; 
+
+	}                                              
+
+	if (cadindices[0]>3)
+
+	{
+
+		return false; 
+
+	}                                              
+
+	indice = cadindices[fin-2]+1;
+
+	if (indice == cade.length)
+
+	{
+
+		return false;
+
+	}                                             
+
+	if (indice+3 != cade.length)
+
+	{
+
+		return false;
+
+	}                                            
+
+	for (i=1; i<fin-1; i++)
+
+	{
+
+		if (cadindices[i] != cadindices[i-1]+4)
+
+		{
+
+			ban=0; 
+
+		}                                          
+
+	}
+
+	if (ban==0)
+
+	{
+
+		return false;
+
+	} else {
+
+		return true;
+
+	}
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+} 
+
+	
+
+	String.prototype.trim = function() {
+
+		return this.replace(/^\s+|\s+$/g,"");
+
+	}
+
+
+
+	$(document).ready(function(){
+
+		$("#ventanaEmergente-contenido").css("height","auto");
+
+		parent.$.modal.setDimentions($("#ventanaEmergente-contenido").height()+15, 750);
+
+			
+
+		ponerMail();
+
+	});
+
+function valCamposTer(){
+
+flag=true;
+
+
+
+var cadEmail="intpm1modif"+"@"+"banamex.com";
+
+
+
+var msj01="El campo no puede estar vacío";
+
+var msj02="El campo solo debe contener números";
+
+var msj03="Caracteres inválidos favor de verificar";
+
+var msj04="Información de Monto Máximo Inválido, favor de verificar.";
+
+var msj05= "Favor de requisitar correctamente el campo de RFC/CURP.";
+
+var msj06 = "Su número celular debe ser de 10 dígitos.";
+
+
+
+	if(Campo_Vacio ("alias",msj01,"SI") != true){
+
+		flag = false;
+
+	}else{
+
+		palabraClave=$("#alias").val();
+
+		var ali="IntPMmodif";
+
+		if(ali!=$("#alias").val()){
+
+			var alpha = /^[a-zA-Z0-9ñÑ ]*$/;
+
+			if(alpha.test(palabraClave)){
+
+			}
+
+			else{flag = false;
+
+				$("#"+"alias"+"_error").css("display","block").html(msj03);
+
+			}
+
+		}
+
+	}
+
+	if(Campo_Vacio ("importe",msj01,"SI") !=true){
+
+		flag = false;
+
+	}else{
+
+		 var imp="1,000";
+
+		if(imp!=$("#importe").val()){
+
+			if(importeValidoModi("importe", msj04)!=true){
+
+				flag = false;
+
+			}
+
+		}
+
+	}
+
+	 
+
+	if($("#email").val()!=cadEmail){
+
+		if(validaMailModi("email", msj03)!=true){
+
+			flag = false;
+
+		}
+
+	}
+
+	/*
+
+	if(verif_celularModi("numcel", msj06)!=true){
+
+		flag = false;
+
+	}
+
+	*/
+
+	if($("#rfc").val()!= ""){
+
+			rfcValidoModi( "rfc",msj05);
+
+		}
+
+	
+
+
+
+if(flag){
+
+	Modificar();
+
+	}else{
+
+		$("#ventanaEmergente-contenido").css("height","auto");
+
+		parent.$.modal.setDimentions($("#ventanaEmergente-contenido").height()+15, 750);
+
+	}
+
+}
+
+
+
+function Modificar(){
+
+		
+
+				parent.cargaDocN("Consulta de Cuentas ABC/modifica/cuentaalianza.htm");
+
+				parent.$.modal.impl.close();
+
+				
+
+			}
+
+
+
+function Salir(){
+
+		//window.parent.frames.main.document.forms[0].SEQUENCE_NUMBER.value=parseInt(o.SEQUENCE_NUMBER.value,10)+1;
+
+		//DoSubmit("REGRESAR");
+
+		parent.$.modal.impl.close();
+
+		}
+
+function DoSubmit(value){
+
+		var d=parent.document.getElementById("main").contentWindow.document.forms[0]
+
+		d.action=o.action;
+
+		d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+		d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+		d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+		d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+		d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+		d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+		d.DATA1.value=o.DATA1.value;
+
+		d.DATA2.value=o.DATA2.value;
+
+		d.DATA3.value=o.DATA3.value;
+
+		d.DATA4.value=o.DATA4.value;
+
+		d.DATA5.value=o.DATA5.value;
+
+		d.DATA6.value=o.DATA6.value;
+
+		d.DATA7.value=o.DATA7.value;
+
+		d.DATA8.value=o.DATA8.value;
+
+		d.DATA9.value=o.DATA9.value;
+
+		d.DATA10.value=o.DATA10.value;
+
+		d.EWFBUTTON.value = value;
+
+		d.EWFBUTTON.name="EWF_BUTTON_" + value;
+
+		d.submit();
+
+		parent.$.modal.close();
+
+	}
+
+	function ponerMail(){
+
+		var mail = "intpm1modif"+"banamex.com";
+
+		mail.trim();
+
+		if(mail != "" && mail != null){
+
+			$("#email").val("intpm1modif"+"@"+"banamex.com");
+
+		}else{
+
+			$("#email").val("");
+
+		}
+
+	}
+
+</script>
+
+
+
+
+
+
+
+<script>parent.setFecha("25/04/12    18:08:14  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="180751  ";b$Cont="180814  "
+
+	</script> 
+
+
+
+ <div id="ventanaEmergente-contenido">
+
+		<div class="bordeVentana">
+
+			<div class="ventanaEmergente_body ancho750">
+
+				<div id="mensajeError_contenido">
+
+					<div class="mensajeError_contenidoIn">
+
+                            <div class="panelIzEnca3_text2" id="t0">Cuentas bancarias</div>
+
+                            <div class="color666 paddingT5 f11" id="t1">Indica los datos de la modificaci&oacute;n y da clic en "Continuar".</div>
+
+
+
+                            <div class="saldos_bloque3_2">
+
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                                    <tr>
+
+                                        
+
+                                        <td valign="top" class="padding20">
+
+                                            <div class="paddingB10">
+
+                                                <div class="negrita color333 f11 paddingB5 borderBSolid f12" id="t2">Datos de la cuenta</div>
+
+                                            </div>
+
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+
+
+                                                <tr>
+
+                                                    <td class="ancho50p bgF1F2F2"><span id="t3">Banco</span></td>
+
+                                                    <td class="ancho50p bgF1F2F2">BANORTE</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td class="ancho50p"><script>if("02"=="01")document.write("<span id='t4'>Nombre</span>");else document.write("<span id='t17'>Raz&oacute;n Social</span>");</script></td>
+
+                                                    <td class="ancho50p">ALMACENES ALIANZA</td>
+
+
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td class="ancho50p bgF1F2F2"><span id="t5">Tipo de cuenta</span></td>
+
+                                                    <td class="ancho50p bgF1F2F2"><script>if("61" == "61")document.write("<label id='t15'>Cuenta CLABE</label>");else document.write("<label id='t16'>Tarjeta de Débito</label>");</script></td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td class="ancho50p"><script>if("61" == "61")document.write("<span id='t18'>CLABE Interbancaria</span>");else document.write("<span id='t6'>N&uacute;mero de Tarjeta</span>");</script></td>
+
+
+
+                                                    <td class="ancho50p">***318</td>
+
+                                                </tr>
+
+                    
+
+                                            </table>
+
+                                           
+
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT20">
+
+                                                <tr>
+
+                                                    <td class=" padding0">
+
+                                                        <div class="floatL">
+
+                                                            <div class=" color333 f11 paddingB5" id="t7">Alias de la cuenta</div>
+
+
+
+															<input id="alias" name="alias"  class="input ancho155" type="text" value="IntPMmodif" maxlength="20">
+
+															<div id="alias_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+                                                        </div>
+
+                                                        <div class="floatL paddingL10">
+
+                                                            <div class=" color333 f11 paddingB5" id="t8">Importe m&aacute;ximo por pago MXN</div>
+
+															<input id="importe" name="importe" class="input ancho155" type="text" value="1,000" maxlength="14"/>              
+
+															<div id="importe_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+                                                        </div>
+
+
+
+                                                    </td>
+
+                                                </tr>
+
+                                            </table>
+
+                    
+
+                                            <div class=" marginT20">
+
+                                                <div class="negrita color333 f11 paddingB5 borderBSolid f12" id="t9">Datos del beneficiario (opcionales)</div>
+
+                                            </div>
+
+                                            
+
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 marginT18 ">
+
+                                                <tr>
+
+
+
+                                                    <td class=" padding0">
+
+                                                        <div class="floatL">
+
+                                                            <div class=" color333 f11 paddingB5" id="t10">RFC o CURP del beneficiario</div>
+
+															<input id="rfc" name="rfc" class="input ancho333" type="text" value="AAA010101000" onblur="cambiaMayus(this)" maxlength="18">
+
+															<div id="rfc_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+                                                        </div>
+
+                                                        <div class="floatL paddingL10">
+
+                                                            <div class=" color333 f11 paddingB5" id="t11">Correo electr&oacute;nico del beneficiario</div>
+
+
+
+                                                            <input type="text" id="email" name="email" maxlength="61" class="input ancho190" value="usuario@mail.com" />
+
+															<div id="email_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+                                                        </div>                                    
+
+                                                  
+
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td class=" padding0">
+
+														
+
+                                                        <div class="floatL paddingT20 f11">
+
+                                                            <div class=" color333 f11 paddingB5" id="t12">N&uacute;mero de celular del beneficiario</div> (044 / 045)&nbsp;&nbsp;
+
+															<input id="numcel"name="numcel" class="input ancho190"  type="text" value="5540506080" maxlength="10" onKeyPress="return bloqueaCaracter(event);"/>&nbsp;&nbsp;*Telcel
+
+															<div id="numcel_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+                                                        </div>
+
+													
+
+                                                    </td>
+
+
+
+                                                </tr>                            
+
+                                            </table>
+
+                    
+
+                                        </td>
+
+                                    </tr>
+
+                                </table>        	
+
+                            </div>
+
+                            
+
+                            <div class="marginT20 overflow">
+
+                                <input type="button" class="btnRJ86 CerrarVentanaEmergente floatL" id="t13" value="Cancelar" onclick="top.$.modal.close();" />
+
+                                <input type="button" class="btnAZ86 CerrarVentanaEmergente floatR" id="t14" value="Continuar" onclick="Modificar();"/>
+
+                            </div>
+
+
+
+						</div>
+
+                    </div>
+
+                </div> 
+
+            </div>
+
+		</div>
+
+<INPUT TYPE="HIDDEN" ID="DATA1" NAME="DATA1" VALUE="">
+
+<INPUT TYPE="HIDDEN" ID="DATA2" NAME="DATA2" VALUE="">
+
+<INPUT TYPE="HIDDEN" ID="DATA3" NAME="DATA3" VALUE="">
+
+<INPUT TYPE="HIDDEN" ID="DATA4" NAME="DATA4" VALUE="">
+
+<INPUT TYPE="HIDDEN" ID="DATA5" NAME="DATA5" VALUE="">
+
+<INPUT TYPE="HIDDEN" ID="DATA6" NAME="DATA6" VALUE="">
+
+<INPUT TYPE="HIDDEN" ID="DATA7" NAME="DATA7" VALUE="">
+
+<INPUT TYPE="HIDDEN" ID="DATA8" NAME="DATA8" VALUE="">
+
+
+
+<INPUT TYPE="HIDDEN" ID="DATA9" NAME="DATA9" VALUE="">
+
+<INPUT TYPE="HIDDEN" ID="DATA10" NAME="DATA10" VALUE="">
+
+<input type="hidden" name="EWFBUTTON" id="EWFBUTTON" value=""/>
+
+<script type="text/javascript" language="javascript" src="https://www.banamex.com/recursos/js/mx_citi_s_code.js"></script>
+
+<script type="text/javascript" language="javascript">
+
+String.prototype.trimomt = function(){return this.replace(/^\s+|\s+$/g,"")};
+
+try{ var moduleeval = "ZABC"; if(!parent.document.getElementById("main") && (moduleeval == "ZLOG" || moduleeval == "["+"CURRENT MODULE"+"]")){ OmnitureBNP2(); } if(parent.document.getElementById("main") && moduleeval != "["+"CURRENT MODULE"+"]" && moduleeval != "ZRUT"){ OmnitureBNP2();} }catch(exp){}
+
+function OmnitureBNP2(){ try{s.eVar21 = "BNP2"; var idusuario_omt = "DEMO"; idusuario_omt.trimomt(); var idusuariomemoria_omt = "["+"USERID"+"]"; if(idusuario_omt != "" && idusuario_omt != idusuariomemoria_omt){ s.prop5 = idusuario_omt; } var tipousuario_omt = "56"; tipousuario_omt.trimomt(); var tipousuariomemoria_omt = "["+"StatusToken"+"]"; if(tipousuario_omt == tipousuariomemoria_omt){ s.prop6 = "anon"; } else if(tipousuario_omt == "56"){ s.prop6 = "CHALLENGE"; }else if(tipousuario_omt == "06"){ s.prop6 = "PASSCODE"; } else{ s.prop6 = "LIGHT"; } var language_omt = "SPANISH"; if(language_omt == "SPANISH"){ s.prop10="ES"; }else if(language_omt == "ENGLISH"){ s.prop10="EN";} var pagenameomt = ""; var indicetable = "Consulta de Cuentas ABC|modal_InterMod.htm"; indicetable.trimomt(); var valuehashtableOmt = hashtableOmtRim[indicetable]; if(valuehashtableOmt != null && valuehashtableOmt != ""){ pagenameomt = "MX|BNP2|" + valuehashtableOmt; }else{ pagenameomt="MX|BNP2|ZABC|Consulta de Cuentas ABC|modal_InterMod.htm"; } s.pageName = pagenameomt; var s_code=s.t();if(s_code)document.write(s_code); }catch(exp){} }
+
+</script>
+
+<input id="omtmodalvalue" type="hidden" value="Consulta de Cuentas ABC|modal_InterMod.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

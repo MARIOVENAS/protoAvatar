@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Banamex</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+    <link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css" />
+	<link rel="stylesheet" type="text/css" href="../../JFP/css/widgets/jquery.qtipW3.css" />
+	<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css" />
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css" />
+
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    <script type="text/javascript" src="../../JFP/js/jquery/jquery-1.5.1.js"></script>
+	<script type="text/javascript" src="../../JFP/js/widgets/jquery.dcjqaccordion.2.7.min.js"></script>
+    <script type="text/javascript" src="../../JFP/js/widgets/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/left_menu_multilevel.js"></script>
+	<script type="text/javascript" src="../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="bbAvatar/js/menuSpanish.js"></script>
+	<script type="text/javascript" src="bbAvatar/js/swap.js"></script>
+    
+    
+	<script type="text/javascript" src="../../JFP/js/widgets/jquery.hoverIntent.minified.js"></script>
+	<script type="text/javascript" src="../../JFP/js/widgets/jquery.qtipW3.js"></script>
+</head>
+
+<body>
+<!--inicia contenedor principal-->
+	<div id="wrap" class="cS-structMainContainer">
+    <!--inicia header-->
+		<div id="header">
+			<div class="utilities_nav" id="navegacionPrincipal"></div>
+			<div class="citibank-containerImg">
+				<a href="#"><div id="citibank-logo"></div></a>
+				<div id="citibank-image"></div>
+			</div>
+			<div class="main_nav" id="menuw"></div>
+			<div id="user-info">
+				<div class="userInfo-content" id="msj_bienvenido"></div>
+			</div>
+<!--termina header-->
+		</div>
+		<div class="cS-structBodyContainer">
+			<div id="title-section" class="cH-appPageHead height20">
+				<div class="float-left"><h1 id="t23">INVERSIONES</h1></div>
+				<div id="ayuda">
+					<div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="liga"><a id="t24" href="javascript:void(0);" class="float-left">&nbsp;Ayuda</a></div>
+					</div>
+				</div>
+				<div id="imp" class="displayNone">
+					<!--<div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">-->
+                    <div class="margin-top6 titulo" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a id="t25" href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+					</div>
+				</div>
+			</div>
+            <div class="bg_demo">
+				<div id="content">
+					<!-- The left menu divs are inserted by javascript if it is necessary -->
+					<div id="left-menu" class="float-left margin-top25"></div>
+		            <div id="shadow" class="width14">&nbsp;</div>
+					<!-- Cuando no lleva menu izquierdo  <div id="subapp-box" class="noleftmenu float-left margin-top1"> -->
+					<div id="subapp-box" class="float-left">
+						<iframe id="iframeConte" name="main" class="ifrContenedor" scrolling="no" frameborder="0" src="transacciones/Operaciones_frecuentes/screen1.html" height="517" width="703"></iframe>
+					</div>
+				</div>
+				<div class="clear"></div>
+            </div>
+			<div id="footer" style="background-color:#FFFFFF !important;"></div>
+		</div> 
+	</div>
+
+<script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	
+	es.push(
+		'INVESTMENTS', //t23
+		'&nbsp;Help', //t24
+		'&nbsp;Print', //t25
+		'FREQUENT OPERATIONS', //t26
+		'OVERNIGHT DEPOSITS', //t27
+		'TIME DEPOSITS', //t28
+		'INVESTMENT FUNDS', //t29
+		'HORIZONTE MUTUAL FUNDS', //t30
+		'BANCA PATRIMONIAL', //t31
+		'EMPRESARIAL BANAMEX',//t32
+		'INVESTMENT NUMBERS', //t33
+		'AUTHENTICATION', // Modal -- t34
+		'For your security, this operation needs to be authenticated with your NetKey.', //t35
+		'Enter the code in your device and press "ENT". A dynamic code will be generated, which you must enter in the textbox. Click on "CONTINUE".', //t36
+		'Dynamic code:', //t37
+		'CONTINUE', //t38
+		'CONTINUE', //t38
+		'Cancel', //t40
+		
+		'ACCITRADE <span class="dcjq-icon"></span>',//t41
+		'Deposit to AcciTrade',//t42
+		'Access to AcciTrade' //t43
+		);
+
+	$(document).ready(function(){
+		ajustarOverlay();
+		ajusta_tooltpis();
+		funciones_loginML3();
+		account_summary();
+		//click_topmenu();
+		setTimeout(function(){$('#Inversiones').addClass('active');},800);
+		setTimeout(function(){cambiaP1();},1100);
+	});
+	$( document ).ajaxStop( function(){
+		if( isEnglishSel ) {
+			$( '#lstAccDate' ).html( '03/24/2010' );
+		}
+	});
+	function idiomaTool(){
+		if( isEnglishSel ) {
+		document.getElementById("iframeConte").contentWindow.inglesTool();
+		}else{
+		document.getElementById("iframeConte").contentWindow.espanolTool();
+		}
+	}
+	function HBE(){
+		$('#MiBancaNet');
+		ayuda();
+	}
+	function cambiaP1(){
+		tamano1_2();
+		cargaDocN('Operaciones_frecuentes/screen1.html');
+		$('#ayuda').hide();
+		$('#imp').hide();
+		setTimeout('liga2();', 880);
+	}
+	function cambiaP2(){
+		tamano1_2();
+		cargaDocN('Inversion Integral/integral_perfiles.html');
+		$('#iframeConte').css({'height':(415)+'px'});
+		$('#ayuda').hide();
+		$('#imp').hide();
+		setTimeout('liga2();', 880);
+	}
+	function cambiaP3(){
+		tamano1_2();
+		cargaDocN('Inversion Pagare/deposito_plazo.html');
+		$('#ayuda').hide();
+		$('#imp').hide();
+		setTimeout('liga3();', 880);
+	}
+	function cambiaP4(){
+		tamano1_2();
+		cargaDocN('Fondos_Inversion/inversiones.html');
+		$('#ayuda').hide();
+		$('#imp').hide();
+		//setTimeout('liga4();', 880);
+	}
+	function cambiaP5(){
+		tamano1();
+		cargaDocN('Sociedades de Inversion/fondos_horizonte.html');
+		$('#ayuda').show();
+		$('#imp').hide();
+		setTimeout('liga5();', 880);
+	}
+	function cambiaP6(){
+		tamano1();
+		cargaDocN('Bancatrade en BancaNet/Bpatrimonial.htm');
+		$('#ayuda').show();
+		$('#imp').hide();
+		setTimeout(function(){$('#link1').trigger('click');},950);
+		setTimeout('liga1();', 880);
+	}
+	function cambiaP7(){
+		tamano1();
+		cargaDocN('Inversion Empresarial/inversion_empresarial.html');
+		$('#ayuda').show();
+		$('#imp').hide();
+		setTimeout('liga6();', 880);
+	}
+	
+	function cambiaP8(){
+		tamano1_2();
+		$('#t42').click();
+		cargaDocN('ACCITRADE/screen1.html');
+		$('#ayuda').show();
+		$('#imp').hide();
+		//setTimeout('liga7();', 880);
+	}
+	
+	function cambiaP9(){
+		tamano1();
+		cargaDocN('ACCITRADE/ingresar_accitrade.html');
+		$('#ayuda').show();
+		$('#imp').hide();
+		//setTimeout('liga8();', 880);
+	}
+	
+	
+	function cambiaM(){
+		window.location="../../../../htmls/48-dashboard-extended.html";
+	}
+	function banca(){
+		open("../../movimientos_banca_historial.html" , "_self");
+	}
+	function Layuda(){
+		window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda1(){
+		window.open(rutaAyudaAv+'inversiones/operaciones-frecuentes.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda2(){
+		window.open(rutaAyudaAv+'inversiones/Integral-Perfiles.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda3(){
+		window.open(rutaAyudaAv+'inversiones/A-plazo.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda4(){
+		window.open(rutaAyudaAv+'inversiones/Multiseries.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda5(){
+		window.open(rutaAyudaAv+'inversiones/Fondos-Horizonte.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Layuda6(){
+		window.open(rutaAyudaAv+'inversiones/Integral-Perfiles.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+	}
+	function Limprimir(){
+		window.print();
+	}
+</script>
+
+<!--<IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="../bancanet_demo/contenidos/menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>-->
+    <input type="hidden" id="objs" value="1" />
+    <input type="hidden" id="TIMEOUT" value="" />
+    <input type="hidden" name="LASTRESET" value="" />
+    <input type="hidden" id="segRestan" value="" />
+    <input type="button" name="exit" style="display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');" />
+    <input type="hidden" id="DATAAUX"  name="DATAAUX" value="" />
+	<input type="hidden" id="DATADEMO" name="DATADEMO" value="" />
+	<input type="hidden" id="REGRESADEMO" name="REGRESADEMO" value="" />
+	<input type="hidden" id="CONTINUADEMO" name="CONTINUADEMO" value="" />
+    <input type="hidden" id="titHdn" name="titHdn" value="" />
+
+<!--termina contenedor principal-->
+	<div id="cortinaOverlay" class="cerrarOverlay" style="display:none;"></div>
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+			<tbody><tr><td>
+				<div id="mensajeError_contenido_div"></div>
+				<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+			</td></tr></tbody>
+			</table>
+		</div>
+	</div>
+	<iframe id="nwd" src="if.htm" name="ndw" style="display:none"></iframe>
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+	<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+		<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+			<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+				<tbody>
+					<tr>
+						<td>
+							<div id="mensajeError_contenido_divEspecial"></div>
+							<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+    
+    <script>
+	function VerNum(){ 
+
+			$('#mensajeError_contenido_div', window.document).html(
+				$("#divAutenticacion").html()
+			);
+
+			$.modal({
+
+				closeHTML: '',
+
+				opacity:60,
+
+				overlayClose:false,
+
+				flagDiv:true,
+
+				widthDivIfrm:570,
+
+				heightDivIfrm:'auto'
+
+			});
+			
+			$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+			$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');	
+			
+			
+			$(document).ready(function() {
+		$.imageTick.logging = true;
+
+		
+		
+		//Radios Investment - Overlay Sceene7
+		$("input[name='investment']").imageTick({
+			tick_image_path: "../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios3" 
+		});
+		
+		
+		
+		//En el caso de los checkboxs se cambiará la imagen teniendo en cuenta el tipo de input, sin especificar su name.
+		//setTimeout("$('.scroll_y').tinyscrollbar({scroll:true,sizethumb:'auto',size:auto });",100);
+	 	$('#scrollbar').tinyscrollbar({ size: 'auto' });
+		$('#scrollbar').tinyscrollbar({ sizeThumb: 'auto' });
+		var autoHeight = $('#thumb').css("height");
+		$('#grip').css("height",autoHeight);
+	});
+		}
+		
+		function MOtra(){
+			document.getElementById("iframeConte").contentWindow.MOtra2();
+		}
+		
+	/*  Modal de Inversiones */
+	
+	function challengeAire(){
+		
+		$('#t38').removeClass('displayNi');
+		$('#t39').addClass('displayNi');
+		
+		$('#mensajeError_contenido_div', window.document).html(
+			$("#divAutenticacion2").html()
+		);
+		
+
+		$.modal({
+			closeHTML: '',
+			opacity:60,
+			overlayClose:false,
+			flagDiv:true,
+			widthDivIfrm:570,
+			heightDivIfrm:'auto'
+
+		});
+		
+		$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');	
+
+		setTimeout(function(){
+			llenarValores('input','.challenge_input','12345678');	
+		},1000);
+	}
+	
+	/*  Modal de Inversiones */
+	
+	/*  Modal de ACCITRADE */
+	
+	function challengeAire2(){
+		
+		$('#t38').addClass('displayNi');
+		$('#t39').removeClass('displayNi');
+		
+		$('#mensajeError_contenido_div', window.document).html(
+			$("#divAutenticacion2").html()
+		);
+		
+
+		$.modal({
+			closeHTML: '',
+			opacity:60,
+			overlayClose:false,
+			flagDiv:true,
+			widthDivIfrm:570,
+			heightDivIfrm:'auto'
+
+		});
+		
+		$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');	
+
+		setTimeout(function(){
+			llenarValores('input','.challenge_input','12345678');	
+		},1000);
+	}
+	
+	/*  Modal de ACCITRADE */
+	</script>
+
+	<div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+    
+    <div class="modal" id="divAutenticacion">
+
+		<div class="overlay-error">
+
+			<div class="overlay-content">
+
+				<div class="external-tranfer2">
+
+					<div class="external-tranfer-content" style="left:-18px !important; top:20px; position:relative;">
+
+						<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+						<div class="content-top">
+								<div class="center">
+									<div class="dot-bottom">
+										<div class="left">
+											<span class="title" id="t33">N&Uacute;MEROS DE INVERSI&Oacute;N</span>
+										</div>                                   
+									</div>
+									<div class="clear"></div>
+									
+                                    
+                                    <iframe id="deposito_plazo_modal" class="ancho100p" height="330"  scrolling="no" frameborder="0" src="transacciones/Inversion Pagare/deposito_plazo_modal.html"></iframe>
+                                    
+								</div>
+							</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+    
+    <!-- Clave Dinámica -->
+    <div class="modal" id="divAutenticacion2">
+
+		<div class="overlay-error">
+
+			<div class="overlay-content">
+
+				<div class="external-tranfer2">
+
+					<div class="external-tranfer-content" style="left:-18px !important; top:20px; position:relative;">
+
+						<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+						<div class="content-top">
+
+							<div class="center">
+
+								<div class="dot-bottom">
+
+									<div class="left"><span class="title" id="t34">AUTENTICACIÓN</span></div>                                   
+
+								</div>
+
+								<div class="error-content">
+
+									<div id="scrollbar">
+
+                                        <div class="clear"></div>
+
+										<div class="viewport">
+
+											<div class="overview">
+
+												 <p class="instructions margin-bottom15 strong" id="t35">Por tu seguridad, esta operación debe ser autenticada con tu NetKey.</p>
+
+                                                 <div class="clear border-dotted_top margin-bottom20"></div>
+
+									             <div class="width103">
+
+													<p class="margin-bottom20" id="t36">Ingresa en tu dispositivo la clave que a continuación se muestra y presiona "ENT". Se generará una clave dinámica que debes ingresar en el espacio en blanco. Da clic en "CONTINUAR".</p>
+
+													<p class="textBig margin-bottom20 margin-left130">CHALLENGE: <span class="colorBlue">24018778</span></p>
+
+													
+
+									                <div class="form-row margin-bottom0 margin-left130">
+
+									                    <div class="for-table margin-bottom5 float-left margin-top2 margin-right10">
+
+									                    	<span class="strong" id="t37">Clave dinámica:</span>
+
+									                    </div>
+
+									                    <input type="password" class="width70 float-left challenge_input" readonly="readonly" />
+
+									                    <div class="clear"></div>
+
+									                </div>
+
+									            </div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="clear margin-bottom30"></div>								
+
+									<div class="cF-sideBySide cF-bottomNav">
+
+										<ul class="cN-primaryNav">
+
+											<li style="float:right;" class="cM-spriteBase cN-primaryNavButton margin-left10">
+                                       
+                                        <a href="javascript:cargaDocN('Fondos_Inversion/inversiones_A2.html'); $.modal.close();" class="displayNi" id="t38">Continuar</a>
+                                        <a href="javascript:cargaDocN('ACCITRADE/screen1A.html'); $.modal.close();" class="displayNi" id="t39">Continuar</a>
+
+											</li>
+
+											<li style="float:right;">
+
+												<div id="flechaLinksOpcoes">
+
+													<span class="flechaGris float-left"></span>
+
+													<a class="sinBold" href="javascript:$.modal.close();" id="t40">Cancelar</a>
+
+												</div>
+
+											</li>
+
+										</ul>
+
+									</div>
+
+									<div class="clear"></div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+    <!-- Fin Clave Dinámica -->
+    
+    
+</body>
+</html>

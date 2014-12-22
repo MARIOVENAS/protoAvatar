@@ -1,0 +1,202 @@
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>Banamex</title>
+		
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+			<script type="text/javascript">
+			
+			var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('ACCOUNT DETAIL','See all accounts','Instrument:','Contract status:','Pending orders:','Price per share:','Last transaction date:','Balance in shares:','Balance date:','Balance in pesos:','WHAT DO YUO WISH TO DO?','Invest my money');
+			
+            <!--
+			$(document).ready(function(){
+			setTimeout(function(){top.ajustarP();},800);
+			
+			});
+			-->
+			</script>
+</script>
+</head>
+
+<body>
+    <div class="width926 bg_demo2">
+    <div id="title-section" class="cH-appPageHead height20 paddingT0 margin-bottom20">
+                    <div class="float-left">
+                      <h1 id="t23">DETALLE DE LA CUENTA</h1></div>
+                        
+               <div id="ayuda">  
+                <div class="margin-top6 titulo " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0)" onclick="top.dash()" class="float-left" id="t24">&nbsp;Ver todas las cuentas</a>
+                </div>
+                </div>   
+             
+             <div id="imp" class="displayNone">
+               <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+                </div>
+                </div>
+                </div>
+    
+    <div class="clear"></div>
+
+<div class="noleftmenu margintop0" id="subapp-box">
+    
+    <div class="form-row">
+        <select name="select" id="select" onchange="valor2=this.value;Cta3();">
+            				<option value="0" >Mi Chequera - Cheques - MXN - 12680</option>
+                          <option value="1">Cta Maestra - Mi maestra - MXN - 12681</option>
+                          <option value="2">Pagom&aacute;tico - BNM - Mi d&eacute;bito - MXN - 12680</option>
+                          <option value="3">Mi Chequera - Cheques - USD - 12680</option>
+                          <option value="4">Tarj. Oro - Mi tarjeta - MXN - 12680</option>
+                          <option value="5">Tarj. Premia - Ptos Premia - MXN 12244</option>
+                          <option value="6">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="7">Credicheques - Mi cr&eacute;dito - MXN - 12300</option>
+                          <option value="8">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="9">Mi inversi&oacute;n - Inv. Integral - MXN - 12299</option>
+                          <option value="10">Mi plazo - Inv. Plazo - MXN - 12282</option>
+                          <option selected="selected">Horzcob - MXN - 123456 - Horzcob</option>
+                          <option value="12">Banca Inversi&oacute;n - MXN - 123456 - Multiseries</option>
+                          <option value="13">Mi retiro - AFORE NSS - MXN - 12312</option>
+        </select>
+        <div class="clear"></div>
+    </div>
+
+<div class="widthOpt2 float-left padding-right35">
+
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+                   <tbody>
+                      <tr class="noborder">
+                        <td class="height20" width="30%" id="t25">Instrumentos:</td>
+                        <td class="height20 alignRight color666 padding-right35" width="30%">HORZCOB</td>
+                        <td class="height20" width="20%" id="t26">Estatus del contrato:</td>
+                        <td class="height20 alignRight color666" width="20%">ACTIVO</td>
+                      </tr>
+                      <tr class="noborder">
+                        <td class="height20" id="t27">Órdenes pendientes:</td>
+                        <td class="height20 alignRight color666 padding-right35">000</td>
+                        <td class="height20" id="t28">Precio por acción:</td>
+                        <td class="height20 alignRight color666">$0.00</td>
+                      </tr>
+                      <tr class="noborder">
+                        <td class="height20" id="t29">Fecha del último movimiento:</td>
+                        <td class="height20 alignRight color666 padding-right35">05 Feb 2012</td>
+                        <td class="height20" id="t30">Saldo en acciones:</td>
+                        <td class="height20 alignRight color666">000</td>
+                      </tr>
+                      <tr class="noborder">
+                        <td class="height20" id="t31">Fecha del saldo:</td>
+                        <td class="height20 alignRight color666 padding-right35">05 Feb 2012</td>
+                        <td class="height20" id="t32">Saldo en pesos:</td>
+                        <td class="height20 alignRight color666">$100,000.00</td>
+                      </tr>
+                    </tbody>
+                </table>
+
+</div>
+<div class="float-left width-190 padding-left20">
+	<h4 class="margin-bottom10" id="t33">¿QUÉ DESEAS HACER?</h4>
+    <div class="clear"></div>
+    <div id="flechaLinksOpcoes" class="float-left height20 width-180" style="*height:14px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.invertir()" id="t34">Invertir mi dinero</a>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<script>
+	var valor2=0;
+	
+	function Cta3(){
+		
+			if(valor2==0)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==1)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Maestra.html'
+			}
+			if(valor2==2)
+			{
+			top.cargando_movimientos();
+			window.location.href='Tarjeta-de-Debito.html'
+			}
+			if(valor2==3)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==4)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta-de-Credito.html'
+			}
+			if(valor2==5)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta_premia.html'
+			}
+			if(valor2==6)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==7)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Credicheque.html'
+			}
+			if(valor2==8)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==9)
+			{
+			top.cargando_movimientos();	
+			window.location.href='39-AccountDetail_integral.html'
+			}
+			if(valor2==10)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_plazo_folio.html'
+			}
+			if(valor2==11)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_fondos.html'
+			}
+			if(valor2==12)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_multiseries.html'
+			}
+			if(valor2==13)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail.html'
+			}
+		}
+	</script>
+</div>
+</div>
+</body>
+</html>

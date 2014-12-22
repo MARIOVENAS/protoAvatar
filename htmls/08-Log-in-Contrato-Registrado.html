@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>Layout Avatar</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+
+	<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/script.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="../bancanet/contenidos/bbAvatar/js/swap.js"></script>
+
+</head>
+
+
+
+<body>
+
+<!--inicia contenedor principal-->
+
+<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+	<div id="header">
+
+		<div class="utilities_nav" id="navegacionPrincipal"></div>
+
+		<div class="citibank-containerImg">
+
+			<a href="#"><div id="citibank-logo"></div></a>
+
+			<div id="citibank-imageb"></div>
+
+		</div>
+
+<!--termina header-->
+
+	</div>
+
+	<div class="cS-structBodyContainer">
+
+		<div id="title-section" class="cH-appPageHead height20">
+
+			<div class="float-left"><h1 id="t24">CONVENIO MODIFICATORIO</h1></div>
+
+			<div class="margin-top6 titulo ancho50" id="flechaLinksOpcoes">
+
+				<span class="flechaGris float-left">&nbsp;</span>
+
+				<a id="t25" href="javascript:void(0);" onclick="javascript:window.print();" class="float-left">&nbsp;Imprimir</a>
+
+			</div>
+
+		</div>
+
+		<div id="content">
+
+		    <!-- The left menu divs are inserted by javascript if it is necessary -->
+
+			<!--div id="left-menu" class="float-left margin-top25"></div>
+
+		    <div id="shadow">&nbsp;</div-->
+
+			<div id="subapp-box" class="noleftmenu float-left">
+
+				<p>
+
+					<span id="t26">En <b>Banca</b>Net queremos brindarte el mejor servicio, por ello, constantemente desarrollamos nuevas funcionalidades para que tu experiencia en nuestra banca electr&oacute;nica sea satisfactoria.</span><br /><br />
+
+               		<span id="t27">Por ello, en esta ocasi&oacute;n te pedimos aceptar nuestro nuevo</span>&nbsp;
+
+					<a id="t28" href="https://bancanet.boveda.banamex.com.mx/spanishdir/contrato_marzo_2011.pdf" target="new" class="underline">Clausulado del Contrato de Prestaci&oacute;n de Servicios</a> 
+
+					<span id="t29">con el cual nos permites seguirte ofreciendo nuestros servicios y todas las actualizaciones de <b>Banca</b>Net, adem&aacute;s de acceder a estos servicios sin costo* para ti.</span><br /><br />
+
+                    <span id="t30">Da click en &quot;Aceptar&quot; y aprovecha la banca electr&oacute;nica de Banamex</span><br /><br />
+
+                    <span id="t31">*Personas F&iacute;sicas con Actividad Empresarial y/o Personas Morales contin&uacute;an con el esquema de comisiones del servicio contratado.</span>
+
+				</p>
+
+                <div class="border-solid margin-top20"></div>
+
+                <ul class="cN-primaryNav float-left margin-top5">
+
+					<li class="cM-spriteBase cN-primaryNavButton"><a id="t32" href="#">ACEPTAR</a></li>
+
+					<li>
+
+						<div id="flechaLinks">
+
+							<span class="flechaazul float-left"></span>
+
+							<a id="t33" href="#" class="sinBold">Cancelar</a>
+
+						</div>
+
+					</li>
+
+                </ul>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="footer"></div>
+
+	</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	var es = new Array('ESPAÑOL','BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My <strong>Banca</strong>Net','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+
+
+
+	es.push(
+
+		'AMENDING AGREEMENT',
+
+		'Print',
+
+		'In <b>Banca</b>Net we want to provide you the best service, that is why, we develop new functionalties in an ongoing basis to ensure that your experience in our electronic banking is satisfactory.',
+
+		'For the above, we ask you in this occasion to please accept the new',
+
+		'clauses added to our Service Agreement',
+
+		'and by doing so you allow us to continue offering you our services an all <b>Banca</b>Net updates, aside from having access to this service free of charge for you',
+
+		'Click "Accept" and take advantage of Banamex Electronic Banking',
+
+		'*Individuals with business activities and / or Companies continue with the service fees agreement they signed up for',
+
+		'ACCEPT',
+
+		'Cancel'
+
+	);
+
+
+
+	$(document).ready(function(){
+
+		ajustarOverlay();
+
+		ajusta_tooltpis();
+
+		funciones_loginP();
+
+	});
+
+
+
+	$( document ).ajaxStop( function(){
+
+		$( '#t0' ).hide();
+
+	});
+
+</script>
+
+
+
+</body>
+
+<!--termina contenedor principal-->
+
+</html>

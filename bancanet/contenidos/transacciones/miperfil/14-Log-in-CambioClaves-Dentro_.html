@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Layout Avatar</title>	
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>	
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+</head>
+
+<body>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+
+<script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	ajustarOverlay();
+
+	ajusta_tooltpis();
+
+	tooltip_left();
+
+});
+
+function valida() {
+
+	if($("#pass").val()!="")
+
+	if($("#pass2").val()!="")
+
+	if($("#pass3").val()!="")
+
+	{ 
+
+		open('16b-Log-in-CambioClaves-Dentro-Correcta.html', '_self');
+
+	}
+
+}	
+
+es=new Array('To change your passwords, login data requested and click on "Accept"',"Enter your current password","Create your new password </br>(8 characters)", "Confirm your new password </br>(8 characters)", "Alphanumeric password:", "It should contain both numbers and letters, and be 8 characters long", "The use of <a id='mayusculas' href='javascript:void(0);' class='border-bot tool_left'>capital and lower</a> case letters is allowed", "The first character must be a letter", 'It should not contain accented letters or <a href="javascript:void(0);" class="border-bot tool_left" id="caracteres">special characters</a>', "Customer number must not be included in the password", 'It should not contain more than <a href="javascript:void(0);" class="border-bot tool_left" id="consecutivos">2 of the same consecutive numbers or letters or consecutive or equal</a>', "It should not contain the name of the institution (Banamex)", 'Example: Is different "hola1357" than "HOLA1357"', 'Example: "ñ","$", commas, etc.', ' Example:"12223445", "abbbcd"', "Accept", "Cancel");
+
+</script>
+
+	<div>
+
+		<div style="width:920px !important; background-color:#FFF; height:475px !important"  class="bg_demo">
+
+			<div id="content">		        	  
+
+				<div id="" class=" float-left" style=" width: 74.8% !important;margin-top:0px !important; margin-bottom:0px !important">
+
+					<div class=" width-360 float-left">
+
+						<p id="t0" class="paddingB15">Para cambiar tus claves de acceso, ingresa los datos<br /> solicitados y da clic en &quot;Aceptar&quot;</p>
+
+						<div class="clear overflow">
+
+							<p id="t1">Ingresa tu clave de acceso actual</p>
+
+							<p class="paddingT5"><input type="password" maxlength="8" class="width170" id="pass" /></p>
+
+							<p id="t2" class="paddingT15">Crea tu nueva clave de acceso <br />(8 caracteres)</p>
+
+							<p class="paddingT5"><input type="password" maxlength="8" class="width170" id="pass2" /></p>
+
+							<p id="t3" class="paddingT15">Confirma tu nueva clave de acceso<br />(8 caracteres)</p>
+
+							<p class="paddingT5"><input type="password" maxlength="8" class="width170" / id="pass3"></p>
+
+						</div>
+
+					</div>
+
+					<div class="padding20 border1DADADA overflow">
+
+						<p id="t4" class="bold">Clave de acceso alfanum&eacute;rica:</p>
+
+						<ul class="paddingT15 listaclave">
+
+							<li id="t5">Debe contener tanto n&uacute;meros como letras, y ser de 8 posiciones</li><br />
+
+							<li id="t6">Se permite el uso de letras <a id="mayusculas" href="javascript:void(0);" class="border-bot tool_left">may&uacute;sculas y min&uacute;sculas</a></li><br />
+
+							<li id="t7">El primer caracter, debe ser una letra</li><br />
+
+							<li id="t8">No se permite el uso de letras acentuadas ni <a href="javascript:void(0);" class="border-bot tool_left" id="caracteres">caracteres especiales</a></li><br />
+
+							<li id="t9">El N&uacute;mero de Cliente no debe estar contenido en el Password</li><br />
+
+							<li id="t10">No debe contener m&aacute;s de <a href="javascript:void(0);" class="border-bot tool_left" id="consecutivos">2 n&uacute;meros o letras iguales o consecutivos</a></li><br />
+
+							<li id="t11">No debe contener el nombre de la instituci&oacute;n (Banamex)</li><br />
+
+						</ul> 
+
+						<div class="tooltip_left mayusculas">
+
+							<div class="flecha"></div>
+
+							<div class="boxt">
+
+								<div class="close"></div>
+
+								<p class="f11" id="t12">Ejemplo: es diferente "hola1357" que "HOLA1357"</p>
+
+							</div>
+
+						</div>
+
+						<div class="tooltip_left caracteres">
+
+							<div class="flecha"></div>
+
+							<div class="boxt">
+
+								<div class="close"></div>
+
+								<p id="t13" class="f11">Ejemplo: "&ntilde;","$", comas, etc.</p>
+
+							</div>
+
+						</div>
+
+						<div class="tooltip_left consecutivos">
+
+							<div class="flecha"></div>
+
+							<div class="boxt">
+
+								<div class="close"></div>
+
+								<p id="t14" class="f11">Ejemplo:"12223445", "abbbcd"</p>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="border-solid margin-top20"></div>
+
+					<ul class="cN-primaryNav float-left margin-top5">
+
+						<li class="cM-spriteBase cN-primaryNavButton"><a id="t15" href="javascript:valida()">ACEPTAR</a></li>
+
+						<li><div id="flechaLinks"><span class="flechaazul float-left"></span><a id="t16" href="javascript:void(0)"class="sinBold">Cancelar</a></div></li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="clear"></div>
+
+		</div>
+
+	</div>    
+
+</body>
+
+</html>
+

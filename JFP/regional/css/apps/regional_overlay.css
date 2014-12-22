@@ -1,0 +1,464 @@
+.margin-bottom50 {
+
+    margin-bottom: 50px !important;
+
+}
+
+
+
+.opacity{
+
+	opacity:0.5 !important;}
+
+
+
+.cS-structBodyContainer.opaco, img.opaco {
+
+	opacity:1;	
+
+	filter: alpha(opacity=50);
+
+	}
+
+	
+
+	
+
+.overlay {
+
+    left: 206px;
+
+    position: absolute;
+
+    top: 6px;
+
+    width: 600px;
+
+}
+
+
+
+
+
+.overlay * {
+
+    font-size: 12px;
+
+    text-align: left;
+
+}
+
+.content-footer
+
+{
+
+    left: 39px;
+
+    margin-top: 35px;
+
+    padding: 10px;
+
+    position: absolute;
+
+    width: 529px;
+
+	float:left;
+
+	height:27px;
+
+	text-transform: uppercase; 
+
+	color:#333 !important; 
+
+} 
+
+.content-footer .title{ font-size:20px !important; margin-left: 17px; float:left; margin-top:1px; }
+
+.content-footer div.telefono, .content-footer div.email { float:right; width:100px; height:16px; margin-top:8px; color:#333 !important; }
+
+.content-footer div.telefono {margin-right:6px;}
+
+.content-footer div.telefono a.telefono, .content-footer div.email a.email { height:16px;  padding: 0px 10px 0px 23px!important; float:left; font-size:12px !important;}
+
+ 
+
+.content-footer div.email a.email{background: url("../../images/overlay/e-mail.png") 0 0 no-repeat;}
+
+.content-footer div.telefono a.telefono{background: url("../../images/overlay/telefono.png") 0 0 no-repeat;}
+
+ 
+
+.content-footer div.email a.email:hover {background: url("../../images/overlay/e-mail.png") 0 -15px no-repeat; color:#0066CC !important;}
+
+.content-footer div.telefono a.telefono:hover {background: url("../../images/overlay/telefono.png") 0 -16px no-repeat; color:#0066CC !important;}
+
+
+
+.external-tranfer .external-tranfer-content .content-top{margin: 0 28px 28px 30px !important;width: 492px;}
+
+
+
+.content-top{margin: 0 28px 28px 30px !important;width: 491px;}
+
+.lineaDivisoria {
+
+    border-right: 1px solid #C1C1C1;
+
+    float: right;
+
+    height: 27px;
+
+    margin-right: 14px;
+
+}
+
+
+
+
+
+#subapp-box .overlay-error {
+
+    /*position: absolute;
+
+    top: 234px;
+
+    width: 600px;*/
+
+	left: 21%;
+
+    position: absolute;
+
+    top: 10%;
+
+	z-index:1;
+
+}
+
+
+
+
+
+.external-tranfer{background:url("../../images/overlay/overlay_fondo_maty.png") no-repeat scroll center transparent; width:548px; height:412px; padding:30px 30px 30px 24px !important}
+
+
+
+.external-tranfer2{background:url("../../images/overlay/overlay_fondo_completo.png") no-repeat scroll center transparent; height: 472px; width: 602px;}
+
+
+
+.external-tranfer .external-tranfer-content, .external-tranfer2 .external-tranfer-content {
+
+	width: 365px;
+
+	display: inline-block;
+
+	padding: 36px 38px 0px !important;
+
+	position: absolute;
+
+	left: -5px;
+
+	top: 16px;
+
+	height: 341px;
+
+}
+
+
+
+.external-tranfer .external-tranfer-close, .external-tranfer2 .external-tranfer-close{
+
+	background:url("../../images/overlay/overlay-close.jpg") no-repeat right transparent;
+
+	height:16px;
+
+	line-height:16px;
+
+	margin: 0px 5px 0px 0px !important;
+
+	padding-right:21px !important;
+
+	color:#999;
+
+	text-decoration:none;
+
+	position:absolute;
+
+	top:17px;
+
+	right:-146px;
+
+}
+
+
+
+.external-tranfer .external-tranfer-close{
+
+	background:url("../../images/overlay/overlay-close.jpg") no-repeat right transparent;
+
+	height:16px;
+
+	line-height:16px;
+
+	/*margin: 0px 5px 0px 0px !important;*/
+
+	padding-right:21px !important;
+
+	color:#999;
+
+	text-decoration:none;
+
+	position:absolute;
+
+	/*top:13px;*/
+
+	right:-146px;
+
+}
+
+	 
+
+.external-tranfer .external-tranfer-close:hover, .external-tranfer2 .external-tranfer-close:hover{color: #2D6DC8;}
+
+
+
+.external-tranfer .dot-bottom, .external-tranfer2 .dot-bottom{height: 31px; margin-bottom:0px; }
+
+.external-tranfer .sub-title, .external-tranfer2 .sub-title{margin:5px 0px;}
+
+
+
+.external-tranfer .title, .external-tranfer2 .title{font-size: 20px !important;}
+
+
+
+span.contentInput {
+
+    color: #FF0000;
+
+    width: 186px;
+
+}
+
+
+
+.dot-bottom span.title{ width:492px}
+
+
+
+.error-content {
+
+		background-color: #FFFFFF;
+
+		border: 1px solid #C1C1C1;
+
+		height: 238px;
+
+		/*margin-bottom: 31px;*/
+
+		padding:22px 30px!important;
+
+		position: relative;
+
+		}
+
+		
+
+		
+
+.external-tranfer2 .error-content.pin{
+
+    height: 292px !important;
+
+    padding:22px 35px 18px 35px !important;
+
+    width: 420px !important;}
+
+
+
+.cF-sideBySide.cF-bottomNav.pin{
+
+ margin-top:93px !important;
+
+ width:85.6% !important;
+
+ position:absolute !important;}
+
+
+
+		
+
+.external-tranfer2 .error-content {
+
+		background-color: #FFFFFF;
+
+		border: 1px solid #C1C1C1;
+
+		height: 276px;
+
+		/*margin-bottom: 31px;*/
+
+		/*padding: 30px !important;*/
+
+		position: relative;
+
+		width: 428px;}
+
+		
+
+.correoElecLabel{ 
+
+	width: 109px;
+
+	float:left;}
+
+		
+
+
+
+.external-tranfer2 .error-content .cF-bottomNav{
+
+	position:static; 
+
+	bottom: 0px;
+
+	margin-top:30px !important;
+
+	padding-top:11px;
+
+	 padding-bottom: 17px;
+
+	*width:96%;
+
+	}
+
+	
+
+.external-tranfer .error-content .cF-bottomNav{
+
+	position:absolute; 
+
+	bottom:0px;
+
+	margin-top:30px !important;
+
+	padding-top:11px;
+
+	padding-bottom:0px;
+
+	/*width:96%;*/
+
+	width:88%;
+
+	}
+
+	
+
+.external-tranfer .error-content .cN-primaryNav li, .external-tranfer2 .error-content .cN-primaryNav li {
+
+	display: inline-block;
+
+    float: left;
+
+    margin-left: 7px;
+
+    margin-right: 0px;
+
+}
+
+
+
+/*.external-tranfer2 .error-content .cF-bottomNav .cN-primaryNavButton #flechaLinks,
+
+.external-tranfer .error-content .cF-bottomNav .cN-primaryNavButton #flechaLinks {
+
+    margin-left: -10px !important;
+
+    margin-right: -10px;
+
+}*/
+
+	
+
+		
+
+.over-content .cF-bottomNav .arrow-rgt{background: url("../../images/overlay/arrow-rgt.png") no-repeat scroll left; padding-left:10px; line-height:16px;}
+
+.over-content .cF-bottomNav .arrow-rgt:hover{color: #3399CC;}
+
+
+
+.dotted_border{
+
+	border-top:#adadad dotted 1px}
+
+	
+
+.sAdmiracion {
+
+    height:12px !important;
+
+}
+
+
+
+div.calculadoraContent {
+
+    margin-left: 76px !important;}
+
+
+
+
+
+.error-content input.text {
+
+	width:120px !important;
+
+	margin-right:5px;
+
+}
+
+
+
+.error-content span.contentInput input.text {
+
+	width:179px !important;
+
+}
+
+
+
+.error-content .senha {
+
+	width:195px !important;
+
+}
+
+
+
+.margin-right15{
+
+	margin-right:15px !important;}
+
+	
+
+.scroll{
+
+	height: 228px;
+
+	overflow-y: scroll !important;
+
+	overflow-x: none !important;
+
+    width: 100%;
+
+	padding-right:30px}
+
+	
+
+	
+
+	.iemarginleft0{ margin-left:0px !important}
+
+	
+

@@ -1,0 +1,840 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>Layout Avatar</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css" />
+
+	<link rel="stylesheet" type="text/css" href="../../JFP/css/widgets/jquery.qtipW3.css" />
+
+	<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css" />
+
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css" />
+
+	<script type="text/javascript" src="../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    <script type="text/javascript" src="../../JFP/js/widgets/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/left_menu_multilevel.js"></script>
+
+	<script type="text/javascript" src="../../JFP/js/script.js"></script>
+
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="bbAvatar/js/menuSpanish.js"></script>
+
+	<script type="text/javascript" src="bbAvatar/js/swap.js"></script>
+
+</head>
+
+
+
+<body>
+
+<!--inicia contenedor principal-->
+
+	<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+		<div id="header">
+
+			<div class="utilities_nav" id="navegacionPrincipal"></div>
+
+			<div class="citibank-containerImg">
+
+				<a href="#"><div id="citibank-logo"></div></a>
+
+				<div id="citibank-image"></div>
+
+			</div>
+
+<!--termina header-->
+
+			<div class="main_nav" id="menuw"></div>
+
+			<div id="user-info">
+
+				<div class="userInfo-content" id="msj_bienvenido"></div>
+
+			</div>
+
+		</div>
+
+		<div class="cS-structBodyContainer"> 				
+
+			<div id="title-section" class="cH-appPageHead height20">
+
+				<div class="float-left"><h1 id="t23">TRANSFERENCIAS Y PAGOS</h1></div>
+
+				<div id="ayuda">
+
+					<div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+
+						<span class="flechaGris float-left">&nbsp;</span>
+
+						<div class="floatLI" id="liga"><a id="t24" href="javascript:void(0);" class="float-left">&nbsp;Ayuda</a></div>
+
+					</div>
+
+				</div>
+
+				<div id="imp" class="displayNone">
+
+					<div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+
+						<span class="flechaGris float-left">&nbsp;</span>
+
+						<a id="t25" href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+
+					</div>
+
+				</div>
+
+				<div id="imp2" class="displayNone">
+
+					<div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+
+						<span class="flechaGris float-left">&nbsp;</span>
+
+						<a id="t25" href="javascript:void(0);" onclick="Limprimir2()" class="float-left">&nbsp;Imprimir</a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="bg_demo">
+
+				<div id="content">
+
+		        	<!-- The left menu divs are inserted by javascript if it is necessary -->
+
+					<div id="left-menu" class="float-left margin-top25"></div>
+
+		            <div id="shadow" class="width14">&nbsp;</div>
+
+					<div id="subapp-box" class=" float-left">
+
+						<iframe id="iframeConte" name="main" class="ifrContenedor" scrolling="no" frameborder="0" src="transacciones/Resumen_Transferencias_y_Pagos/Resumen.html" height="1040" width="765"></iframe>
+
+					</div>
+
+				</div>
+
+				<div class="clear"></div>
+
+            </div>
+
+			<div id="footer"></div>
+
+		</div>
+
+	</div>
+
+
+
+	<div class="modal" id="divAutenticacion">
+
+		<div class="overlay-error">
+
+			<div class="overlay-content">
+
+				<div class="external-tranfer2">
+
+					<div class="external-tranfer-content" style="left:-18px !important; top:20px; position:relative;">
+
+						<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+						<div class="content-top">
+
+							<div class="center">
+
+								<div class="dot-bottom">
+
+									<div class="left"><span class="title" id="t43">AUTENTICACIÓN</span></div>                                   
+
+								</div>
+
+								<div class="error-content">
+
+									<div id="scrollbar">
+
+                                        <div class="clear"></div>
+
+										<div class="viewport">
+
+											<div class="overview">
+
+												 <p class="instructions margin-bottom15 strong" id="t44">Por tu seguridad, esta operación debe ser autenticada con tu NetKey.</p>
+
+                                                 <div class="clear border-dotted_top margin-bottom20"></div>
+
+									             <div class="width103">
+
+													<p class="margin-bottom20" id="t45">Ingresa en tu dispositivo la clave que a continuación se muestra y presiona "ENT". Se generará una clave dinámica que debes ingresar en el espacio en blanco. Da clic en "CONTINUAR".</p>
+
+													<p class="textBig margin-bottom20 margin-left130">CHALLNG: <span class="colorBlue">24018778</span></p>
+
+													
+
+									                <div class="form-row margin-bottom0 margin-left130">
+
+									                    <div class="for-table margin-bottom5 float-left margin-top2 margin-right10">
+
+									                    	<span class="strong" id="t46">Clave dinámica:</span>
+
+									                    </div>
+
+									                    <input type="password" class="width70 float-left challenge_input" />
+
+									                    <div class="clear"></div>
+
+									                </div>
+
+									            </div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="clear margin-bottom30"></div>								
+
+									<div class="cF-sideBySide cF-bottomNav">
+
+										<ul class="cN-primaryNav">
+
+											<li style="float:right;" class="cM-spriteBase cN-primaryNavButton margin-left10">
+
+												<a href="javascript:$.modal.close();cargaDocN('compra_tiempo_aire/top_off_verificacion.html');" id="t48">
+
+													Continuar
+
+												</a>
+
+											</li>
+
+											<li style="float:right;">
+
+												<div id="flechaLinksOpcoes">
+
+													<span class="flechaGris float-left"></span>
+
+													<a class="sinBold" href="javascript:$.modal.close();" id="t47">Cancelar</a>
+
+												</div>
+
+											</li>
+
+										</ul>
+
+									</div>
+
+									<div class="clear"></div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+<script type="text/javascript">
+
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+
+	
+
+	es.push('TRANSFERS AND PAYMENTS','&nbsp;Help','&nbsp;Print','FREQUENT OPERATIONS','TRANSFERS <span class="dcjq-icon"></span>','To my accounts','To other accounts','PAYMENTS <span class="dcjq-icon"></span>','Cards<span class="dcjq-icon"></span>','My Banamex Cards','Others Cards','Bill Payments','Taxes','Credits','Direct Debit','MOBILE TOP UP','GDF AND SAT RECEIPTS','ACCOUNT<br>ADMINISTRATION <span class="dcjq-icon"></span>','Setup a payee or <br/> beneficiary','Modify other accounts (update accounts)');
+
+
+
+	//MODAL CHALLENGE TIEMPO AIRE
+
+	es.push('AUTHENTICATION','For your security, this operation needs to be authenticated with your NetKey.','Enter the code in your device and press "ENT". A dynamic code will be generated, which you must enter in the textbox. Click on "CONTINUE".','Dynamic code:','Cancel','CONTINUE');
+
+
+
+	$(document).ready(function(){
+
+		transl();
+
+		ajustarOverlay();
+
+		ajusta_tooltpis();
+
+		funciones_loginML2();
+
+		account_summary();
+
+		ayuda();
+
+		//click_topmenu();
+
+		setTimeout(function(){$('#TransferenciasyPagos').addClass('active')},800);
+
+		setTimeout(function(){cambiaP3_s1_1()},880);
+
+		
+
+	});
+
+	$( document ).ajaxStop( function(){
+
+		if( isEnglishSel ) {
+
+			$( '#t39' ).removeClass( 'dosLineas_text' );
+
+			$( '#lstAccDate' ).html( '03/24/2010' );
+
+		}
+
+	});
+
+	$(function(){
+
+		$.imageTick.logging = true;
+
+		$("input[name='pagInicio']").imageTick({
+
+			tick_image_path: "../JFP/regional/images/check_1.png",
+
+			no_tick_image_path: "../JFP/regional/images/no_check_1.png",
+
+			image_tick_class: "chkpagInicio"
+
+		});
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+	});
+
+	function banca(){
+
+		open("../../movimientos_banca_historial.html" , "_self");
+
+	}
+
+	function cambiaP1(){
+
+		tamano1();
+		cargaDocN('Resumen_Transferencias_y_Pagos/Resumen.html');
+		ayuda();
+		setTimeout('liga1();', 880);
+	}
+
+	function cambiaP2(){
+
+		tamano1();
+		cargaDocN('Transferencias_y_Pagos_Propias/Transferencia_Cuentas_Propias.html');
+		ayuda();
+		setTimeout('liga1();', 880);
+	}
+
+	function cambiaP2_s1(){
+		
+		$('#t28').click();
+		tamano1();
+		cargaDocN('Transferencias_y_Pagos_Propias/Transferencia_Cuentas_Propias.html');
+		ayuda();
+		setTimeout('liga2();', 880);
+	}
+
+	function cambiaP2_s2(){
+
+		tamano1();
+		cargaDocN('Transferencias_y_Pagos_Otras_Cuentas/Otras_Cuentas.html');
+		ayuda();
+		setTimeout('liga3();', 880);
+	}
+
+	function cambiaP3(){
+
+		tamano1();
+		cargaDocN('Transferencia y Pagos Tarjetas/Tarjetas_de_Credito.html');
+		ayuda();
+		setTimeout('liga5();', 880);
+	}
+
+	function cambiaP3_s1(){
+		setTimeout("$('a#t31.3n').trigger('click');",800);
+	}
+
+	function cambiaP3_s1_1(){
+		
+		tamano1_2();
+		$('#shadow').removeClass('ancho14').addClass('ancho25');
+		$('#iframeConte').removeClass('ancho703').removeClass('ancho765').addClass('ancho692');
+
+		$('a#t31.3n').trigger('click');
+		setTimeout("$('#t32').click();",800);
+			//tamano4();
+		cargaDocN('Transferencia y Pagos Tarjetas/Tarjetas_de_Credito.html');
+		hideyuda();
+		hideimp();
+		//setTimeout('liga5();', 880);
+	}
+
+	function cambiaP3_s1_2(){
+
+		tamano1();
+		cargaDocN('Transferencia y Pagos Tarjetas/Tarjetas_de_Credito2.html');
+		ayuda();
+		//setTimeout('liga5();', 880);
+	}
+
+	function cambiaP3_s2(){
+
+		tamano1();
+		cargaDocN('Pago de Servicios/Servicios.html');
+		ayuda();
+		setTimeout('liga7();', 880);
+	}
+
+	function cambiaP3_s3(){
+
+		tamano1();
+		cargaDocN('Valida Impuestos Reg/Impuestos.html');
+		ayuda();
+		setTimeout('liga8();', 880);
+	}
+
+	function cambiaP3_s4(){
+
+		tamano1();
+		cargaDocN('Pagos Credito/Creditos.html');
+		ayuda();
+		setTimeout('liga9();', 880);
+	}
+
+	function cambiaP3_s5(){
+
+		tamano1();
+		cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/Domiciliacion.html');
+		ayuda();
+		setTimeout('liga10();', 880);
+	}
+
+	function cambiaP3_s5_2(){
+
+		tamano1();
+		ayuda();
+		$('#t30').trigger('click');
+		cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/domiciliar_Pago.html');
+		setTimeout(function(){$('ul#accordion-1 li:eq(9) a:eq(0)').trigger('click');},700);
+		setTimeout('liga10();', 880);
+	}
+
+	function cambiaP3_s5_x(){
+
+		tamano1();
+		ayuda();
+		//setTimeout(function(){cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/domiciliar_Pago.html');},700);
+		cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/domiciliar_Pago.html');
+		setTimeout('liga10();', 880);
+	}
+
+	function cambiaP3_s5_3(){
+
+		tamano1();
+		cargaDocN('Resumen_Transferencias_y_Pagos/ver_Historial.html');
+		ayuda();
+		setTimeout('liga1();', 880);
+	}
+
+	function cambiaP3_s6(){
+
+		tamano1();
+		cargaDocN('Comprobantes GDF e Impuestos/Comprobantes.html');
+		ayuda();
+		setTimeout('liga11();', 880);
+	}
+
+	function cambiaP4(){
+
+		tamano1();
+		cargaDocN('Comprobantes GDF e Impuestos/Comprobantes.html');
+		ayuda();
+		setTimeout('liga11();', 880);
+	}
+
+	function cambiaP5(){
+
+		tamano1();
+		cargaDocN('Cambio PIN/cambio_clave_acceso.html');
+		ayuda();
+	}
+
+	function cambiaP5_s1(){
+		
+		tamano1();
+		$('#t41').click();
+		cargaDocN('Alta Otras Cuentas/otras_cuentas.html');
+		ayuda();
+		setTimeout('liga12();', 880);
+	}
+
+	function cambiaP5_s2(){
+
+		tamano1();
+		cargaDocN('Consulta de Cuentas ABC/administracion_cuentas.html');
+		ayuda();
+		setTimeout('liga13();', 880);
+	}
+
+	function cambiaP6(){
+
+		tamano1();
+                cargaDocN('compra_tiempo_aire/top_off_captura.html');
+                ayuda();
+		}
+
+	function cont1(){
+
+		tamano1();
+		cargaDocN('Transferencias_y_Pagos_Propias/Confirma_Cta_Propias.html');
+		ayuda();
+	}
+
+	function historial(){
+
+		tamano1();
+		cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/ver_Historial.html');
+		ayuda();
+	}
+
+	function modif1(){
+
+		tamano1();
+		cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/modificar.html');
+		ayuda();
+	}
+
+	function baja1(){
+
+		tamano1();
+		cargaDocN('Domiciliacion_Consulta_Baja_Instrucciones/confirma_dar_de_Baja.html');
+		ayuda();
+	}
+
+	function histbanc(){
+
+		tamano1();
+		cargaDocN('Consulta de operaciones/historial.htm');
+		ayuda();
+	}
+
+	function cuentasabc(){
+
+		tamano1();
+		cargaDocN('Consulta de Cuentas ABC/administracion_cuentas.html');
+		ayuda();
+	}
+
+	function detalle1(){
+
+		tamano1();
+		cargaDocN('Comprobantes GDF e Impuestos/detalle1_GDF.html');
+		ayuda();
+	}
+
+	function altotcuentas(){
+
+		tamano1();
+		cargaDocN('Alta Otras Cuentas/otras_cuentas.html');
+		setTimeout(function(){document.getElementById("iframeConte").contentWindow.despliega_ctas("saldosbtn3","saldosConte3");},950);
+		ayuda();
+
+	}
+
+	function confirma_importe(){
+
+		tamano1();
+		cargaDocN('Pagos Credito/confirma_otro_importe_credito.html');
+		ayuda();
+	}
+
+	function cambiaH(){
+
+		tamano1();
+		cargaDocN('Resumen_Transferencias_y_Pagos/ver_Historial.html');
+		ayuda();
+	}
+
+	/*function Layuda(){
+
+		window.open('http://www.banamex.com/resources/bancanets/bnp/esp/contenedor','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}*/
+
+	function Layuda1(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/operaciones-frecuentes.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda2(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Cuentas-Propias-Banamex.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda3(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Otras-Cuentas.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda4(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Donativos-Teleton.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda5(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/mis-tarjetas-banamex.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda6(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/otras-tarjetas.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda7(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Servicios.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda8(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Impuestos.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda9(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Creditos.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda10(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Domiciliacion.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda11(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Comprobantes.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda12(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Alta-de-cuentas.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Layuda13(){
+
+		window.open(rutaAyudaAv+'pagos-y-transferencias/Administracion-de-cuentas.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	function Limprimir(){
+
+		window.print();
+
+	}
+
+	function domiciliarPagoP(){
+
+		ayuda();
+
+		$('#t37').trigger('click');
+
+		tamano1();
+
+	}
+
+	function Limprimir2(){
+
+		document.getElementById("iframeConte").contentWindow.onClick_Imprimir2();
+
+	}
+
+	function admonc(){
+
+		$('#t39').trigger('click');
+
+		$('#t41').trigger('click');
+
+		setTimeout(function(){cambiaP5_s2();},800);
+
+		setTimeout(function(){$('ul#accordion-1 li:eq(12) a:eq(0)').removeClass('active');},900);
+
+	}
+
+	function altaser(){
+
+		$('#t39').trigger('click');
+
+		$('#t40').trigger('click');
+
+	}
+
+	function challengeAire(){ 
+
+		$('#mensajeError_contenido_div', window.document).html(
+
+			$("#divAutenticacion").html()
+
+		);
+
+		$.modal({
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:true,
+
+			widthDivIfrm:570,
+
+			heightDivIfrm:'auto'
+
+		});
+
+		$('#box1').blur();
+
+		$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+
+		$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');	
+
+
+
+		setTimeout(function(){
+
+			llenarValores('input','.challenge_input','12345678');	
+
+		},1000);
+
+	}
+
+</script>
+
+
+
+<!--<IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="../bancanet_demo/contenidos/menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>-->
+
+    <input type="hidden" id="objs" value="1" />
+
+    <input type="hidden" id="TIMEOUT" value="" />
+
+    <input type="hidden" name="LASTRESET" value="" />
+
+    <input type="hidden" id="segRestan" value="" />
+
+    <input type="button" name="exit" style = "display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');" />
+
+    <input type="hidden" id="DATAAUX"  name="DATAAUX" value="" />
+
+	<input type="hidden" id="DATADEMO" name="DATADEMO" value="" />
+
+	<input type="hidden" id="REGRESADEMO" name="REGRESADEMO" value="" />
+
+	<input type="hidden" id="CONTINUADEMO" name="CONTINUADEMO" value="" />
+
+    <input type="hidden" id="titHdn" name="titHdn" value="" />
+
+
+
+<!--termina contenedor principal-->
+
+	<div id="cortinaOverlay" class="cerrarOverlay" style="display: none;"></div>
+
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+
+			<tbody><tr><td>
+
+				<div id="mensajeError_contenido_div"></div>
+
+				<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+
+			</td></tr></tbody>
+
+			</table>
+
+		</div>
+
+	</div>
+
+	<iframe id="nwd" src="" name="ndw" style="display:none"></iframe>
+
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+
+	<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+
+		<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+
+			<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+
+				<tbody>
+
+					<tr>
+
+						<td>
+
+							<div id="mensajeError_contenido_divEspecial"></div>
+
+							<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>
+
+						</td>
+
+					</tr>
+
+				</tbody>
+
+			</table>
+
+		</div>
+
+	</div>
+
+	<div id="guarda" class="displayNone">&nbsp;</div>
+
+    
+
+</body>
+
+</html>
+

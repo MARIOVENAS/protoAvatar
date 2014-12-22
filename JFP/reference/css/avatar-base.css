@@ -1,0 +1,1071 @@
+/* This CSS has only been tested in firefox. It will almost certainly not work in IE as written. */
+
+
+
+* {
+
+	font-family: Arial, Verdana, Sans Serif;
+
+	font-size: 11px;
+
+}
+
+
+
+body {
+
+	width: 1024px;
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+
+
+th, td {
+
+	padding-left:0px;
+
+	padding-right:0px;
+
+}
+
+
+
+div#header {
+
+	width: 1024px;
+
+	height: 186px;
+
+}
+
+
+
+div#main {
+
+	width: 1024px;
+
+	position: relative;
+
+	height: 415px;
+
+}
+
+
+
+div#footer {
+
+	width: 98%;
+
+	position: relative;
+
+}
+
+
+
+div#carousel {
+
+	position: relative;
+
+	top:0px;
+
+	left:0px;
+
+}
+
+
+
+div#left-panel {
+
+	position: absolute;
+
+	top:0px;
+
+	left:40px;
+
+	height: 414px;
+
+	width: 597px;
+
+	border-right: dotted #333333 1px;
+
+	overflow:auto;
+
+}
+
+
+
+div#top-right-panel,div#bottom-right-panel {
+
+	position: absolute;
+
+	right: 45px;
+
+	height: 206px;
+
+	width: 319px;
+
+}
+
+
+
+div#top-right-panel {
+
+	top: 0px;
+
+}
+
+
+
+div#bottom-right-panel {
+
+	top: 208px;
+
+}
+
+
+
+div#primary-dialog	div.contact-us {
+
+	position:absolute;
+
+	left:0px;
+
+	bottom:0px;
+
+	padding-left:38px;
+
+	padding-right:38px;
+
+	width: 472px;
+
+}
+
+
+
+div#account-display-line {
+
+	position: relative;
+
+	top:0px;
+
+	left:0px;
+
+}
+
+
+
+div#account-display-line a.account-details-link {
+
+	color: black;
+
+	text-decoration: underline;
+
+}
+
+
+
+div#account-display-line a.account-details-link:visited {
+
+	color: black;
+
+	text-decoration: underline;
+
+}
+
+
+
+div#main h1 {
+
+	margin-top: 19px;
+
+	font-size: 12pt;
+
+}
+
+
+
+div#left-panel h1 {
+
+	padding-bottom: 40px;
+
+}
+
+
+
+div#left-panel h2 {
+
+	position:absolute;
+
+	top:34px;
+
+	font-size: 11px;
+
+}
+
+
+
+div#left-panel h2.left-header {
+
+	left:0px;
+
+}
+
+div#left-panel h2.center-header {
+
+	left:280px;
+
+}
+
+div#left-panel h2.right-header {
+
+	right:14px;
+
+}
+
+
+
+ul#citi-fast {
+
+	padding-left:0px;
+
+}
+
+
+
+ul#citi-fast li {
+
+	list-style:none;
+
+	width: 319px;
+
+	height: 24px;
+
+	border-bottom: dotted #333333 1px;
+
+}
+
+
+
+ul#citi-fast li a {
+
+	width:319px;
+
+	height: 24px;
+
+	display:block;
+
+	text-decoration: none;
+
+	margin-left: 10px;
+
+	color: black;
+
+	background-repeat:no-repeat;
+
+}
+
+
+
+ul#citi-fast li a:visited {
+
+	text-decoration: none;
+
+	color: black;
+
+}
+
+
+
+ul#citi-fast li a:hover {
+
+	font-weight: bold;
+
+	border: dotted #3333 1px;
+
+}
+
+
+
+ul.sf-menu {
+
+	border-bottom: solid #7EB0E3 3px;
+
+}
+
+
+
+ul.sf-menu li a {
+
+	line-height: 18px;
+
+	font-size: 12px;
+
+	font-weight: bold;
+
+}
+
+
+
+span.citi-fast-link {
+
+	display:block;
+
+	width:280px;
+
+	margin-left: 30px;
+
+	line-height: 23px;
+
+}
+
+
+
+/* Not the most efficient approach - should sprite this */
+
+ul#citi-fast a.pay-bills {
+
+	background-image:url(/JFP/reference/images/paybills.png);
+
+}
+
+ul#citi-fast a.transfer-funds {
+
+	background-image:url(/JFP/reference/images/transferfunds.png);
+
+	background-position: -3px 0px;
+
+}
+
+ul#citi-fast a.download-statements {
+
+	background-image:url(/JFP/reference/images/downloadstatements.png);
+
+}
+
+ul#citi-fast a.rewards-balances {
+
+	background-image:url(/JFP/reference/images/rewardsbalances.png);
+
+}
+
+ul#citi-fast a.alert-signup {
+
+	background-image:url(/JFP/reference/images/alertsignup.png);
+
+}
+
+
+
+table#account-panel-table {
+
+	width: 550px;
+
+	padding: 0px;
+
+	border: 0px;
+
+}
+
+
+
+table#account-panel-table-header caption {
+
+	text-align: left;
+
+	color: black;
+
+	font-size: 12pt;
+
+	font-weight: bold;
+
+	padding-top: 14px;
+
+	padding-bottom: 10px;
+
+}
+
+
+
+.newClass {
+
+	color: black;
+
+	font-size: 12pt;
+
+	font-weight: bold
+
+}
+
+
+
+.acctSummaryTabHeader {
+
+	color: black;
+
+	font-weight: bold;
+
+	font-size: 11px
+
+}
+
+
+
+tr.acctSummaryTabHeader th {
+
+	border-bottom-style:solid;
+
+	border-bottom-color:#333333;
+
+	border-bottom-width:thin;
+
+	padding-left:0px;
+
+	padding-right:0px;
+
+	margin-bottom: 10px;
+
+}
+
+
+
+.acctSummTabHeader {
+
+	color: black;
+
+	font-weight: bold;
+
+	font-size: 11px;
+
+	text-align: left;
+
+}
+
+.acctSummTabHeader2 {
+
+	color: black;
+
+	font-weight: bold;
+
+	font-size: 11px;
+
+	text-align: left;
+
+}
+
+	
+
+.acctSummTabHeader3 {
+
+	color: black;
+
+	font-weight: bold;
+
+	font-size: 11px;
+
+	text-align: right;
+
+}
+
+.acctSummDesc {
+
+	color: black;
+
+	text-decoration: underline;
+
+	font-size: 11px;
+
+	text-align: left;
+
+}
+
+
+
+.acctTableData {
+
+	color: black;
+
+	font-size: 11px;
+
+	text-align: left;
+
+}
+
+.acctTableData2 {
+
+	color: black;
+
+	font-size: 11px;
+
+	text-align: right;
+
+}
+
+.acctTableData3 {
+
+	color: black;
+
+	font-size: 11px;
+
+	text-align: left;
+
+}
+
+
+
+.acctSnapshotLink {
+
+	color: black;
+
+	font-size: 11px;
+
+}
+
+
+
+td.acctAmount {
+
+	color: black;
+
+	font-weight: bold;
+
+	text-align: right;
+
+	font-size: 11px;
+
+	margin-left: 14px;
+
+}
+
+
+
+tr.acctTableLastRow td {
+
+	border-bottom-style: dotted;
+
+	border-bottom-color: #333333;
+
+	border-bottom-width: thin;
+
+	padding-bottom: 10px;
+
+	margin-bottom: 10px;
+
+}
+
+
+
+tr.acctBegin td {
+
+	padding-top:10px;
+
+}
+
+
+
+tr.acctEnd td {
+
+	padding-bottom: 10px;
+
+	margin-bottom: 10px;
+
+	border-bottom-width: thin;
+
+	border-bottom-style: dotted;
+
+	border-top-style: none;
+
+	border-left-style: none;
+
+	border-right-style: none;
+
+	border-bottom-color: #666666;
+
+}
+
+
+
+td.amountLabel {
+
+	color: #0091d9;
+
+	font-weight: bold;
+
+	font-size: 11px;
+
+	text-align: right;
+
+}
+
+
+
+.acctPayment {
+
+	color: black;
+
+	text-align: right;
+
+	font-size: 10px;
+
+}
+
+.acctPayment1 {
+
+	color: black;
+
+	text-align: right;
+
+	font-size: 10px;
+
+}
+
+
+
+.paymentRow {
+
+	padding-top: 20px
+
+}
+
+
+
+.pamentText {
+
+	color: #666666;
+
+	font-size: 10px
+
+}
+
+.pamentRow {
+
+	color: #666666;
+
+	font-size: 10px;
+
+	padding-top: 10px
+
+}
+
+.ctaRow {
+
+	color: #666666;
+
+	text-align:left;
+
+	font-size: 10px;
+
+	padding-top: 10px
+
+}
+
+
+
+.paymentButton {
+
+	color: white;
+
+	background-color: #00589d;
+
+	font-size: 10px;
+
+	text-align: center
+
+}
+
+
+
+ul#post-logon-menu {
+
+	background: #05589D;
+
+	width: 995px;
+
+	height: 29px;
+
+	padding-left:29px;
+
+}
+
+
+
+div#header-picture {
+
+	background-image: url(/JFP/reference/images/header.png);
+
+	background-repeat: no-repeat;
+
+	height: 128px;
+
+	width: 1024px;
+
+}
+
+
+
+div#welcome-bar {
+
+	background: white;
+
+	width: 1024px;
+
+	height: 29px;
+
+	line-height: 29px;
+
+	vertical-align: center;
+
+}
+
+
+
+div#account-display-container {
+
+	height: 315px;
+
+	width: 565px;
+
+	overflow: none;
+
+}
+
+
+
+
+
+span#alerts-display span.count-indicator {
+
+	background: red;
+
+}
+
+
+
+span#messages-display span.count-indicator {
+
+	background: white;
+
+}
+
+
+
+span.count-indicator {
+
+	padding: 2px 4px 2px 4px;
+
+	border: solid black 1px;
+
+}
+
+
+
+div#account-list-slider-wrapper {
+
+	margin-top:20px;
+
+	margin-left:10px;
+
+}
+
+
+
+div#account-list-slider {
+
+	height:280px;
+
+}
+
+
+
+span#welcome-phrase {
+
+	font-size: 12px;
+
+	font-weight: bold;
+
+	border-right: solid black 1px;
+
+	padding-left: 40px;
+
+	padding-right: 10px;
+
+	margin-right: 10px;
+
+}
+
+
+
+div#welcome-bar a {
+
+	float: right;
+
+	padding-left:10px;
+
+	padding-right:10px;
+
+}
+
+
+
+span#last-login {
+
+	margin-left: 10px;
+
+	padding-left: 10px;
+
+	border-left: solid black 1px;
+
+}
+
+
+
+a.acctSnapshotLink img, td.ctaRow img {
+
+	vertical-align: middle;
+
+}
+
+
+
+div#welcome-bar a {
+
+	color: black;
+
+	text-decoration: none;
+
+}
+
+
+
+div#welcome-bar a:visited {
+
+	color: black;
+
+	text-decoration: none;
+
+}
+
+
+
+a {
+
+	color: black;
+
+	text-decoration:none;
+
+}
+
+
+
+a:visited {
+
+	color:black;
+
+}
+
+
+
+div.StructToolsPanel table tr.StructToolsRow1 span {
+
+	background-color: #0CF;
+
+}
+
+div.StructToolsPanel table tr.StructToolsRow2 span {
+
+	background-color: #096;
+
+}
+
+div.StructToolsPanel table tr.StructToolsRow3 span {
+
+	background-color: #CC0;
+
+}
+
+div.StructToolsPanel table tr.StructToolsRow4 span {
+
+	background-color: #000;
+
+}
+
+th.StructToolsName {
+
+	text-align: left;
+
+}
+
+th.StructToolsPercent,td.StructToolsPercent,th.StructToolsAmount,td.StructToolsAmount {
+
+	text-align: right;
+
+}
+
+div.ui-dialog.jfpw-dialog a.ui-dialog-titlebar-close {
+
+	top:14px;
+
+}
+
+
+
+div.ui-dialog.jfpw-dialog div.ui-dialog-titlebar.ui-widget-header {
+
+	height: 60px;
+
+}
+
+
+
+div.ui-dialog.jfpw-dialog #ui-dialog-title-primary-dialog {
+
+	font-size: 14px;
+
+	padding-top: 33px;
+
+	padding-left: 38px;
+
+}
+
+
+
+div#recentTransactions {
+
+	height: 190px;
+
+	width: 441px;
+
+	overflow:hidden;
+
+}
+
+
+
+div#scheduledPayments {
+
+	height: 190px;
+
+	width: 441px;
+
+	overflow:hidden;
+
+}
+
+
+
+/* override height to accomodate taller images in prototype */
+
+.jcarousel-skin-avatar .jcarousel-clip-horizontal {
+
+	height:86px;
+
+}
+
+
+
+.appNavNext {
+
+	font-weight: bold;
+
+	background-color: #05589D;
+
+	padding-left: 20px;
+
+	padding-right: 20px;
+
+}
+
+
+
+td a.appNavNext, td a.appNavBack, td a.appNavCncl {
+
+		color: white;
+
+}
+
+
+
+.appNavCncl {
+
+	font-weight: bold;
+
+	background-color: #05589D;
+
+	padding-left: 20px;
+
+	padding-right: 20px;
+
+	margin: 5px;
+
+}
+
+
+
+.appNavBack {
+
+	font-weight: bold;
+
+	background-color: #05589D;
+
+	padding-left: 20px;
+
+	padding-right: 20px;
+
+}
+
+
+
+div#carousel {
+
+	left:9px;
+
+	width:968px;
+
+}
+
+.jcarousel-skin-avatar .jcarousel-container-horizontal {
+
+	width: 940px;
+
+}
+
+
+
+.sf-menu.jfpw-menu li ul {
+
+	z-index: 1000;
+
+}
+
+
+
+.ui-slider-vertical .ui-slider-handle {
+
+left:-0.5em;
+
+margin-bottom:-0.6em;
+
+margin-left:0;
+
+}
+
+
+
+div#left-nav {
+
+	float: left;
+
+	height: 100%;
+
+	border-right: 1px solid #666666;
+
+	margin-left: 30px;
+
+	margin-right: 30px;
+
+	width: 244px;
+
+}

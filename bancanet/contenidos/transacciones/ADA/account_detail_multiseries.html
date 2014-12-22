@@ -1,0 +1,575 @@
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>Banamex</title>
+		
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+			<script type="text/javascript">
+			
+			var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('ACCOUNT DETAIL','See all accounts','Issuer/Series','Securities','Closing Price','Closing Balance','Balance date: 24 Feb 2012','Total balance:','TRANSACTIONS','Show:','Current period','WHAT DO YUO WISH TO DO?','Invest my money','Print','Export','Aplication Date','Transaction','Issuer/Series','Number of stocks','Price per title','Amount','See more transactions','EXPORT RESULTS','Select the formats desired to export your transactions.','Format','Excel - (CSV)','Text separated by tab','Text separated by comma','Text separated by pipe','Cancel','EXPORTAR','CONTACT US','MESSAGES','CALL US','Wait a moment please','Value type:<span class="marginL10 marginR15">&nbsp;</span>Investment funds');
+			
+            <!--
+			$(document).ready(function(){
+			setTimeout(function(){top.ajustarP();},800);
+			
+			});
+			-->
+			</script>
+</script>
+</head>
+
+<body>
+    <div class="bg_demo width926">
+    <div id="title-section" class="cH-appPageHead height20 paddingT0 margin-bottom20">
+                    <div class="float-left">
+                      <h1 id="t23">DETALLE DE LA CUENTA</h1></div>
+                        
+               <div id="ayuda">  
+                <div class="margin-top6 titulo " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0)" onclick="top.dash()" class="float-left" id="t24">&nbsp;Ver todas las cuentas</a>
+                </div>
+                </div>   
+             
+             <div id="imp" class="displayNone">
+               <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+                </div>
+                </div>
+                </div>
+    
+    <div class="clear"></div>
+
+<div class="noleftmenu margintop0" id="subapp-box">
+    
+
+<div class="widthOpt2 float-left paddingR60">
+
+	<div class="form-row float-left ancho100p">
+        <select name="select" class="ancho100p" id="select" onchange="valor2=this.value;Cta3();">
+            			  <option value="0" >Mi Chequera - Cheques - MXN - 12680</option>
+                          <option value="1">Cta Maestra - Mi maestra - MXN - 12681</option>
+                          <option value="2">Pagom&aacute;tico - BNM - Mi d&eacute;bito - MXN - 12680</option>
+                          <option value="3">Mi Chequera - Cheques - USD - 12680</option>
+                          <option value="4">Tarj. Oro - Mi tarjeta - MXN - 12680</option>
+                          <option value="5">Tarj. Premia - Ptos Premia - MXN 12244</option>
+                          <option value="6">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="7">Credicheques - Mi cr&eacute;dito - MXN - 12300</option>
+                          <option value="8">Cr&eacute;d Aut / Pers - Mi cr&eacute;dito - MXN - 12281</option>
+                          <option value="9">Mi inversi&oacute;n - Inv. Integral - MXN - 12299</option>
+                          <option value="10">Mi plazo - Inv. Plazo - MXN - 12282</option>
+                          <option value="11">Horzcob - MXN - 123456 - Horzcob</option>
+                          <option selected="selected">Banca Inversi&oacute;n - MXN - 123456 - Multiseries</option>
+                          <option value="13">Mi retiro - AFORE NSS - MXN - 12312</option>
+        </select>
+        
+        <div class="clear"></div>
+    </div>
+<div class="margin-top25 margin-bottom20 clear"  id="t58">Tipo de valor:<span class="marginL10 marginR15">&nbsp;</span>Sociedades de Inversi&oacute;n</div>
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+                   <tbody>
+                    <tr class="noborder height26">
+                        <th class="height26 border9A" width="15%" id="t25">Emisora / Serie</th>
+                        <th class="height26 alignRight border9A " width="15%" id="t26">Títulos</th>
+                        <th class="height26 border9A  alignRight" width="25%" id="t27">Precio Cierre</th>
+                        <th class="height26 alignRight border9A " width="25%" id="t28">Saldo</th>
+                        
+                      </tr>
+                      
+                      <tr class="noborder">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">1</td>
+                        <td class="height26 alignRight border-dotted_td">$ 12,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 456,000.00</td>
+                      </tr>
+                      <tr class="noborder height26">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">2</td>
+                        <td class="height26 alignRight border-dotted_td">$ 21,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 46,000.00</td>
+                      </tr>
+                      <tr class="noborder height26">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">3</td>
+                        <td class="height26 alignRight border-dotted_td">$ 38,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 456,000.00</td>
+                      </tr>
+                      <tr class="noborder height26">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">4</td>
+                        <td class="height26 alignRight border-dotted_td">$ 69,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 456,000.00</td>
+                      </tr>
+                      <tr class="noborder height26">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">5</td>
+                        <td class="height26 alignRight border-dotted_td">$ 69,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 456,000.00</td>
+                      </tr>
+                      <tr class="noborder height26">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">6</td>
+                        <td class="height26 alignRight border-dotted_td">$ 69,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 456,000.00</td>
+                      </tr>
+                      <tr class="noborder height26">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">7</td>
+                        <td class="height26 alignRight border-dotted_td">$ 69,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 456,000.00</td>
+                      </tr>
+                      <tr class="noborder height26">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">8</td>
+                        <td class="height26 alignRight border-dotted_td">$ 69,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 456,000.00</td>
+                      </tr>
+                      <tr class="noborder height26">
+                        <td class="height26 border-dotted_td">HORZNT B3-A</td>
+                        <td class="height26 alignRight border-dotted_td">9</td>
+                        <td class="height26 alignRight border-dotted_td">$ 69,000.00</td>
+                        <td class="height26 alignRight border-dotted_td">$ 456,000.00</td>
+                      </tr>
+                      <tr class="height26">
+                        <td class="height26 border9A">HORZNT B3-A</td>
+                        <td class="height26 alignRight border9A">10</td>
+                        <td class="height26 alignRight border9A">$ 51,000.00</td>
+                        <td class="height26 alignRight border9A">$ 51,000.00</td>
+                      </tr>
+                      <tr class="height26 noborder">
+                        <td class="height26" colspan="2"><span class="strong" id="t29">Fecha de saldo: 24 Feb 2012</span></td>
+                        <td class="height26 alignRight" colspan="2"><span class="strong"><span id="t30">Saldo total:</span> $ 81,982.00</span></td>
+                      </tr>
+                      
+                      
+
+                    </tbody>
+                </table>
+
+</div>
+<div class="float-left width-190 padding-left20">
+	<h4 class="margin-bottom10" id="t34">¿QUÉ DESEAS HACER?</h4>
+    <div class="clear"></div>
+    <div id="flechaLinksOpcoes" class="float-left height20 width-180" style="*height:14px !important;">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" href="javascript:void(0)" onclick="top.invertir()" id="t35">Invertir mi dinero</a>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="height15">&nbsp;</div>
+<h4 class="margin-bottom10 paddingT15IE8" id="t31">MOVIMIENTOS</h4>
+<div class="width-80 float-left">
+<div class="form-row margin-bottom10">
+        <label class="for-table width40 display-inline" id="t32">Mostrar:</label>
+        <select>
+            <option id="t33">Periodo Actual</option>
+        </select>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+    <div id="flechaLinksOpcoes" class="float-right">
+        <span class="flechaGris float-left">&nbsp;</span>
+        <a class="float-left" onClick="window.open('../../print9.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" id="t36">Imprimir</a>
+    </div>
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top5 clear">
+                      <tr class="ie7BgFFF">
+                        <td width="17%" valign="middle" scope="col" class="borderLabels pad15">
+                            <span class="strong float-left" id="t38">Fecha de Aplicaci&oacute;n</span>
+                            <a href="#">
+                            <div class="descendente active float-left">&nbsp;</div></a>
+                        </td> 
+                        <td width="15%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t39">Operación</span>
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                        </td> 
+                        <td width="15%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t40">Emisora/Serie</span>
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                        </td> 
+                        <td width="16%" valign="middle" scope="col" class="borderLabels padding-right10">
+                            <a href="#"><div class="descendente float-right">&nbsp;</div></a>
+                            <span class="strong float-right" id="t41">Cantidad de T&iacute;tulos</span>
+                        </td> 
+                        <td width="17%" valign="middle" scope="col" class="borderLabels padding-right10">
+                        	<a href="#"><div class="descendente float-right">&nbsp;</div></a>
+                            <span class="strong float-right" id="t42">Precio por Título</span>
+                        </td> 
+                        <td width="20%" valign="middle" scope="col" class="borderLabels padding-right10">
+                        	<a href="#"><div class="descendente float-right">&nbsp;</div></a>
+                            <span class="strong float-right" id="t43">Importe</span>
+                        </td>                    
+                    </tr>
+                      <tr class="greyBack">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">COMPRA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 30.00</td>
+                        <td class="alignRight padding-right10">$ 9,999,999,999,999.00</td>
+                      </tr>
+                      <tr class="ie7BgFFF">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">VENTA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 45.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+                      
+                      
+                      
+                       <tr class="greyBack">
+                       <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">COMPRA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 50.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+                      
+                      
+                      
+                       <tr class="ie7BgFFF">
+
+                       <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">VENTA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 35.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+                      
+                      
+                      
+                      <tr class="greyBack">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">COMPRA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 40.00</td>
+                        <td class="alignRight padding-right10">$ 9,999,999,999,999.00</td>
+                      </tr>
+                      
+                      
+                      
+                      <tr class="ie7BgFFF">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">VENTA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 60.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+                      
+                      
+                      
+                      <tr class="greyBack">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">COMPRA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 70.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+
+<tr class="ie7BgFFF">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">VENTA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 40.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+                      
+                      
+                      
+                       <tr class="greyBack">
+                       <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">COMPRA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 85.00</td>
+                        <td class="alignRight padding-right10">$ 9,999,999,999,999.00</td>
+                      </tr>
+                      
+                      
+                      
+                       <tr class="ie7BgFFF">
+
+                       <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">VENTA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 100.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+                      
+                      
+                      
+                      <tr class="greyBack">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">COMPRA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 40.00</td>
+                        <td class="alignRight padding-right10">$ 9,999,999,999,999.00</td>
+                      </tr>
+                      
+                      
+                      
+                      <tr class="ie7BgFFF">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">VENTA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 30.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+                      
+                      
+                      
+                      <tr class="greyBack">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">COMPRA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 50.00</td>
+                        <td class="alignRight padding-right10">$ 9,999,999,999,999.00</td>
+                      </tr>
+                      
+                      
+                       <tr class="ie7BgFFF">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">VENTA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 60.00</td>
+                        <td class="alignRight padding-right10">$ 192,837.00</td>
+                      </tr>
+                      
+                      
+                      
+                      <tr class="greyBack">
+                        <td class="pad15">24 Feb 2012</td>
+                        <td> <a onClick="window.open('../../print11.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" class="list-link">COMPRA FONDO </a></td>
+                        <td>HORIZONT B3-A</td>
+                        <td class="alignRight padding-right10">192</td>
+                        <td class="alignRight padding-right10">$ 80.00</td>
+                        <td class="alignRight padding-right10">$ 9,999,999,999,999.00</td>
+                      </tr>
+
+
+
+                      <tr class="ie7BgFFF">
+                        <td class="pad15 border9A" colspan="6">
+                            <div id="flechaLinksOpcoes" class="float-left">
+                                <span class="flechaGris float-left">&nbsp;</span>
+                                <a class="float-left" onclick="top.window.scrollTo(0,0); top.cargando_movimientos();" href="javascript:void(0)" id="t44">&nbsp;Ver más movimientos</a>
+                            </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+</div>
+
+					<!-- Exportar NEW-->
+                            
+                            <div class="modal" id="divExportar">
+                            <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+                        <div class="overlay-error">
+							<div class="overlay-content">
+								<div class="external-tranfer">
+									<div class="external-tranfer-content" style="left:-38px !important; top:-15px; position:relative;">
+										<a href="#" class="external-tranfer-close" onClick="$.modal.close();"></a>
+
+										<div class="content-top">
+											<div class="center">
+												<div class="dot-bottom">
+													<div class="left"><span class="title" id="t45">EXPORTAR RESULTADOS</span></div>                                   
+												</div>
+												<div class="error-content">
+
+													<div id="scrollbar2" class="">
+														<div>
+															<!--div class="flechaUp"></div-->
+                                                            <div class="clear"></div>
+															<div class="scrollbar">
+																
+															</div>
+															<div class="viewport">
+																<div class="overview" style="width:440px !important;">
+																	 <p class="instructions margin-bottom15" id="t46" >Selecciona el formato en el que deseas exportar el resultados de tus movimientos.</p>
+                                                                     <div class="border-dotted_top margin-bottom20"></div>
+														             <div class="width88">
+														                <div class="form-row sinMarginRight">
+														                    <label class="for-table margin-bottom5" style="width:100px !important;"><span class="strong" id="t47">Formato:</span></label>
+														                    <select style="width:75%;">
+														                        <option selected="selected" id="t48">Excel - (CSV)</option>
+                                                                                <option id="t49">Texto separado por tab</option>
+                                                                                <option id="t50">Texto separado por coma</option>
+                                                                                <option id="t51">Texto separado por pipe</option>
+														                    </select>
+														                    <div class="clear"></div>
+														                </div>
+														            </div>
+																</div>
+															</div>
+															<!--div class="flechaDown"></div-->
+														</div>
+													</div>
+
+														<div class="clear"></div>									
+														<div class="cF-sideBySide cF-bottomNav" style="background:none !important; top:200px;">
+															<ul class="cN-primaryNav">
+																<li class="cN-primaryNav">
+																</li>
+																<li class="cM-spriteBase cN-primaryNavButton "><a href="#" value="EXPORTAR" id="export" onclick="loading();"><span id="t53">Exportar</span></a></li> 
+															</ul>
+                                                            <div id="flechaLinksOpcoes">
+                                                                <span class="flechaGris float-left"></span>
+                                                                <a class="sinBold" href="javascript:void(0);" onClick="$.modal.close();" name="Reset" type="reset" id="t52">Cancelar</a>
+                                                            </div>
+														 </div>
+
+													</div>
+													<div class="content-footer" style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important;">
+														<div class="title" id="t54">Cont&aacute;ctanos</div>
+														<div class="telefono"><a href="popup-a.html" class="telefono" id="t56">Ll&aacute;manos</a></div>
+														<div class="lineaDivisoria">&nbsp;</div>
+														<div class="email"><a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="email" id="t55">Mensajes</a></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                            </div>
+                            
+                            <!-- Exportar NEW-->
+
+<script>
+	var valor2=0;
+	
+	function Cta3(){
+		
+			if(valor2==0)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==1)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Maestra.html'
+			}
+			if(valor2==2)
+			{
+			top.cargando_movimientos();
+			window.location.href='Tarjeta-de-Debito.html'
+			}
+			if(valor2==3)
+			{
+			top.cargando_movimientos();
+			window.location.href='Cuenta-Cheques.html'
+			}
+			if(valor2==4)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta-de-Credito.html'
+			}
+			if(valor2==5)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Tarjeta_premia.html'
+			}
+			if(valor2==6)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==7)
+			{
+			top.cargando_movimientos();	
+			window.location.href='Credicheque.html'
+			}
+			if(valor2==8)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_credito_folio.html'
+			}
+			if(valor2==9)
+			{
+			top.cargando_movimientos();	
+			window.location.href='39-AccountDetail_integral.html'
+			}
+			if(valor2==10)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_plazo_folio.html'
+			}
+			if(valor2==11)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_fondos.html'
+			}
+			if(valor2==12)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail_multiseries.html'
+			}
+			if(valor2==13)
+			{
+			top.cargando_movimientos();	
+			window.location.href='account_detail.html'
+			}
+		}
+		
+function exportar(){
+	$('#mensajeError_contenido_div', window.parent.document).html(
+		$("#divExportar").html()
+	);
+	
+		
+	parent.$.modal(				
+			{
+				closeHTML: '',
+				opacity:60,
+				overlayClose:false,
+				flagDiv:true,
+				widthDivIfrm:570,
+				heightDivIfrm:'auto'
+			}
+		);
+		
+		top.$('#ventanaEmergente-contenido').removeClass('ventanaEmergente-data').addClass('no-border-modal');
+		top.$('#tabla_emergente').removeClass('padding20').addClass('no-border-modal');
+		
+		
+}
+
+	</script>
+</div>
+             
+</body>
+</html>
+             

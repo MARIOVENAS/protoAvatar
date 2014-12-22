@@ -1,0 +1,172 @@
+img, a:link img, a:visited img {
+
+                border-style: none;
+
+}
+
+
+
+
+
+/*	Payments Menú Custom Style	*/
+
+.jfpw-menu-payments-dotted
+
+{
+
+	border-top: 1px dotted #666;
+
+	border-bottom: 1px dotted #666;
+
+}
+
+.sf-menu.jfpw-menu-payments .jfpw-menu-payments-dotted a,.sf-menu.jfpw-menu-payments .jfpw-menu-payments-dotted a:focus,
+
+.sf-menu.jfpw-menu-payments .jfpw-menu-payments-dotted a:hover, .sf-menu.jfpw-menu-payments li.sfHover.jfpw-menu-payments-dotted a
+
+{
+
+	margin: 0;
+
+	padding: 0.75em 0;
+
+}
+
+
+
+.sf-menu.jfpw-menu-payments .jfpw-menu-payments-bold a,.sf-menu.jfpw-menu-payments .jfpw-menu-payments-bold a:focus,
+
+.sf-menu.jfpw-menu-payments .jfpw-menu-payments-bold a:hover, .sf-menu.jfpw-menu-payments li.sfHover.jfpw-menu-payments-bold a
+
+{
+
+	font-weight: bold;
+
+	padding: 0.75em 0;
+
+}
+
+
+
+/*	Payments Menú Default Style	*/
+
+.sf-vertical.jfpw-menu-payments {
+
+	font-size: 8.5pt;
+
+	font-weight: normal;
+
+	background: none transparent;
+
+	padding-top: 20px; 
+
+}
+
+.sf-menu.jfpw-menu-payments ul,.sf-menu.jfpw-menu-payments li{
+
+	background: #FFF;
+
+}
+
+.sf-vertical.jfpw-menu-payments, .sf-vertical.jfpw-menu-payments li {
+
+    width: 100%;
+
+    margin-bottom: 0;
+
+    z-index:100;
+
+}
+
+.sf-menu.jfpw-menu-payments li:hover, .sf-menu.jfpw-menu-payments li.sfHover{
+
+	background: #F9F9F9;
+
+}
+
+
+
+.sf-menu.jfpw-menu-payments li.active{
+
+	background: #F9F9F9;
+
+}
+
+.sf-menu.jfpw-menu-payments li:hover, .sf-menu.jfpw-menu-payments li.sfHover,
+
+.sf-menu.jfpw-menu-payments a:hover, .sf-menu.jfpw-menu-payments a:active {
+
+	outline:	none;
+
+	z-index:101;
+
+}
+
+.sf-menu.jfpw-menu-payments a,.sf-menu.jfpw-menu-payments a:focus,
+
+.sf-menu.jfpw-menu-payments a:hover, .sf-menu.jfpw-menu-payments li.sfHover a
+
+{
+
+	color: #666;
+
+    border: 0;
+
+    padding: 0.75em 1em;
+
+    margin:	0 1em;
+
+    text-decoration: none;
+
+    background: none;
+
+    outline: none;
+
+    
+
+ }
+
+
+
+.sf-vertical.jfpw-menu-payments a:focus > .sf-sub-indicator, .sf-vertical.jfpw-menu-payments a:hover > .sf-sub-indicator, 
+
+.sf-vertical.jfpw-menu-payments a:active > .sf-sub-indicator, .sf-vertical.jfpw-menu-payments li:hover > a > .sf-sub-indicator,
+
+.sf-vertical.jfpw-menu-payments li.sfHover > a > .sf-sub-indicator
+
+{
+
+	background: url('/JFP/images/widgets/jfpw.menu.paymentsmenu.arrow.png') no-repeat scroll 0px 0px;
+
+	width: 13px;
+
+	height: 13px;
+
+}
+
+
+
+/*submenus*/
+
+.sf-menu.jfpw-menu-payments li ul{
+
+	left: 100%;
+
+	width: auto;
+
+}
+
+.sf-menu.jfpw-menu-payments li ul li:first-child{
+
+	border-top: none;
+
+}
+
+.sf-menu.jfpw-menu-payments ul li{
+
+	border-top: 1px dotted #666;
+
+	white-space: nowrap;
+
+}
+

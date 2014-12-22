@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="pragma" content="no-cache"/>
+
+<meta http-equiv="cache-control" content="no-cache"/>
+
+<meta http-equiv="expires" content="-1"/>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+<link href="
+
+/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<link href="../contenidos/bbAvatar/css/tabla1css.css" rel="stylesheet" type="text/css" />
+
+      <link rel="stylesheet" href="../contenidos/bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+
+
+<script type="text/javascript" src="../contenidos/bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../contenidos/bbAvatar/js/opciones.js"></script>
+
+
+
+  <script type="text/javascript" src="../contenidos/bbAvatar/js/motor.js"></script>
+
+        <script type="text/javascript" src="../contenidos/bbAvatar/js/calendar3.js"></script>
+
+        <script type="text/javascript" src="../contenidos/bbAvatar/js/plugins.js"></script>
+
+        <script type="text/javascript" src="../contenidos/bbAvatar/js/script.js"></script>
+
+        <script type="text/javascript" src="../contenidos/bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+				
+
+				
+
+				cargando_movimientos();
+
+				
+
+            });
+
+        </script>
+
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var diasSemanaPagoT = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+            var MesesPagoT = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+            var fmtFechaPagoT = 'dd M yy';
+
+            var fechaIni = new Date();  
+
+            CrearCal("#txtFecha", fmtFechaPagoT, diasSemanaPagoT, MesesPagoT, fechaIni, fechaIni, 30, '80', '80' );
+
+        });
+
+        </script>
+
+             <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var diasSemanaPagoT = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+            var MesesPagoT = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+            var fmtFechaPagoT = 'dd M yy';
+
+            var fechaIni = new Date();  
+
+            CrearCal("#txtFecha2", fmtFechaPagoT, diasSemanaPagoT, MesesPagoT, fechaIni, fechaIni, 30, '80', '-550' );
+
+			//$('#ui-datepicker-div').addClass("marginL_menos150");
+
+        });
+
+        </script>
+
+   <title></title>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class=" ancho708 alto320">
+
+  <div class="floatR">
+
+    <div class="fayuda"></div>
+
+  </div>
+
+<div class="boldText f14 marginB10 floatL">Filtrar movimientos 
+
+      <select name="select" id="select">
+
+        <option>Dep&oacute;sitos y retiros</option>
+
+      </select>
+
+  </div>
+
+    <div class="clear"></div>
+
+  <div class="color666 floatL f11">Opcionalmente puedes utilizar las siguientes opciones para mejorar el resultado de tu b&uacute;squeda</div>
+
+  <div class="clear"></div>
+
+  <table class="marginT8" width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td width="33%" valign="top" class=" alto125 paddingT5 paddingB30  borderRSolid paddingL10">
+
+    <div class="color333333 boldText f11">Por palabra clave</div>
+
+    <div class="marginT10"><input name="" type="text" /></div>
+
+    </td>
+
+    <td width="33%" valign="top" class="alto125 paddingB30 paddingT5 paddingL10 borderRSolid">
+
+    <div class="color333333 boldText f11">Por fechas</div>
+
+   
+
+     <div class="ancho90 floatL marginT10"><span class="f11">Fecha</span><input style="width:75px" type="text" id="txtFecha" class="yearpicker" readonly="readonly" /></div>
+
+     <div class="floatL marginT22"><img src="../contenidos/bbAvatar/images/calendar.gif" alt="" onclick="javascript:document.getElementById('txtFecha').focus();"/>&nbsp;&nbsp;Al</div>
+
+     <div class="clear"></div>
+
+<div class="ancho90 floatL marginT10"><span class="f11">Fecha</span><input style="width:75px" type="text" id="txtFecha2" class="yearpicker" readonly="readonly" /></div>
+
+      <div class="floatL marginT22"><img src="../contenidos/bbAvatar/images/calendar.gif" alt="" onclick="javascript:document.getElementById('txtFecha2').focus();"/></div>
+
+    </td>
+
+    <td width="34%" valign="top" class="alto125 paddingB30 paddingT5 paddingL10">
+
+    <div class="color333333 boldText f11">Por importe</div>
+
+    <div class="color666 f11 marginT10"><input id="r1" name="rb1" type="radio" value="" onclick="javascript:habilita1();" /> 
+
+    Espec&iacute;fico</div>
+
+    <div class="color666 f11 marginT3">
+
+      <input id="r2" name="rb1" type="radio" value="" onclick="javascript:habilita2();" /> 
+
+      Por rango</div>
+
+    <div class="marginT15 f11">
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td width="17%" class="f11 color666" >De</td>
+
+    <td width="83%"><input name="input" type="text" class="bge6e6fa ancho137" id="text1" readonly="readonly" /></td>
+
+  </tr>
+
+  <tr>
+
+    <td class="f11 color666 paddingT3">Hasta</td>
+
+    <td class="paddingT3"><input name="input2" type="text" class="bge6e6fa ancho137" id="text2" readonly="readonly" /></td>
+
+  </tr>
+
+</table></div>
+
+    <div></div>
+
+    </td>
+
+  </tr>
+
+</table>
+
+  <div class="marginT20">
+
+    <div class="floatR">
+
+  <input  class="btnAZ86" name="" type="button" value="Filtrar"  onclick="javascript:window.parent.cerrarmodal(0,0);"/> </div>
+
+<div class="floatL">
+
+  <input  class="btnRO86" name="" type="button" value="Cancelar" onclick="javascript:window.parent.cerrarmodal(0,0);"/>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+	<!--
+
+	$(document).ready(function(){optieneAlturas();
+
+	top.window.scrollTo(0,0);
+
+	$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	setTimeout("showtooltip2();",200);
+
+	-->
+
+
+
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+		
+
+		function habilita1(){
+
+			
+
+			$('#text1').removeClass('bge6e6fa').removeAttr('readonly',"readonly").val('');
+
+			$('#text2').addClass('bge6e6fa').attr('readonly',"readonly").val('');			
+
+		
+
+			}
+
+			
+
+		function habilita2(){
+
+			
+
+			$('#text1').removeClass('bge6e6fa').removeAttr('readonly',"readonly").val('');
+
+			$('#text2').removeClass('bge6e6fa').removeAttr('readonly',"readonly").val('');
+
+			
+
+			}
+
+		
+
+		</script>
+
+ 
+
+</body>
+
+</html>
+

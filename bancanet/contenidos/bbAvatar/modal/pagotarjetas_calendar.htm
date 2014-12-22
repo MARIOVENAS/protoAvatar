@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script> 
+
+	<script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>
+
+	<script>
+
+		
+
+	
+
+		
+
+		var Formato,diasSemana,Meses;
+
+		var minDate = 30;
+
+		jQuery(document).ready(function(){
+
+			
+
+			var fecha = "10|4|2012".split("|");
+
+			var idioma = "SPANISH";
+
+			var isIE = (window.navigator.userAgent.indexOf("MSIE")> 0);
+
+			var anio = 0;
+
+			var diaActual = new Date(parseInt(fecha[2])+anio,parseInt(fecha[1]), parseInt(fecha[0]));
+
+			var ciclo =  "CICLOANTERIOR";
+
+			if(ciclo == 'CICLOANTERIOR' || ciclo == 'MES ANTERIOR'){
+
+				minDate = 60;
+
+			}
+
+				
+
+			
+
+			if(idioma != 'ENGLISH'){
+
+			
+
+				Formato = "dd/mm/yy";
+
+				diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+				Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+				msj1 = 'El campo no puede contener caracteres especiales';
+
+				msj2 = 'El campo debe ser num&eacute;rico';
+
+				msj3 = 'Selecciona una opci&oacute;n';
+
+				msj4 = 'El campo no puede contener espacios';
+
+				
+
+			}
+
+			
+
+			CrearCal("#fecInicio", Formato, diasSemana, Meses, diaActual, minDate, diaActual, 30, '');
+
+			
+
+			});
+
+		
+
+		
+
+	</script>
+
+	
+
+</head>
+
+<body style="background-color:#FFF;">
+
+
+
+<div id="contenido" style="background-color:#FFF; height:auto;">
+
+	<div class="clear">
+
+		
+
+	<div class="mensajeError_Fila2 color666">
+
+		
+
+					<span id="t3">Por fechas</span><br /><br />
+
+					<div class="clear calendario">
+
+						<div id="t4" class="color000 f11">Fecha</div>
+
+						<p class="floatL"><input type="text" class="yearpicker" readonly="readonly" name="fecInicio" id="fecInicio" />
+
+						<img class="yearpickerIMG" src="../../bbAvatar/images/calendar.gif" /></p>
+
+				
+
+	</div>
+
+	</div>
+
+
+
+
+
+</body>
+
+</html>

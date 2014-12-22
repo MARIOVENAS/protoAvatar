@@ -1,0 +1,339 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+    
+    
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Change PIN on credit or debit cards','If you wish to change your credit or debit card PIN, select a card and follow the directions bellow:','Select an option','Enter the following information.','Current Card PIN Number:','New Card PIN Number:','Confirmation:','CONTINUE','CONTINUE','Erase','Enter 4 numeric digits.');
+    </script>
+    
+
+    <script type="text/javascript">
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			addTooltip();
+			tooltips_compra_aire();
+			
+
+			});
+			
+			function tooltips_compra_aire(){
+				$('.errorB').css('display','none');
+				$('.sel_cuenta').change(function(){
+					$('.error-sel_cuenta1,.error-sel_cuenta2').css('display','none');
+					if( $(this).hasClass('error1') ){
+						if($(this).val() != '0'){
+							$(this).removeClass('errorbg').removeClass('error1');
+							$(this).find('option').css('background','#FFFFFF');
+						}
+						if( $('.input_tel').hasClass('errorbg') ){
+							$('.error-input_tel').css('display','inline');
+						}else{
+							if( $('.sel_comp').hasClass('errorbg') ){
+								$('.error-sel_comp').css('display','inline');
+							}else{
+								if( $('.sel_importe').hasClass('errorbg') ){
+									$('.error-sel_importe').css('display','inline');
+								}
+							}
+						}
+					}
+					if( $(this).hasClass('error2') ){
+						if( parseFloat( $(this).val() ) >= 200 ){
+							$(this).removeClass('errorbg').removeClass('error2');
+							$(this).find('option').css('background','#FFFFFF');
+						}
+						if( $('.input_tel').hasClass('errorbg') ){
+							$('.error-input_tel').css('display','inline');
+						}else{
+							if( $('.sel_comp').hasClass('errorbg') ){
+								$('.error-sel_comp').css('display','inline');
+							}else{
+								if( $('.sel_importe').hasClass('errorbg') ){
+									$('.error-sel_importe').css('display','inline');
+								}
+							}
+						}
+					}
+				});
+				$('.input_tel').keydown(function(){
+					$('.error-input_tel').css('display','none');
+					if($(this).val() != ''){
+						$(this).removeClass('errorbg');
+						if( $('.sel_comp').hasClass('errorbg') ){
+							$('.error-sel_comp').css('display','inline');
+						}else{
+							if( $('.sel_importe').hasClass('errorbg') ){
+								$('.error-sel_importe').css('display','inline');
+							}
+						}
+					}
+				});
+				$('.sel_comp').change(function(){
+					$('.error-sel_comp').css('display','none');
+					if($(this).val() != '0'){
+						$(this).removeClass('errorbg');
+						$(this).find('option').css('background','#FFFFFF');
+						if( $('.sel_importe').hasClass('errorbg') ){
+							$('.error-sel_importe').css('display','inline');
+						}
+					}
+				});
+				$('.sel_importe').change(function(){
+					$('.error-sel_importe').css('display','none');
+					if($(this).val() != '0'){
+						$(this).removeClass('errorbg');
+						$(this).find('option').css('background','#FFFFFF');
+					}
+				});
+			}
+			
+			function posicionarTooltip(link, tooltip){
+				var posLink = link.offset();
+				//If tooltip's position is bigger than body's width
+				if(posLink.left + link.outerWidth() + tooltip.outerWidth() + 15 < $("body").outerWidth()){
+					tooltip.css({
+						'left': posLink.left + link.outerWidth() + 15,
+						'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+					});
+				}else{
+				tooltip.css({
+					'left': posLink.left - link.outerWidth() - 225,
+					'top' : (posLink.top + 7) - (tooltip.outerHeight() /2)
+				})
+					.find(".tt_arrow")
+					.addClass("tt_arrow_right");
+				}
+			}
+			
+			function addTooltip(){
+				$('.tooltip').click(function(e){
+					e.preventDefault();
+					var tt_container = $('<div id="tt_container" class="medium"></div>'),
+					flecha = $('<div class="tt_arrow"></div>'),
+					actions = $('<div class="tt_actions"></div>'),
+					title_content = $(this).attr("title");
+					//Si ya había un tooltip lo elimino
+					if($('body').find('#tt_container')){
+						$('#tt_container').remove(); 
+					}
+					//Agrego la flechita
+					flecha.appendTo(tt_container);
+					//Agrego el boton de cerrar
+					$('<a href="#" class="tt_close">x</a><div class="clear"></div>').appendTo(tt_container);
+					//Agrego el texto indicativo
+					$('<p class="p_tooltip"></p>').appendTo(tt_container);
+					//Agrego el tooltip
+					tt_container.appendTo('body');
+					$('.p_tooltip').html(title_content);
+					//Acomodo la fecha a la mitad del tooltip
+					flecha.css({
+						'top' : (tt_container.outerHeight() - flecha.outerHeight())/2
+					})
+					posicionarTooltip($(this), tt_container);
+					$('#tt_container .tt_cancel, #tt_container .tt_close, #tt_container .tt_continue').click(function(){
+						$('#tt_container').remove();
+					});			
+				});
+			}
+
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo" style="height:100%;">
+
+
+
+	
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t23">Cambio de NIP de tarjeta de cr&eacute;dito o d&eacute;bito</h3>
+
+            </div>
+			
+            <div class="border-topSolid"></div>
+
+			<p class="instructions margin-botom0" id="t24"  style="*margin-bottom:13px !important; margin-bottom:18px\0/ !important;">Si deseas cambiar el NIP de tu tarjeta de cr&eacute;dito o d&eacute;bito, selecciona una tarjeta y sigue las instruccciones:</p>
+			
+           
+                         
+
+						<div class="width141">
+
+							<div class="form-row margin-right0">
+
+                                <div class="floatLI height30 overflow" style="width:90px !important; padding:0px !important;" id="Horo">
+                                	<div class="tajOro displayNone floatLI" id="Oro"></div>
+                                </div>
+
+                                <div class="height30 floatLI">
+                                <select id="sol1" class="width-600" onChange="valor1=this.value;selector1();">
+									<option selected="selected" value="0" id="t25">&nbsp;&nbsp;Selecciona una cuenta...</option>
+									<option  value="1">&nbsp;&nbsp;Mi tarjeta - Tarj. Oro - MXN - 12680</option>
+								</select>
+                                </div>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							<div id="step" class="displayNone"> <!-- Step -->
+                            
+                            <div class="border-top"></div>
+
+                            
+                            <div class="form-row margin-bottom13">
+                            	 <div class="overflow">
+                                <label id="t26" class="for-table width-240">Captura la informaci&oacute;n solicitada.</label>
+                                </div>
+                                
+                                <div class="overflow margin-top10 clear">
+                                <label id="t27" class="for-table width-240">No. de NIP de Tarjeta Actual:</label>
+                                </div>
+                                <div class="clear margin-top10">
+            
+                                    <input type="password" id="nipP" class="text width100 float-left margin-topm5IE" style="height:18px !important; *height:18px !important; height:14px\0/ !important;" maxlength="4">	
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            
+                            <div class="form-row margin-bottom13">
+                                <div class="overflow">
+                                <label id="t28" class="for-table width-240">Nuevo No. de NIP de Tarjeta:</label>
+                                </div>
+                                <div class="clear margin-top10">
+            
+                                    <input type="password" id="nip1" class="text width100 float-left margin-topm5IE" style="height:18px !important; *height:18px !important; height:14px\0/ !important;">
+                                   
+					<a class="tooltip_q margin-left7 tooltip display-inline valignmiddle marginL07IE" id="t33" href="#"  title="Ingresa 4 d&iacute;gitos num&eacute;ricos."></a>
+                                    
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            <div class="form-row margin-bottom13">
+                                <div class="overflow">
+                                <label id="t29" class="for-table width-240">Confirmaci&oacute;n:</label>
+                                </div>
+                                <div class="clear margin-top10">
+            
+                                    <input type="password" id="nip2" class="text width100 float-left margin-topm5IE" style="height:18px !important; *height:18px !important; height:14px\0/ !important;">	
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+						</div><!-- Step -->
+                              
+
+                        </div><!-- Fin width141 -->
+
+						
+						<div id="btns" class="displayNone"> <!-- Botones -->
+                        
+						<div class="cF-sideBySide border-topSolid ancho100p paddingT10 marginT0">
+
+							<!-- <div class="width156">&nbsp;</div> -->
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton">
+                                	<a href="javascript:void(0);" id="t30">CONTINUAR</a>
+                                    <a href="javascript:void(0);" onClick="javascript:modal();" class="displayNone" id="t31">CONTINUAR</a>
+                                </li>	
+                                <li class="cN-primaryNav">
+									<div id="flechaLinks">
+										<span class="flechaazul float-left"></span>
+										<a id="t32" href="javascript:borrar();" class="sinBold">Borrar</a>
+									</div>
+								</li>
+
+							</ul>
+
+						 </div>	
+                         
+                         </div><!-- BTN -->
+
+						<div class="clear"></div>
+      </div>
+
+
+	<script>
+	valor1 = 0;
+	function selector1(){
+		if (valor1==0){
+			$('#Oro').hide();
+			$('#step').hide();
+			$('#btns').hide();
+			$('#nipP').val('');
+			$('#nip1').val('');
+			$('#nip2').val('');
+			$('#t30').show();
+			$('#t31').hide();
+			$('#Horo').removeClass('height51').addClass('height30');
+			setTimeout(function(){top.ajustarP();},800);
+		}else{
+			$('#Oro').show();
+			$('#step').show();
+			$('#btns').show();
+			$('#Horo').removeClass('height30').addClass('height51');
+			setTimeout(function(){top.ajustarP();},800);
+			setTimeout(function(){autoComplete();},1600);
+		}
+	}
+	
+	function autoComplete(){
+		
+		llenarValores('input','#nipP','1234');
+		setTimeout(function(){llenarValores('input','#nip1','1234');},800);
+		setTimeout(function(){llenarValores('input','#nip2','1234');},1600);
+		setTimeout(function(){botones();},2000);
+	}
+	
+	function botones(){
+		$('#t30').hide();
+		$('#t31').show();
+	}
+	
+	function borrar(){
+		
+		$('#nipP').val('');
+		$('#nip1').val('');
+		$('#nip2').val('');
+		setTimeout(function(){autoComplete();},1600);
+	
+	}
+	
+	function modal(){
+		//alert('Modal');
+		top.challengeAire();
+		top.$('.ventanaEmergente').css({
+			'top': 80,
+			'height':500
+			
+			   }, 600);
+	}
+	
+	
+	</script>
+</body>
+</html>

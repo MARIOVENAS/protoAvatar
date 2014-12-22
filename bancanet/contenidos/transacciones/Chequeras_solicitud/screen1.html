@@ -1,0 +1,235 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+	<script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+    <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+	</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+<script type="text/javascript">
+
+
+
+	$(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='chequeraPers']").imageTick({
+
+			tick_image_path: "JFP/regional/images/img_form/radio_check.png", 
+
+			no_tick_image_path: "JFP/regional/images/img_form/radio_empty.png",
+
+			image_tick_class: "radios"
+
+		});
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	
+
+	es=new Array('Request one or several checkbooks',
+
+				 'Capture data',
+
+				 'Checking account',
+
+				 'Select account',
+
+				 'Number of checkbooks',
+
+				 'Select the amount...',
+
+				 'CONTINUE'
+
+	);
+
+	
+
+	</script>
+
+	
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+
+                <h3 id="t0">Solicitar Una o Varias Chequeras</h3>
+
+            </div>
+
+            
+
+			<p class="instructions" id="t1">Captura los datos</p>
+
+                         
+
+						<div class="width141">
+
+							<div class="form-row">
+
+                                <label class="for-table"id ="t2">Cuenta:</label>
+
+                                <select id="sol1">
+
+									<option selected="selected" id="t3">Seleccione una cuenta...</option>
+
+									<option  value="1">Cuenta Corriente: 12520 $96.000,00 Saldo</option>
+
+									<option value="2">Cuenta Corriente: 1212123002 $599.386,30 Saldo</option>
+
+									<option value="3">Cuenta Corriente: 1212128003 $586.711,30 Saldo</option>
+
+								</select>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							
+
+                            <div class="form-row">
+
+                                <label class="for-table" id="t4">Cantidad de chequeras:</label>
+
+                                <select id="sol2">
+
+									<option selected="selected" id="t5">Seleccione la cantidad deseada...</option>
+
+									<option value="1">25</option>
+
+									<option value="1">50</option>
+
+									<option value="1">100</option>
+
+								</select>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                        </div>
+
+						
+
+						<div class="cF-sideBySide cF-bottomNav margin-top0">
+
+							<div class="width156">&nbsp;</div>
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton"><a onClick="valor1=1;Cheqp();" id="t6">CONTINUAR</a></li>	
+
+							</ul>
+
+						 </div>	
+
+						<div class="clear"></div>
+
+
+
+      </div>
+
+	  
+
+<script>
+
+var valor1=0;   
+
+function Cheqp(){
+
+	//alert($('#sol1').val());
+
+	if($('#sol1').val()!="Seleccione una cuenta...")
+
+	{if($('#sol1').val()==1)
+
+	if($('#sol2').val()==1)
+
+	//if($('#sol3').val()==1)
+
+	{
+
+	top.Solcheq2();
+
+	}
+
+	}
+
+	if($('#sol1').val()==2)
+
+	if($('#sol2').val()==1)
+
+	//if($('#sol3').val()==1)
+
+		{
+
+		top.Solcheq5();
+
+		}	
+
+	if($('#sol1').val()==3)
+
+	if($('#sol2').val()==1)
+
+	//if($('#sol3').val()==1)
+
+		{
+
+		top.Solcheq5();
+
+	
+
+		}		
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>	

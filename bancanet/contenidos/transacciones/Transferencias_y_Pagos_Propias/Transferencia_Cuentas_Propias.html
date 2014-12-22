@@ -1,0 +1,2254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+   <title></title>
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="562aa956-1822-448a-94b3-280691f8e264" ><input type=hidden name="EWF_SYS_1" value="51YWP4@RSZC4@HBBX@LDGN29W5K2FEAS4IN7RVTJ" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZTPP-Pagina Inicio"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="transfctasprop.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="8"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/estilos.css" />
+
+<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" />
+
+<style>.elmHidden { visibility:hidden; }</style>
+
+
+
+<!--[if IE 7]><style>.calendario input{  position:relative;top:-6px; }</style><![endif]-->
+
+
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script type="text/javascript">
+
+	//var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+	var regresatransaccion = parent.document.getElementById("REGRESADEMO").value;
+
+	var auxdemo = new Array();
+
+	var combosdemo = new Array();
+
+	var datademo = new Array();
+
+	function leerDatosDemo(){
+
+		if(regresatransaccion=="true"){
+
+			parent.document.getElementById("REGRESADEMO").value = "";	
+
+			auxdemo = parent.document.getElementById("DATADEMO").value.split("|");
+
+			combosdemo = auxdemo[0].split(",");
+
+			if(combosdemo[0]=="true"){
+
+				datademo = auxdemo[1].split(",");
+
+				$("#txtFecha").val(datademo[0]);
+
+				$("#cboHrs").val(datademo[1]);
+
+				$("#cboMin").val(datademo[2]);
+
+				
+
+				//8 0
+
+				$("#checkProgramar").attr('checked','checked');
+
+				activaCheck('checkProgramar','Programar');
+
+				toggleChecks('checkProgramar','chkFrec');
+
+			}else{
+
+				$("#txtFecha").val("");
+
+				$("#horaFutura").val("");
+
+				//8 0
+
+			}
+
+			if(combosdemo[1]=="true"){
+
+				$("#chkFrec").attr("checked", true);
+
+				toggleChecks('chkFrec','checkProgramar');
+
+			}else{
+
+				$("#chkFrec").attr("checked", false);
+
+			}
+
+		}
+
+	}
+
+  $(document).ready(
+
+	function(){
+
+	
+
+	$("#txtImp").focus(function() {
+
+  		$(this).val('1,000.00').attr("readonly", "readonly");
+
+	});
+
+	
+
+	leerDatosDemo();
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+		
+
+});
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+  
+
+  
+
+
+
+
+
+
+
+function iniDateCal() {
+
+  if(language=="eng")
+
+   {
+
+     var diasSemana=['Sun','Mon','Tue','Wed','Thu','Fry','Sat'];	
+
+	 var Meses = ['Jan','Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+	 var fmtFecha = 'mm/dd/yy';
+
+   }
+
+  else
+
+   {
+
+	 var diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+	 var Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+	 var fmtFecha = 'dd/mm/yy';
+
+   }
+
+  setCboret();
+
+  setCbohrs();
+
+  setCbomin();
+
+  
+
+  var fechaSer = new Date();
+
+  var anio = fechaSer.getFullYear();
+
+  var mes = fechaSer.getMonth();
+
+  var dia = fechaSer.getDate();
+
+  var fechaIni = new Date( anio , mes, dia);
+
+  
+
+  CrearCal("#txtFecha", fmtFecha, diasSemana, Meses, fechaIni, fechaIni, 30, '225', '' );
+
+}
+
+
+
+function setCboret() {
+
+  var ctaVal = new Array();
+
+  var ctaDesc = new Array();
+
+  var ctaAls = new Array();
+
+  var ctaNum = new Array();
+
+  var ctaCur = new Array();
+
+  var ctaTip = new Array();
+
+  var ctaAmt = new Array();
+
+  var i=0;
+
+  var $cboRet = $('#cboRet');
+
+  	ctaVal.push( 'PS' );
+
+	var cad = ( language=='eng' ) ? 'Select an option' : 'Selecciona una opci\u00F3n';
+
+	ctaNum.push( cad );
+
+	ctaDesc.push( '' );
+
+	ctaAls.push( '' );
+
+	ctaCur.push( '' );
+
+	ctaTip.push( '6' );
+
+	ctaAmt.push( '7' );	  
+
+  	ctaVal.push( '2' );
+
+	ctaNum.push( '002' );
+
+	ctaDesc.push( 'Cheques' );
+
+	ctaAls.push( 'Cheques' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '1' );
+
+	ctaAmt.push( '40,000.00' );	  
+
+  	/*ctaVal.push( '6' );
+
+	ctaNum.push( '  501' );
+
+	ctaDesc.push( 'Cta. Maestra Opc.' );
+
+	ctaAls.push( 'Mi maestra.' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '6' );
+
+	ctaAmt.push( '45,000.00' );	  
+
+  	ctaVal.push( '9' );
+
+	ctaNum.push( '  796' );
+
+	ctaDesc.push( 'Tarjeta Crédito' );
+
+	ctaAls.push( 'Tarjeta Crédito' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '3' );
+
+	ctaAmt.push( '50,000.00' );	  
+
+  	ctaVal.push( '16' );
+
+	ctaNum.push( '888' );
+
+	ctaDesc.push( 'Cheques' );
+
+	ctaAls.push( 'Cheques' );
+
+	ctaCur.push( 'USD' );
+
+	ctaTip.push( '1' );
+
+	ctaAmt.push( '54,000.00' );	  
+
+  	ctaVal.push( '18' );
+
+	ctaNum.push( '793' );
+
+	ctaDesc.push( 'Tarj Premia Pre' );
+
+	ctaAls.push( 'Tarj Premia Pre' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '3' );
+
+	ctaAmt.push( '60,000.00' );	  
+
+  	ctaVal.push( '19' );
+
+	ctaNum.push( '502' );
+
+	ctaDesc.push( 'Cuenta Perfiles ' );
+
+	ctaAls.push( 'Cuenta Perfiles' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '6' );
+
+	ctaAmt.push( '40,000.00' );	  
+
+  	ctaVal.push( '21' );
+
+	ctaNum.push( '502' );
+
+	ctaDesc.push( 'Credicheque Perfiles Banamex ' );
+
+	ctaAls.push( 'Credicheque Perfiles Banamex' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '3' );
+
+	ctaAmt.push( '45,000.00' );	  
+
+  	ctaVal.push( '22' );
+
+	ctaNum.push( '502' );
+
+	ctaDesc.push( 'Crédito Personal Perfiles Banamex' );
+
+	ctaAls.push( 'Crédito Personal Perfiles Banamex' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '3' );
+
+	ctaAmt.push( '50,000.00' );	  
+
+  	ctaVal.push( '25' );
+
+	ctaNum.push( '245' );
+
+	ctaDesc.push( 'Tarj Premia Pre' );
+
+	ctaAls.push( 'Tarj Premia Pre' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '3' );
+
+	ctaAmt.push( '54,000.00' );	  
+
+  	ctaVal.push( '26' );
+
+	ctaNum.push( '199' );
+
+	ctaDesc.push( 'Clasica' );
+
+	ctaAls.push( 'Clasica' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( '3' );
+
+	ctaAmt.push( '60,000.00' );	  */
+
+  
+
+  for( i=0; i<ctaDesc.length; i++ ) {
+
+	var contenido;
+
+	var alsTemp = ctaAls[i].replace(/^\s*|\s*$/g,"");
+
+	var desCort = ctaDesc[i].replace(/^\s*|\s*$/g,"");
+
+	var desc = ( alsTemp == "" ) ? desCort : alsTemp;
+
+	var $opt = $('<option></option>');
+
+	$opt.attr('id','opc'+i+'');
+
+	$opt.attr('value', ctaVal[i] );
+
+	$opt.attr('tipo',ctaTip[i]);
+
+	if( isNaN( parseInt( ctaNum[i] ) ) )
+
+	  contenido = ctaNum[i];
+
+	else
+
+	  contenido = Combo_Propias( desc, ctaNum[i], ctaCur[i], ctaAmt[i] );
+
+	$opt.html( contenido );
+
+	$cboRet.append( $opt );
+
+  }
+
+}
+
+
+
+function setCbohrs() {
+
+  var i, hrs, selOpt;
+
+  for( i=0; i<24; i++ ) {
+
+	selOpt = ( i==8 ) ? "selected" : "";
+
+	hrs = ( i<10 ) ? '0'+i : i;
+
+	$('#cboHrs').append('<option value="' + hrs + '"' + selOpt + '>' + hrs + '</option>');
+
+  }
+
+}
+
+  
+
+function setCbomin() {
+
+  var min, i;
+
+  for( i=0; i<4; i++ ) {
+
+	min = ( (i*15)<10 ) ? '0'+i : i*15;
+
+	$('#cboMin').append('<option value="' + min + '">' + min + '</option>');
+
+  }
+
+}
+
+ 
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+  function backData() {
+
+  $("#cboRet option[value=" + "" + "]").attr('selected','selected');
+
+  $("#cboDep option[value=" + "" + "]").attr('selected','selected');
+
+  $("#txtImp").val( "" );
+
+  $("#valTipcam").text( "[ValTipoCambio]" );
+
+  $("#valImppesos").text("[ImportePesos]");
+
+  
+
+  toggleCurrency();
+
+
+
+  if( "" != "" ) {
+
+    $("#checkrf").attr('checked','checked');
+
+    $("#CompFiscal").show();
+
+    $("#txtRFC").val( "" );
+
+    $("#txtIVA").val( "" );
+
+  }
+
+  if( "" != "" ) {
+
+    var mins = parseInt("")/15;
+
+    $("#checkProgramar").attr('checked','checked');
+
+    $("#Programar").show();
+
+    $("#txtFecha").val( "" );
+
+    $("#cboHrs option[value=" + "" + "]").attr('selected','selected');
+
+    $("#cboMin option[value=" + mins + "]").attr('selected','selected');
+
+	toggleChecks('checkProgramar','chkFrec');
+
+  }
+
+  if( "" == "on" ) {
+
+    $("#chkFrec").attr('checked','checked');
+
+	toggleChecks('chkFrec','checkProgramar');
+
+  }
+
+}
+
+  function setCbodepprop() {
+
+  var ctaVal = new Array();
+
+  var ctaDesc = new Array();
+
+  var ctaAls = new Array();
+
+  var ctaNum = new Array();
+
+  var ctaCur = new Array();
+
+  var ctaAmt = new Array();
+
+  var i=0;
+
+  var $cboDep = $('#cboDep');
+
+  	ctaVal.push( 'PS' )
+
+	var cad = ( language=='eng' ) ? 'Select an option' : 'Selecciona una opci\u00F3n';
+
+	ctaNum.push( cad );
+
+	ctaDesc.push( '' );
+
+	ctaAls.push( '' );    
+
+	ctaCur.push( '' );
+
+	ctaAmt.push( '7' );	  
+
+  	ctaVal.push( '2' )
+
+	ctaNum.push( '002' );
+
+	/*ctaDesc.push( 'Cheques' );
+
+	ctaAls.push( 'Cheques' );    
+
+	ctaCur.push( 'MXN' );
+
+	ctaAmt.push( '40,000.00' );	  */
+
+  	ctaVal.push( '6' )
+
+	ctaNum.push( '  501' );
+
+	ctaDesc.push( 'Cta. Maestra Opc.' );
+
+	ctaAls.push( 'Mi maestra.' );    
+
+	ctaCur.push( 'MXN' );
+
+	ctaAmt.push( '45,000.00' );	  
+
+  	/*ctaVal.push( '16' )
+
+	ctaNum.push( '888' );
+
+	ctaDesc.push( 'Cheques' );
+
+	ctaAls.push( 'Cheques' );    
+
+	ctaCur.push( 'USD' );
+
+	ctaAmt.push( '54,000.00' );	  
+
+  	ctaVal.push( '18' )
+
+	ctaNum.push( '793' );
+
+	ctaDesc.push( 'Tarj Premia Pre' );
+
+	ctaAls.push( 'Tarj Premia Pre' );    
+
+	ctaCur.push( 'MXN' );
+
+	ctaAmt.push( '60,000.00' );	  
+
+  	ctaVal.push( '19' )
+
+	ctaNum.push( '502' );
+
+	ctaDesc.push( 'Cuenta Perfiles ' );
+
+	ctaAls.push( 'Cuenta Perfiles' );    
+
+	ctaCur.push( 'MXN' );
+
+	ctaAmt.push( '40,000.00' );	  
+
+  	ctaVal.push( '25' )
+
+	ctaNum.push( '245' );
+
+	ctaDesc.push( 'Tarj Premia Pre' );
+
+	ctaAls.push( 'Tarj Premia Pre' );    
+
+	ctaCur.push( 'MXN' );
+
+	ctaAmt.push( '54,000.00' );	  */
+
+  
+
+  for( i=0; i<ctaDesc.length; i++ ) {
+
+    var contenido;
+
+	var alsTemp = ctaAls[i].replace(/^\s*|\s*$/g,"");
+
+	var desCort = ctaDesc[i].replace(/^\s*|\s*$/g,"");
+
+	var desc = ( alsTemp == "" ) ? desCort : alsTemp;
+
+	var $opt = $('<option></option>');
+
+	$opt.attr('value', ctaVal[i] );
+
+	$opt.attr('id','opc'+i+'');
+
+	if( isNaN( parseInt( ctaNum[i] ) ) )
+
+	  contenido = ctaNum[i];
+
+	else
+
+	  contenido = Combo_Propias( desc, ctaNum[i], ctaCur[i], ctaAmt[i] );
+
+	$opt.html( contenido );
+
+	$cboDep.append( $opt );
+
+  }
+
+}
+
+  var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+			
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+									
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+  jQuery(document).ready(function(){
+
+  $("#cboDep, #cboRet").change(function(){
+
+    var isRetsel = ( $('#cboRet option:selected').val()=="PS" );
+
+    var isDepsel = ( $('#cboDep option:selected').val()=="PS" );
+
+
+
+    if( !isRetsel && !isDepsel ) {
+
+      var isRetdol = ( $('#cboRet option:selected').text().indexOf('USD') > -1 );
+
+      var isDepdol = ( $('#cboDep option:selected').text().indexOf('USD') > -1 );
+
+      if( ( !isRetdol && isDepdol ) || ( isRetdol && !isDepdol ) ) {
+
+        if( "0"=="0" && "CHR"=="CHR" ){
+
+		  $('#t19').attr('disabled',true);
+
+		  $('#t19').removeClass('btnAZ86').addClass('btnAZ86_des');
+
+	      pm('TIPOCAMBIO');
+
+		}
+
+	  }
+
+	}
+
+  });
+
+});
+
+
+
+function pm(ev){
+
+  var d=document.getElementById('ndw').contentWindow.document.forms[0];
+
+  var o=document.forms[0];
+
+  d.action=o.action;
+
+  d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+  d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+  d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+  d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+  d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;	
+
+  d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+  d.EWFBUTTON.value=ev;
+
+  d.EWFBUTTON.name='EWF_BUTTON_'+ev;
+
+  d.submit();
+
+}
+
+  function changeImp() {
+
+  var valImpp;
+
+  var idTxt  = ( $('#txtOimp:visible').size() > 0 ) ? '#txtOimp' : '#txtImp';
+
+  var valImp = $( idTxt ).val().replace(/,/gi,"");
+
+  valImp = $.trim(valImp);
+
+  var valtc  = $('#valTipcam').text();
+
+  valImp = compDec( valImp );
+
+  $( idTxt ).val( valImp );
+
+  
+
+  if( !isNaN( valImp ) && valImp!="" ) {
+
+	valImp = parseFloat( valImp );
+
+	valtc  = ( isNaN( parseFloat( valtc ) ) ) ? 0 : parseFloat( $('#valTipcam').text() );
+
+	txtImpp = (  valImp*valtc )+"";
+
+	txtImpp = ( txtImpp.indexOf('.') > -1 ) ? txtImpp+"00" : txtImpp+".00"
+
+	txtImpp = ( txtImpp.indexOf('.') > -1 ) ? txtImpp.substring( 0, txtImpp.indexOf('.')+3 ) : parseFloat( txtImpp )+'.00';
+
+	txtImpp = ( isNaN( parseFloat( valtc ) ) || valtc==0 ) ? '' : txtImpp;
+
+	$('#valImppesos').text( txtImpp );
+
+  }
+
+  
+
+}
+
+
+
+function compDec( valImp ) {
+
+  if( !isNaN( valImp ) && valImp!="" ) {
+
+    if( valImp.indexOf('.') > -1 ) {
+
+	  var ent = parseFloat(valImp.substring( 0, valImp.indexOf('.') ) );
+
+	  ent = ( isNaN( ent ) ) ? 0 : ent;
+
+	  var dec = valImp.substring( valImp.indexOf('.')+1 );
+
+	  var decl = valImp.substring( valImp.indexOf('.')+1 ).length;
+
+	  if( decl<2 ) {
+
+	    for( var i=0; i<2-decl; i++ )
+
+		  dec = dec+'0';
+
+	  }
+
+	  valImp = ent+'.'+dec;
+
+	} else {
+
+      valImp = parseFloat(valImp)+'.00';
+
+	}
+
+  }
+
+  return valImp;
+
+}
+
+
+
+function checkKey( ev ) {
+
+  var charCode = (ev.charCode) ? ev.charCode : ((ev.keyCode) ? ev.keyCode : ((ev.which) ? ev.which : 0));
+
+  if( charCode == 13 )
+
+    changeImp();
+
+  if( charCode == 8 )
+
+    $('#valImppesos').text( "" );
+
+}
+
+  function toggleCurrency() {
+
+  var isRetsel = ( $('#cboRet option:selected').val()=="PS" );
+
+  var isDepsel = ( $('#cboDep option:selected').val()=="PS" );
+
+
+
+  if( !isRetsel && !isDepsel ) {
+
+    var isRetdol = ( $('#cboRet option:selected').text().indexOf('USD') > -1 );
+
+    var isDepdol = ( $('#cboDep option:selected').text().indexOf('USD') > -1 );
+
+    var titImp = ( !isRetdol && !isDepdol ) ? 'MXN' : 'USD';
+
+    if( ( !isRetdol && isDepdol ) || ( isRetdol && !isDepdol ) ) {
+
+	  if( "CHR" != "CHR" ) {
+
+	    DoSubmit('RIESGOSA');
+
+	  } else {
+
+        show();
+
+	  }
+
+    } else {
+
+      hide();
+
+	}
+
+	clearAdoptions();
+
+	$('#tdImp #titImp').text( titImp );
+
+  } else if( isRetsel && isDepsel ) {
+
+    hide();
+
+	clearAdoptions();
+
+	$('#tdImp #titImp').text( 'MXN' );
+
+	$('#txtImp').val('');
+
+	$('#valImppesos').text('');
+
+  }
+
+  window.parent.ajustar();
+
+}
+
+
+
+function clearAdoptions(){
+
+  $('#tblOpad').find(':input:text').val('');
+
+  $('#tblOpad').find(':input:checkbox').attr('checked',false);
+
+  $('#tblOpad').find(':input:checkbox').attr('disabled',false);
+
+  $('#tblOpad').find('div.adOpt>div').hide();
+
+  $('#cboHrs option[value=08]').attr('selected',true);
+
+  $('#cboMin option[value=0]').attr('selected',true);
+
+  hideErrors();
+
+}
+
+
+
+function show() {
+
+  $('.elmHidden').css( {'visibility':'visible'} );
+
+  $('div.mtp').show();
+
+  $('#divFiscal').hide();
+
+  $('#divProg').removeClass('marginT10');
+
+}
+
+  
+
+function hide() {
+
+  $('.elmHidden').css( {'visibility':'hidden'} );
+
+  $('div.mtp').hide();
+
+  $('#divFiscal').show();
+
+  $('#divProg').addClass('marginT10');
+
+}
+
+
+
+function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+  function showError( idElem, msgErr, contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'', contexto ).after( $divErr );
+
+}
+
+
+
+function hideErrors( contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display', contexto).remove();
+
+}
+
+
+
+function toggleChecks( idChecken, idCheckdis ) {
+
+  var flag =  $('#'+idChecken).is(':checked');
+
+  $('#'+idChecken).attr('disabled', false);
+
+  $('#'+idCheckdis).attr('disabled', flag);
+
+  $('#'+idCheckdis).attr('checked', false);
+
+  $('#msgFrec').show();
+
+  window.parent.ajustarIframe();
+
+}
+
+  function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/
+
+  var valMail = $("#"+idCampo, contexto ).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"", contexto ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function curpValido( idTxt ) {
+
+  var regexCurp;
+
+  var valCurp = $( "#"+idTxt+"" ).val();
+
+  regexCurp = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[0-9]{2}$/;
+
+  return regexCurp.test( valCurp );
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+  
+
+  var msg1;
+
+  var msg2;
+
+  var msg3;
+
+  var msg4;
+
+  var msg5; 
+
+  var msg6;
+
+  var msg7;
+
+  
+
+  var msgrf1;
+
+  var msgrf8;
+
+  var msgrf9;
+
+  var msgrf10;
+
+  
+
+  var msgcal1;
+
+  
+
+
+
+var ctasProp = true;
+
+var hasError = false;
+
+
+
+function validateForm() {
+
+  hideErrors();
+
+
+
+  if( comboVacio( "cboRet" ) )
+
+    showError( "cboRet", msg1 );
+
+  if( comboVacio( "cboDep" ) )
+
+    showError( "cboDep", msg2 );
+
+  if( campoVacio( "txtImp" ) )
+
+    showError( "txtImp", msg3 );
+
+  else if( !importeValido( "txtImp" ) && !campoNumerico( "txtImp" ) )
+
+    showError( "txtImp", msg7 );
+
+  else if( importeValido( "txtImp" ) && importeCero( "txtImp" ) )
+
+    showError( "txtImp", msg4 );
+
+  else if( !importeValido( "txtImp" ) )
+
+	showError( "txtImp", msg5 );
+
+  if( $("#checkrf").is(":checked") ) {
+
+    if( campoVacio( "txtRFC" ) )
+
+	  showError( "txtRFC", msgrf8 );
+
+	else if( !rfcValido( "txtRFC" ) )
+
+	  showError( "txtRFC", msgrf1 );
+
+	if( campoVacio( "txtIVA" ) || importeCero( "txtIVA" ) )
+
+	  showError( "txtIVA", msgrf9 )
+
+	else if( ivaimporteInvalido( "txtIVA", "txtImp" ) )
+
+	  showError( "txtIVA", msgrf10 );
+
+  }
+
+  if( $("#checkProgramar").is(":checked") ) {
+
+    if( campoVacio("txtFecha") )
+
+	  showError( "txtFecha", msgcal1 );
+
+  }
+
+
+
+  if( !hasError ) {
+
+	parseDataConf();
+
+  }
+
+  
+
+  window.parent.ajustar();
+
+}
+
+  function parseDataConf() {
+
+  var opcRet = $('#cboRet option:selected').text();
+
+  var opcDep = $('#cboDep option:selected').text();
+
+	  
+
+  var isRetdol = ( opcRet.indexOf("USD") > -1 );
+
+  var isDepdol = ( opcDep.indexOf("USD") > -1 );
+
+  
+
+  var isCVDP = ( ( !isRetdol && isDepdol ) || ( isRetdol && !isDepdol ) );
+
+  var tranCV = ( !isCVDP ) ? "" : ( isRetdol ) ? "Compra" : "Venta";
+
+
+
+  var num = parseInt( $("#cboHrs option:selected").text() )
+
+  var AmPm = ( isNaN( num ) ) ? "" : ( parseInt( $("#cboHrs option:selected").text() ) >= 12 ) ? "PM" : "AM";
+
+  
+
+  var datFecha = ( document.forms[0].checkProgramar.checked ) ? $('#txtFecha').val().split('/') : ["","",""];;
+
+  var dia = ( "SPANISH" == "SPANISH" ) ? datFecha[0] : datFecha[1];
+
+  var mes = ( "SPANISH" == "SPANISH" ) ? datFecha[1] : datFecha[0];
+
+
+
+  if( isCVDP ) {
+
+    document.forms[0].DATA1.value  = tranCV;
+
+    document.forms[0].DATA2.value  = $('#cboRet').val();
+
+    document.forms[0].DATA3.value  = $('#cboDep').val();
+
+    document.forms[0].DATA4.value  = $('#txtImp').val();
+
+    document.forms[0].DATA5.value  = "";
+
+    document.forms[0].DATA6.value  = ( document.forms[0].checkProgramar.checked ) ? dia : "0";
+
+    document.forms[0].DATA7.value  = ( document.forms[0].checkProgramar.checked ) ? mes : "0";
+
+    document.forms[0].DATA8.value  = ( document.forms[0].checkProgramar.checked ) ? $("#cboHrs option:selected").text() : "0";
+
+    document.forms[0].DATA9.value  = ( document.forms[0].checkProgramar.checked ) ? $('#cboMin option:selected').text() : "0";
+
+    document.forms[0].DATA10.value = ( document.forms[0].checkProgramar.checked ) ? AmPm : "";
+
+    document.forms[0].DATA11.value = "";
+
+    document.forms[0].DATA12.value = "";
+
+  } else {
+
+    document.forms[0].DATA1.value  = $('#cboRet').val();
+
+    document.forms[0].DATA2.value  = $('#cboDep').val();
+
+    document.forms[0].DATA3.value  = $('#txtImp').val();
+
+    document.forms[0].DATA4.value  = "";
+
+    document.forms[0].DATA5.value  = ( document.forms[0].checkProgramar.checked ) ? dia : "0";
+
+    document.forms[0].DATA6.value  = ( document.forms[0].checkProgramar.checked ) ? mes : "0";
+
+    document.forms[0].DATA7.value  = ( document.forms[0].checkProgramar.checked ) ? $("#cboHrs option:selected").text() : "0";
+
+    document.forms[0].DATA8.value  = ( document.forms[0].checkProgramar.checked ) ? $('#cboMin option:selected').text() : "0";
+
+    document.forms[0].DATA9.value  = ( document.forms[0].checkProgramar.checked ) ? AmPm : "";
+
+    document.forms[0].DATA10.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? "1" : "0";
+
+    document.forms[0].DATA11.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? $('#txtRFC').val() : "";
+
+	document.forms[0].DATA12.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? $('#txtIVA').val() : "";
+
+  }
+
+  document.forms[0].DATA13.value = "";
+
+  document.forms[0].DATA14.value = ( document.forms[0].FREC.checked ) ? "on" : "";
+
+  document.forms[0].DATA15.value = ( document.forms[0].checkProgramar.checked ) ? $('#txtFecha').val() : "";
+
+  parent.document.getElementById("DATADEMO").value=$("#checkProgramar").is(":checked") + "," + $("#chkFrec").is(":checked") + "|" + $("#txtFecha").val() + "," + $("#cboHrs").val() + "," + $("#cboMin").val();
+
+  parent.cargaDocN( 'Transferencias_y_Pagos_Propias/Confirma_Cta_Propias.html');
+
+}
+
+
+
+function DoSubmit( value ) {
+
+  document.forms[0].EWFBUTTON.value = value;
+
+  document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+  document.forms[0].submit();
+
+}
+
+
+
+</script>
+
+<script type="text/javascript">
+
+
+
+    var ax=new Array("Transferencias");
+
+	var es=new Array('Transfers between my Banamex accounts','Select a withdrawal account and a deposit one, specify transfer data and click "Continue"','Accounts','Withdrawal account','Deposit account','Transfer data','Amount','Exchange rate *','Amount MXN','* The exchange rate may vary at the moment of application','Additional<br/>transactions','Fiscal Receipt','RFC','TAX','Schedule for future date','Date','Time','Save as frequent operation','Scheduled transactions can not be saved as frequent','Continue','To my accounts');
+
+
+
+  $(document).ready(function(){
+
+    
+
+  msg1 = (language == "eng") ? "You have to select the withdrawal account. Please verify." : "Es necesario seleccionar la cuenta retiro. Favor de verificar.";
+
+  msg2 = (language == "eng") ? "You have to select the deposit account. Please verify." : "Es necesario seleccionar la cuenta dep&oacute;sito. Favor de verificar.";
+
+  msg3 = (language == "eng") ? "Enter a value in the field Amount." : "Digite un valor en el campo Importe."; 
+
+  msg4 = (language == "eng") ? "Amount should be different to zero." : "El importe debe ser mayor a cero."; 
+
+  msg5 = (language == "eng") ? "Invalid information in field Amount. Please verify." : "Informaci&oacuten de Importe Invalida. Favor de verificar.";
+
+  msg6 = (language == "eng") ? "This service apply only for charges and payments to Checking Account or Master Account." : "Este servicio aplica solo para cargos y abonos a Cuentas de Cheques o Cuentas Maestras.";
+
+  msg7 = (language == "eng") ? "The entered field must be numeric. Please verify." : "Solo se permiten datos numericos en este campo. Favor de verificar";
+
+  
+
+  msgrf1 = (language == "eng") ? "Verify Tax Payer Number (T.P.N) fields." : "Favor de requisitar correctamente los campos de R.F.C.";
+
+  msgrf8 = (language == "eng") ? "In order to register the operation as receipt of Tax, it is necessary to provide beneficiary's TPN." : "Para registrar la operacion como Comprobante Fiscal, es necesario proporcionar el RFC del beneficiario.";
+
+  msgrf9 = (language == "eng") ? "In order to register the operation as receipt of Tax, it is necessary to provide the Tax Ammount." : "Para registrar la operacion como Comprobante Fiscal, es necesario indicar el IVA.";
+
+  msgrf10 = (language == "eng") ? "Type correctly the TAX field, it must be less than the amount." : "Requisitar correctamente el campo de I.V.A., debe ser menor que Importe.";
+
+  
+
+  msgcal1 = (language == "eng") ? "If you wish to schedule your transaction you should enter the date field." : "Si desea programar su transacción es necesario que introduzca la fecha.";
+
+	
+
+    iniDateCal();
+
+	setCbodepprop();
+
+	$('#cboDep, #cboRet').change( function() { toggleCurrency() });
+
+	$('#txtImp').blur( function(){ changeImp(); });
+
+	$('#txtImp').mouseout( function(){ changeImp(); });
+
+	$('#txtImp').keypress( function( event ){ checkKey( event ); });
+
+	$('#txtImp').keyup( function( event ){ checkKey( event ); } );
+
+	$('#t19').mousemove( function(){ changeImp(); });
+
+	if( "" != "" )
+
+	  backData();
+
+	if( window.parent.$('#DATAAUX').val() != '' ) {
+
+	  $('#cboRet option[value='+ window.parent.$('#DATAAUX').val() + "]").attr('selected','selected');
+
+	  window.parent.$('#DATAAUX').val('');
+
+	}
+
+	//window.parent.ajustar();
+
+  });
+
+  function modalHorario() {
+
+    parent.$.modal({ opacity:60, overlayClose:false, flagDiv:false, widthDivIfrm:600, heightDivIfrm:400, srcIfrm:'../../bbAvatar/modal/fueraHorario.htm'})
+
+  }
+
+</script>
+
+
+
+
+
+
+
+<script>parent.setFecha("02/04/12    16:20:09  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="162005  ";b$Cont="162009  "
+
+	//
+
+    </script>
+
+ <div id="t20" class="float-left fonttit">A mis cuentas</div>
+
+<div id="t0" class="panelIzEnca3_text2 ancho100p">Transferencias entre mis cuentas Banamex</div>
+
+<div id="t1" class="color666 paddingL4 paddingT5 f11 ancho100p">
+
+  Selecciona una cuenta de retiro y una de dep&oacute;sito, indica los datos de la transferencia y da clic en &quot;Continuar&quot;.
+
+</div>
+
+<div class="saldos_bloque3_2">
+
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+	<tr>
+
+	  <td valign="top" class="borderRDotted ancho25p padding20 paddingL15"><span id="t2" class="f12">Cuentas</span></td>
+
+
+
+	  <td valign="top" class="padding20 paddingL15 paddingR15">
+
+		<div id="t3" class="negrita color333 f11 paddingB2">Cuenta retiro</div>
+
+		<select id="cboRet" class="ancho100p selectp1" SELECTED-BY="VALUE" SELECTED="PS" size=1></select>
+
+		<div id="t4" class="negrita color333 marginT20 f11 paddingB2">Cuenta dep&oacute;sito</div>
+
+		<select id="cboDep" class="ancho100p selectp1" SELECTED-BY="VALUE" SELECTED="002" size=1></select>
+
+	  </td>
+
+	</tr>
+
+
+
+  </table>
+
+</div>
+
+<div class="saldos_bloque3_2">
+
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+	<tr>
+
+	  <td id="tdTit" valign="top" class="borderRDotted ancho25p padding20 paddingL15"><span id="t5" class="f12">Datos de la<br />transferencia</span></td>
+
+	  <td id="tdImp" valign="top" class="padding20 paddingL15 paddingR15">
+
+	    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+          <tr>
+
+
+
+            <td class="ancho33p">
+
+			  <div class="paddingB2">
+
+			    <span id="t6" class="negrita color333 f11" valign="top">Importe</span>&nbsp;
+
+			    <span id="titImp" class="negrita color333 f11">MXN</span>
+
+			  </div>
+
+			  <input id="txtImp" type="text" class="input ancho150" maxlength="14" />
+
+			</td>
+
+			<td class="paddingL10 ancho33p elmHidden" valign="top" >
+
+
+
+			  <div id="t7" class="negrita color333 f11 paddingB2">Tipo de cambio*</div>
+
+			  <div id="valTipcam"></div>
+
+			</td>
+
+			<td class="paddingR10 paddingB10 paddingL20 elmHidden" valign="top">
+
+			  <div id="t8" class="negrita color333 f11 paddingB2">Importe MXN</div>
+
+			  <div id="valImppesos"></div>
+
+			</td>
+
+		  </tr>
+
+
+
+		</table>
+
+	  </td>
+
+	</tr>
+
+  </table>
+
+  <div id="t9" class="mtp bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5 displayN">
+
+    * El tipo de cambio puede variar al momento de la aplicaci&oacute;n de la operaci&oacute;n
+
+  </div>
+
+</div>
+
+<div class="saldos_bloque3_2 bgF1F2F2">
+
+
+
+  <table id="tblOpad" width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+	<tr>
+
+	  <td valign="top" class="borderRDotted ancho25p padding20 paddingL15"><span id="t10" class="f12">Opciones<br />adicionales</span></td>
+
+	  <td valign="top" class="padding20 paddingL15 paddingR15">
+
+
+
+
+
+
+
+		<div id="divProg" class="ancho100p overflow borderBDotted paddingB10 marginT10 f11 adOpt">
+
+		  <input type="checkbox" id="checkProgramar" name="checkProgramar" onclick="activaCheck('checkProgramar','Programar');toggleChecks('checkProgramar','chkFrec');" />&nbsp;<label id="t14" class="f11 color666">Programar a fecha futura</label>
+
+
+
+		  <div id="Programar" class="displayN paddingT10">
+
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+			  <tr>
+
+				<td valign="top" class="ancho50p tablaSaldos2_bordeR">
+
+				  <div id="t15" class="negrita color333 f11 paddingB2">Fecha</div>
+
+				  <div class="calendario">
+
+				    <input id="txtFecha" class="yearpicker" type="text" readonly="readonly" />
+
+				  </div>
+
+
+
+				</td>
+
+				<td valign="top" class="ancho50p">
+
+				  <div id="t16" class="negrita color333 f11 paddingB2">Hora</div>
+
+				  <select id="cboHrs"></select>&nbsp;:&nbsp;<select id="cboMin"></select>&nbsp;hrs
+
+				</td>
+
+			  </tr>
+
+			</table>
+
+		  </div>
+
+
+
+		</div>
+
+		<div class="ancho100p overflow marginT10 f11 adOpt">
+
+		  <input id="chkFrec" type="checkbox" name="FREC" onclick="toggleChecks('chkFrec','checkProgramar');" />&nbsp;<label id="t17" class="f11 color666">Guardar como operaci&oacute;n frecuente</label>
+
+		</div>
+
+	  </td>
+
+	</tr>
+
+  </table>
+
+  <div id="t18" class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5">
+
+
+
+	Las operaciones programadas no pueden ser almacenadas como frecuentes
+
+  </div>
+
+</div>
+
+<div class="marginT20 overflow">
+
+  <input type="button" id="t19" class="btnAZ86 floatR" value="Continuar" onclick="validateForm();" />
+
+</div>
+
+
+
+<iframe id="ndw" src="../../spanishdir/cuentas.html" style="display:none; width:500px; height:500px;"></iframe>
+
+
+
+<!---->
+
+
+
+<input type="hidden" name="bandcf" value="" />
+
+<input type="hidden" name="FD2" value="" />
+
+<input type="hidden" name="DATA1" value="" />
+
+<input type="hidden" name="DATA2" value="" />
+
+<input type="hidden" name="DATA3" value="" />
+
+<input type="hidden" name="DATA4" value="" />
+
+<input type="hidden" name="DATA5" value="" />
+
+<input type="hidden" name="DATA6" value="" />
+
+<input type="hidden" name="DATA7" value="" />
+
+<input type="hidden" name="DATA8" value="" />
+
+<input type="hidden" name="DATA9" value="" />
+
+<input type="hidden" name="DATA10" value="" />
+
+<input type="hidden" name="DATA11" value="" />
+
+<input type="hidden" name="DATA12" value="" />
+
+
+
+<input type="hidden" name="DATA13" value="" />
+
+<input type="hidden" name="DATA14" value="" />
+
+<input type="hidden" name="DATA15" value="" />
+
+<input type="hidden" name="EWFBUTTON" value="" />
+
+<input type="hidden" id="Params" name="Params" value="" />
+
+
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+
+
+

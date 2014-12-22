@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>Layout Avatar</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+
+	<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/script.js"></script>
+
+    <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="../bancanet/contenidos/bbAvatar/js/swap.js"></script>
+
+</head>
+
+
+
+<body>
+
+<!--inicia contenedor principal-->
+
+<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+	<div id="header">
+
+		<div class="utilities_nav" id="navegacionPrincipal"></div>
+
+		<div class="citibank-containerImg">
+
+			<a href="#"><div id="citibank-logo"></div></a>
+
+			<div id="citibank-imageb"></div>
+
+		</div>
+
+<!--termina header-->
+
+	</div>
+
+	<div class="cS-structBodyContainer">
+
+		<div id="title-section" class="cH-appPageHead height20">
+
+			<h1 id="t24">CONTRATO DE BANCA ELECTR&Oacute;NICA</h1>
+
+		</div>
+
+		<div id="content">
+
+				<!-- The left menu divs are inserted by javascript if it is necessary -->
+
+			<!--div id="left-menu" class="float-left margin-top25"></div>
+
+					<div id="shadow">&nbsp;</div-->
+
+			<div id="subapp-box" class="noleftmenu float-left">
+
+				<p id="t25">
+
+					Para poder accesar a <b>Banca</b>Net es necesario aceptar el nuevo Contrato &uacute;nico de Banca Electr&oacute;nica para personas f&iacute;sicas.
+
+				</p><br/>
+
+				<p id="t26"><b>Banca</b>Net te ofrece diversas operaciones bancarias como:</p><br/>
+
+				<div class="paddingL20">
+
+					<ul class="listaclave">
+
+						<li id="t27">Consultas de saldos y movimientos.</li><br />
+
+						<li id="t28">Pagos de tus Tarjetas de Cr&eacute;dito Banamex.</li><br />
+
+						<li id="t29">Protecci&oacute;n de tu chequera y liberaci&oacute;n de cheques.</li><br />
+
+						<li id="t30">Inversiones a la vista.</li><br />
+
+						<li id="t31">Entre otros m&aacute;s…<br /></li><br />
+
+					</ul>
+
+				</div>
+
+				<div class="border-solid margin-top5"></div>
+
+				<ul class="cN-primaryNav float-left margin-top5">
+
+					<li>
+
+						<div id="flechaLinks">
+
+							<span class="flechaazul float-left"></span>
+
+							<a id="t32" href="#" class="sinBold">Regresar</a>
+
+						</div>
+
+					</li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="footer"></div>
+
+	</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	var es = new Array('ESPAÑOL','BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My <strong>Banca</strong>Net','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+
+
+
+	es.push(
+
+		'ELECTRONIC BANKING AGREEMENT',
+
+		'To be able to access <b>Banca</b>Net you must accept the new Electronic Banking Unique Agreement for individuals.',
+
+		'<b>Banca</b>Net offers you several banking transactions such as:',
+
+		'Balance and Transaction Inquiries.',
+
+		'Payment of your Banamex Credit Cards.',
+
+		'Checkbook protection and release of checks.',
+
+		'Investments.',
+
+		'Among many others...',
+
+		'Back'
+
+	);
+
+
+
+	$(document).ready(function(){
+
+		ajustarOverlay();
+
+		ajusta_tooltpis();
+
+		funciones_loginP();
+
+	});
+
+
+
+	$( document ).ajaxStop( function(){
+
+		$( '#t0' ).hide();
+
+	});
+
+</script>
+
+
+
+</body>
+
+<!--termina contenedor principal-->
+
+</html>

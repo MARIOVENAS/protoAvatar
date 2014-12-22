@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="292a9cc4-56b7-4712-af5b-0bbb3bce8f52" ><input type=hidden name="EWF_SYS_1" value="XDN6FA4ED4WST6HE6RW872HNTP2M6JKTYYX7ZPGU" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZTCA-PAG ALTA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="Aplicada.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="8"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>        <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/mando.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+		
+
+    	<script type="text/javascript">
+
+		var	es= new Array("Other accounts registration","The registration has been <span class='negrita'>applied</span> with approval number ","Please wait 30 minutes until account(s) is activated.","Bank Accounts","Bank",
+
+		"Name","Account type","Branch Number","Account Number","Nickname of account","Maximum payment amount","Payee's E-mail","Payee's Cell Number","Payee's Mobile Phone Company",
+
+		"Type of person","Interbank Clabe","Payee's RFC or CURP","Card Type","Account Number","Economic Sector","Name","Incorporated  accounts which have NOT received any deposits from you during a 1 year period  will be automatically canceled, and you will be obliged to incorporate them  again.",
+
+		"Type of person","Name","The incorporated accounts in which you DON'T make a deposit within one year, will be cancelled automatically and you should registered them again.","applied","with approval number", "Company name", "Issuer","Mobile Number","Cards","Setup a payee or beneficiary");
+
+ function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+} 	
+
+ var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "/bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+ 
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+} 
+
+ $(document).ready(
+
+	function(){
+
+		 top.impayuda();
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+} 
+
+ var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+ 
+
+			
+
+	$(document).ready(function(){		
+
+		optieneAlturas();
+
+		pintaTablas();
+
+		$(window).bind('resize', function(){
+
+			optieneAlturas()});
+
+		activaHoverIcos();
+
+		pintarTr();
+
+		slide(".activaflecha2",5,0);
+
+		setTimeout('window.parent.ajustarIframe()', 1000);
+
+	});
+
+	
+
+	String.prototype.trim = function() {
+
+		return this.replace(/^\s+|\s+$/g,"");
+
+	}
+
+
+
+	function pintarTr(){
+
+					
+
+			
+
+			
+
+			
+
+				if("01" == "01" && "SPANISH" == "ENGLISH"){
+
+					$("#persona").html("Individual");
+
+				}else if("01" == "01" && "SPANISH" != "ENGLISH"){
+
+					$("#persona").html("Fisica");
+
+				}
+
+				if("01" != "01" && "SPANISH" == "ENGLISH"){
+
+					$("#persona").html("Company");
+
+				}else if("01" != "01" && "SPANISH" != "ENGLISH"){
+
+					$("#persona").html("Moral");
+
+				}
+
+				
+
+			var rfc = "ASDF123456";
+
+			var correo = "usuario@mail.com";
+
+			var celular = "";
+
+			if(rfc.trim() == "" || rfc.trim() == null){					
+
+				$("#trrfc").remove();
+
+			}
+
+			if(correo.trim() == "" || correo.trim() == null){
+
+				$("#trcorreo").remove();
+
+			}
+
+			if(celular.trim() == "" || celular.trim() == null){
+
+				$("#trcelular").remove();
+
+				$("#trcompania").remove();				
+
+			}else{
+
+				$("#compania").html("Telcel");
+
+			}
+
+			
+
+		
+
+	}
+
+	
+
+		
+
+	function Initialize() {
+
+	
+
+	
+
+	
+
+	pintaTablas();
+
+	
+
+	var tip="Orden";
+
+	var tip="";
+
+	var tip="FGFDG,FDG/FGFGD";
+
+    }
+
+
+
+	</script>
+
+
+
+
+
+
+
+<script>parent.setFecha("25/04/12    13:30:34  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina.\n\n Esta Transacci&oacute;n no se efectuar&aacute;, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="133034  ";b$Cont="133034  "
+
+	//
+
+    </script>
+
+<script type="text/javascript">
+
+			$(document).ready(
+
+	
+
+				function(){
+
+				$("#btngrd").click(function() {
+
+ 					$('#guarda #cbr4', window.parent.document).appendTo($('#guardadatos'));
+
+					
+
+				});	
+
+				$("#btngrd").trigger('click');	
+
+					
+
+				}
+
+			);
+
+			
+
+		</script>  
+
+<div class="float-left fonttit" id="t31">Alta de cuentas de terceros</div>
+
+        <div class="panelIzEnca3_text2" id="t0">Alta de otras cuentas</div>
+
+        <div class="saldos_bloque3_verde paddingL20"><label id="t1">Tu alta ha sido <span class="negrita">aplicada</span> con el n&uacute;mero de autorizaci&oacute;n </label><span class="negrita">  10041129</span>.</div> 
+
+    <div  class="saldos_bloque3_gris " id="t2">Favor de esperar 30 minutos para que la cuenta quede activada.</div>         
+
+     
+
+		
+
+                <tr>
+
+                    	
+
+					
+
+						
+
+					
+
+						
+
+					
+
+					
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2" id="Ordenes">
+
+					<tr>
+
+                    <td class="borderRDotted ancho25p padding20" valign="top"><span class="f12" id="t19">&Oacute;rdenes de pago</span></td>
+
+                    <td id="guardadatos" valign="top" class="padding20">&nbsp;</td>
+
+					
+
+                    
+
+                </tr>
+
+                <tr>
+
+                  <td colspan="2" class="notaGris alto30 " id="t21" >*Las cuentas incorporadas a las que NO realices un dep&oacute;sito en un plazo de 1 a&ntilde;o, ser&aacute;n dadas de baja<br /> en forma autom&aacute;tica y deber&aacute;s incorporarlas nuevamente.</td>
+
+                </tr>	
+
+            </table> 
+
+			 			
+
+        </div>
+
+
+
+<INPUT TYPE="HIDDEN" NAME="EWFBUTTON" VALUE="">
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Alta Otras Cuentas|Aplicada.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+<a class="displayN" id="btngrd" href="#">click</a>
+
+</body>
+
+</html>

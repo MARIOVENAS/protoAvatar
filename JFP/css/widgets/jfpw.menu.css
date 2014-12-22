@@ -1,0 +1,284 @@
+.jfpw-menu-container
+
+{
+
+	height: 2.2em;
+
+	position: relative; 
+
+	z-index: 1000;
+
+	width: 100%;
+
+	background: none repeat scroll 0 0 #05589D;
+
+	
+
+	font-size: 8pt;
+
+	font-weight: normal;
+
+}
+
+
+
+/**** TOP NAV ****/
+
+.sf-menu.jfpw-menu {
+
+	margin-bottom: 0;
+
+	font-size: 8pt;
+
+	font-weight: normal;
+
+}
+
+.sf-menu.jfpw-menu li {
+
+	background:	none transparent ;
+
+	z-index: 1000;
+
+}
+
+ul.sf-menu.jfpw-menu>li, ul.sf-menu.jfpw-menu>li:hover	
+
+{
+
+	background:	none transparent ;
+
+}
+
+
+
+ul.sf-menu.jfpw-menu>li>a, ul.sf-menu.jfpw-menu>li>a:visited
+
+{
+
+	color:	#FFF;
+
+	background:	none transparent ;
+
+	border: none;
+
+	z-index: 1000;
+
+	padding: 0 0 1em;
+
+}
+
+ul.sf-menu.jfpw-menu>li.sfHover>a.sf-with-ul, ul.sf-menu.jfpw-menu>li.sfHover>a.sf-with-ul:visited
+
+{
+
+	background: url('/JFP/images/widgets/menu_arrow.png') no-repeat scroll 50% 100% transparent;
+
+}
+
+ul.sf-menu.jfpw-menu>li>a>span
+
+{
+
+	display: block;
+
+	padding: 0.5em 1em;
+
+	background-color: #05589D;
+
+}
+
+ul.sf-menu.jfpw-menu>li>a>span:hover, ul.sf-menu.jfpw-menu>li.sfHover>a>span
+
+{
+
+	background-color: #7EB0E3;
+
+}
+
+
+
+ul.sf-menu.jfpw-menu > li.active > a > span
+
+{
+
+	background-color: #7EB0E3;
+
+}
+
+
+
+ul.sf-menu.jfpw-menu > li.menu_selected > a > span
+
+{
+
+	background-color: #7EB0E3;
+
+}
+
+
+
+ul.sf-menu.jfpw-menu>li>a>span.sf-sub-indicator {
+
+	background: none;
+
+}
+
+
+
+/**** Sub Menus ****/
+
+.sf-menu.jfpw-menu li ul {
+
+	border:	none;
+
+}
+
+.sf-menu ul,.sf-shadow ul {
+
+
+
+    -moz-border-radius-bottomleft: 0px;
+
+    -moz-border-radius-topright: 0px;
+
+    -webkit-border-top-right-radius: 0px;
+
+	-webkit-border-bottom-left-radius: 0px;
+
+	
+
+    background: none;
+
+    padding: 0;
+
+}
+
+.sf-shadow ul.sf-shadow-off {
+
+    background: none repeat scroll 0 0 transparent;
+
+}
+
+.jfpw-menu-shadow{
+
+	-moz-box-shadow: 2px 2px 10px 2px #666666;
+
+	-o-box-shadow: 2px 2px 10px 2px #666666;
+
+/*	-webkit-box-shadow: 2px 2px 10px 2px #666666; Below changes were done as per ITO defect 214 */
+
+	-webkit-box-shadow: 2px 2px 10px #666666; 
+
+	box-shadow: 2px 2px 10px 2px #666666;	
+
+}
+
+
+
+.sf-menu.jfpw-menu li li:hover, .sf-menu.jfpw-menu li li.sfHover {
+
+	border-top: 	1px solid #DADBDD;
+
+	border-bottom: 	1px solid #DADBDD;
+
+	margin-bottom:	-1px;
+
+	background: url('/JFP/images/widgets/jfpw-menu-item-hoover.png') repeat-x bottom #FFF;
+
+	z-index: 1001;
+
+}
+
+.sf-menu.jfpw-menu li li:first-child:hover, .sf-menu.jfpw-menu li li.sfHover:first-child {
+
+    border-top: none;
+
+}
+
+
+
+.sf-menu.jfpw-menu li li:hover>a, .sf-menu.jfpw-menu li li.sfHover>a{
+
+	border-top: 	none;
+
+}
+
+.sf-menu.jfpw-menu li li {
+
+	background:		#FFF;
+
+}
+
+.sf-menu.jfpw-menu li li li {
+
+	background:		#FFF;
+
+}
+
+.sf-menu.jfpw-menu li li a {
+
+	color: #000;
+
+    border-left: none;
+
+    border-top: 1px solid #DADBDD;
+
+    padding: 0.75em 1em;
+
+    margin:	0 2.5em;
+
+    text-decoration: none;
+
+    background: url('/JFP/images/widgets/submenu_arrow.png') no-repeat 0% 50% transparent;
+
+}
+
+/*** Remove border for first LI element within the submenu ***/
+
+.sf-menu.jfpw-menu li li:first-child>a {
+
+    border-top: none;
+
+}
+
+.jfpw-menu .sf-sub-indicator {
+
+	background:		none; /* 8-bit indexed alpha png. IE6 gets solid image only */
+
+}
+
+/*** First Level SubMenu ***/
+
+.sf-menu.jfpw-menu li ul
+
+{
+
+	z-index:		990;
+
+}
+
+.sf-menu.jfpw-menu li:hover ul,
+
+.sf-menu.jfpw-menu li.sfHover ul {
+
+	top:			2.98em; /* Required Space for the dropDown Arrow */
+
+}
+
+/*** Second Level Menus ***/
+
+ul.sf-menu.jfpw-menu li li:hover ul,
+
+ul.sf-menu.jfpw-menu li li.sfHover ul {
+
+	left:			10em; /* match ul width */
+
+	top:			0;
+
+}
+
+
+
+
+

@@ -1,0 +1,1280 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>Banamex</title>
+		
+    <link rel="stylesheet" type="text/css" href="../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../JFP/regional/css/apps/regional_overlay.css"/>
+    <script type="text/javascript" src="../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="bbAvatar/js/swap.js"></script>
+    <script type="text/javascript" src="../../JFP/js/jquery/plugins/plugins.js"></script>
+
+    <style>
+    .ancho50IE{*width:65px;}
+    .MB0{padding-top:0px !important;}
+	.IEpaddingT4{*padding-top:4px; 
+				padding-top:4px\0/;}
+    </style>
+    
+</head>
+<body>
+<!--inicia contenedor principal-->
+	<div id="wrap" class="cS-structMainContainer">
+    <!--inicia header-->
+		<div id="header">
+            <div class="utilities_nav" id="navegacionPrincipal">
+            </div>
+
+            <div class="citibank-containerImg">
+                <a href="#"><div id="citibank-logo"></div></a>
+                <div id="citibank-image"></div>
+            </div>
+
+            <div class="main_nav" id="menuw">
+            </div>
+    
+            <div id="user-info">
+                <div class="userInfo-content" id="msj_bienvenido">
+                </div>
+        	</div>
+  		</div>
+     <!--termina header-->
+        
+  		<div class="div_cargando displayNone" id="movimientos_cargando">
+              <div class="loader"><img src="../../JFP/regional/images/loader.gif" alt="Cargando" /><br />
+              <span id="t101">Un momento por favor ...</span></div>
+              </div> 
+  		<div class="cS-structBodyContainer"> 				
+			
+                <div id="title-section" class="cH-appPageHead height20">
+                    <div class="float-left">
+                      <h1 id="t23">MOVIMIENTOS EN BANCA ELECTRONICA</h1></div>
+                        
+               <div id="ayuda">         
+               <div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0);" onclick="Layuda()" class="float-left" id="t25">&nbsp;Ayuda</a>
+                </div>
+                <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="48-dashboard-extended.html" class="float-left" id="t24">&nbsp;Ver todas las cuentas</a>
+                </div>
+                </div>   
+             
+             <div id="imp" class="displayNone">
+               <div class="margin-top6 titulo margin-right15 " id="flechaLinksOpcoes">
+                    <span class="flechaGris float-left">&nbsp;</span>
+                    <a href="javascript:void(0);" onclick="Limprimir()" class="float-left">&nbsp;Imprimir</a>
+                </div>
+                </div>
+                </div>
+		    	<div id="content" class="bg_demo overflow">		
+            
+		        <!-- The left menu divs are inserted by javascript if it is necessary -->
+                
+                <div class="float-left" style="width:100% !important;">
+                	<div id="subapp-box" class="noleftmenu float-left margin-top10" style="margin:0 !important; padding:0 !important;">
+      					<div class="contenido_movimientos">
+                        
+                        <div class="busqueda_especifica margin-top20">
+                        
+                        <form action="#" id="form_busqueda_esp">
+                        	
+                            <div class="width141 widthOpt float-left">
+
+                            <div class="cH-appPanelHead float-left margin-top-2">
+                                <h4 id="t26">BÚSQUEDA ESPECÍFICA</h4>
+                            </div>
+                        
+                            <div class="clear"></div>
+                            
+                            <div class="form-row overflow">
+                                <label class="for-table" id="t27">Buscar:</label>
+                                <select name="sel_buscar"  class="sel_buscar width136" onChange="select_busqueda_esp(); buscaChange();">
+                                    	<option value="dia" id="t28">Por d&iacute;a</option>
+                                        <option value="rango" id="t29">Por rango de d&iacute;as</option>
+                                        <option value="periodo" id="t30">Por periodo</option>
+                                        <option value="movimiento" id="t31">Por movimiento</option>
+                                </select>
+                                <div class="clear"></div>
+                            </div>
+                            
+    
+                            <div class="form-row div_porperiodo overflow">
+                                <label class="for-table" id="t32">Periodo:</label>
+                                    <select name="sel_periodo"  class="sel_periodo width136">
+                                        <option id="t33">Agosto 2013</option>
+                                        <option id="t34">Septiembre 2013</option>
+                                    </select>
+                                <div class="clear"></div>
+                            </div>
+    
+    
+    
+                            <div class="form-row div_fecha overflow">
+                                <label class="for-table" id="t32">Fecha:</label>
+                                    <span class="errorB displayNone" id="error_fecha1" style="right:308px !important; *right:307px !important; *margin-top:-13px !important;">
+                                        <span class="flecha2"></span>
+                                        <span class="content_big" id="t74">
+                                        Por favor selecciona una  opción en Fecha</span>
+                                    </span>
+                                <input type="text" id="busqueda_from" class="calendario1 input_calendar float-left margin-right10 width105 paddingl3" value="" readonly="readonly" onFocus="focusBuscfrom()">
+                                <div class="icon-calendar margin-top2 otra_c1" href="#">&nbsp;</div>
+                                    <span class="fecha2">
+                                        <label class="del float-left" id="t35">A:</label>
+                                        <input type="text" id="busqueda_to" class="calendario2 margin-left5 input_calendar float-left margin-right10 width105 paddingl3" value="" readonly="readonly" onFocus="focusBusquedato();" disabled="disabled">
+                                    <div class="icon-calendar margin-top2 otra_c2" href="#">&nbsp;</div>
+                                        <span class="errorB displayNone" id="error_fecha1" style="right:352px !important;">
+                                        <span class="flecha2"></span>
+                                        <span class="content_big" id="t74">
+                                        Por favor selecciona una  opción en Fecha</span>
+                                    </span>
+                                    
+                                    <span class="errorB displayNone" id="error_fecha2" style="right:140px !important; *right:142px !important; *margin-top:-13px !important;">
+                                        <span class="flecha2"></span>
+                                        <span class="content_big" id="t74">
+                                        Por favor selecciona una  opción en Fecha</span>
+                                    </span>
+                                    <div class="clear"></div>
+                                </span>
+                                <div class="clear"></div>
+                            </div>
+    
+                          
+                          <div class="form-row div_estatus">
+        
+                            <label class="for-table " id="t36" >Estatus del movimiento:</label>
+                             <select name="sel_estatus"  class="sel_estatus width136">
+                                                            <option id="t37">Todas</option>
+                                                            <option id="t38">Aplicadas</option>
+                                                            <option id="t39">Instrucciones recibidas</option>
+                                                            <option id="t40">Rechazadas</option>
+                                                            <option id="t41">Canceladas</option>
+                                                        </select>
+                            <div class="clear"></div>
+                        </div>
+                          
+                            
+                            
+                            <div class="form-row margin-bottom15 div_autorizacion">
+                                <label class="for-table" id="t42">No. de autorización:</label>
+                                <input type="text" class="width136 input_num_auto f12" onKeyPress="return validateNumeric45(this,event);"  onBlur="valida_busqueda_onblur();" onFocus="focusNumauto();" />
+                                <span class="errorB displayNone" id="error_num_auto" style="right:302px !important; height:auto !important;">
+                                <span class="flecha2"></span>
+          						<span class="content_big" style="width:152px !important" id="t75">
+                                Por favor ingresa la información en No. de autorización</span>
+                                 </span>
+                                <div class="clear"></div>
+                            </div>
+                            
+                            </div>
+                            	
+                            <div class="float-left width-180 padding-left20">
+                                <h4 class="margin-bottom10" id="t43">¿QUÉ DESEAS HACER?</h4>
+                                <div class="clear"></div>
+                                <div id="flechaLinksOpcoes" class="float-left">
+                                    <span class="flechaGris float-left">&nbsp;</span>
+                                    <a class="float-left" href="30-Transferencias_pagos_tarjetas.html" target="_self" id="t44">Pagar mi tarjeta de crédito</a>
+                                </div>
+                                <div class="clear"></div>
+                                <div id="flechaLinksOpcoes" class="float-left">
+                                    <span class="flechaGris float-left">&nbsp;</span>
+                                    <a class="float-left" href="31-Inversiones.html" target="_self" id="t45">Invertir mi dinero</a>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="ancho100p overflow">
+                            <div class="cF-sideBySide margin-top0 margin-bottom25">
+                                <div class="width151">&nbsp;</div>
+                                <ul class="cN-primaryNav">
+                                    <li class="cM-spriteBase cN-primaryNavButton">
+                                        <a onClick="valida_busqueda_esp();" href="#" id="t46">BUSCAR</a>
+                                    </li>
+                                </ul>
+                                <div id="flechaLinksOpcoes" class="titulo ancho50IE margin-top3 float-left">
+                                        <span class="flechaGris float-left">&nbsp;</span>
+                                        <a onClick="clear_form_busqueda_esp();" href="javascript:void(0);" class="accion2 marginR20 floatR" id="t47">Borrar</a>
+                                    </div>
+                             </div>
+                             </div>   
+                             <div class="clear"></div>  
+                             
+                        </form>
+					
+                    </div>
+                    
+			<h4 class="sinMarginBottom float-left" id="t48">MOVIMIENTOS</h4>
+             
+            <div id="searchMov2" class="displayNone"> 
+             <div id="flechaLinksOpcoes" class="titulo">
+                <span class="flechaGris float-left">&nbsp;</span>
+                <a class="float-left" href="#" onClick="top.mostrar_modal('modal_exportar');" id="t49">Exportar</a>
+            </div>
+            
+            <div id="flechaLinksOpcoes" class="titulo ancho10">
+            &nbsp;
+            </div>
+            
+            <div id="flechaLinksOpcoes" class="titulo">
+                <span class="flechaGris float-left">&nbsp;</span>
+                <a class="float-left" onClick="window.open('print.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" id="t50">Imprimir</a>
+            </div>
+            </div>
+            
+            
+             <div id="flechaLinksOpcoes" class="titulo ancho10">
+           		&nbsp;
+            </div>
+            
+            <div id="searchMov" class="titulo margin-top1 displayNone">
+                <span class="icon float-left">&nbsp;</span>
+                <a href="javascript:void(0);" class="filtrar" onClick="top.mostrar_modal('modal_filtrar');" id="t51">Buscar movimientos</a>
+            </div>
+            
+            <div id="flechaLinksOpcoes" class="Qfiltro displayNone">
+                <span class="flechaGris float-left">&nbsp;</span>
+                <a class="float-left" href="javascript:void(0);" onclick="mQFiltro();" id="t52">Quitar filtro</a>
+            </div>
+            
+            
+       		<div class="clear"></div>
+
+
+
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top10" id="tablaB">
+                   <tbody>
+                      <tr style="background-color:#FFF;">
+                        <th width="5%" class="borderLabels pad15">
+                            <span class="strong float-left">&nbsp;</span>
+                        </th>
+                        <th width="20%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t53">Fecha de Solicitud</span>
+                            <a href="#"><div class="descendente active float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="15%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t54">Descripción</span>
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="20%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t55"># Autorización / Instrucción</span>
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="19%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t56">Estatus</span>
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="20%" valign="middle" scope="col" class="borderLabels padding-right10">
+                        	<a href="#"><div class="descendente float-right">&nbsp;</div></a>
+                            <span class="strong float-right" id="t57">Importe</span>
+                        </th>                    
+                    </tr>
+                    </tbody>
+                    </table>
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom20 margin-top10 displayNone" id="tablaC">
+                   <tbody>
+                      <tr>
+                        <th width="5%" class="borderLabels pad15">
+                            <span class="strong float-left">&nbsp;</span>
+                        </th>
+                        <th width="20%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t53">Fecha de Solicitud</span>
+                            <a href="#"><div class="descendente active float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="15%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t54">Descripción</span>
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="20%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t55"># Autorización / Instrucción</span>
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="19%" valign="middle" scope="col" class="borderLabels">
+                            <span class="strong float-left" id="t56">Estatus</span>
+                            <a href="#"><div class="descendente float-left">&nbsp;</div></a>
+                        </th> 
+                        <th width="20%" valign="middle" scope="col" class="borderLabels padding-right10">
+                        	<a href="#"><div class="descendente float-right">&nbsp;</div></a>
+                            <span class="strong float-right" id="t57">Importe</span>
+                        </th>                    
+                    </tr>
+                      <tr class="degrade">
+                        <td class="pad15"><a class="masMenos" id="mmC1">mas / menos</a></td>
+                        <td id="t58">01 Ago 2013 19:55</td>
+                        <td>PAG.IMP.CAR.CHS</td>
+                        <td>308651</td>
+                        <td id="t59">Cancelada por rechazo</td>
+                        <td class="alignRight padding-right10">$ 600,000,000.000.00</td>
+                      </tr>
+                      
+                      <tr class="show" id="show1">
+                        <td colspan="6" style="padding:10px 0 !important">
+                        	<table width="100%" style="margin-bottom:10px">
+                            	<tbody>
+                                    <tr>
+                                        <td class="pad15" width="5%">&nbsp;</td>
+                                        <td colspan="3" width="54%"><span class="strong" id="t60">Referencia alfanumérica:</span></td>
+                                        <td width="20%"><span class="strong" id="t61">Origen</span></td>
+                                        <td width="20%"><span class="strong" id="t62">Destino</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td colspan="2">Jose Francisco Fernandez Martin del Campo</td>
+                                        <td id="t63">Tipo:</td>
+                                        <td>CHQSS</td>
+                                        <td>CMAES</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td id="t64">Sucursal:</td>
+                                        <td>7000</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t65">Referencia numérica:</td>
+                                        <td>2447411</td>
+                                        <td id="t66">Cuenta:</td>
+                                        <td>063</td>
+                                        <td>862</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t67">Fecha de autorización:</td>
+                                        <td>02 Ago 2013 - 19:55</td>
+                                        <td id="t68">Tipo de instrumento:</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t70">Tipo de cambio:</td>
+                                        <td>10.000.000,000000</td>
+                                        <td id="t71">Importe:</td>
+                                        <td>$ 600,000,000.000.00 MXN</td>
+                                        <td>$ 600,000,000.000.00 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t72">Servicio:</td>
+                                        <td>Bco/Casa Internet</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </td>
+                      </tr>
+                      
+                       <tr class="greyBack">
+                        <td class="pad15"><a class="masMenos" id="mmC2">mas / menos</a></td>
+                        <td id="t58">01 Ago 2013 19:55</td>
+                        <td>PAG.IMP.CAR.CHS</td>
+                        <td>308651</td>
+                        <td id="t59">Cancelada por rechazo</td>
+                        <td class="alignRight padding-right10">$ 600,000,000.000.00</td>
+                      </tr>
+                      
+                      <tr class="show" id="show2">
+                        <td colspan="6" style="padding:10px 0 !important">
+                        	<table width="100%" style="margin-bottom:10px">
+                            	<tbody>
+                                    <tr>
+                                        <td class="pad15" width="5%">&nbsp;</td>
+                                        <td colspan="3" width="54%"><span class="strong" id="t60">Referencia alfanumérica:</span></td>
+                                        <td width="20%"><span class="strong" id="t61">Origen</span></td>
+                                        <td width="20%"><span class="strong" id="t62">Destino</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td colspan="2">Jose Francisco Fernandez Martin del Campo</td>
+                                        <td id="t63">Tipo:</td>
+                                        <td>CHQSS</td>
+                                        <td>CMAES</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td id="t64">Sucursal:</td>
+                                        <td>7000</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t65">Referencia numérica:</td>
+                                        <td>2447411</td>
+                                        <td id="t66">Cuenta:</td>
+                                        <td>063</td>
+                                        <td>862</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t67">Fecha de autorización:</td>
+                                        <td>02 Ago 2013 - 19:55</td>
+                                        <td id="t68">Tipo de instrumento:</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t70">Tipo de cambio:</td>
+                                        <td>10.000.000,000000</td>
+                                        <td id="t71">Importe:</td>
+                                        <td>$ 600,000,000.000.00 MXN</td>
+                                        <td>$ 600,000,000.000.00 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t72">Servicio:</td>
+                                        <td>Bco/Casa Internet</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </td>
+                      </tr>
+                      
+                       <tr class="ie7BgFFF">
+                        <td class="pad15"><a class="masMenos" id="mmC3">mas / menos</a></td>
+                        <td id="t58">01 Ago 2013 19:55</td>
+                        <td>PAG.IMP.CAR.CHS</td>
+                        <td>308651</td>
+                        <td id="t59">Cancelada por rechazo</td>
+                        <td class="alignRight padding-right10">$ 600,000,000.000.00</td>
+                      </tr>
+                      
+                      <tr class="show" id="show3">
+                        <td colspan="6" style="padding:10px 0 !important">
+                        	<table width="100%" style="margin-bottom:10px">
+                            	<tbody>
+                                    <tr>
+                                        <td class="pad15" width="5%">&nbsp;</td>
+                                        <td colspan="3" width="54%"><span class="strong" id="t60">Referencia alfanumérica:</span></td>
+                                        <td width="20%"><span class="strong" id="t61">Origen</span></td>
+                                        <td width="20%"><span class="strong" id="t62">Destino</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td colspan="2">Jose Francisco Fernandez Martin del Campo</td>
+                                        <td id="t63">Tipo:</td>
+                                        <td>CHQSS</td>
+                                        <td>CMAES</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td id="t64">Sucursal:</td>
+                                        <td>7000</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t65">Referencia numérica:</td>
+                                        <td>2447411</td>
+                                        <td id="t66">Cuenta:</td>
+                                        <td>063</td>
+                                        <td>862</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t67">Fecha de autorización:</td>
+                                        <td>02 Ago 2013 - 19:55</td>
+                                        <td id="t68">Tipo de instrumento:</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t70">Tipo de cambio:</td>
+                                        <td>10.000.000,000000</td>
+                                        <td id="t71">Importe:</td>
+                                        <td>$ 600,000,000.000.00 MXN</td>
+                                        <td>$ 600,000,000.000.00 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t72">Servicio:</td>
+                                        <td>Bco/Casa Internet</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            
+                        </td>
+                      </tr>
+                      
+                       <tr class="greyBack">
+                        <td class="pad15"><a class="masMenos" id="mmC4">mas / menos</a></td>
+                        <td id="t58">01 Ago 2013 19:55</td>
+                        <td>PAG.IMP.CAR.CHS</td>
+                        <td>308651</td>
+                        <td id="t59">Cancelada por rechazo</td>
+                        <td class="alignRight padding-right10">$ 600,000,000.000.00</td>
+                      </tr>
+                      
+                      <tr class="show" id="show4">
+                        <td colspan="6" style="padding:10px 0 !important">
+                        	<table width="100%" style="margin-bottom:10px">
+                            	<tbody>
+                                    <tr>
+                                        <td class="pad15" width="5%">&nbsp;</td>
+                                        <td colspan="3" width="54%"><span class="strong" id="t60">Referencia alfanumérica:</span></td>
+                                        <td width="20%"><span class="strong" id="t61">Origen</span></td>
+                                        <td width="20%"><span class="strong" id="t62">Destino</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td colspan="2">Jose Francisco Fernandez Martin del Campo</td>
+                                        <td id="t63">Tipo:</td>
+                                        <td>CHQSS</td>
+                                        <td>CMAES</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td id="t64">Sucursal:</td>
+                                        <td>7000</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t65">Referencia numérica:</td>
+                                        <td>2447411</td>
+                                        <td id="t66">Cuenta:</td>
+                                        <td>063</td>
+                                        <td>862</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t67">Fecha de autorización:</td>
+                                        <td>02 Ago 2013 - 19:55</td>
+                                        <td id="t68">Tipo de instrumento:</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t70">Tipo de cambio:</td>
+                                        <td>10.000.000,000000</td>
+                                        <td id="t71">Importe:</td>
+                                        <td>$ 600,000,000.000.00 MXN</td>
+                                        <td>$ 600,000,000.000.00 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t72">Servicio:</td>
+                                        <td>Bco/Casa Internet</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </td>
+                      </tr>
+                      
+                      <tr class="ie7BgFFF">
+                        <td class="pad15"><a class="masMenos" id="mmC5">mas / menos</a></td>
+                        <td id="t58">01 Ago 2013 19:55</td>
+                        <td>PAG.IMP.CAR.CHS</td>
+                        <td>308651</td>
+                        <td id="t59">Cancelada por rechazo</td>
+                        <td class="alignRight padding-right10">$ 600,000,000.000.00</td>
+                      </tr>
+                      
+                      <tr class="show" id="show5">
+                        <td colspan="6" style="padding:10px 0 !important">
+                        	<table width="100%" style="margin-bottom:10px">
+                            	<tbody>
+                                    <tr>
+                                        <td class="pad15" width="5%">&nbsp;</td>
+                                        <td colspan="3" width="54%"><span class="strong" id="t60">Referencia alfanumérica:</span></td>
+                                        <td width="20%"><span class="strong" id="t61">Origen</span></td>
+                                        <td width="20%"><span class="strong" id="t62">Destino</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td colspan="2">Jose Francisco Fernandez Martin del Campo</td>
+                                        <td id="t63">Tipo:</td>
+                                        <td>CHQSS</td>
+                                        <td>CMAES</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td id="t64">Sucursal:</td>
+                                        <td>7000</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t65">Referencia numérica:</td>
+                                        <td>2447411</td>
+                                        <td id="t66">Cuenta:</td>
+                                        <td>063</td>
+                                        <td>862</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t67">Fecha de autorización:</td>
+                                        <td>02 Ago 2013 - 19:55</td>
+                                        <td id="t68">Tipo de instrumento:</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t70">Tipo de cambio:</td>
+                                        <td>10.000.000,000000</td>
+                                        <td id="t71">Importe:</td>
+                                        <td>$ 600,000,000.000.00 MXN</td>
+                                        <td>$ 600,000,000.000.00 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t72">Servicio:</td>
+                                        <td>Bco/Casa Internet</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15"><a class="masMenos" id="mmC6">mas / menos</a></td>
+                        <td id="t58">01 Ago 2013 19:55</td>
+                        <td>PAG.IMP.CAR.CHS</td>
+                        <td>308651</td>
+                        <td id="t59">Cancelada por rechazo</td>
+                        <td class="alignRight padding-right10">$ 600,000,000.000.00</td>
+                      </tr>
+                      
+                      <tr class="show" id="show6">
+                        <td colspan="6" style="padding:10px 0 !important">
+                        	<table width="100%" style="margin-bottom:10px">
+                            	<tbody>
+                                    <tr>
+                                        <td class="pad15" width="5%">&nbsp;</td>
+                                        <td colspan="3" width="54%"><span class="strong" id="t60">Referencia alfanumérica:</span></td>
+                                        <td width="20%"><span class="strong" id="t61">Origen</span></td>
+                                        <td width="20%"><span class="strong" id="t62">Destino</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td colspan="2">Jose Francisco Fernandez Martin del Campo</td>
+                                        <td id="t63">Tipo:</td>
+                                        <td>CHQSS</td>
+                                        <td>CMAES</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td id="t64">Sucursal:</td>
+                                        <td>7000</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t65">Referencia numérica:</td>
+                                        <td>2447411</td>
+                                        <td id="t66">Cuenta:</td>
+                                        <td>063</td>
+                                        <td>862</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t67">Fecha de autorización:</td>
+                                        <td>02 Ago 2013 - 19:55</td>
+                                        <td id="t68">Tipo de instrumento:</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t70">Tipo de cambio:</td>
+                                        <td>10.000.000,000000</td>
+                                        <td id="t71">Importe:</td>
+                                        <td>$ 600,000,000.000.00 MXN</td>
+                                        <td>$ 600,000,000.000.00 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t72">Servicio:</td>
+                                        <td>Bco/Casa Internet</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            
+                        </td>
+                      </tr>
+                      
+                      <tr class="ie7BgFFF">
+                        <td class="pad15 "><a class="masMenos" id="mmC7">mas / menos</a></td>
+                        <td id="t58">01 Ago 2013 19:55</td>
+                        <td>PAG.IMP.CAR.CHS</td>
+                        <td>308651</td>
+                        <td id="t59">Cancelada por rechazo</td>
+                        <td class="alignRight padding-right10">$ 600,000,000.000.00</td>
+                      </tr>
+                      
+                      <tr class="show" id="show7">
+                        <td colspan="6" style="padding:10px 0 !important">
+                        	<table width="100%" style="margin-bottom:10px">
+                            	<tbody>
+                                    <tr>
+                                        <td class="pad15" width="5%">&nbsp;</td>
+                                        <td colspan="3" width="54%"><span class="strong" id="t60">Referencia alfanumérica:</span></td>
+                                        <td width="20%"><span class="strong" id="t61">Origen</span></td>
+                                        <td width="20%"><span class="strong" id="t62">Destino</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td colspan="2">Jose Francisco Fernandez Martin del Campo</td>
+                                        <td id="t63">Tipo:</td>
+                                        <td>CHQSS</td>
+                                        <td>CMAES</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td id="t64">Sucursal:</td>
+                                        <td>7000</td>
+                                        <td>1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t65">Referencia numérica:</td>
+                                        <td>2447411</td>
+                                        <td id="t66">Cuenta:</td>
+                                        <td>063</td>
+                                        <td>862</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t67">Fecha de autorización:</td>
+                                        <td>02 Ago 2013 - 19:55</td>
+                                        <td id="t68">Tipo de instrumento:</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                        <td id="t69">Órdenes de pago al extranjero</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t70">Tipo de cambio:</td>
+                                        <td>10.000.000,000000</td>
+                                        <td id="t71">Importe:</td>
+                                        <td>$ 600,000,000.000.00 MXN</td>
+                                        <td>$ 600,000,000.000.00 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pad15">&nbsp;</td>
+                                        <td id="t72">Servicio:</td>
+                                        <td>Bco/Casa Internet</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </td>
+                      </tr>
+                      
+                      <tr class="greyBack">
+                        <td class="pad15 border9A" colspan="6" align="left">
+                            <div id="flechaLinksOpcoes" class="float-left">
+                                <span class="flechaGris float-left">&nbsp;</span>
+                                <a class="float-left" href="#" id="t73">Ver más movimientos</a>
+                            </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                        
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+                
+			  	<!-- Cuando no lleva menu izquierdo  <div id="subapp-box" class="noleftmenu float-left margin-top1"> -->
+               
+          		</div>
+        </div>  
+              
+		<div class="clear"></div>
+		<div id="footer"></div>				
+	</div>
+   
+       
+               
+<!--<IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="../bancanet_demo/contenidos/menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>-->
+    <input type="hidden" id="objs" value="1"/>
+    <INPUT TYPE="HIDDEN" ID="TIMEOUT" VALUE="">
+    <INPUT TYPE="HIDDEN" NAME="LASTRESET" VALUE="">
+    <INPUT TYPE="hidden" id="segRestan" VALUE="">		
+    <input type="button" name="exit" style = "display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');">
+    <INPUT TYPE=HIDDEN ID=DATAAUX  NAME=DATAAUX VALUE="">
+	<INPUT TYPE=HIDDEN ID=DATADEMO NAME=DATADEMO VALUE=""/>
+	<INPUT TYPE=HIDDEN ID=REGRESADEMO NAME=REGRESADEMO VALUE=""/>
+	<INPUT TYPE=HIDDEN ID=CONTINUADEMO NAME=CONTINUADEMO VALUE=""/>
+    <input type="hidden" id="titHdn" name="titHdn" value="" />
+
+<!--termina contenedor principal-->
+<div id="cortinaOverlay" class="cerrarOverlay" style="display: none;"></div>
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display:block; border:15px solid #C0C0C0;">
+			<table id="tabla_emergente" class="padding20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+			<tbody><tr><td>
+						<div id="mensajeError_contenido_div">
+						</div>
+						<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0" class="padding20"></iframe>
+			</td></tr></tbody>
+			</table>
+		</div>
+	</div>
+    
+<iframe id="nwd" src="if.htm" name="ndw" style="display:none"></iframe>    
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+		<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+			<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+				<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+					<tbody>
+						<tr>
+							<td>
+								<div id="mensajeError_contenido_divEspecial"></div>
+								<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>                        
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+        
+        
+        
+    		<div class="modal" id="modal_filtrar">
+                        <div class="overlay-error">
+							<div class="overlay-content">
+								<div class="external-tranfer">
+									<div class="external-tranfer-content" style="left:-14px !important;">
+										<a href="#" class="external-tranfer-close" onClick="cerrar_modal( 'modal_filtrar' )"></a>
+
+										<div class="content-top">
+											<div class="center">
+												<div class="dot-bottom">
+													<div class="left"><span class="title" id="t76">FILTRAR MOVIMIENTOS</span></div>                                   
+												</div>
+												<div class="error-content">
+
+													<div id="scrollbar" class="">
+														<div>
+															<!--div class="flechaUp"></div-->
+                                                            <div class="clear"></div>
+															<div class="scrollbar">
+																
+															</div>
+															<div class="viewport">
+																<div class="overview">
+																	 <p class="instructions margin-bottom15" id="t77">De acuerdo al criterio de búsqueda, elige al menos una de las opciones siguientes:</p>
+                                                                     <div class="border-dotted_top margin-bottom20"></div>
+														             <div class="">
+														                <div class="form-row">
+														                    <label class="for-table margin-bottom5 width110"><span class="strong" id="t78">Por palabra clave:</span></label>
+														                    <input type="text" class="width105" maxlength="20" id="porpalabra" onkeypress="return soloLetras(event)" />
+                                                                            <span class="errorB4 displayNone" id="error_porpalabra" style="left:501px !important;*left:501px !important; top:90px !important; *top:90px !important; height:auto !important;">
+                                                                     		<span class="flecha4"></span>
+                                                                                <span class="content_big" id="t91">Por favor ingresa la informaci&oacute;n en Por palabra clave
+                                                                                 </span>
+                                                                             </span>  
+														                    <div class="clear"></div>
+														                </div>
+                                                                        <div class="form-row margin-right0">
+														                    <label class="for-table margin-bottom5 width110"><span class="strong" id="t79">Por fechas:</span></label>
+														                    <input type="text" id="filtro_from" class="calendario1 input_calendar float-left margin-right5 width105 fechaFut modal_calendario1 modal_calendar" readonly="readonly">
+                                                                            <!--<input type="text" id="fechaFut" class="calendario1 f12 paddingT2" readonly/>-->
+                                                                            <div class="icon-calendar margin-top2 otra_c1" href="#">&nbsp;</div>
+                                                                            <span class="errorB3 displayNone" id="error_filtro_fecha1" style="left:356px !important;*left:357px !important;">
+                                
+                                                                            <span class="content_big" id="t74">Por favor selecciona una  opción en Fecha
+                                                                             </span>
+                                                                             <span class="flecha3"></span>
+                                                                             </span>
+                                                                            <label class="float-left" id="t80">A:</label>
+                                                                            <input type="text" id="filtro_to" class=" margin-left5 calendario2 input_calendar modal_calendario2 input_calendar_des modal_calendar float-left margin-right5 width105 fechaFut2 revisar2" disabled="disabled"  value="" readonly >
+                                                                            <!--<input type="text" id="fechaFut" class="calendario1 f12 paddingT2" readonly/>-->
+                                                                            <div class="icon-calendar margin-top2 otra_c2" href="#" id="">&nbsp;</div>
+                                                                            <span class="errorB3 displayNone" id="error_filtro_fecha2" style="left:357px !important;*left:353px !important; top:130px !important; *top:130px !important; height:auto !important;">
+                                
+                                                                            <span class="content_big" id="t74">Por favor selecciona una  opción en Fecha
+                                                                             </span>
+                                                                             <span class="flecha3"></span>
+                                                                             </span>  
+                                                                            <div class="clear"></div>
+														                    <div class="clear"></div>
+														                </div>
+                                                                        <div class="form-row margin-bottom0 margin-right0" style="margin-bottom:5px !important;">
+														                    <label class="for-table margin-bottom5 width110"><span class="strong" id="t81">Por importe:</span></label>
+														                    <label class="for-table radioR label_porimporte" style="width:12px !important;"><input id="rdimporte1" type="radio" class="float-left radio_especifico" name="por_importe"/></label>
+                            												<div class="float-left IEpaddingT4" id="t82">Específico</div>
+                                                                            <label class="for-table radioR margin-left15 label_porimporte" style="width:12px !important;"><input id="rdimporte2" type="radio" class="float-left radio_rango" name="por_importe"/></label>
+                            												<div class="float-left IEpaddingT4" id="t83">Por rango</div>
+														                    <div class="clear"></div>
+														                </div>
+                                                                        <div class="form-row margin-right0">
+														                    <label class="for-table margin-bottom5 width110"><span class="strong">&nbsp;</span></label>
+														                    <label class="float-left" id="t84">De: $</label><input type="text" class="width105 float-left margin-left5 text_importe1 input_1 input_des" id="importe1" onKeyPress="return validateNumeric45(this,event);" onBlur="valida_filtro_onblur();" onChange="Miles(this); agregapesitos();" disabled="disabled"  />
+                                                                            <span class="errorB4 displayNone" id="error_filtro_importe1" style="left:534px !important;*left:534px !important; top:193px;*top:208px;">
+                                                                               <span class="flecha4"></span>
+                                                                            <span class="content_big" id="t92">Por favor sólo ingresa números en importe
+                                                                             </span>
+                                                                          
+                                                                             </span>
+                                                                             <label class="float-left margin-left10" id="t85">A: $</label><input type="text" class="width105 float-left margin-left5 text_importe2 input_hasta input_des" id="importe2" onBlur="valida_filtro_onblur();" onKeyPress="return validateNumeric45(this,event);" onChange="Miles(this); agregapesitos2()" disabled="disabled"  />
+                                                                             <span class="errorB3 displayNone" id="error_filtro_importe2" style="left:380px !important;*left:375px !important; top:193px;*top:208px;">
+                                
+                                                                            <span class="content_big" id="t92">Por favor sólo ingresa números en importe
+                                                                             </span>
+                                                                             <span class="flecha3"></span>
+                                                                             </span>
+														                    <div class="clear"></div>
+														                </div>
+														            </div>
+																</div>
+															</div>
+															<!--div class="flechaDown"></div-->
+														</div>
+													</div>
+
+														<div class="clear"></div>									
+														<div class="cF-sideBySide cF-bottomNav" style="background:none !important; top:200px;">
+															<ul class="cN-primaryNav">
+																<li class="cN-primaryNav">
+																</li>
+																<li class="cM-spriteBase cN-primaryNavButton "><a href="#" value="FILTRAR"  onclick="validador_filtrar();" id="filtrar_modal"><span id="t87">Filtrar</span></a></li> 
+															</ul>
+                                                            <div id="flechaLinksOpcoes">
+                                                                <span class="flechaGris float-left"></span>
+                                                                <a class="sinBold" href="javascript:void(0);" onClick="cerrar_modal( 'modal_filtrar' )" name="Reset" type="reset" id="t86">Cancelar</a>
+                                                            </div>
+														 </div>
+
+													</div>
+													<div class="content-footer" style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important;">
+														<div class="title" id="t88">Cont&aacute;ctanos</div>
+														<div class="telefono"><a href="popup-a.html" class="telefono" id="t89">Llámanos</a></div>
+														<div class="lineaDivisoria">&nbsp;</div>
+														<div class="email"><a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="email" id="t90">Mensajes</a></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                            </div>
+                            
+                            
+                            
+                            
+                       <!-- Exportar -->
+                       
+                       <div class="overlay" style="width:100% !important; height:100% !important; top:0 !important; left:0px !important;">
+    		<div class="modal" id="modal_exportar">
+                        <div class="overlay-error">
+							<div class="overlay-content">
+								<div class="external-tranfer">
+									<div class="external-tranfer-content" style="left:-14px !important;">
+										<a href="#" class="external-tranfer-close" onClick="cerrar_modal( 'modal_exportar' )"></a>
+
+										<div class="content-top">
+											<div class="center">
+												<div class="dot-bottom">
+													<div class="left"><span class="title" id="t93">EXPORTAR RESULTADOS</span></div>                                   
+												</div>
+												<div class="error-content">
+
+													<div id="scrollbar2" class="">
+														<div>
+															<!--div class="flechaUp"></div-->
+                                                            <div class="clear"></div>
+															<div class="scrollbar">
+																
+															</div>
+															<div class="viewport">
+																<div class="overview">
+																	 <p class="instructions margin-bottom15" id="t94">Selecciona el formato en el que deseas exportar los resultados de tus movimientos.</p>
+                                                                     <div class="border-dotted_top margin-bottom20"></div>
+														             <div class="width88">
+														                <div class="form-row">
+														                    <label class="for-table margin-bottom5" style="width:100px !important;"><span class="strong" id="t95">Formato:</span></label>
+														                    <select>
+														                        <option selected="selected" id="t96">Excel - (CSV)</option>
+                                                                                <option id="t97">Texto separado por tab</option>
+                                                                                <option id="t98">Texto separado por coma</option>
+                                                                                <option id="t99">Texto separado por pipe</option>
+														                    </select>
+														                    <div class="clear"></div>
+														                </div>
+														            </div>
+																</div>
+															</div>
+															<!--div class="flechaDown"></div-->
+														</div>
+													</div>
+
+														<div class="clear"></div>									
+														<div class="cF-sideBySide cF-bottomNav" style="background:none !important; top:200px;">
+															<ul class="cN-primaryNav">
+																<li class="cN-primaryNav">
+																</li>
+																<li class="cM-spriteBase cN-primaryNavButton "><a href="#" value="EXPORTAR"  onclick="top.valida_export();" id="export"><span id="t100">Exportar</span></a></li> 
+															</ul>
+                                                            <div id="flechaLinksOpcoes">
+                                                                <span class="flechaGris float-left"></span>
+                                                                <a class="sinBold" href="javascript:void(0);" onClick="cerrar_modal( 'modal_exportar' )" name="Reset" type="reset" id="t86">Cancelar</a>
+                                                            </div>
+														 </div>
+
+													</div>
+													<div class="content-footer" style="background-color:#F7F7F7; height:23px !important; width:528px !important; left:41px !important;">
+														<div class="title" id="t88">Cont&aacute;ctanos</div>
+														<div class="telefono"><a href="popup-a.html" class="telefono" id="t89">Llámanos</a></div>
+														<div class="lineaDivisoria">&nbsp;</div>
+														<div class="email"><a href="https://portal.banamex.com.mx/esp/escribenos.html?xhost=http://www.banamex.com/" target="_blank" class="email" id="t90">Mensajes</a></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                            </div>
+                            </div>
+               
+
+   <script type="text/javascript">
+   
+   var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico. ');
+	es.push('ELECTRONIC BANKING TRANSACTIONS','See all the accounts','Help','SPECIFIC SEARCH','Search:','By day','By range of days','By period','By movement','Date:','August 2013','September 2013','To:','Operations Status:','All','Applied','Instructions received','Rejected','Canceled','Authorization number:','WHAT DO YOU WISH TO DO?','Pay my Credit Card','Invest my money','SEARCH','Delete','TRANSACTIONS','Export','Print','Search transactions','Remove filter','Request date','Description','# Authorization / Intruction','Status','Amount','01 Aug 2013 - 19:55','Cancelled for rejection','Alphanumerical reference:','Origin','Destination','Type:','Branch:','Numerical reference:','Account:','Authorization date:','Instrument type:','Orders of payment abroad','Exchange rate:','Amount:','Service:','See more transactions','Please select a date','Please enter the information in Authorization number','FILTER TRANSACTIONS','According to the search criterion, select at least one of the following<br>options:','By key word:','By dates:','To:','By amount:','Specific','By range','From:$','To:$','Cancel','Filter','Contact us','Call us','Messages','Please enter the information in By key word','Please enter only numbers amount','EXPORT RESULTS','Select the formats desired to export your transactions.','Format:','Excel - (CSV)','Text separated by tab','Text separated by comma','Text separated by pipe','EXPORT','Wait a moment please');
+   
+            $(document).ready(function(){
+				
+				
+				funciones_login();
+			
+					$(window).scroll(function(){
+    if  ($(window).scrollTop() >= 171){
+         $('.div_cargando').css({position:'fixed',top:0});
+    } else {
+         $('.div_cargando').css({position:'absolute',top:171});
+        }
+});
+
+				/* Obtener el alto del contendor  del objeto a centrar. */
+   		var alto_canvas = $(window).height();
+	 
+	    /* Obtener el valor del margen a aplicar.  */
+	    var margen_top = (alto_canvas - $('.loader').height())/3.5;
+	 
+	    /* Aplicar el Margen */
+	    $('.loader').css("top",margen_top);
+
+				
+				select_busqueda_esp();
+				porimporte();
+				datepicker_busqueda_filtro();
+				expUno()
+	
+				
+            });
+			
+            $(document).ready(function(){
+				
+				// $('.calendario1,.calendario2').datepicker({
+				// 	dayNamesMin:['D','L','M','M','J','V','S'],
+				// 	monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+				// 	beforeShow: function(){
+				// 		$(this).removeClass('ui-corner-all');
+						
+				// 	},
+				// 	showAnim: '',
+				// 	showOtherMonths: true,
+				// 	selectOtherMonths: false,
+				// 	minDate: 'y',
+				// 	maxDate: '30d',
+				// 	dateFormat:"d M yy",
+				// 	disabled: false
+				// });
+				
+ //    var diasSemana = ['D','L','M','M','J','V','S'];
+ //    var Meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+ //    var MesesShort = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];		
+	// if(language=="eng") {
+	// 	diasSemana = ['S','M','T','W','Th','F','Sa'];	
+	// 	Meses = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+	// 	MesesShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+	// }
+
+	// $('.calendario1,.calendario2').datepicker({
+	// 	dayNamesMin: diasSemana,
+	// 	monthNames: Meses,
+	// 	monthNamesShort: MesesShort,
+	// 	beforeShow: function(){
+	// 		$(this).removeClass('ui-corner-all');
+	// 	},
+	// 	showAnim: '',
+	// 	showOtherMonths: true,
+	// 	selectOtherMonths: false,
+	// 	minDate: 'y',
+	// 	maxDate: '30d',
+	// 	dateFormat:"d M yy",
+	// 	disabled: true
+	// });
+	
+				
+	// 			$('.calendario1,.calendario2').focus(
+	// 				function(){
+	// 					if( $(this).hasClass('modal_calendar') ){
+	// 						$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+	// 					}else{
+	// 						$('.ui-widget').css({'top':($(this).offset().top-63)+'px','left':($(this).offset().left+136)+'px', 'z-index':'99999999'});
+	// 					}
+	// 					if( $('.ui-datepicker .close').length == 0){
+	// 						$('.ui-datepicker').append("<div class='close'></div>");
+	// 					}
+	// 					$('.ui-datepicker').find('.close').click(function(){
+	// 						$('.input_calendar').datepicker( "hide" );
+	// 					});
+						
+	// 				}
+	// 			);
+				
+			   $(".otra_c1").click(function(){
+    				$('.calendario1').datepicker('show');
+			   });
+			   $(".otra_c2").click(function(){
+    				$('.calendario2').datepicker('show');
+			   });
+				
+				
+             });
+			 
+			 
+        </script>
+        <script>
+			$(document).ready(function(){
+				$("#show1,#show2,#show3,#show4,#show5,#show6,#show7").hide();
+				$("#mmC1").live('click',function(){
+					$(this).addClass('act');
+					$("#show1").show();
+					$(".act").live('click',function(){
+							$("#mmC1").removeClass('act');
+							$("#show1").hide();
+						});
+				}
+				);
+				$("#mmC2").live('click',function(){
+					$(this).addClass('act');
+					$("#show2").show();
+					$(".act").live('click',function(){
+							$("#mmC2").removeClass('act');
+							$("#show2").hide();
+						});
+				}
+				);
+				$("#mmC3").live('click',function(){
+					$(this).addClass('act');
+					$("#show3").show();
+					$(".act").live('click',function(){
+							$("#mmC3").removeClass('act');
+							$("#show3").hide();
+						});
+				}
+				);
+				$("#mmC4").live('click',function(){
+					$(this).addClass('act');
+					$("#show4").show();
+					$(".act").live('click',function(){
+							$("#mmC4").removeClass('act');
+							$("#show4").hide();
+						});
+				}
+				);
+				$("#mmC5").live('click',function(){
+					$(this).addClass('act');
+					$("#show5").show();
+					$(".act").live('click',function(){
+							$("#mmC5").removeClass('act');
+							$("#show5").hide();
+						});
+				}
+				);
+				$("#mmC6").live('click',function(){
+					$(this).addClass('act');
+					$("#show6").show();
+					$(".act").live('click',function(){
+							$("#mmC6").removeClass('act');
+							$("#show6").hide();
+						});
+				}
+				);
+				$("#mmC7").live('click',function(){
+					$(this).addClass('act');
+					$("#show7").show();
+					$(".act").live('click',function(){
+							$("#mmC7").removeClass('act');
+							$("#show7").hide();
+						});
+				}
+				);
+			});
+		</script>
+        
+        <script type="text/javascript">
+           $(document).ready(function(){
+                               ajustarOverlay();
+                               ajusta_tooltpis();
+                   funciones_loginP()
+                     
+           });
+function Layuda(){
+window.open('https://bancanet.banamex.com/ayudas/es/Movimientos-en-Banca-Electronica.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+       </script>
+        
+        
+        </body>
+</html>

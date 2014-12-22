@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="aa0cf85a-af21-4344-bce4-e56fe7dca4ea" ><input type=hidden name="EWF_SYS_1" value="CPQY0RLE2J5TRPLEW6H4SXJV0029Y7870B6DC2V@" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZADT-PAG CONFIRMA UOA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="confaou.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="7"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE><script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script>parent.setFecha("12/04/12    13:58:12  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="135759  ";b$Cont="135812  ";
+
+//if(a$Cont==b$Cont)parent.scd();
+
+</script>
+
+<script type="text/javascript">
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+
+
+var es = new Array("Card managment",
+
+					   "Confirm activation data",
+
+					   "Activation data", 
+
+					   "Card to be activated", 
+
+					   "Return", 
+
+					   "Accept", 
+
+					   "Sorry, the transaction could not be completed", 
+
+					   "Card managment", 
+
+					   "What Can I do?", 
+
+					   "Continue",
+
+					   "Cause:",
+
+					   "Possible solution: ",
+
+					   "You can contact",
+
+					   "customer service",
+
+					   "at 1226 3990 (D.F. and Metropolitan area) or 01 800 110 3990 (rest of the Republic).",
+
+					   "It is important to have the following code:");
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+
+
+	//function swap(){}
+
+
+
+
+
+	$(document).ready(function(){
+
+		//swap();
+
+		if ( '' == 'ERROR' ){
+
+			$('#mensajeError_contenido_div', window.parent.document).html($('#ventanaEmergenteContenido').html());parent.$.modal({opacity:60,overlayClose:false,flagDiv:true,widthDivIfrm:640,heightDivIfrm:150});
+
+			parent.$.modal.setDimentions($("#mensaADTModal",window.parent.document).height(),$("#mensaADTModal",window.parent.document).width());
+
+		}
+
+		
+
+			rutaAyuda=rutaAyuda+"CuentasPropiasBanamex-Tarjetas.htm";
+
+			
+
+		
+
+	});
+
+</script>
+
+
+
+	<div class="panelIzEnca3_text2 font_arial" id="t0">Administraci&oacute;n de tarjetas</div>
+
+	<div class="color666 paddingT5 f11 font_arial" id="t1">Confirma los datos de la activaci&oacute;n.</div>
+
+    <div class="saldos_bloque3_2">
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+			<tr>
+
+				<td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t2">Datos de la<br /> activaci&oacute;n</span></td>
+
+				<td valign="top" class="padding20152015">
+
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+						<tr>
+
+							<td class="ancho50p bgF1F2F2"><span id="t3">Tarjeta a activar</span></td>
+
+							<td class="ancho50p bgF1F2F2" align="left">Tarjeta Cr&eacute;dito M.N - **  796</td>
+
+						</tr>
+
+					</table>
+
+				 </td>
+
+			</tr>
+
+		</table>
+
+    </div>
+
+    <div class="marginT20 overflow">
+
+       	<input type="button" class="btnRJ86 floatL" value="Regresar" onclick="parent.cargaDocN('ZADT/adm_de_tarjetas.html');" id="t4" />
+
+        <input type="button" class="btnAZ86 floatR" value="Aceptar" onclick="parent.cargaDocN('UBIACT/resultado_activacion.html');" id="t5" />
+
+	</div>
+
+	<input type="HIDDEN" name="EWFBUTTON" value="" />
+
+	
+
+	
+
+	
+
+	
+
+	<div id="ventanaEmergenteContenido" style="display:none;">
+
+	  <div id="mensaADTModal">
+
+		<div class="mensajeError_contenidoIn">
+
+            <div class="mensajeError_Fila1">
+
+                <div class="mensajeError_titulo1" id="t6">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+                <div class="mensaje_btn1">
+
+					<div class="saldos_btn2 margin0" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+				</div>
+
+            </div>
+
+            <div class="mensajeError_Fila1_2  ">
+
+                <div class="color666 paddingT5 paddingL25 f11"> <span class="color666 paddingT5 f11" id="t7">Administraci&oacute;n de tarjetas</span></br>
+
+				
+
+					&nbsp;&nbsp;<label id="me"></label><br/>
+
+							
+
+				
+
+				</div>
+
+            </div>
+
+			
+
+			<div class="mensajeError_Fila2 color333 negrita paddingL25" id="t8">&iquest;Qu&eacute; puedo hacer?</div>
+
+			
+
+				<div class="mensajeError_Fila2 color666 paddingL25" >
+
+				<span class="color666 paddingT5 f11" id="t12">Si deseas comun&iacute;cate a</span> <span  class="f11" id="t13">servicio a clientes</span> 
+
+				<span class="color666 paddingT5 f11" id="t14">al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br>
+
+				01 800 110 3990 (Del interior de la Rep&uacute;blica).<br></span> 
+
+				</div>
+
+				
+
+					<div class="mensajeError_Fila2 color666 paddingL25" id="t15">
+
+						Es importante tener a la mano el siguiente c&oacute;digo: 
+
+					</div>
+
+					<div id="ne" class="coloree2e24 mensajeError_Fila2 paddingL25"></div>
+
+			<div class="mensajeError_Fila3">
+
+                <div class="floatR"><input type="button" id="t9" value="Continuar" class="floatR btnAZ86 CerrarVentanaEmergente" onclick=" parent.Expandir();"/></div>
+
+            </div>
+
+		 </div>
+
+	   </div>
+
+	</div>	
+
+	
+
+	
+
+	
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Administracion de Tarjetas|confaou.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

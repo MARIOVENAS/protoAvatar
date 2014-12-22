@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="pragma" content="no-cache"/>
+
+<meta http-equiv="cache-control" content="no-cache"/>
+
+<meta http-equiv="expires" content="-1"/>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+<link href="../../bbAvatar/css/estilosmulti.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+  <script type="text/javascript">
+
+
+
+	$(document).ready(function(){
+
+	labelTooltip();
+
+	optieneAlturas();parent.ajustar();window.parent.$('.panelDerecho').hide();$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+	
+
+	function Layuda1(){
+
+window.open(rutaAyudaAv +'Estados-de-cuenta-y-Movimientos.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+
+	}
+
+	
+
+		 var es=new Array("Specific search ",
+
+		"For a specific search select an account or enter the necessary data and click 'Search'",
+
+		"Select the account number",
+
+		"For enter the last three digits of the account or the nickname",
+
+		"The field cannot contain special characters",
+
+		"Search",
+
+		"Account details:&nbsp;",
+
+		"Investment number",
+
+		"Instrument",
+
+		"Customer's name ",
+
+		"Type of person",
+
+		"Term",
+
+		"Rate",
+
+		"Opening date",
+
+		"Maturity date",
+
+		"Opening balance",
+
+		"Period's returns",
+
+		"Maturity balance", 
+
+		"Status",
+
+		"Cause",
+
+		"Membership payment",
+
+		"Instructions at expiration",
+
+		"Refund type",
+
+		"Account type",
+
+		"Return",
+
+		"What do you want to do?",
+
+		"Invest my money",
+
+		"(mmddyy)",
+
+		"See account summary",
+
+		"ACCOUNT DETAIL",	
+
+		"Wait a moment please ...",
+
+		" - Select an option -"
+
+);
+
+		
+
+
+
+	-->
+
+</script>
+
+   <title></title>
+
+</head>
+
+
+
+<body >
+
+
+
+<div class="resumen_enca ancho100p">
+
+<div class="floatR marginT7 paddingR7 ancho40p">
+
+ <div class="saldos_btn1 showtooltip margin_menosT3 " id="btn_ayuda" onclick="Javascript:Layuda1();"></div>
+
+   <div class="saldos_btn2 showtooltip margin_menosT3 " id="btn_imp" onclick="ocultaToolTip();imprimirMain();"></div>
+
+   
+
+   <div class="floatR">
+
+  <div class="resumen_flecha"></div>
+
+    <a href="javascript:top.dash();" id="t28">Ver resumen de cuentas</a></div>
+
+  </div>
+
+ <div class="floatL">
+
+     <div class="floatL"><h1 id="t29">DETALLE DE LA CUENTA</h1> </div>
+
+      <div class="floatL marginL10 marginT2">
+
+      <select name="select" id="cboCritReg" class="select" onchange="valor1=this.value;Cta1();">
+
+	<option class="0" value="PS"id ="t31">&nbsp;-&nbsp;Selecciona una opci&oacute;n&nbsp;-&nbsp;</option>
+
+    <option value="1" value="1" >Cheques&nbsp;-&nbsp;002&nbsp;-&nbsp;MXN</option>
+
+    <option class="2"  value="2" >Cuenta Maestra - 490 - MXN</option>
+
+    <option class="3"  value="3">D&eacute;bito - 678 - MXN</option>
+
+    <option class="4" value="4" >Cheques- 888 - USD</option>
+
+    <option class="5" value="5">Tarjeta Cr&eacute;dito -  796 - MXN</option>
+
+    <option class="6" value="6"  > Tarj. Premia Pre - 245 - MXN</option>
+
+    <option class="7"  value="7">Mi cr&eacute;dito - 3014 - MXN</option>
+
+    <option class="8" value="8" >Credicheque Perfiles Banamex - 502 - MXN</option>
+
+    <option class="9"  value="9" >Cr&eacute;dito Casa - 9014 - MXN</option>
+
+    <option class="10" value="10"  >Inversi&oacute;n Perfiles - 502 - MXN</option>
+
+    <option class="11" selected="selected" >Inversi&oacute;n Plazo - 010 - MXN</option>
+
+    <option class="12" value="12" >HORZONT - 746 - MXN</option>
+
+    <option class="13" value="13" >Multiseries - 378 - MXN</option>
+
+    <option class="14" value="14" >Mi afore NSS - 424 - MXN</option>
+
+</select>
+
+    </div>
+
+   </div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+
+<div class="floatL ancho70p marginT15">
+
+  <div class="boldText f14 floatL paddingT4">Inv. Plazo - MXN **010 - Mi inversion</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="floatL ancho70p marginT37 paddingT3" >
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr>
+
+    <td class="paddingB3 paddingT3" width="25%"><span id="t7">N&uacute;mero de inversi&oacute;n</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3" width="22%"><span class=" color8f paddingB20 paddingL40">6</span></td>
+
+    <td class="paddingB3 paddingT3" width="8%">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3" width="30%"><span id="t13">Fecha de apertura</span></td>
+
+    <td width="15%" class="alignRight color8f paddingB3 paddingT3">01 Ene 2012</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB3 paddingT3"><span id="t8">Instrumento</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">Pagar&eacute;</td>
+
+    <td class="paddingB3 paddingT3">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3"><span id="t14">Fecha de vencimiento</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">26 Ene 2012</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB3 paddingT3"><span id="t9">Nombre del cliente</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">JOSE RIVERA LOPEZ</td>
+
+    <td class="paddingB3 paddingT3">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3"><span id="t15">Saldo inicial</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">$ 8,220.32</td>
+
+    </tr>
+
+  <tr>
+
+    <td class="paddingB3 paddingT3"><span id="t10">Tipo de persona</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">FISICA</td>
+
+    <td class="paddingB3 paddingT3">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3"><span id="t17">Saldo al vencimiento </span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">$ 8,229.07</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB3 paddingT3"><span id="t11">Plazo</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">100</td>
+
+    <td class="paddingB3 paddingT3">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3"><span id="t18">Estatus</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">ACTIVO</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB3 paddingT3"><span id="t12">Tasa</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">10.7%</td>
+
+    <td class="paddingB3 paddingT3">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3"><span id="t19">Causa</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td class="paddingB3 paddingT3"><span id="t16">Rendimiento del per&iacute;odo</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">$ 8.75</td>
+
+    <td class="paddingB3 paddingT3">&nbsp;</td>
+
+    <td class="paddingB3 paddingT3"><span id="t20">Pagar&eacute; membres&iacute;a</span></td>
+
+    <td class="alignRight color8f paddingB3 paddingT3">No es membres&iacute;a</td>
+
+  </tr>
+
+</table>
+
+<div class="borderTSolid marginT7">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tr>
+
+      <td class="boldText paddingB3 paddingT10" colspan="2" id ="t21">Instrucciones al vencimiento</td>
+
+      <td class="paddingB3 paddingT10" width="8%">&nbsp;</td>
+
+      <td class="paddingB3 paddingT10" width="30%">&nbsp;</td>
+
+      <td width="15%" class="alignRight color8f paddingB3 paddingT10">&nbsp;</td>
+
+      </tr>
+
+    <tr>
+
+      <td class="paddingB10 paddingT3" width="25%" id ="t22">Tipo de reembolso</td>
+
+      <td width="22%" class="alignRight color8f paddingB10 paddingT3">Reembolso Total</td>
+
+      <td class="paddingB10 paddingT3">&nbsp;</td>
+
+      <td class="paddingB10 paddingT3"><span id="t23">Tipo de cuenta</span></td>
+
+      <td class="alignRight color8f paddingB10 paddingT3">Cheques</td>
+
+      </tr>
+
+  </table>
+
+</div>
+
+</div>
+
+<div class="floatL marginL30 paddingL25 ancho20p borderlSolid9 marginT5">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <tr> 
+
+      <td class=" f14 boldText paddingB10" id="t25">&iquest;QU&Eacute; DESEAS HACER?</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="paddingT3 paddingB3 ">  
+
+   
+
+        <div class="resumen_flecha"></div> 
+
+        <a href="#"id="t26">Invertir mi dinero</a>
+
+    </td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+<div class="clear"></div>
+
+<div class="clear alto150"></div>
+
+<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+	<!--
+
+	$(document).ready(function(){optieneAlturas();top.window.scrollTo(0,0);$(window).bind('resize', function(){optieneAlturas()});slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+setTimeout("showtooltip2();",200);
+
+	-->
+
+	
+
+var valor1=0;   
+
+function Cta1(){
+
+	$("#divCargando").show();
+
+	setTimeout(function() {
+
+	
+
+	if(valor1==1){
+
+		window.location="14-Cheques_mes_actual_real.htm";
+
+	}
+
+	if(valor1==2){
+
+		window.location="maestra_mes_actual.htm";
+
+	}   
+
+	if(valor1==3){
+
+		window.location="26-TDD-MesActual-REAL.htm";
+
+	}   
+
+	if(valor1==4){
+
+		window.location="ChequesUSD_mes_actual.htm";
+
+	}   
+
+	if(valor1==5){
+
+		window.location="04-TDC-MesActual_AntesdeFecha-Limite_REAL.htm";
+
+	}   
+
+	if(valor1==6){
+
+		window.location="premia_mes_actual.htm";
+
+	}   
+
+	
+
+	if(valor1==7){
+
+		window.location="credito_infonavit.html";
+
+	}   
+
+	
+
+	if(valor1==8){
+
+		window.location="credicheques_perfiles_actual.htm";
+
+	}   
+
+	
+
+	if(valor1==9){
+
+		window.location="credito_hipotecario.htm";
+
+	}   
+
+	
+
+	if(valor1==10){
+
+		window.location="inversion_perfiles.htm";
+
+	}   
+
+	
+
+	if(valor1==11){
+
+		window.location="Resumen-de-inversiones_6.htm";
+
+	}   
+
+	
+
+	if(valor1==12){
+
+		window.location="inversionesdetalle_horizonte.htm";
+
+	}   
+
+	
+
+	if(valor1==13){
+
+		window.location="Multiseries.htm";
+
+	}   
+
+	if(valor1==14){
+
+		window.location="Afore.htm";
+
+	} 
+
+if(valor1==15){
+
+		window.location="20-Cheques_mes_anterior_real.htm";
+
+	}
+
+	}, 2000);
+
+}
+
+
+
+
+
+	
+
+        </script>
+
+        
+
+        <div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayN">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src='../../bbAvatar/images/loader.gif'/></div>
+
+    <div style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'><span id="t30">Espere un momento por favor ...</span></div>
+
+</div>
+
+
+
+<iframe id="ndw" src="../../spanishdir/if.htm" frameborder="0" allowtransparency="true" style="display:none;top:10;left:60;z-Index=1018;position:absolute;"></iframe>
+
+</body>
+
+</html>
+

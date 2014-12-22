@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="292a9cc4-56b7-4712-af5b-0bbb3bce8f52" ><input type=hidden name="EWF_SYS_1" value="HTDWN54XOT4C1A2OKWLYBBM5PHXOIT7JS7QIZTF0" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="Z3PC-CONFIRMA_PAGO"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="ConfirmacioN.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="31"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>        <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>      
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+   		<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+		 	
+
+         <script type="text/javascript">
+
+			var es=new Array('Credit payments','Confirm payment data to be applied.','Accounts','Withdrawal Account','Contracts','Contract number','Payment data','Amount MXN','Payment type','Folio','Frequent transaction','Return','Accept','Credits','Prepayment');
+
+
+
+			
+
+			function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+			function DatosCuenta(NombreCorto, Alias, Mone, NumeroCuenta ) {
+
+	var Cadena;
+
+	var ValorAlias=Alias.replace(/^\s*|\s*$/g,"");
+
+	var Mon=Mone.replace(/^\s*|\s*$/g,"");
+
+	if(Mon == "M.N" || Mon=="MXN" || Mon=="M.N."){ 
+
+	   Moneda = "MXN";
+
+	}else{ 
+
+	   Moneda = "USD";
+
+	}
+
+	 
+
+  if( ValorAlias!="" ){
+
+	Cadena=Alias + " " + Moneda + " - **"+NumeroCuenta;
+
+	return Cadena;
+
+  }else{
+
+    Cadena=NombreCorto + " " + Moneda + " - **"+NumeroCuenta;
+
+	return Cadena;
+
+	}
+
+	
+
+}			
+
+
+
+
+
+function DatosSaldo(mone,saldo){
+
+				var Cadena;
+
+				var mon=mone.replace(/^\s*|\s*$/g,"");
+
+				if(mon == "M.N" || mon == "MXN" || mon=="M.N."){ 
+
+				Moneda = "MXN";
+
+				
+
+				}else{
+
+					
+
+				Moneda = "USD";
+
+				
+
+				}
+
+				if(language == 'eng')
+
+				Cadena="Current amount (" + Moneda + "): $"+saldo;
+
+				else
+
+				Cadena="Saldo actual (" + Moneda + "): $"+saldo;
+
+				
+
+				return Cadena;
+
+				
+
+				
+
+				
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+			$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+			
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+			var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+			
+
+		</script>
+
+
+
+<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    Liquidación de Crédito con Cuenta de Cheques<br/>
+
+
+
+		<div id="me">Causa:&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+<script>parent.setFecha("24/04/12    20:05:17  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="200447  ";b$Cont="200517  "
+
+
+
+    </script>
+
+        
+
+		<script type="text/javascript">
+
+		
+
+		function Initialize(){
+
+		
+
+		   if (parseInt('7') == 7)
+
+		  {
+
+		    mostrarDatpago();
+
+		  }else{
+
+			cerrarDatpago();
+
+		  }
+
+		}
+
+		
+
+		function mostrarDatpago()
+
+		{
+
+		$('#folio').show();
+
+		}
+
+		function cerrarDatpago()
+
+		{
+
+		$('#folio').hide();
+
+		$("#frecuente td").addClass("bgF1F2F2");
+
+		}
+
+		
+
+		</script>
+
+        
+
+       <script type="text/javascript"> 
+
+        $(document).ready(function(){
+
+
+
+				     
+
+
+
+    			
+
+		 				
+
+				if(""=="E"){
+
+				$("#mensajeError_contenido_div", window.parent.document).html($("#idErr").html());	
+
+	       		parent.$.modal({
+
+				opacity:60, 
+
+				overlayClose:false, 
+
+				flagDiv:true,
+
+				widthDivIfrm:600});
+
+		     	}
+
+			
+
+			 	
+
+		    var Datos=DatosCuenta( "Cheques", "Cheques", "M.N", "002");
+
+			document.getElementById('Datos').innerHTML=Datos;
+
+			var Saldo= DatosSaldo("M.N",'40,000.00');
+
+			document.getElementById('Saldo').innerHTML=Saldo;
+
+			var DatosD=DatosCuenta( "Crédito", "Crédito", "M.N", "  256");
+
+			document.getElementById('DatosD').innerHTML=DatosD;
+
+			
+
+
+
+ 
+
+top.ajustarIframe();
+
+			
+
+			});
+
+	
+
+		</script>
+
+        
+
+
+
+<div>
+
+<div class="float-left fonttit" id="t13">Cr&eacute;ditos</div>
+
+      <div class="panelIzEnca3_text2" id="t0">
+
+
+
+            Pago de Cr&eacute;ditos
+
+	   </div>
+
+         <div class="color666 paddingT5 f11" id="t1">
+
+            Confirma los datos del pago para aplicar.
+
+        </div>
+
+         <div class="saldos_bloque3_2">
+
+
+
+                    
+
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                                <tr>
+
+                                    <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t2">Cuentas</span></td>
+
+
+
+                                    <td valign="top" class="padding20152015">
+
+                                        <div class="titulo_tabla_at marginT0" id="t3">Cuenta retiro</div>
+
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                                            <tr>
+
+                                                <td class="ancho50p paddingL0"><div class="f11 color666" id="Datos"></div></td>
+
+						<td class="ancho50p"><div class="f11 color666" id="Saldo"></div></td>
+
+                                            </tr>
+
+                                        </table>
+
+
+
+                                      
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+            	
+
+        </div>
+
+        
+
+        
+
+  <div class="saldos_bloque3_2">
+
+                    
+
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                                <tr>
+
+                                    <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t4">Contratos</span></td>
+
+
+
+                                    <td valign="top" class="padding20152015">
+
+                                        <div class="titulo_tabla_at marginT0" id="t5">N&uacute;mero de contrato</div>
+
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+                                            <tr>
+
+                                                <td class="ancho50p paddingL0"><div class="f11 color666" id="DatosD"></div></td>
+
+											 </tr>
+
+                                        </table>
+
+
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                    	
+
+        </div>        
+
+        
+
+       <div class="saldos_bloque3_2">
+
+   
+
+                    
+
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                                <tr>
+
+                                    <td class="borderRDotted ancho25p padding20152015" valign="top"><span class="f12" id="t6">Datos del pago</span></td>
+
+                                    <td valign="top" class="padding20152015">
+
+
+
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 pinta1">
+
+                                            <tr class="bgF1F2F2">
+
+                                                <td class="ancho50p "><span id="t7">Importe MXN</span></td>
+
+                                                <td class="ancho50p "><r>$ 1,000.00</r></td>
+
+												
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td class="ancho50p"><span id="t8">Tipo de pago</span></td>
+
+
+
+                                                <td class="ancho50p" id="t14"><r>Otro importe</r></td>
+
+                                            </tr>
+
+                                            <tr id="folio" style="display:none;" class="bgF1F2F2">
+
+                                                <td class="ancho50p "><span id="t9">Folio</span></td>
+
+                                                <td class="ancho50p "><r>0100</r></td>
+
+												
+
+                                            </tr>
+
+                                            <tr id="frecuente">
+
+
+
+                                                <td class="ancho50p"><span id="t10">Operaci&oacute;n frecuente</span></td>
+
+                                                <td class="ancho50p">No</td>
+
+												
+
+                                            </tr>
+
+                                        </table>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+
+
+             	
+
+        </div>
+
+        
+
+		
+
+         <div class="marginT20 overflow">
+
+        
+
+        	<input type="Button" id="t11"  class="btnRJ86 floatL" value="Regresar" onclick="javascript:parent.cargaDocN('Pagos Credito/creditos2.html')"/>
+
+         
+
+        
+
+            <input type="Button" id="t12" class="btnAZ86 floatR" value="Aceptar" onclick="javascript:parent.cargaDocN('Pagos Credito/aplica_otro_importe_credito.html')"/>
+
+        </div>
+
+        
+
+         <input type="hidden" name="EWFBUTTON" value="">
+
+         </div>
+
+
+
+<input id="omtmodalvalue" type="hidden" value="PAGOS CREDITO|ConfirmacioN.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

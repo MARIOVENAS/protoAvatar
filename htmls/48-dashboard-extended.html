@@ -1,0 +1,1518 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>Layout Avatar</title>
+
+		
+
+  <link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css"/>      
+
+  <link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css"/>
+
+  <link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css"/>
+
+<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css"/>
+
+
+
+  <script type="text/javascript" src="../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+
+  <script type="text/javascript" src="../JFP/js/script.js"></script>
+
+  <script type="text/javascript" src="../JFP/js/carrusel.js"></script>
+
+  <script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+
+</head>
+
+<body>
+
+  <!--inicia contenedor principal-->
+
+	<div id="wrap" class="cS-structMainContainer">
+
+    <!--inicia header-->
+
+		<div id="header">
+
+      <div class="utilities_nav" id="navegacionPrincipal"></div>
+
+
+
+      <div class="citibank-containerImg">
+
+          <a href="#"><div id="citibank-logo"></div></a>
+
+          <div id="citibank-image"></div>
+
+      </div>
+
+
+
+      <div class="main_nav" id="menuw"></div>
+
+
+
+      <div id="user-info">
+
+        <div class="userInfo-content" id="msj_bienvenido"></div>
+
+      </div>
+
+    </div><!--termina header-->
+
+    <div class="cS-structBodyContainer"></div>
+
+      <div id="content" class="overflow bg_demo">		
+
+		        	<!-- The left menu divs are inserted by javascript if it is necessary -->
+
+				<!--div id="left-menu" class="float-left margin-top25"></div>
+
+		                <div id="shadow">&nbsp;</div-->
+
+			  <div id="subapp-box" class="float-left width630"><!--  <div id="contenido_pag" class="contract padding0">-->
+
+          <div><!--      empieza-->
+
+            <div class="clear overflow">
+
+              <div class="float-left strong margin-left25 f15">CUENTAS</div>
+
+          
+
+              <div class="margin-rightm16">
+
+                <div class="margin-right15 " id="flechaLinksOpcoes">
+
+            			<span class="flechaGris float-left">&nbsp;</span>
+
+            			<a href="#" class="float-left" onclick="enConstruccion();">&nbsp;Personalizar</a>
+
+    		        </div>
+
+                <div class="margin-right15 " id="flechaLinksOpcoes">
+
+            			<span class="flechaGris float-left">&nbsp;</span>
+
+            			<a href="../bancanet/contenidos/movimientos_banca.html" class="float-left" >&nbsp;Movimientos en Banca Electr&oacute;nica</a>
+
+    		        </div>
+
+              </div>
+
+            </div><!--  termina-->
+
+              <div class="contenido paddingT9 borderBnone clear overflow margin-left25">
+
+                  <div class="contenido_account_summary">
+
+                    <div class="clear overflow">
+
+                    	
+
+                        <div class="expandir_contraer margenec" id="expc">
+
+                            <a href="javascript:void(0);" class="contraer deshabilitado" id="contie8">Contraer todo</a>
+
+                            <a href="javascript:void(0);" class="expandir habilitado">Expandir todo</a>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="titulo_cuentas marginT0" style="margin-top:4px !important; padding-left:0px !important; padding-right:0px !important;" id="cuentas_efectivo_mxn">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir" style="margin-top:27px !important"></div>
+
+                            <div class="text2" >CUENTAS DE EFECTIVO (4)</div>    
+
+                        </div>
+
+                       <div class="resumen_total TxtAR width130">
+
+                         <p style="padding-right:0 !important">MXN $ 625,694.77<br />
+
+                         <span class="fnormal">USD $1,000.00</span></p>
+
+                      </div>
+
+                        <div class="resumen_total widthauto paddingR5">
+
+                          <p class="padding-right50">Saldo total:</p></div>
+
+                        <!--<div class="resumen_total"><p>Total disponible<br>$1,000,000,000.00</p></div>-->
+
+                    </div>
+
+                    <div class="contenido_cuentas cuentas_efectivo_mxn" style="height:400px !important" >
+
+                        <table cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                          <td class="descripcion bold "  style="padding-left:0px !important" width="39%">Nombre de la cuenta</td>
+
+                         
+
+                          <td  width="5%"class="monto bold" style="padding-left:0px !important">&nbsp;&nbsp;Tipo de cuenta</td> 
+
+                           <td  width="36%" class="monto bold" style="padding-left:0px !important">&nbsp;</td> 
+
+                          <td  width="30%" class="monto  bold textR paddingr0" >Importe</td>
+
+                          </tr>     
+
+                          
+
+                          
+
+                          
+
+                         <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a onclick="showload()" href="../bancanet/contenidos/cuentas.html?ifrContenedor=0"  >CUENTA CHEQUES - Cuenta de n&oacute;mina - <br />
+
+MXN- 12002</a></td> <td class="descripcion   " >Cuenta de cheques<br /><br />
+
+</td>
+
+                       <td class="descripcion textR  " >Saldo:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 617,130.05<br /><br /></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                              
+
+                          
+
+                            <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=1" onclick="showload()">CUENTA MAESTRA - Mi cuenta maestra - <br />
+
+MXN- 12490</a></td> <td class="descripcion   " >Cuenta maestra<br /><br /></td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+Disponible:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 7,840.64<br />
+
+<SPAN class="fnormal paddingr0" >MXN $ 0.00</SPAN>  <br />
+
+                      </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                    
+
+                          
+
+                          <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=2" onclick="showload()">PAG&Oacute;MATICO INT - Mi pag&oacute;matico - <br />
+
+MXN - 12678</a></td> <td class="descripcion   " >Tarjeta de d&eacute;bito<br /><br /></td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+Disponible:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 724.08<br />
+
+<SPAN class="fnormal paddingr0" >MXN $ 724.08</SPAN></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                         
+
+                         <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=3" onclick="showload()">CHEQUES D&Oacute;LARES - Cuenta de n&oacute;mina - USD- 12888</a></td> <td class="descripcion   " >Cuenta de cheques<br /><br /></td>
+
+                       <td class="descripcion textR  " >Saldo:<br /><br /></td>
+
+                         <td class="descripcion textR bold paddingr0" >USD $ 1,000.00<br /><br /></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                             
+
+                         
+
+                             <!-- inicia-->
+
+                         <tr>
+
+                   <td class=" foot"  style="padding-left:0px !important; height:70px !important"></td>
+
+                     <td class="descripcion foot   " ></td>
+
+                       <td class="descripcion foot textR bold " >Saldo Total<br /><br />
+
+</td>
+
+                         <td class="descripcion textR bold foot paddingr0" ><span class="fnormal">MXN</span> $ 625,694.77<br />
+
+<span class="fnormal">USD</span> $ 1,000.00</td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                               
+
+                        </table>
+
+                    </div>
+
+                  
+
+                    <div class="titulo_cuentas " style="margin-top:4px !important; padding-left:0px !important; padding-right:0px !important; " id="cuentas_efectivo_usd">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir" style="margin-top:27px !important"></div>
+
+                            <div class="text2">TARJETAS DE CR&Eacute;DITO (1)</div>
+
+                        </div>
+
+                        <div class="resumen_total TxtAR width130">
+
+                          <p style="padding-right:0 !important">MXN $110,833.24<br />
+
+                         <span class="fnormal">MXN $ 43,659.04</span></p>
+
+                      </div>
+
+                        <div class="resumen_total widthauto paddingR5">
+
+                          <p class="padding-right50">Saldo total:</p></div>
+
+                        <!--<div class="resumen_total"><p>Total disponible<br>$1,000,000,000.00</p></div>-->
+
+                    </div>
+
+                    <div class="contenido_cuentas cuentas_efectivo_usd" style="height:137px !important">
+
+                        <table cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                          <td class="descripcion bold "  style="padding-left:0px !important" width="39%">Nombre de la cuenta</td>
+
+                         
+
+                          <td  width="5%"class="monto bold" style="padding-left:0px !important">&nbsp;&nbsp;Tipo de cuenta</td> 
+
+                           <td  width="36%" class="monto bold" style="padding-left:0px !important">&nbsp;</td> 
+
+                          <td  width="30%" class="monto  bold textR paddingr0" >Importe</td>
+
+                          </tr>     
+
+                          
+
+                          
+
+                          
+
+                    
+
+                          
+
+                          
+
+                              
+
+                          
+
+                            <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><br />
+
+<a href="../bancanet/contenidos/cuentas.html?ifrContenedor=4" onclick="showload()" >TARJ. CL&Aacute;SICA - Mi tarjeta - MXN- 12796</a><br />
+
+<br />
+
+<br /><br /><br />
+
+</td> <td class="descripcion   " >&nbsp;<br />
+
+Tarjeta de cr&eacute;dito<br />
+
+<br />
+
+<br /><br /><br />
+
+</td>
+
+                       <td class="monto  bold textR" ><span class="fnormal"><br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;Saldo:<br />
+
+Cr&eacute;dito disponible:<br />
+
+M&iacute;nimo a pagar:<br />
+
+Fecha l&iacute;mite de pago:<br /><br />
+
+</span>
+
+</td>
+
+                         <td class="descripcion textR bold paddingr0" ><br />
+
+MXN $ 43,659.04<br />
+
+<span class="fnormal">MXN $110,833.24<br />
+
+MXN $ 500.00<br />
+
+20/12/12<br /><br />
+
+</span>                                                </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                    
+
+                          
+
+                          <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important">PAG&Oacute;MATICO INT - Mi pag&oacute;matico - MXN - 12789</td> <td class="descripcion   " >&nbsp;Tarjeta de d&eacute;bito</td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+Disponible:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 326,851.32<br />
+
+<SPAN class="fnormal" >MXN $ 8,004.04</SPAN></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                         
+
+                         <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important">CHEQUES D&Oacute;LARES - Cuenta de n&oacute;mina - USD- 12123</td> <td class="descripcion   " >&nbsp;Cuenta de cheques</td>
+
+                       <td class="descripcion textR  " >Saldo:</td>
+
+                         <td class="descripcion textR bold paddingr0" >USD $ 5,000.00</td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                             
+
+                         
+
+                             <!-- inicia-->
+
+                         <tr>
+
+                   <td class=" foot"  style="padding-left:0px !important; height:70px !important"></td>
+
+                     <td class="descripcion foot   " ></td>
+
+                       <td class="descripcion foot textR bold " >Saldo Total<br /><br />
+
+</td>
+
+                         <td class="descripcion textR bold foot paddingr0" ><span class="fnormal">MXN</span> $326,851.32<br />
+
+<span class="fnormal">USD</span> $ 5,000.00</td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                               
+
+                        </table>
+
+                    </div>
+
+                    <div class="titulo_cuentas marginT0" style="margin-top:4px !important; padding-left:0px !important; padding-right:0px !important;" id="terjetas_credito">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir" style="margin-top:27px !important"></div>
+
+                            <div class="text2" >TARJETA PREMIA (1)</div>    
+
+                        </div>
+
+                         <div class="resumen_total TxtAR width130">
+
+                          <p style="padding-right:0 !important">MXN $113.01<br />
+
+                         <span class="fnormal">256</span></p>
+
+                      </div>
+
+                      <div class="resumen_total widthauto paddingR5">
+
+                          <p class="padding-right50">Saldo total:<br />
+
+<span class="fnormal">Saldo en puntos:</span></p></div>
+
+                       <!--<div class="resumen_total"><p>Total disponible<br>$1,000,000,000.00</p></div>-->
+
+                    </div>
+
+                    <div class="contenido_cuentas terjetas_credito" style="height:116px !important" >
+
+                        <table cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                          <td class="descripcion bold "  style="padding-left:0px !important" width="39%">Nombre de la cuenta</td>
+
+                         
+
+                          <td  width="5%"class="monto bold" style="padding-left:0px !important">&nbsp;&nbsp;Tipo de cuenta</td> 
+
+                           <td  width="36%" class="monto bold" style="padding-left:0px !important">&nbsp;</td> 
+
+                          <td  width="30%" class="monto  bold textR paddingr0" >Importe</td>
+
+                          </tr>     
+
+                          
+
+                          
+
+                          
+
+                         <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=5" onclick="showload()" >TARJ. PREMIA Pre 12245</a><br /><br /></td> <td class="descripcion   " >&nbsp;Puntos premia<br /><br /></td>
+
+                       <td class="descripcion textR  " >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saldo:<br />
+
+Saldo en Puntos:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 113.01<br />
+
+<span class="fnormal paddingr0">256</span></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                              
+
+                      
+
+                         
+
+                                 
+
+                         
+
+                             <!-- inicia-->
+
+                         <tr>
+
+                   <td class=" foot"  style="padding-left:0px !important; height:70px !important"></td>
+
+                     <td class="descripcion foot   " ></td>
+
+                       <td class="descripcion foot textR bold " >Saldo Total<br /><br />
+
+</td>
+
+                         <td class="descripcion textR bold foot paddingr0" ><span class="fnormal">MXN</span> $326,851.32<br />
+
+<span class="fnormal paddingr0">USD</span> $ 5,000.00</td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                               
+
+                        </table>
+
+                    </div>
+
+                      <div class="titulo_cuentas" style="margin-top:4px !important; padding-left:0px !important; padding-right:0px !important;" id="premia">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir" style="margin-top:27px !important"></div>
+
+                            <div class="text2">CR&Eacute;DITOS (3)</div>
+
+                        </div>
+
+                        <div class="resumen_total TxtAR width130">
+
+                          <p style="padding-right:0 !important">MXN $ 11,137.01<br />
+
+                         <span class="fnormal">&nbsp;</span></p>
+
+                      </div>
+
+                        <div class="resumen_total widthauto paddingR5">
+
+                          <p class="padding-right50">Saldo total:</p></div>
+
+                    </div>
+
+                    <div class="contenido_cuentas premia" style="height:327px !important">
+
+                          <table cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                          <td class="descripcion bold "  style="padding-left:0px !important" width="39%">Nombre de la cuenta</td>
+
+                         
+
+                          <td  width="5%"class="monto bold" style="padding-left:0px !important">&nbsp;&nbsp;Tipo de cuenta</td> 
+
+                           <td  width="36%" class="monto bold" style="padding-left:0px !important">&nbsp;</td> 
+
+                          <td  width="30%" class="monto  bold textR paddingr0" >Importe</td>
+
+                          </tr>     
+
+                          
+
+                 
+
+                          
+
+                            <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=6" onclick="showload()" >CRED. INFONAVIT - Mi cr&eacute;dito - MXN - <br />
+
+MXN -3014</a><br /><br />
+
+</td> <td class="descripcion   " >&nbsp;Cr&eacute;dito<br />
+
+<br /><br />
+
+</td>
+
+                       <td class="descripcion textR  " >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saldo:<br />
+
+Folio:<br />
+
+D&iacute;a corte:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 5,512.00<br />
+
+<SPAN class="fnormal" >0100<br />
+
+05</SPAN>                        </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                    
+
+                          
+
+                          <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=7" onclick="showload()" >Perfiles Banamex - Credicheque - <br />
+
+MXN - 12502</a><br />
+
+<br /></td> <td class="descripcion   " >&nbsp;Cr&eacute;dito<br />
+
+<br /><br /></td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+M&iacute;nimo a pagar:<br />
+
+Fecha l&iacute;mite de pago:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 113.01<br />
+
+<SPAN class="fnormal" >MXN $ 500.00<br />
+
+03/09/13</SPAN></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                         
+
+                         <!-- inicia-->
+
+                        <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=8" onclick="showload()" >CRED. HIPOTECA - Mi cr&eacute;dito - MXN -  <br />
+
+9014</a><br />
+
+<br /></td> <td class="descripcion   " >&nbsp;Cr&eacute;dito<br />
+
+<br /><br /></td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+Folio:<br />
+
+D&iacute;a corte:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 5,512.00<br />
+
+<SPAN class="fnormal" >0100<br />
+
+05</SPAN>                        </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                             
+
+                         
+
+                             <!-- inicia-->
+
+                         <tr>
+
+                   <td class=" foot"  style="padding-left:0px !important; height:70px !important"></td>
+
+                     <td class="descripcion foot   " ></td>
+
+                       <td class="descripcion foot textR bold " >Saldo Total
+
+</td>
+
+                         <td class="descripcion textR bold foot paddingr0" ><span class="fnormal">MXN</span> $ 10,000.00<br />
+
+</td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                               
+
+                        </table>
+
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    <div class="titulo_cuentas" style="margin-top:4px !important; padding-left:0px !important; padding-right:0px !important;" id="inver">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir" style="margin-top:27px !important"></div>
+
+                            <div class="text2">INVERSIONES (4)</div>
+
+                        </div>
+
+                        <div class="resumen_total TxtAR width130">
+
+                          <p style="padding-right:0 !important">MXN $ 177,479.77<br />
+
+                         <span class="fnormal"></span></p>
+
+                      </div>
+
+                        <div class="resumen_total widthauto paddingR5">
+
+                          <p class="padding-right50">Saldo total:<br />
+
+                          </p><br />
+
+</div>
+
+                    </div>
+
+                    <div class="contenido_cuentas inver" style="height:400px !important">
+
+                         <table cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                          <td class="descripcion bold "  style="padding-left:0px !important" width="39%">Nombre de la cuenta</td>
+
+                         
+
+                          <td  width="5%"class="monto bold" style="padding-left:0px !important">&nbsp;&nbsp;Tipo de cuenta</td> 
+
+                           <td  width="36%" class="monto bold" style="padding-left:0px !important">&nbsp;</td> 
+
+                          <td  width="30%" class="monto  bold textR paddingr0" >Importe</td>
+
+                          </tr>     
+
+                          
+
+                          
+
+                          
+
+                         <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=9" onclick="showload()" >INV. PERFILES - Mi inversi&oacute;n perfiles - <br />
+
+MXN - 12502</a></td> <td class="descripcion   " >&nbsp;Inversi&oacute;n a la vista<br />
+
+<br />
+
+</td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+&Oacute;rdenes pendientes:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 230.00<br />
+
+<span class="fnormal">000</span></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                              
+
+                          
+
+                            <!-- inicia-->
+
+                           <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=10" onclick="showload()" >INV.PLAZO - Mi inversi&oacute;n - <br />
+
+MXN - 12010</a><br />
+
+<br />
+
+</td> <td class="descripcion   " >&nbsp;Inversi&oacute;n a plazo<br />
+
+<br /><br />
+
+</td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+N&uacute;mero de inversi&oacute;n<br />
+
+Fecha de vencimiento:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 8,229.07<br />
+
+<span class="fnormal">6<br />
+
+26/01/12</span></td>
+
+                         </tr>
+
+                          
+
+                          
+
+                          
+
+                    
+
+                          
+
+                          <!-- inicia-->
+
+                          <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=11" onclick="showload()" >INV. HORIZONTE - Mi inv.HORIZONTE - <br />
+
+MXN -12746</a></td> <td class="descripcion   " >&nbsp;Fondo horizonte<br /><br />
+
+</td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+&Oacute;rdenes pendientes:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 50,000.00<br />
+
+<span class="fnormal">0</span></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                         
+
+                         <!-- inicia-->
+
+                          <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=12" onclick="showload()" >MULTISERIES - Mi inv.multiseries - <br />
+
+MXN - 12378</a></td> <td class="descripcion   " >&nbsp;Fondo de inversi&oacute;n<br />
+
+<br />
+
+</td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+<br />
+
+</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 119,020.70<br /><br />
+
+<span class="fnormal"></span></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                             
+
+
+
+                          <!--termina-->                     
+
+                             <!-- inicia-->
+
+                         <tr>
+
+                   <td class=" foot"  style="padding-left:0px !important; height:70px !important"></td>
+
+                     <td class="descripcion foot   " ></td>
+
+                       <td class="descripcion foot textR bold " >Saldo Total<br /><br />
+
+</td>
+
+                         <td class="descripcion textR bold foot paddingr0" ><span class="fnormal">MXN</span> $ 177,479.77<br /><br />
+
+<span class="fnormal"></span> </td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                               
+
+                        </table>
+
+                    </div>
+
+                    
+
+                    <div class="titulo_cuentas" style="margin-top:4px !important; padding-left:0px !important; padding-right:0px !important;" id="afore">
+
+                        <div class="floatL">
+
+                            <div class="ico expandir" style="margin-top:27px !important"></div>
+
+                            <div class="text2">AFORE (1)</div>
+
+                        </div>
+
+                        <div class="resumen_total TxtAR width130">
+
+                          <p style="padding-right:0 !important">MXN $ $ 456,789.00<br />
+
+                         <span class="fnormal"></span></p>
+
+                      </div>
+
+                        <div class="resumen_total widthauto paddingR5">
+
+                          <p class="padding-right50">Saldo total:<br />
+
+                            <br />
+
+                          </p></div>
+
+                    </div>
+
+                    <div class="contenido_cuentas afore" style="height:124px !important">
+
+                         <table cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                          <td class="descripcion bold "  style="padding-left:0px !important" width="39%">Nombre de la cuenta</td>
+
+                         
+
+                          <td  width="5%"class="monto bold" style="padding-left:0px !important">&nbsp;&nbsp;Tipo de cuenta</td> 
+
+                           <td  width="36%" class="monto bold" style="padding-left:0px !important">&nbsp;</td> 
+
+                          <td  width="30%" class="monto  bold textR paddingr0" >Importe</td>
+
+                          </tr>     
+
+                          
+
+                          
+
+                          
+
+                         <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important"><a href="../bancanet/contenidos/cuentas.html?ifrContenedor=13" onclick="showload()" >AFORE NSS - Mi retiro - 12424</a></td> <td class="descripcion   " >Afore</td>
+
+                       <td class="descripcion textR  " >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saldo:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 456,789.00</td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                              
+
+                          
+
+                            <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important">CUENTA MAESTRA - Mi cuenta maestra - MXN- 12456</td> <td class="descripcion   " >&nbsp;Cuenta maestra</td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+Disponible:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 326,851.32<br />
+
+<SPAN class="fnormal" >MXN $ 8,004.04</SPAN>                        </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                    
+
+                          
+
+                          <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important">PAG&Oacute;MATICO INT - Mi pag&oacute;matico - MXN - 12789</td> <td class="descripcion   " >&nbsp;Tarjeta de d&eacute;bito</td>
+
+                       <td class="descripcion textR  " >Saldo:<br />
+
+Disponible:</td>
+
+                         <td class="descripcion textR bold paddingr0" >MXN $ 326,851.32<br />
+
+<SPAN class="fnormal" >MXN $ 8,004.04</SPAN></td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                          
+
+                         
+
+                         <!-- inicia-->
+
+                         <tr>
+
+                   <td class="descripcion txt_und"  style="padding-left:0px !important; height:70px !important">CHEQUES D&Oacute;LARES - Cuenta de n&oacute;mina - USD- 12123</td> <td class="descripcion   " >&nbsp;Cuenta de cheques</td>
+
+                       <td class="descripcion textR  " >Saldo:</td>
+
+                         <td class="descripcion textR bold paddingr0" >USD $ 5,000.00</td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                          
+
+                          
+
+                             
+
+                         
+
+                             <!-- inicia-->
+
+                         <tr>
+
+                   <td class=" foot"  style="padding-left:0px !important; height:70px !important"></td>
+
+                     <td class="descripcion foot   " ></td>
+
+                       <td class="descripcion foot textR bold " >Saldo Total<br /><br />
+
+</td>
+
+                         <td class="descripcion textR bold foot paddingr0" ><span class="fnormal">MXN</span> $ 326,851.32<br />
+
+<span class="fnormal">USD</span> $ 5,000.00</td>
+
+                         </tr>
+
+                          <!--termina-->
+
+                               
+
+                        </table>        
+
+                       
+
+                    </div>
+
+                  </div>
+
+              </div>
+
+              
+
+                
+
+            </div>
+
+                </div>  
+
+                
+
+                
+
+                
+
+         <!--    derecho    -->
+
+                
+
+              <div class="float-left margin-left20 margin-top25" >
+
+    	
+
+        
+
+        <div class="lineaVertical4">&nbsp;</div>
+
+    <div class=" float-left ">
+
+    <p class="strong">ACCESOS R&Aacute;PIDOS</p>
+
+    <P class="fnormal">¿Qu&eacute; deseas hacer?</P>
+
+<div class="menu_acl"></div>
+
+ 
+
+ <div class="mpagar" >
+
+ <a class="ico_pag"  href="../bancanet/contenidos/30-Transferencias_pagos.html?ifrContenedor=0" >Pagar mi tarjeta de cr&eacute;dito</a>
+
+</div>
+
+ 
+
+ 
+
+ <div class="mpagar"> <a class="ico_tran" href="../bancanet/contenidos/30-Transferencias_pagos.html?ifrContenedor=1">Transferir a mis cuentas</a></div>
+
+ 
+
+ 
+
+ <div class="mpagar" > <a class="ico_tran" href="../bancanet/contenidos/30-Transferencias_pagos.html?ifrContenedor=2">Transferir a otras cuentas</a></div>
+
+ 
+
+ 
+
+ <div class="mpagar" > <a class="ico_pag" href="../bancanet/contenidos/34-Servicios.html?ifrContenedor=3">Pago de servicios</a>
+
+</div>
+
+ 
+
+ 
+
+ <div class="mpagar" href=""> <a class="ico_not">Notificaciones Banamex</a></div>
+
+
+
+ 
+
+
+
+    </div>
+
+    
+
+    <div id="menu_ac">
+
+
+
+    </div>
+
+    
+
+    
+
+    
+
+    </div>
+
+              
+
+              
+
+    <!--    derecho    -->           
+
+              
+
+               <div id="liquid1" class="liquid">
+
+            <div id="linea_carrusel"></div>
+
+	<a class="previous" href="javascript:void(0)"></a>
+
+	<div class="wrapper">
+
+		<ul>
+
+			<li><a href="http://www.banamex.com/es/personas/landing_tarjetas/index.htm?icid=Menu-TarjetasCredito-Personas-MejoresTarjetas-05152013-Int-ES" title="image 01"><img src="../JFP/regional/images/carrusel/carousel_1.png" width="218" height="88" alt="image 01" border="0" /></a></li>
+
+			<li><a href="http://www.banamex.com/es/personas/inversiones/integral_perfiles.htm" title="image 02"><img src="../JFP/regional/images/carrusel/carousel_2.png" width="218" height="88" alt="image 01" border="0" /></a></li>
+
+			<li><a href="http://www.banamex.com/es/personas/servicios/banca_electronica/banamex_movil.htm" title="image 03"><img src="../JFP/regional/images/carrusel/carousel_3.png" width="218" height="88" alt="image 01" border="0" /></a></li>
+
+			<li><a href="http://www.banamex.com/es/personas/servicios_digitales/notificaciones.htm" title="image 04"><img src="../JFP/regional/images/carrusel/carousel_4.png" width="218" height="88" alt="image 01" border="0" /></a></li>
+
+			<li><a href="http://www.banamex.com/es/personas/landing_tarjetas/index.htm?icid=Menu-TarjetasCredito-Personas-MejoresTarjetas-05152013-Int-ES" title="image 05"><img src="../JFP/regional/images/carrusel/carousel_1.png" width="218" height="88" alt="image 01" border="0" /></a></li>
+
+            <li><a href="http://www.banamex.com/es/personas/inversiones/integral_perfiles.htm" title="image 03"><img src="../JFP/regional/images/carrusel/carousel_2.png" width="218" height="88" alt="image 01" border="0" /></a></li>
+
+	
+
+			
+
+	  </ul>
+
+	</div>
+
+	<a class="next" href="javascript:void(0)"></a>
+
+     <div id="linea_carrusel" class="float-left"></div>
+
+</div>
+
+
+
+
+
+                
+
+                
+
+                
+
+                
+
+                </div>
+
+                
+
+               
+
+			  </div>
+
+			</div>
+
+			<div class="clear"></div>
+
+            
+
+           
+
+			<div id="footer"></div>				
+
+		</div>
+
+
+
+  
+
+  </div>
+
+  <script type="text/javascript">
+
+	<!--
+
+		$(document).ready(function() {
+
+			$('#liquid1').liquidcarousel({height:129, duration:100, hidearrows:false});
+
+	
+
+			$('#expc').addClass('iemtm7');
+
+		});
+
+	-->
+
+	</script>
+
+  <script type="text/javascript">
+
+            $(document).ready(function(){
+
+				load_html_callback("#menu_principal_bienvenido",'piezas/menu_principal_bienvenido.html',function(){$("#menu_principal_bienvenido #miBancaNet").addClass('selected')} ,true)
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+				account_summary();
+
+				setTimeout(function(){$('#MiBancaNet').addClass('active')},900);
+
+            });
+
+        </script>
+
+               <script type="text/javascript">
+
+
+
+	$(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='pagInicio']").imageTick({ 
+
+			tick_image_path: "../JFP/regional/images/check_1.png", 
+
+			no_tick_image_path: "../JFP/regional/images/no_check_1.png",
+
+			image_tick_class: "chkpagInicio"
+
+		});
+
+        
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	
+
+	function maestra(){
+
+		
+
+		cargaDocN3('cuentas/20-Cheques_mes_anterior_real.htm');
+
+cargaDocN('Pagos Credito/confirma_otro_importe_credito.html')
+
+
+
+	
+
+	}
+
+	
+
+	
+
+	
+
+		function dash(){
+
+open('48-dashboard_extended.html' , "_self")
+
+
+
+}
+
+	function showload(){
+
+	$("#divCargando").show();
+
+
+
+
+
+}
+
+	
+
+</script>  
+
+
+
+
+
+   <div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayNone">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src="../bancanet/contenidos/bbAvatar/images/loader.gif"></div>
+
+    <div style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'>Espere un momento por favor ...</div>
+
+</div>
+
+
+
+<iframe id="ndw" src="../bancanet/contenidos/spanishdir/if.htm" frameborder="0" allowtransparency="true" style="display:none;top:10;left:60;z-Index=1018;position:absolute;"></iframe>
+
+</body>
+
+<!--termina contenedor principal-->
+
+</html>
+

@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <head>
+
+    	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    	<title>Banamex</title>
+
+        <link rel="stylesheet" href="bbAvatar/css/mando.css" type="text/css" />
+
+        <script type="text/javascript" src="bbAvatar/js/motor.js"></script>
+
+        <script type="text/javascript" src="bbAvatar/js/mando.js"></script>
+
+        <script type="text/javascript" src="bbAvatar/js/menuSpanish.js"></script>
+
+		<script type="text/javascript" src="fb/fun.js"></script>
+
+		<script type="text/javascript">
+
+		var flag_ajax=false;
+
+		var flagFuera=false;
+
+		var Modal_Div_O_Iframe = '';
+
+		var $tm=2, $ts='0', $tl='8',$ad='1';
+
+		var v_idioma=0;
+
+		v_nbr="JOSE RIVERA LOPEZ";v_rec="[NA]";v_mail="0";v_lin="";
+
+		v_mapa="spanishdir/ayudas/mapa_extranet.htm";
+
+		var exitFlag="T";
+
+		function menuFunc(){return '\n<html>\n<head>\n   <title></title>\n</head>\n\n<body topmargin=0 leftmargin=0 marginheight=0 marginwidth=0 TEXT="#000000" BGCOLOR="#FFFFFF" ONLOAD="if(window.Initialize != null)Initialize();">\n<FORM TARGET="main" METHOD="POST" ACTION="" NAME="APPS_FORM_MENU" >\n\n<input type=hidden name="EWF_SYS_0" value="292a9cc4-56b7-4712-af5b-0bbb3bce8f52" ><input type=hidden name="EWF_SYS_1" value="951ZG97PDVDOXNJJO5IC@H3TJPMQH7I4FQXRL@8E" >\n<input type=hidden name="EWF_FORM_NAME" value="MAIN Left Side">\n<p><script>\nfunction DoSubmit(value){\n\ndocument.getElementById("EWFBUTTON").value=value\n\ndocument.getElementById("EWFBUTTON").name=\'EWF_BUTTON_\'+value;\n\ndocument.forms[0].submit();\n\nreturn;\n}\n\nccc=parent.CURRENT_MODULE;\nif(ccc=="Z2CS"||ccc=="ZBIE"||ccc=="ZMTC"){\n    Initialize=function(){\n        parent.main.document.write(\'<script>P=parent;function i_i$(){ccc=P.CURRENT_MODULE;if(ccc=="Z2CS")P.menu.DoSubmit("Consulta de Saldos");else if(ccc=="ZMTC")P.menu.DoSubmit("Mul_TodasCtas");else if(ccc=="ZBIE")P.menu.DoSubmit("BIENVENIDO")}</scr\\151pt>\');\n        parent.main.i_i$()\n    }\n}\n<\/SCRIPT>\n<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">\n<INPUT TYPE="HIDDEN" NAME="exit" value="0" onclick="return DoSubmit(\'EXIT\');">\n<INPUT TYPE=HIDDEN NAME=EWFBUTTON ID=EWFBUTTON VALUE="">\n\n</p>\n\n</form>\n</body>\n</html>\n'}
+
+		function mainFunc(){return '\n<html>\n<head>\n<META HTTP-EQUIV="Pragma" CONTENT="no-cache">\n\n<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">\n\n<META HTTP-EQUIV="Expires" CONTENT="-1">\n\n<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />\n\n<LINK REL="stylesheet" href="bbAvatar/css/estilos.css" type="text/css" />\n\n\n\n\n\n   <title></title>\n</head>\n\n<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >\n<form TARGET="main" METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >\n\n<input type=hidden name="EWF_SYS_0" value="292a9cc4-56b7-4712-af5b-0bbb3bce8f52" ><input type=hidden name="EWF_SYS_1" value="951ZG97PDVDOXNJJO5IC@H3TJPMQH7I4FQXRL@8E" >\n<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">\n<p id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZRUT-BEGIN"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="ruteador.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="3">\n\n<SCRIPT LANGUAGE="JavaScript">\nfunction DoSubmit( value )\n{\n    document.forms[0].EWFBUTTON.value = value;\n    document.forms[0].EWFBUTTON.name = \'EWF_BUTTON_\'+value;\n    document.forms[0].submit();\n}\nfunction Initialize(){\n\nDoSubmit(\'ZMTC\');\n\n}\n<\/SCRIPT>\n<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">\n<INPUT TYPE=HIDDEN NAME=USERID VALUE="DEMO">\n\n</div><p></p>\n\n</form>\n</body>\n</html>\n'}
+
+		function DoSubmit(value){			
+
+			if(value != "Mul_TodasCtas"){
+
+				$("#div_contenedorPrincipal").css({"margin":"0px 0px 0px 0px"});				
+
+			}	
+
+			$("#main").attr("src","transacciones/"+value);
+
+			igualarDimenc2($(".column"));	
+
+			$('.cortiContPrincipal').hide();
+
+			activaFlechas();		
+
+		}
+
+		function submitFuera(value,title){
+
+			DoSubmit( value );
+
+		}
+
+		v_nam="fecha"; v_rut="spanishdir/"; vL$="Est\u00e1s abandonando tu sesi\u00f3n segura de BancaNet";
+
+		var timer, timer2, timer3, ti$;
+
+		v_idi="spanishdir/";
+
+		var flagReset="T";
+
+		var ventana;
+
+		var flagAfore = "OK";
+
+		function validaStatusAfore(){
+
+			if(flagAfore != "OK"){
+
+				$('.menu3N').css('display','none');
+
+				parent.doSubmitAfore('Consulta_Estados_de_Cuenta_Afore/Edo_de_Cuenta.html');
+
+			}else{
+
+				$('.menu3N').css('display','block');
+
+				parent.doSubmitAfore('Consulta_Estados_de_Cuenta_Afore/Edo_de_Cuenta.html');
+
+			}
+
+		}
+
+		function doSubmitAfore(transaccion){
+
+			DoSubmit(transaccion);
+
+		}
+
+		function bindBackSpace(){ $(document).bind('keydown.backspace keyup.backspace',function(event){ if(event.keyCode==8){ event.preventDefault();} });}
+
+		function setFecha(fecha){
+
+			var fechaCompleta = fecha;
+
+			var diasSistema = ['Domingo', 'Lunes', 'Martes', 'Mi&eacute;rcoles', 'Jueves', 'Viernes', 'S&aacute;bado'];
+
+			var mesesSistema = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']
+
+			var fechaFormato = fechaCompleta.substring(0,8).split('/');
+
+			var horaFormato = fechaCompleta.substring(12,20);
+
+			var fechaSistema = new Date(20 + fechaFormato[2], fechaFormato[1] - 1, fechaFormato[0]);
+
+			$("#fecha",window.parent.document).html(diasSistema[fechaSistema.getDay()]+' '+fechaSistema.getDate()+' de '+mesesSistema[fechaSistema.getMonth()]+' de 20'+fechaFormato[2]+', '+horaFormato);
+
+			
+
+		}
+
+		function setFechaFormateada(fechaForma){
+
+			var Meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+			var fechaAcceso = fechaForma.split('/');
+
+			$("#fechaForm",window.parent.document).html(fechaAcceso[0]+' '+Meses[fechaAcceso[1]-1]+' '+fechaAcceso[2]);
+
+		}	
+
+		function setFechaCopyrigth(fecha){			
+
+			var fechapedazos = new Array();
+
+			fechapedazos = fecha.substring(0,8).split("/");
+
+			$("#aniocopy").html("20"+fechapedazos[2]);			
+
+		}
+
+		function abrirVentana(ruta){
+
+			var winImp = window.open(ruta,"","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");			
+
+		}	
+
+		function cargaFrame(){
+
+			try{
+
+				var aux1=document.getElementById('main').contentWindow.document.getElementsByName('APPS_FORM_MAIN');		
+
+				var aux2=document.getElementById('iftimer').contentWindow.document.getElementsByName('APPS_FORM_MAIN');	
+
+				if(aux2[0]){
+
+					aux2[0].action = aux1[0].action;	
+
+					aux1=document.getElementById('main').contentWindow.document.getElementsByName('EWF_SYS_0');		
+
+					aux2=document.getElementById('iftimer').contentWindow.document.getElementsByName('EWF_SYS_0');	
+
+					aux2[0].value = aux1[0].value;
+
+					aux1=document.getElementById('main').contentWindow.document.getElementsByName('EWF_SYS_1');		
+
+					aux2=document.getElementById('iftimer').contentWindow.document.getElementsByName('EWF_SYS_1');	
+
+					aux2[0].value = aux1[0].value;	
+
+					aux1=document.getElementById('main').contentWindow.document.getElementsByName('EWF_FORM_NAME');		
+
+					aux2=document.getElementById('iftimer').contentWindow.document.getElementsByName('EWF_FORM_NAME');	
+
+					aux2[0].value = aux1[0].value;	
+
+					aux1=document.getElementById('main').contentWindow.document.getElementsByName('DISPLAYPAGE');		
+
+					aux2=document.getElementById('iftimer').contentWindow.document.getElementsByName('DISPLAYPAGE');	
+
+					aux2[0].value = aux1[0].value;
+
+					aux1=document.getElementById('main').contentWindow.document.getElementsByName('TEMPLATE_FILE');		
+
+					aux2=document.getElementById('iftimer').contentWindow.document.getElementsByName('TEMPLATE_FILE');	
+
+					aux2[0].value = aux1[0].value;	
+
+					aux1=document.getElementById('main').contentWindow.document.getElementsByName('SEQUENCE_NUMBER');		
+
+					aux2=document.getElementById('iftimer').contentWindow.document.getElementsByName('SEQUENCE_NUMBER');	
+
+					aux2[0].value = aux1[0].value;	
+
+					aux1=document.getElementById('main').contentWindow.document.getElementsByName('EWFBUTTON');		
+
+					aux2=document.getElementById('iftimer').contentWindow.document.getElementsByName('EWFBUTTON');
+
+				}
+
+			}catch(exp){
+
+				setTimeout("cargaFrame()", 500);
+
+				return;
+
+			}
+
+			if(aux2[0]){
+
+				try{aux2[0].value = aux1[0].value;}catch(ex){}	
+
+			}
+
+		}			
+
+		function DosubmitExit(){
+
+			document.getElementById("objs").readOnly = false;
+
+			document.getElementById("objs").value = "3";
+
+			DoSubmit("EXIT");
+
+			alert("Est\u00e1s abandonando tu sesi\u00f3n segura de BancaNet");
+
+			window.close();
+
+		}		
+
+		function DosubmitExitWebKit(){
+
+			var datosEdify = "EWF_BUTTON_EXIT=EXIT&EWF_FORM_NAME=MAIN Left Side&EWF_SYS_0="+document.getElementById('APPS_FORM_MENU').contentWindow.document.forms[0].EWF_SYS_0.value+"&EWF_SYS_1="+document.getElementById('APPS_FORM_MENU').contentWindow.document.forms[0].EWF_SYS_1.value+"&exit=0"
+
+			$.ajax({ url: document.getElementById('APPS_FORM_MENU').contentWindow.document.forms[0].action, type: "POST", data: datosEdify, async: false, success: function(){flag_ajax=true;}});
+
+		}
+
+		function getNavegadorAndVersion(){ 
+
+			$.each($.browser, function(bro, val) { 
+
+				if( bro == "webkit" && val == true ){
+
+					try{document.body.setAttribute('onbeforeunload','');}catch(e){}
+
+					$(window).bind("beforeunload", function(){ window.close()	});
+
+				} 
+
+			});
+
+		}
+
+		function inicioBBAvatar(){
+
+			scd();
+
+			showtooltipCopy();			
+
+			setFechaCopyrigth("29/03/12    12:46:02  ");
+
+			cargaFrame();
+
+			getNavegadorAndVersion();
+
+		}
+
+		var indicegral =0;
+
+		function MostrarModalId(id,contenido){
+
+		$(".mostrarVentanaEmergente").each(function (){
+
+				if($(this).attr("id")==id){
+
+					indicegral=contenido;
+
+				  $(this).trigger('click');
+
+				}
+
+			});
+
+		}
+
+		$(document).ready(function(){
+
+			bindBackSpace();
+
+			$("input:text, input:password, textarea").focus(function(){ if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false){ $(document).unbind('.backspace');} }); 
+
+			$("input:text, input:password, textarea").blur(function(){ if($(this).attr("readonly") == ""){ bindBackSpace(); }}); 
+
+			$("#srv").html('BancaNet Demo-boveda.banamex.com.mx-ND001-MTY3885CSICB11V-234');
+
+			setFecha("29/03/12    12:46:02  ");
+
+			setFechaFormateada("24/03/2010");
+
+		});		
+
+		</script>
+
+    </head>
+
+    <body onbeforeunload="DosubmitExit()" onload="javascript:inicioBBAvatar();">	
+
+    <div class="contendormaximo">
+
+        <div class="contenedor">
+
+        	<div class="cabeceraSup clear overflow">
+
+            	<div class="top_cabecera">
+
+                	<div class="ancho100p">
+
+                        <div class="floatL f11" id="fecha" style="margin-top:3px; margin-left:10px"></div>
+
+                        <div class="floatL f11" id="fecha2" style="margin-top:3px;">
+
+                            &nbsp;Centro de M&eacute;xico  |  &Uacute;ltimo acceso por BancaNet: <span class='f11' id='fechaForm'></span>&nbsp;a las 11:59:35
+
+                        </div>
+
+                        <div class="floatR f11" style="margin-top:3px; margin-right:10px">
+
+                            <a href="#" onclick="submitFuera('Contactanos', 'Cont&aacute;ctanos')">Cont&aacute;ctanos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+                            <a href="http://portal.banamex.com.mx/mapas/index.jsp?idioma=esp" target="_blank">Sucursales</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+                            <a href="http://www.banamex.com/" target="_blank">www.banamex.com</a>
+
+                        </div>
+
+                	</div>
+
+                </div>
+
+                <div style="position:relative; margin:auto" class="ancho100p">
+
+                <table class="ancho100p" cellpadding="0" cellspacing="0">
+
+                	<tr>
+
+                    	<td class="headerLeft" valign="top">
+
+							<div style="position:absolute; margin-top:46px; left:0px; margin-left:10px">
+
+                            	<div class="contenedor_menuTN_infoIz_text1">JOSE RIVERA LOPEZ&nbsp;<span class="text">jrivera@banamex.com | 5512345678</span></div>
+
+							</div>
+
+						</td>
+
+                        <td class="headerCenter" valign="top">&nbsp;</td>
+
+                        <td class="headerRight" valign="top">
+
+                        	<div style="position:relative; margin:auto" class="ancho100p">
+
+                                <div style="position:absolute; margin-top:46px; right:0px;">
+
+                                    <div>                                	
+
+                                        <div class="salida">
+
+                                            <div class="salida_img" onclick="javascript:f_Salir();"></div>
+
+                                            <div class="salida_txt"><a href="#" onclick="javascript:f_Salir();">Salir</a></div>
+
+                                        </div>
+
+                                        <div class="msj">
+
+                                            <div class="contenedor_menuTN_infoDe_text2_b3"><a href="#" onclick="submitFuera('Mail_BancaNet/Mensajes_Mail_BancaNet.html', 'Mensajes Mail BancaNet')">Mensajes</a></div>
+
+                                            <div class="contenedor_menuTN_infoDe_text2_b2" onclick="submitFuera('Mail BancaNet', 'Mensajes Mail BancaNet')"><div>0</div></div>
+
+                                        </div>
+
+                                        <div class="productos">
+
+                                            <div class="productos_img" onclick="javascript:submitFuera('Actualiza Datos Cliente', 'Mis Productos - Contrataci&oacute;n en l&iacute;nea');"></div>
+
+                                            <div class="productos_txt"><a href="#" onclick="javascript:parent.submitFuera('Actualiza_Datos_Cliente/Mis_Productos.html', 'Mis Productos - Contrataci&oacute;n en l&iacute;nea');">Mis productos</a></div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                         	</div>
+
+						</td>
+
+                    </tr>
+
+                </table> 
+
+				</div>             
+
+        	</div>            
+
+            <div class="contenedor_menus2 clear overflow" style="height:0px !important"><div class="btntime"><a id="botonTime" href="#" class="two" style="height:0px !important; width:0px !important; color:transparent"></a></div></div>                    	
+
+            <div class="contenedor_menus">
+
+                <div class="contenedor_menuPrinc">
+
+                    <div id='menu'>
+
+                        <ul class="menu">                        
+
+                        </ul>
+
+                    </div>                    
+
+                </div>               
+
+                <div class="contenedor_menuSN">
+
+                	<div class="menuSegundoNivel" id="menuSegundoNivel">
+
+                    </div>                    
+
+                </div>
+
+            </div>
+
+            <div id="tituloSeccion" class="contenedorTitulo"  style="display:none;">
+
+                <div class="contenedorTitulo_tit1">
+
+                    <div class="contenedorTitulo_tit1_btnBox activaflecha2"><div class="contenedorTitulo_tit1_btn">&nbsp;</div></div>
+
+					<div class="contenedorTitulo_tit1_txt"><span>&nbsp;</span></div>
+
+                </div>
+
+                <div class="contenedorTitulo_box1" id="contenedorTitulo_Botones">
+
+                    <div class="saldos_btn1"></div>
+
+                    <div class="saldos_btn2"></div>
+
+                </div>
+
+            </div>        
+
+            <div id="div_contenedorPrincipal" class="contenedorPrincipal">
+
+            	<table class="paneles" cellpadding="0" cellspacing="0">
+
+                    <tr>
+
+                        <td class="panelIzquierdo displayN" valign="top">
+
+                        	<div class="menu3N"></div>                            
+
+                            <div class="opcion_carrusel" id="bannerIzq">
+
+								<div class="floatL">
+
+									<div id="bannerVariable" style="width:205px; height:78px; cursor:pointer;"></div>
+
+								</div>
+
+                            </div>                            
+
+                            <div class="menu4N floatL clear overflow">
+
+                            </div>                        
+
+                        </td>
+
+                        <td class="panelCentro2 iframeCli" valign="top">
+
+                            <iframe class="ifrContenedor" name="main" id="main" frameborder="0" scrolling="no" src="transacciones/Mul_TodasCtas/01b-MultiSaldos_REAL.htm"></iframe>
+
+                        </td>
+
+                        <td class="panelDerecho displayN" valign="top">&nbsp;</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="cortiContPrincipal"></div>			
+
+			<div class="contenedorPie1" id="srv" style="padding-top:20px !important;"></div>
+
+			<div class="contenedorPie2">
+
+            	<div class="contenedorPie2_ligas1">
+
+                </div>                
+
+                <div class="contenedorPie2_ligas3">
+
+                    <a class="showtooltip-copy">Copyright</a>
+
+                </div>
+
+        	</div>
+
+        </div>
+
+    </div>
+
+   <IFRAME id="APPS_FORM_MENU" name="APPS_FORM_MENU" src="menu-js.htm" frameborder='0' width='0' height='0' style="display:none;"></IFRAME>
+
+    <iframe id="iftimer" src="spanishdir/iftimer.htm" style="display:none"></iframe>
+
+    <input type="hidden" id="objs" value="1"/>
+
+    <INPUT TYPE="HIDDEN" ID="TIMEOUT" VALUE="">
+
+    <INPUT TYPE="HIDDEN" NAME="LASTRESET" VALUE="">
+
+    <INPUT TYPE="hidden" id="segRestan" VALUE="">		
+
+    <input type="button" name="exit" style = "display:none" id="_button_exit" value="0" onclick="return DoSubmit('EXIT');">
+
+    <INPUT TYPE=HIDDEN ID=DATAAUX  NAME=DATAAUX VALUE="">
+
+	<INPUT TYPE=HIDDEN ID=DATADEMO NAME=DATADEMO VALUE=""/>
+
+	<INPUT TYPE=HIDDEN ID=REGRESADEMO NAME=REGRESADEMO VALUE=""/>
+
+	<INPUT TYPE=HIDDEN ID=CONTINUADEMO NAME=CONTINUADEMO VALUE=""/>
+
+    <input type="hidden" id="titHdn" name="titHdn" value="" />	
+
+	<table id="tooltip-iconos" cellpadding="0" cellspacing="0">
+
+		<tr>
+
+			<td>
+
+				<div class="tooltip negrita color01589f">&nbsp;</div>
+
+				<div class="p_tooltip"></div>
+
+			</td>
+
+		</tr>
+
+	</table>
+
+    <div id="guarda" class="displayN"></div>
+
+<div id="tooltip">
+
+<table cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td class="tooltipTL"></td>
+
+				<td class="tooltipT"></td>
+
+				<td class="tooltipTR"></td>
+
+			</tr>
+
+			<tr>
+
+				<td class="tooltipL">&nbsp;</td>
+
+				<td class="tooltipC">&nbsp;</td>
+
+				<td class="tooltipR">&nbsp;</td>
+
+			</tr>
+
+			<tr>
+
+				<td class="tooltipBL"></td>
+
+				<td class="tooltipB"><div class="tooltipP"></div></td>
+
+				<td class="tooltipBR"></td>
+
+			</tr>
+
+		</table>
+
+	</div>	
+
+	<table id="tooltip-copy" cellpadding="0" cellspacing="0">
+
+		<tr>
+
+			<td>
+
+				<div class="tooltipcopy">
+
+					D.R. @ Copyright <span id="aniocopy" class="f11"></span>, Derechos Reservados. Banco Nacional de M&eacute;xico, S.A., integrante de Grupo Financiero Banamex.<br />
+
+					Isabel la Cat&oacute;lica 44. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico
+
+				</div>
+
+				<div id="tail-tooltip"></div>
+
+			</td>
+
+		</tr>
+
+	</table>	
+
+	<div id="cortinaOverlay" class="cerrarOverlay" style="display: none;"></div>
+
+	<div id="ventanaEmergente" class="ventanaEmergente" style="display:none;">
+
+		<div class="ventanaEmergente-data" id="ventanaEmergente-contenido" style="display: block;border:15px solid #C0C0C0;">
+
+			<table id="tabla_emergente" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+
+			<tbody><tr><td>
+
+						<div id="mensajeError_contenido_div">
+
+						</div>
+
+						<iframe id="mensajeError_contenido_ifrm" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>
+
+			</td></tr></tbody>
+
+			</table>
+
+		</div>
+
+	</div>		
+
+	<iframe id="nwd" src="if.htm" name="ndw" style="display:none"></iframe>    
+
+    <div id="cortinaOverlayEspecial" class="cerrarOverlayEspecial" style="display: none;"></div>
+
+		<div id="ventanaEmergenteEspecial" class="ventanaEmergenteEspecial" style="display:none;">
+
+			<div class="ventanaEmergente-dataEspecial" id="ventanaEmergente-contenidoEspecial" style="display: block;border:15px solid #C0C0C0;">
+
+				<table id="tabla_emergenteEspecial" cellspacing="20" style="background:#FFFFFF; border:2px solid #DEDEDE;">
+
+					<tbody>
+
+						<tr>
+
+							<td>
+
+								<div id="mensajeError_contenido_divEspecial"></div>
+
+								<iframe id="mensajeError_contenido_ifrmEspecial" src="if.htm" frameborder="0" scrolling="NO" noresize marginwidth="0" marginheight="0"></iframe>                        
+
+							</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</div>      
+
+    </body> 
+
+</html>  

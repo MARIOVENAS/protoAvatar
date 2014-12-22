@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>Layout Avatar</title>
+
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css" />
+
+		<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css" />
+
+	</head>
+
+	<body class="bg_demo">
+
+		<div class="anchoPopup">
+
+			<div class="cH-appPanelHead">
+
+				<div class="contentLogo2"></div>
+
+				<div class="float-right">
+
+					<div class="float-left marginPrint margin-top35" id="flechaLinks">
+
+						<span class="flechaGris float-left">&nbsp;</span>
+
+						<a href="javascript:window.print();" id="t0">Imprimir</a>
+
+					</div>
+
+					<div class="float-left marginPrint margin-top35" id="flechaLinks">
+
+						<span class="flechaGris float-left">&nbsp;</span>
+
+						<a href="javascript:window.close();" id="t1">Cerrar</a>
+
+					</div>
+
+				</div>
+
+				<div class="clear"></div>
+
+				<div class="border-solid"></div>
+
+			</div>
+
+			<div id="screenPrint">
+
+				<div class="clear"></div>
+
+				<div class="clear"></div>
+
+				<div class="width152">
+
+					<p class="margin-bottom5 strong padding-left18" id="t2">Compra de tiempo aire</p>
+
+					<p class="margin-bottom20 padding-left18" id="t3">Tu compra ha sido aplicada con número de autorización 091101.</p>
+
+					<div class="border-top"></div>
+
+					<div class="width139">
+
+						<div class="form-row margin-bottom5">
+
+							<label class="for-table" id="t4">Pago realizado por:</label>
+
+							<p>José Rivera López</p>
+
+							<div class="clear"></div>
+
+						</div>
+
+						<div class="form-row margin-bottom5">
+
+							<label class="for-table" id="t5">Fecha de operación:</label>
+
+							<p>09 Nov 2013</p>
+
+							<div class="clear"></div>
+
+						</div>
+
+						<div class="form-row">
+
+							<label class="for-table" id="t6">Hora de operación:</label>
+
+							<p>12:44:55 h</p>
+
+							<div class="clear"></div>
+
+						</div>
+
+					</div>
+
+					<div class="border-solid margin-bottom10"></div>
+
+					<div class="width139">
+
+						<div class="form-row margin-bottom5">
+
+							<label class="for-table" id="t7">Cuenta de retiro:</label>
+
+							<p>Mi tarjeta - Tarj. Clásica - MXN - 12780 - $ 15,987.13</p>
+
+							<div class="clear"></div>
+
+						</div>
+
+						<div class="form-row margin-bottom5">
+
+							<label class="for-table" id="t8">Número celular:</label>
+
+							<p>044 / 045 55 3504 9488</p>
+
+							<div class="clear"></div>
+
+						</div>
+
+						<div class="form-row margin-bottom5">
+
+							<label class="for-table" id="t9">Compañía celular:</label>
+
+							<p>Movistar</p>
+
+							<div class="clear"></div>
+
+						</div>
+
+						<div class="form-row margin-bottom5">
+
+							<label class="for-table" id="t10">Importe MXN:</label>
+
+							<p>$ 200.00</p>
+
+							<div class="clear"></div>
+
+						</div>
+
+					</div>
+
+					<div class="form-row">
+
+						<div class="clear"></div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="border-solid"></div>
+
+			<div id="footer">
+
+				<p id="t11">
+
+					Este recibo es s&oacute;lo de car&aacute;cter informativo para cualquier duda o aclaraci&oacute;n. No tiene validez oficial como com-<br />
+
+					probante legal o fiscal. Todos los Derechos Reservados 1998 - 2013 Grupo Financiero Banamex, S.A.
+
+					<br /><br />
+
+					Para cualquier duda o aclaraci&oacute;n comun&iacute;quese con nosotros al Tel. 1226 3990 &oacute; 01 800 110 3990
+
+				</p>
+
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+		<script type="text/javascript">
+
+			var es = new Array(
+
+                'Print',
+
+                'Close',
+
+                'Mobile top up',
+
+                'Your purchase have been applied with authorization number 091101.',
+
+                'Payment made by:',
+
+                'Operation date:',
+
+                'Operation time:',
+
+                'Withdrawal account:',
+
+                'Mobile number:',
+
+                'Carrier:',
+
+                'Amount MXN:',
+
+                'This receipt is for information purposes only, in case of any question or dispute. It does not have any official validity as a legal or Fiscal Invoice/Receipt. All right reserved 1998-2014 Grupo Financiero Banamex, S.A.<br /><br />If you have any questions or comment please dial 1226 3990 or 01 800 110 3990'
+
+            );
+
+            $(document).ready(function(){
+
+            	if( $( window ).height() > $( 'body' ).height()+150 ){
+
+				    self.resizeTo($( window ).width(), $( 'body' ).height()+150 );
+
+            	} 
+
+            });
+
+		</script>
+
+	</body>
+
+</html>

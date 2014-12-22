@@ -1,0 +1,537 @@
+
+
+	       <html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+     <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+     <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+
+
+<script type="text/javascript">
+
+
+
+	$(document).ready(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='chequeRango']").imageTick({
+
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+
+			image_tick_class: "radios"
+
+		});
+
+		
+
+		
+
+		$("input[name='chequeRango2']").imageTick({
+
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+
+			image_tick_class: "radios"
+
+		});
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	</script>
+
+<script type="text/javascript">
+
+
+
+	$(function(){
+
+		
+
+		$.imageTick.logging = true;
+
+		
+
+		$("input[name='chequeraPers']").imageTick({
+
+			tick_image_path: "JFP/regional/images/img_form/radio_check.png", 
+
+			no_tick_image_path: "JFP/regional/images/img_form/radio_empty.png",
+
+			image_tick_class: "radios"
+
+		});
+
+
+
+
+
+	$("input[type='checkbox']").imageTick({ 
+
+			tick_image_path: "JFP/regional/images/img_form/check_1.png", 
+
+			no_tick_image_path: "JFP/regional/images/img_form/no_check_1.png"
+
+		});
+
+        
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+
+
+	});
+
+	</script>
+
+
+
+
+
+
+
+<div class="contentSteps margin-topm18">
+
+	<div class="step1 active"><b>1</b> Captura</div>
+
+	<div class="step2"><b>2</b> Verifica</div>
+
+	<div class="step3"><b>3</b> Respuesta</div>
+
+	<div class="barrita">&nbsp;</div>
+
+</div>                 
+
+  <div class="clear"></div>
+
+				<div class="cH-appPanelHead float-left margin-top-2">
+
+                 <h3>Pagar Mi Tarjeta</h3>
+
+                </div>
+
+ <div id="jfpHelpLinkDiv">
+
+        <div class="margin-top6 titulo" id="flechaLinksOpcoes">
+
+			<span class="flechaGris float-left">&nbsp;</span>
+
+			<a href="#" class="float-left">&nbsp;Ayuda</a>
+
+		</div>
+
+  </div>      
+
+ <div class="clear"></div>
+
+
+
+  <p class="instructions">Selecciona una tarjeta de cr&eacute;dito y la cuenta retiro, indica los datos de pago y da clic en "Continuar".</p>
+
+                     <!--<span class="strong">Instruç&otilde;es</span>-->
+
+    
+
+<div class="width141">
+
+<div class="form-row">
+
+<label class="for-table">Cuenta de retiro:</label>
+
+                                <select class="width315">
+
+								  <option>Selecciona una cuenta</option>
+
+									<option value="GT" selected="selected">Cheques - 12002 - MXN - $ 62,294.10</option>
+
+									
+
+	</select>
+
+
+
+
+
+<div class="clear"></div>
+
+
+
+</div>
+
+<div class="form-row">
+
+<label class="for-table">Tarjeta de cr&eacute;dito:</label>
+
+    <select class="width315">
+
+									<option>Selecciona una tarjeta</option>
+
+									<option value="GT" selected="selected">Banamex - Tarjeta Cr&eacute;dito - 12780 - MXN: $ 15,987.00</option>
+
+									
+
+								</select>
+
+
+
+
+
+<div class="clear"></div>
+
+</div>
+
+
+
+<div class="form-row"><label class="for-table">&nbsp;</label>Tu fecha l&iacute;mite de pago es: 20 Ago 2013</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-row margin-bottom10">
+
+                                <label class="for-table">Importe:</label>
+
+								<label class="marginsRadios for-table radioR float-left"><input type="radio" name="chequeraPers" id="rdchequeraPers1" class="float-left" /></label>
+
+ <div class="float-left"> M&iacute;nimo a pagar: $ 930.00</div>
+
+                                <div class="clear"></div>
+
+                                </div>
+
+
+
+
+
+
+
+<div class="form-row margin-bottom10">
+
+                                <label class="for-table">&nbsp;</label>
+
+								<label class="marginsRadios for-table radioR float-left"><input type="radio" name="chequeraPers" id="rdchequeraPers2" class="float-left" /></label>
+
+ <div class="float-left">Pago para no generar intereses: $ 15,987.00</div>
+
+                                <div class="clear"></div>
+
+                                </div>
+
+
+
+
+
+
+
+<div class="form-row margin-bottom20">
+
+                                <label class="for-table">&nbsp;</label>
+
+								<label class="marginsRadios for-table radioR float-left"><input name="chequeraPers" id="rdchequeraPers3" type="radio" checked="checked" /></label>
+
+								<div class="float-left">Otra cantidad: $</div>
+
+								<div class="margin-left10 float-left">
+
+									
+
+									<input type="text" class="width100 margin-topm5IE text float-left TxtAR errorFocus paddingr3" title="Importe mayor al permitido" value="19,000.00" align="right" id="importe" /> 	
+
+                        <span class="errorB" >
+
+                                <span class="flecha2"></span>
+
+          						<span class="content_big" style="width:152px !important">
+
+                                Importe mayor al permitido</span>
+
+                                 </span> 					
+
+								</div>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+
+
+
+
+
+
+<div class="border-top"></div>	
+
+
+
+
+
+<div class="form-row margin-bottom10">
+
+                                <label class="for-table">Opciones<br>
+
+ adicionales:</label>
+
+								<label class="for-table checkR"><input name="makeOrSave" id="chMakeOrSave1" type="checkbox" checked="checked" /></label>
+
+								<div class="float-left padding0">Programar a fecha futura</div>
+
+                            </div>
+
+
+
+
+
+	<div class="form-row">
+
+                                <label class="for-table">&nbsp;</label>
+
+	<div class="float-left ancho100p paddingL175">
+
+								<input type="text" class="float-left margin-right15 width105 paddingl3" id="fechaFut" value="09 Sep 2012" >
+
+                                    <!--<input type="text" id="fechaFut" class="calendario1 f12 paddingT2" readonly/>-->
+
+                                    
+
+                                    <div class="icon-calendar margin-top2">&nbsp;</div>
+
+									
+
+                                    <div class="comboH">
+
+               <input type="text" id="selHoras2" class="selhoras f12normal paddingL2 " value="15:30"  />
+
+            
+
+             
+
+              </div>
+
+		
+
+	  </div>						
+
+								<div class="clear"></div>	
+
+						
+
+											
+
+						</div>
+
+                        
+
+                        
+
+<div class="form-row margin-bottom10">
+
+                                <label class="for-table">&nbsp;</label>
+
+	<div class="float-left">
+
+	  <label class="for-table checkR"><input name="makeOrSave" id="chMakeOrSave2" type="checkbox" disabled="disabled"/></label> </div><div class="float-left terminos-condiciones-mx padding0">
+
+      						Guardar como operaci&oacute;n frecuente 
+
+                           <br />
+
+                         Las operaciones programadas no pueden ser almacenadas como frecuentes.</div>
+
+      									
+
+                                        <div class="clear"></div>	
+
+						</div>        
+
+                                   
+
+                            
+
+                             
+
+                           <div class="cF-sideBySide cF-bottomNav margin-top0">
+
+				<div class="width156">&nbsp;</div>
+
+				<ul class="cN-primaryNav">
+
+					<li class="cM-spriteBase cN-primaryNavButton"><a href="layout_a.htm?subapps/Pack3/UpdateCheckbookRequest/screen2&SER&header_postlogin&footer_postlogin&left_menu_services">CONTINUAR</a></li>	
+
+				</ul>
+
+			 </div>
+
+                        
+
+                 
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+ <!-- Script para tootltips-->
+
+
+
+<script type="text/javascript">
+
+// Create the tooltips only on document load
+
+	$(document).ready(function()
+
+	{
+
+		// Tooltip para input type=text
+
+		//Dentro de tag <input> se debe poner el atributo title="...." con el texto que corresponda
+
+		$('input[title]').qtip({
+
+			position: {
+
+			    my: 'center left',  // Position my top left...
+
+				at: 'right center' // at the bottom right of...
+
+			},
+
+			style: {
+
+					
+
+					classes: 'ui-tooltip-shadow',
+
+					tip: {	
+
+						 width:9,
+
+						 height:17
+
+						}
+
+
+
+					}
+
+		});
+
+		/*************************************/
+
+
+
+		// Tooltip para selects
+
+		//Dentro de tag <select> se debe poner el atributo title="...." con el texto que corresponda
+
+		$('select[title]').qtip({
+
+			position: {
+
+			    my: 'center left',  // Position my top left...
+
+				at: 'right center' // at the bottom right of...
+
+			},
+
+			style: {
+
+					
+
+					classes: 'ui-tooltip-shadow',
+
+					tip: {
+
+						 width:9,
+
+						 height:17
+
+						}
+
+					}
+
+		});
+
+	});
+
+</script> 
+
+
+
+<script type="text/javascript">
+
+            $(document).ready(function(){
+
+				ajustarOverlay();
+
+				ajusta_tooltpis();
+
+				funciones_login();
+
+            });
+
+        </script>

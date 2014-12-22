@@ -1,0 +1,281 @@
+       <html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+     <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	 <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+     <script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function(){
+
+        
+
+        $.imageTick.logging = true;
+
+        
+
+        $("input[type='checkbox']").imageTick({ 
+
+            tick_image_path: "../../../../JFP/regional/images/img_form/check_1.png", 
+
+            no_tick_image_path: "../../../../JFP/regional/images/img_form/no_check_1.png"
+
+        });
+
+        
+
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+    
+
+    });
+
+    </script>
+
+    
+
+    <div id="cont-chequeras">
+
+                    <div class="cH-appPanelHead">
+
+                        <h3 id="t0">Consulta y Modificaci&oacute;n de Estatus de Cheques</h3>
+
+                    </div>
+
+                    
+
+						<div class="width103">
+
+							
+
+							 <p class="strong topNotes" id="t1">Detalle de la cuenta.</p>
+
+                             <div class="form-row">
+
+                                <label class="for-table" id="t2">Cuenta:</label>
+
+                                <span>Cheques M.N 002 Cheques</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                            <div class="form-row margin-bottom20">
+
+                                <label class="for-table" id="t3">Cheque solicitado:</label>
+
+                                <span>25</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							
+
+                            <div class="border-top"></div>
+
+                            
+
+                            <p class="strong" id="t4">Detalle de cheques</p>
+
+                            <p class="margin-top5 topNotes" id="t5">Selecciona uno o varios cheques, indique el estatus deseado para cada uno y d&eacute; click en "Continuar".</p>
+
+                            <div id="subapp-box" style="margin:0px !important; min-height:0px !important; width:100% !important">
+
+                            <table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom20">
+
+                               <tbody>
+
+                                  <tr>
+
+                                    <th width="1%" valign="middle" class="borderLabels pad15"></th>
+
+                                    <th width="15%" valign="middle" class="borderLabels" id="t6">N&uacute;mero de cheque</th>
+
+                                    <th width="15%" valign="middle" scope="col" class="borderLabels" id="t7">Estatus del cheque</th>
+
+                                    <th width="25%" valign="middle" scope="col" class="alignRight borderLabels" id="t8">Importe</th>
+
+                                  </tr>
+
+                                  <tr class="degrade">
+
+                                    <td valign="middle" class="border9A pad15"><input type="checkbox" checked="checked" id="ch1" /></td>
+
+                                    <td valign="middle" class="border9A">25</td>
+
+                                    <td valign="middle" class="border9A" id="t9">LIBERADO CR</td>
+
+                                    <td class="alignRight border9A" valign="middle">$14.201,00</td>
+
+                                  </tr>
+
+                                </tbody>
+
+                            </table>
+
+                            </div>
+
+                            <div class="clear"></div>
+
+                            <div class="form-row sinMarginBottom" style="margin-top:20px\0/;">
+
+                                <label class="for-table" >&nbsp;</label>
+
+								<label class="for-table" >&nbsp;</label>
+
+                                <select  style="*margin-top:-6px !important;margin-top:-1px !important\0/;  " >
+
+									<option id="t10">Cambiar estatus</option>
+
+                                    <option id="t11">Desactivar (No liberados)</option>
+
+                                </select>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+                        </div>
+
+						
+
+						<div class="clear"></div>
+
+						<div class="cF-sideBySide cF-bottomNav">
+
+							<div class="width118">&nbsp;</div>
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton"><a onClick="Cheqp();" id="t12">CONTINUAR</a></li>	
+
+								<li class="cN-primaryNav">
+
+								<div id="flechaLinks">
+
+									<span class="flechaazul float-left"></span>
+
+									<a class="sinBold" onClick="Cheqp2();" href="javascript:void(0);" id="t13">Regresar</a>
+
+								</div></li>	
+
+							</ul>
+
+						 </div>	
+
+						<div class="clear"></div>
+
+                        </div>
+
+                        <script>
+
+                        function Cheqp(){
+
+		
+
+						top.Consultam7();
+
+
+
+										}
+
+										
+
+						 function Cheqp2(){
+
+		
+
+						top.Consultam();
+
+
+
+										}				
+
+										
+
+										es=new Array( 'Check status inquiry',
+
+						  'Account Detail',
+
+						  'Account:',
+
+						  'Requested check:',
+
+						  'Check details',
+
+						  'Select one or more checks, indicate the status desired for each check, and click &quot;Continue&quot;.',
+
+						  'Check number:',
+
+						  'Check status',
+
+						  'Amount',
+
+						  'RELEASED WITH AMOUNT',
+
+						  'Change the selection status',
+
+						  'Activate (Released)',
+
+						  'CONTINUE',
+
+						  'Return'
+
+						  
+
+	);
+
+										
+
+	</script>				
+
+    
+
+    	</body>
+
+                        
+
+                        
+
+                    </html>

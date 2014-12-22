@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>Pago Tarjetas</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+    <link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+    <script type="text/javascript">
+
+	
+
+		function mCambios(){
+
+			window.parent.document.getElementById("iframeConte").contentWindow.act_datos2();
+
+			}
+
+						
+
+		$(document).ready(function(){
+
+			
+
+			setTimeout(function(){mCambios();},1000);
+
+			
+
+        });
+
+	</script>
+
+</head>
+
+<body>
+
+<div id="mensajeError_contenido_div" style="background-color:#FFF; height:auto;">
+
+    <div id="s0" style="font-size:22px;">Pago de cr&eacute;ditos</div>
+
+	<div class="marginT8" style="font-size:12px; color:#666; height:15px;">
+
+    	<div id="s1" class="floatL">D&aacute; clic en &quot;Confirmar&quot; para aplicar el pago.</div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    
+
+    <div class="marginT20">
+
+    	<div class="ancho100p borderBSolid9 paddingT4" style="padding-bottom:3px;"><span id="s2" class="color333 negrita" style="font-size:11px; margin-left:5px;">Cuentas</span></div>
+
+        <div id="s3" class="color333 negrita marginL20 marginT8" style="font-size:11px;">Cuenta de retiro:</div>
+
+      <div class="ancho100p marginT10 paddingB15 borderBSolid9">
+
+        	<div id="ttarjeta" class="color8f floatL" style="font-size:11px; margin-left:25px">Cheques</div>
+
+        	<div id="dtarjeta" class="color8f floatR" style="font-size:11px; margin-right:25px">**<span class="f11" id="cuenta1">002 Saldo MXN</span><span class="f11">: $45,000.00</span></div>
+
+            <div class="clear"></div>
+
+        </div>   
+
+        <div id="s4" class="color333 negrita marginL20 marginT8" style="font-size:11px;">Tarjeta Cr&eacute;dito</div>
+
+        <div class="ancho100p marginT10 paddingB15 borderBSolid9">
+
+        	<div id="tdeposito" class="floatL color8f" style="font-size:11px; margin-left:25px">Tarjeta Cr&eacute;dito</div>
+
+            <div id="ddeposito" class="floatR color8f" style="font-size:11px; margin-right:25px">**796 Saldo MXN: $50,000.00</div>
+
+            <div class="clear"></div>
+
+        </div> 
+
+        <div id="s5" class="color333 negrita marginT15 marginL8" style="font-size:11px; margin-left:5px;">Datos del pago</div>
+
+        <div class="ancho100p marginT15">
+
+        	<div style="padding:0 30px 0 30px">
+
+                <table cellpadding="0" cellspacing="0" class="ancho100p">
+
+                    <tr class="bgF1F2F2">
+
+                        <td align="left" colspan="1" width="50%" class="padding3"><span id="s6" class="color333 negrita marginL3" style="font-size:11px">Importe&nbsp; MXN</span></td>
+
+                        <td align="right" colspan="1" width="50%" class="padding3"><span class="color8f" style="font-size:11px;">$ </span><span class="color8f" style="font-size:11px;" id="importe1">15,897.00</span></td>
+
+                    </tr>
+
+                    <tr id="fechaprogramada">
+
+                        <td align="left" colspan="1" width="50%" class="padding3"><span id="s7" class="color333 negrita marginL3" style="font-size:11px">Fecha futura</span></td>
+
+                        <td align="right" colspan="1" width="50%" class="padding3"><span class="marginL10 color8f" style="font-size:11px;" id="fecha1">20/09/2013</span></td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ancho100p marginT60">
+
+    	<table cellpadding="0" cellspacing="0" width="100%">
+
+        <tr><td width="50%" align="left" valign="top">
+
+        	<input id="s8" type="button" align="left" class="btnRJ86login" value="Regresar" onclick="javascript:regresa()"/></td>
+
+        <td width="50%" align="right" valign="top">
+
+            <input id="s9" type="button" align="right" class="btnAZ86login" value="Confirmar" onclick="javascript:avanza();"/>
+
+            
+
+            </td>
+
+        </tr></table>
+
+    </div>  
+
+</div>
+
+
+
+<script>
+
+ function avanza() {
+
+	 parent.$.modal(			
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:499,
+
+			heightDivIfrm:400,
+
+			srcIfrm:'bbAvatar/modal/pagocreditosapli3.htm'
+
+		}
+
+	);
+
+	
+
+	 
+
+	 }
+
+	 
+
+	  function regresa() {
+
+	 parent.$.modal(			
+
+		{
+
+			closeHTML: '',
+
+			opacity:60,
+
+			overlayClose:false,
+
+			flagDiv:false,
+
+			widthDivIfrm:499,
+
+			heightDivIfrm:350,
+
+			srcIfrm:'bbAvatar/modal/pagocreditos.htm'
+
+		}
+
+	);
+
+	
+
+	 
+
+	 }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+﻿<div class="graphite">
+
+	<ul class="accordion" id="accordion-1">
+
+		<span class="border-topDotted">&nbsp;</span>
+
+		<li>
+
+			<a id="t26" class="dcjq-parent 2n dosLineas_text" href="javascript:cambiaP1();">CAMBIO DE CLAVES DE ACCESO</a>
+
+		</li>
+
+		<span class="border-topDotted">&nbsp; </span>
+
+		<!--<li>
+
+			<a id="t27" class="dcjq-parent 2n dosLineas_text" href="javascript:cambiaP2();">CAMBIO DE PIN DE TARJETA DE CR&Eacute;DITO O D&Eacute;BITO</a>
+
+		</li>
+
+		<span class="border-topDotted">&nbsp; </span>-->
+
+		<li>
+
+			<a id="t28" class="dcjq-parent 2n dosLineas_text" href="javascript:cambiaP3();">CONSULTA DE CONTRATO DE BANCA ELECTR&Oacute;NICA</a>
+
+		</li>
+
+	</ul>
+
+	<span class="border-topDotted">&nbsp; </span>
+
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		left_menu_fun();
+
+		link_click = getURLParameter('link');
+
+		$('#t26').click();
+
+		$('#'+link_click).click();
+
+    });
+
+</script>

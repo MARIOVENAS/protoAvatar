@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Layout Avatar</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="../JFP/css/common/JPPTemp.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/css/widgets/jquery.qtipW3.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/latamCommon.css" />
+	<link rel="stylesheet" type="text/css" href="../JFP/regional/css/localStyles.css" />
+	<script type="text/javascript" src="../JFP/js/jquery/jquery-1.5.1.js"></script>
+	<script type="text/javascript" src="../JFP/js/script3.js"></script>
+	<script type="text/javascript" src="../JFP/js/jquery/plugins/plugins.js"></script>
+	<script type="text/javascript" src="../JFP/js/langManagement.js"></script>
+</head>
+
+<body>
+	<div class="overlay"></div>
+	<div class="overlay_trans"></div>
+<!--inicia contenedor principal-->
+	<div id="wrap" class="cS-structMainContainer">
+<!--inicia header-->
+		<div id="header">
+			<div class="utilities_nav" id="navegacionPrincipal"></div>
+			<div class="citibank-containerImg">
+				<a href="#"><div id="citibank-logo"></div></a>
+				<div id="citibank-imageb"></div>
+			</div>
+<!--termina header-->
+		</div>
+		<div class="cS-structBodyContainer">
+			<div id="title-section" class="cH-appPageHead height20">
+				<div class="float-left"><h1 id="t105">SESI&Oacute;N FINALIZADA</h1></div>
+			</div>
+			<div class="bg_demo overflow">
+				<div id="content">
+					<div id="subapp-box" class="noleftmenu float-left">
+						<div class="cH-appPanelHead margin-top-2" style="margin-bottom:10px;">
+							<h4 id="t106">Mensaje</h4>
+							<p style="line-height:18px;">
+								<span class="strong" id="t107">¡Queremos saber tu opinión!</span><br/>
+								<span id="t108">Ayúdanos contestando las siguientes preguntas:</span>
+								<a href="#" class="link" id="t109">Haz click aquí</a>
+							</p>
+						</div>
+						<div class="cH-appPanelHead margin-top-2" style="margin-bottom:10px;">
+							<p style="line-height:18px;"><span class="strong" id="t110">Recuerda:</span><br/>
+								<span id="t111">
+									Banamex NUNCA te solicitará información específica de tus cuentas Bancarias o Claves de acceso, via correo electrónico ni por páginas electrónicas referenciadas desde un correo electrónico.
+								</span>
+							</p>
+						</div>
+						<div class="cH-appPanelHead margin-top-2">
+							<p style="line-height:18px;" id="t112">Si deseas comunícate a Servicio a Clientes:</p><br/>
+							<ul class="bulletList padding-left20">
+									<li id="t113">De la Ciudad de México: 1226 3990</li>
+									<li id="t114">Del interior sin costo: 01800 110 3990</li>
+							</ul>
+							<p style="line-height:18px;" id="t115">Horario de atención de lunes a sábado de 7:00 a 21:00 h.</p>
+						</div>
+						<div class="clear"></div>                    
+						<div class="border-top margin-top25">                 
+							<ul class="cN-primaryNav">
+								<li class="cM-spriteBase cN-primaryNavButton margin-top15">
+									<a href="01-Log-in.html" id="t116">REGRESAR A LA PÁGINA DE INICIO</a>
+								</li>	
+							</ul>       
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			ajustarOverlay();
+			ajusta_tooltpis();
+			funciones_loginP();
+		});
+
+		$( document ).ajaxStop( function(){
+			$( '#t0' ).hide();
+		});
+	</script>
+	<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript"> 
+		google.load('search', '1', {language : 'es'});
+	</script>
+
+</body>
+<!--termina contenedor principal-->
+</html>

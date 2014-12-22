@@ -1,0 +1,7325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+<title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="aa0cf85a-af21-4344-bce4-e56fe7dca4ea" ><input type=hidden name="EWF_SYS_1" value="N2T3OEGFMJ7TU9A3P4ZB6W9XP@4JSES32@ETIRBL" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZSI3-PAG_SOLICITUD"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="pagSolicitud.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="6"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+		<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+		<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+		<style type="text/css">
+
+			.msgtc { padding:10px 0px 0px 20px; border-top:1px dotted #CCCCCC; }
+
+		</style>
+
+		<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+
+
+    	<script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>		
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+<script>parent.setFecha("19/04/12    10:45:26  ");
+
+var regresatransaccion = parent.document.getElementById("REGRESADEMO").value;
+
+	var auxdemo = new Array();
+
+	var combosdemo = new Array();
+
+	var datademo = new Array();
+
+	function leerDatosDemo(){
+
+	if(regresatransaccion=="true"){
+
+			parent.document.getElementById("REGRESADEMO").value = "";	
+
+			auxdemo = parent.document.getElementById("DATADEMO").value.split("|");
+
+			alert(auxdemo);
+
+			combosdemo = auxdemo[0].split(",");
+
+			if(combosdemo[0]=="true"){
+
+				datademo = auxdemo[1].split(",");
+
+				alert(datademo);
+
+				$("#yearpicker1").val(datademo[0]);
+
+				$("#checkCalendario").attr('checked','checked');
+
+				activaCheck('checkCalendario','Programar');
+
+				toggleChecks('checkCalendario','DATA14');
+
+			}else{
+
+				$("#yearpicker1").val("");
+
+			}
+
+			if(combosdemo[1]=="true"){
+
+				$("#DATA14").attr("checked", true);
+
+				toggleChecks('DATA14','checkCalendario');
+
+			}else{
+
+				$("#DATA14").attr("checked", false);
+
+			}
+
+		}
+
+	}
+
+
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="104517  ";b$Cont="104526  "
+
+	//
+
+    </script>
+
+		<script language="JavaScript">
+
+			theForm=document.forms[0];
+
+
+
+function Initialize() 
+
+{
+
+	var comp = "";
+
+	var nomcomps;
+
+
+
+	if (typeof(document.forms[0].checkrf)!="undefined")
+
+	{
+
+		    HabilitaCF(document.forms[0].checkrf) ;
+
+           try
+
+		   {
+
+		    MakeInvisibles(document.getElementById("comfiscal"));
+
+		   }
+
+		    catch(E){ }
+
+	}
+
+
+
+	if (typeof(document.forms[0].checkfp)!="undefined")
+
+		 HabilitaCF(document.forms[0].checkfp) ;
+
+	if (typeof(document.forms[0].checkfps)!="undefined")
+
+		 HabilitaCF(document.forms[0].checkfps) ;
+
+	if (typeof(document.forms[0].checkpf)!="undefined")
+
+		 HabilitaCF(document.forms[0].checkpf) ;
+
+	if (typeof(document.forms[0].checkCalendario)!="undefined")
+
+	{
+
+		if ('SPANISH' == 'SPANISH')
+
+			var idioma = 1;
+
+		else
+
+			var idioma = 2;
+
+		if ("ZSI3"!= 'Z3SP') 
+
+		{
+
+			cCEWF('19/04/12    10:45:26  ',idioma,0,1,30);
+
+		}
+
+	}
+
+
+
+	if ("ZSI3"== 'ZTCP' || "ZSI3"== 'ZPTJ' || "ZSI3"== 'ZPTC' || "ZSI3"== 'ZPTB')
+
+	{
+
+		ObtenerNumComp(5, 9, "|");
+
+		FechaCompleta();
+
+	}
+
+
+
+	if ("ZSI3"== 'Z7CP') 
+
+	{
+
+		ObtenerNumComp(6, 10, "|");
+
+		FechaCompleta();
+
+	}
+
+	
+
+	if ("ZSI3"== 'Z3IA') 
+
+	{
+
+		ObtenerNumComp(6, 10, "|");
+
+		FechaCompleta();
+
+	}
+
+
+
+	if ("ZSI3"== 'Z2TT')
+
+	{
+
+		ObtenerNumComp(9, 13, "|");
+
+		FechaCompleta();
+
+	}
+
+
+
+	if ("ZSI3"== 'Z8CT') 
+
+	{
+
+		ObtenerNumComp(10, 14, "|");
+
+		FechaCompleta();
+
+	}
+
+
+
+	if ("ZSI3"== 'Z3SP' || "ZSI3"== 'ZGDF' || "ZSI3"== 'ZPPH' || "ZSI3"== 'ZPLI'  || "ZSI3"== 'ZPSC' || "ZSI3"== 'ZAME' || "ZSI3"== 'ZAMD') 
+
+	{
+
+		ObtenerNumComp(3, 7, "|");
+
+		FechaCompleta();
+
+	}
+
+
+
+	if ("ZSI3"== 'ZPIB' && "ZSI3-PAG_SOLICITUD"=="ZPIB-PAGINASOLICITUD") 
+
+	{
+
+		ObtenerNumComp(3, 7, "|");
+
+		FechaCompleta();
+
+	}
+
+
+
+	if ("ZSI3"== 'Z3II' || "ZSI3"== 'Z3IE') 
+
+	{
+
+		ObtenerNumComp(5, 6, "|");
+
+		FechaCorta();
+
+	}
+
+	
+
+	if ("ZSI3"== 'ZSI3') 
+
+	{
+
+		ObtenerNumComp(6, 7, "|");
+
+		FechaCorta();
+
+	}
+
+
+
+	function FechaCompleta() 
+
+	{
+
+		document.forms[0].DIA.name=ObtenerNomComp(comp);
+
+		document.forms[0].MES.name=ObtenerNomComp(comp);
+
+		document.forms[0].HRS.name=ObtenerNomComp(comp);
+
+		document.forms[0].MIN.name=ObtenerNomComp(comp);
+
+		radio = ObtenerNomComp(comp);
+
+		if (navigator.appName == "Netscape")
+
+		{
+
+			for (var i=0;i<document.forms[0].elements.length ;i++)
+
+			{
+
+				document.forms[0].elements[i].name;
+
+			if(document.forms[0].elements[i].name == "AMPM")
+
+				document.forms[0].elements[i].name = radio;
+
+			}
+
+		}
+
+		if (navigator.appName == "Microsoft Internet Explorer")
+
+		{
+
+			for (var i=0;i<document.forms[0].elements.length ;i++)
+
+			{
+
+				if(document.forms[0].elements[i].name == "AMPM")
+
+					document.forms[0].elements[i].name = radio;
+
+			}	
+
+		}
+
+	}
+
+
+
+	function FechaCorta() 
+
+	{
+
+		document.forms[0].DIA.name=ObtenerNomComp(comp);
+
+		document.forms[0].MES.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'ZTCP' || "ZSI3"== 'ZPTJ' || "ZSI3"== 'Z3II' || "ZSI3"== 'Z3IE') 
+
+	{
+
+		ObtenerNumComp(4, 4, "|");
+
+		document.forms[0].FD2.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'Z2TT') 
+
+	{
+
+		ObtenerNumComp(8, 8, "|");
+
+		document.forms[0].FD2.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'Z3SP' || "ZSI3"== 'ZGDF' || "ZSI3"== 'ZPSC') 
+
+	{
+
+		ObtenerNumComp(2, 2, "|");
+
+		document.forms[0].FD2.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'Z3EC') 
+
+	{
+
+		ObtenerNumComp(6, 6, "|");
+
+		document.forms[0].FD2.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'ZTCP' || "ZSI3"== 'ZPTJ' || "ZSI3"== 'Z3II' || "ZSI3"== 'Z3IE' || "ZSI3"== 'Z7CP' || "ZSI3"== 'ZPTC') 
+
+	{
+
+		ObtenerNumComp(14, 14, "|");
+
+		document.forms[0].FREC.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'Z2TT')
+
+	{
+
+		ObtenerNumComp(17, 17, "|");
+
+		document.forms[0].FREC.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'ZPIB' && "ZSI3-PAG_SOLICITUD"!="ZPIB-PAGINASOLICITUD")
+
+	{
+
+		ObtenerNumComp(25, 25, "|");
+
+		document.forms[0].FREC.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'Z8CT')
+
+	{
+
+		ObtenerNumComp(15, 15, "|");
+
+		document.forms[0].FREC.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'Z3SP' && "[servmigrado]"=='SI')
+
+	{
+
+		ObtenerNumComp(17, 17, "|");
+
+		document.forms[0].FREC.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	if ("ZSI3"== 'Z2TT') 
+
+	{
+
+		ObtenerNumComp(18, 19, "|");
+
+		ObtenerNumComp(20, 21, "|");
+
+		Beneficiario();
+
+	}
+
+
+
+	if ("ZSI3"== 'Z3OP') 
+
+	{
+
+		ObtenerNumComp(9, 10, "|");
+
+		ObtenerNumComp(11, 12, "|");
+
+		Beneficiario();
+
+	}
+
+
+
+	if ("ZSI3"== 'ZPIB') 
+
+	{
+
+		ObtenerNumComp(22, 23, "|");
+
+		ObtenerNumComp(26, 27, "|");
+
+		Beneficiario();
+
+	}
+
+	
+
+	if ("ZSI3"== 'Z3SP') 
+
+	{
+
+		calendarioModal();
+
+	}
+
+
+
+	function Beneficiario() 
+
+	{
+
+		document.forms[0].CORREO.name=ObtenerNomComp(comp);
+
+		document.forms[0].MSJ.name=ObtenerNomComp(comp);
+
+		document.forms[0].CEL.name=ObtenerNomComp(comp);
+
+		document.forms[0].TEL2.name=ObtenerNomComp(comp);
+
+	}
+
+
+
+	function ObtenerNumComp(numcompinicio, numcompfin, separador) 
+
+	{
+
+		for (; numcompinicio<=numcompfin; numcompinicio++)
+
+			comp = comp + ("DATA" + numcompinicio + separador);
+
+		return comp;
+
+	}
+
+
+
+	function ObtenerNomComp(cadena) 
+
+	{
+
+		var separador = "|";
+
+		for (i=0; i < cadena.length; i++)
+
+		{
+
+			if (cadena.charAt(i) == separador)
+
+			{
+
+				nomcomps = cadena.substring(0,i);
+
+				comp = cadena.substring(i + separador.length, cadena.length);
+
+			    return nomcomps;
+
+			}
+
+	   }
+
+	}
+
+}
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+function VerificaSeleccion(Combo) 
+
+{
+
+   
+
+	if (Combo.selectedIndex > 0)
+
+	   	{			
+
+   		  return true; 
+
+                                  
+
+                }
+
+        else
+
+                {
+
+                   return false;
+
+                }
+
+ }
+
+
+
+function Valida_CSS2 (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg)
+
+{
+
+   var Numeros="";
+
+   var Letras="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzñÑ@-_$., ";
+
+   var Validos="";
+
+   var Txt_MAY = Campo_Txt.value;
+
+   var invalidos = 0;	
+
+
+
+if (Req == "SI" && Txt_MAY.length==0)
+
+    {
+
+    Campo_Txt.focus();
+
+    return false;
+
+    }	
+
+else
+
+   {
+
+   (Tipo_Validacion == 1) ?
+
+    	Validos = Numeros:
+
+
+
+   		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+
+
+   Validos = Validos + Caracteres_Extras;
+
+		
+
+   for (i=0; i < Txt_MAY.length; i++)
+
+	 for (j=0; j < Validos.length; j++)
+
+
+
+	   	if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+			if (j+1 < Validos.length)
+
+	 			continue;
+
+	 		else
+
+	 		    {
+
+	                        //alert (Msg);
+
+				document.forms[0].DATA1.focus();
+
+	 			return true
+
+	 		    }
+
+		else 
+
+   			break;
+
+   return false;
+
+   }
+
+}
+
+
+
+var LengConf;
+
+function Conf_Msg(id_msg)
+
+{
+
+  var msg;
+
+ 
+
+    switch(id_msg)
+
+    {
+
+      case 1: msg='Cuenta Origen: ';
+
+	      break;
+
+      case 2: msg='Cuenta Destino: ';
+
+	      break;
+
+      case 3: msg='Importe: $';
+
+	      break;
+
+      case 4: msg='Solicito comprobante fiscal:SI ';
+
+	      break;
+
+      case 5: msg='RFC: ';
+
+	      break;
+
+      case 6: msg='IVA: $';
+
+	      break;
+
+      case 7: msg='Su operaci\u00F3n fu\u00E9 programada para: ';
+
+	      break;
+
+      case 8: msg='Fecha: ';
+
+	      break;
+
+      case 9: msg='Hora: ';
+
+	      break;
+
+      case 10: msg='Compraventa: ';
+
+	      break;
+
+      case 11: msg='Tipo de Pago: ';
+
+	      break;
+
+      case 12: msg='Folio: ';
+
+	      break;
+
+      case 13: msg='Nombre del Cliente/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 14: msg='Formulario: ';
+
+	      break;
+
+      case 15: msg='N\u00FAmero de Tarjeta: ';
+
+	      break;
+
+      case 16: msg='N\u00FAmero de cuenta: ';
+
+	      break;
+
+      case 17: msg='Referencia Alfan\u00FAmerica: ';
+
+	      break;
+
+      case 18: msg='Referencia N\u00FAmerica: ';
+
+	      break;
+
+      case 19: msg='N\u00FAmero de Chequeras: ';
+
+	      break;
+
+      case 20: msg='Su operaci\u00F3n: ';
+
+	      break;
+
+      case 21: msg='La siguiente p\u00E1gina le mostrar\u00E1 los datos de su operaci\u00F3n, verifique que est\u00E9n correctos y haga clic en el bot\u00F3n aceptar para que se aplique su operaci\u00F3n.';
+
+	      break;
+
+      case 22: msg='Tipo de Persona: ';
+
+	      break;
+
+      case 23: msg='Su envi\u00F3 ser\u00E1 en: ';
+
+	      break;
+
+      case 24: msg='Mismo d\u00EDa. ';
+
+	      break;
+
+      case 25: msg='24 horas. ';
+
+	      break;
+
+      case 26: msg='48 horas. ';
+
+	      break;
+
+      case 27: msg='No. Contrato: ';
+
+	      break;
+
+      case 28: msg='Sucursal Destino: ';
+
+              break;
+
+      case 29: msg='Tipo de Inversi\u00F3n: ';
+
+              break;
+
+      case 30: msg='Tipo de Operaci\u00F3n: ';
+
+              break;
+
+      case 31: msg='Importe en D\u00F3lares: ';
+
+              break;
+
+      case 32: msg='Cheque inicial: ';
+
+              break;
+
+      case 33: msg='Cheque final: ';
+
+              break;
+
+      case 34: msg='No. de Contrato de Inversi\u00F3n: ';
+
+              break;
+
+      case 35: msg='No. Klick Card Cr\u00E9dito: ';
+
+              break;
+
+      case 36: msg='No. Klick Card D\u00E9bito: ';
+
+              break;
+
+      case 37: msg='L\u00EDnea de Consumo: ';//hay que revisarla
+
+              break;
+
+      case 38: msg='Tipo de Entrega: '
+
+	      break;
+
+      case 39: msg='Acciones: ';
+
+              break;
+
+      case 40: msg='Fecha de Alta: ';
+
+              break;
+
+      case 41: msg='Tipo de Inversi\u00F3n / No. de Contrato: ';
+
+              break;
+
+      case 42: msg='No. de Inversi\u00F3n: ';
+
+              break;
+
+      case 43: msg='Plazo: ';
+
+              break;
+
+      case 44: msg='Instrucciones al Vencimiento: ';
+
+              break;
+
+      case 45: msg='Cuenta de Rembolso: ';
+
+              break;
+
+      case 46: msg='Traspaso a: ';
+
+              break;
+
+      case 47: msg='Abono a:';
+
+	      break;
+
+      case 48: msg='El tipo de cambio que se aplique, ser\u00E1 el vigente en el d\u00EDa y hora en que se realice la operaci\u00F3n.';
+
+	      break;
+
+      case 49: msg='Importe en d\u00F3lares:';
+
+	      break;
+
+	      
+
+      case 50: msg='Tarjeta: ';   							
+
+	      break;
+
+      case 51: msg='Importe a Parcializar: $';  
+
+	      break;
+
+      case 52: msg='Interes: $';  							
+
+	      break;
+
+      case 53: msg='Interes Diferido: $';  			
+
+	      break;
+
+      case 54: msg='Monto Diferido: $';  				
+
+	      break;
+
+      case 55: msg='Pago Mensual: $';  				
+
+	      break;
+
+      case 56: msg='Tarjeta Premia:  ';
+
+	      break;
+
+      case 57: msg='Cuenta a Incorporar:  ';
+
+	      break;
+
+      case 58: msg='Tarjeta de Credito Titular:  ';
+
+	      break;	      
+
+      case 59: msg='No. de Tarjeta: ';
+
+	      break;	
+
+      case 60: msg='Límite a Asignar: ';
+
+	      break;	
+
+      case 61: msg='Tipo de Retiro: ';
+
+	      break;	
+
+      case 62: msg='Monto a Retirar: ';
+
+	      break;
+
+		case 63: msg='Afore NSS: ';
+
+	      break;
+
+	  case 64: msg='Beneficiario: ';
+
+	      break;
+
+	  case 65: msg='RFC/CURP: ';
+
+	      break;
+
+	  case 66: msg='Sector Económico: ';
+
+	      break;
+
+	  case 67: msg='Nombre/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 150: msg='Una vez aceptada no podr\u00E1 cancelar su operaci\u00F3n.';
+
+              break;
+
+      case 151: msg='Una vez recibida su instrucci\u00F3n no podr\u00E1 cancelar su operaci\u00F3n.';
+
+	      break;
+
+      case 152: msg='Correo Electr\u00F3nico del Beneficiario: ';
+
+	      break;
+
+	    case 200: msg="Verifica los datos de tu operación."; 
+
+	    	break;
+
+	    case 201: msg="Paso 2 de 3"; 
+
+	    	break;
+
+	    case 202: msg="Paso 3 de 3"; 
+
+	    	break;	    	
+
+	    case 203: msg="Paso 3 de 4";  /*YA NO SE UTILIZA*/ 
+
+	    	break;
+
+	    case 204: msg="Paso 2 de 2"; 
+
+	    	break;
+
+	    case 205: msg="Número Celular del Beneficiario: "; 
+
+	    	break;
+
+	    case 206: msg="Compañía Celular: "; 
+
+	    	break;	    	
+
+	    default: msg='Verifique que sus datos est\u00E9n correctos antes de enviar su operaci\u00F3n.';
+
+    }
+
+
+
+  return(msg);
+
+}
+
+
+
+var z=new Array();
+
+var answ;
+
+var myDate=new Date();
+
+
+
+function Conf_Main(id_tran)
+
+{
+
+  var mensaje='';
+
+  var programada;
+
+  programada=Conf_VP(z[6],z[7],z[8],z[9],z[10]);
+
+  if(programada=='') mensaje=Conf_Msg(200) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+  else mensaje=Conf_Msg(200) + '\n' + Conf_Msg(151) + '\n\n' ;
+
+  
+
+  switch(id_tran)
+
+  {
+
+	case 'TPT'://traspaso pago a terceros
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(67) + z[16] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12]  + '\n' + Conf_Msg(152) + z[13] + '\n' + Conf_Msg(205) + z[14] + '\n' + Conf_Msg(206) + z[15] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      break;
+
+    case 'TCVDP': //traspaso compraventa de divisas cuentas propias 
+
+      if(programada=='') mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(2) + z[3] + '\n' + Conf_Msg(31) + z[4] + '\n' + programada;
+
+      break;
+
+    case 'TCVDT': //traspaso compraventa de divisas terceros
+
+      if(programada=='') mensaje=Conf_Msg(200) + '\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + '\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(2) + z[3] + '\n' + Conf_Msg(31) + z[4] + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12] + '\n' + programada;
+
+      break;
+
+    case 'CCB': //pago tarjeta CCB
+
+      if(programada=='') mensaje=Conf_Msg(200) +"\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + "\t\t" + Conf_Msg(201)+'\n\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(49) + z[3] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      break;
+
+    case 'PI': //pago interbancario cheques y tarjeta de debito
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n';
+
+      if (z[21]==true)//cheques
+
+      {
+
+        mensaje=mensaje + Conf_Msg(16) ;
+
+      }
+
+      else
+
+      {
+
+        mensaje=mensaje + Conf_Msg(15); 
+
+      }
+
+      mensaje=mensaje + z[3] + '\n' +  Conf_Msg(22);
+
+      if (z[7]=="Fisica")
+
+      {
+
+	
+
+		z[7]="Fisica";
+
+	
+
+	mensaje=mensaje + z[7] + '\n' + Conf_Msg(13) + z[8] + '\n';
+
+      }
+
+      else
+
+      {
+
+	
+
+		z[7]="Moral";
+
+
+
+	mensaje=mensaje + z[7] + '\n' + Conf_Msg(13) + z[9] + '\n';
+
+      }
+
+
+
+      mensaje=mensaje + Conf_Msg(17) + z[10] + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(3) + FormatCurrency(z[12]) + '\n' + Conf_Msg(152) + z[14] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + Conf_ValidaPlazo(z[13]);
+
+      break;
+
+    //case 'PS': //pago de servicios
+
+      //mensaje=Conf_Msg(21);
+
+      break;
+
+    case 'FRECC': //operaciones frecuentes
+
+      break;
+
+    case 'PC': //pago de creditos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(27) + z[2] + '\n' + Conf_Msg(11) + z[3] + '\n' + Conf_Msg(12) + z[4] + '\n' + Conf_Msg(3) + FormatCurrency(z[5]);
+
+      break;
+
+    case 'POP': //pago ordenes de pago
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + z[2] + '\n' + Conf_Msg(64) + z[12] + '\n' + Conf_Msg(28) + z[3] + '\n' + Conf_Msg(66) + z[16] + '\n' + Conf_Msg(3) + FormatCurrency(z[4]) + '\n' + Conf_Msg(65) + z[17] + '\n' + Conf_Msg(152) + z[13] + '\n' + Conf_Msg(205) + z[14] + '\n' + Conf_Msg(206) + z[15];
+
+      break;
+
+    case 'PIMP': //pago de impuestos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(11) + z[2] + '\n' + Conf_Msg(14) + z[3] + '\n' + Conf_Msg(38) + z[4] + '\n' + z[5] + '\n' + z[12] + '\n' + Conf_Msg(13) + z[13] + '\n' + Conf_Msg(5) + z[14] + '\n' + Conf_Msg(3) + FormatCurrency(z[15]);
+
+      break;
+
+    case 'PA': //pago Accitrade
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12] + '\n' + programada;
+
+      break;
+
+    case 'PDB': //pago domiciliacion baja
+
+    case 'PDA': //pago domiciliacion activacion
+
+      mensaje=mensaje + z[3] +'\n' + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(47) + z[2] + '\n' + Conf_Msg(40) + z[4];
+
+      break;
+
+    case 'II': //inversion integral
+
+      if( /*DNBF*/ (document.getElementById("checkCalendario").checked==true) && z[4].value != "0" && z[5].value.length != 0) 
+
+      { 
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(29) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[4].value + '/' + z[5].value + '/' + myDate.getFullYear();
+
+			}
+
+      else
+
+      {  
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + z[1] + '\n' + Conf_Msg(29) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      } 
+
+      break;
+
+      
+
+    case 'IFI': //fondo inversion horizontes cobertura
+
+
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) &&  z[11].value != "0" && z[12].value != "0") 
+
+      { 
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + '\n\n' ;
+
+      }
+
+
+
+      if(z[3].value.length!=0 && z[3].value.length!=0)
+
+      {
+
+        //mensaje=mensaje + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3].value);
+
+      }
+
+      else
+
+      {
+
+        //mensaje=mensaje + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(39) + z[4].value;
+
+      }
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value!="0" && z[12].value!="0") 
+
+      { 
+
+       // mensaje=mensaje + '\n' + '\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[11].value + '/' + z[12].value + '/' + myDate.getFullYear();
+
+      }
+
+      break;
+
+    case 'IFH': //fondo inversion horizontes banamex
+
+      if(z[3].value.length!=0 && z[3].value.length!=0)
+
+      {
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3].value);
+
+      }
+
+      else
+
+      {
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(39) + z[4].value;
+
+      }
+
+      break;
+
+    case 'IE': //inversion empresarial
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value == "0" && z[12].value == "0") 
+
+      { 
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' ;
+
+      }
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value != "0" && z[12].value != "0") 
+
+      { 
+
+        mensaje=mensaje + '\n\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[11].value + '/' + z[12].value + '/' + myDate.getFullYear();
+
+      }
+
+      break;
+
+    case 'IPAIN': //inversion a plazo A/I
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(34) + z[3] + '\n' + Conf_Msg(42) + z[5] + '\n' + Conf_Msg(29) + z[4] + '\n' + Conf_Msg(43) + z[11] + '\n' + Conf_Msg(44)  + z[12] + '\n' + Conf_Msg(3) + FormatCurrency(z[13]) + '\n' + Conf_Msg(45) + z[14];
+
+      break;
+
+    case 'IPDC': //inversion a plazo D/C
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(34) + z[2] + '\n' + Conf_Msg(42) + z[3] + '\n' + Conf_Msg(29) + z[4] + '\n' + Conf_Msg(2) + z[5] + '\n' + Conf_Msg(3) + FormatCurrency(z[11]) + '\n' + Conf_Msg(44) + z[12] + '\n' + Conf_Msg(43)  + z[13] + '\n' + Conf_Msg(45) + z[14];
+
+      break;
+
+    case 'SCH': //solicitud chequera
+
+      if(z[1]=="01" || z[1]=="03")
+
+      {
+
+        mensaje=mensaje + z[2] + '\n' + Conf_Msg(1) + z[3];
+
+      }
+
+      else
+
+      {
+
+        mensaje=mensaje + z[2] + '\n' + Conf_Msg(1) + z[3] + '\n' + Conf_Msg(19) + z[4];
+
+      }
+
+      break;
+
+    case 'KCTLC': //klic card traspaso de linea de consumo credito y debito
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(20) + '\n' ;
+
+      if (z[11]=='credito')
+
+      {
+
+	mensaje=mensaje + Conf_Msg(35) + z[1] + '\n' + Conf_Msg(37) + z[2];
+
+      }
+
+      else
+
+      {
+
+	mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(46) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      }
+
+      break;
+
+    case 'PT':// Pago tarjetas Banamex
+
+    	if (programada=="")
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+"\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]);
+
+      }
+
+      else
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+"\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      } 
+
+    	break;
+
+    	
+
+     case 'AUT':// Activación o Ubicación de Plástico
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+"\n" + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1];
+
+    	break;
+
+
+
+    case 'LIT':// Limite de crédito Titular
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+"\n" + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1] + '\n\n' + Conf_Msg(3) + z[2];
+
+    	break;
+
+    	
+
+    case 'ROBO': // Robo o Extravio
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1];
+
+      break;
+
+    case 'IPRE': // Inscripcion Premia
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(1)+ z[1] + '\n';
+
+      break;
+
+
+
+    case 'INCPRE': // Incorporacion Premia
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(56)+ z[1] + '\n\n' + Conf_Msg(57) + z[2];
+
+      break;
+
+    
+
+    case 'INSLIB': // Inscripcion Libra Arsa
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(58)+ z[1] + '\n';
+
+      break;
+
+
+
+    case 'PPP':		//Plan Personal de Pagos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(50) + z[1] + '\n' + Conf_Msg(51) + z[2] + '\n' + Conf_Msg(43) + z[3] + '\n' + Conf_Msg(52) + z[4] + '\n' + Conf_Msg(53) + z[5]  + '\n' + Conf_Msg(54) + z[11] + '\n' + Conf_Msg(55) + z[12] + '\n';
+
+      break;
+
+
+
+    case 'LTA':	//Limite de Tarjetas Adicionales Modificar
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n";
+
+			for(k=0,j=10; k<CtasModif; k++) { 
+
+				mensaje=mensaje + Conf_Msg(59) + z[++j] + '\t\t' + Conf_Msg(60) + z[++j] + '\n' ;
+
+      	} 
+
+      break;
+
+      
+
+    case 'LTAr':	//Limite de Tarjetas Adicionales Reestablecer
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n";
+
+				mensaje=mensaje + Conf_Msg(59) + z[1] + '\n' ;
+
+      break;      
+
+    
+
+		case 'ZAAP': //Aportaciones Afore 
+
+      mensaje=Conf_Msg(21);
+
+      break;
+
+
+
+    case 'ARL': // Retiro por Ley Afore
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(203)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(63)+ z[1]+'\n'+ Conf_Msg(2)+ z[2]+ '\n'+ Conf_Msg(61)+ z[3]+ '\n'+ Conf_Msg(62)+ z[4]+ '\n';
+
+	  break;
+
+	  
+
+    default: //
+
+      if (programada=="")
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]);
+
+      }
+
+      else
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      }
+
+  }
+
+  answ=confirm(mensaje);
+
+}
+
+
+
+function Conf_AV(objeto,tipo)
+
+{
+
+  var Num_Opcion;
+
+  var Valor=99;
+
+
+
+  if ((typeof objeto)=='undefined')
+
+  {
+
+    return Valor;
+
+  }
+
+  else if (tipo==1)
+
+  {
+
+    Num_Opcion = objeto.selectedIndex;
+
+    Valor = objeto.options[Num_Opcion].text;
+
+    return Valor;
+
+  }
+
+  else if (tipo==2)
+
+  {
+
+    Num_Opcion = objeto.selectedIndex;
+
+    Valor = objeto.value;
+
+    return Valor;
+
+  }
+
+  else
+
+  {
+
+    var numradios=objeto.length;
+
+    for(var i=0; i<numradios; i++)
+
+     {
+
+       if (objeto[i].checked)
+
+	{
+
+	  Valor=objeto[i].value;	
+
+	}
+
+      }
+
+      return Valor;
+
+   }
+
+}
+
+
+
+function Conf_Comprobante(bcom,rfc,iva)
+
+{
+
+  var msgcom='';
+
+  if(bcom==true)
+
+  {
+
+    msgcom='\n' + Conf_Msg(4) + '\n' + Conf_Msg(5) + rfc + '\n' + Conf_Msg(6) + iva;
+
+  }
+
+  return msgcom;
+
+
+
+}
+
+
+
+function Conf_VP(dia,mes,hora,minuto,ampm)
+
+{
+
+  if((typeof dia)=='undefined')
+
+  {
+
+    return("");
+
+  }
+
+  /*BFDN*/
+
+  minuto.value = (minuto.value.length=1 ? document.getElementById('MINS').options[document.getElementById('MINS').selectedIndex].value : minuto.value);
+
+  hora.options[hora.selectedIndex].value = (hora.options[hora.selectedIndex].value.length > 2) ? hora.options[hora.selectedIndex].value.substring(0,2) : hora.options[hora.selectedIndex].value;
+
+  if(document.getElementById("checkCalendario").checked==false)
+
+   { /* DNBF*/
+
+      return ("");
+
+  }
+
+
+
+  var msgprog='';
+
+  
+
+  if (dia.value != "0"  
+
+     &&   mes.value != "0"  
+
+     &&   (hora.options[hora.selectedIndex].value != "0"  /*hora.selectedIndex > 0  DNBF*/ 
+
+     ||   minuto.value != "0"))
+
+  {
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + dia.value + '/' + mes.value + '/' + myDate.getFullYear() + '\n' + Conf_Msg(9) + hora.value + ':' + minuto.value + ' ' + ampm.value;
+
+  }
+
+  else if( dia.value != "0"  
+
+     &&   mes.value != "0")
+
+  {
+
+   
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + dia.value + '/' + mes.value + '/' + myDate.getFullYear() ;
+
+   
+
+   
+
+  }
+
+  else if (hora.options[hora.selectedIndex].value != "0"  /*DNBF*/ 
+
+     &&   minuto.value != "0" )
+
+  {
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + getFechaActual("DDMMYY") +'\n' + Conf_Msg(9) + hora.value + ':' + minuto.value + ' ' + Conf_AV(ampm,3);
+
+  }
+
+
+
+  return msgprog;
+
+}
+
+
+
+function Conf_ValidaPlazo(valor)
+
+{
+
+  var plaz='';
+
+  
+
+  if(valor==99)
+
+  {
+
+    return plaz;
+
+  }
+
+
+
+  if(valor=="0")
+
+  {
+
+    plaz=Conf_Msg(23) + '\n' + Conf_Msg(24);
+
+  }
+
+  else if (valor=="24")
+
+  {
+
+   plaz=Conf_Msg(23) + '\n' + Conf_Msg(25);
+
+  }
+
+  else
+
+  {
+
+   plaz=Conf_Msg(23) + '\n' + Conf_Msg(26);
+
+  }
+
+  return plaz;
+
+}
+
+
+
+function getFechaActual(mode)
+
+{
+
+   var now = new Date();
+
+   var dayNr = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+
+   if (mode=="DDMMYY")
+
+      var MonthDayYear =(dayNr+"/"+(now.getMonth()+1)+"/"+now.getFullYear());
+
+   else
+
+      var MonthDayYear =((now.getMonth()+1)+"/"+dayNr+"/"+now.getFullYear());
+
+
+
+   return MonthDayYear;
+
+}
+
+
+
+function FormatClean(num)
+
+{
+
+     var sVal='';
+
+     var nVal = num.length;
+
+     var sChar='';
+
+     var sPoint='.';
+
+
+
+   try
+
+   {
+
+       for(i=0;i<nVal;i++)
+
+      {
+
+         sChar = num.charAt(i);
+
+         nChar = sChar.charCodeAt(0);
+
+         if (((nChar >=48) && (nChar <=57)) || (nChar == sPoint.charCodeAt(0)) ) { sVal += num.charAt(i);   }
+
+      }
+
+   }
+
+    catch (exception) { AlertError("Format Clean",e); }
+
+    return sVal;
+
+}
+
+function FormatCurrency(num)
+
+{
+
+        var sVal='';
+
+        var minus='';
+
+        var Decimal='.';
+
+		
+
+        if (num.lastIndexOf("-") == 0) { minus='-'; }
+
+   		num = FormatClean(num);
+
+        sVal = minus + FormatDollar(num,',') + '.' + FormatCents(num);
+
+        return sVal;
+
+}
+
+
+
+function FormatCents(amount)
+
+{
+
+	var cents = '';
+
+
+
+	try
+
+	{
+
+		amount = parseFloat(amount);
+
+        	if (isNaN(amount)) amount = 0;
+
+
+
+		var samount = new String(amount);
+
+		var pos;
+
+
+
+		pos = samount.lastIndexOf('.') + 1;
+
+
+
+		if (pos == 0 || pos == -1)
+
+				cents = '';
+
+		else	cents =  samount.substring(pos);
+
+
+
+		if (cents.length == 0) { return '00'; }
+
+		if (cents.length == 1) { return cents + '0'; }
+
+		if (cents.length == 2) { return cents; }
+
+	}
+
+	catch (exception) { AlertError("Format Cents",e); }
+
+	return cents;
+
+}
+
+
+
+function FormatDollar(amount,CommaDelimiter)
+
+{
+
+   try
+
+   {
+
+        amount = parseInt(amount, 10);
+
+        
+
+        if (isNaN(amount)) amount = 0;
+
+
+
+        var samount = new String(amount);
+
+
+
+        if (samount.length <= 0) { return 0; }
+
+
+
+        samount =  samount.substring(0,samount.length);
+
+
+
+        for (var i = 0; i < Math.floor((samount.length-(1+i))/3); i++)
+
+        {
+
+           samount = samount.substring(0,samount.length-(4*i+3)) + CommaDelimiter + samount.substring(samount.length-(4*i+3));
+
+         }
+
+   }
+
+    catch (exception) { AlertError("Format Comma",e); }
+
+    return samount;
+
+}
+
+
+
+function AlertError(MethodName,e)
+
+{
+
+    if (e.description == null) { alert(MethodName + " Exception: " + e.message); }
+
+    else {  alert(MethodName + " Exception: " + e.description); }
+
+}
+
+
+
+var aplicar, continuar, diaIndex, mesIndex, horaIndex, minIndex;
+
+
+
+function validaCalendario()
+
+{
+
+	if (document.getElementById("checkCalendario").checked)
+
+	{
+
+		
+
+		asignaIndices();
+
+		mesNumerico();
+
+		validaMes();
+
+		if (aplicar == true)
+
+			validaDia();
+
+	}
+
+	else
+
+	{
+
+		aplicar = true;
+
+	}
+
+}
+
+
+
+function validaVacios()
+
+{
+
+	asignaIndices();
+
+	
+
+	if (document.getElementById("checkCalendario").checked==true)
+
+	{
+
+		if (z[diaIndex].value=="" || z[mesIndex].value=="")
+
+		{
+
+			continuar=false;
+
+			if ('SPANISH' == 'SPANISH')
+
+				alert ("Si desea programar su transacción es necesario que introduzca el día y el mes");
+
+			else
+
+				alert ("If you wish to schedule your transaction you should enter all the day and month fields");
+
+			
+
+			if (continuar==false && z[mesIndex].value != "")
+
+			{
+
+			continuar=false;
+
+			}
+
+		}
+
+		else
+
+			continuar=true;
+
+	}
+
+	
+
+	else
+
+		continuar=true;
+
+}
+
+
+
+function asignaIndices()
+
+{
+
+	if ("ZSI3"== 'Z3II')
+
+	{ 
+
+		diaIndex = 4;
+
+		mesIndex = 5;
+
+		z[diaIndex] = document.getElementById("DIA");
+
+		z[mesIndex] = document.getElementById("MES");
+
+	}
+
+	
+
+	if ("ZSI3" == 'Z3IE')
+
+	{
+
+		diaIndex = 4;
+
+		mesIndex = 5;
+
+		
+
+		z[diaIndex] = document.getElementById("DIA");
+
+		z[mesIndex] = document.getElementById("MES");
+
+	}
+
+	
+
+	if ("ZSI3" == "ZSI3")
+
+	{
+
+		diaIndex = 11;
+
+		mesIndex = 12;
+
+		var a=document.forms[0].DIA;
+
+		var b=document.forms[0].MES;
+
+		z[diaIndex] = document.forms[0].DIA;
+
+		z[mesIndex] = document.forms[0].MES;
+
+	}
+
+}
+
+
+
+function mesNumerico()
+
+{
+
+	var mesNum = z[mesIndex].value.toUpperCase();
+
+				
+
+	if (mesNum=="ENERO " || mesNum=="JANUARY " || mesNum=="ENERO" || mesNum=="JANUARY")
+
+		z[mesIndex].value="01";        		
+
+	if (mesNum=="FEBRERO " || mesNum=="FEBRUARY " || mesNum=="FEBRERO" || mesNum=="FEBRUARY")
+
+		z[mesIndex].value="02";        
+
+	if (mesNum=="MARZO " || mesNum=="MARCH " || mesNum=="MARZO" || mesNum=="MARCH")
+
+		z[mesIndex].value="03"         
+
+	if (mesNum=="ABRIL " || mesNum=="APRIL " || mesNum=="ABRIL" || mesNum=="APRIL")
+
+		z[mesIndex].value="04";        
+
+	if (mesNum=="MAYO " || mesNum=="MAY " || mesNum=="MAYO" || mesNum=="MAY")
+
+		z[mesIndex].value="05";        
+
+	if (mesNum=="JUNIO " || mesNum=="JUNE " || mesNum=="JUNIO" || mesNum=="JUNE")
+
+		z[mesIndex].value="06";        
+
+	if (mesNum=="JULIO " || mesNum=="JULY " || mesNum=="JULIO" || mesNum=="JULY")
+
+		z[mesIndex].value="07";        		
+
+	if (mesNum=="AGOSTO " || mesNum=="AUGUST "  || mesNum=="AGOSTO" || mesNum=="AUGUST")
+
+		z[mesIndex].value="08";
+
+	if (mesNum=="SEPTIEMBRE " || mesNum=="SEPTEMBER " || mesNum=="SEPTIEMBRE" || mesNum=="SEPTEMBER")
+
+		z[mesIndex].value="09";
+
+	if (mesNum=="OCTUBRE " || mesNum=="OCTOBER " || mesNum=="OCTUBRE" || mesNum=="OCTOBER")
+
+		z[mesIndex].value="10";
+
+	if (mesNum=="NOVIEMBRE " || mesNum=="NOVEMBER " || mesNum=="NOVIEMBRE" || mesNum=="NOVEMBER")
+
+		z[mesIndex].value="11";           
+
+	if (mesNum=="DICIEMBRE " || mesNum=="DECEMBER " || mesNum=="DICIEMBRE" || mesNum=="DECEMBER")
+
+		z[mesIndex].value="12";
+
+}
+
+
+
+function validaMes()
+
+{
+
+	if (z[mesIndex].value == "01" || z[mesIndex].value == "02" || z[mesIndex].value == "03" || z[mesIndex].value == "04" || z[mesIndex].value == "05" || z[mesIndex].value == "06" || z[mesIndex].value == "07" || z[mesIndex].value == "08" || z[mesIndex].value == "09" || z[mesIndex].value == "10" || z[mesIndex].value == "11" || z[mesIndex].value == "12")
+
+		aplicar = true;
+
+	else
+
+	{
+
+		aplicar = false;
+
+		document.getElementById("MES").value="";
+
+	}
+
+}
+
+
+
+function validaDia()
+
+{
+
+	var diaNum = parseInt (z[diaIndex].value);
+
+	
+
+	switch (z[mesIndex].value)
+
+	{
+
+		case "01":
+
+		case "03":
+
+		case "05":
+
+		case "07":
+
+		case "08":
+
+		case "10":
+
+		case "12":
+
+			if (diaNum > 31)
+
+			{
+
+				aplicar = false;
+
+				document.getElementById("DIA").value="";
+
+			}
+
+			break;
+
+		
+
+		case "04":
+
+		case "06":
+
+		case "09":
+
+		case "11":
+
+			if (diaNum > 30)
+
+			{
+
+				aplicar = false;
+
+				document.getElementById("DIA").value="";
+
+			}
+
+			break;
+
+		
+
+		case "02":
+
+			if (y % 4 != 0 && diaNum > 28)
+
+			{
+
+				aplicar = false;
+
+				document.getElementById("DIA").value="";
+
+			}
+
+			if (y % 4 == 0 && diaNum > 29)
+
+			{
+
+				aplicar = false;
+
+				document.getElementById("DIA").value="";
+
+			}
+
+			break;
+
+		
+
+		default:
+
+			aplicar = false;
+
+	}
+
+}
+
+
+
+var nD=new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+
+var mN=new Array("Enero ","Febrero ","Marzo ","Abril ","Mayo ","Junio ","Julio ","Agosto ","Septiembre ","Octubre ","Noviembre ","Diciembre ");
+
+var mNE=new Array("January ","February ","March ","April ","May ","June ","July ","August ","September ","October ","November ","December ");
+
+var cm,cy,wDi,wDf;
+
+var curr=0;
+
+var past;
+
+var fut;
+
+var oid;
+
+var bnd1,bnd2;
+
+var today;
+
+var wd,m,y;
+
+var lang;
+
+var da=document.all;
+
+
+
+function draw(m,y,wd){
+
+	var days=nD[m-1];
+
+	if(m==2 && y%4==0)
+
+		days=29;
+
+	//da.month.innerText=lang=="1"?mN[m-1]:mNE[m-1];
+
+	if(lang=="1")
+
+	  document.getElementById('month').innerHTML=mN[m-1];	  
+
+	else
+
+	  document.getElementById('month').innerHTML=mNE[m-1];
+
+
+
+	//da.year.innerText=y;
+
+	document.getElementById('year').innerHTML=y;
+
+	for(i=0,j=1;i<42;i++){
+
+	    var ayuda='sd'+i;
+
+	    //alert(ayuda);
+
+	    document.getElementById(ayuda).style.background="#E6E7EC";
+
+		//ayuda[i].style.background="#E6E7EC";
+
+		if(i+1<wd || i+1>=days+wd)
+
+		    document.getElementById(ayuda).innerHTML='';
+
+			//ayuda[i].innerText='';	
+
+		else
+
+		    document.getElementById(ayuda).innerHTML=(j++)+'';
+
+			//ayuda[i].innerText=(j++)+'';	
+
+		//ayuda[i].style.color="#000066";
+
+		document.getElementById(ayuda).style.color="#000066";
+
+	}
+
+	cm=m;cy=y;wDi=wd;wDf=(wd+days-1)%7;
+
+	paint();
+
+}
+
+
+
+function paint(){
+
+	var date=new Array();
+
+	var day,aux,today,month,year;
+
+	var ayuda;
+
+	               
+
+	if(bnd1!=""){
+
+		date=bnd1.split('/');
+
+		day=parseInt(date[0],10);month=parseInt(date[1],10);year=parseInt(date[2],10);
+
+		if(year>cy || (month>cm && year==cy))
+
+		 {
+
+			//ayuda=document.getElementsByName('sd');
+
+			
+
+			for(i=0;i<42;i++)
+
+			  {			    
+
+				//ayuda[i].style.color="#999999";
+
+				//ayuda[i].style.background="white";
+
+				ayuda="sd"+i;
+
+			    document.getElementById(ayuda).style.color="#999999";
+
+			    document.getElementById(ayuda).style.background="white";
+
+		      }
+
+		  }     
+
+		else if(month==cm && year==cy){
+
+					//ayuda=document.getElementsByName('sd');
+
+			for(i=0;i<42;i++){
+
+				//ayuda[i].style.color="#999999";
+
+				//ayuda[i].style.background="white";
+
+				ayuda="sd"+i;
+
+			    document.getElementById(ayuda).style.color="#999999";
+
+			    document.getElementById(ayuda).style.background="white";
+
+				aux=document.getElementById(ayuda).innerHTML;
+
+				today=aux==""?0:parseInt(aux,10);
+
+				if(today+1==day)
+
+					break;
+
+			}
+
+		}
+
+	}
+
+	if(bnd2!=""){				
+
+		date=bnd2.split('/');
+
+		day=parseInt(date[0],10);month=parseInt(date[1],10);year=parseInt(date[2],10);
+
+		if(year<cy || (month<cm && year==cy))
+
+		 {
+
+		   //ayuda=document.getElementsByName('sd');
+
+			for(i=0;i<42;i++)
+
+			 {
+
+				//ayuda[i].style.color="#999999";
+
+				//ayuda[i].style.background="white";
+
+				ayuda="sd"+i;
+
+			    document.getElementById(ayuda).style.color="#999999";
+
+			    document.getElementById(ayuda).style.background="white";
+
+		     }
+
+		 }    
+
+		if(month==cm && year==cy)
+
+		{
+
+		 //ayuda=document.getElementsByName('sd');
+
+			for(i=41;i>=0;i--){
+
+				//aux=ayuda[i].innerHTML;
+
+				ayuda="sd"+i;
+
+				aux=document.getElementById(ayuda).innerHTML;
+
+				today=aux==""?0:parseInt(aux,10);
+
+				if(today==day)
+
+					break;
+
+				//ayuda[i].style.color="#999999";
+
+				//ayuda[i].style.background="white";
+
+				document.getElementById(ayuda).style.color="#999999";
+
+			    document.getElementById(ayuda).style.background="white";
+
+				if(today-1==day)
+
+					break;
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+function less(){
+
+	var days;
+
+	if(cm==1)
+
+		cm=12,cy-=1;
+
+	else
+
+		cm-=1;
+
+	days=nD[cm-1];
+
+	if(cm==2 && cy%4==0)
+
+		days=29;
+
+	wDi=7-((days-wDi)%7);
+
+	draw(cm,cy,wDi);
+
+	curr-=1;
+
+	if(curr==past)
+
+		//da.pre.style.display='none';
+
+		document.getElementById('pre').style.display='none';
+
+	//da.post.style.display='';
+
+	document.getElementById('post').style.display='';
+
+}
+
+
+
+function more(){
+
+	if(cm==12)
+
+		cm=1,cy+=1;
+
+	else
+
+		cm+=1;
+
+	wDi=wDf+1;
+
+	draw(cm,cy,wDi);
+
+	curr+=1;
+
+	if(curr==fut)
+
+		//da.post.style.display='none';
+
+		document.getElementById('post').style.display='none';
+
+	//da.pre.style.display='';
+
+	document.getElementById('pre').style.display='';
+
+}
+
+
+
+function cal(o)
+
+{
+
+	oid=o;
+
+	curr=0;
+
+	
+
+	//da.pre.style.display=(curr==past)?'none':'';
+
+	document.getElementById('pre').style.display=(curr==past)?'none':'';
+
+	//da.post.style.display=(curr==fut)?'none':'';
+
+	document.getElementById('post').style.display=(curr==fut)?'none':'';
+
+	draw(m,y,wd);
+
+	//da.cals.style.display="";
+
+	document.getElementById('cals').style.display="";
+
+	//da.cals.style.left=0; 
+
+	document.getElementById('cals').style.left="0px";
+
+	//da.cals.style.top=0;
+
+	document.getElementById('cals').style.top="0px";
+
+	if(window.shSelect != null)shSelect();
+
+}
+
+
+
+function cCEWF(d,l,p,f,days){
+
+	var nc,tr,th,div,a,futd,futd2,fday;
+
+	
+
+	lang=l;
+
+  
+
+	if(l=='1')
+
+	{
+
+		today=new Date(d.substr(6,4),d.substr(3,2)-1,d.substr(0,2));
+
+		fday=new Date(d.substr(6,4),d.substr(3,2)-1,'01');
+
+		ano=today.getYear();
+
+		ano+=2000;
+
+		today.setYear(ano);
+
+		fday.setYear(ano);
+
+	}
+
+	else
+
+	{
+
+
+
+		mtemp=d.substr(3,3);
+
+		if (mtemp=="Jan")
+
+		{
+
+			today=new Date(d.substr(7,4),"00",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"00",'01');
+
+		}
+
+		if (mtemp=="Feb")
+
+		{
+
+			today=new Date(d.substr(7,4),"01",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"01",'01');
+
+		}
+
+		if (mtemp=="Mar")
+
+		{
+
+			today=new Date(d.substr(7,4),"02",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"02",'01');
+
+		}
+
+		if (mtemp=="Apr")
+
+		{
+
+			today=new Date(d.substr(7,4),"03",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"03",'01');
+
+		}
+
+		if (mtemp=="May")
+
+		{
+
+			today=new Date(d.substr(7,4),"04",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"04",'01');
+
+		}
+
+		if (mtemp=="Jun")
+
+		{
+
+			today=new Date(d.substr(7,4),"05",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"05",'01');
+
+		}
+
+		if (mtemp=="Jul")
+
+		{
+
+			today=new Date(d.substr(7,4),"06",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"06",'01');
+
+		}
+
+		if (mtemp=="Aug")
+
+		{
+
+			today=new Date(d.substr(7,4),"07",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"07",'01');
+
+		}
+
+		if (mtemp=="Sep")
+
+		{
+
+			today=new Date(d.substr(7,4),"08",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"08",'01');
+
+		}
+
+		if (mtemp=="Oct")
+
+		{
+
+			today=new Date(d.substr(7,4),"09",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"09",'01');
+
+		}
+
+		if (mtemp=="Nov")
+
+		{
+
+			today=new Date(d.substr(7,4),"10",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"10",'01');
+
+		}
+
+		if (mtemp=="Dec")
+
+		{		
+
+			today=new Date(d.substr(7,4),"11",d.substr(0,2));
+
+			fday=new Date(d.substr(7,4),"11",'01');
+
+		}
+
+		else
+
+		{
+
+			today=new Date(d.substr(6,4),d.substr(0,2)-1,d.substr(3,2));
+
+			fday=new Date(d.substr(6,4),d.substr(0,2)-1,'01');
+
+		}		
+
+	}
+
+	
+
+	wd=fday.getDay()+1;
+
+	m=today.getMonth()+1;
+
+	y=today.getFullYear();
+
+	var fut = new Date(today);	
+
+	var now = fut.getTime() - fut.getTimezoneOffset()*60000;	
+
+	now += (days+1) * 24*3600*1000;
+
+	fut.setTime(now);
+
+	futd=fut.getDate()+"/"+(fut.getMonth()+1)+"/"+fut.getFullYear();
+
+	
+
+	if(p!=0 && f!=0){
+
+		var fut2 = new Date(today);
+
+		now = fut2.getTime();
+
+		now -= days * 24*3600*1000;
+
+		fut2.setTime(now);
+
+		futd2=fut2.getDate()+"/"+(fut2.getMonth()+1)+"/"+fut2.getFullYear();
+
+		bnd1=days<0?futd:futd2;
+
+		bnd2=days>0?futd:futd2;
+
+	}else{
+
+		bnd1=days<0?futd:(today.getDate()+'/'+m+'/'+y);
+
+		bnd2=days>0?futd:(today.getDate()+'/'+m+'/'+y);
+
+	}
+
+
+
+}	
+
+
+
+function rOfst(obj){
+
+	var aux=parseInt(obj.style.left,10);
+
+	xF=event.clientX-aux;
+
+}
+
+
+
+function move(obj){
+
+		var pos=event.clientX+document.body.scrollLeft-xF;
+
+		obj.style.left=pos<1?1:pos;
+
+		obj.style.top=event.clientY+document.body.scrollTop-8;
+
+}
+
+
+
+function go(){window.event.returnValue=false}
+
+
+
+function set(obj){
+
+
+
+	//if(obj.style.color!="#000066" || obj.innerText=="")
+
+	var ayuda=obj.style.color;
+
+
+
+	if(navigator.appName=="Microsoft Internet Explorer")	 
+
+	 {
+
+	  if(ayuda!="#000066" || obj.innerHTML=="")		
+
+	   {
+
+		return;
+
+	   }
+
+	 }  	 
+
+	else
+
+	 {
+
+	  if(ayuda!="rgb(0, 0, 102)" || obj.innerHTML=="")		
+
+	   {
+
+		return;
+
+	   }   
+
+	 }
+
+			
+
+	if(lang=="1")
+
+	{
+
+		eval('document.getElementById("'+oid+'").value=(obj.innerHTML.length==1?"0":"")+obj.innerHTML+"/"+(cm>9?"":"0")+cm+"/"+cy;');
+
+	}
+
+	else
+
+	{
+
+		eval('document.getElementById("'+oid+'").value=(cm>9?"":"0")+cm+"/"+(obj.innerHTML.length==1?"0":"")+obj.innerHTML+"/"+cy;');
+
+	}
+
+	
+
+	document.getElementById('DIA').value=obj.innerHTML;
+
+	document.getElementById('MES').value=month.innerHTML;
+
+	
+
+	document.getElementById('cals').style.display="none";	
+
+	if(window.shSelect != null)shSelect();
+
+}
+
+
+
+function ce(x){
+
+	return document.createElement(x);
+
+}
+
+
+
+function bound(p,f){
+
+	past=p;
+
+	fut=f;
+
+	if(p==0)
+
+	document.getElementById('pre').style.display='none';
+
+	if(f==0)
+
+	document.getElementById('post').style.display='none';
+
+}
+
+
+
+function NOnly(obj){
+
+	var key, keychar,val=obj.value,len=val.length;
+
+	var valid="0123456789";
+
+	key = window.event.keyCode;
+
+	keychar = String.fromCharCode(key);
+
+	if ((key==null) || (key==0) || (key==8) || (key==9) || (key==13) || (key==27) || (key==46))
+
+		return true;
+
+	else 
+
+		if ((valid.indexOf(keychar) > -1))
+
+		{
+
+			obj.value=obj.value+keychar;
+
+			return false;
+
+		}
+
+		else
+
+			return false;
+
+}
+
+
+
+function validaSociedades(idioma) 
+
+{
+
+	var flag=true;
+
+	var tmpImporte; 
+
+	var tmpAcciones;
+
+	
+
+	if( idioma == "spanish") 
+
+	{
+
+		mensaje1 = "Seleccione alguna operación";
+
+		mensaje2 = "El número de contrato es necesario para la transacción";
+
+		mensaje5 = ( language=="esp" ) ? "Digite el Importe" : "Tip the amount";
+
+		mensaje7 = ( language=="esp" ) ? "El campo Importe debe ser num&eacute;rico" : "The Amount field must be numeric"; 
+
+		mensaje6 = ( language=="esp" ) ? "Digite el No. de Acciones" : "Tip the stocks";
+
+		mensaje9 = "La firma digital debe ser numérica";
+
+		mensaje10 = ( language=="esp" ) ? "Seleccione una fecha" : "Select a date";
+
+		mensaje11= ( language=="esp" ) ? "Importe debe ser mayor a cero" : "The amount must be greater than zero";
+
+		mensaje12= ( language=="esp" ) ? "Campo acciones debe ser mayor a cero" : "The Stocks fields must be greater than zero";
+
+	}
+
+	
+
+	if(RdioChk_Vacio ("DATA1", mensaje1) != true) 
+
+	{                      
+
+	    flag=false;
+
+	}
+
+	
+
+	if(Combo_Vacio("DATA2", mensaje2, 'SI') != true) 
+
+	{
+
+	    flag=false;
+
+	}
+
+	
+
+	if(document.forms[0].DATA1[0].checked == true) // compra
+
+	{    
+
+	  	if(Campo_Vacio('DATA3', mensaje5,'SI') != true) 
+
+		{
+
+	  	    flag= false;
+
+			parent.Expandir();
+
+	  	}  
+
+			
+
+			else
+
+		{
+
+			if(Valida_Caracteres('DATA3', ',.', '1', 'SI', mensaje7) != true) 
+
+			{
+
+				flag=false;
+
+				parent.Expandir();
+
+			}
+
+					
+
+			else
+
+			{
+
+				var prueba=document.getElementById('DATA3').value;
+
+				if(prueba=="0")
+
+				{
+
+					flag=false;
+
+					document.getElementById('DATA3_error').style.display='block';
+
+					document.getElementById('DATA3_error').innerHTML=mensaje11;
+
+					parent.Expandir();
+
+				}
+
+			}
+
+		}
+
+		document.getElementById('DATA4').value="";
+
+  	}
+
+	
+
+	if(document.forms[0].DATA1[1].checked == true) 
+
+	{    
+
+	    if(Campo_Vacio('DATA4', mensaje6,'SI') != true) 
+
+		{
+
+	        flag=false;
+
+			parent.Expandir();
+
+	    }  
+
+			else
+
+			{
+
+				if(Valida_Caracteres('DATA4','', '1', 'SI', mensaje7) != true) 
+
+				{
+
+					flag=false;
+
+					parent.Expandir();
+
+				}
+
+				
+
+				else
+
+				{
+
+					var prueba=document.getElementById('DATA4').value;
+
+					if(prueba=="0")
+
+					{
+
+						flag=false;
+
+						document.getElementById('DATA4_error').style.display='block';
+
+						document.getElementById('DATA4_error').innerHTML=mensaje12;
+
+						parent.Expandir();
+
+					}
+
+				}
+
+			}
+
+		document.getElementById('DATA3').value="";
+
+	}
+
+	
+
+	if(document.getElementById('DATA5').value != "") 
+
+	{       //valida firma digital
+
+	    if(Valida_Caracteres('DATA5', '', '1', 'SI', mensaje9) != true) 
+
+		{
+
+	        flag=false;
+
+	    }
+
+	}
+
+	        /*DNBF*/
+
+        tmpImporte = document.getElementById('DATA3').value;
+
+        tmpAcciones = document.getElementById('DATA4').value;
+
+        document.getElementById('DATA3').value = (document.forms[0].DATA1[0].checked == true ? document.forms[0].DATA3.value : "") ;
+
+        document.getElementById('DATA4').value = ( document.forms[0].DATA1[1].checked == true ? document.forms[0].DATA4.value : "") ;
+
+                /*DNBF*/
+
+	z[3]=document.forms[0].DATA3; 
+
+	z[4]=document.forms[0].DATA4; 
+
+	z[11]=document.forms[0].DIA; 
+
+	z[12]=document.forms[0].MES; 
+
+	
+
+	validaVacios();
+
+
+
+	if(continuar==true)
+
+		//Conf_Main('IFI');
+
+		
+
+	if (answ==false)
+
+		continuar=false;
+
+
+
+	if(answ==true && aplicar==true)
+
+	{
+
+		    if(document.forms[0].DATA1[0].checked == true) // compra
+
+                    {
+
+  	              document.forms[0].DATA4.value = "";
+
+  	            }
+
+  	            if(document.forms[0].DATA1[1].checked == true)     // venta
+
+                    { 
+
+                      document.forms[0].DATA3.value = "";
+
+                    }
+
+	}
+
+	else{
+
+		  document.forms[0].DATA3.value = tmpImporte;
+
+          document.forms[0].DATA4.value = tmpAcciones;
+
+        }
+
+		
+
+		if (document.getElementById("checkCalendario").checked==true)
+
+	{
+
+					if(Campo_Vacio("yearpicker1",mensaje10,"SI")!=true)
+
+					{
+
+						flag = false;
+
+					}
+
+
+
+					if(Campo_Vacio("yearpicker1",mensaje10,"SI")==true)
+
+					{
+
+						var fecha=document.getElementById('yearpicker1').value.split("/");
+
+						if("SPANISH"=="SPANISH")
+
+						{
+
+							document.getElementById('DIA').value=fecha[0];
+
+							document.getElementById('MES').value=fecha[1];
+
+							document.getElementById('DATA13').value=fecha[2];
+
+							document.getElementById('DATA10').value=1;
+
+							y=fecha[2];
+
+						}
+
+						
+
+							else	
+
+							{
+
+								document.getElementById('DIA').value=fecha[1];
+
+								document.getElementById('MES').value=fecha[0];
+
+								document.getElementById('DATA13').value=fecha[2];
+
+								document.getElementById('DATA10').value=1;
+
+								y=fecha[2];
+
+							}
+
+					}
+
+					document.getElementById('DATA19').value=1;
+
+	}
+
+	
+
+	if(document.getElementById("checkCalendario").checked==false)
+
+	{
+
+					document.forms[0].DIA.value="0";
+
+					document.forms[0].MES.value="0";
+
+					document.getElementById('DATA19').value=0;
+
+					document.getElementById('DATA20').value=0;
+
+					document.getElementById('DATA21').value=0;
+
+					document.getElementById('DATA10').value=0;
+
+	}
+
+	
+
+	document.getElementById('DATA6').value=document.getElementById('DIA').value;
+
+	document.getElementById('DATA7').value=document.getElementById('MES').value;
+
+	
+
+	if(document.getElementById("DATA14").checked==true)
+
+	{
+
+		document.getElementById('DATA14').value="on";
+
+	}
+
+
+
+	if(flag)
+
+	{
+
+		document.getElementById('DATA12').value=document.getElementById('combonCtas').selectedIndex;
+
+		parent.document.getElementById("DATADEMO").value=$("#checkCalendario").is(":checked") + "," + $("#DATA14").is(":checked") + "|" + $("#yearpicker1").val();
+
+
+
+		if($("input:radio[id=radCompra]").is(':checked')==true){
+
+		
+
+			if($("#combonCtas option:selected").val()=="14")
+
+			{
+
+			parent.cargaDocN('Sociedades de Inversion/confirma_compra_de_titulos.html');
+
+			
+
+			}
+
+		}
+
+		if($("input:radio[id=radVenta]").is(':checked')==true){
+
+			if($("#combonCtas option:selected").val()=="14")
+
+			{
+
+			parent.cargaDocN('Sociedades de Inversion/confirma_venta_de_titulos.html');
+
+			
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+function validaCompraVenta(campo, operacion, mensaje3, mensaje4) {
+
+	if(operacion[0].checked == true) {    //compra
+
+	    if(campo != "importe") {    
+
+	        //alert(mensaje4);
+
+	 /*       document.forms[0].DATA4.value = ""; DNBF*/
+
+	        document.forms[0].DATA3.focus();
+
+	    }
+
+	}
+
+	if(operacion[1].checked == true) {    //venta
+
+	    if(campo != "acciones") {    
+
+	        //alert(mensaje3);
+
+	      /*  document.forms[0].DATA3.value = ""; DNBF*/
+
+	        document.forms[0].DATA4.focus();
+
+	    }
+
+	}
+
+}
+
+			function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+			function showError( idElem, msgErr, contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'', contexto ).after( $divErr );
+
+}
+
+
+
+function hideErrors( contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display', contexto).remove();
+
+}
+
+
+
+function toggleChecks( idChecken, idCheckdis ) {
+
+  var flag =  $('#'+idChecken).is(':checked');
+
+  $('#'+idChecken).attr('disabled', false);
+
+  $('#'+idCheckdis).attr('disabled', flag);
+
+  $('#'+idCheckdis).attr('checked', false);
+
+  $('#msgFrec').show();
+
+  window.parent.ajustarIframe();
+
+}
+
+			/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+/* Funcion que verifica si el campo tiene los caracteres validos
+
+ * Parametros
+
+ * @Campo_Txt: Id del campo que se pretende validar
+
+ * @Caracteres_Extras: Permitir otros caracteres como validos
+
+ * @Tipo_Validacion: El tipo de validacion 1=Numerico 2=Alfanumerico
+
+ * @Req: Cadena que nos valida si debe de ser requerido
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+/* Funcion que verifica si el combo esta vacio
+
+ * Parametros
+
+ * @Combo: Id del Combo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es diferente a "NO", lo omite
+
+**/
+
+
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+/* Funcion que verifica si el campo tenga la longitud requerida
+
+ * Parametros
+
+ * @Campo: Id del campo que se pretende validar
+
+ * @Longitud: Longitud a evaluar
+
+ * @TipoRel: Indice del tipo de comparacion 1(<=) 2(<) 3(>=) 4(>) 5(!=)
+
+ * @Msg: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+function ValidaLongitud (Campo,Longitud,TipoRel,Msg){ 
+
+	$("#"+Campo+"_error").css("display","none");
+
+	var Error = 0;
+
+	switch(TipoRel){
+
+		case 1: if($("#"+Campo).val().length <= Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 2: if($("#"+Campo).val().length < Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 3: if($("#"+Campo).val().length >= Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 4: if($("#"+Campo).val().length > Longitud)
+
+			Error = 1;
+
+			break;
+
+		case 5: if($("#"+Campo).val().length != Longitud)
+
+			Error = 1;
+
+			break;
+
+		default: Error = 1;
+
+	}
+
+	if(Error == 1){
+
+		$("#"+Campo+"_error").css("display","block").html(Msg);
+
+		$("#"+Campo).focus();
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+/* Funcion que verifica si el campo esta activo
+
+ * Parametros
+
+ * @Objeto: Id del campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+**/
+
+
+
+function RdioChk_Vacio (Objeto,Msg_Error){
+
+	$("#"+Objeto+"_error").css("display","none");
+
+	var Seleccionado = false;
+
+	$("input[name='"+Objeto+"']").each(function(){
+
+		if(Seleccionado != true){
+
+			if(this.checked)
+
+			Seleccionado = true;
+
+			else
+
+			Seleccionado = false;
+
+		}
+
+	});
+
+	if(Seleccionado != true){
+
+		$("#"+Objeto+"_error").css("display","block").html(Msg_Error);
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+function Verifica_DosCamposVacios(Campo_Txt1,Campo_Txt2,Msg_Error,Requerido)
+
+   { 
+
+    if ((Campo_Txt1.value.length == 0) && (Campo_Txt2.value.length == 0))
+
+       {
+
+         if(Requerido == "SI")
+
+            {
+
+                alert(Msg_Error);
+
+                Campo_Txt1.focus();
+
+            }
+
+           return false;
+
+       }
+
+    return true;
+
+    }
+
+
+
+function Verifica_DosCamposLlenos(Campo_Txt1,Campo_Txt2,Msg_Error,Requerido)
+
+   { 
+
+    if ((Campo_Txt1.value.length > 0) && (Campo_Txt2.value.length > 0))
+
+       {
+
+         if(Requerido == "SI")
+
+            {
+
+                alert(Msg_Error);
+
+		Campo_Txt1.value = "";
+
+		Campo_Txt2.value = "";
+
+                Campo_Txt1.focus();
+
+            }
+
+           return false;
+
+       }
+
+    return true;
+
+
+
+    }
+
+	
+
+			function Valida_CSS2 (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg)
+
+{
+
+   var Numeros="";
+
+   var Letras="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzñÑ@-_$., ";
+
+   var Validos="";
+
+   var Txt_MAY = Campo_Txt.value;
+
+   var invalidos = 0;	
+
+
+
+if (Req == "SI" && Txt_MAY.length==0)
+
+    {
+
+    //alert ("Msg");
+
+    Campo_Txt.focus();
+
+    return false;
+
+    }	
+
+else
+
+   {
+
+   (Tipo_Validacion == 1) ?
+
+    	Validos = Numeros:
+
+
+
+   		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+
+
+   Validos = Validos + Caracteres_Extras;
+
+		
+
+   for (i=0; i < Txt_MAY.length; i++)
+
+	 for (j=0; j < Validos.length; j++)
+
+
+
+	   	if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+			if (j+1 < Validos.length)
+
+	 			continue;
+
+	 		else
+
+	 		    {
+
+	                        //alert (Msg);
+
+				document.forms[0].DATA1.focus();
+
+	 			return true
+
+	 		    }
+
+		else 
+
+   			break;	
+
+   return false;
+
+   }
+
+}
+
+
+
+var LengConf;
+
+function Conf_Msg(id_msg)
+
+{
+
+  var msg;
+
+ 
+
+    switch(id_msg)
+
+    {
+
+      case 1: msg='Cuenta Origen: ';
+
+	      break;
+
+      case 2: msg='Cuenta Destino: ';
+
+	      break;
+
+      case 3: msg='Importe: $';
+
+	      break;
+
+      case 4: msg='Solicito comprobante fiscal:SI ';
+
+	      break;
+
+      case 5: msg='RFC: ';
+
+	      break;
+
+      case 6: msg='IVA: $';
+
+	      break;
+
+      case 7: msg='Su operaci\u00F3n fu\u00E9 programada para: ';
+
+	      break;
+
+      case 8: msg='Fecha: ';
+
+	      break;
+
+      case 9: msg='Hora: ';
+
+	      break;
+
+      case 10: msg='Compraventa: ';
+
+	      break;
+
+      case 11: msg='Tipo de Pago: ';
+
+	      break;
+
+      case 12: msg='Folio: ';
+
+	      break;
+
+      case 13: msg='Nombre del Cliente/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 14: msg='Formulario: ';
+
+	      break;
+
+      case 15: msg='N\u00FAmero de Tarjeta: ';
+
+	      break;
+
+      case 16: msg='N\u00FAmero de cuenta: ';
+
+	      break;
+
+      case 17: msg='Referencia Alfan\u00FAmerica: ';
+
+	      break;
+
+      case 18: msg='Referencia N\u00FAmerica: ';
+
+	      break;
+
+      case 19: msg='N\u00FAmero de Chequeras: ';
+
+	      break;
+
+      case 20: msg='Su operaci\u00F3n: ';
+
+	      break;
+
+      case 21: msg='La siguiente p\u00E1gina le mostrar\u00E1 los datos de su operaci\u00F3n, verifique que est\u00E9n correctos y haga clic en el bot\u00F3n aceptar para que se aplique su operaci\u00F3n.';
+
+	      break;
+
+      case 22: msg='Tipo de Persona: ';
+
+	      break;
+
+      case 23: msg='Su envi\u00F3 ser\u00E1 en: ';
+
+	      break;
+
+      case 24: msg='Mismo d\u00EDa. ';
+
+	      break;
+
+      case 25: msg='24 horas. ';
+
+	      break;
+
+      case 26: msg='48 horas. ';
+
+	      break;
+
+      case 27: msg='No. Contrato: ';
+
+	      break;
+
+      case 28: msg='Sucursal Destino: ';
+
+              break;
+
+      case 29: msg='Tipo de Inversi\u00F3n: ';
+
+              break;
+
+      case 30: msg='Tipo de Operaci\u00F3n: ';
+
+              break;
+
+      case 31: msg='Importe en D\u00F3lares: ';
+
+              break;
+
+      case 32: msg='Cheque inicial: ';
+
+              break;
+
+      case 33: msg='Cheque final: ';
+
+              break;
+
+      case 34: msg='No. de Contrato de Inversi\u00F3n: ';
+
+              break;
+
+      case 35: msg='No. Klick Card Cr\u00E9dito: ';
+
+              break;
+
+      case 36: msg='No. Klick Card D\u00E9bito: ';
+
+              break;
+
+      case 37: msg='L\u00EDnea de Consumo: ';//hay que revisarla
+
+              break;
+
+      case 38: msg='Tipo de Entrega: '
+
+	      break;
+
+      case 39: msg='Acciones: ';
+
+              break;
+
+      case 40: msg='Fecha de Alta: ';
+
+              break;
+
+      case 41: msg='Tipo de Inversi\u00F3n / No. de Contrato: ';
+
+              break;
+
+      case 42: msg='No. de Inversi\u00F3n: ';
+
+              break;
+
+      case 43: msg='Plazo: ';
+
+              break;
+
+      case 44: msg='Instrucciones al Vencimiento: ';
+
+              break;
+
+      case 45: msg='Cuenta de Rembolso: ';
+
+              break;
+
+      case 46: msg='Traspaso a: ';
+
+              break;
+
+      case 47: msg='Abono a:';
+
+	      break;
+
+      case 48: msg='El tipo de cambio que se aplique, ser\u00E1 el vigente en el d\u00EDa y hora en que se realice la operaci\u00F3n.';
+
+	      break;
+
+      case 49: msg='Importe en d\u00F3lares:';
+
+	      break;
+
+	      
+
+      case 50: msg='Tarjeta: ';   							
+
+	      break;
+
+      case 51: msg='Importe a Parcializar: $';  
+
+	      break;
+
+      case 52: msg='Interes: $';  							
+
+	      break;
+
+      case 53: msg='Interes Diferido: $';  			
+
+	      break;
+
+      case 54: msg='Monto Diferido: $';  				
+
+	      break;
+
+      case 55: msg='Pago Mensual: $';  				
+
+	      break;
+
+      case 56: msg='Tarjeta Premia:  ';
+
+	      break;
+
+      case 57: msg='Cuenta a Incorporar:  ';
+
+	      break;
+
+      case 58: msg='Tarjeta de Credito Titular:  ';
+
+	      break;	      
+
+      case 59: msg='No. de Tarjeta: ';
+
+	      break;	
+
+      case 60: msg='Límite a Asignar: ';
+
+	      break;	
+
+      case 61: msg='Tipo de Retiro: ';
+
+	      break;	
+
+      case 62: msg='Monto a Retirar: ';
+
+	      break;
+
+		case 63: msg='Afore NSS: ';
+
+	      break;
+
+	  case 64: msg='Beneficiario: ';
+
+	      break;
+
+	  case 65: msg='RFC/CURP: ';
+
+	      break;
+
+	  case 66: msg='Sector Económico: ';
+
+	      break;
+
+	  case 67: msg='Nombre/Raz\u00F3n Social: ';
+
+	      break;
+
+      case 150: msg='Una vez aceptada no podr\u00E1 cancelar su operaci\u00F3n.';
+
+              break;
+
+      case 151: msg='Una vez recibida su instrucci\u00F3n no podr\u00E1 cancelar su operaci\u00F3n.';
+
+	      break;
+
+      case 152: msg='Correo Electr\u00F3nico del Beneficiario: ';
+
+	      break;
+
+	    case 200: msg="Verifica los datos de tu operación."; 
+
+	    	break;
+
+	    case 201: msg="Paso 2 de 3"; 
+
+	    	break;
+
+	    case 202: msg="Paso 3 de 3"; 
+
+	    	break;	    	
+
+	    case 203: msg="Paso 3 de 4";  /*YA NO SE UTILIZA*/ 
+
+	    	break;
+
+	    case 204: msg="Paso 2 de 2"; 
+
+	    	break;
+
+	    case 205: msg="Número Celular del Beneficiario: "; 
+
+	    	break;
+
+	    case 206: msg="Compañía Celular: "; 
+
+	    	break;	    	
+
+	    default: msg='Verifique que sus datos est\u00E9n correctos antes de enviar su operaci\u00F3n.';
+
+    }
+
+  return(msg);
+
+}
+
+
+
+var z=new Array();
+
+var answ;
+
+var myDate=new Date();
+
+
+
+function Conf_Main(id_tran)
+
+{
+
+  var mensaje='';
+
+  var programada;
+
+  programada=Conf_VP(z[6],z[7],z[8],z[9],z[10]);
+
+  if(programada=='') mensaje=Conf_Msg(200) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+  else mensaje=Conf_Msg(200) + '\n' + Conf_Msg(151) + '\n\n' ;
+
+  
+
+  switch(id_tran)
+
+  {
+
+	case 'TPT'://traspaso pago a terceros
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(67) + z[16] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12]  + '\n' + Conf_Msg(152) + z[13] + '\n' + Conf_Msg(205) + z[14] + '\n' + Conf_Msg(206) + z[15] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      break;
+
+    case 'TCVDP': //traspaso compraventa de divisas cuentas propias 
+
+      if(programada=='') mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(2) + z[3] + '\n' + Conf_Msg(31) + z[4] + '\n' + programada;
+
+      break;
+
+    case 'TCVDT': //traspaso compraventa de divisas terceros
+
+      if(programada=='') mensaje=Conf_Msg(200) + '\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + '\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(2) + z[3] + '\n' + Conf_Msg(31) + z[4] + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12] + '\n' + programada;
+
+      break;
+
+    case 'CCB': //pago tarjeta CCB
+
+      if(programada=='') mensaje=Conf_Msg(200) +"\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(48) + '\n' + Conf_Msg(150) + '\n\n' ;
+
+      else mensaje=Conf_Msg(200) + "\t\t" + Conf_Msg(201)+'\n\n' + Conf_Msg(48) + '\n' + Conf_Msg(151) + '\n\n' ;      
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(49) + z[3] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      break;
+
+    case 'PI': //pago interbancario cheques y tarjeta de debito
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n';
+
+      if (z[21]==true)//cheques
+
+      {
+
+        mensaje=mensaje + Conf_Msg(16) ;
+
+      }
+
+      else
+
+      {
+
+        mensaje=mensaje + Conf_Msg(15); 
+
+      }
+
+      mensaje=mensaje + z[3] + '\n' +  Conf_Msg(22);
+
+      if (z[7]=="Fisica")
+
+      {
+
+	
+
+		z[7]="Fisica";
+
+	
+
+	mensaje=mensaje + z[7] + '\n' + Conf_Msg(13) + z[8] + '\n';
+
+      }
+
+      else
+
+      {
+
+		z[7]="Moral";
+
+
+
+	mensaje=mensaje + z[7] + '\n' + Conf_Msg(13) + z[9] + '\n';
+
+      }
+
+
+
+      mensaje=mensaje + Conf_Msg(17) + z[10] + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(3) + FormatCurrency(z[12]) + '\n' + Conf_Msg(152) + z[14] + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + Conf_ValidaPlazo(z[13]);
+
+      break;
+
+    //case 'PS': //pago de servicios
+
+      //mensaje=Conf_Msg(21);
+
+      break;
+
+    case 'FRECC': //operaciones frecuentes
+
+      break;
+
+    case 'PC': //pago de creditos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(27) + z[2] + '\n' + Conf_Msg(11) + z[3] + '\n' + Conf_Msg(12) + z[4] + '\n' + Conf_Msg(3) + FormatCurrency(z[5]);
+
+      break;
+
+    case 'POP': //pago ordenes de pago
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + z[2] + '\n' + Conf_Msg(64) + z[12] + '\n' + Conf_Msg(28) + z[3] + '\n' + Conf_Msg(66) + z[16] + '\n' + Conf_Msg(3) + FormatCurrency(z[4]) + '\n' + Conf_Msg(65) + z[17] + '\n' + Conf_Msg(152) + z[13] + '\n' + Conf_Msg(205) + z[14] + '\n' + Conf_Msg(206) + z[15];
+
+      break;
+
+    case 'PIMP': //pago de impuestos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(11) + z[2] + '\n' + Conf_Msg(14) + z[3] + '\n' + Conf_Msg(38) + z[4] + '\n' + z[5] + '\n' + z[12] + '\n' + Conf_Msg(13) + z[13] + '\n' + Conf_Msg(5) + z[14] + '\n' + Conf_Msg(3) + FormatCurrency(z[15]);
+
+      break;
+
+    case 'PA': //pago Accitrade
+
+      mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(18) + z[11] + '\n' + Conf_Msg(17) + z[12] + '\n' + programada;
+
+      break;
+
+    case 'PDB': //pago domiciliacion baja
+
+    case 'PDA': //pago domiciliacion activacion
+
+      mensaje=mensaje + z[3] +'\n' + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(47) + z[2] + '\n' + Conf_Msg(40) + z[4];
+
+      break;
+
+    case 'II': //inversion integral
+
+      if( /*DNBF*/ (document.getElementById("checkCalendario").checked==true) && z[4].value != "0" && z[5].value.length != 0) 
+
+      { 
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(29) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[4].value + '/' + z[5].value + '/' + myDate.getFullYear();
+
+			}
+
+      else
+
+      {  
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + "\n\n" + z[1] + '\n' + Conf_Msg(29) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      } 
+
+      break;
+
+      
+
+    case 'IFI': //fondo inversion horizontes cobertura
+
+
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) &&  z[11].value != "0" && z[12].value != "0") 
+
+      { 
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + '\n\n' ;
+
+      }
+
+
+
+      if(z[3].value.length!=0 && z[3].value.length!=0)
+
+      {
+
+        //mensaje=mensaje + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3].value);
+
+      }
+
+      else
+
+      {
+
+        //mensaje=mensaje + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(39) + z[4].value;
+
+      }
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value!="0" && z[12].value!="0") 
+
+      { 
+
+       // mensaje=mensaje + '\n' + '\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[11].value + '/' + z[12].value + '/' + myDate.getFullYear();
+
+      }
+
+      break;
+
+    case 'IFH': //fondo inversion horizontes banamex
+
+      if(z[3].value.length!=0 && z[3].value.length!=0)
+
+      {
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3].value);
+
+      }
+
+      else
+
+      {
+
+       // mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(39) + z[4].value;
+
+      }
+
+      break;
+
+    case 'IE': //inversion empresarial
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value == "0" && z[12].value == "0") 
+
+      { 
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' ;
+
+      }
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + z[1] + '\n' + Conf_Msg(41) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      if( /*DNBF*/(document.getElementById("checkCalendario").checked==true) && z[11].value != "0" && z[12].value != "0") 
+
+      { 
+
+        mensaje=mensaje + '\n\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + z[11].value + '/' + z[12].value + '/' + myDate.getFullYear();
+
+      }
+
+      break;
+
+    case 'IPAIN': //inversion a plazo A/I
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(1) + z[2] + '\n' + Conf_Msg(34) + z[3] + '\n' + Conf_Msg(42) + z[5] + '\n' + Conf_Msg(29) + z[4] + '\n' + Conf_Msg(43) + z[11] + '\n' + Conf_Msg(44)  + z[12] + '\n' + Conf_Msg(3) + FormatCurrency(z[13]) + '\n' + Conf_Msg(45) + z[14];
+
+      break;
+
+    case 'IPDC': //inversion a plazo D/C
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201) + '\n\n' + Conf_Msg(151) + '\n\n' + z[1] + '\n' + Conf_Msg(34) + z[2] + '\n' + Conf_Msg(42) + z[3] + '\n' + Conf_Msg(29) + z[4] + '\n' + Conf_Msg(2) + z[5] + '\n' + Conf_Msg(3) + FormatCurrency(z[11]) + '\n' + Conf_Msg(44) + z[12] + '\n' + Conf_Msg(43)  + z[13] + '\n' + Conf_Msg(45) + z[14];
+
+      break;
+
+    case 'SCH': //solicitud chequera
+
+      if(z[1]=="01" || z[1]=="03")
+
+      {
+
+        mensaje=mensaje + z[2] + '\n' + Conf_Msg(1) + z[3];
+
+      }
+
+      else
+
+      {
+
+        mensaje=mensaje + z[2] + '\n' + Conf_Msg(1) + z[3] + '\n' + Conf_Msg(19) + z[4];
+
+      }
+
+      break;
+
+    case 'KCTLC': //klic card traspaso de linea de consumo credito y debito
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n\n' + Conf_Msg(20) + '\n' ;
+
+      if (z[11]=='credito')
+
+      {
+
+	mensaje=mensaje + Conf_Msg(35) + z[1] + '\n' + Conf_Msg(37) + z[2];
+
+      }
+
+      else
+
+      {
+
+	mensaje=mensaje + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(46) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]);
+
+      }
+
+      break;
+
+    case 'PT':// Pago tarjetas Banamex
+
+    	if (programada=="")
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+"\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]);
+
+      }
+
+      else
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+"\n\n" + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      } 
+
+    	break;
+
+    	
+
+     case 'AUT':// Activación o Ubicación de Plástico
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+"\n" + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1];
+
+    	break;
+
+
+
+    case 'LIT':// Limite de crédito Titular
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+"\n" + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1] + '\n\n' + Conf_Msg(3) + z[2];
+
+    	break;
+
+    	
+
+    case 'ROBO': // Robo o Extravio
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(1) + z[1];
+
+      break;
+
+    case 'IPRE': // Inscripcion Premia
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(1)+ z[1] + '\n';
+
+      break;
+
+
+
+    case 'INCPRE': // Incorporacion Premia
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(56)+ z[1] + '\n\n' + Conf_Msg(57) + z[2];
+
+      break;
+
+    
+
+    case 'INSLIB': // Inscripcion Libra Arsa
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(204)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(58)+ z[1] + '\n';
+
+      break;
+
+
+
+    case 'PPP':		//Plan Personal de Pagos
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n" + Conf_Msg(50) + z[1] + '\n' + Conf_Msg(51) + z[2] + '\n' + Conf_Msg(43) + z[3] + '\n' + Conf_Msg(52) + z[4] + '\n' + Conf_Msg(53) + z[5]  + '\n' + Conf_Msg(54) + z[11] + '\n' + Conf_Msg(55) + z[12] + '\n';
+
+      break;
+
+
+
+    case 'LTA':	//Limite de Tarjetas Adicionales Modificar
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n";
+
+			for(k=0,j=10; k<CtasModif; k++) { 
+
+				mensaje=mensaje + Conf_Msg(59) + z[++j] + '\t\t' + Conf_Msg(60) + z[++j] + '\n' ;
+
+      	} 
+
+      break;
+
+      
+
+    case 'LTAr':	//Limite de Tarjetas Adicionales Reestablecer
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(202)+ '\n' + Conf_Msg(151) + "\n\n";
+
+				mensaje=mensaje + Conf_Msg(59) + z[1] + '\n' ;
+
+      break;      
+
+    
+
+		case 'ZAAP': //Aportaciones Afore 
+
+      mensaje=Conf_Msg(21);
+
+      break;
+
+
+
+    case 'ARL': // Retiro por Ley Afore
+
+      mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(203)+ '\n' + Conf_Msg(151) + '\n\n'+ Conf_Msg(63)+ z[1]+'\n'+ Conf_Msg(2)+ z[2]+ '\n'+ Conf_Msg(61)+ z[3]+ '\n'+ Conf_Msg(62)+ z[4]+ '\n';
+
+	  break;
+
+	  
+
+    default: //
+
+      if (programada=="")
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + '\n\n' + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]);
+
+      }
+
+      else
+
+      {
+
+        mensaje=Conf_Msg(200) + "\t\t\t\t" + Conf_Msg(201)+ '\n' + Conf_Msg(151) + Conf_Msg(1) + z[1] + '\n' + Conf_Msg(2) + z[2] + '\n' + Conf_Msg(3) + FormatCurrency(z[3]) + '\n' + Conf_Comprobante(z[20],z[4],z[5]) + '\n' + programada;
+
+      }
+
+  }
+
+  answ=confirm(mensaje);
+
+}
+
+
+
+function Conf_AV(objeto,tipo)
+
+{
+
+  var Num_Opcion;
+
+  var Valor=99;
+
+
+
+  if ((typeof objeto)=='undefined')
+
+  {
+
+    return Valor;
+
+  }
+
+  else if (tipo==1)
+
+  {
+
+    Num_Opcion = objeto.selectedIndex;
+
+    Valor = objeto.options[Num_Opcion].text;
+
+    return Valor;
+
+  }
+
+  else if (tipo==2)
+
+  {
+
+    Num_Opcion = objeto.selectedIndex;
+
+    Valor = objeto.value;
+
+    return Valor;
+
+  }
+
+  else
+
+  {
+
+    var numradios=objeto.length;
+
+    for(var i=0; i<numradios; i++)
+
+     {
+
+       if (objeto[i].checked)
+
+	{
+
+	  Valor=objeto[i].value;	
+
+	}
+
+      }
+
+      return Valor;
+
+   }
+
+}
+
+
+
+function Conf_Comprobante(bcom,rfc,iva)
+
+{
+
+  var msgcom='';
+
+  if(bcom==true)
+
+  {
+
+    msgcom='\n' + Conf_Msg(4) + '\n' + Conf_Msg(5) + rfc + '\n' + Conf_Msg(6) + iva;
+
+  }
+
+  return msgcom;
+
+}
+
+
+
+function Conf_VP(dia,mes,hora,minuto,ampm)
+
+{
+
+  if((typeof dia)=='undefined')
+
+  {
+
+    return("");
+
+  }
+
+  /*BFDN*/
+
+  minuto.value = (minuto.value.length=1 ? document.getElementById('MINS').options[document.getElementById('MINS').selectedIndex].value : minuto.value);
+
+  hora.options[hora.selectedIndex].value = (hora.options[hora.selectedIndex].value.length > 2) ? hora.options[hora.selectedIndex].value.substring(0,2) : hora.options[hora.selectedIndex].value;
+
+  if(document.getElementById("checkCalendario").checked==false)
+
+   { /* DNBF*/
+
+      return ("");
+
+  }
+
+
+
+  var msgprog='';
+
+  
+
+  if (dia.value != "0"  
+
+     &&   mes.value != "0"  
+
+     &&   (hora.options[hora.selectedIndex].value != "0"  /*hora.selectedIndex > 0  DNBF*/ 
+
+     ||   minuto.value != "0"))
+
+  {
+
+   
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + dia.value + '/' + mes.value + '/' + myDate.getFullYear() + '\n' + Conf_Msg(9) + hora.value + ':' + minuto.value + ' ' + ampm.value;
+
+
+
+  }
+
+  else if( dia.value != "0"  
+
+     &&   mes.value != "0")
+
+  { 
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + dia.value + '/' + mes.value + '/' + myDate.getFullYear() ;
+
+  }
+
+  else if (hora.options[hora.selectedIndex].value != "0"  /*DNBF*/ 
+
+     &&   minuto.value != "0" )
+
+  {
+
+   
+
+     msgprog='\n' + Conf_Msg(7) + '\n' + Conf_Msg(8) + getFechaActual("DDMMYY") +'\n' + Conf_Msg(9) + hora.value + ':' + minuto.value + ' ' + Conf_AV(ampm,3);
+
+  }
+
+
+
+  return msgprog;
+
+}
+
+
+
+function Conf_ValidaPlazo(valor)
+
+{
+
+  var plaz='';
+
+  
+
+  if(valor==99)
+
+  {
+
+    return plaz;
+
+  }
+
+
+
+  if(valor=="0")
+
+  {
+
+    plaz=Conf_Msg(23) + '\n' + Conf_Msg(24);
+
+  }
+
+  else if (valor=="24")
+
+  {
+
+   plaz=Conf_Msg(23) + '\n' + Conf_Msg(25);
+
+  }
+
+  else
+
+  {
+
+   plaz=Conf_Msg(23) + '\n' + Conf_Msg(26);
+
+  }
+
+  return plaz;
+
+}
+
+
+
+function getFechaActual(mode)
+
+{
+
+   var now = new Date();
+
+   var dayNr = ((now.getDate()<10) ? "0" : "")+ now.getDate();
+
+   if (mode=="DDMMYY")
+
+      var MonthDayYear =(dayNr+"/"+(now.getMonth()+1)+"/"+now.getFullYear());
+
+   else
+
+      var MonthDayYear =((now.getMonth()+1)+"/"+dayNr+"/"+now.getFullYear());
+
+
+
+   return MonthDayYear;
+
+}
+
+
+
+function FormatClean(num)
+
+{
+
+     var sVal='';
+
+     var nVal = num.length;
+
+     var sChar='';
+
+     var sPoint='.';
+
+
+
+   try
+
+   {
+
+       for(i=0;i<nVal;i++)
+
+      {
+
+         sChar = num.charAt(i);
+
+         nChar = sChar.charCodeAt(0);
+
+         if (((nChar >=48) && (nChar <=57)) || (nChar == sPoint.charCodeAt(0)) ) { sVal += num.charAt(i);   }
+
+      }
+
+   }
+
+    catch (exception) { AlertError("Format Clean",e); }
+
+    return sVal;
+
+}
+
+function FormatCurrency(num)
+
+{
+
+        var sVal='';
+
+        var minus='';
+
+        var Decimal='.';
+
+		
+
+        if (num.lastIndexOf("-") == 0) { minus='-'; }
+
+   		num = FormatClean(num);
+
+        sVal = minus + FormatDollar(num,',') + '.' + FormatCents(num);
+
+        return sVal;
+
+}
+
+
+
+function FormatCents(amount)
+
+{
+
+	var cents = '';
+
+
+
+	try
+
+	{
+
+		amount = parseFloat(amount);
+
+        	if (isNaN(amount)) amount = 0;
+
+
+
+		var samount = new String(amount);
+
+		var pos;
+
+
+
+		pos = samount.lastIndexOf('.') + 1;
+
+
+
+		if (pos == 0 || pos == -1)
+
+				cents = '';
+
+		else	cents =  samount.substring(pos);
+
+
+
+		if (cents.length == 0) { return '00'; }
+
+		if (cents.length == 1) { return cents + '0'; }
+
+		if (cents.length == 2) { return cents; }
+
+	}
+
+	catch (exception) { AlertError("Format Cents",e); }
+
+	return cents;
+
+}
+
+
+
+function FormatDollar(amount,CommaDelimiter)
+
+{
+
+   try
+
+   {
+
+        amount = parseInt(amount, 10);
+
+        
+
+        if (isNaN(amount)) amount = 0;
+
+
+
+        var samount = new String(amount);
+
+
+
+        if (samount.length <= 0) { return 0; }
+
+
+
+        samount =  samount.substring(0,samount.length);
+
+
+
+        for (var i = 0; i < Math.floor((samount.length-(1+i))/3); i++)
+
+        {
+
+           samount = samount.substring(0,samount.length-(4*i+3)) + CommaDelimiter + samount.substring(samount.length-(4*i+3));
+
+         }
+
+   }
+
+    catch (exception) { AlertError("Format Comma",e); }
+
+    return samount;
+
+}
+
+
+
+
+
+function AlertError(MethodName,e)
+
+{
+
+    if (e.description == null) { alert(MethodName + " Exception: " + e.message); }
+
+    else {  alert(MethodName + " Exception: " + e.description); }
+
+}
+
+
+
+function CmpVta_Fond_Deuda() 
+
+{
+
+	flag=true;
+
+	
+
+		mens1 = "Seleccione una de las opciones disponibles";
+
+		mens2 = "Seleccione algún tipo de inversi&oacute;n"; 
+
+		mens3 = ( language=="esp" ) ? "Digite el Importe" : "Tip the amount";
+
+		mens4 = ( language=="esp" ) ? "Digite el No. de Acciones" : "Tip the stocks";
+
+		mens5 = "Solo se permite una opción: Acciones o Importe";
+
+		mens6 = ( language=="esp" ) ? "El campo Importe debe ser num&eacute;rico" : "The Amount field must be numeric"; 
+
+		mens7 = ( language=="esp" ) ? "El campo Acciones debe ser num&eacute;rico" : "The Stocks field must be numeric";
+
+		mens8 = "La firma digital debe ser num&eacute;rica";
+
+		mens9= ( language=="esp" ) ? "Importe debe ser mayor a cero" : "The amount must be greater than zero";
+
+		mens10= ( language=="esp" ) ? "Campo acciones debe ser mayor a cero" : "The Stocks fields must be greater than zero";
+
+	
+
+	if(RdioChk_Vacio ("DATA1", mens1) != true) 
+
+	{                      
+
+	    flag=false;
+
+	}
+
+	
+
+	if(Combo_Vacio("DATA2", mens2, 'SI') != true) 
+
+	{
+
+	    flag=false;
+
+	}
+
+	
+
+	if(document.forms[0].DATA1[0].checked == true) 
+
+	{    
+
+	  	if(Campo_Vacio('DATA3', mens3,'SI') != true) 
+
+		{
+
+	  	    flag= false;
+
+	  	}  
+
+			else
+
+		{
+
+			if(Valida_Caracteres('DATA3', ',.', '1', 'SI', mens6) != true) 
+
+			{
+
+				flag=false;
+
+				parent.Expandir();
+
+			}
+
+
+
+			if(document.getElementById('DATA3').value=="0")
+
+			{
+
+				document.getElementById('DATA3_error').style.display='block';
+
+				document.getElementById('DATA3_error').innerHTML=mens9;
+
+				flag=false;
+
+				parent.Expandir();
+
+			}
+
+		}
+
+		document.getElementById('DATA4').value="";
+
+  	}
+
+	
+
+	if(document.forms[0].DATA1[1].checked == true) 
+
+	{    
+
+		//alert("venta");
+
+	    if(Campo_Vacio('DATA4', mens4,'SI') != true) 
+
+		{
+
+	        flag=false;
+
+	    }  
+
+			else
+
+			{
+
+				if(Valida_Caracteres('DATA4','', '1', 'SI', mens7) != true) 
+
+				{
+
+					flag=false;
+
+					parent.Expandir();
+
+				}
+
+				else
+
+				{
+
+					if(document.forms[0].DATA4.value <= 0) 
+
+					{
+
+						document.forms[0].DATA4.focus();
+
+						document.getElementById('DATA4_error').style.display='block';
+
+						document.getElementById('DATA4_error').innerHTML=mens10;
+
+						flag=false;
+
+						parent.Expandir();
+
+					}
+
+				}
+
+			}
+
+			document.getElementById('DATA3').value="";
+
+	}
+
+	
+
+	if(document.getElementById('DATA5').value != "") 
+
+	{       //valida firma digital
+
+	    if(Valida_Caracteres('DATA5', '', '1', 'SI', mens8) != true) 
+
+		{
+
+	        flag=false;
+
+		parent.Expandir();
+
+	    }
+
+	}
+
+	z[3]=document.forms[0].DATA3;
+
+	z[4]=document.forms[0].DATA4;
+
+			
+
+	if(document.getElementById("DATA14").checked==true)
+
+	{
+
+		document.getElementById('DATA14').value="on";
+
+	}
+
+	
+
+	if(flag)
+
+	{
+
+		document.getElementById('DATA12').value=document.getElementById('combonCtas').selectedIndex;
+
+
+
+		parent.document.getElementById("DATADEMO").value=$("#checkCalendario").is(":checked") + "," + $("#DATA14").is(":checked") + "|" + $("#yearpicker1").val();
+
+		
+
+		if($("input:radio[id=radCompra]").is(':checked')==true){
+
+		
+
+			if($("#combonCtas option:selected").val()=="17")
+
+			{
+
+			parent.cargaDocN('Sociedades de Inversion/confirma_compra_liquidez_diaria.html');
+
+			}
+
+		}
+
+		if($("input:radio[id=radVenta]").is(':checked')==true){
+
+			if($("#combonCtas option:selected").val()=="17")
+
+			{
+
+			parent.cargaDocN('Sociedades de Inversion/confirma_venta_liquidez_diaria.html');
+
+			}
+
+		}
+
+	}else{
+
+		window.parent.ajustarIframe();
+
+	}
+
+}
+
+			function VerificaSeleccion(Combo) 
+
+{
+
+	if (Combo.selectedIndex > 0)
+
+	   	{			
+
+   		  return true; 
+
+                }
+
+        else
+
+                {
+
+                   return false;
+
+                }
+
+ }
+
+
+
+			var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+}
+
+
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+			var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "/bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+			var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+			var aw="";
+
+			var event="";
+
+			var miprueba="";
+
+			
+
+			var titulo="Fondos Horizonte";
+
+			rutaAyuda=rutaAyuda+"Fondos-Horizonte.htm";
+
+			
+
+			function cambioLeyendaRetiro()
+
+			{
+
+				document.getElementById('leyenda').innerHTML=(language=='eng') ? "The sale's amount will be deposited into the collection account linked to the investment" : 'El importe de la venta ser&aacute; depositado a la cuenta eje que est&aacute; ligada la inversi&oacute;n.';
+
+				document.getElementById('leyenda').style.display='block';
+
+				if(document.getElementById('compra').style.display=='block')
+
+				{
+
+					document.getElementById('compra').style.display='none';
+
+					document.getElementById('venta').style.display='block';
+
+				}
+
+				else
+
+				{
+
+					document.getElementById('venta').style.display='block';
+
+				}
+
+				parent.Expandir();
+
+			}
+
+			
+
+			function cambioLeyendaDeposito()
+
+			{
+
+				document.getElementById('leyenda').innerHTML= (language=='eng') ? 'The purchase will be charged to the collection account linked to the investment' : 'La compra ser&aacute; cargada de  la cuenta eje a la que est&aacute; ligada la inversi&oacute;n.';
+
+				
+
+				document.getElementById('leyenda').style.display='block';
+
+				
+
+				if(document.getElementById('venta').style.display=='block')
+
+				{
+
+					document.getElementById('venta').style.display='none';
+
+					document.getElementById('compra').style.display='block';
+
+				}
+
+				else
+
+				{
+
+					document.getElementById('compra').style.display='block';
+
+				}
+
+				parent.Expandir();
+
+			}
+
+
+
+	var es= new Array("Banamex investment funds (previously horizontes)",
+
+							  "Select the type of transaction and the withdrawal account, enter the investment data and click &quot;Continue&quot;",
+
+							  "Transaction type",
+
+							  "Purchase",
+
+							  "Sale",
+
+							  "Accounts",
+
+							  "Investment Fund / Contract",
+
+							  "Investment <br/> data",
+
+							  "Amount MXN",
+
+							  "Investment <br/> data",
+
+							  "Number contract",
+
+							  "Additionals<br />options",
+
+							  "Schedule for future date",
+
+							  "Date",
+
+							  "Save as frequent transaction",
+
+							  "Continue",
+
+							  "Continue",
+
+							  "Continue",
+
+							  "What can I do&#63;",
+
+							  "View Amounts",
+
+							  "Sorry, the transaction could not be completed",
+
+							  "Investment at sight with availability and daily interests",
+
+							  "Possible solution",
+
+							  "What can I do&#63;",
+
+							  "You can use online help or contact the",
+
+							  "customer service",
+
+							  "at 1226 3990 (D.F. and Metropolitan area) or 01 800 110 3990 (rest of the Republic).",
+
+							  "It is important to have the following code:",
+
+							  "Cause",
+
+							  "Accept",
+
+							  "*Scheduled transactions can not be saved as frequent",
+
+							  "HORIZONTE MUTUAL FUNDS");
+
+			
+
+			jQuery(document).ready(function()
+
+			{
+
+						$("#DATA3").focus(function() {
+
+$(this).val('1,000.00').attr("readonly", "readonly");
+
+});
+
+				leerDatosDemo();
+
+				LlenaCombo();
+
+				
+
+				$("#combonCtas").change(function(){
+
+			var a=document.getElementById('combonCtas').options[document.getElementById('combonCtas').selectedIndex].getAttribute("class");
+
+					if(a == "16" || a == "24")
+
+						{
+
+							document.getElementById('t15').style.display='none';
+
+							document.getElementById('t17').style.display='none';
+
+							document.getElementById('opcionesAdicionales').style.display='block';
+
+							document.getElementById('Programar2').style.display='block';
+
+							document.getElementById('checkCalendario').checked=false;
+
+							document.getElementById('advertencia').style.display='block';
+
+							document.getElementById('t16').style.display='block';
+
+							
+
+							parent.Expandir();
+
+						}
+
+											
+
+					else
+
+					{
+
+						if(a == "22" || a == "23")
+
+							{
+
+								document.getElementById('t15').style.display='none';
+
+								document.getElementById('t17').style.display='block';
+
+								document.getElementById('opcionesAdicionales').style.display='block';
+
+								document.getElementById('Programar2').style.display='none';
+
+								document.getElementById('Programar').style.display='none';
+
+								document.getElementById('checkCalendario').checked='false';
+
+								document.getElementById('t16').style.display='none';
+
+								document.getElementById('advertencia').style.display='none';
+
+								parent.Expandir();
+
+							}
+
+					}
+
+					
+
+				});
+
+
+
+				if(language== "eng"){
+
+					var Formato = "mm/dd/yy";
+
+					var diasSemana = ['Sun','Mon','Tue','Wed','Thu','Fry','Sat'];
+
+					var Meses = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+				}else{
+
+					var Formato = "dd/mm/yy";
+
+					var diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+					var Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+				}
+
+
+
+				var fechaSer= new Date();
+
+				var anio = fechaSer.getFullYear();
+
+				var mes = fechaSer.getMonth();
+
+				var dia = fechaSer.getDate();
+
+				fechaIni = new Date(anio, mes, dia);
+
+				
+
+				CrearCal("#yearpicker1", Formato, diasSemana, Meses, fechaIni, fechaIni,30, '275', 'A');
+
+				$("#yearpicker1").focus(function(){$("#yearpicker1").val("");});
+
+				parent.Expandir();
+
+
+
+				if("[Error_Modal]"=="error")
+
+				{
+
+					parent.$("#mensajeError_contenido_div").html($("#mensajeError_contenido").html());
+
+					parent.$.modal(				
+
+					{
+
+					opacity:60, 
+
+					overlayClose:false, 
+
+					flagDiv:true,
+
+					widthDivIfrm:600,
+
+					heightDivIfrm:"auto"
+
+					}
+
+					);
+
+				}
+
+
+
+					if("[Flag_Horario]"=="fuera")
+
+				{
+
+					parent.$.modal(				
+
+						{
+
+						opacity:60, 
+
+						overlayClose:false, 
+
+						flagDiv:false,
+
+						widthDivIfrm:600,
+
+						heightDivIfrm:100,
+
+						srcIfrm:"/spanishdir/if.htm"
+
+						}
+
+						);
+
+						aw=parent.document.getElementById('mensajeError_contenido_ifrm').contentWindow;
+
+						miprueba="LanzaModal";
+
+						setTimeout("checkdom()",100);
+
+				}
+
+
+
+				if(""=="return")
+
+				{
+
+					if("[CompraVenta]"=="COMPRA")
+
+					{
+
+						document.getElementById('combonCtas').selectedIndex=[SelectIndex];
+
+						document.forms[0].DATA1[0].checked=true;
+
+						
+
+						cambioLeyendaDeposito();  
+
+						document.getElementById('opcionesAdicionales').style.display='block';
+
+						document.getElementById('Programar2').style.display='block';
+
+						document.getElementById('t16').style.display='block';
+
+						document.getElementById('t15').style.display='none';
+
+						document.getElementById('DATA3').value="[Import]";
+
+						
+
+						if("[Day]"!="0")
+
+						{
+
+							document.getElementById('checkCalendario').checked=true;
+
+							toggleChecks('checkCalendario','DATA14');
+
+							document.getElementById('Programar').style.display='block';
+
+							var anio="[year]";
+
+							
+
+								document.getElementById('yearpicker1').value="[Day]/[Month]/"+anio;
+
+						}
+
+							else
+
+							{
+
+								var frec="[FrecuenteStatus]";
+
+								frec=frec.replace(/^\s*|\s*$/gi,"");
+
+								if(frec=="on")
+
+								{
+
+									document.getElementById('DATA14').checked=true;
+
+									toggleChecks('DATA14','checkCalendario');
+
+									document.getElementById('Programar2').style.display='block';
+
+									document.getElementById('Programar').style.display='none';
+
+									document.getElementById('advertencia').style.display='block';
+
+									document.getElementById('yearpicker1').value="";
+
+								}
+
+									else
+
+									{
+
+										document.getElementById('checkCalendario').checked=false;
+
+										document.getElementById('DATA14').checked=false;
+
+										document.getElementById('Programar2').style.display='block';
+
+										document.getElementById('Programar').style.display='none';
+
+										document.getElementById('advertencia').style.display='block';
+
+										document.getElementById('yearpicker1').value="";
+
+									}
+
+							}
+
+					}
+
+					else
+
+						{
+
+							document.getElementById('combonCtas').selectedIndex=[SelectIndex];
+
+							document.forms[0].DATA1[1].checked=true;
+
+							cambioLeyendaRetiro();
+
+							document.getElementById('opcionesAdicionales').style.display='block';
+
+							document.getElementById('Programar2').style.display='block';
+
+							document.getElementById('t16').style.display='block';
+
+							document.getElementById('t15').style.display='none';
+
+							document.getElementById('DATA4').value="[Acciones]";
+
+							
+
+								if("[Day]"!="0")
+
+							{
+
+								document.getElementById('checkCalendario').checked=true;
+
+								toggleChecks('checkCalendario','DATA14');
+
+								document.getElementById('Programar').style.display='block';
+
+								var anio="[year]"
+
+								
+
+									document.getElementById('yearpicker1').value="[Day]/[Month]/"+anio;
+
+							}
+
+							else
+
+							{
+
+								var frec="[FrecuenteStatus]";
+
+								frec=frec.replace(/^\s*|\s*$/gi,"");
+
+								if(frec=="on")
+
+								{
+
+									document.getElementById('DATA14').checked=true;
+
+									toggleChecks('DATA14','checkCalendario');
+
+									document.getElementById('Programar2').style.display='block';
+
+									document.getElementById('Programar').style.display='none';
+
+									document.getElementById('advertencia').style.display='block';
+
+									document.getElementById('yearpicker1').value="";
+
+								}
+
+									else
+
+									{
+
+										document.getElementById('checkCalendario').checked=false;
+
+										document.getElementById('Programar2').style.display='block';
+
+										document.getElementById('Programar').style.display='none';
+
+										document.getElementById('advertencia').style.display='block';
+
+										document.getElementById('yearpicker1').value="";
+
+									}
+
+							}
+
+						}
+
+				}
+
+				if(""=="return")
+
+				{
+
+					if("[CompraVenta]"=="COMPRA")
+
+					{
+
+						document.getElementById('combonCtas').selectedIndex=[SelectIndex_Diario];
+
+						document.forms[0].DATA1[0].checked=true;
+
+						cambioLeyendaDeposito();  
+
+						document.getElementById('opcionesAdicionales').style.display='block';
+
+						document.getElementById('Programar').style.display='none';
+
+						document.getElementById('advertencia').style.display='none';
+
+						document.getElementById('Programar2').style.display='none';
+
+						document.getElementById('t17').style.display='block';
+
+						document.getElementById('t15').style.display='none';
+
+						document.getElementById('DATA3').value="[Import]";
+
+								var frec="[FrecuenteStatus]";
+
+								frec=frec.replace(/^\s*|\s*$/gi,"");
+
+								if(frec=="on")
+
+								{
+
+									document.getElementById('DATA14').checked=true;
+
+									document.getElementById('Programar2').style.display='none';
+
+									document.getElementById('Programar').style.display='none';
+
+									document.getElementById('advertencia').style.display='none';
+
+									document.getElementById('yearpicker1').value="";
+
+								}
+
+									else
+
+									{
+
+										document.getElementById('DATA14').checked=false;
+
+										document.getElementById('Programar2').style.display='none';
+
+										document.getElementById('Programar').style.display='none';
+
+										document.getElementById('advertencia').style.display='none';
+
+										document.getElementById('yearpicker1').value="";
+
+									}
+
+					}
+
+						else
+
+						{
+
+						document.getElementById('combonCtas').selectedIndex=[SelectIndex_Diario];
+
+							document.forms[0].DATA1[1].checked=true;
+
+							cambioLeyendaRetiro();
+
+							document.getElementById('opcionesAdicionales').style.display='block';
+
+							document.getElementById('Programar2').style.display='none';
+
+							document.getElementById('t17').style.display='block';
+
+							document.getElementById('t15').style.display='none';
+
+							document.getElementById('DATA4').value="[Acciones]";
+
+							
+
+								var frec="[FrecuenteStatus]";
+
+								frec=frec.replace(/^\s*|\s*$/gi,"");
+
+								if(frec=="on")
+
+								{
+
+									document.getElementById('DATA14').checked=true;
+
+									toggleChecks('DATA14','checkCalendario');
+
+									document.getElementById('Programar2').style.display='none';
+
+									document.getElementById('Programar').style.display='none';
+
+									document.getElementById('advertencia').style.display='none';
+
+									document.getElementById('yearpicker1').value="";
+
+								}
+
+									else
+
+									{
+
+										document.getElementById('checkCalendario').checked=false;
+
+										document.getElementById('Programar2').style.display='none';
+
+										document.getElementById('Programar').style.display='none';
+
+										document.getElementById('advertencia').style.display='none';
+
+										document.getElementById('yearpicker1').value="";
+
+									}
+
+						}
+
+				}
+
+
+
+				var DATAAUX = $("#DATAAUX", window.parent.document).val();
+
+					if(DATAAUX!=""){
+
+					
+
+						if(isNaN(DATAAUX))
+
+						{
+
+							var resumen=DATAAUX.split('~');
+
+							if(resumen[0]=="retiro")
+
+							{
+
+								$(".VENTA").attr("checked","checked");
+
+								cambioLeyendaRetiro();
+
+							}
+
+							else
+
+							{
+
+								$(".COMPRA").attr("checked","checked");
+
+								cambioLeyendaDeposito();
+
+							}
+
+								document.getElementById('combonCtas').value=resumen[1];
+
+									var a=document.getElementById('combonCtas').options[document.getElementById('combonCtas').selectedIndex].getAttribute("class");
+
+									if(a == "16" || a == "24")
+
+										{
+
+											document.getElementById('t15').style.display='none';
+
+											document.getElementById('t17').style.display='none';
+
+											document.getElementById('opcionesAdicionales').style.display='block';
+
+											document.getElementById('Programar2').style.display='block';
+
+											document.getElementById('checkCalendario').checked=false;
+
+											document.getElementById('advertencia').style.display='block';
+
+											document.getElementById('t16').style.display='block';
+
+											parent.Expandir();
+
+										}
+
+									else
+
+									{
+
+										if(a == "22" || a == "23")
+
+											{
+
+												document.getElementById('t15').style.display='none';
+
+												document.getElementById('t17').style.display='block';
+
+												document.getElementById('opcionesAdicionales').style.display='block';
+
+												document.getElementById('Programar2').style.display='none';
+
+												document.getElementById('Programar').style.display='none';
+
+												document.getElementById('checkCalendario').checked='false';
+
+												document.getElementById('t16').style.display='none';
+
+												document.getElementById('advertencia').style.display='none';
+
+												parent.Expandir();
+
+											}
+
+									}
+
+						}else{
+
+							$("#combonCtas").find("option[value='"+DATAAUX+"']").attr("selected","selected");
+
+							var a=document.getElementById('combonCtas').options[document.getElementById('combonCtas').selectedIndex].getAttribute("class");
+
+									if(a == "16" || a == "24")
+
+										{
+
+											document.getElementById('t15').style.display='none';
+
+											document.getElementById('t17').style.display='none';
+
+											document.getElementById('opcionesAdicionales').style.display='block';
+
+											document.getElementById('Programar2').style.display='block';
+
+											document.getElementById('checkCalendario').checked=false;
+
+											document.getElementById('advertencia').style.display='block';
+
+											document.getElementById('t16').style.display='block';
+
+											
+
+											parent.Expandir();
+
+										}
+
+									else
+
+									{
+
+										if(a == "22" || a == "23")
+
+											{
+
+												document.getElementById('t15').style.display='none';
+
+												document.getElementById('t17').style.display='block';
+
+												document.getElementById('opcionesAdicionales').style.display='block';
+
+												document.getElementById('Programar2').style.display='none';
+
+												document.getElementById('Programar').style.display='none';
+
+												document.getElementById('checkCalendario').checked='false';
+
+												document.getElementById('t16').style.display='none';
+
+												document.getElementById('advertencia').style.display='none';
+
+												parent.Expandir();
+
+											}
+
+									}
+
+						}
+
+						$("#DATAAUX", window.parent.document).val("");
+
+					}
+
+			});
+
+
+
+	function checkdom()
+
+	{
+
+		if(aw.document.forms[0]+''==undefined)
+
+		setTimeout("checkdom()",100);
+
+			else
+
+			{
+
+				var d=aw.document.forms[0];
+
+				var o=document.forms[0];
+
+				d.action=o.action;
+
+				d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+				d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+				d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+				d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+				d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+				d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+				d.EWFBUTTON.value=miprueba;
+
+				d.EWFBUTTON.name='EWF_BUTTON_'+miprueba;
+
+				d.submit();	
+
+			}
+
+	}
+
+			function LlenaCombo()
+
+			{	var i=0;
+
+				var cuentas= document.getElementById('combonCtas');
+
+				
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","PS");
+
+
+
+					opcion.setAttribute("class","8");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="".replace(/^\s*|\s*$/gi,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+							if("8"=="16"||"8"=="24")
+
+							{
+
+									desc="&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp; Liquidez 24 Horas";
+
+							}
+
+								else
+
+								{
+
+										desc="&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez Diaria";
+
+								}
+
+						 
+
+						}
+
+						else
+
+						{
+
+							if("8"=="16"||"8"=="24")
+
+							{
+
+									desc=alias+ "&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez 24 Horas";
+
+							}
+
+								else
+
+								{
+
+										desc=alias+ "&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez Diaria";
+
+								}
+
+						}
+
+					if("PS"=="PS")
+
+					{
+
+							document.getElementById("opc" + i + "").innerHTML = (language=='eng') ? 'Select an option' : 'Selecciona una opci&oacute;n';
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias_Horizontes(desc, (language=='eng') ? 'Select an option' : 'Selecciona una opci&oacute;n', "" ,"9");		
+
+					}
+
+					i++;
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","17");
+
+					opcion.setAttribute("class","22");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="HORZONT".replace(/^\s*|\s*$/gi,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+							if("22"=="16"||"22"=="24")
+
+							{
+
+									desc="HORZONT&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp; Liquidez 24 Horas";
+
+							}
+
+								else
+
+								{
+
+										desc="HORZONT&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez Diaria";
+
+								}
+
+						}
+
+						else
+
+						{
+
+							if("22"=="16"||"22"=="24")
+
+							{
+
+									desc=alias+ "&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez 24 Horas";
+
+							}
+
+								else
+
+								{
+
+										desc=alias+ "&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez Diaria";
+
+								}
+
+						}
+
+					if("17"=="PS")
+
+					{
+
+							document.getElementById("opc" + i + "").innerHTML = (language=='eng') ? 'Select an option' : 'Selecciona una opci&oacute;n';
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias_Horizontes(desc, "  746" , "MXN" ,"40,000.00");		
+
+					}
+
+					i++;
+
+									var opcion = document.createElement("option");
+
+					opcion.setAttribute("value","14");
+
+
+
+					opcion.setAttribute("class","16");
+
+					opcion.setAttribute("id","opc" + i + "");
+
+					cuentas.appendChild(opcion);
+
+					
+
+					var alias="HORZCOB".replace(/^\s*|\s*$/gi,"");
+
+					var desc;
+
+						if(alias=="")
+
+						{
+
+							if("16"=="16"||"16"=="24")
+
+							{
+
+									desc="HORZCOB&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp; Liquidez 24 Horas";
+
+							}
+
+								else
+
+								{
+
+										desc="HORZCOB&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez Diaria";
+
+								}
+
+						}
+
+						else
+
+						{
+
+							if("16"=="16"||"16"=="24")
+
+							{
+
+									desc=alias+ "&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez 24 Horas";
+
+							}
+
+								else
+
+								{
+
+										desc=alias+ "&nbsp;&nbsp;-&nbsp;&nbsp;MXN&nbsp;&nbsp;-&nbsp;&nbsp;Liquidez Diaria";
+
+								}
+
+						}
+
+					if("14"=="PS")
+
+					{
+
+							document.getElementById("opc" + i + "").innerHTML = (language=='eng') ? 'Select an option' : 'Selecciona una opci&oacute;n';
+
+					}
+
+					else
+
+					{
+
+					document.getElementById("opc" + i + "").innerHTML = Combo_Propias_Horizontes(desc, "  999" , "MXN" ,"40,000.00");
+
+					}
+
+					i++;
+
+			}
+
+		</script>
+
+    	<div class="float-left fonttit" id="t31">FONDOS HORIZONTE</div>
+
+        <div class="panelIzEnca3_text2" id="t0">
+
+        Fondos de Inversi&oacute;n Banamex (antes horizontes)</div>
+
+        <div class="color666 paddingT5 f11" id="t1">
+
+            Selecciona una inversi&oacute;n. Completa los datos de la inversi&oacute;n y da clic en &quot;Continuar&quot;.
+
+        </div>
+
+        
+
+        <div class="saldos_bloque3_2">
+
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p  padding20 paddingL15" valign="top"><span class="f12" id="t2">Tipo de operaci&oacute;n</span></td>
+
+
+
+					  <td valign="top" class=" paddingL0  paddingT18   paddingB13 padding20 ">
+
+                        <div class="floatL paddingL2 negrita color333 f11 paddingB5  ancho40p">
+
+                        <table  cellpadding="0" cellspacing="0" border="0">
+
+                            <tr>
+
+                                <td class=" paddingL10">
+
+									<input type="radio" name="DATA1"  id="radCompra" value="COMPRA" class="radio_contenido_acordeon COMPRA"onclick="javascript:cambioLeyendaDeposito();"/>
+
+								</td>
+
+                                <td class=""><div class="normal color333 f11 paddingT2 " id="t3">Compra de t&iacute;tulos</div> </td>   
+
+                            </tr>
+
+                        </table>
+
+						<table>
+
+								<tr>
+
+									<td class="paddingL15">
+
+										<div id="DATA1_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+									</td>
+
+								</tr>
+
+						</table>
+
+
+
+                        </div>
+
+                         <div class=" borderLSolid floatL paddingL2 negrita color333 f11 paddingB5 ancho40p">
+
+                        <table  cellpadding="0" cellspacing="0" border="0">
+
+                            <tr>
+
+                                <td class=" paddingL15">
+
+									<input type="radio" name="DATA1" id="radVenta" value="VENTA" class="radio_contenido_acordeon VENTA" onclick="javascript:cambioLeyendaRetiro();"/>
+
+								</td>
+
+                                <td class=""><div class="normal color333 f11 paddingT2 " id="t4">Venta de t&iacute;tulos</div> </td>
+
+                            </tr>
+
+                        </table>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </table>      	
+
+        </div>
+
+        <div class="saldos_bloque3_2">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20 paddingL15" valign="top"><span class="f12" id="t5">Cuentas</span></td>
+
+                    <td valign="top" class="padding20 paddingL15 paddingR15">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                        <tr>
+
+                            <td class="ancho33p">
+
+                                <div class="negrita color333 f11 paddingB5" id="t6">Fondo de Inversi&oacute;n / Contrato</div>
+
+                                <div class="">
+
+									<select class="ancho100p" name="DATA2" SELECTED-BY="VALUE" id="combonCtas">
+
+					                </select>
+
+									<div id="combonCtas_error" class="saldos_bloque2_f4_error_display_blanco"></div>
+
+                                </div>
+
+                            </td>             
+
+                        </tr>
+
+                    </table>
+
+                    </td>
+
+                </tr>
+
+            </table> 
+
+            <div class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5" id="leyenda" style="display:none;"></div>      	
+
+		</div>
+
+		<div class="saldos_bloque3_2" id="compra" style="display:none;">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+				<tr>
+
+                    <td class="borderRDotted ancho25p padding20 paddingL15" valign="top"><span class="f12" id="t7">Datos de<br />la inversi&oacute;n</span></td>
+
+                    <td valign="top" class="padding20 paddingL15 paddingR15">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td class=" ancho33p">
+
+									<div class="negrita color333 f11 paddingB5" id="t8">Importe MXN</div>
+
+									<input class="input ancho190 " maxlength="18" value="" type="text" name="DATA3" id="DATA3"/>
+
+									<div id="DATA3_error" class="saldos_bloque2_f4_error_display_blanco" onclick="validaCompraVenta('importe', document.forms[0].DATA1, 'El importe sÃ³lo aplica para compra','El nÃºmero de acciones sÃ³lo aplica para venta')">
+
+									</div> 
+
+								</td>
+
+							</tr>
+
+						</table>
+
+                    </td>
+
+				</tr>
+
+            </table> 
+
+		</div>
+
+		<div class="saldos_bloque3_2" id="venta" style="display:none;">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+				<tr>
+
+                    <td class="borderRDotted ancho25p padding20 paddingL15" valign="top"><span class="f12" id="t9">Datos de<br />la inversi&oacute;n</span></td>
+
+                    <td valign="top" class="padding20 paddingL15 paddingR15">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td class="ancho33p">
+
+									<div class="negrita color333 f11 paddingB5" id="t10">N&uacute;mero de t&iacute;tulos</div>
+
+									<input class="input ancho190" maxlength="18" value="" type="text" id="DATA4" name="DATA4" onclick="validaCompraVenta('acciones', document.forms[0].DATA1, 'El importe sÃ³lo aplica para compra','El nÃºmero de acciones sÃ³lo aplica para venta')"/>
+
+									<div id="DATA4_error" class="saldos_bloque2_f4_error_display_blanco">
+
+								</td>
+
+							</tr>
+
+						</table>
+
+                    </td>
+
+				</tr>
+
+            </table>
+
+        </div>
+
+        <div class="saldos_bloque3_2 bgF1F2F2" id="opcionesAdicionales" style="display:none;">
+
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+                <tr>
+
+                    <td class="borderRDotted ancho25p padding20 paddingL15" valign="top"><span class="f12" id="t11">Opciones<br />adicionales</span></td>
+
+					<td valign="top" class=" paddingT0 paddingB17 padding20 paddingL11 paddingR15" >
+
+						<div class="ancho100p overflow borderBDotted paddingB10  marginT19" id="Programar2">
+
+						<div class="floatL paddingT2" id="Programar1"><input type="checkbox" id="checkCalendario" name="checkCalendario" onclick="activaCheck('checkCalendario','Programar'); parent.Expandir(); toggleChecks('checkCalendario','DATA14');" /></div> 
+
+						<div class="floatL paddingT5 f11" id="t12">Programar a fecha futura</div></div>
+
+						<div id="Programar" class="displayN">
+
+							<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+								<tr>
+
+									<td valign="top" class="ancho50p calendario">
+
+										<div class="negrita color333 f11" id="t13">Fecha</div>
+
+										<input type="text" class="yearpicker" id="yearpicker1" readonly="readonly"/>
+
+										<div id="yearpicker1_error" class="saldos_bloque2_f4_error_display_azul"></div>
+
+									</td>
+
+								</tr>
+
+							</table>
+
+						</div>
+
+						<div class=" marginT10  alto18  ancho300">
+
+							<div class="floatL paddingT2"><input type="checkbox" id="DATA14" name="DATA14" onclick="toggleChecks('DATA14','checkCalendario');"/></div>
+
+							<div class="floatL paddingT5 f11" id="t14"> Guardar como operaci&oacute;n frecuente</div>
+
+						</div>
+
+                    </td>
+
+                </tr>
+
+            </table> 
+
+			<div id="advertencia" class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5">
+
+				<span id="t30" class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5">*Las operaciones programadas no pueden ser almacenadas como frecuentes</span>
+
+			</div>
+
+        </div>
+
+        <div class="marginT20 overflow" id="btnDeshabilitado">
+
+			<input type="button" id="t15" class="btnAZ86_des floatR" value="Continuar" value="Buscar" style="display:block;" />	
+
+			<input type="button" id="t16" class="btnAZ86 floatR" value="Continuar" onclick="validaSociedades('spanish')"  style="display:none;"/>
+
+			<input type="button" id="t17" class="btnAZ86 floatR" value="Continuar" onclick="CmpVta_Fond_Deuda()" style="display:none;"/>
+
+        </div>
+
+		<div id="mensajeError_contenido" style="display:none;">
+
+			<div class="mensajeError_contenidoIn">
+
+				<div class="mensajeError_Fila1">
+
+					<div class="mensajeError_titulo1" id="t20">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+					<div class="mensaje_btn1">
+
+						<div class="saldos_btn2 margin0" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+					</div>
+
+				</div>
+
+				<div class="mensajeError_Fila1_2  ">
+
+					<div class="color666 paddingT5 paddingL25 f11"> 
+
+						<span class="color666 paddingT5 f11" id="t21">Inversiones a la vista con disponibilidad e intereses diarios</span><br>
+
+					</div>
+
+				</div>
+
+				<div class="mensajeError_Fila2 color333 negrita paddingL25" id="t23">&iquest;Qu&eacute; puedo hacer?</div>
+
+					<div class="mensajeError_Fila2 color666 paddingL25" >
+
+					<span class="color666 paddingT5 f11" id="t24">Si deseas comun&iacute;cate a</span> <span id="t25">servicio a clientes</span> 
+
+					<span class="color666 paddingT5 f11" id="t26">al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br>
+
+					01 800 110 3990 (Del interior de la Rep&uacute;blica).<br></span> 
+
+					</div>
+
+						<div class="mensajeError_Fila2 color666 paddingL25" id="t27">
+
+							Es importante tener a la mano el siguiente c&oacute;digo:
+
+							<div class="coloree2e24 mensajeError_Fila2"></div>
+
+						</div>
+
+				<div class="mensajeError_Fila3">
+
+					<div class="floatR"><input type="button" id="t29" value="Aceptar" class="floatR btnAZ86 CerrarVentanaEmergente"/></div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+		<input TYPE="HIDDEN" NAME="EWFBUTTON" VALUE=""/>
+
+		<input TYPE="HIDDEN" NAME="DIA"  id="DIA" VALUE="0"/> 
+
+		<input TYPE="HIDDEN" NAME="MES" id="MES"  VALUE="0"/>
+
+		<INPUT TYPE="HIDDEN" NAME="DATA5" id="DATA5" VALUE=""/>
+
+		<input TYPE="HIDDEN" NAME="DATA6"id="DATA6" VALUE="0"/>
+
+		<input TYPE="HIDDEN" NAME="DATA7" id="DATA7" VALUE="0"/>
+
+		<input TYPE="HIDDEN" NAME="DATA8" id="DATA8" VALUE="0"/>
+
+		<input TYPE="HIDDEN" NAME="DATA9" id="DATA9" VALUE="0"/>
+
+		<input TYPE="HIDDEN" NAME="DATA13" id="DATA13"  VALUE="0"/>
+
+		<input TYPE="HIDDEN" NAME="DATA12" id="DATA12"  VALUE=""/>
+
+		<input TYPE="HIDDEN" NAME="DATA19" id="DATA19" VALUE="0"/>
+
+		<input TYPE="HIDDEN" NAME="DATA20" id="DATA20" VALUE=""/>
+
+		<input TYPE="HIDDEN" NAME="DATA21" id="DATA21" VALUE=""/>
+
+		<input TYPE="HIDDEN" NAME="DATA10" id="DATA10" VALUE="0"/>
+
+<input id="omtmodalvalue" type="hidden" value="Sociedades de Inversion|pagSolicitud.htm" />
+
+</div><p></p>
+
+</form>
+
+</body>
+
+</html>

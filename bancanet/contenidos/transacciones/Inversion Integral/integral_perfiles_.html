@@ -1,0 +1,483 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+       
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+     <script type="text/javascript">
+			<!--
+			$(document).ready(function(){
+			//setTimeout(function(){top.ajustarP();},1000);
+			setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},1000);
+			
+			
+			});
+			-->
+</script>
+</head>
+
+<body>
+<div class="bg_demo cont_demo">
+<div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%" >
+  				<div class="cH-appPanelHead">
+                	<h3 class="float-left">Inversiones a la vista con disponibilidad e<br /> intereses diarios</h3>
+					<!--<div id="flechaLinks" class="float-right">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<a href="javascript:void(0);" onClick="Layuda()" class="float-left" >Ayuda</a>
+					</div>-->
+                    <div class="margin-top6 titulo ancho100" id="flechaLinksOpcoes">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="liga"><a href="javascript:void(0);" onClick="Layuda()" class="float-left" >&nbsp;Ayuda</a></div>
+					</div>
+					<div class="clear"></div>
+                </div>
+		
+				
+				<div class="clear"></div>
+		   <p class="topNotes">Selecciona el tipo de operaci&oacute;n, el tipo de inveris&oacute;n con la que deseas invertir, completa los datos y da click en &quot;Continuar&quot;.</p>
+           <div class="clear"></div>
+           <p class="strong topNotes">Lunes a viernes d&iacute;as h&aacute;biles bancarios de 9:00 hrs. a 16:00 hrs. (Hora de la ciudad de M&eacute;xico)</p>
+				<div id="contenidoSelect" style="height:430px !important;">
+                <div class="width200">
+                    <div class="border-top"></div> 
+					<div class="form-row">
+						<label class="for-table">Tipo de operaci&oacute;n:</label>
+						<span><input type="radio" name="chequeraPers2" id="rdchequeraPers1" onClick="cambia1();" />
+						Realizar un dep&oacute;sito en tu inversi&oacute;n</span>
+                		<span class="margin-left15"><input type="radio" name="chequeraPers2" id="rdchequeraPers2"  onclick="cambia2();" />
+                        Realizar un retiro de tu inversi&oacute;n</span>
+						<div class="clear"></div>
+					</div>
+                    <div class="border-top"></div> 
+                    <div class="form-row displayNone" id="select_cuentas_retiro">
+						<label class="for-table">Cuenta retiro (inversi&oacute;n):</label>
+						<span><select name="" id="selector1" onChange="valSelect();">
+                        	<option selected="selected" value="0" id="selecciona1">Selecciona una cuenta</option>
+                        	<option value="1">Mi inversi&oacute;n Perfiles1 - Inv. Integral - 00872 - MXN: $ 40 000.00</option>
+                		</select></span>
+						<div class="clear"></div>
+					</div>
+                    <div class="form-row displayNone" id="select_cuentas_deposito">
+						<label class="for-table">Cuenta dep&oacute;sito (inversi&oacute;n):</label>
+						<span><select name="" id="selector2" onChange="valSelect2();">
+                        	<option selected="selected" value="0" id="selecciona2">Selecciona una cuenta</option>
+                        	<option value="1">Mi inversi&oacute;n Perfiles1 - Inv. Integral - 00872 - MXN: $ 40 000.00</option>
+                		</select></span>
+						<div class="clear"></div>
+					</div>
+                    <div class="border-top displayNone" id="borde"></div>
+                    <div id="content_retiro" class="displayNone" >
+					<div class="form-row">
+						<label class="for-table height43 ">Tipo de retiro:</label>
+						<span><input type="radio" name="chequeraPers3" class="rarios2" id="chequeraPers3" onClick="cambiaA();" checked />
+                        Total</span><br/><br/>
+                        <span><input  type="radio" name="chequeraPers3" class="rarios2" id="chequeraPers4" onClick="cambiaB();" />
+                        Importe a retirar MXN <input class="width105 jfpw-select-input input_num_auto f12 text_importe2 input_hasta" id="importe2" style="height:18px !important; *height:14px !important; height:14px\0/ !important;"  name="" type="text" onKeyPress="return  validateNumeric45(this,event);" onBlur="onblur22();" onChange="Miles(this); agregapesitos2();" /></span>
+                        
+                        		<span class="errorB displayNone" id="tooltip1" style="right:-60px !important; height:auto !important;">
+                                <span class="flecha2"></span>
+          						<span class="content_big" style="width:152px !important">
+                                Por favor ingresa un importe a retirar</span>
+                                 </span>
+                        
+						<div class="clear"></div>
+					</div>
+					
+					<div class="form-row">
+						<label class="for-table">Programar a fecha futura:</label>
+                        	<span >
+                             
+                                
+                               <input type="text" id="busqueda_from" class="calendario1 input_calendar float-left margin-right10 width210 paddingl3" value="" readonly onFocus="focusBuscfrom()" onBlur="onblur22();" style="height:18px !important; *height:14px !important; height:14px\0/ !important;">
+                                <div class="icon-calendar margin-top2 otra_c1" href="#">&nbsp;</div>
+                                 
+                                	<span class="errorB displayNone" id="tooltip2" style="right:-52px !important; *right:-57px !important; right:-57px\0/ !important;">
+                                        <span class="flecha2"></span>
+                                        <span class="content_big">
+                                        Por favor selecciona una  opción en Fecha</span>
+                                    </span> 
+                                   
+                        	</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table">Saldo total a invertir:</label>
+						<span id="total">
+                    	$ 0.00
+						</span>
+                        <span class="displayNone" id="importe">
+                    	$ 30,000.00
+						</span>
+						<div class="clear"></div>
+					</div>
+					
+                    <div class="border-top"></div> 
+					<div class="form-row">
+						<p class="bottomNotes">
+                        <div class="width10 float-left"><input type="checkbox" name="checkbox" id="checkbox" /></div><span class="marginL10">Guardar como operaci&oacute;n frecuente.</span>
+                        </p>
+						<div class="clear"></div>
+					</div>
+                    <div class="border-top"></div> 
+					
+				<p class="bottomNotes">Las operaciones programadas no pueden ser almacenadas como frecuentes.</p>
+				
+                <div class="width305 overflow marginL5" >
+                            <div class="cF-sideBySide floatR marginT15 marginB15" id="continuar"    >
+                                <ul class="cN-primaryNav ">
+                                    <li class="cM-spriteBase cN-primaryNavButton" >
+                                        <a href="#" onClick="validaFecha();">continuar</a>
+                                    </li>
+                                </ul>
+                     		</div>
+                            <div class="cF-sideBySide floatR marginT15 marginB15 displayNone" id="validar"    >
+                                <ul class="cN-primaryNav ">
+                                    <li class="cM-spriteBase cN-primaryNavButton" >
+                                        <a href="#" onClick="valida_cajas();">continuar</a>
+                                    </li>
+                                </ul>
+                     		</div>
+                       </div>
+                 </div>
+                 
+                 <div id="content_deposito" class="displayNone" >
+					<div class="form-row">
+						<label class="for-table ">Importe a depositar MXN:</label>
+                        <span><input class="width210 jfpw-select-input input_num_auto f12 text_importe2 input_hasta" id="importe3" style="height:18px !important; *height:14px !important; height:14px\0/ !important;"  name="" type="text" onKeyPress="return  validateNumeric45(this,event);" onBlur="onblur22();" onChange="Miles(this); agregapesitos3();" /></span>
+                        
+                        		<span class="errorB displayNone" id="tooltip3" style="right:-30px !important; height:auto !important;">
+                                <span class="flecha2"></span>
+          						<span class="content_big" style="width:152px !important">
+                                Por favor ingresa un importe a retirar</span>
+                                 </span>
+                        
+						<div class="clear"></div>
+					</div>
+					
+                    <div class="form-row">
+						<label class="for-table">Saldo total a invertir:</label>
+						<span>
+                    	$ 90,000.00
+						</span>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row">
+						<label class="for-table">Programar a fecha futura:</label>
+                        	<span >
+                             
+                                
+                               <input type="text" id="busqueda_from2" class="calendario1 input_calendar float-left margin-right10 width210 paddingl3" value="" readonly onFocus="focusBuscfrom()" onBlur="onblur22();" style="height:18px !important; *height:14px !important; height:14px\0/ !important;">
+                                <div class="icon-calendar margin-top2 otra_c1" href="#">&nbsp;</div>
+                                 
+                                	<span class="errorB displayNone" id="tooltip4" style="right:-52px !important; *right:-57px !important; right:-57px\0/ !important;">
+                                        <span class="flecha2"></span>
+                                        <span class="content_big">
+                                        Por favor selecciona una  opción en Fecha</span>
+                                    </span> 
+                                   
+                        	</span>
+						<div class="clear"></div>
+					</div>
+					
+					
+                    <div class="border-top"></div> 
+					<div class="form-row">
+						<p class="bottomNotes">
+                        <div class="width10 float-left"><input type="checkbox" name="checkbox" id="checkbox2" /></div><span class="marginL10">Guardar como operaci&oacute;n frecuente.</span>
+                        </p>
+						<div class="clear"></div>
+					</div>
+                    <div class="border-top"></div> 
+					
+				<p class="bottomNotes">Las operaciones programadas no pueden ser almacenadas como frecuentes.</p>
+				
+                <div class="width305 overflow marginL5" >
+                            <div class="cF-sideBySide floatR marginT15 marginB15"    >
+                                <ul class="cN-primaryNav ">
+                                    <li class="cM-spriteBase cN-primaryNavButton" >
+                                        <a href="#" onClick="valida_cajas2();">continuar</a>
+                                    </li>
+                                </ul>
+                     		</div>
+                       </div>
+                 </div>
+                 
+			    </div>
+                
+                </div> <!-- Cierra 385 -->
+				<div class="clear"></div>
+				
+      </div>
+      <script>
+	  // Funcion validación 
+	  function valida_cajas(){
+		  //box1 es el id del importe
+		   if($('#importe2').val()==""){
+			  //alert('No tiene importe')
+			  $('#tooltip1').show();
+			  $('#importe2').addClass("revisar4")
+				retorno = false;
+			  }else{
+				  valida=1;
+				  //alert('Tiene impote')
+				  $('#tooltip1').hide();
+				  $('#importe2').removeClass('revisar4');
+				  validaFecha();
+			}
+	  }
+	  
+	  function valida_cajas2(){
+		  //box1 es el id del importe
+		   if($('#importe3').val()==""){
+			  //alert('No tiene importe')
+			  $('#tooltip3').show();
+			  $('#importe3').addClass("revisar4")
+				retorno = false;
+			  }else{
+				  valida=1;
+				  //alert('Tiene impote')
+				  $('#tooltip3').hide();
+				  $('#importe3').removeClass('revisar4');
+				  validaFecha2();
+			}
+	  }
+	  
+		function validaFecha(){
+		  
+		  if($('#busqueda_from').val()==""){
+			  //alert('Nada en fecha')
+			  $('#tooltip2').show();
+			  $('#busqueda_from').addClass("revisar4")
+			  
+			  }else{
+				 //alert('Tiene fecha');
+				  $('#tooltip2').hide();
+				  $('#busqueda_from').removeClass("revisar4")
+				  
+				  continuar();
+			}
+		  
+		  }
+		  
+		  function validaFecha2(){
+		  
+		  if($('#busqueda_from2').val()==""){
+			  //alert('Nada en fecha')
+			  $('#tooltip4').show();
+			  $('#busqueda_from2').addClass("revisar4")
+			  
+			  }else{
+				 //alert('Tiene fecha');
+				  $('#tooltip4').hide();
+				  $('#busqueda_from2').removeClass("revisar4")
+				  
+				  continuar2();
+			}
+		  
+		  }
+	  
+	  function onblur22(){
+				$('#importe2').removeClass('revisar4');
+				$('#tooltip1').hide();
+				$('#busqueda_from').removeClass('revisar4');
+				$('#tooltip2').hide();
+				$('#importe3').removeClass('revisar4');
+				$('#tooltip3').hide();
+				$('#busqueda_from2').removeClass('revisar4');
+				$('#tooltip4').hide();
+	  }
+	  
+      function cheqp(){
+		  top.ModSol3();
+		  }
+	  </script>
+      <script>
+		function cambia1(){
+			top.$('#iframeConte').css({'height':(415)+'px'});
+			document.getElementById('selector2').selectedIndex=0
+			$('#select_cuentas_deposito').show();
+			$('#select_cuentas_retiro').hide();
+			$('#borde').hide();
+			$('#content_retiro').hide();
+			//top.ajustarP();
+		}
+		function cambia2(){
+			top.$('#iframeConte').css({'height':(415)+'px'});
+			document.getElementById('selector1').selectedIndex=0
+			$('#select_cuentas_deposito').hide();
+			$('#select_cuentas_retiro').show();
+			$('#borde').show();
+			$('#content_deposito').hide();
+			//top.ajustarP();
+		}
+		</script>
+        <script type="text/javascript">
+
+	$(function(){
+		
+		$.imageTick.logging = true;
+		
+		$("input[name='chequeraPers2']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios"
+		});
+		
+		$("input[name='chequeraPers3']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios2"
+		});
+
+
+	$("input[type='checkbox']").imageTick({ 
+			tick_image_path: "../../../../JFP/regional/images/img_form/check_1.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/no_check_1.png"
+		});
+        
+        // Manually disable inputs, use this method instead of $('input').attr('disabled', 'disabled')
+
+	});
+	
+	
+	</script>
+        
+        <script>
+		function valSelect(){
+	    if(document.getElementById('selector1').selectedIndex==1){
+		 
+		 //alert('los dos seleccionaron')
+		
+		 top.$('#iframeConte').css({'height':(520)+'px'});
+		 $('#content_retiro').show();
+		 $('#borde').hide();
+		 //top.ajustarP();
+		 
+		 }
+		 else{ 
+		 //alert('no pasa')
+		 top.$('#iframeConte').css({'height':(415)+'px'});
+		 $('#content_retiro').hide();
+		 $('#borde').show();
+		 //top.ajustarP();
+		 }
+	}
+	
+		function valSelect2(){
+	 if(document.getElementById('selector2').selectedIndex==1){
+		
+		 top.$('#iframeConte').css({'height':(495)+'px'});
+		 $('#content_deposito').show();
+		 //top.ajustarP();
+		 
+		 }
+		 else{ 
+		 //alert('no pasa')
+		 $('#content_deposito').hide();
+		 top.$('#iframeConte').css({'height':(415)+'px'});
+		 //top.ajustarP();
+		 }
+	}
+	
+		</script>
+        <script>
+		function cambiaA(){
+			$('#total').show();
+			$('#importe').hide();
+			$('#continuar').show();
+			$('#validar').hide();
+			$("#chequeraPers3").attr('checked',true);
+			$('#tooltip2').hide();
+			$('#busqueda_from').removeClass("revisar4")
+			$('#tooltip1').hide();
+			$('#importe2').removeClass('revisar4');
+			//top.ajustarP();
+		}
+		function cambiaB(){
+			$('#total').hide();
+			$('#importe').show();
+			$('#continuar').hide();
+			$('#validar').show();
+			$('#tooltip2').hide();
+			$('#busqueda_from').removeClass("revisar4")
+			//top.ajustarP();
+		}
+		
+		
+	
+		function continuar(){
+		open('Alavista_retiro3.html' , "_self");
+		}
+		
+		function continuar2(){
+		open('Alavista_deposito3.html' , "_self");
+		}
+		
+		function Layuda(){
+window.open('https://bancanet.banamex.com/ayudas/es/inversiones/Integral-Perfiles.htm','','height='+(screen.height-70)+',width=600,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+		</script>
+        
+        <script type="text/javascript">
+            $(document).ready(function(){
+				
+				$('.calendario1,.calendario2').datepicker({
+					dayNamesMin:['D','L','M','M','J','V','S'],
+					monthNames:['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+					beforeShow: function(){
+						$(this).removeClass('ui-corner-all');
+						
+					},
+					monthNamesShort:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+					showAnim: '',
+					showOtherMonths: true,
+					selectOtherMonths: false,
+					minDate: 'y',
+					maxDate: '30d',
+					dateFormat:"d M yy",
+					disabled: false
+				});
+				
+				$('.calendario1,.calendario2').focus(
+					function(){
+						if( $(this).hasClass('modal_calendar') ){
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+						}else{
+							$('.ui-widget').css({'top':($(this).offset().top-67)+'px','left':($(this).offset().left+240)+'px', 'z-index':'99999999'});
+						}
+						if( $('.ui-datepicker .close').length == 0){
+							$('.ui-datepicker').append("<div class='close'></div>");
+						}
+						$('.ui-datepicker').find('.close').click(function(){
+							$('.input_calendar').datepicker( "hide" );
+						});
+						
+					}
+				);
+				
+			   $(".otra_c1").click(function(){
+    				$('.calendario1').datepicker('show');
+			   });
+			   $(".otra_c2").click(function(){
+    				$('.calendario2').datepicker('show');
+			   });
+				
+				
+             });
+			 
+			 function agregapesitos3(){
+			$('#importe3').val($('#importe3').val() + ".00" );
+			} 
+        </script>
+        
+        
+      </div>
+	</body>
+</html>

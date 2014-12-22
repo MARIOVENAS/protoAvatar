@@ -1,0 +1,4605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="351ff9d2-3d6c-458a-9dad-06c2b78f8532" ><input type=hidden name="EWF_SYS_1" value="@SLVME4HLUIJ@EOZ8MTN2XUHDYZC6CT64NUCX3EE" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZMTC-Account Summary Page"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="acctsmry.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="4"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../bbAvatar/css/estilos.css">
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+
+
+<script>
+
+	
+
+	var msg55 ="Solo se permiten datos num&eacute;ricos"
+
+
+
+
+
+function crearComboCuentas(){
+
+	var cuentasCombo = new Array();
+
+	var stringCuentas = '';
+
+			stringCuentas += '6-PS--Selecciona una opci&oacute;n--|';
+
+			stringCuentas += '1-2-Cheques-002-Cheques-MXN|';
+
+			stringCuentas += '2-4-Mi inversion-  010-Inv. Plazo-MXN|';
+
+			stringCuentas += '4-5-Inv. Integral-872-Inv. Integral-MXN|';
+
+			stringCuentas += '6-6-Mi maestra.-  501-Cta. Maestra Opc.-MXN|';
+
+			stringCuentas += '3-9-Tarjeta Cr&eacute;dito-  796-Tarjeta Cr&eacute;dito-MXN|';
+
+			stringCuentas += '7-10-Cr&eacute;dito-  256-Cr&eacute;dito-MXN|';
+
+			stringCuentas += '4-11-Inv Integral A-  299-Inv Integral A-MXN|';
+
+			stringCuentas += '4-12-Inv Emp Banamex-  699-Inv Emp Banamex-MXN|';
+
+			stringCuentas += '4-13-Cta Maestra Emp-  899-Cta Maestra Emp-MXN|';
+
+			stringCuentas += '4-14-HORZCOB-  999-HORZCOB-MXN|';
+
+			stringCuentas += '1-16-Cheques-888-Cheques-USD|';
+
+			stringCuentas += '4-17-HORZONT-  746-HORZONT-MXN|';
+
+			stringCuentas += '3-18-Tarj Premia Pre-793-Tarj Premia Pre-MXN|';
+
+			stringCuentas += '6-19-Cuenta Perfiles-502-Cuenta Perfiles -MXN|';
+
+			stringCuentas += '4-20-Inversion Perfiles-502-Inversion Perfiles -MXN|';
+
+			stringCuentas += '3-21-Credicheque Perfiles Banamex-502-Credicheque Perfiles Banamex -MXN|';
+
+			stringCuentas += '3-22-Cr&eacute;dito Personal Perfiles Banamex-502-Cr&eacute;dito Personal Perfiles Banamex-MXN|';
+
+			stringCuentas += '5-24- Mi afore NSS-424-Afore NSS-MXN|';
+
+			stringCuentas += '3-25-Tarj Premia Pre-245-Tarj Premia Pre-MXN|';
+
+			stringCuentas += '3-26-Clasica-199-Clasica-MXN|';
+
+			stringCuentas += '8-27-Multiseries-378-Banca Inversi&oacute;n-MXN|';
+
+	
+
+	cuentasCombo = stringCuentas.split('|');
+
+	var option = '';
+
+	var alpha = /[A-Za-z0-9]/;
+
+	for(i=0;i<cuentasCombo.length-1;i++){
+
+		cuentaTemp = cuentasCombo[i].split('-');
+
+		if(alpha.test(cuentaTemp[2].replace(/(&nbsp;)+/gi,""))){
+
+				nombreCuenta = Combo_Cuentas(cuentaTemp[2].replace(/^\s*|\s*$/gi,""),cuentaTemp[3].replace(/^\s*|\s*$/g,""),cuentaTemp[5].replace(/^\s*|\s*$/g,""));
+
+		}
+
+		else{
+
+			nombreCuenta = Combo_Cuentas(cuentaTemp[4].replace(/^\s*|\s*$|\s*/g,""),cuentaTemp[3].replace(/^\s*|\s*$/g,""),cuentaTemp[5].replace(/^\s*|\s*$/g,""));
+
+		}
+
+		option += "<option class='"+cuentaTemp[0]+"' value='"+cuentaTemp[1]+"'>"+nombreCuenta+"</option>";
+
+	}
+
+	$("#comboCuentas").html('');
+
+	$("#comboCuentas").append(option);
+
+}
+
+
+
+function consultaSaldos(evento){
+
+	document.forms[0].DATA1.value = $("#comboCuentas").val();
+
+	document.forms[0].DATA2.value = $("#folios").val();
+
+	DoSubmit(evento);
+
+}
+
+
+
+function esNumerico(){
+
+	$("#folios_error").css("display","none");
+
+	var palabraClave=$('#folios').val();
+
+	if( palabraClave != ''){
+
+		palabraClave = $.trim(palabraClave);
+
+		var numeric = /^\d+$/;
+
+		if(numeric.test(palabraClave)){
+
+			return true;
+
+		}
+
+		else{
+
+			$("#folios_error").css("display","block").html(msg55);
+
+			parent.ajustarIframe();
+
+		return false;
+
+		}
+
+	}
+
+	else{
+
+
+
+	}
+
+}
+
+
+
+function borraInput(Id){
+
+	$("#"+Id).val('');
+
+}
+
+
+
+function ocultaErrores(){
+
+	$("#saldBloq2Inp1_error").css("display","none");
+
+	$("#folios_error").css("display","none");
+
+	$("#comboCuentas_error").css("display","none");
+
+}
+
+
+
+function validaEnter(){
+
+	$("#saldBloq2Inp1").keyup(function(e){
+
+		if(e.which==13){
+
+			$("#saldBloq2Inp1").blur();
+
+			searchCombo();
+
+		}else{
+
+			$('#saldBloq2Inp1_error').css("display", "none");
+
+		}
+
+	});
+
+
+
+}
+
+
+
+function ocultaError(Id){
+
+	$("#"+Id+"_error").css('display', 'none');
+
+}
+
+var moneda33 ="";
+
+function MXN(){
+
+	moneda33 = $.trim("[DESMONEDA]");
+
+	if(moneda33 == "M.N" || moneda33 == "M.N." || moneda33 == "MN"){
+
+		moneda33 = "MXN";
+
+	}else moneda33="[DESMONEDA]";
+
+	return moneda33;
+
+}
+
+
+
+jQuery(document).ready(function(){
+
+$("#saldBloq2Inp1").keyup(function(e){
+
+		if(e.which==13){
+
+			$("#saldBloq2Inp1").blur();
+
+			searchCombo();
+
+		}
+
+	});
+
+});
+
+  <!--  depurar -->
+
+	function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+	function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+	var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+	$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+} 
+
+	var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+ 
+
+	var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+			
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+									
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+} 
+
+	var errorMulti ="OFF";
+
+
+
+function cargando(){
+
+	$("#divCargando").show();
+
+}
+
+
+
+function saltoMultisaldos(){
+
+	cargando();
+
+	$("#DATAAUX", window.parent.document).val("EXPANDIDO");
+
+	top.SaltoTransaccion(0,0);
+
+	window.parent.setBanner(parent.menus[0][3], parent.menus[0][4]);
+
+}
+
+
+
+function validaFolioInversiones(){
+
+	cargando();
+
+	var option = $("#comboCuentas").find("option:selected").val();
+
+	var tipoCuenta = $("#comboCuentas").find("option:selected").attr("class");
+
+	if(option != "PS"){
+
+		var event = 'SALTO_MOVS';
+
+		parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+		if(tipoCuenta == '1' || tipoCuenta == '3' || tipoCuenta == '6'){
+
+			var d=document.getElementById('ndw').contentWindow.document.forms[0];
+
+			var o=document.forms[0];
+
+			d.action=o.action;
+
+			d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+			d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+			d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+			d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+			d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+			d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+			d.DATA1.value = option;
+
+			d.DATA2.value = 'ESTADOS DE CUENTA';
+
+			d.DATA3.value = '';
+
+			d.EWFBUTTON.value = event;
+
+			d.EWFBUTTON.name = 'EWF_BUTTON_'+event;
+
+			d.submit();
+
+		}else{
+
+			document.forms[0].DATA1.value = option;
+
+			document.forms[0].DATA2.value = 'ESTADOS DE CUENTA';
+
+			document.forms[0].DATA3.value = '';
+
+			DoSubmit(event);
+
+		}
+
+	}else{parent.ajustarIframe();}            
+
+}
+
+
+
+function GetDetail2(tipoCuenta, acctID, descripcion, liga){
+
+	cargando();
+
+	var event = 'SALTO_MOVS';
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"0px 0px 0px 0px"});
+
+	if(tipoCuenta == '1' || tipoCuenta == '3' || tipoCuenta == '6'){
+
+		parent.DoSubmit(liga);
+
+	}else{
+
+		parent.DoSubmit(liga);
+
+	}
+
+	
+
+}
+
+
+
+function GetDetailafore(acctID){
+
+	document.forms[0].DATA1.value = acctID;
+
+	document.forms[0].DATA2.value = 'EDOCTALINEA';
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"0px 0px 0px 0px"});
+
+	DoSubmit('CONVEDO');
+
+}	
+
+
+
+function GetDetailafore2(acctID){
+
+	document.forms[0].DATA1.value = acctID;
+
+	document.forms[0].DATA2.value = 'SDOESPAFORE';
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"0px 0px 0px 0px"});
+
+	DoSubmit('CONVEDO');
+
+}
+
+
+
+function GetDetail(acctID){
+
+	$("#DATAAUX", window.parent.document).val('multi_TRUE');
+
+	document.forms[0].DATA1.value = acctID;
+
+	document.forms[0].DATA2.value = 'ECTA';
+
+	parent.$("#div_contenedorPrincipal").css({"margin":"0px 0px 0px 0px"});
+
+	DoSubmit('CONVEDO');
+
+}
+
+
+
+ $(document).ready(function () {
+
+	if(errorMulti=="ON")
+
+	$('#divExpansores').hide();
+
+}
+
+); 
+
+	
+
+	var isIE = (window.navigator.userAgent.indexOf("MSIE")> 0);
+
+var flagCon='TRUE'; 
+
+var total0101 =0.0, total0102=0.0,total0201=0.0,total0202=0.0,total0203=0.0,total0204=0.0,total03=0.0, total0301=0.0,total0302=0.0,total04=0.0,total0401=0.0,total0402=0.0,total04dis=0.0;total05=0.0,total0601=0.0,total06= 0.0,total07=0.0,total0101dis=0.0;
+
+var cont01=0.0, cont0101 =0.0, cont0102=0.0,cont02=0.0,cont0201=0.0,cont0202=0.0,cont0203=0.0; cont0204=0.0,cont03=0.0;cont0301=0.0,cont0302=0.0,cont04=0.0,cont0401=0.0,
+
+cont0402=0.0, cont05=0.0,cont0601 =0.0,cont06=0.0,cont07=0.0;
+
+var cuentasExistentes = new Array();
+
+var cuentaActual=100;		
+
+ var flagInversiones = "ON"; 
+
+
+
+var flagBotonActiva = false;
+
+var eMulti ="OFF"
+
+
+
+function mostrarGrupos(){
+
+		if(cont0101>0){
+
+			$("#bloqueCEfectivo").css('display','block');
+
+		}
+
+		if(cont0102>0){
+
+			$("#bloqueCEfectivoDolares").css('display','block');
+
+		}
+
+		if(cont03>0){
+
+			$("#bloqueInversiones").css('display','block');
+
+		}
+
+		if(cont0301>0){
+
+			$("#bloqueInversionesDolares").css('display','block');
+
+		}
+
+		if(cont04>0){
+
+			$("#bloqueTarjetas").css('display','block');
+
+		}
+
+		if(cont0401>0){
+
+			$("#bloqueTarjetasPremia").css('display','block');
+
+		}
+
+		if(cont05>0){
+
+			$("#bloqueCreditosPesos").css('display','block');
+
+		}
+
+		if(cont06>0){
+
+			$("#bloqueCreditosUDIS").css('display','block');
+
+		}
+
+		if(cont07>0){
+
+			$("#bloqueAfore").show();
+
+		}
+
+	}
+
+
+
+function agregarTodas(){
+
+try{agregarCuenta( "01", "CHEQUES MXN", "00000000000007069002"," 1", "+", "0000000000100000","001", "0000000000000000000000000000000000000000000000000000","CHEQUES", "$1,000.00", "                 002", "Dep&oacute;sito salvo buen cobro: $0.00, Dep&oacute;sitos pendientes: $0.00, Movimientos en el d&iacute;a: 0000, L&iacute;nea de sobregiro: $0.00", "", "","","Cheques","","Mul_TodasCtas/saldos_cheques002.html");}catch(err){}
+
+
+
+try{agregarCuenta( "03", "Tarjeta Cr&eacute;dito", "00004540570010032796"," 1", "+", "0000000000011301","001", "0000000000000000000000000000000113010000000000000000+0000000000000000         00000000000","TARJETA", "$113.01", "                 796", "M&iacute;nimo a pagar: $0.00, Fecha l&iacute;mite de pago: 00 Dic 00, Cr&eacute;dito disponible: $113.01, Importe de abonos del ciclo: $0.00, Signo del saldo del último ciclo:    , Saldo del último periodo: $0.00, Saldo en puntos:    ", "", "","","Oro","1","Mul_TodasCtas/tarjeta_credito_796.html");}catch(err){}
+
+
+
+try{agregarCuenta( "06", "Cta.Maestra", "00000000000217299490"," 1", "+", "0000000000057658","001", "000000000005765800000000000000000000000000000000","CUENTA MAESTRA", "$576.58", "                 490", "Saldo disponible: $576.58, Dep&oacute;sitos en el d&iacute;a: $0.00, Retiros en el d&iacute;a: $0.00", "", "","","Maestra490","","Mul_TodasCtas/maestra490.html");}catch(err){}
+
+
+
+try{agregarCuenta( "02", "Inv. Plazo", "00000000005489506010"," 1", "+", "0000000000000000","001", "000000000000000000000000000000000000000000000000","INVERSI&oacute;N BANAMEX", "0.00", "                 010", "Número de inversi&oacute;n: 000000, Rendimiento del per&iacute;odo: $0.00, Fecha de vencimiento: 00 Dic 00", "87", "","","Mi inversion","","Mul_TodasCtas/inv_plazo_010.html");}catch(err){}
+
+
+
+try{agregarCuenta( "05", "AFORE NSS M.N.", "0044444444444424"," 1", "+", "0000000007592424","001", "","AFORE", "$75,924.24", "             424", "&nbsp;", "336", "1","250","Mi afore","","Mul_TodasCtas/afore_424.html");}catch(err){}
+
+
+
+try{agregarCuenta( "04", "INVERSION INTEGRAL BANAMEX(11)", "00000000009004707872"," 1", "", "0000000000006407","", "000","INVERSI&oacute;N", "$64.07", "                 872", "&oacute;rdenes pendientes: 000", "", "","","","");}catch(err){}
+
+
+
+try{agregarCuenta( "03", "PERFILES BNM", "0044444444444444"," 1", "-", "0000000000000000","001", "000000000000000000000000000000000000000000000000","TARJETA", "0.00", "             444", "M&iacute;nimo a pagar: $0.00, Fecha l&iacute;mite de pago: 00 Dic 00, Cr&eacute;dito disponible: $0.00, Importe de abonos del ciclo: $0.00, Signo del saldo del último ciclo:    , Saldo del último periodo:    , Saldo en puntos:    ", "", "","","","");}catch(err){}
+
+
+
+try{agregarCuenta( "02", "PAGARE M.N.", "00000000005489506010"," 1", "+", "0000000000315747","", "00000100000000001368090800004","INVERSI&oacute;N BANAMEX", "$3,157.47", "                 010", "Número de inversi&oacute;n: 000001, Rendimiento del per&iacute;odo: $13.68, Fecha de vencimiento: 09 Ago 00", "", "","","","");}catch(err){}
+
+
+
+try{agregarCuenta( "03", "PREMIA BNM", "00004295221084763245"," 1", "+", "0000000000025600","", "0000000000000000000000000000000681790000000000000000+000000000006817900000000000000000256","TARJETA", "$256.00", "                 245", "M&iacute;nimo a pagar: $0.00, Fecha l&iacute;mite de pago: 00 Dic 00, Cr&eacute;dito disponible: $681.79, Importe de abonos del ciclo: $0.00, Signo del saldo del último ciclo:    , Saldo del último periodo: $681.79, Saldo en puntos: 00000000000000000256", "", "","","Tarj Premia Pre","2","Mul_TodasCtas/tarjeta_premia_245.html");}catch(err){}
+
+
+
+try{agregarCuenta( "04", "HORZONT", "00004540570010032999"," 1", "+", "0000000000009500","", "000","INVERSI&oacute;N", "$95.00", "                 999", "&oacute;rdenes pendientes: 000", "", "","","","");}catch(err){}
+
+
+
+try{agregarCuenta( "07", "-", "00004540570010032256"," 2", "+", "0000000000009511","", "00010404 9999 0001:TRANSACCION NO EFECTUADA, VERIFIQUE Y/O","CR&eacute;DITO", "$95.11", "                 256", "00010404 9999 0001:TRANSACCION NO EFECTUADA, VERIFIQUE Y/O", "", "","","","");}catch(err){}
+
+
+
+try{agregarCuenta( "03", "INVERMATICO BNM", "00004540570010032796"," 1", "+", "0000000005263770","", "00000000000000      0000000005263770","TARJETA", "$52,637.70", "                 796", "M&iacute;nimo a pagar: $0.00, Fecha l&iacute;mite de pago:    , Cr&eacute;dito disponible: $52,637.70, Importe de abonos del ciclo:    , Signo del saldo del último ciclo:    , Saldo del último periodo:    , Saldo en puntos:    ", "", "","","","1");}catch(err){}
+
+
+
+try{agregarCuenta( "02", "INVERSIONES", "00008548971174547590"," 2", "+", "0000000000045140","", "0051E    0201 0051:CUENTA O CONTRATO NO REGISTRADO","INVERSI&oacute;N BANAMEX", "$451.40", "                 590", "0051E    0201 0051:CUENTA O CONTRATO NO REGISTRADO", "", "","","","");}catch(err){}
+
+
+
+try{agregarCuenta( "03", "-", "00004540570010032796"," 2", "+", "0000000000000124","", "0050E    0101 0050:NUMERO DE CLIENTE NO EXISTE","TARJETA", "$1.24", "                 796", "0050E    0101 0050:NUMERO DE CLIENTE NO EXISTE", "", "","","","1");}catch(err){}
+
+
+
+try{agregarCuenta( "03", "CLASICA", "00004540690834670199"," 1", "-", "0000000000012451","", "0000000000000000000000000000000124510000000000000000+0000000000000000         00000000000","TARJETA", "$124.51", "                 199", "M&iacute;nimo a pagar: $0.00, Fecha l&iacute;mite de pago: 00 Dic 00, Cr&eacute;dito disponible: $124.51, Importe de abonos del ciclo: $0.00, Signo del saldo del último ciclo:    , Saldo del último periodo: $0.00, Saldo en puntos:    ", "", "","","Clasica","1");}catch(err){}
+
+
+
+try{agregarCuenta( "03", "-", "0044444444444444"," 2", "+", "0000000000784011","", "0051E    0201 0051:CUENTA O CONTRATO NO REGISTRADO","TARJETA", "$7,840.11", "             444", "0051E    0201 0051:CUENTA O CONTRATO NO REGISTRADO", "", "","","","");}catch(err){}
+
+
+
+try{agregarCuenta( "03", "-", "00004295221084763245"," 2", "+", "0000000000000454","", "0051E    0201 0051:CUENTA O CONTRATO NO REGISTRADO","TARJETA", "$4.54", "                 245", "0051E    0201 0051:CUENTA O CONTRATO NO REGISTRADO", "", "","","","2");}catch(err){}
+
+ 
+
+
+
+	$("#total0101a").html( '$' + CurrencyFormatted(total0101))
+
+	$("#total0101b").html( '$' + CurrencyFormatted(total0101))
+
+	$("#total0101ad").html( '$' + CurrencyFormatted(total0101dis))
+
+	$("#total0101bd").html( '$' + CurrencyFormatted(total0101dis))
+
+	$("#total0102a").html( '$' + CurrencyFormatted(total0102))
+
+	$("#total0102b").html( '$' + CurrencyFormatted(total0102))
+
+	$("#total03a").html( '$' + CurrencyFormatted(total03))
+
+	$("#total03b").html( '$' + CurrencyFormatted(total03))
+
+	$("#total0301a").html( '$' + CurrencyFormatted(total0301))
+
+	$("#total0301b").html( '$' + CurrencyFormatted(total0301))
+
+	$("#total04a").html( ' - $' + CurrencyFormatted(total04))
+
+	$("#total04b").html( ' - $' + CurrencyFormatted(total04))
+
+	$("#total04ad").html( '$' + CurrencyFormatted(total04dis))
+
+	$("#total04bd").html( '$' + CurrencyFormatted(total04dis))
+
+	$("#total0401a").html( '$' + CurrencyFormatted(total0401))
+
+	$("#total0401b").html( '$' + CurrencyFormatted(total0401))
+
+	$("#total05a").html( '$' + CurrencyFormatted(total05))
+
+	$("#total05b").html( '$' + CurrencyFormatted(total05))
+
+	$("#total06a").html( '$' + CurrencyFormatted(total06))
+
+	$("#total06b").html( '$' + CurrencyFormatted(total06))
+
+	  $("#total07a").html( '$' + CurrencyFormatted(total07))
+
+	  $("#total07b").html( '$' + CurrencyFormatted(total07))
+
+
+
+	
+
+	$("#con0101").html(' ('+cont0101+')');
+
+	$("#con0102").html(' ('+cont0102+')');
+
+	$("#con02").html(' ('+cont02+')');
+
+	$("#con0201").html(' ('+cont0201+')');
+
+	$("#con0202").html(' ('+cont0202+')');
+
+	$("#con0203").html(' ('+cont0203+')');
+
+	$("#con0204").html(' ('+cont0204+')');
+
+	$("#con03").html(' ('+cont03+')');
+
+	$("#con0301").html(' ('+cont0301+')');
+
+	$("#con0302").html(' ('+cont0302+')');
+
+	$("#con04").html(' ('+cont04+')');
+
+	$("#con0401").html(' ('+cont0401+')');
+
+	$("#con05").html(' ('+cont05+')');
+
+	$("#con06").html(' ('+cont06+')');
+
+	$("#con07").html(' ('+cont07+')');
+
+
+
+}
+
+
+
+function agregarCuenta(C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18){
+
+	
+
+		C1 = parseFloat(C1);
+
+		C4 = parseFloat(C4);
+
+		if (yaExiste(C13, C14, C3, C1, C12) == true) {return;}
+
+		var divResumenBloque = document.createElement('div');
+
+		divResumenBloque.className = 'resumen_bloque';
+
+		divResumenBloque.setAttribute("id", "saldosConte" + cuentaActual);
+
+		if(flagCon=='TRUE'){
+
+			var resultados = obtenerIdDivPadre(C1, C2, C3, C4, C5,C6, C7,C9, C10, C11, C12, C13, C14, C16, C17,divResumenBloque,divResumenBloque, C18);
+
+			idDivPadre = resultados[0];
+
+		}
+
+		else {
+
+			var resultados = contigencia(divResumenBloque,divResumenBloque, C1,C2, C4, C5,C9,C12, C16, C11, C10,C7,C18);
+
+			idDivPadre = "contenedor010101";
+
+			
+
+		}
+
+		if(!idDivPadre)
+
+            return;
+
+		var divPadre = document.getElementById(idDivPadre);
+
+		divPadre.appendChild(divResumenBloque);
+
+		cuentaActual++;
+
+	}
+
+
+
+function obtenerIdDivPadre(C1,C2,C3,C4,C5,C6,C7,C9,C10,C11,C12,C13,C14,C16,C17,divdet, divEncabezado, C18) {
+
+		var contImpar;
+
+		var retdivpadre;
+
+		var posiciones= new Array();
+
+		if(C10.substr(0,1)=='$'){
+
+			var saldo = parseFloat(C10.replace(/,/gi,'').replace("$",""));
+
+			C10 = C10.replace("$","");
+
+		}else{var saldo=0;}
+
+			switch(C1)
+
+			{
+
+				case 1: 
+
+					if (C7 == '001'){
+
+						retdivpadre = "contenedor010101";
+
+						total0101+=saldo;
+
+						cont0101++;
+
+					}
+
+					else if (C7 == '005'){
+
+						 retdivpadre = "contenedor010201";
+
+						 total0102+=saldo;
+
+						 cont0102++;
+
+					}
+
+					else{
+
+						break;						
+
+					}
+
+					llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7, C18);  
+
+					posiciones=[0,2];
+
+					divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+				break;
+
+
+
+				case 2:
+
+					if(flagInversiones == "OFF"){
+
+						retdivpadre = "contenedor03";
+
+						//total03+=saldo;
+
+						cont03++;
+
+						llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7, C18);
+
+						posiciones=[0,2];
+
+						divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+						
+
+					}
+
+					else{
+
+						if( C13 == '87'  ||  C13 == '190' ){
+
+							if (C7 == '001'){
+
+								retdivpadre = "contenedor03";
+
+								total03+=saldo;
+
+								cont03++;
+
+							}
+
+							 if (C7 == '005'){
+
+								retdivpadre = "contenedor0301";
+
+								total0301+=saldo;
+
+								cont0301++;
+
+							}
+
+							if($.trim(C7) != '001' && $.trim(C7) != '005'){break;}
+
+							llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7, C18);
+
+							posiciones=[0,2];
+
+							divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+						}
+
+						else{break;}
+
+					}
+
+				break;
+
+
+
+				case 3:
+
+					var primeros6 = C3.substring(4, 10);
+
+					if(C17 == '2' && !(primeros6 == '429522' || primeros6 == '529028')){
+
+						retdivpadre = "contenedor010103"; 
+
+						var rollover;
+
+						rollover =C3.substring(18,19);
+
+						 if(rollover == '7' ||rollover == '8' ||rollover == '9'){
+
+							total0101+=saldo;
+
+						 }
+
+						llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7, C18);
+
+						var errordisponible = "SPANISH" == "SPANISH" ? "NO DISPONIBLE" : "NOT AVAILABLE";
+
+						C12.indexOf(",")>0?$(divdet).find('td:eq(1)').html(C12.split(", ")[0].split(": ")[1]):$(divdet).find('td:eq(1)').html(errordisponible).addClass("coloree2e24");
+
+						
+
+						posiciones=[0];
+
+						C12 = "&nbsp;";
+
+						divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+						cont0101++;
+
+					}
+
+					
+
+					if(primeros6 == '467473' || primeros6 == '518174' || (C17 == '1' && !( (primeros6 == '881137') ||
+
+						(primeros6 == '882203') ||( primeros6 == '882290') ||(primeros6 == '882218') ||(primeros6 == '882272')))){
+
+						retdivpadre = "contenedor04";
+
+						var rollover;
+
+						rollover =C3.substring(18,19);
+
+						 if(rollover == '7' ||rollover == '8' ||rollover == '9'){
+
+							if(C5 =='-')total04+=saldo;
+
+						 }
+
+						llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7, C18);
+
+						posiciones=[1,0];
+
+						divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+						cont04++;
+
+						if(C4==1){
+
+							total04dis+= (parseFloat(C12.split(", ")[2].split(": ")[1].replace("$","").replace(/,*/gi,''),10));
+
+							$(divdet).find('td:eq(1)').html(C12.split(", ")[2].split(": ")[1]);	
+
+						}else if(C4==2){
+
+							var errordisponible = "SPANISH" == "SPANISH" ? "NO DISPONIBLE" : "NOT AVAILABLE";
+
+							$(divdet).find('td:eq(1)').html(errordisponible).addClass("coloree2e24")
+
+						}
+
+						else{};
+
+					}
+
+
+
+					if(primeros6 == '429522' || primeros6 == '529028') {
+
+						retdivpadre = "contenedor0401";
+
+						(!isNaN(C10))>0?C10 = parseFloat(C10/10):C10;
+
+						llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11,C10,C5,C12,C9,C7,C18);
+
+						posiciones=[6];
+
+						divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+						if(isNaN(C6)){
+
+						totalpremia = parseFloat(C6.replace(/,/gi,''));
+
+						}else totalpremia= 0;
+
+						total0401+= totalpremia;
+
+						cont0401++;
+
+					 	cadPremia=$(divdet).find('td.premia').html();
+
+						
+
+						$(divdet).find('td.premia').html(cadPremia.indexOf(": ")>0?puntosPremia=isNaN(parseInt(cadPremia.split(": ")[1].substr(cadPremia.split(": ")[1].length -20,20) ,10))?cadPremia.split(": ")[0]+": 0":cadPremia.split(": ")[0]+": "+formataePPremia(parseInt(cadPremia.split(": ")[1].substr(cadPremia.split(": ")[1].length -20,20) ,10)):puntosPremia = cadPremia);
+
+						//alert(puntosPremia);
+
+						//alert(cadPremia);
+
+						//puntosPremia=formataePPremia(puntosPremia);
+
+						//alert(puntosPremia);
+
+						
+
+						
+
+					}
+
+					
+
+					if((primeros6 == '881137') ||(primeros6 == '882203')||(primeros6 == '882290') ||(primeros6 == '882218') ||(primeros6 == '882272')){
+
+						retdivpadre = "contenedor05";
+
+						total05+=saldo;
+
+						C5 = "+"
+
+						cont05++;
+
+						llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C18);
+
+						posiciones=[0,1];
+
+						divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+					}
+
+				break;
+
+
+
+				case 4:
+
+					if(flagInversiones == "OFF"){
+
+						retdivpadre = "contenedor03";
+
+						llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7,C18);
+
+						posiciones=[0];
+
+						divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+						//total03+=saldo;
+
+						cont03++;
+
+					}
+
+					else{
+
+						if(C13 == '84' && (C14 == '16' || C14 == '22' || C14 == '23' || C14 == '24' || C14 == '25')){
+
+							retdivpadre = "contenedor0302";
+
+							total03+=saldo;
+
+							cont03++;
+
+							llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7,C18);
+
+							posiciones=[0];
+
+							divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+						}
+
+						else if(C13 == '84' && !(C14 == '16' || C14 == '22' || C14 == '23' || C14 == '24' || C14 == '25')){
+
+							 retdivpadre = "contenedor0303";
+
+							 total03+=saldo;
+
+							 cont03++;
+
+							 llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7,C18);
+
+							posiciones=[0];
+
+							divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+						}
+
+					}
+
+				break;
+
+				case 5:
+
+					retdivpadre = "contenedor07";
+
+					total07+=saldo;
+
+					llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7,C18);
+
+					contImpar = cont07++;
+
+				break;
+
+				case 6:
+
+					retdivpadre = "contenedor010102";
+
+					llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7,C18);
+
+					posiciones=[1,2];
+
+					divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+					var errordisponible = "SPANISH" == "SPANISH" ? "NO DISPONIBLE" : "NOT AVAILABLE";
+
+					C12.indexOf(",")>0?$(divdet).find('td:eq(1)').html(C12.split(", ")[0].split(": ")[1]):$(divdet).find('td:eq(1)').html(errordisponible).addClass("coloree2e24");
+
+					total0101+=saldo;
+
+					cont0101++;
+
+				break;
+
+				case 7:
+
+					C12Ori = C12;
+
+					monto = C10;
+
+					aux = C12.split(", ");
+
+					if(C4==1){
+
+							C10 = aux[4].split(": ")[1].replace("$","");
+
+							saldo = parseFloat(aux[4].split(": ")[1].replace("$","").replace(/,*/gi,''),10);
+
+							aux2 = C12.split(", ");
+
+							aux3 = aux2[4].split(": ");
+
+							aux3[1]=monto;
+
+							aux2[4] = aux3.join(": ");
+
+							auxPlazo= aux2[1].split(": ")[1];
+
+							aux2[5] = aux2[5]+" de "+auxPlazo;
+
+							C12 = aux2.join(", ");
+
+					}
+
+					if(flagInversiones == "ON"){
+
+							if (C7 == '001'){
+
+								retdivpadre = "contenedor05";
+
+								 total05+=saldo;
+
+								 cont05++;
+
+							}
+
+							else if (C7 == '003'){
+
+								    retdivpadre = "contenedor06";
+
+									total06+=saldo;
+
+									cont06++;
+
+							}
+
+							else{}
+
+						}else if(flagInversiones == "OFF"){
+
+							retdivpadre = "contenedor05";
+
+							//total05+=saldo;
+
+							cont05++;
+
+						}
+
+					llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12Ori,C9,C7,C18);
+
+					posiciones=[3];
+
+					divdet.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+				break;
+
+				default:
+
+				break;
+
+			}
+
+	return([retdivpadre, contImpar]);
+
+}
+
+
+
+function llenaDivEncabezado(divResumenBloque,C1,C2, C4, C16, C11, C10, C5, C12, C9, C7,C18){
+
+	
+
+	if (C5 == '-')	C10 = "-" + C10;
+
+	var tablaCuenta = document.createElement('table');
+
+	tablaCuenta.setAttribute("cellspacing","0");
+
+	tablaCuenta.setAttribute("cellpadding","0");
+
+	tablaCuenta.className="ancho100p tablaDisponible";
+
+	var bodyTablaCuenta = document.createElement("tbody");
+
+	var divEncabezado = document.createElement('tr');
+
+	divEncabezado.className ="trTablaDisponible";
+
+	var tdNombreCuenta = document.createElement("td");
+
+	tdNombreCuenta.className="paddingL40 paddingT15 paddingB10 borderTSolid ancho63p";
+
+	tdNombreCuenta.appendChild(generaLinkOrSpan(C1, C2, C4,C9, C11, C12,C16,C7,C18));
+
+	var tdSaldo = document.createElement("td");
+
+	var tdDisponible =  document.createElement("td");
+
+	if(C4 == '2'){
+
+		var errordisponible = "SPANISH" == "SPANISH" ? "NO DISPONIBLE" : "NOT AVAILABLE";
+
+		tdSaldo.className="alignRight borderTSolid paddingR35 paddingT15 paddingB10 boldText coloree2e24 ancho23p";
+
+		tdSaldo.innerHTML = errordisponible;
+
+	}
+
+	else{
+
+	tdSaldo.className="alignRight borderTSolid paddingR35 paddingT15 paddingB10 boldText ancho23p";
+
+	tdSaldo.innerHTML = "$ " + C10;
+
+	}
+
+	tdDisponible.className= "alignRight borderTSolid paddingT15 paddingB10 boldText  ancho14p"
+
+	tdDisponible.innerHTML="&nbsp;";
+
+	divEncabezado.appendChild(tdNombreCuenta);
+
+	divEncabezado.appendChild(tdDisponible);
+
+	divEncabezado.appendChild(tdSaldo);
+
+	bodyTablaCuenta.appendChild(divEncabezado);		
+
+	tablaCuenta.appendChild(bodyTablaCuenta);
+
+	divResumenBloque.appendChild(tablaCuenta);
+
+}
+
+
+
+function generaLinkOrSpan(C1, C2, C4, C9, C11, C12,C16,C7,C18){
+
+	
+
+	if(C7 == '001'){ C7="MXN" }else if (C7 == '005'){ C7="USD"}else if(C7 == '003'){ C7="UDIS"}else C7= "";
+
+	var linkOrSpan;
+
+	if (((C9 == "INVESTMENT" || C9 == "INVERSI&oacute;N"  || C9 == "INVERSI&oacute;N BANAMEX" || C9 == "BANAMEX INVESTMENT") && C2  == "-") || (C4 == 2) || C2 == "")
+
+		{
+
+		linkOrSpan = document.createElement ("span");
+
+		linkOrSpan.className="color01589f";
+
+		if(C2 == ""){C2="-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";}
+
+		linkOrSpan.innerHTML = C2 +' - '+ C16 +' - '+ C7 +' - **'+ C11 ;
+
+	}
+
+	else{
+
+		linkOrSpan = document.createElement ("a");
+
+		linkOrSpan.className="underline";
+
+		linkOrSpan.href ="Javascript:GetDetail2('" +C1 + "','" + C11 + "','" + C12 + "','" + C18 + "')";
+
+		linkOrSpan.innerHTML = C2 +' - '+ C16 +' - '+ C7 +' - **'+ C11 ;
+
+	}
+
+	return linkOrSpan;
+
+}
+
+
+
+function obtieneValorEvento(evt, nombre){
+
+    var ieVar = "srcElement";
+
+    var mozVar = "target";
+
+	if(evt[mozVar])
+
+		return evt[mozVar][nombre];
+
+	else
+
+		return evt[ieVar][nombre];
+
+}
+
+
+
+function procesaClick(evt) {
+
+    var idBoton = obtieneValorEvento(evt, "idBoton");
+
+    var idContenedor = obtieneValorEvento(evt, "idContenedor");
+
+    desplegableBordes(idBoton, idContenedor, 2);
+
+}
+
+
+
+ function yaExiste(producto, instrumento, noCuenta, tipoCuenta, detalles) { 
+
+        for (i = 0; i<cuentasExistentes.length; i++) {
+
+            if (cuentasExistentes[i]["producto"] == producto && cuentasExistentes[i]["instrumento"] == instrumento && cuentasExistentes[i]["noCuenta"] == noCuenta) {
+
+                if (tipoCuenta == 2 && cuentasExistentes[i]["tipoCuenta"] == 2) {
+
+                    var noInversion = detalles.split(", ")[0];
+
+                    var noInversionExistente = cuentasExistentes[i]["detalles"].split(", ")[0];
+
+                    if (noInversion == noInversionExistente ) {
+
+                        return true;
+
+                    }
+
+                } else if (tipoCuenta == 7 && cuentasExistentes[i]["tipoCuenta"] == 7) {
+
+                    var noFolio = detalles.split(", ")[3];
+
+                    var noFolioExistente = cuentasExistentes[i]["detalles"].split(", ")[3];
+
+                    if (noFolio == noFolioExistente) {
+
+                        return true;
+
+                    }
+
+                } else {
+
+                    return true;
+
+                }
+
+            }
+
+        }
+
+        var nuevaCuenta = new Array();
+
+        nuevaCuenta["producto"] = producto;
+
+        nuevaCuenta["instrumento"] = instrumento;
+
+        nuevaCuenta["noCuenta"] = noCuenta;
+
+        nuevaCuenta["tipoCuenta"] = tipoCuenta;
+
+        nuevaCuenta["detalles"] = detalles;
+
+        cuentasExistentes.splice(0, 0, nuevaCuenta);
+
+ return false;
+
+}
+
+
+
+function creaDetallesOError(C4, C12, posiciones){
+
+	var tablaDetalles = document.createElement("table");
+
+	tablaDetalles.className="ancho100p tabTarBoton";
+
+	var bodyTablaDetalles=document.createElement("tbody");
+
+	tablaDetalles.appendChild(bodyTablaDetalles);
+
+	if(C4 == 2){
+
+		trtablaDetalles=document.createElement("tr");
+
+		tdtablaDetalles=document.createElement("td");
+
+		if(C12=="&nbsp;")C12='';
+
+		tdtablaDetalles.innerText = tdtablaDetalles.textContent = C12;
+
+		trtablaDetalles.appendChild(tdtablaDetalles);
+
+		bodyTablaDetalles.appendChild(trtablaDetalles);
+
+		tdtablaDetalles.className= "color8f paddingB10 paddingL40 premia";
+
+	}
+
+	else{
+
+	var detalles = C12.split(", ");
+
+		var trDetalle = document.createElement("tr");
+
+		trDetalle.className = "trTarBoton";
+
+		var tdTitulo = document.createElement("td");
+
+		var tdTitulo1 = document.createElement("td");
+
+		tdTitulo.className="color8f paddingB10 paddingL40 ancho10p premia";
+
+		tdTitulo1.className="color8f paddingB10 paddingL40 ancho40p";
+
+		if(posiciones[0] != undefined)tdTitulo.innerHTML = detalles[posiciones[0]];
+
+		if(posiciones[1] != undefined)tdTitulo1.innerHTML= detalles[posiciones[1]];
+
+		trDetalle.appendChild(tdTitulo);
+
+		trDetalle.appendChild(tdTitulo1);
+
+		bodyTablaDetalles.appendChild(trDetalle);
+
+	}
+
+	return tablaDetalles;
+
+}
+
+
+
+function contigencia(tdContenedorDetalles,divEncabezado, C1,C2, C4, C5,C9,C12, C16, C11, C10,C7,C18){
+
+	var posiciones= new Array();
+
+	llenaDivEncabezado(divEncabezado, C1,C2, C4, C16, C11, C10,C5,C12,C9,C7,C18);
+
+	posiciones=[0,1];
+
+	tdContenedorDetalles.appendChild(creaDetallesOError(C4, C12, posiciones));
+
+	cont0101++;
+
+	return "contenedor0101";
+
+}
+
+
+
+function CurrencyFormatted(amount) {
+
+	var i = parseFloat(amount);
+
+	if (isNaN(i)) { i = 0.00; }
+
+	var minus = '';
+
+	if (i < 0) { minus = '-'; }
+
+	i = Math.abs(i);
+
+	i = parseInt((i + .005) * 100);
+
+	i = i / 100;
+
+	s = new String(i);
+
+	if (s.indexOf('.') < 0) { s += '.00'; }
+
+	if (s.indexOf('.') == (s.length - 2)) { s += '0'; }
+
+	s = minus + s;
+
+	return CommaFormatted(s);
+
+}
+
+
+
+function CommaFormatted(amount) {
+
+	var delimiter = ",";
+
+	var a = amount.split('.', 2)
+
+	var d = a[1];
+
+	var i = parseInt(a[0]);
+
+	if (isNaN(i)) { return ''; }
+
+	var minus = '';
+
+	if (i < 0) { minus = '-'; }
+
+	i = Math.abs(i);
+
+	var n = new String(i);
+
+	var a = [];
+
+	while (n.length > 3) {
+
+		var nn = n.substr(n.length - 3);
+
+		a.unshift(nn);
+
+		n = n.substr(0, n.length - 3);
+
+	}
+
+	if (n.length > 0) { a.unshift(n); }
+
+	n = a.join(delimiter);
+
+	if (d.length < 1) { amount = n; }
+
+	else { amount = n + '.' + d; }
+
+	amount = minus + amount;
+
+	return amount;
+
+}
+
+
+
+
+
+
+
+function LinkTransaccion(cuentaCorta,pN,sN,tN,tPago){
+
+	corta=$.trim(cuentaCorta);
+
+	var indice = '';
+
+       $("#comboCuentas option").each(function(){
+
+	   if($.trim($(this).text().split("-")[1]) == corta)
+
+			indice = $(this).val();
+
+       });
+
+       if(indice != ''){
+
+			var aux="";
+
+			if(tPago!="") aux = "|" + tPago;
+
+			$("#DATAAUX", window.parent.document).val(indice + aux);
+
+		}
+
+		if(tN!="")
+
+			window.parent.SaltoTransaccion(pN,sN,tN);
+
+		else
+
+			window.parent.SaltoTransaccion(pN,sN);
+
+}
+
+
+
+ $(document).ready(function () {
+
+  if(window.parent.$('#DATAAUX').val()=="EXPANDIDO"){expandir();  window.parent.$('#DATAAUX').val('');}
+
+		if(flagCon=='FALSE'){
+
+			$("#tituloMulti").html("Multisaldos");
+
+			$("#total_1").hide();
+
+			$("#total_efectivo").hide();
+
+			$("#dispo_efec").hide();
+
+		}
+
+		if(flagInversiones == "OFF"){
+
+			$("#t17").html("CR&Eacute;DITOS");
+
+			$("#total_3").html('&nbsp;');
+
+			$("#total_inver").hide();
+
+			$("#total_5").html('&nbsp;');
+
+			$("#tot_creditos").hide();
+
+			$("#boton_3").addClass('marginB10');
+
+			$("#boton_5").addClass('marginB10');
+
+		}
+
+		top.window.scrollTo(0,0);
+
+	}
+
+); 
+
+
+
+
+
+function ocultaToolTip(){
+
+	$("#tooltip").hide();
+
+}
+
+
+
+function oculta(boton,conte,total){
+
+	if($('#'+conte).is (':visible')){
+
+		$('#'+conte).hide();
+
+		$('#'+boton).removeClass().addClass('mas marginT10 marginR15 marginB10');
+
+		$('#'+total).show();
+
+	}
+
+	else{
+
+		$('#'+conte).show();
+
+		$('#'+boton).removeClass().addClass('menos marginT10 marginR15');
+
+		$('#'+total).hide();
+
+	}
+
+	parent.ajustarIframe();
+
+}
+
+
+
+function expandir(){
+
+	$('div[id^="contenido"]').show(); 
+
+	$('div[id^="boton_"]').removeClass().addClass('menos marginT10 marginR15');
+
+	$('div[id^="total_"]').hide();
+
+	if(flagInversiones!="ON"){
+
+	$("#total_5").hide();$("#boton_5").removeClass('marginB10');
+
+	$("#total_3").hide();$("#boton_3").removeClass('marginB10');
+
+	}
+
+	parent.ajustar();
+
+	$('#menos').removeClass("color8808182 nodecoNone").addClass("color000 nodecoPo"); 
+
+	$('#mas').removeClass("color000 nodecoPo").addClass("color8808182 nodecoNone");
+
+	$('#t4').removeClass('nodecoPo').addClass('nodecoNone');
+
+	$('#t5').removeClass('nodecoNone').addClass('nodecoPo');
+
+}
+
+
+
+function contraer(){
+
+	$('div[id^="contenido"]').hide(); 
+
+	$('div[id^="boton_"]').removeClass().addClass('mas marginT10 marginR15');
+
+	$('div[id^="total_"]').show();
+
+	if(flagInversiones!="ON"){
+
+	$("#total_5").hide();$("#boton_5").addClass('marginB10');
+
+	$("#total_3").hide();$("#boton_3").addClass('marginB10');
+
+	}
+
+	parent.ajustar();
+
+	$('#mas').removeClass("color8808182 nodecoNone").addClass("color000 nodecoPo"); 
+
+	$('#menos').removeClass("color000 nodecoPo").addClass("color8808182 nodecoNone");
+
+	$('#t4').removeClass('nodecoNone').addClass('nodecoPo');
+
+	$('#t5').removeClass('nodecoPo').addClass('nodecoNone');
+
+}
+
+
+
+function formataePPremia(puntosPremia){
+
+	var puntosPremia = String(puntosPremia);
+
+	var numLength = puntosPremia.length;
+
+	if(numLength > 3){
+
+		var puntos = new Array();
+
+		puntos = puntosPremia.split("");
+
+		var contador = 0;
+
+		var aux1 = "";
+
+		for(numLength; numLength > 0; numLength--){
+
+			aux1 = puntos [numLength - 1] + aux1;
+
+			contador++
+
+			if(contador == 3 && numLength > 1){
+
+				aux1 = "," + aux1;
+
+				contador = 0;
+
+			}
+
+		}
+
+		puntos = aux1;
+
+		return(puntos);
+
+	}else{
+
+	return(puntosPremia);
+
+	}
+
+}
+
+
+
+	
+
+	var esIngles=false;
+
+</script>
+
+<script>
+
+	var ingles =[["mdlCuentas", "Accounts found"],["mdlSelecciona","Choose an account to continue "],["mdlCuentaOAlias","Account or nickname "],["mdlCuenta","Account"],["cerrarResultados","Cancel"]];
+
+	function mdlSwap(){
+
+	for (var i=0;i<ingles.length;i++){
+
+		$("[id="+ingles[i][0]+"]", window.parent.document).each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = ingles[i][1];
+
+			else
+
+				this.innerHTML = ingles[i][1];});
+
+		}
+
+}
+
+</script>
+
+
+
+<div id="divResultados" class="displayN">
+
+	<div class="mensajeError_Fila2">
+
+		<div class="panelIzEnca3_text2" id="mdlCuentas">Cuentas encontradas</div>
+
+		<p class="f11 color666"  id="mdlSelecciona">Selecciona una cuenta para continuar</p>
+
+		<br />
+
+		<div class="mensajeError_Fila2">
+
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3 pinta2" id="tablaResultados">
+
+				<tr >
+
+					<td class="borderRSolid"><span  id="mdlCuentaOAlias">Cuenta o alias</span></td>
+
+					<td><span id="mdlCuenta">Cuenta</span></td>
+
+				</tr>
+
+			</table>
+
+		</div>
+
+		<div class="mensajeError_Fila3">
+
+			<div class="floatL"><input type="button"  class="btnRJ86 CerrarVentanaEmergente" value="Cerrar" id="cerrarResultados"/></div>
+
+		</div>
+
+	</div>
+
+</div>	
+
+<script>parent.setFecha("11/04/12    13:54:57  ");</script>
+
+
+
+<script>
+
+v_nbr="";v_fch="";
+
+a$Cont="135457  ";b$Cont="135457  ";
+
+if(a$Cont==b$Cont)parent.scd();</script>
+
+
+
+
+
+<script>
+
+ var ruta = rutaAyuda + 'saldos.htm';
+
+ 
+
+	  function Initialize(){ 
+
+		showtooltip2();
+
+		crearComboCuentas();
+
+		parent.$("#tituloSeccion").hide();
+
+		parent.$("#div_contenedorPrincipal").css({"margin":"-21px 0px 0px 0px"});
+
+		
+
+	 
+
+		agregarTodas();
+
+		mostrarGrupos(); 
+
+	 
+
+	 
+
+		var memos="0";
+
+		if( memos == "2"){muestraMemos();}
+
+		else{ErrorMulti();}
+
+		setTimeout('reAjusteIE7()',1000);
+
+		contraerTodo();
+
+		$('div[id^="contenedor"]').find('tr:eq(0)').addClass("smbmult");
+
+	  }	 
+
+	  
+
+</script>
+
+ 
+
+
+
+  <LINK REL=STYLESHEET TYPE="text/css" HREF="../../bbAvatar/css/estilos.css">
+
+<script language="JavaScript" src="../../bbAvatar/js/motor.js"></script>
+
+<script language="JavaScript" src="../../bbAvatar/js/opciones.js"></script>
+
+
+
+<script language="JavaScript">
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+function validaMail(idCampo, contexto){
+
+  contexto = contexto || window.document;
+
+  var mailTest = /^[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}$/
+
+  var valMail = $("#"+idCampo, contexto ).val();
+
+  return mailTest.test(valMail);
+
+}
+
+
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+function rfcValido( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var regexRfc;
+
+  var valRfc = $( "#"+idTxt+"", contexto ).val();
+
+  if( valRfc.length == 12 || valRfc.length == 13 ) {
+
+    regexRFC = ( valRfc.length == 12 ) ? /^([A-Z&]{3})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/ 
+
+									   : /^([A-Z&]{4})([0-9]{2})([0][1-9]|[1][0-2])([0][1-9]|[1-2][0-9]|[3][0-1])([A-Z0-9]{3})$/;
+
+	return regexRFC.test( valRfc );
+
+  } else
+
+    return false;
+
+}
+
+
+
+function curpValido( idTxt ) {
+
+  var regexCurp;
+
+  var valCurp = $( "#"+idTxt+"" ).val();
+
+  regexCurp = /^[A-Z]{4}[0-9]{6}[A-Z]{6}[0-9]{2}$/;
+
+  return regexCurp.test( valCurp );
+
+}
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function showError( idElem, msgErr, contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'', contexto ).after( $divErr );
+
+}
+
+
+
+function hideErrors( contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display', contexto).remove();
+
+}
+
+
+
+function toggleChecks( idChecken, idCheckdis ) {
+
+  var flag =  $('#'+idChecken).is(':checked');
+
+  $('#'+idChecken).attr('disabled', false);
+
+  $('#'+idCheckdis).attr('disabled', flag);
+
+  $('#'+idCheckdis).attr('checked', false);
+
+  $('#msgFrec').show();
+
+  window.parent.ajustarIframe();
+
+}
+
+
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+$(document).ready(
+
+	function(){
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+			
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+									
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function AbreAyuda(){
+
+	rutaAyuda += 'saldos.htm';
+
+	window.open(rutaAyuda,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function LinkTransaccionSaldos(primerN, segundoN, tercerN, tPago){
+
+    var aux="";
+
+    if(tPago!="") aux = "|"+tPago;
+
+    $("#DATAAUX", window.parent.document).val("[INDICEACTUAL]"+ aux);
+
+        if(tercerN!="")
+
+            window.parent.SaltoTransaccion(primerN,segundoN,tercerN);
+
+        else
+
+            window.parent.SaltoTransaccion(primerN,segundoN);
+
+}
+
+function saltoPersonalizar(){
+
+	window.parent.SaltoTransaccion(4,1,0)
+
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+<script>parent.setFecha("11/04/12    13:54:57  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del menú la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la página.\n\n Esta Transacci&oacute;n no se efectuará, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la página. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="135457  ";b$Cont="135457  "
+
+	</script>
+
+
+
+<div class="resumen_enca ancho100p">
+
+	<div class="floatR marginT7 paddingR7 ancho20p">
+
+    	<div class=" floatR">
+
+  			<div class="saldos_btn1 showtooltip margin_menosT3 Ayuda" onclick="Javascript:AbreAyuda();"></div>
+
+	   		<div class="saldos_btn2 showtooltip margin_menosT3 Imprimir" onclick="imprimirMain();"></div>
+
+      		<div class="floatR marginR10">
+
+                <div class="resumen_flecha"></div>
+
+                <a href="javascript:saltoPersonalizar()"> Personalizar vista</a>
+
+            </div>
+
+        </div>
+
+   	</div>
+
+    <div class="floatR marginT5" style="width:208px">
+
+        <div id="divExpansores" class="floatR">
+
+            <div class="expandir_contraer floatR marginR5">
+
+                <div id="menos" class="color8f nodecoNone" style="text-decoration:none !important;" onclick="contraer();">
+
+                    <div class="menos" ></div>
+
+                    <label id="t5" class="nodecoNone" style="text-decoration:none;">Contraer todo</label>
+
+                </div>
+
+            </div>
+
+            <div class="expandir_contraer floatR marginR5">
+
+                <div id="mas" class="color000 nodecoPo" style="text-decoration:none !important;" onclick="expandir();">
+
+                    <div class="mas"></div>
+
+                    <label id="t4" class="nodecoPo" style="text-decoration:none;">Expandir todo</label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="floatL">
+
+        <div class="floatL"><h1>RESUMEN DE CUENTAS</h1></div>
+
+        <div class="floatL marginL10 marginT2">
+
+            <select name="select" id="comboCuentas" onChange="JavaScript:validaFolioInversiones();"></select>
+
+        </div>
+
+   	</div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+
+	
+
+			
+
+
+
+	
+
+	<div  id="bloqueCEfectivo" class="displayN marginT15">		
+
+		<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT15" >
+
+			<div>
+
+				<div id="boton_1" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_1','contenido_1','total_1');"></div>
+
+				<div class="floatL f14 marginT10 ancho85p">
+
+					<label id="t11" class="f14" >CUENTAS DE EFECTIVO MXN&nbsp;</label>
+
+					<span id="con0101"  class="f14"></span>
+
+				</div>
+
+			</div>
+
+			  <div id="total_1" class="resumen_total floatR">
+
+					<div id="t19" class="floatR">Saldo total</div>
+
+					<div class="clear"></div>
+
+					<div class="marginT5 floatR" id="total0101a"></div>
+
+			  </div>
+
+			<div class="clear"></div>
+
+		</div>
+
+		<div id="contenido_1" class="displayN">
+
+			<div class="resumen_saldo">
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr>
+
+						<td class="padding_td" width="63%">&nbsp;</td>
+
+						<td id="dispo_efec" width="14%" align="right" class="padding_td"> 
+
+							<label   id="t7">Disponible</label></td>
+
+						<td class="paddingR35 padding_td"  align="right" width="23%">
+
+							<label id="t8" >Saldo</label></td>
+
+					</tr>
+
+				</table> 
+
+			</div>
+
+			<div id="contenedor010101"></div>
+
+			<div id="contenedor010102"></div>
+
+			<div id="contenedor010103"></div>
+
+			<div>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr class="bgF5F5F5">
+
+						<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+						<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+						<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total0101b"></p></td>
+
+					</tr>
+
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+		<!-- esto se repite -->
+
+<div  id="bloqueCEfectivoDolares" class="displayN">
+
+	<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT15" >
+
+		<div>
+
+			<div id="boton_2" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_2','contenido_2','total_2');"></div> 
+
+			<div class="floatL f14 marginT10 ancho85p">
+
+				<label id="t12" class="f14" >CUENTAS DE EFECTIVO  USD&nbsp;</label>
+
+				<span id="con0102"  class="f14"></span>
+
+			</div>
+
+		</div>
+
+		  <div id="total_2" class="resumen_total floatR">
+
+				<div id="t19" class="floatR" >Saldo total</div>
+
+				<div class="clear"></div>
+
+				<div class="marginT5 floatR" id="total0102a"></div>
+
+		  </div>
+
+		<div class="clear"></div>
+
+	</div>
+
+
+
+		<!-- esto se repite -->
+
+		<div id="contenido_2" class="displayN">
+
+			<div class="resumen_saldo">
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr>
+
+						<td class="padding_td" width="63%">&nbsp;</td>
+
+						<td width="14%" align="right" class="padding_td">
+
+							<label id="t7"  >Disponible</label>
+
+						</td>
+
+						<td class="paddingR35 padding_td" align="right" width="23%">
+
+							<label id="t8" >Saldo</label>
+
+						</td>
+
+					</tr>
+
+				</table> 
+
+			</div>
+
+			<div id="contenedor010201"></div>
+
+			<div>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr class="bgF5F5F5">
+
+						<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+						<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+						<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total0102b"></p></td>
+
+					</tr>
+
+				</table>
+
+			</div>
+
+		</div>
+
+		</div>
+
+
+
+
+
+		<!--inveriones-->
+
+	<div  id="bloqueInversiones" class="displayN">		
+
+		<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" >
+
+			<div>
+
+				<div id="boton_3" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_3','contenido_3','total_3');"></div> 
+
+				<div class="floatL f14 marginT10 ancho85p">
+
+					<label id="t13" class="f14" >INVERSIONES&nbsp;</label>
+
+					<span id="con03"  class="f14"></span>
+
+				</div>
+
+			</div>
+
+			  <div id="total_3" class="resumen_total floatR">
+
+					<div id="t19" class="floatR" >Saldo total</div>
+
+					<div class="clear"></div>
+
+					<div class="marginT5 floatR" id="total03a"></div>
+
+			  </div>
+
+			<div class="clear"></div>
+
+		</div>
+
+			<div id="contenido_3" class="displayN">
+
+				<div class="resumen_saldo">
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+						<tr>
+
+							<td class="padding_td" width="63%">&nbsp;</td>
+
+							<td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+							<td width="23%" align="right" class="paddingR35 padding_td">
+
+								<label id="t8" >Saldo</label>
+
+							</td>
+
+						</tr>
+
+					</table> 
+
+				</div>
+
+				<div id="contenedor03"></div>
+
+				<div id="contenedor0302"></div>
+
+				<div id="contenedor0303"></div>
+
+				<div id="total_inver">
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+						<tr class="bgF5F5F5">
+
+							<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+							<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+							<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total03b"></p></td>
+
+						</tr>
+
+					</table>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	
+
+	<div  id="bloqueInversionesDolares" class="displayN">		
+
+		<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" >
+
+			<div>
+
+				<div id="boton_0301" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_0301','contenido_0301','total_0301');"></div> 
+
+				<div class="floatL f14 marginT10 ancho85p">
+
+					<label id="t14" class="f14" >INVERSIONES DOLARES&nbsp;</label>
+
+					<span id="con0301"  class="f14"></span>
+
+				</div>
+
+			</div>
+
+			  <div id="total_0301" class="resumen_total floatR">
+
+					<div id="t19" class="floatR" >Saldo total</div>
+
+					<div class="clear"></div>
+
+					<div class="marginT5 floatR" id="total0301a"></div>
+
+			  </div>
+
+			<div class="clear"></div>
+
+		</div>
+
+			<div id="contenido_0301" class="displayN">
+
+				<div class="resumen_saldo">
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+						<tr>
+
+							  <td width="63%" class="padding_td">&nbsp;</td>
+
+								<td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+								<td width="23%" align="right" class="paddingR35 padding_td">
+
+								<label id="t8" >Saldo</label></td>
+
+						</tr>
+
+					</table> 
+
+				</div>
+
+				<div id="contenedor0301"></div>
+
+				<div>
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+						<tr class="bgF5F5F5">
+
+							<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+							<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+							<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total0301b"></p></td>
+
+						</tr>
+
+					</table>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+	<div  id="bloqueTarjetas" class="displayN">	
+
+		<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" >
+
+			<div>
+
+				<div id="boton_4" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_4','contenido_4','total_4');"></div> 
+
+				<div class="floatL f14 marginT10 ancho50p">
+
+					<label id="t15" class="f14" >TARJETAS DE CR&Eacute;DITO&nbsp;</label>
+
+					<span id="con04"  class="f14"></span>
+
+				</div>
+
+			</div>
+
+			  <div id="total_4" class="resumen_total floatR ancho40p">
+
+				<div class="floatR ancho40p">
+
+					<div id="t19" class="floatR">Saldo total</div>
+
+					<div class="clear"></div>
+
+					<div class="marginT5 floatR" id="total04a"></div>
+
+				</div>
+
+				<div class="floatR ancho60p">
+
+					<div id="t9" class="floatR">Cr&eacute;dito disponible total</div>
+
+					<div class="clear"></div>
+
+					<div class="marginT5 floatR" id="total04ad"></div>
+
+				</div>
+
+			  </div>
+
+			<div class="clear"></div>
+
+		</div>
+
+		<div id="contenido_4" class="displayN">
+
+			<div class="resumen_saldo">
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr>
+
+						<td width="63%" class="padding_td">&nbsp;</td>
+
+						 <td width="14%" align="right" class="padding_td0">
+
+							<label id="t10" >Cr&eacute;dito disponible</label>
+
+						</td>
+
+						 <td width="23%" align="right" class="paddingR35 padding_td">
+
+							<label id="t8">Saldo</label>
+
+						</td>
+
+					</tr>
+
+				</table> 
+
+			</div>
+
+			<div id="contenedor04"></div>
+
+			<div>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr class="bgF5F5F5">
+
+						<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+						<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+						<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total04b"></p></td>
+
+					</tr>
+
+				</table>
+
+			</div>
+
+		</div>
+
+		</div>
+
+		
+
+<div  id="bloqueTarjetasPremia" class="displayN">
+
+		<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" >
+
+		<div>
+
+			<div id="boton_0401" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_0401','contenido_0401','total_0401');"></div> 
+
+			<div class="floatL f14 marginT10 ancho85p">
+
+				<label id="t16" class="f14" >TARJETA PREMIA&nbsp;</label>
+
+				<span id="con0401"  class="f14"></span>
+
+			</div>
+
+		</div>
+
+		  <div id="total_0401" class="resumen_total floatR">
+
+				<div id="t19" class="floatR" >Saldo total</div>
+
+				<div class="clear"></div>
+
+				<div class="marginT5 floatR" id="total0401a"></div>
+
+		  </div>
+
+		<div class="clear"></div>
+
+	</div>
+
+	
+
+		<div id="contenido_0401" class="displayN">
+
+			<div class="resumen_saldo">
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr>
+
+						<td width="63%" class="padding_td">&nbsp;</td>
+
+						<td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+						<td width="23%" align="right" class="paddingR35 padding_td">
+
+							<label id="t8" >Saldo</label>
+
+						</td>
+
+					</tr>
+
+				</table> 
+
+			</div>
+
+			<div id="contenedor0401"></div>
+
+			<div>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr class="bgF5F5F5">
+
+						<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+						<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+						<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total0401b"></p></td>
+
+					</tr>
+
+				</table>
+
+			</div>
+
+		</div>
+
+		</div>
+
+
+
+		<div  id="bloqueCreditosPesos" class="displayN">
+
+			<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" >
+
+				<div>
+
+					<div id="boton_5" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_5','contenido_5','total_5');"></div> 
+
+					<div class="floatL f14 marginT10 ancho85p">
+
+						<label id="t17" class="f14" >CR&Eacute;DITOS PESOS &nbsp;</label>
+
+						<span id="con05"  class="f14"></span>
+
+					</div>
+
+				</div>
+
+				  <div id="total_5" class="resumen_total floatR">
+
+						<div id="t19" class="floatR" >Saldo total</div>
+
+						<div class="clear"></div>
+
+						<div class="marginT5 floatR" id="total05a"></div>
+
+				  </div>
+
+				<div class="clear"></div>
+
+			</div>
+
+			<div id="contenido_5" class="displayN">
+
+				<div class="resumen_saldo">
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+						<tr>
+
+							<td width="63%" class="padding_td">&nbsp;</td>
+
+							<td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+							<td width="23%" align="right" class="paddingR35 padding_td">
+
+								<label id="t8" >Saldo</label>
+
+							</td>
+
+						</tr>
+
+					</table> 
+
+				</div>
+
+				<div id="contenedor05"></div>
+
+				<div id="tot_creditos">
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+						<tr class="bgF5F5F5">
+
+							<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+							<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+							<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total05b"></p></td>
+
+						</tr>
+
+					</table>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+	<div  id="bloqueCreditosUDIS" class="displayN">
+
+		<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" >
+
+				<div>
+
+					<div id="boton_6" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_6','contenido_6','total_6');"></div> 
+
+					<div class="floatL f14 marginT10 ancho85p">
+
+						<label id="t18" class="f14" >CR&Eacute;DITOS UDIS&nbsp;</label>
+
+						<span id="con06"  class="f14"></span>
+
+					</div>
+
+				</div>
+
+				  <div id="total_6" class="resumen_total floatR">
+
+						<div id="t19" class="floatR" >Saldo total</div>
+
+						<div class="clear"></div>
+
+						<div class="marginT5 floatR" id="total06a"></div>
+
+				  </div>
+
+				<div class="clear"></div>
+
+			</div>
+
+			<div id="contenido_6" class="displayN">
+
+				<div class="resumen_saldo">
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+						<tr>
+
+							<td width="63%" class="padding_td">&nbsp;</td>
+
+							<td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+							<td width="23%" align="right" class="paddingR35 padding_td">
+
+								<label id="t8" >Saldo</label>
+
+							</td>
+
+						</tr>
+
+					</table> 
+
+				</div>
+
+				<div id="contenedor06"></div>
+
+				<div>
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+						<tr class="bgF5F5F5">
+
+							<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+							<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+							<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total06b"></p></td>
+
+						</tr>
+
+					</table>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	<div id="bloqueAfore" class="displayN">
+
+		<div class="titulo_cuentas boldText borderBSolid000 paddingB5 marginT17" >
+
+			<div>
+
+				<div id="boton_7" class="mas marginT10 marginR15" onclick="Javascript:oculta('boton_7','contenido_7','total_7');"></div> 
+
+				<div class="floatL f14 marginT10 ancho85p">
+
+					<label class="f14" >AFORE&nbsp;</label>
+
+					<span id="con07"  class="f14"></span>
+
+				</div>
+
+			</div>
+
+			  <div id="total_7" class="resumen_total floatR">
+
+					<div id="t19" class="floatR" >Saldo total</div>
+
+					<div class="clear"></div>
+
+					<div class="marginT5 floatR" id="total07a"></div>
+
+			  </div>
+
+			<div class="clear"></div>
+
+		</div>
+
+		<div id="contenido_7" class="displayN">
+
+			<div class="resumen_saldo">
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr>
+
+						<td width="63%" class="padding_td">&nbsp;</td>
+
+						<td width="14%" align="right" class="padding_td">&nbsp;</td>
+
+						<td width="23%" align="right" class="paddingR35 padding_td">
+
+							<label id="t8" >Saldo</label>
+
+						</td>
+
+					</tr>
+
+				</table> 
+
+			</div>
+
+			<div id="contenedor07"></div>
+
+			<div>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+					<tr class="bgF5F5F5">
+
+						<td class="paddingL40 boldText borderTSolid"  width="70%" ><label id="t6">Total</label></td>
+
+						<td align="right" class="borderTSolid boldText" width="15%">&nbsp;</td>
+
+						<td align="right" class="borderTSolid paddingR35 padding_td boldText" width="15%"><p id="total07b"></p></td>
+
+					</tr>
+
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<br />
+
+	
+
+
+
+
+
+
+
+ 
+
+
+
+	<script language="JavaScript">
+
+		function muestraMemos(){
+
+				if(esIngles){$('.btnAZ86').val("Continue");}
+
+				$("#mensajeError_contenido_div", window.parent.document).html($("#divMemos").html());
+
+				$("#ventanaEmergente-contenido", window.parent.document).css('border', 'none');
+
+				$("#tabla_emergente", window.parent.document).css('border', 'none');
+
+				$("#tabla_emergente", window.parent.document).css({'background':'none'});
+
+				parent.$.modal(				
+
+				{
+
+					closeHTML: '',
+
+					opacity:60, 
+
+					overlayClose:true, 
+
+					flagDiv:true,
+
+					widthDivIfrm:350,
+
+					heightDivIfrm:330
+
+				}
+
+				);
+
+		}
+
+		function cerrarModalMemos(){
+
+			parent.$.modal.close();
+
+		    setTimeout('addAtrPos()',1000);	
+
+		}
+
+		function addAtrPos(){
+
+			$("#ventanaEmergente-contenido", window.parent.document).css('border', '15px solid #C0C0C0');
+
+			$("#tabla_emergente", window.parent.document).css('border', '2px solid #DEDEDE');
+
+			$("#tabla_emergente", window.parent.document).css('background','#FFFFFF');
+
+			ErrorMulti();
+
+		}
+
+	</script>
+
+
+
+
+
+<div id="divMemos" class="displayN">
+
+	<div class="nota padding0 bordePosIt">	
+
+		<div class="padding20">
+
+			<div > <span class="colorCC0000 f22 negrita"> &#187;</span>
+
+				<span class="color333 f16 negrita">[AsuntoMemo]</span>
+
+			</div>
+
+			<div class="marginT17 f11 color666 negrita">[MensajeMemo]</div>
+
+		</div>
+
+	</div>
+
+	 <div class="pie_nota">
+
+		<div class="paddingT10 paddingR30">
+
+			<input type="button" class="btnAZ86 floatR " value="Continuar" onclick="frames.main.cerrarModalMemos();"/>
+
+		</div>
+
+     </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+	function ErrorMulti(){
+
+		if($("#wrapper_div").height() < 90){
+
+               $("#wrapper_div").height(450);
+
+			   $("#wrapper_div").css("height","auto");
+
+		}
+
+		var fld_flagErroMulti ="OFF";
+
+		if(fld_flagErroMulti=="ON"){
+
+			if(esIngles){
+
+			es=new Array("Sorry, the transaction could not be completed","Overview balance:&nbsp;","Cause:&nbsp;","What can I do?",
+
+			"You can use online help or contact the customer service at 1226 3990 (D.F. and Metropolitan area) or 01 800 110 3990 (rest of the Republic)",
+
+			"It is important to have the following code:&nbsp;","","Retry","Continue");
+
+			swapModalErrorIngles();
+
+			}
+
+			$("#causa").css("height","auto");
+
+			$("#mensajeError_contenido_div", window.parent.document).html($("#divError").html());
+
+			parent.$.modal(				
+
+			{
+
+				closeHTML: '',
+
+				opacity:60, 
+
+				overlayClose:false, 
+
+				flagDiv:true,
+
+				widthDivIfrm:600,
+
+				heightDivIfrm:'auto'
+
+			}
+
+			);	
+
+		}
+
+	}
+
+</script>
+
+
+
+
+
+
+
+
+
+<div id="divError" class="displayN">
+
+	<div class="mensajeError_contenidoIn">
+
+		<div class="mensajeError_Fila1">
+
+			<div class="mensajeError_titulo1" id="f0">Disculpe, la operaci&oacute;n no se ha podido completar</div>
+
+			<div class="mensaje_btn1"><div class="saldos_btn2 margin0" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div></div>
+
+		</div>
+
+		<div id="causa"class="mensajeError_Fila1_2">
+
+			<div class="color666 paddingT5 paddingL25 f11"><span  id="f1" class="color666 paddingT5 f11">Saldos de Todas sus Cuentas:</span> <br />
+
+				<span class="color666 f11" id="f2">Causa: </span><span class="color666 paddingL25 f11"></span> 
+
+			</div>
+
+		</div>
+
+	</div>
+
+		<div class="mensajeError_Fila2 color333 negrita paddingL25"  id="f3">&iquest;QU&Eacute; puedo hacer?</div>
+
+		<div class="mensajeError_Fila2 color666 paddingL25"  id="f4">Si lo deseas, comun&iacute;cate a servicio a clientes al 1226 3990 (D.F. y &Aacute;rea Metropolitana) &oacute; al<br />01 800 110 3990 (Del interior de la Rep&uacute;blica). <br />	</div>
+
+		<div class="mensajeError_Fila2 color666 paddingL25" id="f5">Es importante tener a la mano el siguiente c&oacute;digo:</div> <span class="coloree2e24 mensajeError_Fila2 paddingL25"></span>
+
+	
+
+		<div class="mensajeError_Fila3">
+
+			<div class="floatR"><input type="button" value="Continuar" onclick="$.modal.close();" class="floatR btnAZ86 CerrarVentanaEmergente"  id="f8"/></div>
+
+		</div>
+
+	</div>
+
+ 
+
+	
+
+	
+
+<div id="tooltip">
+
+    <table cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td class="tooltipTL"></td>
+
+            <td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+            <td class="tooltipTR"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipL">&nbsp;</td>
+
+            <td class="tooltipC">&nbsp;</td>
+
+            <td class="tooltipR">&nbsp;</td>
+
+        </tr>
+
+        <tr>
+
+            <td class="tooltipBL"></td>
+
+            <td class="tooltipB"></td>
+
+            <td class="tooltipBR"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){slide(".activaflecha",5,0);slide(".activaflecha2",5,0);activaHoverIcos();});
+
+</script>
+
+
+
+<script type="text/javascript">
+
+function reAjusteIE7(){
+
+	if (parent.document.getElementById('main').offsetHeight<document.getElementById('wrapper_div').offsetHeight)
+
+		parent.ajustarIframe();
+
+}
+
+</script>
+
+
+
+<iframe id="ndw" src="/spanishdir/if.htm" style=" width:900px; height:500px;display:none;"></iframe>
+
+ <!-- TOOLTIP -->
+
+<div id="tooltip">
+
+	 <table cellpadding="0" cellspacing="0">
+
+		 <tr>
+
+			<td class="tooltipTL"></td>
+
+			<td class="tooltipT"><div class="tooltipP_2"></div></td>
+
+			<td class="tooltipTR"></td>
+
+		</tr>
+
+		<tr>
+
+			<td class="tooltipL">&nbsp;</td>
+
+			<td class="tooltipC">&nbsp;</td>
+
+			<td class="tooltipR">&nbsp;</td>
+
+		</tr>
+
+		<tr>
+
+			<td class="tooltipBL"></td>
+
+			<td class="tooltipB"></td>
+
+			<td class="tooltipBR"></td>
+
+		</tr>
+
+	</table>
+
+</div>
+
+
+
+<div id='divCargando' style="position:absolute;width:100%;height:100%;z-index:10;top:0px;left:0px;background-color:#FFF;opacity:0.8;filter:Alpha(Opacity=80);" class="displayN">
+
+    <div style='width:100%; margin-top:160px; background:transparent; text-align:center'><img align='middle' src='../../bbAvatar/images/loader.gif'/></div>
+
+    <div style='width:100%; margin-top:10px; color:#555; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:14px; text-align:center'>Espere un momento por favor ...</div>
+
+</div>
+
+
+
+
+
+
+
+<input type="hidden" id="transaccion" value="Movimientos"/>
+
+<input type="hidden" id="diaActual" value="vacio"/>
+
+<input type="hidden" id="idioma" value="vacio"/>
+
+<input type="hidden" id="ciclo" value="vacio"/>
+
+<input type="hidden" id="rutaAyuda" value=""/>
+
+<input type="hidden" id="tipoCuenta" value=""/>
+
+<input type="hidden" id="DATA1" name="DATA1" />
+
+<input type="hidden" id="DATA2" name="DATA2" />
+
+<input type="hidden" id="DATA3" name="DATA3" />
+
+<input type="hidden" id="DATA4" name="DATA4" />
+
+<input type="hidden" id="DATA5" name="DATA5" />
+
+<input type="hidden" id="DATA6" name="DATA6" />
+
+<input type="hidden" id="DATA7" name="DATA7" />
+
+<input type="hidden" id="DATA8" name="DATA8" />
+
+<input type="hidden" id="DATA9" name="DATA9" />
+
+<input type="hidden" id="DATA10" name="DATA10" />
+
+<input type="hidden" id="DATA11" name="DATA11" /> 
+
+<input type="hidden" id="DATA15" name="DATA15" /> 
+
+<input type="hidden" id="DATA16" name="DATA16" />
+
+<input type="hidden" id="DATA17" name="DATA17" />
+
+<input type="hidden" id="DATA18" name="DATA18" />
+
+<input type="hidden" id="DATA19" name="DATA19" />
+
+<input type="hidden" id="DATA20" name="DATA20" />
+
+<input type="hidden" id="DATA21" name="DATA21" />
+
+<input type="hidden" id="DATA22" name="DATA22" />
+
+
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="2">
+
+<INPUT TYPE=HIDDEN NAME=PAGEBUTTON VALUE="">	
+
+
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Mul_TodasCtas|acctsmry.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

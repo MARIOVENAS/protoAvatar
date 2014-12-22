@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+	<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/mando.css" />
+
+	<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+	<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script> 
+
+	<script LANGUAGE="JavaScript" SRC="../../spanishdir/js/bloquea.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+	<script>
+
+	var es= new Array("Credit folios",'Select a credit folio and click "Continue".','Product','Status','Currency','Maturity date','Cancel','Continue');
+
+function continuar(){
+
+	//parent.ajustarIframe();
+
+	//parent.top.SaltoTransaccion(2,0);
+
+	parent.cargaDocN('Pagos Credito/creditos2.html');
+
+//	parent.DoSubmit('Resumen de Inversiones/resumen_inversiones.html');
+
+	parent.$.modal.close();	
+
+}
+
+	</script>
+
+</head> 
+
+<body style="background-color:#FFF;" oncontextmenu="return false;">
+
+	<div id="contenido" style="width: 600px; height: 164px; display: block;">
+
+	<div style="width: 100%;" class="mensajeError_contenidoInb">
+
+		<div class="panelIzEnca3_text2"><label class="panelIzEnca3_text2" id="t0">Folios de cr&eacute;dito</label> - Cr&eacute;dito - M.N - **  256</div>
+
+		<div class="color666 paddingT5 f11" id="t1">Selecciona folio de
+
+			cr&eacute;dito y da clic en "Continuar".</div>
+
+		<br>
+
+		<div class="color666">
+
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" id="tablaResultados" class="tablaSaldos3 pinta2">
+
+				<tbody><tr class="trPrinc">
+
+					<td class="tablaSaldos2_bordeR" style="background-color: rgb(255, 255, 255);"><span></span></td>
+
+					<td class="tablaSaldos2_bordeR" style="background-color: rgb(255, 255, 255);"><span>Folio</span></td>
+
+					<td class="tablaSaldos2_bordeR" style="background-color: rgb(255, 255, 255);"><span id="t2"> Producto</span></td>
+
+					<td class="tablaSaldos2_bordeR" style="background-color: rgb(255, 255, 255);"><span id="t3">Estatus</span></td>
+
+					<td class="tablaSaldos2_bordeR" style="background-color: rgb(255, 255, 255);"><span id="t4"> Moneda</span></td>
+
+					<td style="background-color: rgb(255, 255, 255);"><span id="t5">Fecha de vencimiento</span></td>
+
+				</tr>
+
+					<tr>
+
+					<td valign="top" class="tablaSaldos2_bordeR " style="background-color: rgb(241, 242, 242);"><input type="radio" id="Radio1" value="0100" name="RadioB" checked="checked">
+
+					</td>
+
+					<td valign="top" class="tablaSaldos2_bordeR " style="background-color: rgb(241, 242, 242);">0100</td>
+
+					<td class="tablaSaldos2_bordeR" style="background-color: rgb(241, 242, 242);">R VIV. LIQUIDEZ 16                      </td>
+
+					<td class="tablaSaldos2_bordeR" style="background-color: rgb(241, 242, 242);">ACTIVO</td>
+
+					<td class="tablaSaldos2_bordeR" style="background-color: rgb(241, 242, 242);"><div class="TipoMonedas">MXN</div></td>
+
+					<td align="center" style="background-color: rgb(241, 242, 242);">17 May 01</td>
+
+
+
+				</tr>
+
+			</tbody></table>
+
+		</div>
+
+		<br>
+
+		<div class="mensajeError_Fila3">
+
+			<div class="floatL">
+
+				<input type="button" id="t6" class="btnRJ86 CerrarVentanaEmergente" value="Cancelar" onclick="parent.$.modal.close();">
+
+			</div>
+
+			<div class="floatR">
+
+				<!--<input type="button" onclick="JavaScript:top.frames.main.pasarfolio();" class="btnAZ86" value="Continuar">-->
+
+				<input type="button" id="t7" onclick="continuar();" class="btnAZ86" value="Continuar">
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+</body
+
+></html>
+

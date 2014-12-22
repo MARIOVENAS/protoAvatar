@@ -1,0 +1,136 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="../bbAvatar/js/motor.js"></script>
+
+<script>
+
+
+
+function Initialize(){
+
+  var d=window.parent.document.forms[0];
+
+  var o=document.forms[0];
+
+  d.action=o.action;
+
+  d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+  d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+  d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+  d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+  d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;
+
+  d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+  if( "[TipoConsulta]"=="S" ) {
+
+    window.parent.document.getElementById('divDat0').innerHTML = document.getElementById('pagoMinimo').value;
+
+    var valMin = parseFloat( "[minpag]" );
+
+		var isNeg  = "[sigsuc]";
+
+	window.parent.document.getElementById('rdDat0').disabled = ( valMin==0 || isNaN(valMin) );
+
+	if(document.getElementById('fecLimPag').value != ""){
+
+	  window.parent.document.getElementById('fechaLimiteDiv').innerHTML = formateaFechaBB( 'ddmmaaaa', document.getElementById('fecLimPag').value);
+
+	  window.parent.document.getElementById('fechaLimiteCont').style.display = 'block';
+
+    }else{
+
+	  window.parent.document.getElementById('fechaLimiteDiv').innerHTML = "";
+
+	  window.parent.document.getElementById('fechaLimiteCont').style.display = 'none';
+
+	}
+
+  }else if( "[TipoConsulta]"=="HTC" ) {
+
+	var valTcc, valTcv, valTc;
+
+    if( !isNaN(parseFloat("[TCCompra]")) && !isNaN(parseFloat("[TCVenta]")) ){
+
+      valTcc = parseFloat( "[TCCompra]" );
+
+	  valTcv = parseFloat( "[TCVenta]" );
+
+    }else{
+
+      valTcc = "[TCCompra]";
+
+	  valTcv = "[TCVenta]";
+
+    }
+
+    valTc = ( $(".cboRet:visible option:selected", window.parent.document).text().indexOf('USD')>-1 ) ? valTcc : valTcv;
+
+    $('#valTipcam', window.parent.document).html( valTc );
+
+    if( "[BanderaHorario]"!="" ){
+
+      d.Params.value = "[HoraInicial]"+"~"+"[MinutosInicial]"+"~"+"[HoraFinal]"+"~"+"[MinutosFinal]"+"~"+"[FechaServ]"+"~"+"[EXTRA1]"+"~"+""+"~"+"TP";
+
+      window.parent.modalHorario();
+
+    }
+
+  }
+
+  $('#t23', window.parent.document).attr('disabled',false);
+
+  $('#t23', window.parent.document).removeClass('btnAZ86_des').addClass('btnAZ86');
+
+  window.parent.parent.ajustar();
+
+}
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<form  method="POST" action="" name="APPS_FORM_MAIN">
+
+<input type="hidden" name="EWF_SYS_0">
+
+<input type="hidden" name="EWF_SYS_1">
+
+<input type="hidden" name="EWF_FORM_NAME" value="LEV2 Main">
+
+<input type="hidden" name="DISPLAYPAGE">
+
+<input type="hidden" name="TEMPLATE_FILE">
+
+<input type="hidden" name="SEQUENCE_NUMBER">
+
+<input type="hidden" name="EWFBUTTON">
+
+<input type="hidden" name="DATA2" />
+
+<input type="hidden" name="DATA3" />
+
+<input type="text" id="fecLimPag" value="[feclimpag]" />
+
+<input type="text" id="pagoMinimo" value="$ [minpag]" />
+
+</form>
+
+</body>
+
+</html>
+
+
+
+
+

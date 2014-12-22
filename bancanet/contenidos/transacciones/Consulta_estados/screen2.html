@@ -1,0 +1,291 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+    
+
+	<script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+
+
+<body class="bg_demo">
+
+
+
+<div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%" >
+
+                     
+
+					 <div class="cH-appPanelHead ffmtop5">
+
+                        <h3 class="float-left" id="t0">Consultar Estado de Solicitudes Previas</h3>
+
+						<div id="flechaLinks" class="float-right">
+
+							<span class="flechaGris float-left">&nbsp;</span>
+
+							<a onClick="window.open('screen3.html', 'print', 'width=800, height=700, scrollbars=1');" href="#" id="t1">
+
+							Versi&oacute;n para impresi&oacute;n</a>
+
+						</div>
+
+						<div class="clear"></div>
+
+                    </div>
+
+
+
+                    <div class="border-top margin-topm10"></div>
+
+						<div class="width203">
+
+							 <p class="strong topNotes" id="t2">Detalle de la cuenta</p>
+
+
+
+                            <div class="form-row">
+
+                                <label class="for-table" id="t3">Cuenta:</label>
+
+                                <span>Cheques M.N 002 cheques</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							
+
+							<div class="form-row">
+
+                                <label class="for-table" id="t4">N&uacute;mero de sucursal:</label>
+
+                                <span>4337</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							
+
+                            <div class="form-row">
+
+                                <label class="for-table" id="t5">Chequera disponible en sucursal:</label>
+
+                                <span>2</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							
+
+							<div class="form-row">
+
+                                <label class="for-table" id="t6">N&uacute;mero de cheques por chequeras:</label>
+
+                                <span>50</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							
+
+							<div class="form-row">
+
+                                <label class="for-table" id="t7">Solicitudes del d&iacute;a:</label>
+
+                                <span>0</span>
+
+                                <div class="clear"></div>
+
+                            </div>
+
+							
+
+                            <div class="border-top"></div>
+
+								<p class="strong titleTabla" id="t8">SOLICITUDES PREVIAS</p>
+
+								<table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom5">
+
+								<tbody>
+
+								<tr>
+
+							    <th class="">
+
+								<table width="100%" cellspacing="0" cellpadding="0" border="0" class="margin-bottom5">
+
+								  <tbody>
+
+							        <tr>
+
+							          <th class="borderLabels" id="t9">Tipo de chequera</th>
+
+							          <th class="borderLabels" id="t10">Fecha de solicitud</th>
+
+							          <th class="borderLabels" id="t11">Fecha de entrega</th>
+
+							          <th class="borderLabels" id="t12">Folio inicial</th>
+
+							          <th class="borderLabels" id="t13">Folio final</th>
+
+							          <th class="borderLabels" id="t14">Estado</th>
+
+						            </tr>
+
+									
+
+							        <tr class="degrade">
+
+							          <td >CUENTA DE CHEQUES</td>
+
+							          <td >50</td>
+
+							          <td >-</td>
+
+							          <td >11</td>
+
+							          <td >60</td>
+
+							          <td >SUCURSAL</td>
+
+						            </tr>
+
+									
+
+							        <tr class="greyBack">
+
+							          <td class="border9A">CUENTA DE CHEQUES</td>
+
+							          <td class="border9A">50</td>
+
+							          <td class="border9A">14/02/2000</td>
+
+							          <td class="border9A">1</td>
+
+							          <td class="border9A">10</td>
+
+							          <td class="border9A">ENTREGADA</td>
+
+						            </tr>
+
+						          </tbody>
+
+						        </table>
+
+								</th>
+
+								</tr>
+
+								</tbody>
+
+								</table>
+
+						</div>	
+
+						
+
+						<div class="cF-sideBySide cF-bottomNav">
+
+							<ul class="cN-primaryNav">
+
+								<li class="cM-spriteBase cN-primaryNavButton"><a onClick="cheqp();" id="t15">Regresar</a></li>
+
+							</ul>
+
+						 </div>
+
+						
+
+						<div class="clear"></div>
+
+                        </div>
+
+					  </body>
+
+
+
+<script>
+
+function cheqp(){
+
+	top.Consultae();
+
+}
+
+
+
+es=new Array(	 'Inquire status of previous requests',
+
+				 'Print',
+
+				 'Account details',
+
+				 'Checking account:',
+
+				 'Branch number:',
+
+				 'Checkbook available at branch:',
+
+				 'Number of checks per checkbook',
+
+				 'Same day requests',
+
+				 'PREVIOUS REQUESTS',
+
+				 'Checkbook type',
+
+				 'Request date',
+
+				 'Delivery date',
+
+				 'Initial sequential number',
+
+				 'Ending sequential number',
+
+				 'Status',
+
+				 'RETURN'
+
+	);
+
+
+
+</script>
+
+
+
+</html>

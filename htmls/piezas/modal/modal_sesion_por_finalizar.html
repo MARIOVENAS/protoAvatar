@@ -1,0 +1,115 @@
+<div class="modal height351" id="modal_sesion_por_finalizar">
+
+	<div class="top"></div>
+
+    <div class="content height740">
+
+    	<div class="padding30T15B0 height275">
+
+            <div class="clear overflow">
+
+                <div class="close" onClick="cerrar_modal( 'modal_sesion_por_finalizar' )" ></div>
+
+            </div>
+
+            <div style="margin-bottom:20px !important; margin-top:20px !important;"><p class="titulo modaltitulo" id="m0">TIEMPO DE SESI&Oacute;N POR FINALIZAR</p></div>
+
+            <br />
+
+            <div class="contenido clear" style="height:221px !important;">
+
+            	<div class="puntos" style="margin-top:20px !important;">
+
+                    <div class="titulocontenido_ico">
+
+                        <p id="m1">Tu sesi&oacute;n est&aacute; a punto de expirar.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="textocontenido">
+
+                    <p class="paddingT15" id="m2">Por tu seguridad y debido a que no has realizado ninguna operaci&oacute;n, la </p>
+
+                    <p class="paddingT10" id="m3">sesi&oacute;n finalizar&aacute; en: <span class="bold" id="minutosRestantes">01:59 (mm:ss)</span></p>
+
+                    <p class="paddingT18" id="m4">&iquest;Qu&eacute; puedo hacer?</p>
+
+                    <p class="paddingT18" id="m5">Si deseas extender el tiempo de sesi&oacute;n haz clic en &quot;Continuar&quot;.</p>
+
+                </div>
+
+                <div class="paddingT10 puntos_foot clear overflow footerModal marginT25">
+
+                    <input type="button" id="btnContinuar" onclick="javascript:cerrar_modal( 'modal_sesion_por_finalizar' );"  class="btn_az floatR" value="CONTINUAR" />
+
+                </div>
+
+            </div>
+
+            <div class="sello"><p>0000000000000001</p></div>
+
+        </div>
+
+    </div>
+
+    <div class="bottom"></div>
+
+</div>
+
+<script type="text/javascript">
+
+var esmod = new Array(
+
+		'SESSION TIME ABOUT TO EXPIRE',
+
+		'Your session time is about to expire.',
+
+		'For your own security and because you have not performed any transaction, ',
+
+		'the session will end in:',
+
+		'What can I do?',
+
+		'If you wish to extend the session time please click on "Continue"'
+
+	);
+
+            function swap(){
+
+	for (var i=0;i<esmod.length;i++){
+
+		$("[id=m"+i+"]").each(function(){
+
+			if(this.tagName.toUpperCase()=="INPUT")
+
+				this.value = esmod[i];
+
+			else
+
+				this.innerHTML = esmod[i];});
+
+	}
+
+}
+
+            $(document).ready(function(){
+
+			    if(language == "eng")
+
+				{
+
+					swap();
+
+					$('#btnContinuar').val('CONTINUE');
+
+				}
+
+               
+
+                 setTimeout("$('.scroll_y').tinyscrollbar();grip_scroll();",1500);
+
+             });
+
+        </script>

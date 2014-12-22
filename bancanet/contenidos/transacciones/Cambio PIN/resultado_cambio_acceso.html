@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST"  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="4f4659af-c9d7-4c5e-b3dc-9ef248f0a7e1" ><input type=hidden name="EWF_SYS_1" value="O@6RV99PB1KBVTTWF4Y40EPPNPYW4PKXTW6062NE" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="Z2CP-TXN REALIZADA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="pin02.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="6"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>		<link href="../../bbAvatar/css/estilos.css" rel="stylesheet" type="text/css" />        
+
+		<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+		<script type="text/javascript" src="../../bbAvatar/js/jquery/jquery-ui-1.7.2.custom.min.js"></script>        
+
+		<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+						
+
+
+
+		
+
+<script type="text/javascript">
+
+			
+
+			$(document).ready(function(){
+
+				 top.impayuda();
+
+				optieneAlturas();$(window).bind('resize', function(){optieneAlturas()});activaHoverIcos();slide(".activaflecha2",5,0);setTimeout('window.parent.ajustarIframe()', 1000);});
+
+			
+
+
+
+		
+
+		
+
+
+
+
+
+var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+
+
+
+
+
+
+var ax=new Array('Cambio de claves de acceso','/ayudasbb/spanishdir/CambioNumeroSecreto.htm');
+
+
+
+
+
+function Initialize(){
+
+
+
+top.ajustarIframe();
+
+
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="float-left fonttit">CAMBIO DE CLAVES DE ACCESO</div>
+
+
+
+        <div class="saldos_bloque3_verde">
+
+		
+
+			Operaci&oacute;n <span class="negrita">Aplicada</span><br/><br/>
+
+        	Tu clave de acceso ha sido modificada<bmxdato TNNAUB>
+
+            
+
+            
+
+            
+
+        </div>
+
+        <div class="marginT20 overflow">
+
+            <input type="button" class="btnAZ135 floatR" value="Otro Cambio" onclick="parent.cargaDocN('Cambio PIN/cambio_clave_acceso.html')" />
+
+        </div>
+
+
+
+
+
+<INPUT TYPE=HIDDEN NAME=AYUDA VALUE="/spanishdir/ayudas/apin02.htm">
+
+<br/><br/>
+
+
+
+
+
+
+
+
+
+
+
+<INPUT TYPE=HIDDEN NAME=EWFBUTTON VALUE="">
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Cambio PIN|pin02.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

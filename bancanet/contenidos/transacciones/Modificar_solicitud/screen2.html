@@ -1,0 +1,209 @@
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/> 
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+
+       
+
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.5.1.js"></script>
+
+    <script type="text/ecmascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+
+	<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+    
+
+	<script type="text/javascript">
+
+			<!--
+
+			$(document).ready(function(){
+
+			setTimeout(function(){top.ajustarP();},800);
+
+			
+
+			});
+
+			-->
+
+</script>
+
+</head>
+
+
+
+<body class="bg_demo">
+
+<div id="subapp-box"style="margin:0px !important; min-height:0px !important;width:100%">
+
+  	<div class="cH-appPanelHead">
+
+        <h3 id="t0">Modificar Solicitud Anterior de Chequeras</h3>
+
+    </div>
+
+                  
+
+	<p class="margin-top5" id="t1">Selecciona la cuenta y da clic en "Continuar".</p>
+
+	<div class="clear"></div>
+
+
+
+	<div class="clear"></div>
+
+		<p class="instructions"></p>
+
+			<div class="width200">
+
+				<div class="form-row">
+
+					<label class="for-table" id="t2">Cuenta:</label>
+
+					<select  onChange="valor1=this.value;Cheqp();">
+
+					<option selected="selected" id="t3">Selecciona una opci&oacute;n...</option>
+
+					<option  value="1">Cheques - MXN - 12002 - Cheques</option>
+
+					</select>
+
+					<div class="clear"></div>
+
+				</div>
+
+				
+
+				<div class="form-row margin-bottom20">
+
+					<label class="for-table" id="t4">Cantidad de chequeras requeridas:</label>
+
+						<input type="text" class="short float-left margin-topm5IE" id="cantidad" />									
+
+					<div class="clear"></div>
+
+				</div>
+
+					
+
+                <div id="tipo">
+
+				
+
+					<div class="form-row">
+
+						<label class="for-table">Tipo de chequera:</label>
+
+							<select id="selec">
+
+							  <option  selected="selected">Seleccione tipo de chequera...</option>
+
+							  <option value="1">Tradicional</option>
+
+							  <option value="1">Credichequera</option>
+
+							  <option value="1">Integrada</option>
+
+							</select>
+
+							<div class="clear"></div>
+
+					</div>
+
+                </div>
+
+            </div>
+
+					
+
+			<div class="cF-sideBySide cF-bottomNav" style="margin-top:0px !important">
+
+                <div class="width217 float-left">&nbsp;</div>
+
+				<ul class="cN-primaryNav">
+
+				<li class="cM-spriteBase cN-primaryNavButton"><a onClick="Cheqp2();" id="t5">CONTINUAR</a></li>
+
+				</ul>
+
+			</div>
+
+			
+
+			<div class="clear"></div>
+
+</div>
+
+                    
+
+<script>
+
+    $('#tipo').hide();
+
+</script>				
+
+					
+
+<script>
+
+var valor1=0;   
+
+function Cheqp(){
+
+	if(valor1==1){
+
+		$('#tipo').hide();
+
+		$('#cantidad').val(5);
+
+				}
+
+				}
+
+</script>
+
+                    
+
+<script>
+
+			var valor1=0;   
+
+			function Cheqp2(){
+
+
+
+			top.ModSol3();
+
+			}
+
+			
+
+			
+
+			es=new Array( 'Modify prior checkbook request',
+
+						  'Select the account and click &quot;Continue&quot;.',
+
+						  'Checking account:',
+
+						  'Select an option',
+
+						  'Number checkbooks required:',
+
+						  'CONTINUE'
+
+	);
+
+</script>
+
+</body>
+
+</html>

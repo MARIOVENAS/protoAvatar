@@ -1,0 +1,232 @@
+<html>
+
+<head>
+    
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+       
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+    <script type="text/javascript">
+	var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Investments / Shedules',
+			'<span class="sAdmiracion2"></span> Not you have registered frequent operations. This option will help you do so quickly and your operations. Remember to select &lsquo;Save as frequent operation&lsquo; when making your investments, you can only save a maximum of 10 common operations.',
+			
+			'Make an investment',
+			
+			'Schedules',
+			'Deposits and withdrawals, purchases and sales.',
+			
+			'Service',
+			'Days',
+			'Schedule',
+			
+			'<span class="paddingL10">Integral / Perfiles</div>',
+			'Daily',
+			'From 6:00 to 19:00 hrs',
+			
+			'<div class="paddingL10">Empresarial Banamex</div>',
+			'Daily',
+			'From 6:00 to 19:00 hrs',
+			
+			'<div class="paddingL10">Fixed Term</div>',
+			'Monday to friday',
+			'From 8:00 to 20:00 hrs',
+			
+			'<div class="paddingL10">Fondos Banamex</div>',
+			'Monday to friday',
+			'From 9:00 to 13:00 hrs',
+			
+			'<div class="paddingL10">Buy/sell of shares of HORZCOB on Horizontes Banamex mutual funds (24 hours liquidity)</div>',
+			'Monday to friday',
+			'From 9:00 to 13:45 hrs',
+			
+			'<div class="paddingL10">Buy/ sell of shares of HZMD+.B, HZMDEMP on Horizontes Banamex mutual funds (24 hours liquidity)</div>',
+			'Monday to friday',
+			'From 9:00 to 13:00 hrs',
+			
+			'<div class="paddingL10">Buy /sell of shares of HORZONT on Horizontes Banamex mutual funds (daily liquidity)</div>',
+			'Monday to friday',
+			'From 9:00 to 13:00 hrs',
+			
+			'<div class="paddingL10">Buy/sell of shares of HORZONT+ on Horizontes Banamex mutual funds (daily liquidity)</div>',
+			'Monday to friday',
+			'From 9:00 to 12:30 hrs',
+			
+			'<div class="paddingL10">Enquiries, position and transactions Patrimonial banking</div>',
+			'Monday to friday',
+			'From 9:00 to 20:00 hrs',
+			
+			'<div class="paddingL10">Buy/Sell Patrimonial banking</div>',
+			'Monday to friday',
+			'From 8:30 to 15:30 hrs',
+			
+			'Note:',
+			'Some of these transactions can be requested out of business hours to be applied the next business day.',
+			'<a class="float-left" onclick="ayuda2()" href="javascript:void(0);">&nbsp;Help</a>'
+			);
+    </script>
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+	
+	//setTimeout(function(){top.$('#iframeConte').removeClass('alto610').removeClass('alto525').addClass('alto550');},800);
+	//top.ayuda();
+	setTimeout(function(){top.$('#iframeConte').css({'height':(770)+'px'});},1000);
+		
+	});
+	</script>
+</head>
+
+<body class="bg_demo cont_demo" style="height:100%;">
+
+<div class="floatL width700">
+
+		<div id="cont-chequeras">
+
+  			<div class="cH-appPanelHead">
+            	 <div id="flechaLinksOpcoes" class="float-right marginR10">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="t63"><a class="float-left" onClick="ayuda1()" href="javascript:void(0);">&nbsp;Ayuda</a></div>
+				</div>
+
+                <h3 id="t23" class="float-left">Inversiones / Horarios</h3>
+
+            </div>
+
+			<p class="instructions margin-botom0 clear" id="t24"  style="margin-bottom:10px !important; *margin-bottom:5px !important; margin-bottom:10px\0/ !important;"><span class="sAdmiracion2"></span>No tienes registradas operaciones frecuentes. Esta opci&oacute;n te ayudar&aacute; a realizar de forma f&aacute;cil y r&aacute;pida tus operaciones. Recuerda seleccionar 'Guardar como operaci&oacute;n frecuente' al momento de realizar tus inversiones, solo puedes guardar <br> <span style="margin-left:21px;">10 operaciones frecuentes como m&aacute;ximo.</span></p>
+            
+            <div class="titulo float-left" id="flechaLinksOpcoes" style="width:300px; margin-left:15px; margin-bottom:20px;">
+                <span class="flechaGris float-left">&nbsp;</span>
+                <a id="t25" onClick="inversion();" class="float-left pointer">&nbsp;Realizar una inversi&oacute;n</a>
+            </div>
+				
+            <div class="border-top clear"></div>
+            
+            <div class="clear margin-left20">
+            	<p class="instructions bold margin-bottom10" id="t26">Horarios</p>
+				<p class="instructions" id="t27">Dep&oacute;sitos y retiros, compras y ventas.</p>
+            </div>
+            
+            <div class="width141 clear">
+            	<div id="subapp-box" class="ancho100p" style="min-height:315px !important; margin-bottom:0px !important;">
+            
+                <table cellspacing="0" cellpadding="0" border="0" class="margin-botom0 margin-top5 back_white ancho100p">
+                   <tbody>
+                      <tr class="ada">
+                        <th width="40%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left paddingL10" id="t28">Servicios</span>
+                        </th> 
+                        <th width="25%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t29">D&iacute;as</span>
+                        </th> 
+                        <th width="25%" valign="middle" scope="col" class="borderLabels height20">
+                            <span class="strong float-left" id="t30">Horarios</span>
+                        </th>                   
+                      </tr>
+                      <tr class="degrade">
+                        <td class="borderB1solidCCC" id="t31"><span class="paddingL10">Integral / Perfiles</span></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t32">Lunes a Domingo</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t33">de 6:00 a 19:00 hrs</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="borderB1solidCCC" id="t34"><span class="paddingL10">Empresarial Banamex</span></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t35">Lunes a Domingo</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t36">de 6:00 a 19:00 hrs</td>
+                      </tr>
+                      <tr>
+                        <td class="borderB1solidCCC" id="t37"><span class="paddingL10">Dep&oacute;sitos a plazo</span></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t38">Lunes a viernes</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t39">de 8:00 a 20:00 hrs</td>
+                      </tr> 
+                      <tr class="greyBack">
+                        <td class="borderB1solidCCC" id="t40"><span class="paddingL10">Fondos Banamex</span></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t41">Lunes a viernes</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t42">de 9:00 a 13:00 hrs</td>
+                      </tr>
+                      <tr>
+                        <td class="borderB1solidCCC" id="t43"><div class="paddingL10">&Oacute;rdenes de compra o venta de t&iacute;tulos del producto HORZCOB en Fondos Horizonte (liquidez 24 horas)</div></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t44">Lunes a viernes</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t45">de 9:00 a 13:45 hrs</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="borderB1solidCCC" id="t46"><div class="paddingL10">&Oacute;rdenes de compra o venta de t&iacute;tulos del producto HZMD+.B, HZMDEMP en Fondos Horizonte (liquidez 24 horas)</div></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t47">Lunes a viernes</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t48">de 9:00 a 13:00 hrs</td>
+                      </tr>
+                      <tr>
+                        <td class="borderB1solidCCC" id="t49"><div class="paddingL10">&Oacute;rdenes de compra o venta de t&iacute;tulos del producto HORZONT en Fondos Horizonte (liquidez diaria)</div></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t50">Lunes a viernes</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t51">de 9:00 a 13:00 hrs</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="borderB1solidCCC" id="t52"><div class="paddingL10">&Oacute;rdenes de compra o venta de t&iacute;tulos del producto HORZNT+ en Fondos Horizonte (liquidez diaria)</div></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t53">Lunes a viernes</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t54">de 9:00 a 12:30 hrs</td>
+                      </tr>
+                      <tr>
+                        <td class="borderB1solidCCC" id="t55"><div class="paddingL10">Consulta Posici&oacute;n y Movimientos Banca Patrimonial</div></td>
+                        <td class="paddingR15 borderB1solidCCC" id="t56">Lunes a viernes</td>
+                        <td class="paddingR15 borderB1solidCCC" id="t57">de 9:00 a 20:00 hrs</td>
+                      </tr>
+                      <tr class="greyBack">
+                        <td class="borderB1solidCCC last" id="t58"><div class="paddingL10">Compra o Venta Banca Patrimonial</div></td>
+                        <td class="paddingR15 borderB1solidCCC last" id="t59">Lunes a viernes</td>
+                        <td class="paddingR15 borderB1solidCCC last" id="t60">de 8:30 a 15:30 hrs</td>
+                      </tr>
+                    </tbody>
+                </table>
+                </div><!-- id="subapp-box"  -->
+            </div><!-- Fin width141 -->
+
+						
+            <div class="clear margin-left20 margin-top10">
+            	<p class="instructions bold margin-bottom10" id="t61">Nota:</p>
+				<p class="instructions" id="t62">Algunas de estas operaciones pueden realizarse fuera de horario para aplicarse al d&iacute;a h&aacute;bil siguiente.</p>
+            </div>
+
+	  <div class="clear"></div>
+      </div>
+</div>
+
+	<script type="text/javascript" src="../Activacion_tarjetas/prototipo_BancaNetAvatar/js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../Activacion_tarjetas/prototipo_BancaNetAvatar/js/plugins.js"></script>
+
+	<script type="text/javascript">
+	
+	$(function(){
+    
+		$.imageTick.logging = true;
+		
+		$("input[name='radios']").imageTick({
+		  tick_image_path: "../../../../JFP/regional/images/radio_check.png", 
+		  no_tick_image_path: "../../../../JFP/regional/images/radio_empty.png",
+		  image_tick_class: "radios"
+		});
+
+  	});
+	
+	function continuar(){
+		top.cargaDocN('Activacion_tarjetas/screen1_activarC1.html');
+	}
+	
+	function ayuda1(){
+	window.open("https://bancanet.banamex.com/ayudas/es/inversiones/operaciones-frecuentes.htm", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
+	}
+	function ayuda2(){
+	window.open("https://bancanet.banamex.com/ayudas/en/inversiones/operaciones-frecuentes.htm", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=1024, height=768");
+	}
+	function inversion(){
+	top.$('#t27').click();
+	top.cambiaP2();
+	}
+	</script>
+    <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+</body>
+</html>

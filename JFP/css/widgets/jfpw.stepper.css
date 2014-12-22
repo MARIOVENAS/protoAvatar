@@ -1,0 +1,43 @@
+/* Default Spinner Configuration, DO NOT MODIFY, Please Override if necessary
+
+----------------------------------*/
+
+.ui-spinner-container {	display: block;	overflow: hidden; padding: 0 0 0 0 0px; margin: 0px;}
+
+.ui-spinner-container .ui-spinner {border: 1px solid #999999;	display: block;	position: relative;	overflow: hidden; padding: 0 5px; background: white;}
+
+.ui-spinner-container .ui-spinner-disabled {background: #F4F4F4;color: #CCC;}
+
+.ui-spinner-container .ui-spinner-box {border: 0px none;height: 100%;padding: 0;width: 99%;text-align: center; outline: none;}
+
+.ui-spinner-container .ui-spinner-up, .ui-spinner-down {-moz-user-select: none; -khtml-user-select: none; user-select: none;border-color: -moz-use-text-color -moz-use-text-color #999999 #999999;border-style: none;	border-width: medium medium 1px 1px;cursor: pointer;font-size: 0.5em;margin: 0;padding: 0;position: relative;text-align: center;vertical-align: middle;z-index: 1000;height: 12px;}
+
+.ui-spinner-container .ui-spinner-up{	background: transparent url('/JFP/images/widgets/spinner-up.png') no-repeat center;}
+
+.ui-spinner-container .ui-spinner-down  {	border-bottom: 0 none;	bottom: 0;background: transparent url('/JFP/images/widgets/spinner-down.png') no-repeat center;}
+
+.ui-spinner-container .ui-spinner-list, .ui-spinner-listitem {margin: 0;padding: 0;}
+
+.ui-spinner-container .ui-show-element{display: inline;}
+
+.ui-spinner-container .ui-hide-element{display: none;}
+
+
+
+/* Avatar Stepper Configuration, Override if necessary
+
+----------------------------------*/
+
+.ui-spinner-container.jfpw-stepper .ui-spinner {border: 0px none; background: transparent;}
+
+.ui-spinner-container.jfpw-stepper .ui-spinner-box{font-size: 11pt;}
+
+
+
+/* Avatar Stepper Configuration, Simple Stepper for 1 number only.
+
+----------------------------------*/
+
+.ui-spinner-container.jfpw-stepper-single .ui-spinner-box{font-size: 25pt;}
+
+.ui-spinner-container.jfpw-stepper-single .ui-spinner {border: 0px none;padding-top: 5px;	padding-bottom: 5px;}

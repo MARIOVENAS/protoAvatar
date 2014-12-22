@@ -1,0 +1,59 @@
+.jfpw-spinner {
+
+	background-position:center top;
+
+	background-repeat: no-repeat;
+
+	padding-top: 31px; 
+
+	text-align: center;
+
+}
+
+.jfpw-spinner.jfpw-spinner-small {
+
+	background-image: url('/JFP/images/widgets/jfpw-spinner-small.gif');
+
+	padding-top: 31px; 
+
+}
+
+.jfpw-spinner.jfpw-spinner-medium {
+
+	background-image: url('/JFP/images/widgets/jfpw-spinner-medium.gif');
+
+	padding-top: 45px;
+
+}
+
+.jfpw-spinner.jfpw-spinner-large {
+
+	background-image: url('/JFP/images/widgets/jfpw-spinner-large.gif');
+
+	padding-top: 60px;
+
+}
+
+.blockUI.blockMsg.blockElement{
+
+    border: none !important;
+
+    background: none !important;
+
+}
+
+.blockUI.blockMsg.blockPage{
+
+	text-align: center;
+
+    border: none !important;
+
+    background: none !important;
+
+}
+
+.blockUI.blockOverlay{
+
+	background-color: #FFFFFF !important;
+
+}

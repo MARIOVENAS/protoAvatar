@@ -1,0 +1,57 @@
+body		{background-color:#FFFFFF; color:#000000; }
+
+td 			{}
+
+#nav		{display:none;}
+
+#desc		{display:none;}
+
+#div		{display:none;}
+
+#portalNavBar, td.portalNavBar	{display:none;}
+
+.NavBG		{display:none;}
+
+.MItmStyl	{display:none;}
+
+#portalAdBar, td.portalAdBar	{display:none;}
+
+.printBG	{background-image: url('/JFP/images/print_bg.jpg'); background-repeat: no-repeat; background-position: center center; background-attachment: fixed; vertical-align: top; height: 200; }
+
+.printDate 	{font-size: 10px; vertical-align: top; text-align: left; padding-left: 10px; white-space: nowrap; }
+
+.appHdTitle {font-size: 12px; font-weight: bold; color: #000000; white-space: nowrap; }
+
+.applabelR	{font-size: 12px; color: #000000; }
+
+.applabelRalt	{font-size: 12px; color: #000000; }
+
+.apptxtsm	{font-size: 12px; color: #000000; }
+
+.apptxtlg 	{font-size: 14px; color: #000000; }
+
+.apptxtlgbold {font-size: 12px; color: #000000; font-weight: bold; }
+
+.linksm		{font-size: 12px; color: #000000; }
+
+.appBl 		{font-size: 12px; color: #000000; }
+
+.sortlinks 	{font-size: 12px; color: #000000; }
+
+.appLsDate 	{font-size: 12px; color: #000000; text-align: left; }
+
+.appLsDateA {font-size: 12px; color: #000000; text-align: left; }
+
+.appLsDesc 	{font-size: 12px; color: #000000; text-align: left; }
+
+.appLsCred 	{font-size: 12px; color: #000000; text-align: right; }
+
+.appLsDeb 	{font-size: 12px; color: #000000; text-align: right; }
+
+.appLsRun 	{font-size: 12px; color: #000000; text-align: right; }
+
+.appLsTo 	{font-size: 12px; color: #000000; text-align: left; }
+
+.appLsFrom 	{font-size: 12px; color: #000000; text-align: left; }
+
+.appLsAmount{font-size: 12px; color: #000000; text-align: right; }

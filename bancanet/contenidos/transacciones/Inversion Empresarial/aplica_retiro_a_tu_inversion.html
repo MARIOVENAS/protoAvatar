@@ -1,0 +1,1389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="61118042-ff0a-11d0-98df-006097b70359" ><input type=hidden name="EWF_SYS_1" value="Q@5ATZABRAV@0YWTKULF@ZVSNGCBXS109S@8CIDH" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="Z3IE-PAG RECIBIDA"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="PagRecibida.html"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="10"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+<link href="../../bbAvatar/css/skin.css" rel="stylesheet" type="text/css" />
+
+<link href="../../bbAvatar/css/skin2.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" type="text/css" />
+
+<script language="JavaScript" src="../../bbAvatar/js/motor.js"></script>
+
+<script language="JavaScript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../bbAvatar/css/estilos.css">
+
+<script language="JavaScript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script language="JavaScript" src="../../bbAvatar/js/swap.js"></script>
+
+
+
+<script language="JavaScript">
+
+var auxdemo = new Array();
+
+	var combosdemo = new Array();
+
+	var datademo = new Array();
+
+	function leerDatosDemo(){
+
+		auxdemo = parent.document.getElementById("DATADEMO").value.split("|");
+
+		combosdemo = auxdemo[0].split(",");
+
+		if(combosdemo[0]=="true"){
+
+			datademo = auxdemo[1].split(",");
+
+			$("#txtFecha").html(datademo[0]);
+
+			//$("#horaFutura").html(datademo[1]);
+
+			//Codigo programada debe crear la fecha y la hora leer en aux[1]
+
+			$("#frecuencia2").hide();
+
+		}else{
+
+			$("#fechaFutura").hide();
+
+			$("#frecuencia1").hide();
+
+		}
+
+		if(combosdemo[1]=="true"){
+
+			$("#Frec2").html((language=='eng')? 'Yes' : 'Si');
+
+			$("#Frec").html((language=='eng')? 'Yes' : 'Si');
+
+		}else{
+
+			$("#Frec").html("No");
+
+			$("#Frec2").html("No");
+
+		}
+
+	}
+
+
+
+function Combo_Vacio(Combo,Msg_Error,Req){
+
+	$("#"+Combo+"_error").css("display","none");
+
+	var Valor = "";
+
+	Valor = $("#"+Combo+" option:selected").val()
+
+	if (Valor == "PS" || Valor == "AC" || Valor == "NS" || Valor == "0" || Valor ==""){
+
+		if(Req != "NO"){
+
+			$("#"+Combo+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Combo).focus();
+
+		}
+
+		return false;
+
+	}
+
+	else
+
+		return true;
+
+}
+
+
+
+/* Funcion que verifica si el campo esta vacio
+
+ * Parametros
+
+ * @Campo_Txt: Id del Campo que se pretende validar
+
+ * @Msg_Error: Mensaje de error que se va a mostrar si contiene un error
+
+ * @Req: Valor que si es "NO" el campo no es obligatorio
+
+**/
+
+
+
+function Campo_Vacio (Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}else
+
+		return true;
+
+}
+
+
+
+function Verifica_CampoVacio(Campo_Txt,Msg_Error,Req){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	if ($("#"+Campo_Txt).val().length == 0){
+
+		if(Req != "NO"){
+
+			$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+			$("#"+Campo_Txt).focus();
+
+		}
+
+		return false;
+
+	}
+
+		return true;
+
+}
+
+
+
+function Verifica_Combos_Vacios (Combo1, Combo2)
+
+{
+
+var Valor1 = "";
+
+var Valor2 = "";
+
+Num_Opcion1 = Combo1.selectedIndex;
+
+Valor1 = Combo1.options[Num_Opcion1].value;
+
+Num_Opcion2 = Combo2.selectedIndex;
+
+Valor2 = Combo2.options[Num_Opcion2].value;
+
+
+
+if (Valor1 == "PS" || Valor1 == "AC" || Valor1 == "NS")
+
+	{
+
+       if (Valor2 == "PS" || Valor2 == "AC" || Valor2 == "NS")
+
+	   {
+
+	      return false;
+
+	   }
+
+       else
+
+           {
+
+             Combo1.focus();
+
+	     alert("Seleccione el dia");	
+
+   	     return true;
+
+           }          
+
+        }
+
+   else
+
+     {
+
+       if (Valor2 == "PS" || Valor2 == "AC" || Valor2 == "NS")
+
+	   {
+
+	       Combo2.focus();
+
+	       alert("Seleccione el mes");	
+
+               return true;
+
+           }
+
+       else
+
+           {
+
+   	     return false;
+
+           }
+
+     }
+
+}
+
+
+
+function Valida_Caracteres (Campo_Txt,Caracteres_Extras,Tipo_Validacion,Req,Msg_Error){
+
+	$("#"+Campo_Txt+"_error").css("display","none");
+
+	var Numeros="0123456789";
+
+	var Letras="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	var Validos="";
+
+	var Txt_MAY = $("#"+Campo_Txt).val().toUpperCase();
+
+	var invalidos = 0;	
+
+	if (Req == "SI" && $("#"+Campo_Txt).val().length==0){
+
+		$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+		$("#"+Campo_Txt).focus();
+
+		return false;
+
+	}
+
+	else{
+
+		(Tipo_Validacion == 1) ?
+
+			Validos = Numeros:
+
+		(Tipo_Validacion == 2) ?
+
+			Validos = Letras:
+
+			Validos = Numeros + Letras;
+
+		Validos = Validos + Caracteres_Extras;
+
+		for (i=0; i < $("#"+Campo_Txt).val().length; i++)
+
+			for (j=0; j < Validos.length; j++)
+
+				if (Txt_MAY.charAt(i) != Validos.charAt(j))
+
+					if (j+1 < Validos.length)
+
+						continue;
+
+					else{
+
+						$("#"+Campo_Txt+"_error").css("display","block").html(Msg_Error);
+
+						$("#"+Campo_Txt).focus();
+
+						return false
+
+					}
+
+				else 
+
+					break;
+
+				return true;
+
+   }
+
+}
+
+
+
+function DoSubmit( value )
+
+{
+
+    document.forms[0].EWFBUTTON.value = value;
+
+    document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+    document.forms[0].submit();
+
+}
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+</script>
+
+
+
+<script language="JavaScript">
+
+
+
+function MM_openBrWindow(theURL,winName,features)
+
+{ 
+
+  var URL;
+
+  for (iCount=0; iCount<document.forms[0].length; iCount++)
+
+   {
+
+     if (document.forms[0].elements[iCount].name == theURL)
+
+       URL=document.forms[0].elements[iCount].value;
+
+   }
+
+
+
+  window.open(URL, winName, features);
+
+}
+
+</script>
+
+
+
+<script>parent.setFecha("19/04/12    12:31:09  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilit&oacute; la funci&oacute;n de back, para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina.\n\n Esta Transacci&oacute;n no se efectuar&aacute;, recuerde imprimir el comprobante de la transacci&oacute;n anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del men&uacute; la opci&oacute;n deseada u oprima el bot&oacute;n(es) al final de la p&aacute;gina. Recuerde imprimir el comprobante de la transacci&oacute;n anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="123109  ";b$Cont="123109  "
+
+	//
+
+    </script>
+
+
+
+<script>
+
+var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+var winImp;
+
+var fecha;
+
+var lugar;
+
+
+
+function Impresion() {
+
+  var fechaComp = $("#fecha",window.parent.document).html().split(',');
+
+  var lugarComp = $("#fecha2",window.parent.document).html().split('|');
+
+  fecha = ( "SPANISH"=="ENGLISH" ) ? fechaComp[0]+', '+fechaComp[1]+', '+fechaComp[2] : fechaComp[0];
+
+  lugar = lugarComp[0];
+
+ if(navigator.userAgent.indexOf("MSIE") > 0 ){
+
+winImp=window.open("../../bbAvatar/impresion/ImpresionRecibo.html","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+}else{
+
+		winImp=window.open("bbAvatar/impresion/ImpresionRecibo.html","Banamex","toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=yes,height=760,width=1024");
+
+}
+
+ winImp.moveTo(0,0);
+
+}
+
+
+
+function llenar(){
+
+  var txtCtaret="";
+
+  var txtCtadep="";
+
+  var dCtar, dCtad, aCtar, aCtad, nCtar, nCtad;
+
+	dCtar = "Inv Emp Banamex".replace(/^\s*|\s*$/g,"");
+
+	aCtar = "Inv Emp Banamex".replace(/^\s*|\s*$/g,"");
+
+	nCtar = "  699".replace(/^\s*|\s*$/g,"");
+
+    txtCtaret = dCtar+" - "+aCtar+" - **"+nCtar;
+
+  $('#divCom', winImp.document).html( $('#impComp').html() );
+
+  if( txtCtaret!="" ) { $('#lblRet', winImp.document).html( txtCtaret ); }
+
+  if( txtCtadep!="" ) { $('#lblDep', winImp.document).html( txtCtadep ); }
+
+  $('.nosimp', winImp.document).html('');
+
+  $('.nosimp', winImp.document).hide();
+
+  $('#lblNom', winImp.document).html( "Jose Rivera Lopez" );
+
+  $('#lblFec', winImp.document).html( fecha );
+
+  $('#lblHor', winImp.document).html( "12:31:09 PM"+lugar );
+
+}
+
+
+
+if(language== "eng"){
+
+	var mesesFecha_BB = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+}else{
+
+	var mesesFecha_BB = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+}
+
+
+
+var es= new Array("Empresarial Banamex Investments",
+
+				  "Your&nbsp;",
+
+				  "has been",
+
+				  "applied ",
+
+				  "with authorization number ",
+
+				  "Accounts",
+
+				  "Account&nbsp;",
+
+				  "(investment)",
+
+				  "Amount",
+
+				  "Transaction type of",
+
+				  "Amount",
+
+				  "Investment total balance",
+
+				  "Frequent transaction",
+
+				  "Empresarial Banamex Investments",
+
+				  "Schedule for future");
+
+				  
+
+$(document).ready(function (){
+
+	leerDatosDemo();
+
+	top.impayuda();
+
+	$('[name^="FECHA_BNP_"]').each(
+
+		function ()
+
+		{
+
+			try
+
+			{
+
+				$(this).html(formateaFechaBB($(this).attr('name').substring(10, $(this).attr('name').length), $(this).html())) 
+
+			}
+
+			catch(e)
+
+			{}
+
+		}
+
+	)
+
+});
+
+
+
+function formato_odddeMesdeaaaa(fecha){
+
+	fecha = fecha.replace(/\s/g,'');
+
+	fecha=fecha.replace(/(de)/g,' ');	
+
+	var patron = /^[0-9]{1}[^0-9,^A-Z,^a-z]{1,}/;
+
+	var fechafinal;
+
+	(fecha.match(patron)) ? (fechafinal = "0" + fecha) : (fechafinal = fecha);
+
+	patron = /\s[A-Za-z]+\s/;
+
+	var mes = fechafinal.match(patron);
+
+	var mesCorto = (mes[0].replace(/\s/g,'')).substring(0,3);
+
+	try{
+
+		fechafinal = fechafinal.replace(patron,' '+mesCorto+' ');	
+
+	}
+
+	catch(e){
+
+	}	
+
+	return fechafinal;
+
+}
+
+
+
+function formato_ddmmaaaa_hhmm(fecha){
+
+				var hora = fecha.substring(10);
+
+				var fechaformateada = formateaFechaBB('ddmmaaaa',fecha.substring(0,10));
+
+				return fechaformateada + hora;
+
+}
+
+
+
+function formato_ddMMMaaaa(fecha){
+
+			fecha = fecha.replace(/\-/gi," ");
+
+			var conversion = (fecha.substring(4,6)).toLowerCase();
+
+			var fechaformateada = fecha.substring(0,4) + conversion + fecha.substring(6,fecha.length);	
+
+			return fechaformateada;
+
+}
+
+
+
+function formato_ddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[fecha8]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+			
+
+		if(splitFecha[0].length==1)
+
+		{
+
+			splitFecha[0]="0"+splitFecha[0];
+
+		}
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+
+
+function formato_dddemesdeaaaa(Fecha)
+
+	{
+
+		var mesIngles="";
+
+		var fechaFormateada="";
+
+		var fec="[Fecha]";
+
+		var splitFecha=fec.split(' ');
+
+		var Idioma="SPANISH";
+
+								
+
+		if(Idioma=="SPANISH")
+
+		{
+
+			fechaFormateada=splitFecha[0]+" "+splitFecha[2].substring(0,3)+" "+splitFecha[4];
+
+		}
+
+		else
+
+		{
+
+			if(splitFecha[2]=="Enero")
+
+				{mesIngles="Jan";}
+
+			if(splitFecha[2]=="Febrero")
+
+				{mesIngles="Feb";}
+
+			if(splitFecha[2]=="Marzo")
+
+				{mesIngles="Mar";}
+
+			if(splitFecha[2]=="Abril")
+
+				{mesIngles="Apr";}
+
+			if(splitFecha[2]=="Mayo")
+
+				{mesIngles="May";}
+
+			if(splitFecha[2]=="Junio")
+
+				{mesIngles="Jun";}
+
+			if(splitFecha[2]=="Julio")
+
+				{mesIngles="Jul";}
+
+			if(splitFecha[2]=="Agosto")
+
+				{mesIngles="Aug";}
+
+			if(splitFecha[2]=="Septiembre")
+
+				{mesIngles="Sep";}
+
+			if(splitFecha[2]=="Octubre")
+
+				{mesIngles="Oct";}
+
+			if(splitFecha[2]=="Noviembre")
+
+				{mesIngles="Nov";}
+
+			if(splitFecha[2]=="Diciembre")
+
+				{mesIngles="Dec";}
+
+					
+
+				fechaFormateada=splitFecha[0]+" "+mesIngles+" "+splitFecha[4];
+
+			}
+
+			return fechaFormateada;
+
+	}
+
+	
+
+function formato_ddmmaaaaEBSJS(fecha)
+
+{
+
+	var indice;
+
+	var fechaAux;
+
+	var IdiomaAux="SPANISH";
+
+	var mesFecha;
+
+	var mesFecha1;
+
+	var fechaModif;
+
+	var fechaFormateada
+
+	
+
+	fecha=fecha.replace(/^\s*|\s*$/gi,"");	
+
+	indice=fecha.indexOf("/");
+
+	
+
+	if(indice!=-1)
+
+	{
+
+		indice=indice-2;
+
+		fechaAux=fecha.substring(indice,indice+10);
+
+		if(IdiomaAux=="SPANISH")
+
+		{
+
+			mesFecha=fechaAux.substring(3,5);
+
+			if(mesFecha=="01")
+
+				{mesFecha1="Ene";}
+
+			if(mesFecha=="02")
+
+				{mesFecha1="Feb";}
+
+			if(mesFecha=="03")
+
+				{mesFecha1="Mar";}
+
+			if(mesFecha=="04")
+
+				{mesFecha1="Abr";}
+
+			if(mesFecha=="05")
+
+				{mesFecha1="May";}
+
+			if(mesFecha=="06")
+
+				{mesFecha1="Jun";}
+
+			if(mesFecha=="07")
+
+				{mesFecha1="Jul";}
+
+			if(mesFecha=="08")
+
+				{mesFecha1="Ago";}
+
+			if(mesFecha=="09")
+
+				{mesFecha1="Sep";}
+
+			if(mesFecha=="10")
+
+				{mesFecha1="Oct";}
+
+			if(mesFecha=="11")
+
+				{mesFecha1="Nov";}
+
+			if(mesFecha=="12")
+
+				{mesFecha1="Dic";}
+
+				
+
+			fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+			fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+		}
+
+			else
+
+			{
+
+				mesFecha=fechaAux.substring(0,2);
+
+					if(mesFecha=="01")
+
+						{mesFecha1="Jan";}
+
+					if(mesFecha=="02")
+
+						{mesFecha1="Feb";}
+
+					if(mesFecha=="03")
+
+						{mesFecha1="Mar";}
+
+					if(mesFecha=="04")
+
+						{mesFecha1="Apr";}
+
+					if(mesFecha=="05")
+
+						{mesFecha1="May";}
+
+					if(mesFecha=="06")
+
+						{mesFecha1="Jun";}
+
+					if(mesFecha=="07")
+
+						{mesFecha1="Jul";}
+
+					if(mesFecha=="08")
+
+						{mesFecha1="Aug";}
+
+					if(mesFecha=="09")
+
+						{mesFecha1="Sep";}
+
+					if(mesFecha=="10")
+
+						{mesFecha1="Oct";}
+
+					if(mesFecha=="11")
+
+						{mesFecha1="Nov";}
+
+					if(mesFecha=="12")
+
+						{mesFecha1="Dec";}
+
+					
+
+				fechaModif=fechaAux.substring(0,2)+" "+mesFecha1+" "+fechaAux.substring(6,10);
+
+				fechaFormateada=fecha.replace(fechaAux,fechaModif);
+
+			}
+
+	}
+
+	return fechaFormateada;
+
+}
+
+
+
+function formateaFechaBB(formato, fecha)
+
+{	
+
+	
+
+	fechaFormateada="";
+
+	
+
+	if(fecha == 'Not available' || fecha == 'No disponible' || fecha == '' ||  fecha == '&nbsp;' ||  fecha == '-')
+
+	{
+
+		return fecha;
+
+	}
+
+		
+
+	if(fecha != '' &&  fecha != '&nbsp;'){
+
+		
+
+		switch(formato)
+
+		{
+
+			case 'ddmmaa'   : 
+
+			case 'ddmmaaaa' :	
+
+						fecha=fecha.replace(/^\s*|\s*$/gi,"");
+
+						if(language== "eng")
+
+							fechaFormateada = fecha.substring(3,5) + ' ' + (isNaN(parseInt(fecha.substring(0,2),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(0,2), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						else
+
+							fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			case 'oddeMesdeaaaa':
+
+						fechaFormateada = formato_odddeMesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaa_hhmm':
+
+						fechaFormateada = formato_ddmmaaaa_hhmm(fecha);
+
+						break;
+
+			case 'ddMMMaaaa':
+
+						fechaFormateada = formato_ddMMMaaaa(fecha);
+
+						break;
+
+			case 'ddemesdeaaaa':
+
+						fechaFormateada = formato_ddemesdeaaaa(fecha);
+
+						break;	
+
+			case 'dddemesdeaaaa':
+
+						fechaFormateada = formato_dddemesdeaaaa(fecha);
+
+						break;
+
+			case 'ddmmaaaEsp':
+
+						fechaFormateada = fecha.substring(0,2) + ' ' + (isNaN(parseInt(fecha.substring(3,5),10))?mesesFecha_BB[0]:mesesFecha_BB[parseInt(fecha.substring(3,5), 10)-1]) + ' ' + (formato=='ddmmaa'?fecha.substring(6,8):fecha.substring(6,10));
+
+						break;
+
+			default :			
+
+					break;
+
+		}
+
+	}
+
+	return fechaFormateada; 
+
+}
+
+				var titulo="Inversi&oacute;n Empresarial Banamex";
+
+				rutaAyuda=rutaAyuda+"Empresarial-Banamex.htm";
+
+
+
+jQuery(document).ready(function(){
+
+	var alias = "Inv Emp Banamex";
+
+	alias = alias.replace(/^\s*|\s*$/g,"");
+
+	var descCorta = "Inv Emp Banamex";
+
+	var ctaCorta = "**  699";
+
+	var descMoneda = "MXN";
+
+	var saldoCuenta = "40,000.00";
+
+	var nombreCuenta = "";
+
+	var tipoTransaccion = "VTAIEM_CBS";
+
+	var importe = "1,000.00";
+
+	var saldoTotal = "39,000.00";
+
+	var programada = "SI";
+
+	var frecuenteEmpresarial = "";
+
+	var tituloFrecuente = "";
+
+	
+
+	var fechaProgramada = "27/04/2012";
+
+	
+
+	var eventoEmpresarial = "INSTRUCCIONRECIBIDA";
+
+	var frec = "";
+
+	if(frec =="on"){
+
+		$("#frecuente").html("Si")
+
+	}
+
+	else{
+
+		$("#frecuente").html("No")
+
+	}
+
+	
+
+	$("#monedaIntergral").html(descMoneda);
+
+	$("#monedaSaldo").html(descMoneda);
+
+	$("#monedaImporte").html(descMoneda);
+
+	
+
+	if(language== "esp"){
+
+		if(tipoTransaccion== "CMPIEM_CBS" || tipoTransaccion== "CMPCME_CBS"){
+
+			$("#verdeTipoTrans").html("dep&oacute;sito");
+
+			$("#tipoInversion").html("Cuenta dep&oacute;sito (Inversi&oacute;n)");
+
+			$("#datosDe").html("Datos de <br> la inversi&oacute;n");
+
+			$("#tipoOperacion").html("D&eacute;posito");
+
+		}
+
+		else{
+
+			$("#verdeTipoTrans").html("retiro");
+
+			$("#tipoInversion").html("Cuenta retiro (Inversi&oacute;n)");
+
+			$("#datosDe").html("Datos de <br> la inversi&oacute;n");
+
+			$("#tipoOperacion").html("Retiro");
+
+		}
+
+	}else{
+
+		if(tipoTransaccion== "CMPIEM_CBS" || tipoTransaccion== "CMPCME_CBS"){
+
+			$("#verdeTipoTrans").html("deposit");
+
+			$("#tipoInversion").html("Deposit account (Investment)");
+
+			$("#datosDe").html("Investment <br> data");
+
+			$("#tipoOperacion").html("Deposit");
+
+		}
+
+		else{
+
+			$("#verdeTipoTrans").html("withdrawal");
+
+			$("#tipoInversion").html("Withdrawal account (Investment)");
+
+			$("#datosDe").html("Withdrawal <br> data");
+
+			$("#tipoOperacion").html("Withdrawal");
+
+		}
+
+	}
+
+	
+
+	if(programada == "1" || programada == "SI"){
+
+		
+
+			$("#fechaProgramada").html(formateaFechaBB("ddmmaaaa",fechaProgramada));
+
+	}
+
+	else{
+
+		$("#trProgramada").remove();
+
+	}
+
+	
+
+	$("#tablaDatos tr:odd td").css("background-color", "#FFF");
+
+	$("#tablaDatos tr:even td").css("background-color", "#F1F2F2");
+
+});	
+
+</script>
+
+<div class="float-left fonttit">EMPRESARIAL BANAMEX</div>
+
+
+
+<div id="impComp">
+
+        <div id="t0" class="panelIzEnca3_text2">Inversi&oacute;n Empresarial Banamex</div>
+
+        
+
+       <div class="saldos_bloque3_verde">
+
+        	<div id="aplicacion" class="f12"><span id="t1">Su</span>&nbsp;<span id='verdeTipoTrans'></span>&nbsp;<span id="t2">ha sido</span>&nbsp;<span id="t3" class="negrita">recibido</span>&nbsp;<span id="t4">con n&uacute;mero de instrucci&oacute;n</span>&nbsp;<span class="negrita">200114</span>.</div>
+
+        </div>
+
+      <div style="display: block;" id="caso2_3" class="saldos_bloque3_2">
+
+        	<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tablaSaldos2">
+
+                <tbody><tr>
+
+                    <td valign="top" class="borderRDotted ancho25p padding20"><span id="t5" class="f12">Cuentas</span></td>
+
+                    <td valign="top" class="padding20 paddingL15 paddingR15">
+
+                        <div class=" paddingB5 borderBSolid"><div id="tipoInversion" class="negrita color333 f12b"></div></div>
+
+                        <div id="lblRet" class="ancho100p clear overflow paddingT5">
+
+
+
+                        	<div id="tipoCuenta" class="floatL ancho40p f11">Inv Emp Banamex <span class="color666 normal" id="monedaIntergral"></span> - **  699</div>
+
+                            <div id="saldo" class="floatR ancho50p f11 nosimp"><span id="t6" class="color666 normal f11">Saldo</span>&nbsp;(<span  class="color666 normal" id="monedaSaldo"></span>): $40,000.00</div>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            </tbody></table>    	
+
+        </div>
+
+        <div class="saldos_bloque3_2">
+
+        	<table width="100%" cellspacing="0" cellpadding="0" border="0" class="tablaSaldos2">
+
+                <tbody><tr>
+
+                    <td valign="top" class="borderRDotted ancho25p padding20"><span id="datosDe" class="f12"></span></span></td>
+
+                    <td valign="top" class=" paddingB13 paddingL15 paddingR15 padding20">
+
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="tablaSaldos3 pinta1" id="tablaDatos">
+
+                        	<tbody>
+
+								<tr>
+
+									<td align="left" class="ancho50p"><span id="t9">Tipo de operaci&oacute;n</span></td>
+
+									<td id="tipoOperacion" class="ancho50p paddingL0"><span id="tipo1"></span></td>
+
+                                </tr>
+
+                                <tr>
+
+									<td align="left"><span id="t8">Importe <span id="monedaImporte"></span></span></td>
+
+									<td class="paddingL0">1,000.00</td>
+
+                                </tr>
+
+								<tr>
+
+									<td align="left" class=" bgF1F2F2"><span id="t11">Saldo total de la inversi&oacute;n</span></td>
+
+									<td id="saldoTot" class="bgF1F2F2 paddingL0">39,000.00</td>
+
+                                </tr>
+
+								<tbody id="fechaFutura">
+
+                                <tr id="trProgramada">
+
+									<td align="left" id="Prog1"><span id="t14">Fecha programada</span></td>
+
+									<td id="Prog" class="paddingL0"><span class="f11 normal color666"id="txtFecha" name="FECHA_BNP_ddmmaaaa"></span></td>
+
+                                </tr>
+
+								</tbody>
+
+						<tbody  id="frecuencia1">
+
+									<tr >
+
+									<td align="left bgF1F2F2" ><span id="t12">Operaci&oacute;n frecuente</span></td>
+
+									<td class="paddingL0 bgF1F2F2" id="Frec"></td>
+
+									</tr>
+
+							</tbody>
+
+							<tbody  id="frecuencia2">
+
+									<tr >
+
+									<td align="left" ><span id="t12">Operaci&oacute;n frecuente</span></td>
+
+									<td class="paddingL0" id="Frec2"></td>
+
+									</tr>
+
+							</tbody>
+
+							</tbody>
+
+						</table>
+
+                        <div class="padding4"></div>
+
+                    </td>
+
+                </tr>
+
+            </tbody></table>        	
+
+        </div>
+
+   </div>
+
+<input id="omtmodalvalue" type="hidden" value="Inversion Empresarial|PagRecibida.html" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>

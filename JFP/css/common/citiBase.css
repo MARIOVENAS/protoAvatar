@@ -1,0 +1,183 @@
+/* GUILDLINES AND DOCUMENTATION.
+
+----------------------------------------------------------
+
+STYLE PREFIXES AND NAMING CONVENTIONS:
+
+All styles start with the below two character prefix, this allows the style class to be easily identified and categorized.
+
+Style names should be meaningful, but not explicitly specify things such as color, text size, etc.
+
+cH - styles for site heading structures.
+
+cT - styles for tabular structures
+
+cF - styles for form structures
+
+cM - styles for modular rules, allows for mix-ins with other structures
+
+cL - styles for list structures
+
+cN - styles for navigation structures
+
+cS - styles for base site structure
+
+example style : .xX-styleName
+
+----------------------------------------------------------
+
+CSS DOCUMENTATION:
+
+Styles within each and every CSS file should be well documented. Blocks of like style classes should be grouped together - by application, screen,
+
+etc.- along with each style class having notes explain what purpose the style was written.
+
+----------------------------------------------------------
+
+FILE NOTES:
+
+This file contains all base css files for html elements and design patterns. 
+
+
+
+*/
+
+
+
+/* Sets the basic site text color, font family, and font size. */
+
+body {
+
+	font-family: Arial, sans-serif;
+
+	font-size: 12px;
+
+	color: black;
+
+}
+
+
+
+/* Headings, the below font sizes are base for all h1 heading tags. */
+
+h1 {
+
+   font-size: 20px;
+
+}
+
+
+
+/* Headings, the below font sizes are base for all h2 heading tags. */
+
+h2 {
+
+   font-size: 17px;
+
+}
+
+
+
+/* Headings, the below font sizes are base for all h3 heading tags. */
+
+h3 {
+
+   font-size: 13px;
+
+}
+
+
+
+/* Headings, the below is the base for all h4 heading tags. */
+
+h4 {
+
+}
+
+
+
+/* Headings, the below is the base for all h5 heading tags. */
+
+h5 {
+
+}
+
+
+
+/* Headings, the below is the base for all h6 heading tags. */
+
+h6 {
+
+}
+
+
+
+/* Sets the basic style use for hr rule */
+
+hr {
+
+}
+
+
+
+/* Sets the basic style use ul/li structure */
+
+ul {
+
+
+
+}
+
+
+
+/* Set the basc style use for li elements */
+
+li {
+
+   list-style: none;
+
+   display: inline; 
+
+}
+
+
+
+/* Sets up the base structure for icon images. A second class will be used to call the cordiantes of the icon from the sprite. 
+
+	If the icon needs to overide attributes of the base, have the overides on the second class used to call the icon cordiantes.*/
+
+.cM-spriteBase {
+
+    position: relative;
+
+	background-image: url('/JFP/images/glbl_sprite.png');
+
+    background-repeat: repeat-x;
+
+	display: inline-block;
+
+}
+
+
+
+/* IE specific CSS to correctly display sprites */
+
+html.vIE7 .cM-spriteBase {
+
+	position: static;
+
+	vertical-align: top;
+
+	display: inline;
+
+    zoom: 1;	
+
+}
+
+
+
+.cM-appClear {
+
+	clear: both;
+
+}

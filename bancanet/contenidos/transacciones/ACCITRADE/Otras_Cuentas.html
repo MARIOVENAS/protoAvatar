@@ -1,0 +1,3526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<LINK REL="stylesheet" href="../../bbAvatar/css/estilos.css" type="text/css" />
+
+
+
+
+
+   <title></title>
+
+
+
+</head>
+
+
+
+<body  TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#006060" ONLOAD="if(window.Initialize != null)Initialize();" >
+
+<form  METHOD="POST" ACTION=""  NAME="APPS_FORM_MAIN" >
+
+<input type=hidden name="EWF_SYS_0" value="4f4659af-c9d7-4c5e-b3dc-9ef248f0a7e1" ><input type=hidden name="EWF_SYS_1" value="CXI3L@3U986UBJLI0CUDPVXJ1ARJ6@5XIFHM3493" >
+
+<input type=hidden name="EWF_FORM_NAME" value="LEV2 Main">
+
+<div id="wrapper_div"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="DISPLAYPAGE" VALUE="ZTPO-Pagina Inicio"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="TEMPLATE_FILE" VALUE="transfoctas.htm"><INPUT TYPE="HIDDEN" SIZE="10" MAXLENGTH="100" NAME="SEQUENCE_NUMBER" VALUE="9"><TABLE WIDTH=100%><TR><TD WIDTH=95% ALIGN="bottom"></TD><TD></TD><TD></TD><TD></TD></TR></TABLE>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/estilos.css" />
+
+<link rel="stylesheet" type="text/css" href="../../bbAvatar/css/jquery-ui-1.7.2.custom.css" />
+
+<style>.tdHidden { visibility:hidden; }.txtCal { position:relative; top:1px; }</style>
+
+<style>.tooltipcopy{border:1px solid #DEDEDE;background:#F1F2F2;padding:10px;font-size:11px;} .p_tooltipcopy{background:url(/bbAvatar/images/p-tooltip.gif) no-repeat;width:10px;height:10px;float:right;margin-right:5px;} #tooltip-copy{position:absolute;top:0;display:none;opacity:.8;filter:Alpha(Opacity=80);}</style>
+
+
+
+<!--[if IE 7]><style>.calendario input{  position:relative;top:-6px; }</style><![endif]-->
+
+<!--[if IE 8]><style>.txtCal { position:relative; top:1px; }</style><![endif]-->
+
+
+
+
+
+<script type="text/javascript" src="../../bbAvatar/js/motor.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/opciones.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/jquery-ui-1.7.2.custom.min.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/calendar.js"></script>
+
+<script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+
+<script type="text/javascript">
+
+
+
+	var rutaAyuda="https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/";
+
+	function has_letras(text){ var letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-+°";
+
+				   for(i=0; i<text.length; i++){
+
+					  if (letters.indexOf(text.charAt(i),0)>-1){
+
+						 return false;
+
+					  }
+
+				   }
+
+				   return true;
+
+				}
+
+				
+
+				
+
+	function teclea18(iden){
+
+	var cadena;
+
+	var tamano;
+
+	cadena=document.getElementById(iden).value;
+
+	tamano=cadena.length;
+
+	if (has_letras(cadena)!=false && tamano<19){
+
+		document.getElementById(iden).value=cadena;
+
+	} else {
+
+		document.getElementById(iden).value=cadena.substr(0,tamano-1);
+
+	}
+
+	}
+
+	
+
+	var es = new Array( 
+
+	"Transfer AcciTrade",
+
+	'Select a withdrawal account, specify payment data and click "Continue"',
+
+	"Accounts",
+
+	"Withdrawal account",
+
+	"Deposit account or payee",
+
+	"Transfer data",
+
+	"Amount",
+
+	"Numeric reference",
+
+	"* The exchange rate may vary at the moment of application",
+
+	"Additional<br/>transactions",
+
+	"Schedule for future date",
+
+	"Date",
+
+	"Time",
+
+	"Save as frequent transaction",
+
+	"Scheduled transactions can not be saved as frequent",
+
+	"Continue", 
+
+	"DEPOSIT TO ACCITRADE" );
+
+
+
+	var diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+	var Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+	var fmtFecha = 'dd/mm/yy';
+
+	
+
+	var fechaIni;
+
+
+
+function iniDateCal() {
+
+  if(language=="eng")
+
+   {
+
+     diasSemana=['Sun','Mon','Tue','Wed','Thu','Fry','Sat'];	
+
+	 Meses = ['Jan','Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+	 fmtFecha = 'mm/dd/yy';
+
+   }
+
+  else
+
+   {
+
+	 diasSemana = ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'];
+
+	 Meses = ['Ene','Feb','Mar','Abr','Mayo','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+	 fmtFecha = 'dd/mm/yy';
+
+   }
+
+  setCbohrs();
+
+  setCbomin();
+
+  
+
+  var fechaSer = new Date();
+
+  var anio = fechaSer.getFullYear();
+
+  var mes = fechaSer.getMonth();
+
+  var dia = fechaSer.getDate();
+
+  fechaIni = new Date( anio , mes, dia);
+
+  
+
+  CrearCal("#txtFecha", fmtFecha, diasSemana, Meses, fechaIni, fechaIni, 30, '285', '' );
+
+}
+
+
+
+
+
+function setCbohrs() {
+
+  var i, hrs, selOpt;
+
+  for( i=0; i<24; i++ ) {
+
+	selOpt = ( i==8 ) ? "selected" : "";
+
+	hrs = ( i<10 ) ? '0'+i : i;
+
+	$('#cboHrs').append('<option value="' + hrs + '"' + selOpt + '>' + hrs + '</option>');
+
+  }
+
+}
+
+function setCbomin() {
+
+  var min, i;
+
+  for( i=0; i<4; i++ ) {
+
+	min = ( (i*15)<10 ) ? '0'+i : i*15;
+
+	$('#cboMin').append('<option value="' + i + '">' + min + '</option>');
+
+  }
+
+}
+
+  
+
+
+
+function AbreAyuda(fn){
+
+window.open(fn,"ClickInfo","scrollbars=yes,menubar=no,resizable=1,copyhistory=1,width=650,height=450");
+
+}
+
+
+
+
+
+function GotoTXN(value){
+
+parent.parent.DoSubmit(value);
+
+}
+
+  $(document).ready(
+
+	function(){
+
+
+
+	
+
+		bindBackSpace()		
+
+		$("input:text, input:password, textarea").focus(function(){
+
+			if($(this).attr("readonly") == "" || $(this).attr("readonly")+'' == 'undefined' || $(this).attr("readonly") == false)
+
+				$(document).unbind('.backspace');
+
+		});
+
+		$("input:text, input:password, textarea").blur(function(){
+
+			if($(this).attr("readonly") == "")
+
+				bindBackSpace();
+
+		});
+
+	}
+
+);
+
+function bindBackSpace()
+
+{
+
+	$(document).bind('keydown.backspace keyup.backspace',
+
+		function(event){
+
+			if(event.keyCode==8)
+
+			{				
+
+				event.preventDefault();
+
+			}	
+
+		}
+
+	);
+
+}
+
+  var iframe = "";
+
+var banderaBoton = "";
+
+function imprimirMain(){
+
+	parent.document.getElementById("main").contentWindow.focus();
+
+	parent.document.getElementById("main").contentWindow.print();
+
+}
+
+function imprimirError(boton){
+
+	if(boton != undefined)
+
+		banderaBoton = boton;
+
+	iframe = parent.document.getElementById('mensajeError_contenido_ifrm');
+
+	iframe.style.display="block";
+
+	iframe.style.width="0px";
+
+	iframe.style.height="0px";
+
+	iframe.src = "../../bbAvatar/modal/impresionModales.htm";
+
+	setTimeout('imprimirIframe()',300);
+
+}
+
+function imprimirIframe(){
+
+	if(iframe.contentWindow.document.body+''=="undefined")
+
+		setTimeout('imprimirIframe()',300);
+
+	else{
+
+		iframe.contentWindow.document.getElementById("contenidoImpresion").innerHTML = parent.document.getElementById('mensajeError_contenido_div').innerHTML;
+
+		if(banderaBoton != "")
+
+			iframe.contentWindow.document.getElementById("impresionImg").style.display="none";
+
+		iframe.contentWindow.focus();
+
+		iframe.contentWindow.print();
+
+	}
+
+}
+
+  function setCbosret() {
+
+
+
+  var ctaVal = [[],[],[],[]];
+
+  var ctaDesc = [[],[],[],[]];
+
+  var ctaAls = [[],[],[],[]];
+
+  var ctaNum = [[],[],[],[]];
+
+  var ctaCur = [[],[],[],[]];
+
+  var ctaTip = [[],[],[],[]];
+
+  var ctaAmt = [[],[],[],[]];
+
+  var i=0;
+
+  
+
+  var $cboRetTER = $('#cboRetTER');
+
+  var $cboRetINT = $('#cboRetINT');
+
+  var $cboRetORD = $('#cboRetORD');
+
+  var $cboRetACC = $('#cboRetACC');
+
+  
+
+  	ctaVal[0].push( 'PS' );
+
+	var cad = (language == 'eng') ? 'Select an option' : 'Selecciona una opci&oacute;n'; 
+
+	ctaNum[0].push( cad );
+
+	ctaDesc[0].push( '' );
+
+	ctaAls[0].push( '' );
+
+	ctaCur[0].push( '' );
+
+	ctaTip[0].push( '6' );
+
+	ctaAmt[0].push( '7' );	
+
+	  
+
+  	ctaVal[0].push( '2' );
+
+	ctaNum[0].push( '002' );
+
+	ctaDesc[0].push( 'Cheques' );
+
+	ctaAls[0].push( 'Cheques' );
+
+	ctaCur[0].push( 'MXN' );
+
+	ctaTip[0].push( '1' );
+
+	ctaAmt[0].push( '40,000.00' );
+
+	
+
+  	ctaVal[1].push( 'PS' );
+
+	var cad = (language == 'eng') ? 'Select an option' : 'Selecciona una opci&oacute;n'; 
+
+	ctaNum[1].push( cad );
+
+	ctaDesc[1].push( '' );
+
+	ctaAls[1].push( '' );
+
+	ctaCur[1].push( '' );
+
+	ctaTip[1].push( '6' );
+
+	ctaAmt[1].push( '7' );	  
+
+  	ctaVal[1].push( '2' );
+
+	ctaNum[1].push( '002' );
+
+	ctaDesc[1].push( 'Cheques' );
+
+	ctaAls[1].push( 'Cheques' );
+
+	ctaCur[1].push( 'MXN' );
+
+	ctaTip[1].push( '1' );
+
+	ctaAmt[1].push( '40,000.00' );	  
+
+  	ctaVal[1].push( '9' );
+
+	ctaNum[1].push( '  796' );
+
+	ctaDesc[1].push( 'Tarjeta Cr\u00E9dito' );
+
+	ctaAls[1].push( 'Tarjeta Cr\u00E9dito' );
+
+	ctaCur[1].push( 'MXN' );
+
+	ctaTip[1].push( '3' );
+
+	ctaAmt[1].push( '50,000.00' );	  
+
+  	ctaVal[1].push( '18' );
+
+	ctaNum[1].push( '793' );
+
+	ctaDesc[1].push( 'Tarj Premia Pre' );
+
+	ctaAls[1].push( 'Tarj Premia Pre' );
+
+	ctaCur[1].push( 'MXN' );
+
+	ctaTip[1].push( '3' );
+
+	ctaAmt[1].push( '60,000.00' );	  
+
+  	ctaVal[1].push( '21' );
+
+	ctaNum[1].push( '502' );
+
+	ctaDesc[1].push( 'Credicheque Perfiles Banamex ' );
+
+	ctaAls[1].push( 'Credicheque Perfiles Banamex' );
+
+	ctaCur[1].push( 'MXN' );
+
+	ctaTip[1].push( '3' );
+
+	ctaAmt[1].push( '45,000.00' );	  
+
+  	ctaVal[1].push( '22' );
+
+	ctaNum[1].push( '502' );
+
+	ctaDesc[1].push( 'Cr\u00E9dito Personal Perfiles Banamex' );
+
+	ctaAls[1].push( 'Cr\u00E9dito Personal Perfiles Banamex' );
+
+	ctaCur[1].push( 'MXN' );
+
+	ctaTip[1].push( '3' );
+
+	ctaAmt[1].push( '50,000.00' );	  
+
+  	ctaVal[1].push( '25' );
+
+	ctaNum[1].push( '245' );
+
+	ctaDesc[1].push( 'Tarj Premia Pre' );
+
+	ctaAls[1].push( 'Tarj Premia Pre' );
+
+	ctaCur[1].push( 'MXN' );
+
+	ctaTip[1].push( '3' );
+
+	ctaAmt[1].push( '54,000.00' );	  
+
+  	ctaVal[1].push( '26' );
+
+	ctaNum[1].push( '199' );
+
+	ctaDesc[1].push( 'Clasica' );
+
+	ctaAls[1].push( 'Clasica' );
+
+	ctaCur[1].push( 'MXN' );
+
+	ctaTip[1].push( '3' );
+
+	ctaAmt[1].push( '60,000.00' );	  
+
+  
+
+  
+
+  	ctaVal[2].push( 'PS' );
+
+	var cad = (language == 'eng') ? 'Select an option' : 'Selecciona una opci&oacute;n'; 
+
+	ctaNum[2].push( cad );
+
+	ctaDesc[2].push( '' );
+
+	ctaAls[2].push( '' );
+
+	ctaCur[2].push( '' );
+
+	ctaTip[2].push( '6' );
+
+	ctaAmt[2].push( '7' );	  
+
+  	ctaVal[2].push( '2' );
+
+	ctaNum[2].push( '002' );
+
+	ctaDesc[2].push( 'Cheques' );
+
+	ctaAls[2].push( 'Cheques' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '1' );
+
+	ctaAmt[2].push( '40,000.00' );	  
+
+  	ctaVal[2].push( '6' );
+
+	ctaNum[2].push( '  501' );
+
+	ctaDesc[2].push( 'Cta. Maestra Opc.' );
+
+	ctaAls[2].push( 'Mi maestra.' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '6' );
+
+	ctaAmt[2].push( '45,000.00' );	  
+
+  	ctaVal[2].push( '9' );
+
+	ctaNum[2].push( '  796' );
+
+	ctaDesc[2].push( 'Tarjeta Cr\u00E9dito' );
+
+	ctaAls[2].push( 'Tarjeta Cr\u00E9dito' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '3' );
+
+	ctaAmt[2].push( '50,000.00' );	  
+
+  	ctaVal[2].push( '18' );
+
+	ctaNum[2].push( '793' );
+
+	ctaDesc[2].push( 'Tarj Premia Pre' );
+
+	ctaAls[2].push( 'Tarj Premia Pre' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '3' );
+
+	ctaAmt[2].push( '60,000.00' );	  
+
+  	ctaVal[2].push( '19' );
+
+	ctaNum[2].push( '502' );
+
+	ctaDesc[2].push( 'Cuenta Perfiles ' );
+
+	ctaAls[2].push( 'Cuenta Perfiles' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '6' );
+
+	ctaAmt[2].push( '40,000.00' );	  
+
+  	ctaVal[2].push( '21' );
+
+	ctaNum[2].push( '502' );
+
+	ctaDesc[2].push( 'Credicheque Perfiles Banamex ' );
+
+	ctaAls[2].push( 'Credicheque Perfiles Banamex' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '3' );
+
+	ctaAmt[2].push( '45,000.00' );	  
+
+  	ctaVal[2].push( '22' );
+
+	ctaNum[2].push( '502' );
+
+	ctaDesc[2].push( 'Cr\u00E9dito Personal Perfiles Banamex' );
+
+	ctaAls[2].push( 'Cr\u00E9dito Personal Perfiles Banamex' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '3' );
+
+	ctaAmt[2].push( '50,000.00' );	  
+
+  	ctaVal[2].push( '25' );
+
+	ctaNum[2].push( '245' );
+
+	ctaDesc[2].push( 'Tarj Premia Pre' );
+
+	ctaAls[2].push( 'Tarj Premia Pre' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '3' );
+
+	ctaAmt[2].push( '54,000.00' );	  
+
+  	ctaVal[2].push( '26' );
+
+	ctaNum[2].push( '199' );
+
+	ctaDesc[2].push( 'Clasica' );
+
+	ctaAls[2].push( 'Clasica' );
+
+	ctaCur[2].push( 'MXN' );
+
+	ctaTip[2].push( '3' );
+
+	ctaAmt[2].push( '60,000.00' );	  
+
+  
+
+  
+
+  	ctaVal[3].push( 'PS' );
+
+	var cad = (language == 'eng') ? 'Select an option' : 'Selecciona una opci&oacute;n'; 
+
+	ctaNum[3].push( cad );
+
+	ctaDesc[3].push( '' );
+
+	ctaAls[3].push( '' );
+
+	ctaCur[3].push( '' );
+
+	ctaTip[3].push( '6' );
+
+	ctaAmt[3].push( '7' );	
+
+  	ctaVal[3].push( '2' );
+
+	ctaNum[3].push( '002' );
+
+	ctaDesc[3].push( 'Cheques' );
+
+	ctaAls[3].push( 'Cheques' );
+
+	ctaCur[3].push( 'MXN' );
+
+	ctaTip[3].push( '1' );
+
+	ctaAmt[3].push( '40,000.00' );	  
+
+  	ctaVal[3].push( '6' );
+
+	ctaNum[3].push( '  501' );
+
+	ctaDesc[3].push( 'Cta. Maestra Opc.' );
+
+	ctaAls[3].push( 'Mi maestra.' );
+
+	ctaCur[3].push( 'MXN' );
+
+	ctaTip[3].push( '6' );
+
+	ctaAmt[3].push( '45,000.00' );	  
+
+  	ctaVal[3].push( '19' );
+
+	ctaNum[3].push( '502' );
+
+	ctaDesc[3].push( 'Cuenta Perfiles ' );
+
+	ctaAls[3].push( 'Cuenta Perfiles' );
+
+	ctaCur[3].push( 'MXN' );
+
+	ctaTip[3].push( '6' );
+
+	ctaAmt[3].push( '50,000.00' );	  
+
+  	ctaVal[3].push( '21' );
+
+	ctaNum[3].push( '502' );
+
+	ctaDesc[3].push( 'Credicheque Perfiles Banamex ' );
+
+	ctaAls[3].push( 'Credicheque Perfiles Banamex' );
+
+	ctaCur[3].push( 'MXN' );
+
+	ctaTip[3].push( '3' );
+
+	ctaAmt[3].push( '45,000.00' );	  
+
+  	ctaVal[3].push( '22' );
+
+	ctaNum[3].push( '502' );
+
+	ctaDesc[3].push( 'Cr\u00E9dito Personal Perfiles Banamex' );
+
+	ctaAls[3].push( 'Cr\u00E9dito Personal Perfiles Banamex' );
+
+	ctaCur[3].push( 'MXN' );
+
+	ctaTip[3].push( '3' );
+
+	ctaAmt[3].push( '50,000.00' );	  
+
+  
+
+  
+
+  armaComboRetiro( $cboRetTER, ctaVal[3], ctaNum[3], ctaDesc[3], ctaAls[3], ctaCur[3], ctaTip[3], ctaAmt[3] );
+
+  armaComboRetiro( $cboRetINT, ctaVal[1], ctaNum[1], ctaDesc[1], ctaAls[1], ctaCur[1], ctaTip[1], ctaAmt[1] );
+
+  armaComboRetiro( $cboRetORD, ctaVal[2], ctaNum[2], ctaDesc[2], ctaAls[2], ctaCur[2], ctaTip[2], ctaAmt[2] );
+
+  armaComboRetiro( $cboRetACC, ctaVal[3], ctaNum[3], ctaDesc[3], ctaAls[3], ctaCur[3], ctaTip[3], ctaAmt[3] );
+
+}
+
+
+
+function armaComboRetiro( combo, vals, nums, descs, als, curs, tips, amts ){
+
+  for( i=0; i<descs.length; i++ ) {
+
+	var contenido;
+
+	var alsTemp = als[i].replace(/^\s*|\s*$/g,"");
+
+	var desCort = descs[i].replace(/^\s*|\s*$/g,"");
+
+	var desc = ( alsTemp == "" ) ? desCort : alsTemp;
+
+	var $opt = $('<option></option>');
+
+	$opt.attr('id','opc'+i+'');
+
+	$opt.attr('value', vals[i] );
+
+	$opt.attr('tipo', tips[i]);
+
+	if( isNaN( parseInt( nums[i] ) ) )
+
+	  contenido = nums[i];
+
+	else
+
+	  contenido = Combo_Propias( desc, nums[i], curs[i], amts[i] );
+
+	$opt.html( contenido );
+
+	combo.append( $opt );
+
+  }
+
+}
+
+  function setCbodepotras() {
+
+  var $opt, contenido, des;
+
+  var ctaVal = new Array();
+
+  var ctaNum = new Array();
+
+  var ctaDes = new Array();
+
+  var ctaAls = new Array();
+
+  var ctaCur = new Array();
+
+  var ctaTip = new Array();
+
+  var ctaBen = new Array();
+
+  var ctaBan = new Array();
+
+  var ctaOpc = new Array();
+
+  var intTipo = new Array(); 
+
+  
+
+  var i=0;
+
+  var $cboDep = $('#cboDep');
+
+	
+
+  	ctaVal.push( '1' );
+
+	ctaNum.push( '509/560' );
+
+	ctaDes.push( 'Cheques' );
+
+	ctaAls.push( 'Ch GAHD' );
+
+	ctaCur.push( 'MXN' );
+
+	ctaTip.push( 'TER' );
+
+	ctaBen.push( 'MARIO M,MIGUEL/ABRAHAM' );
+
+	ctaBan.push( '' );
+
+	
+
+	
+
+	  ctaOpc.push( 'gabinohernandez@hotmail.com'+'~'+''+'~'+'1'+'~'+'1' );//meter los campos de instrumento, producto y tipo de cuenta
+
+	
+
+		intTipo.push('Burger King cambio');
+
+	
+
+	
+
+	
+
+		intTipo.push('Rosy Bancomer');
+
+	
+
+	
+
+	
+
+		intTipo.push('mamá');
+
+	
+
+	
+
+	
+
+		intTipo.push('IntPMmodif');
+
+
+
+  for( i=0, j=0; i<ctaDes.length+1; i++ ) {
+
+	$opt = $('<option></option>');
+
+	$opt.attr('id','opc'+i+'');
+
+	if( i==ctaDes.length ) {
+
+	  $opt.attr('value','1');
+
+	 $opt.attr('tipo','ACC');
+
+	  contenido = ( 'SPANISH'=='ENGLISH' ) ? 'AcciTrade account&nbsp;&nbsp;-&nbsp;&nbsp;547001' : 'Cuenta AcciTrade&nbsp;&nbsp;-&nbsp;&nbsp;547001';
+
+	} else if( i==0 ) {
+
+	  $opt.attr('value',ctaVal[i]);
+
+	  contenido = ctaBen[i];
+
+	} else {
+
+	  $opt.attr('value',ctaVal[i]);
+
+	  $opt.attr('tipo',ctaTip[i]);
+
+	  if( isNaN( parseInt( ctaNum[i] ) ) && ctaNum[i] != "" )
+
+	    contenido = ctaNum[i];
+
+	  else {
+
+	    if( ctaTip[i] == 'TER' ) {
+
+		  var alsTemp = ctaAls[i].replace(/^\s*|\s*$/g,"").replace(/^(&nbsp;)*|(&nbsp;)*$/g,"");
+
+		  var desCort = ctaDes[i].replace(/^\s*|\s*$/g,"").replace(/^(&nbsp;)*|(&nbsp;)*$/g,"");
+
+	      des = ( ctaAls[i] == "" ) ? desCort : alsTemp;
+
+		  $opt.attr('datos',ctaOpc[i]);
+
+		  var banco = "Banamex";
+
+		  banco += "&nbsp;&nbsp;-&nbsp;&nbsp;";
+
+		contenido = Combo_Terceros(banco+des+'&nbsp;&nbsp;-&nbsp;&nbsp;'+ctaCur[i], ctaNum[i], ctaBen[i].replace(/,|\//g," "));
+
+	    } else if( ctaTip[i] == 'INT' ) {
+
+		  $opt.attr('datos',ctaOpc[i]);
+
+		  contenido = Combo_Inter(ctaBan[i],intTipo[j++], ctaCur[i], ctaNum[i], ctaBen[i].replace(/,|\//g," "));
+
+	    } else if( ctaTip[i] == 'ORD' ) {
+
+		  var txtOrd = ( 'SPANISH'=='ENGLISH' ) ? 'Window payment' : 'Orden de pago';
+
+		  $opt.attr('datos',ctaOpc[i]);
+
+		 contenido = Combo_OrdenesDePago(txtOrd, ctaBen[i].replace(/,|\//g," "));
+
+		}
+
+	  }
+
+	}
+
+	$opt.html( contenido );
+
+	$cboDep.append( $opt );
+
+  }
+
+}
+
+var txtNom = ( "SPANISH"=="SPANISH" ) ? "Nombre:  " : "Name:  ";
+
+var txtSdo = ( "SPANISH"=="SPANISH" ) ? "Saldo" : "Balance";
+
+var screen_height = screen.height;
+
+var screen_width = screen.width;
+
+
+
+function Combo_Afore(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	n = nom;
+
+   return d + c + n;	
+
+}
+
+
+
+function Combo_Propias(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Tarjetas_Propias_Banamex(banco,desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida = banco + conector;
+
+	salida += desc + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += moneda +":" + espacio + espacio +"$" +espacio + saldo;	
+
+   return salida;	
+
+}
+
+
+
+
+
+function Combo_PropiasInv(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 15;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+
+
+function Combo_Saldos(desc, cta){
+
+	var c,d;
+
+	if(cta.indexOf("Sel")!=-1){return cta;}
+
+	if(desc.charAt(0)==" ")desc = desc.substring(1,desc.length);
+
+	d = Arma_Descripcion2(desc, 26);
+
+	c = jQuery.trim(cta);
+
+   return d + "- " + c;	
+
+}
+
+
+
+function Combo_Terceros(desc, cta, nom){
+
+	var c,d,n,lon_des = 40,lon_cta = 11;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 11;
+
+	}
+
+	d = (desc.length<20)?desc.substring(0,20):desc;
+
+	d += "&nbsp;&nbsp;-&nbsp;&nbsp;"; 
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	
+
+   return d + c + nom;	
+
+}
+
+			
+
+function Combo_Inter(banco, tipo, mon, cta, nom){
+
+	var b,m,c,n,d;
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	b = (banco.length<20)?banco.substring(0,20):banco;
+
+	d = Arma_Descripcion(b, 20);
+
+  return d + tipo +"&nbsp;&nbsp;-&nbsp;&nbsp;"+ mon + "&nbsp;&nbsp;-&nbsp;&nbsp;"+ c+nom;
+
+}
+
+
+
+function Combo_Tarjetas_Otros_Bancos(banco, moneda, cta, nombre){
+
+	var bank = (banco.length<20)?banco.substring(0,20):banco;
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += bank + conector;
+
+	salida += moneda + conector
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return  salida;
+
+	}
+
+
+
+function Combo_Tarjetas_Departamentales(tiendaDep,cta,nombre){
+
+	var espacio="&nbsp;";
+
+	var guion="-";
+
+	var conector = espacio + espacio + guion + espacio + espacio;
+
+	var salida="";
+
+	salida += tiendaDep + conector;
+
+	salida += "**" + cta + conector;
+
+	salida += nombre;
+
+	return salida;
+
+}
+
+
+
+		
+
+function Combo_OrdenesDePago(tipo, nom){
+
+	var aux;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return tipo +espacio + espacio + guion + espacio + espacio + nom;
+
+	
+
+}
+
+					
+
+function Arma_Descripcion(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + espacio + guion + espacio +espacio;
+
+}
+
+
+
+
+
+function Arma_Descripcion2(nom,  lon){
+
+	var i,numb=0,aux="", cur=0;
+
+	cur=nom.length;
+
+	if(nom.length>=lon){
+
+		nom=nom.substring(0,lon);
+
+	}
+
+	numb = (lon - nom.length)
+
+	for(i=0; i!=(numb +1); i++){
+
+		aux += '&nbsp;';
+
+	}
+
+	return nom + aux;
+
+}
+
+									
+
+function Arma_Saldo(mon, sal){
+
+	var aux="";
+
+	aux =mon + ':';
+
+	return aux + " $ " + sal;
+
+}
+
+
+
+function Arma_Cuenta(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = "**" + cta + espacio + espacio + guion + espacio + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Combo_Cuentas(desc, cta, moneda){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_DescripcionCombo(desc, lon_des);
+
+	c = Arma_CuentaCombo(jQuery.trim(cta));
+
+   return d + c + moneda;	
+
+}
+
+
+
+function Arma_CuentaCombo(cta){
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	var ctaAux = cta + espacio + guion + espacio;
+
+	return ctaAux;
+
+}
+
+
+
+function Arma_DescripcionCombo(nom,  lon){
+
+	var nombre = (nom.length>lon)?nom.substring(0,lon):nom;
+
+	var espacio = "&nbsp;";
+
+	var guion = "-";
+
+	return nombre + espacio + guion + espacio;
+
+}
+
+
+
+function Arma_Descripcion_Horizontes(nom,lon){
+
+	return nom+'&nbsp;&nbsp;-&nbsp;&nbsp;';
+
+}
+
+
+
+function Combo_Propias_Horizontes(desc, cta, moneda, saldo){
+
+	var c,d,s,lon_des = 40,lon_cta = 10;
+
+	desc= desc.replace(/^\s*|\s*$/g,"");
+
+	if(screen_width == 1024 ){
+
+		lon_des = 30;
+
+		lon_cta = 5;
+
+	}
+
+	d = Arma_Descripcion_Horizontes(desc, lon_des);
+
+	c = Arma_Cuenta(jQuery.trim(cta));
+
+	s = Arma_Saldo(moneda, saldo);
+
+   return d + c + s;	
+
+}
+
+  function changeImp() {
+
+  var valImpp;
+
+  var idTxt  = ( $('#txtOimp:visible').size() > 0 ) ? '#txtOimp' : '#txtImp';
+
+  var valImp = $( idTxt ).val().replace(/,/gi,"");
+
+  valImp = $.trim(valImp);
+
+  var valtc  = $('#valTipcam').text();
+
+  valImp = compDec( valImp );
+
+  $( idTxt ).val( valImp );
+
+  
+
+  if( !isNaN( valImp ) && valImp!="" ) {
+
+	valImp = parseFloat( valImp );
+
+	valtc  = ( isNaN( parseFloat( valtc ) ) ) ? 0 : parseFloat( $('#valTipcam').text() );
+
+	txtImpp = (  valImp*valtc )+"";
+
+	txtImpp = ( txtImpp.indexOf('.') > -1 ) ? txtImpp+"00" : txtImpp+".00"
+
+	txtImpp = ( txtImpp.indexOf('.') > -1 ) ? txtImpp.substring( 0, txtImpp.indexOf('.')+3 ) : parseFloat( txtImpp )+'.00';
+
+	txtImpp = ( isNaN( parseFloat( valtc ) ) || valtc==0 ) ? '' : txtImpp;
+
+	$('#valImppesos').text( txtImpp );
+
+  }
+
+  
+
+}
+
+
+
+function compDec( valImp ) {
+
+  if( !isNaN( valImp ) && valImp!="" ) {
+
+    if( valImp.indexOf('.') > -1 ) {
+
+	  var ent = parseFloat(valImp.substring( 0, valImp.indexOf('.') ) );
+
+	  ent = ( isNaN( ent ) ) ? 0 : ent;
+
+	  var dec = valImp.substring( valImp.indexOf('.')+1 );
+
+	  var decl = valImp.substring( valImp.indexOf('.')+1 ).length;
+
+	  if( decl<2 ) {
+
+	    for( var i=0; i<2-decl; i++ )
+
+		  dec = dec+'0';
+
+	  }
+
+	  valImp = ent+'.'+dec;
+
+	} else {
+
+      valImp = parseFloat(valImp)+'.00';
+
+	}
+
+  }
+
+  return valImp;
+
+}
+
+
+
+function checkKey( ev ) {
+
+  var charCode = (ev.charCode) ? ev.charCode : ((ev.keyCode) ? ev.keyCode : ((ev.which) ? ev.which : 0));
+
+  if( charCode == 13 )
+
+    changeImp();
+
+  if( charCode == 8 )
+
+    $('#valImppesos').text( "" );
+
+}
+
+  var tipo;
+
+
+
+jQuery(document).ready(function(){
+
+
+
+	$("#txtImp").focus(function() {
+
+  		$(this).val('1,000.00').attr("readonly", "readonly");
+
+	});
+
+	
+
+  $("#cboDep, .cboRet").change(function(){
+
+    var tipTrn;
+
+	var isRetsel = ( $('.cboRet:visible').find('option:selected').val()=="PS" );
+
+	var isDepsel = ( $('#cboDep').find('option:selected').val()=="PS" );
+
+	if( !isRetsel && !isDepsel ){
+
+	  tipo=$('#cboDep').find('option:selected').attr('tipo');
+
+	  if( tipo=="TER" ) {
+
+        var isRetdol = ( $('.cboRet:visible').find('option:selected').text().indexOf('USD') != -1 );
+
+	    var isDepdol = ( $('#cboDep').find('option:selected').text().indexOf('USD') != -1 );
+
+	    if( ( !isRetdol && isDepdol ) || ( isRetdol && !isDepdol ) )
+
+	      tipo="CVT";
+
+	  }
+
+	  tipTrn=tipo;
+
+	  $('#t30').attr('Disabled',true);
+
+	  $('#t30').removeClass('btnAZ86').addClass('btnAZ86_des');
+
+	  pm('SALDOHORARIO',tipTrn);
+
+	}
+
+  });
+
+});
+
+
+
+function pm(ev,tipTrn){
+
+  //debugger;
+
+  var d=document.getElementById('ndw').contentWindow.document.forms[0];
+
+  var o=document.forms[0];
+
+  //d.action=o.action;
+
+  d.EWF_SYS_0.value=o.EWF_SYS_0.value;
+
+  d.EWF_SYS_1.value=o.EWF_SYS_1.value;
+
+  d.EWF_FORM_NAME.value=o.EWF_FORM_NAME.value;
+
+  d.DISPLAYPAGE.value=o.DISPLAYPAGE.value;
+
+  d.TEMPLATE_FILE.value=o.TEMPLATE_FILE.value;	
+
+  d.SEQUENCE_NUMBER.value=o.SEQUENCE_NUMBER.value;
+
+  d.DATA1.value = tipTrn;
+
+  d.EWFBUTTON.value=ev;
+
+  d.EWFBUTTON.name='EWF_BUTTON_'+ev;
+
+  document.getElementById('ndw').contentWindow.actCuentas();
+
+  d.submit();
+
+}
+
+
+
+  function hourChanged(){
+
+  var dateEmpty = ( $('#txtFecha').val()=='' )
+
+  var tipoCta = $('#cboDep').find('option:selected').attr('tipo');
+
+  var cboOts = ( tipoCta == 'TO' || tipoCta == 'TD' || tipoCta == 'TER' )
+
+  if( cboOts && !dateEmpty ){
+
+    if( isSameDay() ){
+
+      updateTime();
+
+    }
+
+  }
+
+}
+
+
+
+function isSameDay() {
+
+  var fechaServ = "03/30/2012";
+
+  
+
+  var anioServ = parseFloat( fechaServ.substring(6,10) );
+
+  var mesServ  = parseFloat( fechaServ.substring(0,2) );
+
+  var diaServ  = parseFloat( fechaServ.substring(3,5) );
+
+  
+
+  var fechaSel = $('#txtFecha').val().split('/');
+
+  var anioSel  = parseFloat( fechaSel[2] );
+
+  var mesSel   = ( "SPANISH" == "SPANISH" ) ? parseFloat( fechaSel[1] ) : parseFloat( fechaSel[0] );
+
+  var diaSel   = ( "SPANISH" == "SPANISH" ) ? parseFloat( fechaSel[0] ) : parseFloat( fechaSel[1] );
+
+  
+
+  if( anioSel==anioServ && mesSel==mesServ && diaSel==diaServ ){
+
+    return true;
+
+  }else{
+
+    return false;
+
+  }
+
+}
+
+
+
+function updateTime(){
+
+  var fecHorServ = "30/03/12    14:31:38  ";
+
+  
+
+  var horServ = parseFloat( fecHorServ.substring( fecHorServ.indexOf(':')-2, fecHorServ.indexOf(':') ) );
+
+  var minServ = parseFloat( fecHorServ.substring( fecHorServ.indexOf(':')+1, fecHorServ.lastIndexOf(':') ) );
+
+  var horSel  = parseFloat( $('#cboHrs').find('option:selected').text() );
+
+  var minSel  = parseFloat( $('#cboMin').find('option:selected').text() );
+
+  
+
+  var hourChanged = false;
+
+  while( ( ( horSel == horServ && (minSel - minServ) < 30)) || (horSel > horServ && (horSel - horServ < 2) && ((60 - minServ) + minSel) < 30) ){
+
+	hourChanged = true;
+
+	if(minSel == 45){
+
+	  horSel += 1;
+
+	  minSel = 0;
+
+	}else{
+
+	  minSel += 15;
+
+	}
+
+  }
+
+  
+
+  if( hourChanged ){
+
+    $("#cboHrs option[value=" + horSel + "]").attr('selected','selected');
+
+    $("#cboMin option[value=" + minSel/15 + "]").attr('selected','selected');
+
+  }
+
+  
+
+}
+
+  function backData() {
+
+  var tran = "";
+
+  var tranType = tran.substring( tran.indexOf('tran')+4 );
+
+  tranType= ( tranType == "CVDT" ) ? "TER" : tranType;
+
+  
+
+  $(".cboRet").hide();
+
+  $("#cboRet" + tranType).show()
+
+  $("#cboRet" + tranType + " option[value=" + "" + "]").attr('selected','selected');
+
+  shareSelop();
+
+  
+
+  $("#cboDep option[value=" + "" + "][tipo=" + tranType + "]").attr('selected','selected');
+
+  
+
+  showCboRet();
+
+  toggleCurrency();
+
+  
+
+  $("#txtImp").val( "" );
+
+  $("#valTipcam").text( "[ValTipoCambio]" );
+
+  $("#valImppesos").text("[ImportePesos]");
+
+  $("#txtSuc").val( "" );
+
+  
+
+  if( tranType == "INT" ){
+
+    $("input[name=rdoPzo][value="+"[plazo]"+"]").attr('checked','checked');
+
+  }
+
+  
+
+  if( ""!="" )
+
+	$("#checkCon").attr('checked','checked');
+
+	
+
+  if( ""!="" || ""!="" || ""!="" ) {
+
+    $("#checkRefs").attr('checked','checked');
+
+	$("#Referencias").show();
+
+	$("#txtRefnum").val( "" );
+
+    $("#txtRefaln").val( "" );
+
+    $("#txtDesc").val( "" );
+
+  }
+
+
+
+  if( "" != "" ) {
+
+    $("#checkrf").attr('checked','checked');
+
+    $("#CompFiscal").show();
+
+    $("#txtRFC").val( "" );
+
+    $("#txtIVA").val( "" );
+
+  }
+
+  
+
+  if( "" != "" ) {
+
+    var offs = ( parseFloat("")<12 && ""=="PM" ) ? 12 : 0;
+
+    var indHrs = parseFloat( "" )+offs;
+
+	var cadHrs = "00"+indHrs;
+
+	var valHrs = cadHrs.substring( cadHrs.length-2 );
+
+    var indMin = parseFloat( "" )/15;
+
+    $("#checkProgramar").attr('checked','checked');
+
+    $("#Programar").show();
+
+    $("#txtFecha").val( "" );
+
+    $("#cboHrs option[value=" + valHrs + "]").attr('selected','selected');
+
+    $("#cboMin option[value=" + indMin + "]").attr('selected','selected');
+
+	toggleChecks('checkProgramar','checkFrec');
+
+  }
+
+  
+
+  if( ""!="" || ""!="" || ""!="" ) {
+
+    $("#checkNotif").attr('checked','checked');
+
+    $("#Notificar").show();
+
+	$("#txtMail").val( "" );
+
+	$("#txtCel").val( "" );
+
+	$("#txtMsg").val( "" );
+
+  }
+
+  
+
+  if( "" != "" ) {
+
+    $("#checkFrec").attr('checked','checked');
+
+	toggleChecks('checkFrec','checkProgramar');
+
+  }
+
+  
+
+  if( $("#txtSuc").is(":visible") ) {
+
+	$("#txtRem").val( "" );
+
+	$("#txtRFCC").val( "" );
+
+	$("#txtIns").val( "[reftrans]" );
+
+  }
+
+  
+
+  window.parent.ajustar();
+
+}
+
+var lblRefnumInt = ( "SPANISH"=="SPANISH" ) ? "N\u00FAmero de referencia" : "Reference number";
+
+var lblRefalfInt = ( "SPANISH"=="SPANISH" ) ? "Concepto de pago" : "Payment concept";
+
+var lblRefnumOts = ( "SPANISH"=="SPANISH" ) ? "Referencia numérica" : "Numeric reference";
+
+var lblRefalfOts = ( "SPANISH"=="SPANISH" ) ? "Referencia alfanumérica" : "Alphanumeric reference";
+
+
+
+function toggleCurrency() {
+
+  var isRetsel = ( $('.cboRet:visible').find('option:selected').val()=="PS" );
+
+  var isDepsel = ( $('#cboDep').find('option:selected').val()=="PS" );
+
+  
+
+  if( !isRetsel && !isDepsel ) {
+
+    var tran = '';
+
+    var isRetdol = ( $('.cboRet:visible').find('option:selected').text().indexOf('USD') > -1 );
+
+    var isDepdol = ( $('#cboDep').find('option:selected').text().indexOf('USD') > -1 );
+
+    var isDepter = ( $('#cboDep').find('option:selected').attr('tipo') == 'TER' );
+
+    var titImp = ( !isRetdol && !isDepdol ) ? 'MXN' : 'USD';
+
+
+
+    if( ( !isRetdol && isDepdol ) || ( isRetdol && !isDepdol ) ) {
+
+      show();
+
+	  tran = ( isDepter ) ? 'CVT' : '';
+
+    } else
+
+      hide();
+
+	$('#tdImp #titImp').text( titImp );
+
+  } else if( isRetsel && isDepsel ) {
+
+    hide();
+
+	clearAdoptions();
+
+	$('#tdImp #titImp').text( 'MXN' );
+
+	$('#txtImp').val('');
+
+	$('#valImppesos').text('');
+
+  }
+
+  if( !isDepsel ){
+
+    showAdopt( tran );
+
+    showData( tran );
+
+  
+
+  window.parent.ajustar();
+
+
+
+
+
+if (isDepter== true)
+
+  {
+
+   var datos = $('#cboDep').find('option:selected').attr('datos').split('~');
+
+   var ins=datos[3];
+
+   var prod=datos[2];
+
+   if (ins == '02' && prod=='15' || ins == '2' && prod=='15')
+
+	{
+
+		showAdopt('MOV');
+
+	}  
+
+   }
+
+  else {
+
+  }
+
+
+
+}
+
+}
+
+
+
+
+
+function show() {
+
+  $('.tdHidden').css( {'visibility':'visible'} );
+
+  $('div.mtp').show();
+
+  $('#divFiscal').hide();
+
+  $('#divProg').removeClass('marginT10');
+
+}
+
+  
+
+function hide() {
+
+  $('.tdHidden').css( {'visibility':'hidden'} );
+
+  $('div.mtp').hide();
+
+  $('#divFiscal').show();
+
+  $('#divProg').addClass('marginT10');
+
+}
+
+
+
+function shareSelop() {
+
+  var selOpt = $('.cboRet:visible').find('option:selected').val();
+
+  $('.cboRet').each(function(){
+
+    $(this).find('option[value="'+selOpt+'"]').attr('selected',true);
+
+  });
+
+}
+
+
+
+function showCboRet() {
+
+  if( $('#cboDep').val() != "PS" ) {
+
+    var tipctaDep = $('#cboDep').find('option:selected').attr('tipo');
+
+    $('.cboRet').hide();
+
+    $('#cboRet'+tipctaDep).show();
+
+  }
+
+}
+
+
+
+function clearAdoptions(){
+
+  $('#tblOpad').find(':input:text').val('');
+
+  $('#tblOpad').find(':input:checkbox').attr('checked',false);
+
+  $('#tblOpad').find(':input:checkbox').attr('disabled',false);
+
+  $('#tblOpad').find('div.adOpt>div').hide();
+
+  $('#cboHrs option[value=08]').attr('selected',true);
+
+  $('#cboMin option[value=0]').attr('selected',true);
+
+  hideErrors();
+
+}
+
+
+
+function showAdopt( tran ) {
+
+  var ordData = '';
+
+  var tipctaDep = ( tran == 'CVT' || tran == 'MOV' ) ? tran : $('#cboDep').find('option:selected').attr('tipo');
+
+  $('.adOpt').hide();
+
+  $('.'+tipctaDep).show();
+
+  $('#tblOpad').find('div.adOpt').addClass('paddingB10 marginT10 borderBDotted');
+
+  $('#tblOpad').find('div.adOpt:visible:first').removeClass('marginT10');
+
+  $('#tblOpad').find('div.adOpt:visible:last').removeClass('paddingB10 borderBDotted');
+
+  $('#tblOpad').find('div.adOpt>div').hide();
+
+  clearAdoptions();
+
+  
+
+  if( tipctaDep=='ORD' ){
+
+    $('#tdImp').siblings('td').hide();
+
+    $('#tdImp').removeClass('ancho33p').addClass('ancho100p');
+
+	$('#divImp').addClass('ancho33p');
+
+	ordData = $("#cboDep option:selected").attr('datos').split('~');
+
+	$('#txtRFCC').val( ordData[3] );
+
+  }else{
+
+    $('#tdImp').siblings('td').show();
+
+    $('#tdImp').removeClass('ancho100p').addClass('ancho33p');
+
+	$('#divImp').removeClass('ancho33p');
+
+	$('#txtRFCC').val('');
+
+  }
+
+  
+
+  if( tipctaDep=='INT' ){
+
+	$("#tdDesc").css('visibility','hidden');
+
+	$("#tdRefs").removeClass('tablaSaldos2_bordeR');
+
+	$("#t15").text( lblRefnumInt );
+
+	$("#t16").text( lblRefalfInt );
+
+    EliminarCal("#txtFecha");
+
+    CrearCal("#txtFecha", fmtFecha, diasSemana, Meses, fechaIni, fechaIni, 30, '285', 'A' );
+
+  } else {
+
+	$("#tdDesc").css('visibility','visible');
+
+	$("#tdRefs").addClass('tablaSaldos2_bordeR');
+
+	$("#t15").text( lblRefnumOts );
+
+	$("#t16").text( lblRefalfOts );
+
+    EliminarCal("#txtFecha");
+
+    CrearCal("#txtFecha", fmtFecha, diasSemana, Meses, fechaIni, fechaIni, 30, '285', '' );
+
+  }
+
+}
+
+
+
+function showData( tran ) {
+
+  var tipCta = ( tran == 'CVT' ) ? tran : $('#cboDep').find('option:selected').attr('tipo');
+
+  if( tipCta=="TER" || tipCta=="INT" || tipCta=="ORD"  ) {
+
+    var datosCta = $('#cboDep').find('option:selected').attr('datos').split('~');
+
+    var mailCta  = datosCta[0];
+
+    var ncelCta  = datosCta[1];
+
+    $('#txtMail').val( mailCta );
+
+  }
+
+}
+
+
+
+function setMaxLength(obj,maxLen){
+
+  return(obj.value.length<maxLen);
+
+}
+
+
+
+function completeBranch(){
+
+  var bch = $('#txtSuc').val();
+
+  if( !isNaN( bch ) && bch.length<4 && bch.length>0 ){
+
+    var stgBch = '0000'+bch;
+
+	var cmpBch = stgBch.substring( stgBch.length-4 );
+
+	$('#txtSuc').val( cmpBch );
+
+  }
+
+}
+
+  function cambiaMayus( obj ) {
+
+  obj.value = obj.value.toUpperCase();
+
+}
+
+
+
+function comboVacio( idCombo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var val = $( "#" + idCombo + " option:selected", contexto ).val();
+
+  if ( val=="PS" || val=="AC" || val=="NS" || val=="0" || val=="" )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function campoVacio( idCampo, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#" + idCampo + "", contexto ).val().replace(/^\s*|\s*$/g,"").length == 0 )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+
+
+function importeCero( idTxt, contexto ) {
+
+  contexto = contexto || window.document;
+
+  if( $( "#"+idTxt+"", contexto ).val() > 0 )
+
+    return false;
+
+  else
+
+    return true;
+
+}
+
+
+
+function campoNumerico( idCampo, numCar, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var regexNum = new RegExp( "^([0-9]" + rep + ")$" );
+
+  var valNum = $( "#"+idCampo+"", contexto ).val();
+
+  return regexNum.test( valNum );
+
+}
+
+
+
+function validaAlfabetico( idCampo, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var valorAlfa = $( "#"+idCampo, contexto ).val();
+
+  var alfanumTest = new RegExp( "^[a-zA-Z]{"+ numCar + "}$" );
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function validaAlfanumerico( idCampo, caracteres, numCar, contexto ){
+
+  contexto = contexto || window.document;
+
+  var rep  = ( numCar ) ? "{"+numCar+"}" : "+";
+
+  var valorAlfa = $("#"+idCampo, contexto ).val();
+
+  var carRexp = replaceMetacharacters( caracteres );
+
+  var alfanumTest = new RegExp("^[a-zA-Z0-9"+carRexp+"]"+ rep + "$")
+
+  return alfanumTest.test( valorAlfa );
+
+}
+
+
+
+function replaceMetacharacters( caracteres ) {
+
+  var caracter;
+
+  var arrMetachar = "\^${}[]().*+?|<>-&";
+
+  for( var i=0; i<arrMetachar.length; i++ ) {
+
+    caracter = arrMetachar.charAt(i);
+
+	if( caracteres.indexOf( caracter ) > -1 )
+
+      caracteres = caracteres.replace( caracter, "\\"+caracter );
+
+  }
+
+  return caracteres;
+
+}
+
+
+
+
+
+function importeValido( txtImp, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valImp = $( "#"+txtImp+"", contexto ).val().replace(/,/gi,"");
+
+  var regexImp = /^(((0){0,1})|(([1-9])([0-9]{0,13})))((\.){0,1})([0-9]{0,2})$/;
+
+  if( regexImp.test( valImp ) ) {
+
+    $( "#"+txtImp+"", contexto ).val( valImp );
+
+    return true;
+
+  } else
+
+	return false;
+
+}
+
+
+
+
+
+function ivaimporteInvalido( idIva, idImporte, contexto ) {
+
+  contexto = contexto || window.document;
+
+  var valIva = parseFloat( $( "#"+idIva+"", contexto ).val().replace(/,/gi,"") );
+
+  var valImp = parseFloat( $( "#"+idImporte+"", contexto ).val().replace(/,/gi,"") );
+
+  if( valIva > valImp )
+
+    return true;
+
+  else
+
+    return false;
+
+}
+
+	var msg1 ;  
+
+	var msg2 ;
+
+	var msg3 ;
+
+	var msg4 ;
+
+	var msg5 ;
+
+	var msg6 ;
+
+	var msg11
+
+	var msgcal1 ;
+
+	
+
+
+
+var lonRefnum=0;
+
+var lonRefaln=0;
+
+var lonDesc=0;
+
+var adChar="";
+
+var hasError =false;
+
+
+
+function validateForm() {
+
+  var tranType, isRetdol, isDepdol, isDepter, cboRetid;
+
+  hideErrors();
+
+
+
+  isRetdol = ( $('.cboRet:visible option:selected').text().indexOf('USD') > -1 );
+
+  isDepdol = ( $('#cboDep option:selected').text().indexOf('USD') > -1 );
+
+  isDepter = ( $('#cboDep option:selected').attr('tipo') == 'TER' );
+
+  
+
+  tranType = ( isDepter && ( ( !isRetdol && isDepdol ) || ( isRetdol && !isDepdol ) ) ) ? 'CVDT' : $('#cboDep option:selected').attr('tipo');
+
+  
+
+  switch( tranType ) {
+
+    case 'TER' : lonRefnum=( $("#checkCon").is(":checked"))?20:7; lonRefaln=34; lonDesc=60; adChar="ñÑ@-$., ";  break;//Terceros
+
+	case 'CVDT': lonRefnum=( $("#checkCon").is(":checked"))?20:7; lonRefaln=24; lonDesc=60; adChar="ñÑ@-$., ";  break;//Compra y venta de divisas a terceros
+
+	case 'INT' : lonRefnum=7;  lonRefaln=40; lonDesc=0;  adChar="ñÑáéíóúÁÉÍÓÚÄËÏÖÜ1234567890 "; break;//interbancarios
+
+	case 'ORD' : adChar="ñÑáéíóúÁÉÍÓÚÄËÏÖÜ "; break;//ordenes de pago
+
+	//case 'ACC' : lonRefnum=18; lonRefaln=34; lonDesc=60; adChar="-_/!#$%&()=?!?\|<>[]{}*,;.";   break;//Accitrade
+
+	default    : lonRefnum=0;  lonRefaln=0;  lonDesc=0;  adChar=""; break;
+
+  }
+
+  
+
+  cboRetid   = $(".cboRet:visible").attr("id");
+
+  lastCboret = $(".cboRet:last").attr("id");
+
+  
+
+  if( comboVacio( cboRetid ) )
+
+    showError( lastCboret, msg1 );
+
+  if( comboVacio( "cboDep" ) )
+
+    showError( "cboDep", msg2 );
+
+  if( campoVacio( "txtImp" ) )
+
+    showError( "txtImp", msg3 );
+
+  if( campoVacio( "txtImp2" ) )
+
+    showError( "txtImp2", msg11 );
+
+  else if( !importeValido( "txtImp" ) && !campoNumerico( "txtImp" ) )
+
+    showError( "txtImp", msg6 );
+
+  else if( importeValido( "txtImp" ) && importeCero( "txtImp" ) )
+
+    showError( "txtImp", msg4 );
+
+  else if( !importeValido( "txtImp" ) )
+
+	showError( "txtImp", msg5 );
+
+	
+
+  if( $("#txtSuc").is(":visible") ) {
+
+    if( campoVacio( "txtSuc" ) || parseFloat( $("#txtSuc").val() )==0 )
+
+	  showError( "txtSuc", msg10 );
+
+	else if( !campoNumerico( "txtSuc" ) )
+
+	  showError( "txtSuc", msg6 );
+
+	
+
+	if( campoVacio( "txtRem" ) )
+
+	  showError( "txtRem", msgOrd1 );
+
+	else if( !validaAlfanumerico( "txtRem", adChar, "" ) )
+
+	  showError( "txtRem", msgOrd2 );
+
+	
+
+	var ordData = $("#cboDep option:selected").attr('datos').split('~');
+
+	var lenRFCC = $("#txtRFCC").val().length;
+
+	
+
+	if( ordData[4] == "01" ) {
+
+	  if( !campoVacio( "txtRFCC" ) && lenRFCC!=18 && lenRFCC!=13 )
+
+	    showError( "txtRFCC", msgOrd4 );
+
+	  else if( lenRFCC==13 && !rfcValido( "txtRFCC" ) )
+
+	    showError( "txtRFCC", msgOrd5 );
+
+	  else if( lenRFCC==18 && !curpValido( "txtRFCC" ) )
+
+	    showError( "txtRFCC", msgOrd6 );
+
+	}else{
+
+	  if( ( !campoVacio( "txtRFCC" ) && !rfcValido( "txtRFCC" ) ) || lenRFCC!=12 )
+
+	    showError( "txtRFCC", msgOrd5 );
+
+	}
+
+	
+
+	if( campoVacio( "txtIns" ) )
+
+	  showError( "txtIns", msgOrd3 );
+
+	else if( !validaAlfanumerico( "txtIns", adChar, "" ) )
+
+	  showError( "txtIns", msgOrd2 );
+
+  }
+
+
+
+  if( $("#checkRefs").is(":checked") ) {
+
+    if( !campoVacio( "txtRefnum" ) && !campoNumerico( "txtRefnum" ) )
+
+	  showError( "txtRefnum", msg6 );
+
+	else if( !campoVacio( "txtRefnum" ) && $('#txtRefnum').val().length>lonRefnum )
+
+	  showError( "txtRefnum", msg8 + lonRefnum + msg9 );
+
+	if( !campoVacio( "txtRefaln" ) &&  !validaAlfanumerico( "txtRefaln", adChar, "" ) )
+
+	  showError( "txtRefaln", msg7 );
+
+	else if( !campoVacio( "txtRefaln" ) && $('#txtRefaln').val().length>lonRefaln )
+
+	  showError( "txtRefaln", msg8 + lonRefaln + msg9 );
+
+	if( !campoVacio( "txtDesc" ) && !validaAlfanumerico( "txtDesc", adChar+" ", "" ) )
+
+	  showError( "txtDesc", msg7 );
+
+	else if( lonDesc!=0 && !campoVacio( "txtDesc" ) && $('#txtDesc').val().length>lonDesc )
+
+	  showError( "txtDesc", msg8 + lonDesc + msg9 );
+
+  }
+
+  
+
+  if( $("#checkrf").is(":checked") ) {
+
+    if( campoVacio( "txtRFC" ) )
+
+	  showError( "txtRFC", msgrf1 );
+
+	else if( !rfcValido( "txtRFC" ) )
+
+	  showError( "txtRFC", msgrf3 );
+
+	if( campoVacio( "txtIVA" ) || importeCero( "txtIVA" ) )
+
+	  showError( "txtIVA", msgrf2 );
+
+	else if( ivaimporteInvalido( "txtIVA", "txtImp" ) )
+
+	  showError( "txtIVA", msgrf4 );
+
+  }
+
+  
+
+  if( $("#checkProgramar").is(":checked") ) {
+
+    if( campoVacio("txtFecha") )
+
+	  showError( "txtFecha", msgcal1 );
+
+	hourChanged();
+
+  }
+
+  
+
+  if( $("#checkNotif").is(":checked") ) {
+
+	if( campoVacio( "txtMail" ) ){
+
+	  showError( "txtMail", msgntf1 );
+
+	}else{
+
+	  if( !campoVacio( "txtMail" ) && !validaMail( "txtMail" ) )
+
+	    showError( "txtMail", msgntf2 );
+
+	  if( !campoVacio("txtMsg") && !validaAlfanumerico( "txtMsg", "ñÑ@-_$., ", "" ) )
+
+	    showError( "txtMsg", msgntf5 )
+
+	}
+
+  }
+
+  
+
+  window.parent.ajustar();
+
+  
+
+  if( !hasError ) {
+
+    parseDataConf( tranType );
+
+  }
+
+}
+
+  
+
+
+
+
+
+
+
+ function showError( idElem, msgErr, contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = true;
+
+  var $divErr = $('<div class="saldos_bloque2_f4_error_display"><span>' + msgErr + '</span></div>');
+
+  $( '#'+idElem+'', contexto ).after( $divErr );
+
+}
+
+
+
+function hideErrors( contexto ) {
+
+  contexto = contexto || window.document;
+
+  hasError = false;
+
+  $('div.saldos_bloque2_f4_error_display', contexto).remove();
+
+}
+
+
+
+function toggleChecks( idChecken, idCheckdis ) {
+
+  var flag =  $('#'+idChecken).is(':checked');
+
+  $('#'+idChecken).attr('disabled', false);
+
+  $('#'+idCheckdis).attr('disabled', flag);
+
+  $('#'+idCheckdis).attr('checked', false);
+
+  $('#msgFrec').show();
+
+  window.parent.ajustarIframe();
+
+}
+
+  function parseDataConf( tranType ) {
+
+  var ao;
+
+  var params, dia, mes;
+
+  var num, hora, AmPm;
+
+  var isRetdol, isDepdol, flagTipocam;
+
+  
+
+  isRetdol = ( $('.cboRet:visible option:selected').text().indexOf('USD') > -1 );
+
+  isDepdol = ( $('#cboDep option:selected').text().indexOf('USD') > -1 );
+
+  flagTipocam = ( isRetdol || isDepdol ) ? 'T' : 'F';
+
+  
+
+  params = $('#txtFecha').val().split('/');
+
+  dia = ( "SPANISH" == "SPANISH" ) ? params[0] : params[1];
+
+  mes = ( "SPANISH" == "SPANISH" ) ? params[1] : params[0];
+
+
+
+  num = parseFloat( $("#cboHrs option:selected").text() )
+
+  AmPm = ( isNaN( num ) ) ? "" : ( num >= 12 ) ? "PM" : "AM";
+
+  hora = ( num > 12 ) ? "0"+(num-12) : num ;
+
+
+
+  if( tranType ==  "TER" ) {
+
+    document.forms[0].DATA1.value = $('#cboRetTER option:selected').val();
+
+	document.forms[0].DATA2.value = $('#cboDep option:selected').val();
+
+	document.forms[0].DATA3.value = ( document.forms[0].checkCon.checked ) ? $('#checkCon').val() : "";
+
+	document.forms[0].DATA4.value = $('#txtImp').val();
+
+	document.forms[0].DATA5.value = ( document.forms[0].checkRefs.checked ) ? $('#txtRefnum').val() : "";
+
+	document.forms[0].DATA6.value = ( document.forms[0].checkRefs.checked ) ? $('#txtRefaln').val() : "";
+
+	document.forms[0].DATA7.value = ( document.forms[0].checkRefs.checked ) ? $('#txtDesc').val() : "";
+
+	document.forms[0].DATA8.value = "";
+
+	document.forms[0].DATA9.value = ( document.forms[0].checkProgramar.checked ) ? dia : "0";
+
+	document.forms[0].DATA10.value = ( document.forms[0].checkProgramar.checked ) ? mes : "0";
+
+	document.forms[0].DATA11.value = ( document.forms[0].checkProgramar.checked ) ? hora : "0";
+
+	document.forms[0].DATA12.value = ( document.forms[0].checkProgramar.checked ) ? $("#cboMin option:selected").text() : "0";
+
+	document.forms[0].DATA13.value = ( document.forms[0].checkProgramar.checked ) ? AmPm : "";
+
+	document.forms[0].DATA14.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? "1" : "0";
+
+	document.forms[0].DATA15.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? $('#txtRFC').val() : "";
+
+	document.forms[0].DATA16.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? $('#txtIVA').val() : "";
+
+	document.forms[0].DATA17.value = ( document.forms[0].checkFrec.checked ) ? "on" : "";
+
+	document.forms[0].DATA18.value = "";
+
+	document.forms[0].DATA19.value = ( document.forms[0].checkNotif.checked ) ? $('#txtMail').val() : "";
+
+	document.forms[0].DATA20.value = ( document.forms[0].checkNotif.checked ) ? $('#txtMsg').val() : "";
+
+	document.forms[0].DATA21.value = "";
+
+	document.forms[0].DATA22.value = "";
+
+	document.forms[0].DATA23.value = "";
+
+	document.forms[0].DATA24.value = "";
+
+	document.forms[0].DATA25.value = "";
+
+	document.forms[0].DATA26.value = "";
+
+	document.forms[0].DATA27.value = "";
+
+	ao = "OKTERC";
+
+  } else if( tranType == "CVDT" ) {
+
+    document.forms[0].DATA1.value = ( $('#cboRetTER option:selected').text().indexOf('MXN') > -1 ) ? 'Venta' : 'Compra';
+
+	document.forms[0].DATA2.value = $('#cboRetTER option:selected').val();
+
+	document.forms[0].DATA3.value = $('#cboDep option:selected').val();
+
+	document.forms[0].DATA4.value = ( document.forms[0].checkCon.checked ) ? $('#checkCon').val() : "";
+
+	document.forms[0].DATA5.value = $('#txtImp').val();
+
+	document.forms[0].DATA6.value = ( document.forms[0].checkRefs.checked ) ? $('#txtRefnum').val() : "";
+
+	document.forms[0].DATA7.value = ( document.forms[0].checkRefs.checked ) ? $('#txtRefaln').val() : "";
+
+	document.forms[0].DATA8.value = ( document.forms[0].checkRefs.checked ) ? $('#txtDesc').val() : "";
+
+	document.forms[0].DATA9.value = "";
+
+	document.forms[0].DATA10.value = ( document.forms[0].checkProgramar.checked ) ? dia : "0";
+
+	document.forms[0].DATA11.value = ( document.forms[0].checkProgramar.checked ) ? mes : "0";
+
+	document.forms[0].DATA12.value = ( document.forms[0].checkProgramar.checked ) ? hora : "0";
+
+	document.forms[0].DATA13.value = ( document.forms[0].checkProgramar.checked ) ? $("#cboMin option:selected").text() : "0";
+
+	document.forms[0].DATA14.value = ( document.forms[0].checkProgramar.checked ) ? AmPm : "";
+
+	document.forms[0].DATA15.value = ( document.forms[0].checkFrec.checked ) ? "on" : "";
+
+	document.forms[0].DATA16.value = "";
+
+	document.forms[0].DATA17.value = "";
+
+	document.forms[0].DATA18.value = "";
+
+	document.forms[0].DATA19.value = "";
+
+	document.forms[0].DATA20.value = "";
+
+	document.forms[0].DATA21.value = "";
+
+	document.forms[0].DATA22.value = "";
+
+	document.forms[0].DATA23.value = "";
+
+	document.forms[0].DATA24.value = "";
+
+	document.forms[0].DATA25.value = "";
+
+	document.forms[0].DATA26.value = "";
+
+	document.forms[0].DATA27.value = "";
+
+	ao = "OKCVDTER";
+
+  } else if( tranType == "INT" ) {
+
+    var nom, app, apm, rsoc;
+
+    var otrosDatos = $('#cboDep option:selected').attr('datos').split('~');
+
+	var nomrs = otrosDatos[5];
+
+	var fmtPfis = ( nomrs.indexOf(',')>-1 && nomrs.indexOf(',')>-1 );
+
+	
+
+	nom = ( fmtPfis ) ? nomrs.substring( 0, nomrs.indexOf(',') ) : "";
+
+	app = ( fmtPfis ) ? nomrs.substring( nomrs.indexOf(',')+1, nomrs.indexOf('/') ) : "";
+
+	apm = ( fmtPfis ) ? nomrs.substring( nomrs.indexOf('/')+1 ) : "";
+
+	rsoc = ( fmtPfis ) ? "" : otrosDatos[5];
+
+	
+
+    document.forms[0].DATA1.value = $('#cboRetINT option:selected').val();
+
+	document.forms[0].DATA2.value = otrosDatos[2];
+
+	document.forms[0].DATA3.value = otrosDatos[3];
+
+	document.forms[0].DATA4.value = otrosDatos[4];
+
+	document.forms[0].DATA5.value = app;
+
+	document.forms[0].DATA6.value = apm;
+
+	document.forms[0].DATA7.value = nom;
+
+	document.forms[0].DATA8.value = rsoc;
+
+	document.forms[0].DATA9.value = ( document.forms[0].checkRefs.checked ) ? $('#txtRefaln').val() : "";
+
+	document.forms[0].DATA10.value = ( document.forms[0].checkRefs.checked ) ? $('#txtRefnum').val() : "";
+
+	document.forms[0].DATA11.value = $('#txtImp').val();
+
+	document.forms[0].DATA12.value = $('input[name=rdoPzo]:checked').val(); // Plazo;
+
+	document.forms[0].DATA13.value = "PS";
+
+	document.forms[0].DATA14.value = "PS";
+
+	document.forms[0].DATA15.value = "PS";
+
+	document.forms[0].DATA16.value = "PS";
+
+	document.forms[0].DATA17.value = "AM";
+
+	document.forms[0].DATA18.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? "PRENDIDO" : "0";
+
+	document.forms[0].DATA19.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? $('#txtRFC').val() : "";
+
+	document.forms[0].DATA20.value = ( document.forms[0].checkrf && document.forms[0].checkrf.checked ) ? $('#txtIVA').val() : "";
+
+	document.forms[0].DATA21.value = $('#cboDep option:selected').val();
+
+	document.forms[0].DATA22.value = ( document.forms[0].checkNotif.checked ) ? $('#txtMail').val() : "";
+
+	document.forms[0].DATA23.value = ( document.forms[0].checkNotif.checked ) ? $('#txtMsg').val() : "";
+
+	document.forms[0].DATA24.value = otrosDatos[6];
+
+	document.forms[0].DATA25.value = ( document.forms[0].checkFrec.checked ) ? "on" : "";
+
+	document.forms[0].DATA26.value = "";
+
+	document.forms[0].DATA27.value = "";
+
+	ao = "OKINT";
+
+  } else if( tranType == "ORD" ) {
+
+    var otrosDatos = $('#cboDep option:selected').attr('datos').split('~');
+
+    document.forms[0].DATA1.value = $('#cboRetORD option:selected').val();
+
+	document.forms[0].DATA2.value = $('#cboDep option:selected').val();
+
+	document.forms[0].DATA3.value = $('#txtSuc').val();
+
+	document.forms[0].DATA4.value = $('#txtRem').val();
+
+	document.forms[0].DATA5.value = $('#txtRFCC').val();
+
+	document.forms[0].DATA6.value = $('#txtIns').val();
+
+	document.forms[0].DATA7.value = otrosDatos[5];
+
+	document.forms[0].DATA8.value = $('#txtImp').val();
+
+	document.forms[0].DATA9.value = ( document.forms[0].checkNotif.checked ) ? $('#txtMail').val() : "";
+
+	document.forms[0].DATA10.value = ( document.forms[0].checkNotif.checked ) ? $('#txtMsg').val() : "";
+
+	document.forms[0].DATA11.value = "";
+
+	document.forms[0].DATA12.value = "";
+
+	document.forms[0].DATA13.value = "";
+
+	document.forms[0].DATA14.value = "";
+
+	document.forms[0].DATA15.value = "";
+
+	document.forms[0].DATA16.value = "";
+
+	document.forms[0].DATA17.value = "";
+
+	document.forms[0].DATA18.value = "";
+
+	document.forms[0].DATA19.value = "";
+
+	document.forms[0].DATA20.value = "";
+
+	document.forms[0].DATA21.value = "";
+
+	document.forms[0].DATA22.value = "";
+
+	document.forms[0].DATA23.value = "";
+
+	document.forms[0].DATA24.value = "";
+
+	document.forms[0].DATA25.value = "";
+
+	document.forms[0].DATA26.value = "";
+
+	document.forms[0].DATA27.value = "";
+
+	ao = "OKOP";
+
+  } 
+
+  document.forms[0].DATA28.value = ( document.forms[0].checkProgramar.checked ) ? $('#txtFecha').val() : "";
+
+  parent.cargaDocN( 'ACCITRADE/confirma_otras_cuentas.html' );
+
+}
+
+
+
+function DoSubmit( value ) {
+
+  document.forms[0].EWFBUTTON.value = value;
+
+  document.forms[0].EWFBUTTON.name = 'EWF_BUTTON_'+value;
+
+  document.forms[0].submit();
+
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+
+
+
+  var ax=new Array("Transferencias");
+
+
+
+  $(document).ready(function(){
+
+  
+
+    msg1 = (language == 'eng') ? "You have to select the withdrawal account. Please verify." : "Es necesario seleccionar la cuenta retiro. Favor de verificar.";  
+
+	msg3 = (language == 'eng') ? "Enter a value in the field Amount.": "Digite un valor en el campo Importe.";
+
+	msg4 = (language == 'eng') ? "Amount should be different to zero.": "El importe debe ser mayor a cero.";
+
+	msg6 = (language == 'eng') ? "The entered field must be numeric. Please verify.": "Sólo se permiten datos numéricos en este campo. Favor de verificar.";
+
+	msg5 = (language == 'eng') ? "Invalid information in field Amount. Please verify.": "Información de Importe Invalida. Favor de verificar.";
+
+	msg11 = (language == 'eng') ? "Enter a value in the field Reference.": "Digite un valor en el campo Referencia.";
+
+	msgcal1 = (language == 'eng') ? "If you wish to schedule your transaction you should enter the date field.":"Si desea programar su transacción es necesario que introduzca la fecha.";
+
+	
+
+  
+
+    iniDateCal();
+
+	setCbosret();
+
+	setCbodepotras();
+
+	$('#cboRetTER, #cboRetINT, #cboRetORD, #cboRetACC').change( function(){ shareSelop(); });
+
+	$('#cboDep').change( function(){ showCboRet();toggleCurrency(); });
+
+	$('#txtImp').blur( function(){ changeImp(); });
+
+	$('#txtImp').mouseout( function(){ changeImp(); });
+
+	$('#txtImp').keypress( function( event ){ checkKey( event ); });
+
+	$('#txtImp').keyup( function( event ){ checkKey( event ); } );
+
+	$('#txtMsg').keypress( function(){ return setMaxLength(this,100) } );
+
+	$('#t30').mousemove( function(){ changeImp(); });
+
+	if( "" != "" )
+
+	  backData();
+
+	if( '' == 'E' ) {
+
+	  $('#mensajeError_contenido_div', window.parent.document).html( $('#idErr').html() );
+
+	  parent.$.modal({ opacity:60, overlayClose:false, flagDiv:true, widthDivIfrm:670 });
+
+	}
+
+	showtooltipCopy();
+
+	window.parent.redimencionarAncho();
+
+	window.parent.ajustar();
+
+  });
+
+  function modalHorario() {
+
+	if( tipo=="ORD" || tipo=="INT" ) {
+
+	  var datos = $('#Params').val().split('~');
+
+	  $('#horario').html( datos[0]+":"+datos[1]+" hrs. - "+datos[2]+":"+datos[3]+" hrs." );
+
+	  $('#mensajeError_contenido_div', window.parent.document).html( $('#divHorario').html() );
+
+	  parent.$.modal({ opacity:60, overlayClose:false, flagDiv:true, widthDivIfrm:670 });
+
+    }else
+
+      parent.$.modal({ opacity:60, overlayClose:false, flagDiv:false, widthDivIfrm:600, heightDivIfrm:400, srcIfrm:'../../bbAvatar/modal/fueraHorario.htm'})
+
+  }
+
+  function showSuc() {
+
+    parent.$.modal({ opacity:60, overlayClose:false, flagDiv:false, widthDivIfrm:600, heightDivIfrm:400, srcIfrm:'../../bbAvatar/modal/sucursales.htm'})
+
+  }
+
+  function showtooltipCopy(){$('.showtooltip-copy').hover(function(){$("#tail-tooltip").addClass("p_tooltipcopy");pos = $(this).offset();alto = $('#tooltip-copy').height()-3;ancho = $('#tooltip-copy').width()-35;$('#tooltip-copy').css({'top':(pos.top-alto)+'px','left':(pos.left-ancho)+'px'});$('#tooltip-copy').show();},function(){$('#tooltip-copy').hide();});}
+
+  
+
+  
+
+</script>
+
+
+
+
+
+<div id="divHorario" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+	<div class="panelIzEnca3_text2 padding0">Aviso importante</div><br/>
+
+	<div class="mensajeError_Fila2 color666">
+
+	  La operaci&oacute;n que intentas realizar se encuentra fuera de horario:
+
+	  <div id="horario" class="panelIzEnca3_text2">[HoraInicial]:[MinutosInicial]&nbsp;hrs.&nbsp;-&nbsp;[HoraFinal]:[MinutosFinal]&nbsp;hrs.</div><br />
+
+	  <div class="mensajeError_Fila3">
+
+		<div class="floatL"><input type="button" value="Cancelar" class="btnRJ86 CerrarVentanaEmergente" /></div>
+
+		<div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+	  </div>
+
+	</div>
+
+  </div>
+
+</div>
+
+<div id="idErr" class="displayN">
+
+  <div class="mensajeError_contenidoIn">
+
+    <div class="mensajeError_Fila1">
+
+	  <div class="mensajeError_titulo1">Disculpe, su operaci&oacute;n ha sido rechazada</div>
+
+
+
+	  <div class="saldos_btn2b" onclick="parent.document.getElementById('main').contentWindow.imprimirError();"></div>
+
+    </div>
+
+    <div class="mensajeError_Fila1_2">
+
+	  <div class="color666 paddingT5 paddingL25 f11">
+
+	    <br/>
+
+		<div id="me">Causa:&nbsp;</div>
+
+	  </div>
+
+    </div>
+
+
+
+    <div class="mensajeError_Fila2 color333 negrita paddingL25">&iquest;Qu&eacute; puedo hacer?</div>
+
+    <div class="mensajeError_Fila2 color666 paddingL25">
+
+      <br/>
+
+      Si deseas comun&iacute;cate a servicio a clientes
+
+	  al 1226 3990 (D.F y &Aacute;rea Metropolitana) &oacute; al<br/>
+
+      01 800 110 3990 (Del interior de la Rep&uacute;blica).<br/>
+
+
+
+	  Es importante tener a la mano el siguiente c&oacute;digo:
+
+	  <span id="ne" class="coloree2e24"></span>
+
+    </div>
+
+    <div class="mensajeError_Fila3">
+
+	  <div class="floatR"><input type="button" value="Continuar" class="btnAZ86 CerrarVentanaEmergente" /></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>parent.setFecha("30/03/12    14:31:38  ");
+
+if(typeof v_de !=="undefined"){
+
+	if (v_de == 1){alert("Para su mayor seguridad se deshabilitó la función de back, para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página.\n\n Esta Transacción no se efectuará, recuerde imprimir el comprobante de la transacción anterior ya efectuada."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>Para poder continuar operando elija del menú la opción deseada u oprima el botón(es) al final de la página. Recuerde imprimir el comprobante de la transacción anterior.</h4>"); document.write("</td></tr></table>");}
+
+    else {alert("Now for greater security the function of back has been disabled, to continue using other operations, select from the menu the option that you want to do or click the button at the end of the page. \n\nRemember to print the confirmation pages (voucher)."); document.writeln('<table width="75%" border="1" bgcolor="#FDF666">'); document.writeln("<tr><td>"); document.writeln("<h4>To continue operating, select from the menu the option that you want to do or click the button at the end of the page. \nRemember to print the voucher of the transaction that you performed.</h4>"); document.write("</td></tr></table>");}   
+
+    };
+
+	
+
+	a$Cont="143126  ";b$Cont="143138  "
+
+	//
+
+    </script>
+
+    
+
+<div id="t16" class="float-left fonttit">DEP&Oacute;SITO A ACCITRADE</div>
+
+<div id="t0" class="panelIzEnca3_text2 ancho100p">Transferencias AcciTrade</div>
+
+<div id="t1" class="color666 paddingT5 f11 ancho100p">
+
+  Selecciona una cuenta de retiro y una de dep&oacute;sito, indica los datos de la transferencia y da clic en &quot;Continuar&quot;.
+
+</div>        
+
+<div class="saldos_bloque3_2">
+
+
+
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+    <tr>
+
+      <td valign="top" class="borderRDotted ancho25p padding20 paddingL15"><span id="t2" class="f12">Cuentas</span></td>
+
+	  <td valign="top" class="padding20 paddingL15 paddingR15">
+
+		<div id="t3" class="negrita color333 f11 paddingB2">Cuenta retiro</div>
+
+		<select id="cboRetTER" class="ancho100p selectp1 cboRet"  SELECTED="PS"></select>
+
+		<select id="cboRetINT" class="ancho100p selectp1 displayN cboRet"  SELECTED="[SelecionadaComboCargo]"></select>
+
+		<select id="cboRetORD" class="ancho100p selectp1 displayN cboRet"  SELECTED="[SelecionadaComboCargo]"></select>
+
+
+
+		<select id="cboRetACC" class="ancho100p selectp1 displayN cboRet"  SELECTED="[SelecionadaComboCargo]"></select>
+
+		<!--<div id="t4" class="negrita color333 marginT20 f11 paddingB2">Cuenta dep&oacute;sito o beneficiario</div>-->
+
+		<select id="cboDep" class="ancho100p selectp1 displayN" SELECTED="PS"></select>
+
+        
+
+        <div class="color333 marginT20 f11 paddingB2">Cuenta AcciTrade  -  547001</div>
+
+		
+
+	  </td>
+
+    </tr>
+
+  </table>        	
+
+</div>
+
+<div class="saldos_bloque3_2">
+
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+    <tr>
+
+      <td id="tdTit" valign="top" class="borderRDotted ancho25p padding20 paddingL15"><span id="t5" class="f12">Datos de la<br />transferencia</span></td>
+
+      <td valign="top" class="padding20 paddingL15 paddingR15">
+
+	    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+	      <tr>
+
+		    <td id="tdImp" valign="top" class="padding0 ancho33p">
+
+
+
+			  <div id="divImp" class="floatL">
+
+			    <div class="paddingB2"><span id="t6" class="negrita color333 f11">Importe</span>&nbsp;<span id="titImp">MXN</span></div>
+
+			    <input id="txtImp" type="text" class="input ancho150" maxlength="14" />
+
+			  </div>
+
+			</td>
+
+			<td class="padding0 ancho20p tdHidden" valign="top">
+
+			  <div id="t9" class="negrita color333 f11 paddingB2">Tipo de cambio *</div>
+
+			  <div id="valTipcam"></div>
+
+			</td>
+
+			<td class="padding0 ancho33p" valign="top">
+
+
+
+			  <div id="t7" class="negrita color333 f11 paddingB2">Referencia num&eacute;rica</div>
+
+              <input id="txtImp2" type="text" class="input ancho150" maxlength="18"  onkeyup="javascript:teclea18(this.id);" />
+
+			  <div id="valImppesos"></div>
+
+			</td>
+
+		  </tr>
+
+		</table>
+
+	  </td>
+
+	</tr>
+
+  </table>
+
+  <div id="t11" class="mtp bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5 displayN">
+
+    * El tipo de cambio puede variar al momento de la aplicaci&oacute;n de la operaci&oacute;n
+
+  </div>
+
+
+
+</div>
+
+<div class="saldos_bloque3_2 displayN adOpt INT">
+
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos2">
+
+    <tr>
+
+      <td valign="top" class="borderRDotted ancho25p padding20 paddingL15"><span id="t31" class="f12">Plazo</span></td>
+
+	  <td valign="top" class="padding20 paddingL15 paddingR15">
+
+		<div id="t32" class="negrita color333 f11 paddingB5">Selecciona el plazo en que deseas se realice tu pago:</div>
+
+		<div class="ancho50p floatL"><input type="radio" name="rdoPzo" value="0" checked />&nbsp;<label id="t33" class="f11 color666">Mismo d&iacute;a</label></div>
+
+
+
+		<div class="ancho50p floatL"><input type="radio" name="rdoPzo" value="24" />&nbsp;<label id="t34" class="f11 color666">D&iacute;a siguiente</label></div>
+
+	  </td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+<div class="saldos_bloque3_2 bgF1F2F2">
+
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+    <tr>
+
+	  <td valign="top" class="borderRDotted ancho25p padding20 paddingL15"><span class="negrita color333 f12" id="t9">Opciones<br />adicionales</span></td>
+
+
+
+      <td valign="top" class="padding20 paddingL15 paddingR15"><div  class="ancho100p overflow borderBDotted paddingB10 marginT10 f11">
+
+        <input id="checkProgramar" name="checkProgramar" type="checkbox" onclick="activaCheck('checkProgramar','Programar');toggleChecks('checkProgramar','checkFrec');" />&nbsp;<label id="t10" class="f11 color666">Programar a fecha futura</label>
+
+          <div id="Programar" class="displayN paddingT10">
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tablaSaldos3">
+
+
+
+              <tr>
+
+                <td valign="top" class="ancho50p tablaSaldos2_bordeR calendario">
+
+                  <div class="calendario">
+
+				  <div id="t11" class="negrita color333 f11 paddingB2">Fecha</div>
+
+				  <input id="txtFecha" class="yearpicker txtCal" type="text" readonly="readonly" />
+
+				  </div>
+
+                </td>
+
+                <td valign="top" class="ancho50p">
+
+                  <div id="t12" class="negrita color333 f11 paddingB2">Hora</div>
+
+                  <select id="cboHrs" onchange="hourChanged();"></select>&nbsp;:&nbsp;<select id="cboMin"></select>&nbsp;hrs
+
+                </td>
+
+
+
+              </tr>
+
+            </table>
+
+          </div>
+
+    </div>
+
+        <div id="divFrec2" class="ancho100p overflow marginT10 f11">
+
+          <input id="checkFrec" name="checkFrec" type="checkbox" onclick="toggleChecks('checkFrec','checkProgramar');" />&nbsp;<label id="t13" class="f11 color666">Guardar como operaci&oacute;n frecuente</label>
+
+      </div>
+
+      </td>
+
+
+
+    </tr>
+
+  </table>
+
+  <div id="t14" class="bgF1F2F2 borderTDotted ancho100p clear overflow center f11 paddingB5 paddingT5">
+
+	Las operaciones programadas no pueden ser almacenadas como frecuentes
+
+  </div>  
+
+</div>
+
+<div class="marginT20 overflow">
+
+  <input type="button" id="t15" class="btnAZ86 floatR" value="Continuar" onclick="validateForm();" />
+
+</div>
+
+
+
+<table id="tooltip-copy" cellpadding="0" cellspacing="0"><tr><td><div id="t36" class="tooltipcopy">Si no puedes ver las cuentas que ya diste de alta previamente, da click en esta liga<br />para que tus cuentas sean actualizadas y puedas realizar tus operaciones.</div><div id="tail-tooltip"></div></td></tr></table>
+
+
+
+<iframe id="ndw" src="../../spanishdir/cuentas.html" style="display:none; width:500px; height:500px;"></iframe>
+
+
+
+
+
+<!---->
+
+
+
+<input type="hidden" name="bandcf" value="" />
+
+<input type="hidden" name="FD2" value="" />
+
+<input type="hidden" name="DATA1" value="" />
+
+<input type="hidden" name="DATA2" value="" />
+
+<input type="hidden" name="DATA3" value="" />
+
+<input type="hidden" name="DATA4" value="" />
+
+<input type="hidden" name="DATA5" value="" />
+
+<input type="hidden" name="DATA6" value="" />
+
+
+
+<input type="hidden" name="DATA7" value="" />
+
+<input type="hidden" name="DATA8" value="" />
+
+<input type="hidden" name="DATA9" value="" />
+
+<input type="hidden" name="DATA10" value="" />
+
+<input type="hidden" name="DATA11" value="" />
+
+<input type="hidden" name="DATA12" value="" />
+
+<input type="hidden" name="DATA13" value="" />
+
+<input type="hidden" name="DATA14" value="" />
+
+<input type="hidden" name="DATA15" value="" />
+
+<input type="hidden" name="DATA16" value="" />
+
+<input type="hidden" name="DATA17" value="" />
+
+<input type="hidden" name="DATA18" value="" />
+
+<input type="hidden" name="DATA19" value="" />
+
+<input type="hidden" name="DATA20" value="" />
+
+<input type="hidden" name="DATA21" value="" />
+
+<input type="hidden" name="DATA22" value="" />
+
+<input type="hidden" name="DATA23" value="" />
+
+
+
+<input type="hidden" name="DATA24" value="" />
+
+<input type="hidden" name="DATA25" value="" />
+
+<input type="hidden" name="DATA26" value="" />
+
+<input type="hidden" name="DATA27" value="" />
+
+<input type="hidden" name="DATA28" value="" />
+
+<input type="hidden" id="lngApp" name="lngApp" value="SPANISH" />
+
+<input type="hidden" id="Params" name="Params" value="" />
+
+<input type="hidden" name="EWFBUTTON" value="" />
+
+
+
+<input id="omtmodalvalue" type="hidden" value="Transferencias y Pagos Otras Cuentas|transfoctas.htm" />
+
+</div><p></p>
+
+
+
+</form>
+
+</body>
+
+</html>
+

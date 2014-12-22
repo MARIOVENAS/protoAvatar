@@ -1,0 +1,1187 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/common/JPPTemp.css"/>      
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/css/widgets/jquery.qtipW3.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/latamCommon_light.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/localStyles.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../JFP/regional/css/apps/regional_overlay.css"/>
+       
+    <script type="text/javascript" src="../../../../JFP/js/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/script.js"></script>
+    <script type="text/javascript" src="../../../../JFP/js/jquery/plugins/plugins.js"></script>
+     <script type="text/javascript">
+			<!--
+			
+			var es = new Array('BRANCHES','CONTACT US','SEND A MESSAGE','CALL US','QUEREMOS ESCUCHARTE','HELP','SEARCH...','GO','Welcome','Last access:','at','by','My Profile','My BancaNet','Transfers and Payments','Investments','AcciTrade','AFORE Banamex','Services','Go to Banamex.com','Sign off','PRIVACY AND USE RELATED TERMS AND CONDITIONS','D.R. &reg; Copyright 2013, All Rights Reserved. Banco Nacional de M&eacute;xico, SA member of Grupo Financiero Banamex.<br />Isabel la Cat&oacute;lica 44. Col. Centro Hist&oacute;rico. Del. Cuauht&eacute;moc. C.P. 06000, M&eacute;xico, Distrito Federal, M&eacute;xico.');
+			
+	es.push('Investments with interest payment','Print','Help','Select the transaction type, enter the investment data and click "Continue".','Transaction type:','Make a deposit into your investment','Make a withdrawal from your investment','Withdrawal account:','Select an option','Investment contract:','Select an option','Investment type:','Invest with a new term','Increase an existing investment','See investment numbers','See investment numbers','Investment instrument:','Select an option','Term:','Deposit amount MXN:','View terms and minimum amounts','Instructions at the end of the term:','Select an option','Deposit account:','Select an option','Save as frequent operation','CONTINUE','Investment contract:','Select an option','Investment number:','See investment numbers','Type of redemption','Withdraw total amount','View terms and minimum amounts','Amount to withdraw MXN','Deposit account:','Select an option','Save as frequent operation','CONTINUE','Confirm the data you entered, and if it is correct, click on "Accept" to send your operation.','Transaction type:','Increase','Withdrawal account:','Balance (MXN):','Investment contract:','Investment instrument:','Term in days:','28 days','Investment number:','Instructions at the end of the term:','Capital reinvestment','Deposit account at maturity:','Amount MXN:','Frequent operation:','ACCEPT','Return','Confirm the investment data for its application.','Transaction type:','Decrease','Withdrawal account:','Investment instrument:','Term in days:','90 days','Investment number:','Type of redemption:','Partial','Amount MXN:','Instructions at the end of the term:','Capital reinvestment','Deposit account at maturity:','Deposit account:','Balance (MXN):','Frequent operation:','ACCEPT','Return','Your withdrawal has been applied.','Transaction type:','Decrease','Withdrawal account:','Investment instrument:','Term in days:','90 days','Investment number:','Type of redemption:','Partial','Amount MXN:','Instructions at the end of the term:','Capital reinvestment','Deposit account at maturity:','Deposit account:','Balance (MXN):','Frequent operation:','Status:','Applied','Authorization number:','Your deposit has been applied.','Transaction type:','Increase','Withdrawal account:','Balance (MXN):','Investment contract:','Investment instrument:','Term in days:','28 days','Investment number:','Instructions at the end of the term:','Capital reinvestment','Deposit account at maturity:','Amount MXN:','Frequent operation:','Status:','Applied','Authorization number:');
+			
+			$(document).ready(function(){
+				//setTimeout(function(){top.ajustarP();},1000);
+				setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},1000);
+				var lanFolderAv;
+
+				var lanFolderEd;
+
+				var c_lang = Get_Cookie( 'c_lang' );
+		
+				isEnglishSel = ( c_lang=='eng' );
+				if( isEnglishSel && !isAjaxInProcess ) {
+					
+					$('#p43').hide();
+					$('#t43').show();
+					$('#p56').hide();
+					$('#t56').show();
+					$('#p25').hide();
+					$('#t25').show();
+			
+				}
+				
+			});
+			
+			
+			-->
+</script>
+
+<script type="text/javascript">
+                            $(document).ready(function(){
+
+                                $('a.toggleActive').live('click', function(event){
+                                        event.stopPropagation();
+                                         var $this = $(this),
+                                         dropdown = $this.parent().find('.flyout');
+                                        $this.toggleClass('active');
+                                        dropdown.slideToggle();
+                                        $('.flyout').not(dropdown).slideUp();
+                                        $('#header nav a').not($this).removeClass('active');
+                                    });
+                                    $('body').live('click', function() {
+                                        $('.flyout').slideUp();
+                                        $('.toggleActive').removeClass('active');
+                                    });
+                                    $('nav a').live('click', function(){
+                                        var $this = $(this),
+                                        others = $('#nav_home').find('a').not($this);
+                                        if($this.hasClass('active')){
+                                        return false;
+                                        }else{
+                                                $this.toggleClass('active');
+                                            }
+                                    others.removeClass('active');
+                                }); 
+
+                            });
+
+                            </script>
+                            
+                            
+<style>
+	.contaralturaie {
+		*margin-bottom:5px !important;
+	}
+</style>
+
+</head>
+
+<body>
+<div class="bg_demo cont_demo margintop0" id="subapp-box" style="height:100% !important;">
+
+				<div class="cH-appPanelHead float-left">
+					<h3 id="t23">Inversiones con pago de intereses</h3>
+				</div>
+				<div class="margin-top6 titulo ancho100">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="liga">
+                        <a href="javascript:void(0);" onClick="javascript:Layuda1();" class="float-left flechaLinksOpcoes" id="p25">&nbsp;Ayuda</a>
+                        <a href="javascript:void(0);" onClick="javascript:Layuda1_2();" class="float-left flechaLinksOpcoes displayNone" id="t25">&nbsp;Ayuda</a>
+                        
+                        </div>
+				</div>
+                <div class="margin-top6 titulo ancho100 margin-right10 displayNone" id="imprimir">
+						<span class="flechaGris float-left">&nbsp;</span>
+						<div class="floatLI" id="liga"><a href="javascript:void(0);" onClick="javascript:Layuda2();" class="float-left flechaLinksOpcoes" id="t24">&nbsp;Imprimir</a></div>
+				</div>
+				<div class="clear"></div>
+                <div id="titulo">
+				<p class="topNotes" id="t26">Selecciona el tipo de operaci&oacute;n, completa los datos de la inversi&oacute;n y da clic en "Continuar".</p>	
+				<div class="border-top"></div>
+                
+				<div class="width146">
+					<div class="form-row2 float-left sinMarginRight">
+						<label class="for-table2 sinBold" id="t27">Tipo de operaci&oacute;n:</label>
+						<label class="for-table2 radioR"><input type="radio" name="typeOperation" id="typeOperation1" onClick="showS1_1();" /></label>
+						<span class="float-left" id="t28">Realizar un dep&oacute;sito a tu inversi&oacute;n</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row2 float-left margin-left13">
+						<label class="for-table2 radioR"><input type="radio" name="typeOperation" id="typeOperation2" onClick="showS2_1();" /></label>
+						<span class="float-left" id="t29">Realizar un retiro de tu inversi&oacute;n</span>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+                    <div class="border-top"></div>
+                 </div><!-- Fin Titulo -->
+                 
+                 <div id="principal1">
+                    <div id="step1_1" class="displayNone">
+					<div class="form-row2">
+						<label class="for-table2 sinBold" id="t30">Cuenta retiro:</label>
+						<select class="width419 margin-topIE7" id="select1_1" onChange="val1=this.value; showS1_2();">
+                        	<option selected="selected" value="0" id="t31">Selecciona una opci&oacute;n</option>
+							<option value="1">Mi inversi&oacute;n Perfiles1 - Cuenta Perfiles - MXN - 00502: $ 16,500.00</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                    </div><!--End step 1_1 -->
+                    
+                    <div id="step1_2" class="displayNone">
+					<div class="form-row2">
+						<label class="for-table2 sinBold" id="t32">Contrato de inversi&oacute;n:</label>
+						<select class="width224 margin-topIE7" id="select1_2" onChange="val2=this.value; showS1_3();">
+                        	<option selected="selected" value="0" id="t33">Selecciona una opci&oacute;n</option>
+							<option value="1">Mi inversi&oacute;n - 00010 - Inv. Plazo MXN</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                    </div><!--End step 1_2 -->
+                    
+                    <div id="step1_3" class="displayNone">
+					<div class="form-row2">
+						<label class="for-table2 sinBold" id="t34">Tipo de inversi&oacute;n:</label>
+						<label class="for-table2 radioR">
+                        <input type="radio" name="typeInvestment" id="typeInvestment1" onClick="showS1_4();" />
+                        </label>
+                        <input type="radio" name="typeInvestment" id="typeInvestment3" />
+						<span class="float-left" id="t35">Invertir un nuevo plazo</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table2 height20">&nbsp;</label>
+						<label class="for-table2 radioR"><input type="radio" name="typeInvestment" id="typeInvestment2" onClick="showS1_42();" /></label>
+						<span class="float-left" id="t36">Incrementar inversi&oacute;n existente</span>
+						<input type="text" class="width68 margin-left10 float-left F0F0F0" onKeyUp="javascript:teclea7(this.id);" id="inver" onBlur="showS1_43();" onChange="showS1_43();" disabled="disabled" value=""  />
+						<div id="flechaLinks" class="float-left margin-left10">
+							<span class="flechaGris float-left">&nbsp;</span>
+							<span id="existenteL1" class="link-disabled"><div id="t37" class="width-180">Ver n&uacute;meros de inversi&oacute;n</div></span>
+                            <span id="existenteL2" class="displayNone"><a id="t38" href="javascript:top.VerNum(); tModal();">Ver n&uacute;meros de inversi&oacute;n</a></span>			
+                           <script type="text/javascript">
+						   function tModal(){
+							top.$('.ventanaEmergente').css({
+							'top': 80,
+							'height':500
+							
+							   }, 600);
+							}
+							function MOtra2(){
+								//Funcion que se ejecuta despues de lanzar la modal!
+								if($("#typeInvestment2").is(':checked')){ 
+									//alert('Primera')
+									showS1_43();
+									}
+								else{
+									//alert('Segunda')
+									$('#inver2').val('900001')
+									showS2_3();
+									top.$.modal.close();
+									}
+							}
+						   </script>
+						</div>
+						<div class="clear"></div>
+					</div>
+                    </div><!--End step 1_3 -->
+                    
+                    <div id="step1_4" class="displayNone">
+					<div class="form-row2">
+						<label class="for-table2 sinBold" id="t39">Instrumento de inversi&oacute;n:</label>
+						<select class="width224 margin-topIE7" id="select1_3" onChange="val3=this.value; showS1_5();">
+							<option selected="selected" value="0" id="t40">Selecciona una opci&oacute;n</option>
+                            <option value="1">Pagar&eacute; M.N.</option>
+							<option value="1">CEDES M.N.</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                    </div><!--End step 1_4 -->
+                    
+                    <div id="step1_5" class="displayNone">
+					<div class="form-row">
+						<label class="for-table2" id="t41">Plazo:</label>
+						<div class="float-left">
+							<input type="text" value="" onChange="showS1_6();" readonly id="cale1" class="width68 float-left calendario1 margin-topIE7">                               
+							<a href="#" class="icon-calendar margin-left10 otra_c1 posRelative top2"></a>
+						</div>						
+						<div class="clear"></div>	
+					</div>
+                    </div><!--End step 1_5 -->
+                    
+                    <div id="step1_6" class="displayNone">
+					<div class="form-row">
+						<label class="for-table2 sinBold" id="t42">Importe a depositar MXN:</label>
+						<input type="text" class="float-left width68" onKeyUp="javascript:teclea7(this.id);" id="import1" value="11,350.00"/>
+						<!-- span class="nota-style float-left margin-left10">(Minimum amount U$S 500)</span -->
+						<div id="flechaLinks" class="float-left margin-left10">
+							<span class="flechaGris float-left">&nbsp;</span>
+							<a href="javascript:Link1();" id="p43">Consulta plazos e importes m&iacute;nimos</a>
+                            <a href="javascript:Link2();" id="t43" class="displayNone">Consulta plazos e importes m&iacute;nimos</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row2 ">
+						<label class="for-table2 sinBold" id="t44">Instrucciones al t&eacute;rmino del plazo:</label>
+						<select class="width302 margin-topIE7" id="select1_4" onChange="val4=this.value; showS1_7();">
+                        	<option selected="selected" value="0" id="t45">Selecciona una opci&oacute;n</option>
+							<option value="1">Reinversi&oacute;n de capital</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                    <div id="ext6" class="clear padding15IE78" style="height: 1px ! important; line-height: 1px ! important;"></div>
+                    </div><!--End step 1_6 -->
+                    
+                    
+                    <div id="step1_7" class="displayNone">
+					<div class="form-row2 padding15IE78">
+						<label class="for-table2 sinBold" id="t46">Cuenta dep&oacute;sito:</label>
+						<select class="width302 margin-topIE7" id="select1_5" onChange="val5=this.value; showS1_8();">
+                        	<option selected="selected" value="0" id="t47">Selecciona una opci&oacute;n</option>
+							<option value="1">Mi cl&aacute;sica - Cl&aacute;sica - MXN - 00199: $ 45,020.88</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+				</div>
+                </div><!--End step 1_7 -->
+                
+                
+                <div id="step1_8" class="displayNone">
+				<div class="border-top"></div>
+				<div class="form-row2 margin-bottom0 topNotes">
+					<label class="for-table2 checkR"><input class="check" type="checkbox" name="save" id="save1"/></label>
+					<span id="t48">Guardar como operaci&oacute;n frecuente</span>
+					<div class="clear"></div>
+				</div>
+                
+                
+				<div class="cF-sideBySide cF-bottomNav" style="margin-top:0px !important;">
+					<div class="width146 float-left">&nbsp;</div>
+					<ul class="cN-primaryNav paddingL148">
+						<li class="cM-spriteBase cN-primaryNavButton"><a href="javascript:void(0);" onClick="javascript:continuar1();" id="t49">CONTINUAR</a></li>
+					</ul>
+				</div>
+                
+                </div><!--End step 1_8 -->
+                
+                 <div class="border-top displayNone" id="punteada1"></div>
+                 <div id="step1_52" class="displayNone"><br /><br /><br /><br /><br /><br /><br /></div>
+				<div class="clear"></div>
+                
+                </div><!-- Principal -->
+                
+                <div id="principal2">
+                
+                <div class="width146">
+                <div id="step2_1" class="displayNone">
+                	<div class="form-row2">
+						<label class="for-table2 sinBold" id="t50">Contrato de inversi&oacute;n:</label>
+						<select class="width263 margin-topIE7" id="select2_1" onChange="val6=this.value; showS2_2();">
+                        	<option selected="selected" value="0" id="t51">Selecciona una opci&oacute;n</option>
+							<option value="1">Mi inversi&oacute;n - Inv. Plazo - MXN - 00010</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                </div><!--End step 2_1 -->
+                
+                <div id="step2_2" class="displayNone">
+					<div class="form-row">
+						<label class="for-table2 sinBold" id="t52">N&uacute;mero de inversi&oacute;n:</label>
+						<input type="text" class="float-left width68" onKeyUp="javascript:teclea7(this.id);" id="inver2" onChange="javascript:showS2_3();" value="" onBlur="javascript:showS2_3();"/>
+						<div class="float-left merginleft10 margin-left10" id="flechaLinks">
+							<span class="flechaGris float-left">&nbsp;</span>
+							<a href="javascript:top.VerNum(); tModal();" id="t53">Ver n&uacute;meros de inversi&oacute;n</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+                 </div><!--End step 2_2 -->
+                 
+                 <div id="step2_3" class="displayNone">
+					<div class="form-row2">
+						<label class="for-table2 sinBold" id="t54">Tipo de retiro:</label>
+						<label class="for-table2 radioR"><input type="radio" name="typeRedemption" id="typeRedemption1" onClick="javascript:showS2_4();"></label>
+                        <input type="radio" name="typeRedemption" id="typeRedemption3" />
+						<span class="float-left" id="t55">Retirar importe total</span>
+						<div class="float-left merginleft10 margin-left10" id="flechaLinks">
+							<span class="flechaGris float-left">&nbsp;</span>
+							<a href="javascript:Link1();" id="p56">Consulta plazos e importes m&iacute;nimos</a>
+                            <a href="javascript:Link2();" id="t56" class="displayNone">Consulta plazos e importes m&iacute;nimos</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+                    
+					<div class="form-row margin-bottom20">
+						<label class="for-table2 sinBold">&nbsp;</label>
+						<label class="for-table2 radioR"><input type="radio" name="typeRedemption" id="typeRedemption2" onClick="javascript:showS2_42();"></label>
+						<span class="float-left" id="t57">Importe a retirar MXN</span>
+						<input type="text" class="width68 margin-left10 float-left numeros F0F0F0" disabled="disabled" onKeyUp="javascript:teclea7(this.id);" id="import2" value=" 34,201.42"/>
+						<div class="clear"></div>
+					</div>
+                  </div><!--End step 2_3 -->
+                  
+                  <div id="step2_4" class="displayNone">
+					<div class="form-row2 sinMarginRight">
+						<label class="for-table2 sinBold" id="t58">Cuenta dep&oacute;sito:</label>
+						<select class="width302 margin-topIE7" id="select2_2" onChange="val7=this.value; showS2_5();">
+                        	<option selected="selected" value="0" id="t59">Selecciona una opci&oacute;n</option>
+							<option value="1">Otra cl&aacute;sica - Cl&aacute;sica - MXN - 00201</option>
+						</select>
+						<div class="clear"></div>
+					</div>
+                 </div><!-- End step 2_4 --> 
+                 
+                 <div id="step2_5" class="displayNone">
+					<div class="border-top"></div>
+					<div class="form-row2 bottomNotes margin-bottom5">
+						<label class="for-table2 checkR"><input type="checkbox" class="check" id="frequentOperation"></label>
+						<span id="t60">Guardar como operaci&oacute;n frecuente</span>
+						<div class="clear"></div>
+					</div>
+                	</div><!-- End step 2_5 -->    
+				</div><!-- ancho -->
+                
+                <div id="step2_52" class="displayNone">
+                <div class="cF-sideBySide cF-bottomNav paddingL148" style="margin-top:10px !important;">
+					<div class="float-left">&nbsp;</div>
+					<ul class="cN-primaryNav width146">
+						<li class="cM-spriteBase cN-primaryNavButton"><a href="javascript:void(0);" onClick="javascript:continuar2();" id="t61">CONTINUAR</a></li>
+						
+					</ul>
+				</div> 
+                </div><!--End step 2_52 -->
+                
+                <div class="border-top displayNone margin-top15" id="punteada2"></div>
+				<div class="clear"></div>
+                
+                </div><!-- Principal2 -->
+                
+                
+                <!-- Continuar 1-->
+                <div id="continuar1" class="displayNone">
+				<p class="topNotes" id="t62">Confirma los datos que ingresaste y si son correctos, haz clic en "Aceptar" para enviar tu operaci&oacute;n.</p>	
+				<div class="border-top" style="height:1px;"></div>
+                <div class="clear padding15IE78_2" style="height: 1px ! important; line-height: 1px ! important;"></div>
+				<div class="width146">
+					<div class="form-row">
+						<label class="for-table sinBold" id="t63">Tipo de operaci&oacute;n:</label>
+						<span class="float-left" id="t64">Incremento</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t65">Cuenta retiro:</label>
+						<span>Mi inversi&oacute;n Perfiles1 - Cuenta Perfiles - MXN - 00502</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t66">Saldo (MXN):</label>
+						<span>$ 16,500.00</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t67">Contrato de inversi&oacute;n:</label>
+						<span>Mi inversi&oacute;n - 00010 - Inv. Plazo MXN</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t68">Instrumento de inversi&oacute;n:</label>
+						<span>Pagar&eacute; M.N.</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t69">Plazo en d&iacute;as:</label>
+						<span id="t70">28 d&iacute;as</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t71">N&uacute;mero de inversi&oacute;n:</label>
+						<span>900001</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t72">Instrucciones al t&eacute;rmino del plazo:</label>
+						<span id="t73">Reinversi&oacute;n de capital</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row padding15IE78">
+						<label class="for-table sinBold" id="t74">Cuenta dep&oacute;sito al vencimiento:</label>
+						<span>Mi cl&aacute;sica - Cl&aacute;sica - MXN - 00199</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row padding15IE78">
+						<label class="for-table sinBold" id="t75">Importe MXN:</label>
+						<span>$ 11,350.00</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row margin-bottom0">
+						<label class="for-table sinBold" id="t76">Operaci&oacute;n frecuente:</label>
+						<span>No</span>
+						<div class="clear"></div>
+					</div>
+				<div class="cF-sideBySide cF-bottomNav paddingL148 marginT10">
+					<div class="width146 float-left">&nbsp;</div>
+					<ul class="cN-primaryNav">
+						<li class="cM-spriteBase cN-primaryNavButton"><a href="javascript:void(0);" onClick="javascript:aceptar1();" id="t77">ACEPTAR</a></li>
+						<li>
+						<div id="flechaLinks">
+							<span class="flechaazul float-left"></span>
+							<a class="sinBold" href="javascript:void(0);" onClick="javascript:regresar1_1();" id="t78">Regresar</a>
+						</div></li>								
+					</ul>
+				</div> 
+				<div class="clear"></div>
+                </div>
+                </div><!-- Continuar 1-->
+                
+                 <!-- Continuar 2-->
+                <div id="continuar2" class="displayNone">
+                
+                <p class="topNotes" id="t79">Confirma los datos de la inversi&oacute;n para su aplicaci&oacute;n.</p>	
+				<div class="border-top"></div>
+				<div class="width146">
+					<div class="form-row">
+						<label class="for-table" id="t80">Tipo de operaci&oacute;n:</label>
+						<span id="t81">Decremento</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t82">Cuenta retiro:</label>
+						<span>Mi inversi&oacute;n - Inv. Plazo - MXN - 00010</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t83">Instrumento de inversi&oacute;n:</label>
+						<span>Pagar&eacute; M.N.</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t84">Plazo en d&iacute;as:</label>
+						<span id="t85">90 d&iacute;as</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t86">N&uacute;mero de inversi&oacute;n:</label>
+						<span>700002</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t87">Tipo de retiro:</label>
+						<span id="t88">Parcial</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t89">Importe MXN:</label>
+						<span>$ 34,201.42</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t90">Instrucciones al t&eacute;rmino del plazo:</label>
+						<span id="t91">Reinversi&oacute;n de capital</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row padding15IE78">
+						<label class="for-table" id="t92">Cuenta dep&oacute;sito al vencimiento:</label>
+						<span>Mi cl&aacute;sica - Cl&aacute;sica - 00199 - MXN</span>
+						<div class="clear"></div>
+					</div>
+                     <div class="clear padding15IE78" style="height: 1px ! important; line-height: 1px ! important;"></div>
+					<div class="border-top"></div>
+					<div class="form-row">
+						<label class="for-table" id="t93">Cuenta de dep&oacute;sito:</label>
+						<span>Otra cl&aacute;sica - Cl&aacute;sica - MXN - 00201</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t94">Saldo (MXN):</label>
+						<span>$ 9,312.15</span>
+						<div class="clear"></div>
+					</div>
+					<div class="border-top"></div>
+					<div class="form-row margin-bottom5">
+						<label class="for-table" id="t95">Operaci&oacute;n frecuente:</label>
+						<span>No</span>
+					</div>	
+				</div>
+				<div class="cF-sideBySide cF-bottomNav paddingL148 marginT10">
+					<ul class="cN-primaryNav">
+						<li class="cM-spriteBase cN-primaryNavButton"><a href="javascript:void(0);" onClick="javascript:aceptar2();" id="t96">ACEPTAR</a></li>	
+						
+						<li class="">
+							<div id="flechaLinks">
+								<span class="flechaazul float-left"></span>
+								<a class="sinBold" href="javascript:void(0);" onClick="javascript:regresar2_1();" id="t97">Regresar</a>
+							</div>
+						</li>
+					</ul>
+				</div> 
+				<div class="clear"></div>
+                
+                </div><!-- Continuar 2-->
+                
+                <div id="aceptar2" class="displayNone"><!-- Aceptar2 -->
+                
+                <div class="clear"></div>
+				<div class="border-top"></div>
+				<div class="greenCheck"></div>
+				<p class="sinMarginTop topNotes margin-left17" id="t98">Tu retiro ha sido aplicado.</p>
+				<div class="clear"></div>
+				<div class="border-top"></div>
+				<div class="width146">
+					<div class="form-row">
+						<label class="for-table" id="t99">Tipo de operaci&oacute;n:</label>
+						<span id="t100">Decremento</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t101">Cuenta retiro:</label>
+						<span>Mi inversi&oacute;n - Inv. Plazo - MXN - 00010</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t103">Plazo en d&iacute;as:</label>
+						<span id="t104">90 d&iacute;as</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t105">N&uacute;mero de inversi&oacute;n:</label>
+						<span>700002</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t106">Tipo de retiro:</label>
+						<span id="t107">Parcial</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t108">Importe MXN:</label>
+						<span>$ 34,201.42</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t109">Instrucciones al t&eacute;rmino del plazo:</label>
+						<span id="t110">Reinversi&oacute;n de capital</span>
+						<div class="clear"></div>
+					</div>	
+					<div class="form-row padding15IE78">
+						<label class="for-table" id="t111">Cuenta dep&oacute;sito al vencimiento:</label>
+						<span>Mi cl&aacute;sica - Cl&aacute;sica - 00199 - MXN</span>
+						<div class="clear"></div>
+					</div>
+                    <div class="clear padding15IE78" style="height: 1px ! important; line-height: 1px ! important;"></div>
+					<div class="border-top"></div>
+					<div class="form-row">
+						<label class="for-table" id="t112">Cuenta de dep&oacute;sito:</label>
+						<span>Otra cl&aacute;sica - Cl&aacute;sica - MXN - 00201</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table" id="t113">Saldo (MXN):</label>
+						<span>$ 9,312.15</span>
+						<div class="clear"></div>
+					</div>
+					<div class="border-top"></div>
+					<div class="form-row">
+						<label class="for-table" id="t114">Operaci&oacute;n frecuente:</label>
+						<span>No</span>
+						<div class="clear"></div>
+					</div>
+					<div class="border-top"></div>
+					<div class="form-row">
+						<label class="for-table" id="t115">Estatus:</label>
+						<span id="t116">Aplicado</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row margin-bottom18">
+						<label class="for-table sinBold" id="t117">N&uacute;mero de autorizaci&oacute;n:</label>
+						<span>160378</span>
+						<div class="clear"></div>
+					</div>
+					<div class="border-top"></div>
+				</div>
+                </div> <!-- Aceptar 2 -->
+                
+                <div id="aceptar1" class="displayNone"><!-- Aceptar1 -->
+                
+				<div class="border-top"></div>
+				<div class="greenCheck"></div>
+				<p class="topNotes margin-left17" id="t118">Tu dep&oacute;sito ha sido aplicado.</p>
+				<div class="border-top"></div>
+                
+				<div class="width146">
+					<div class="form-row">
+						<label class="for-table sinBold" id="t119">Tipo de operaci&oacute;n:</label>
+						<span id="t120">Incremento</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t121">Cuenta retiro:</label>
+						<span>Mi inversi&oacute;n Perfiles1 - Cuenta Perfiles - MXN - 00502</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t122">Saldo (MXN):</label>
+						<span>$ 16,500.00</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t123">Contrato de inversi&oacute;n:</label>
+						<span>Mi inversi&oacute;n - 00010 - Inv. Plazo MXN</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t124">Instrumento de inversi&oacute;n:</label>
+						<span>Pagar&eacute; M.N.</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t125">Plazo en d&iacute;as:</label>
+						<span id="t126">28 d&iacute;as</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t127">Nuevo n&uacute;mero de inversi&oacute;n:</label>
+						<span>900001</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row padding15IE78">
+						<label class="for-table sinBold" id="t128">Instrucciones al t&eacute;rmino del plazo:</label>
+						<span id="t129">Reinversi&oacute;n de capital</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row padding15IE78">
+						<label class="for-table sinBold" id="t130">Cuenta dep&oacute;sito al vencimiento:</label>
+						<span>Mi cl&aacute;sica - Cl&aacute;sica - MXN - 00199</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row padding15IE78">
+						<label class="for-table sinBold" id="t131">Importe MXN:</label>
+						<span>$ 11,350.00</span>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="border-top"></div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t132">Operaci&oacute;n frecuente</label>
+						<span>No</span>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="border-top"></div>
+					<div class="form-row">
+						<label class="for-table sinBold" id="t133">Estatus</label>
+						<span id="t134">Aplicado</span>
+						<div class="clear"></div>
+					</div>
+					<div class="form-row margin-bottom20">
+						<label class="for-table sinBold" id="t135">N&uacute;mero de autorizaci&oacute;n:</label>
+						<span>10040586</span>
+						<div class="clear"></div>
+					</div>
+					<div class="border-top"></div>
+                </div><!-- Aceptar -->
+                
+                
+                
+                </div>
+                
+                
+						
+<!-- Script para radio buttons y checkboxs-->
+        <script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		var diasSemana = ['D','L','M','M','J','V','S'];
+			    var Meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+			    var MesesShort = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];		
+				if(top.language=="eng") {
+					diasSemana = ['S','M','T','W','Th','F','Sa'];	
+					Meses = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+					MesesShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+				}
+				$('.calendario1,.calendario2').datepicker({
+					dayNamesMin: diasSemana,
+					monthNames: Meses,
+					monthNamesShort: MesesShort,
+					beforeShow: function(){
+						$(this).removeClass('ui-corner-all');
+						
+					},
+					showAnim: '',
+					showOtherMonths: true,
+					selectOtherMonths: false,
+					minDate: 'y',
+					maxDate: '30d',
+					dateFormat:"d M yy",
+					disabled: false
+				});
+				$('.calendario1,.calendario2').focus(
+			      function(){
+			        if( $('.ui-datepicker .flecha').length == 0){
+			          $('.ui-datepicker').prepend("<div class='flecha'></div>");
+			        }
+			      }
+			    );
+				$('.calendario1,.calendario2').focus(
+					function(){
+						if( $(this).hasClass('modal_calendar') ){
+							$('.ui-widget').css({'top':($(this).offset().top - $(document).scrollTop() -63)+'px','left':($(this).offset().left+115)+'px', 'z-index':'99999999'});
+						}else{
+							$('.ui-widget').css({'top':($(this).offset().top-67)+'px','left':($(this).offset().left+95)+'px', 'z-index':'99999999'});
+						}
+						if( $('.ui-datepicker .close').length == 0){
+							$('.ui-datepicker').append("<div class='close'></div>");
+						}
+						$('.ui-datepicker').find('.close').click(function(){
+							$('.input_calendar').datepicker( "hide" );
+						});
+						
+					}
+				);
+				
+			   $(".otra_c1").click(function(){
+    				$('.calendario1').datepicker('show');
+			   });
+			   $(".otra_c2").click(function(){
+    				$('.calendario2').datepicker('show');
+			   });
+		
+		$.imageTick.logging = true;
+
+		//Por cada grupo de radio buttons repetir el siguiente código cambiando el name. Ademas ir cambiando la clase radios, para diferenciarla de los demas grupos.
+		//Radio Type of operation
+		$("input[name='typeOperation']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios1" 
+		});
+		
+		// Radio Type of Investment
+		$("input[name='typeInvestment']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios2" 
+		});
+		
+		//Radios Investment - Overlay Sceene7
+		$("input[name='typeRedemption']").imageTick({
+			tick_image_path: "../../../../JFP/regional/images/img_form/radio_check.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/radio_empty.png",
+			image_tick_class: "radios3" 
+		});
+		
+		//En el caso de los checkboxs se cambiará la imagen teniendo en cuenta el tipo de input, sin especificar su name.
+
+		$("input[type='checkbox']").imageTick({ 
+			tick_image_path: "../../../../JFP/regional/images/img_form/check_1.png", 
+			no_tick_image_path: "../../../../JFP/regional/images/img_form/no_check_1.png"
+		});
+		
+		
+	 //setTimeout("$('.scroll_y').tinyscrollbar({scroll:true,sizethumb:'auto',size:auto });",100);
+	 
+	 $('#scrollbar').tinyscrollbar({ size: 'auto' });
+	 $('#scrollbar').tinyscrollbar({ sizeThumb: 'auto' });
+      var autoHeight = $('#thumb').css("height");
+      $('#grip').css("height",autoHeight);
+
+
+
+	 });     
+	 	
+		function showS1_1(){
+		$('#imprimir').hide();
+		$('#principal1').show();
+		$('#principal2').hide();
+		$('#punteada2').show();
+		
+		$("#select1_1 option[value='0']").attr("selected",true);
+		$("#select1_2 option[value='0']").attr("selected",true);
+		$("#select1_3 option[value='0']").attr("selected",true);
+		$("#select1_4 option[value='0']").attr("selected",true);
+		$("#select1_5 option[value='0']").attr("selected",true);
+		val1=0;
+		val2=0;
+		val3=0;
+		val4=0;
+		val5=0;
+		$('#tick_img_typeInvestment3').trigger('click');
+			
+		$('#punteada1').show();
+		$('#step1_1').show();
+		
+		$('#cale1').val('');
+		
+		$('#step1_2').hide();
+		$('#step1_3').hide();
+		$('#step1_4').hide();
+		$('#step1_5').hide();
+		$('#step1_52').hide();
+		$('#step1_6').hide();
+		$('#step1_7').hide();
+		$('#step1_8').hide();
+		}
+		
+		var val1 = 0;
+		function showS1_2(){
+			
+			if(val1==0){
+			
+			$('#step1_2').hide();
+			$('#step1_3').hide();
+			$('#step1_4').hide();
+			$('#step1_5').hide();
+			$('#step1_6').hide();
+			$('#step1_7').hide();
+			$('#step1_8').hide();
+			
+			$("#select1_2 option[value='0']").attr("selected",true);
+			$("#select1_3 option[value='0']").attr("selected",true);
+			$("#select1_4 option[value='0']").attr("selected",true);
+			$("#select1_5 option[value='0']").attr("selected",true);
+			val2=0;
+			val3=0;
+			val4=0;
+			val5=0;
+			
+			$('#tick_img_typeInvestment3').trigger('click');
+			//document.getElementById("tick_img_typeInvestment3").click();
+			$("#cale1").val(" ");
+			setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},800);
+			
+			}else{$('#step1_2').show();}
+		}
+		var val2 = 0;
+		function showS1_3(){
+			
+			if(val2==0){
+			$('#step1_3').hide();
+			}else{
+				$('#step1_3').show();
+				$('#tick_img_typeInvestment3').hide();
+				}
+		}
+		function showS1_4(){
+			$('#existenteL1').show();
+			$('#existenteL2').hide();
+			$('#inver').val('');
+			$('#inver').attr('disabled', true);
+			$('#inver').addClass('F0F0F0');
+			$('#step1_4').show();
+		}
+
+		function showS1_42(){
+			$("#select1_3 option[value='0']").attr("selected",true);
+			$("#select1_4 option[value='0']").attr("selected",true);
+			$("#select1_5 option[value='0']").attr("selected",true);
+			val3=0;
+			val4=0;
+			val5=0;
+			$("#cale1").val(" ");
+			
+			$('#existenteL1').hide();
+			$('#existenteL2').show();
+			$('#step1_4').hide();
+			$('#step1_5').hide();
+			$('#step1_6').hide();
+			$('#step1_7').hide();
+			$('#step1_8').hide();
+			
+			$('#inver').val('');
+			$('#inver').attr('disabled', false);
+			$('#inver').removeClass('F0F0F0');
+			
+			setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},800);
+		}
+		
+		function showS1_43(){
+			
+			$('#existenteL1').hide();
+			$('#existenteL2').show();
+			$('#inver').val('900001');
+			$('#step1_4').show();
+			top.$.modal.close();
+		}
+		var val3 = 0;
+		function showS1_5(){
+			
+			if(val3==0){
+			$('#step1_5').hide();
+			$('#step1_52').hide();
+			$('#step1_6').hide();
+			$('#step1_7').hide();
+			$('#step1_8').hide();
+			$('#cale1').val('');
+			
+			$("#select1_4 option[value='0']").attr("selected",true);
+			$("#select1_5 option[value='0']").attr("selected",true);
+			val4=0;
+			val5=0;
+			
+			setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},800);
+			
+			}else{
+				$('#step1_5').show();
+				$('#step1_52').show();
+				setTimeout(function(){top.$('#iframeConte').css({'height':(450)+'px'});},800);
+			}
+		}
+		function showS1_6(){
+			$('#step1_52').hide();
+			$('#cale1').val('28');
+	    	$('#step1_6').show();
+			$('#ext6').show();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(475)+'px'});},800);
+		}
+		
+		var val4 = 0;
+		function showS1_7(){
+			
+			if(val4==0){
+			$('#step1_7').hide();
+			$('#ext6').show();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(475)+'px'});},800);
+			}else{
+				$('#step1_7').show();
+				$('#ext6').hide();
+				setTimeout(function(){top.$('#iframeConte').css({'height':(500)+'px'});},800);
+			}
+		}
+		var val5 = 0;
+		function showS1_8(){
+			
+			if(val5==0){
+			$('#step1_8').hide();
+			}else{
+				$('#step1_8').show();
+				$('#punteada1').hide();
+				setTimeout(function(){top.$('#iframeConte').css({'height':(600)+'px'});},800);
+			}
+		}
+		
+		function continuar1(){
+			$('#titulo').hide();
+			$('#principal1').hide();
+			$('#continuar1').show();
+			$('#aceptar1').hide();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(570)+'px'});},800);
+		}
+		
+		
+		function aceptar1(){
+			$('#titulo').hide();
+			$('#principal1').hide();
+			$('#continuar1').hide();
+			$('#aceptar1').show();
+			$('#imprimir').show();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(650)+'px'});},800);
+		}
+		
+		function regresar1_1(){
+			$('#titulo').show();
+			$('#principal1').show();
+			$('#continuar1').hide();
+			$('#aceptar1').hide();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(600)+'px'});},800);
+		}
+		
+		
+		/* Funciones  radio 2*/
+		
+		function showS2_1(){
+			$('#imprimir').hide();
+			$('#tick_img_typeInvestment3').trigger('click');
+			$('#principal1').hide();
+			$('#punteada1').hide();
+			$('#continuar1').hide();
+			$('#aceptar1').hide();
+			$('#step1_52').hide();
+			$('#step1_8').hide();
+			
+			$('#principal2').show();
+			
+			$('#step2_1').show();
+			$("#select2_1 option[value='0']").attr("selected",true);
+			val6=0;
+			$('#tick_img_typeRedemption3').trigger('click');
+			$('#inver2').val(" ");
+			$('#import2').val(" ");
+			
+			$('#step2_2').hide();
+			$('#step2_3').hide();
+			$('#step2_4').hide();
+			$('#step2_42').hide();
+			$('#punteada2').show();
+			
+			setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},800)
+		}
+		
+		var val6 = 0;
+		function showS2_2(){
+			
+			if(val6==0){
+			
+			$('#step2_2').hide();
+			$('#step2_3').hide();
+			$('#step2_4').hide();
+			$('#step2_42').hide();
+			
+			$("#select2_1 option[value='0']").attr("selected",true);
+			$("#select1_2 option[value='0']").attr("selected",true);
+			val6=0;
+			val7=0;
+			
+			$('#tick_img_typeRedemption3').trigger('click');
+			$("#inver2").val(" ");
+			('#import2').val(" ");
+			setTimeout(function(){top.$('#iframeConte').css({'height':(415)+'px'});},800);
+			
+			}else{$('#step2_2').show();}
+		}
+		
+		function showS2_3(){
+			
+				$('#step2_3').show();
+				$('#tick_img_typeRedemption3').hide();
+		}
+		
+		function showS2_4(){
+			
+				$('#step2_4').show();
+				$('#import2').attr('disabled', true);
+				$('#import2').addClass('F0F0F0');
+				$('#import2').val('')
+				setTimeout(function(){top.$('#iframeConte').css({'height':(360)+'px'});},800);
+		}
+		
+		function showS2_42(){
+			
+				$('#step2_4').show();
+				$('#import2').attr('disabled', false);
+				$('#import2').removeClass('F0F0F0');
+				$('#import2').val('34,201.42')
+				setTimeout(function(){top.$('#iframeConte').css({'height':(360)+'px'});},800);
+		}
+		
+		var val7 = 0;
+		function showS2_5(){
+			
+			if(val7==0){
+			$('#step2_5').hide();
+			$('#step2_52').hide();
+			}else{
+				$('#punteada2').hide();
+				$('#step2_5').show();
+				$('#step2_52').show();
+				setTimeout(function(){top.$('#iframeConte').css({'height':(440)+'px'});},800);
+			}
+		}
+		function continuar2(){
+			$('#titulo').hide();
+			$('#principal2').hide();
+			$('#continuar2').show();
+			$('#aceptar2').hide();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(620)+'px'});},800);
+		}
+		
+		
+		function aceptar2(){
+			$('#titulo').hide();
+			$('#principal2').hide();
+			$('#continuar2').hide();
+			$('#aceptar2').show();
+			$('#imprimir').show();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(670)+'px'});},800);
+		}
+		
+		function regresar2_1(){
+			$('#titulo').show();
+			$('#principal2').show();
+			$('#continuar2').hide();
+			$('#aceptar2').hide();
+			setTimeout(function(){top.$('#iframeConte').css({'height':(660)+'px'});},800);
+		}
+		
+		
+		
+		function Layuda1(){
+			window.open('https://bancanet.banamex.com/ayudas/es/inversiones/A-plazo.htm','','height=786,width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+	   
+	   function Layuda1_2(){
+			window.open('https://bancanet.banamex.com/ayudas/en/inversiones/A-plazo.htm','','height=786,width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+	   
+	   function Layuda2(){
+		   if($("#typeOperation1").is(':checked')){ 
+		   	window.open('deposito_imprimir1.html', 'print', 'width=800, height=700, scrollbars=1');
+		   }else{
+			    window.open('deposito_imprimir2.html', 'print', 'width=800, height=700, scrollbars=1');
+				}
+	   }
+		function Link1(){
+			window.open('https://www.banamex.com/resources/bancanets/bnp/esp/contenedor/pdfs/plazos.pdf','','height=786,width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+	   function Link2(){
+			window.open('https://www.banamex.com/resources/bancanets/bnp/eng/contenedor/pdfs/plazos.pdf','','height=786,width=1024,top=0,left=0,resizable=yes,menubar=no,scrollbars=yes,titlebar=yes,toolbar=no,status=yes');
+       }
+	   
+	/* Valida Letras*/
+	   
+	function has_letras(text){ var letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-+°";
+				   for(i=0; i<text.length; i++){
+					  if (letters.indexOf(text.charAt(i),0)>-1){
+						 return false;
+					  }
+				   }
+				   return true;
+				}
+ 
+				function has_numeros(text){ var numbers="1234567890";
+				   for(i=0; i<text.length; i++){
+					  if (numbers.indexOf(text.charAt(i),0)>-1){
+						 return false;
+					  }
+				   }
+				   return true;
+				}
+					
+	function teclea(iden){
+	
+	var cadena;
+	var tamano;
+	
+	cadena=document.getElementById(iden).value;
+	tamano=cadena.length;
+	
+		if (has_letras(cadena)!=false && tamano<3){
+			document.getElementById(iden).value=cadena;
+			
+			} else {
+			document.getElementById(iden).value=cadena.substr(0,tamano-1);
+		}
+	}
+
+	function teclea7(iden){
+		var cadena;
+		var tamano;
+		cadena=document.getElementById(iden).value;
+		tamano=cadena.length;
+		if (has_letras(cadena)!=false && tamano<8){
+			document.getElementById(iden).value=cadena;
+		} else {
+			document.getElementById(iden).value=cadena.substr(0,tamano-1);
+		}
+	}
+	   
+</script> 
+      <script type="text/javascript" src="../../bbAvatar/js/swap.js"></script>
+        
+      </div>
+	</body>
+</html>

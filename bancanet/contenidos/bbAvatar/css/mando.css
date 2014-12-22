@@ -1,0 +1,4151 @@
+@charset "utf-8";
+
+
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, code, em, font, img, s, strong, sub, sup, b, u, center, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tr, th, td {
+
+	margin:0;
+
+	padding:0;
+
+	border:0;
+
+	font-size:12px;
+
+	font-family:Arial, Helvetica, sans-serif;
+
+	background: transparent;
+
+}
+
+html{
+
+	height: 100%;
+
+}
+
+
+
+ol, ul {
+
+	list-style: none;
+
+}
+
+a { 
+
+	color:#01589f; 
+
+	text-decoration:none; 
+
+}
+
+a:hover {
+
+	color:#1e87dd; 
+
+}
+
+.contendormaximo{
+
+	max-width:1280px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	width:expression( screen.width > 1280? '1280px':'auto'); 
+
+}
+
+
+
+.contenedor {
+
+	min-width:925px;
+
+	padding-left:35px;
+
+	padding-right:35px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	width:expression( screen.width <= 1024? '925px':'auto');
+
+}
+
+
+
+.cabeceraSup{
+
+	min-width:925px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	margin-bottom:9px;
+
+	background:none;
+
+}
+
+.top_cabecera{
+
+	background:#000;
+
+	width:auto;
+
+	overflow:hidden;
+
+	padding:3px 15px 3px 15px;
+
+	color:#FFFFFF;
+
+}
+
+.top_cabecera a{
+
+	font-size:11px;
+
+	color:#ffffff;
+
+	text-decoration:none;
+
+}
+
+.top_cabecera a:hover{
+
+	font-size:11px;
+
+	color:#ffffff;
+
+	text-decoration:underline;
+
+}
+
+
+
+.ancho708{ width:708px!important;}
+
+
+
+.marginT35{margin-top:35px;}
+
+.marginT102{margin-top:102px;}
+
+
+
+.contenedor_menus{
+
+	min-width:925px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	margin-bottom:29px;
+
+}
+
+.contenedor_menuSN {
+
+	width:100%;
+
+	min-width:925px;
+
+	height:20px;
+
+}
+
+.contenedor_menuSN a {
+
+
+
+}
+
+.exLiga{
+
+	color:#01589f;
+
+}
+
+.contenedor_menuSN a:hover {
+
+	color:#09347a;
+
+}
+
+.contenedor_menuTN_infoDe_text1 {
+
+	padding-top:9px;
+
+	text-align:right;
+
+	color:#666666;
+
+	padding-right:12px;
+
+	font-size:11px;
+
+}
+
+.contenedor_menuTN_infoDe_text2_b1 {
+
+	padding-top:5px;
+
+	padding-right:7px;
+
+	height:15px;
+
+	float:right;
+
+	color:#666666;
+
+	font-size:11px;
+
+}
+
+.contenedor_menuTN_infoDe_text2_b2 {
+
+	height:15px;
+
+	float:right;
+
+	color:#666666;
+
+	padding-left:23px;
+
+	margin-top:5px;
+
+	background:url(../images/marco.gif) -655px 0 no-repeat;
+
+	font-size:11px;
+
+}
+
+.contenedor_menuTN_infoDe_text2_b2 div{
+
+	background:url(../images/marco.gif) right 0 no-repeat;
+
+	padding-right:7px;
+
+	color:#FFF;
+
+	font-weight:bold;
+
+	font-size:11px;
+
+	padding-top:1px;
+
+	height:13px;
+
+	float:left;
+
+	font-size:11px;
+
+}
+
+.msj{
+
+	cursor:pointer;
+
+	height:15px;
+
+	width:100px;
+
+	float:right;
+
+	text-align:center;
+
+	vertical-align:middle;
+
+	padding-top:6px;
+
+	margin-right:20px;
+
+	text-decoration: underline;
+
+}
+
+.contenedor_menuTN_infoDe_text2_b3 {
+
+	padding-top:5px;
+
+	padding-left:5px;
+
+	height:15px;
+
+	float:right;
+
+	font-size:11px;
+
+}
+
+.contenedor_menuTN_infoDe_text2_b3 a {
+
+	text-decoration:underline;
+
+	color:#;
+
+	font-size:11px;
+
+}
+
+.contenedor_menuTN_infoDe_text2_b3 a:hover {
+
+	color:#1e87dd;
+
+	text-decoration:underline;
+
+}
+
+.contenedor_menuTN_infoDe a {
+
+	
+
+}
+
+.contenedor_menuTN_infoIz {
+
+	height:45px;
+
+	width:420px;
+
+	padding-top:0px;
+
+	line-height:12px;
+
+	float:left;
+
+}
+
+.contenedor_menuTN_infoIz_text1 {
+
+	padding-top:9px;
+
+	font-weight:bold;
+
+	color:#333333;
+
+	float:left;
+
+}
+
+.contenedor_menuTN_infoIz_text1 .text{
+
+	padding-top:9px;
+
+	font-weight:normal;
+
+	color:#333333;
+
+	font-size:11px!important;
+
+}
+
+.contenedor_menuTN_infoIz_text1 a{
+
+	text-decoration:underline;
+
+	font-size:11px!important;
+
+}
+
+.contenedor_menuTN_infoIz_text1 a:hover{
+
+	text-decoration:underline;
+
+	font-size:11px!important;
+
+}
+
+.contenedor_menuTN_infoIz_text2 {
+
+	padding-top:5px;
+
+	font-size:11px;
+
+	color:#666666;
+
+}
+
+.contenedor_menuTN_infoIz_text2 a {
+
+	color:#1e87dd;
+
+	text-decoration:underline;
+
+	font-size:11px;
+
+}
+
+.contenedor_menuTN_infoIz_text2 a:hover {
+
+	color:#09347a;
+
+	text-decoration:underline;
+
+}
+
+.contenedor_menuPrinc{
+
+	min-width:915px;
+
+	height:30px;
+
+	background: #01589f;
+
+	width:auto;
+
+	margin:0px 0 1px 0;
+
+	padding-left:10px;
+
+	position:relative;
+
+}
+
+.menuSegundoNivel{
+
+	float:left;
+
+	min-width:580px;
+
+	padding-top:2px;
+
+}
+
+.menuSegundoNivel div {
+
+	float:left;
+
+	
+
+}
+
+.menuSegundoNivel a {
+
+	font-size:12px;
+
+}
+
+.menuSegundoNivel a:hover {
+
+	color:#09347a;
+
+	text-decoration:underline;
+
+}
+
+.menuSegundoNivel div div{
+
+	padding-left:10px;
+
+	padding-right:10px;
+
+	padding-top:1px;
+
+	float:left;
+
+}
+
+.borderLeft_01589f{border-left:1px solid #01589f;}
+
+.oculto{
+
+	display:none;
+
+}
+
+.displayN{
+
+	display:none;
+
+}
+
+.contenedorPie1{
+
+	min-width:925px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	color:#efefef;
+
+	height:18px;
+
+	padding-top:42px;
+
+	border-bottom:#e5e5e5 1px solid;
+
+	width:auto;
+
+}
+
+.contenedorPie2{
+
+	min-width:925px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	color:#efefef;
+
+	height:35px;
+
+	padding-top:0px;
+
+	width:auto;
+
+}
+
+.contenedorPie2_ligas1{
+
+	float:left;
+
+	height:25px;
+
+	padding-top:8px;
+
+	color:#01589f;
+
+}
+
+.contenedorPie2_ligas1 a{
+
+	color:#01589f;
+
+	font-size:9px;
+
+	text-decoration:underline;
+
+}
+
+.contenedorPie2_ligas1 a:hover{
+
+	color:#1e87dd;
+
+}
+
+.contenedorPie2_ligas2{
+
+	float:right;
+
+	height:25px;
+
+	padding-top:8px;
+
+	padding-left:25px;
+
+	color:#01589f;
+
+}
+
+.contenedorPie2_ligas2 a{
+
+	font-size:11px;
+
+	color:#01589f;
+
+	text-decoration:underline;
+
+}
+
+.contenedorPie2_ligas2 a:hover{
+
+	color:#1e87dd;
+
+}
+
+.contenedorPie2_ligas3{
+
+	float:right;
+
+	height:25px;
+
+	padding-top:8px;
+
+	color:#01589f;
+
+}
+
+.contenedorPie2_ligas3 a{
+
+	font-size:11px;
+
+	color:#01589f;
+
+	text-decoration:underline;
+
+}
+
+.contenedorPie2_ligas3 a:hover{
+
+	color:#1e87dd;
+
+}
+
+
+
+.contenedorTitulo{
+
+	min-width:925px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	margin-top: -20px;
+
+	height:35px;
+
+	width:auto;
+
+}
+
+.contenedorTitulo_tit1 {
+
+	font-size:30px;
+
+	color:#09347a;
+
+	line-height:24px;
+
+	float:left;
+
+	padding-top:0px;
+
+	font-weight:bold;
+
+}
+
+.contenedorTitulo_tit1_btnBox {
+
+	float:left;
+
+	width:22px;
+
+	padding-left:2px;
+
+	height:19px;
+
+	cursor:default;
+
+	padding-top:5px;
+
+}
+
+.contenedorTitulo_tit1_btn {
+
+	background:#FFFFFF url(../images/marco.gif) right -29px no-repeat;
+
+	width:13px;
+
+	height:14px;
+
+	cursor:default;
+
+	margin-top:2px;
+
+}
+
+.contenedorTitulo_tit1_txt {
+
+	float:left;
+
+	cursor:default;
+
+}
+
+.contenedorTitulo_tit1_txt span {
+
+	font-size:24px;
+
+	color:#000000;
+
+	line-height:27px;
+
+	padding:0;
+
+	cursor:default;
+
+	font-weight:bold;
+
+}
+
+.contenedorTitulo_tit1_txt p {
+
+	font-size:11px;
+
+	color:#09347a;
+
+	cursor:default;
+
+}
+
+.contenedorTitulo_box1 {
+
+	float:right;
+
+	width:180px;
+
+	height:21px;
+
+}
+
+.saldos_btn1 {
+
+	width:20px;
+
+	height:20px;
+
+	cursor:pointer;
+
+	float:right;
+
+	background:#FFFFFF url(../images/marco.gif) -249px -0 no-repeat;
+
+}
+
+.saldos_btn1:hover{
+
+	background:#FFFFFF url(../images/marco.gif) -269px 0 no-repeat;
+
+}
+
+.saldos_btn2 {
+
+	width:23px;
+
+	height:21px;
+
+	margin-right:10px;
+
+	float:right;
+
+	cursor:pointer;
+
+	background:#FFFFFF url(../images/marco.gif) -289px -0 no-repeat;
+
+}
+
+.saldos_btn2:hover {
+
+	background:#FFFFFF url(../images/marco.gif) -312px 0 no-repeat;
+
+}
+
+.saldos_btn3 {
+
+	width:16px;
+
+	height:20px;
+
+	margin-right:10px;
+
+	cursor:pointer;
+
+	float:right;
+
+	background:#FFFFFF url(../images/marco.gif) -185px -0 no-repeat;
+
+}
+
+.saldos_btn3:hover {
+
+	background:#FFFFFF url(../images/marco.gif) -201px -0 no-repeat;
+
+}
+
+.saldos_btn4 {
+
+	width:16px;
+
+	height:20px;
+
+	margin-right:10px;
+
+	cursor:pointer;
+
+	float:right;
+
+	background:#FFFFFF url(../images/marco.gif) -217px 0 no-repeat;
+
+}
+
+.saldos_btn4:hover {
+
+	background:#FFFFFF url(../images/marco.gif) -233px -0 no-repeat;
+
+}
+
+.saldos_btn5 {
+
+	width:24px;
+
+	height:22px;
+
+	margin-right:10px;
+
+	cursor:pointer;
+
+	float:right;
+
+	background:#FFFFFF url(../images/marco.gif) -186px -21 no-repeat;
+
+}
+
+.saldos_btn5:hover {
+
+	background:#FFFFFF url(../images/marco.gif) -211px -21px no-repeat;
+
+}
+
+
+
+.saldos_btn_PDF{
+
+	width:25px;
+
+	height:24px;
+
+	margin-right:10px;
+
+	cursor:pointer;
+
+	float:right;
+
+	background:#FFFFFF url(../images/marco.gif) -185px -21px no-repeat;
+
+}
+
+.saldos_btn_PDF:hover {
+
+	background:#FFFFFF url(../images/marco.gif) -210px -21px no-repeat;
+
+}
+
+
+
+
+
+.contenedorPrincipal{
+
+	min-width:925px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	width:auto;
+
+}
+
+.contenedorPrincipal2{
+
+	min-width:925px;
+
+	height:514px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+	width:auto
+
+}
+
+.paneles{
+
+	width:100%;
+
+}
+
+.paneles2{
+
+	margin-top:19px;
+
+	width:100%;
+
+}
+
+.panelIzquierdo{
+
+	background:none;
+
+	width:190px;
+
+	padding-right:10px;
+
+}
+
+.panelCentro{
+
+	background:#F2F2F2;
+
+	height:424px;
+
+}
+
+.panelCentro2{
+
+	width:auto;
+
+}
+
+.ifrContenedor{
+
+	width:100%;
+
+	height:444px;
+
+	overflow:hidden;
+
+}
+
+.panelDerecho{
+
+	height:auto;
+
+	width:310px;
+
+	padding-left:40px;
+
+	display:none
+
+}
+
+.panelIzquierdo2{
+
+	background:none;
+
+	padding-top:19px;
+
+	width:190px;
+
+	padding-right:10px;
+
+}
+
+.panelDerecho2{
+
+	height:auto;
+
+	padding-top:19px;
+
+}
+
+
+
+.panelDeContenedor2{
+
+	width:310px;
+
+	border-top:2px solid #999999;
+
+	border-bottom:2px solid #999999;
+
+	padding-top:20px;
+
+	padding-bottom:20px;
+
+	overflow:hidden;
+
+}
+
+
+
+.ligaPanel1{
+
+	padding-top:6px;
+
+	width:27px;
+
+	float:left;
+
+}
+
+.ligaPanel1 a{
+
+	color:#1e87dd;
+
+	text-decoration:underline;
+
+}
+
+.ligaPanel1 a:hover{
+
+	color:#09347a;
+
+	text-decoration:underline;
+
+}
+
+.encaPanelDe1{
+
+	width:300px;
+
+	color:#1e1e1e;
+
+	font-weight:bold;
+
+	font-size:14px;
+
+}
+
+.textPanelDe1{
+
+	width:300px;
+
+	padding-top:10px;
+
+	color:#666;
+
+	font-size:11px;
+
+}
+
+.textPanelDe1 a{
+
+	font-size:11px;
+
+	text-decoration:underline;
+
+}
+
+.textPanelDe1 a:hover{
+
+	color:#09347a;
+
+}
+
+.bgPanelSeparacion{
+
+	width:310px;
+
+	height:9px;
+
+	border-bottom:1px dotted #c0c0c0;
+
+}
+
+
+
+.menu3N{
+
+	width:205px;
+
+	border:1px solid #dedede;
+
+	float:left;
+
+	clear:both;
+
+}
+
+.menu3N a{
+
+	color:#1e87dd;
+
+}
+
+.menu3N a:hover{
+
+	color:#09347a;
+
+}
+
+.menu3N_p1{
+
+	width:auto;
+
+	padding-top:6px;
+
+	padding-bottom:6px;
+
+	line-height:14px;
+
+	padding-left:10px;
+
+	border-bottom:1px dotted #dedede;
+
+}
+
+.menu3N_p1 a{
+
+	color:#01589f;
+
+}
+
+.menu3N_p1 a:hover{
+
+	color:#1e87dd;
+
+}
+
+.menu3N_p2{
+
+	width:auto;
+
+	padding-left:10px;
+
+	padding-top:5px;
+
+	line-height:14px;
+
+	padding-bottom:5px;
+
+	line-height:14px;
+
+	border-bottom:1px dotted #dedede;
+
+}
+
+.menu3N_p2 a{
+
+	color:#01589f;
+
+}
+
+.menu3N_p2 a:hover{
+
+	color:#1e87dd;
+
+}
+
+.menu4NConte{
+
+	width:auto;
+
+	padding-left:25px;
+
+	padding-right:5px;
+
+	padding-top:5px;
+
+	padding-bottom:5px;
+
+	display:none;
+
+	overflow:hidden;
+
+	border-bottom:1px dotted #c0c0c0;
+
+}
+
+.menu3N_p4{
+
+	width:auto;
+
+	color:#01589f;
+
+	padding-right:5px;
+
+	border-bottom:#c0c0c0 1px dotted;
+
+}
+
+.menu3N_p4:hover{
+
+	color:#1e87dd;
+
+}
+
+
+
+.menu3N_p4h{
+
+	width:auto;
+
+	padding-right:5px; 
+
+	border-bottom:#c0c0c0 1px dotted;
+
+}
+
+.menu3N_p4in{
+
+	width:160px;
+
+	padding-left:10px;
+
+	padding-top:5px;
+
+	padding-bottom:5px;
+
+	padding-right:15px;
+
+	line-height:14px;
+
+	cursor:pointer;
+
+	background: url(../images/marco.gif) right -80 no-repeat;
+
+}
+
+.menu3N_p4inH{
+
+	background:url(../images/marco.gif) right -101px no-repeat;
+
+	color:#09344a;
+
+}
+
+.menu3N_p4inH a{
+
+	color:#09344a;			
+
+}
+
+
+
+.menu3N_p5{
+
+	border-bottom:#b2b2b2 1px dotted;
+
+	width:160px;
+
+	padding-top:5px;
+
+	padding-bottom:5px;
+
+	line-height:14px;
+
+}
+
+.menu3N_p5b{
+
+	width:160px;
+
+	padding-top:5px;
+
+	padding-bottom:5px;
+
+	line-height:14px;
+
+}
+
+
+
+.menu3N_p6{
+
+	width:185px;
+
+	color:#1e87dd;
+
+	padding-right:5px;
+
+	border-top:#e0e0e0 1px solid;
+
+	background:url(../images/menu3n_bg2.gif) bottom no-repeat;
+
+}
+
+.menu3N_p6h{
+
+	width:185px;
+
+	padding-right:5px;
+
+	background:url(../images/menu3n_bg1h.gif) left -1px no-repeat;
+
+	border-bottom:#e0e0e0 1px solid;
+
+}
+
+.menu3N_p6in{
+
+	width:160px;
+
+	padding-left:10px;
+
+	padding-top:6px;
+
+	padding-bottom:6px;
+
+	padding-right:15px;
+
+	line-height:14px;
+
+	cursor:pointer;
+
+	background: url(../images/marco.gif) right -80px no-repeat;
+
+}
+
+.menu3N_p6inH{
+
+	background:url(../images/marco.gif) right -101px no-repeat;
+
+	color:#09344a;
+
+}
+
+
+
+.menu3N_p7{
+
+	width:auto;
+
+	color:#01589f;
+
+	padding-right:5px;
+
+	border-bottom:#c0c0c0 1px dotted;
+
+}
+
+.menu3N_p7:hover{
+
+	color:#1e87dd;
+
+}
+
+.menu3N_p7h{
+
+	width:auto;
+
+	padding-right:5px;
+
+	border-bottom:#c0c0c0 1px dotted;
+
+}
+
+.menu3N_p7in{
+
+	width:160px;
+
+	padding-left:10px;
+
+	padding-top:6px;
+
+	padding-bottom:6px;
+
+	padding-right:15px;
+
+	line-height:14px;
+
+	cursor:pointer;
+
+	background: url(../images/marco.gif) right -80px no-repeat;
+
+}
+
+.menu3N_p7inH{
+
+	background:url(../images/marco.gif) right -101px no-repeat;
+
+	color:#09344a;
+
+}
+
+
+
+.menu3N_p3{
+
+	width:auto;
+
+	padding-left:10px;
+
+	line-height:14px;
+
+	padding-top:6px;
+
+	padding-bottom:6px;
+
+}
+
+.menu3N_p3 a{
+
+	color:#01589f;
+
+}
+
+.menu3N_p3 a:hover{
+
+	color:#1e87dd;
+
+}
+
+.panelIz2_conten1{
+
+	width:190px;
+
+	height:94px;
+
+	padding-top:15px;
+
+}
+
+.panelIz2_separacion{
+
+	width:190px;
+
+	height:15px;
+
+	font-size:30%;
+
+}
+
+.panelIz2_conten1_p1{
+
+	width:190px;
+
+	height:94px;
+
+	background:url(../images/bg1.gif) left -421px no-repeat;
+
+}
+
+.menu4N{
+
+	width:205px;
+
+	margin-top:20px;
+
+	float:left;
+
+	border-top:2px solid #999999;
+
+	border-bottom:2px solid #999999;
+
+	padding:5px 0 5px 0;
+
+}
+
+.menu4N_p1{
+
+	width:180px;
+
+	padding-left:10px;
+
+	padding-top:4px;
+
+	font-weight:bold;
+
+	height:22px;
+
+	color:#000;
+
+}
+
+.menu4N_p2{
+
+	width:170px;
+
+	padding-left:10px;
+
+	padding-right:10px;
+
+	padding-top:4px;
+
+	padding-bottom:4px;
+
+	color:#01589f;
+
+}
+
+.menu4N_p2 a{
+
+	color:#01589f!important;
+
+	text-decoration:underline;
+
+	font-size:11px;
+
+}
+
+.menu4N_p2 a:hover{
+
+	color:#1e87dd!important;
+
+}
+
+.conetnedorMenuDeLarge{
+
+	width:auto;
+
+	font-size:16px;
+
+	font-weight:bold;
+
+	background:#f2f2f2;
+
+	height:524px;
+
+}
+
+.conetnedorMenuDeLargeIn{
+
+	width:auto;
+
+	padding-left:10px;
+
+	padding-top:10px;
+
+	font-size:16px;
+
+	font-weight:bold;
+
+	background:#f2f2f2;
+
+	height:514px;
+
+}
+
+.contenedorCont{
+
+	width:auto;
+
+	overflow:hidden;
+
+}
+
+.cortinaPrincipal{
+
+	background:#FFFFFF;
+
+	padding:0px;
+
+	display:none;
+
+	float:left;
+
+	overflow:hidden;
+
+	margin:0px;
+
+	margin-top:-524px;
+
+	width:100%;
+
+	z-index:3000;
+
+	position:relative;
+
+}
+
+.cortiContPrincipal{
+
+	background:#FFF;
+
+	padding:0px;
+
+	overflow:hidden;
+
+	height:350px;
+
+	top:240px;
+
+	z-index:3000;
+
+	position:absolute;
+
+	bottom:350px;
+
+}
+
+.cortiContIfr{
+
+	background:#FFFFFF;
+
+	padding:0px;
+
+	overflow:hidden;
+
+	height:100px;
+
+	top:260px;
+
+	z-index:2999;
+
+	position:absolute;
+
+	left:250px;
+
+	display:none
+
+}
+
+
+
+div#menu {
+
+	height: 30px;
+
+	width:auto;
+
+	float:left;
+
+}
+
+div#menup {
+
+	height: 40px;
+
+	float:left;
+
+	width:5px;
+
+}
+
+div#menu ul {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    float: left;
+
+}
+
+div#menu ul.menu {
+
+    padding-right: 0px;
+
+}
+
+div#menu li {
+
+    position: relative;
+
+    margin: 0;
+
+	margin-right:0px;
+
+    padding:0;
+
+    display: block;
+
+    float: left;
+
+    z-index: 9;
+
+    width: auto;
+
+	font-weight:bold;
+
+}
+
+div#menu ul ul li {
+
+    z-index: 10;
+
+}
+
+div#menu li:hover>div {
+
+    visibility: visible;
+
+}
+
+div#menu a {
+
+    position: relative;
+
+    z-index: 11;
+
+    height: 30px;
+
+    display: block;
+
+    float: left;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    width: auto;
+
+    text-align:center;
+
+}
+
+div#menu span {
+
+	padding-left:4px;
+
+	padding-right:0px;
+
+	padding-top:5px;
+
+	color: #fff;
+
+	background: none;
+
+	display: block;
+
+	font-size:12px;
+
+	line-height:21px;
+
+	cursor: pointer;
+
+	background-repeat: no-repeat;
+
+	background-position: 95% 0;
+
+	text-align: center;
+
+}
+
+
+
+div#menu a {
+
+    padding: 0px 5px 0 0;
+
+    line-height: 18px;
+
+    height: 31px;
+
+    margin-right: 5px;
+
+    background: none;
+
+}
+
+div#menu li.current a,
+
+div#menu ul.menu>li:hover>a {
+
+	color:#003066;
+
+}
+
+div#menu li.current a span,
+
+div#menu ul.menu>li:hover>a span {
+
+	color:#003066;
+
+    
+
+}
+
+div#menu ul.menu>li:hover>a span {
+
+	
+
+
+
+}
+
+div#menu li.last { background: none; }
+
+
+
+div#menu li.back {
+
+	background:#FFFFFF;
+
+    width: 5px;
+
+    height: 30px;
+
+    z-index: 8;
+
+    position: absolute;
+
+    padding: 0;
+
+    margin: 0px 0 0 0;
+
+}
+
+div#menu li.back .left {
+
+    padding:0;
+
+    width:auto;
+
+    height: 40px;
+
+    margin: 0 5px 0 5px;
+
+    float: none;
+
+    position: relative;
+
+    top: 0;
+
+    left: 0;
+
+    visibility: visible;
+
+}
+
+
+
+div#menu span.sih{
+
+	color:#003066;
+
+}
+
+
+
+#ventanaEmergente-contenido{
+
+	display:none;
+
+	width:40px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+}
+
+.ventanaEmergente_body{
+
+	background:#FFFFFF; 
+
+	border:2px solid #DEDEDE; 
+
+	padding:20px;
+
+}
+
+
+
+#cortinaOverlay {
+
+	background-color:#FFFFFF; 
+
+	cursor:pointer;
+
+}
+
+.encaVentanaEmergente{
+
+	height:15px;
+
+	padding-left:10px;
+
+	padding-right:10px;
+
+}
+
+
+
+#mensajeError_contenido {
+
+	background-color:#ffffff;
+
+	padding-top:5px;
+
+	display:none;
+
+	padding-bottom:5px;
+
+	overflow:hidden;
+
+	padding-left:0px;
+
+	padding-right:0px;
+
+}
+
+.ventanaEmergente{
+
+	width:100%;
+
+}
+
+.mensajeError_encabezado {
+
+	width:100%;
+
+	overflow:hidden;
+
+	background:none;
+
+	height:15px;
+
+}
+
+.mensajeError_encabezadoBT {
+
+	font-size:30%;
+
+	background:#fff;
+
+}
+
+.mensajeError_encabezadoCT {
+
+	height:14px;
+
+	width:100%;
+
+	font-size:30%;
+
+	border-top:#7487ae 1px solid;
+
+	background:#fff;
+
+}
+
+.mensajeError_contenidoIn {
+
+	background:#ffffff;
+
+}
+
+.mensajeError_contenidoInb {
+
+	width:270px;
+
+	background:#ffffff;
+
+}
+
+.mensajeError_Fila1{
+
+	height:25px;
+
+	border-bottom:#d6d6d6 1px solid;
+
+}
+
+.mensajeError_Fila1b{
+
+	height:21px;
+
+}
+
+.mensajeError_Fila2{
+
+	font-size:12px;
+
+	padding-top:5px;
+
+	padding-bottom:5px;
+
+	font-size:11px;
+
+}
+
+.mensajeError_Fila3{
+
+	font-size:12px;
+
+	padding-top:25px;
+
+	height:20px;
+
+	font-size:11px;
+
+}
+
+.mensajeError_titulo1{
+
+	color:#ee2e24;
+
+	font-size:16px;
+
+	font-weight:bold;
+
+	padding-left:25px;
+
+	float:left;
+
+	background:url(../images/bg2.gif) -32px top no-repeat;
+
+}
+
+.mensaje_btn1{
+
+	height:25px;
+
+	float:right;
+
+	width:28px;
+
+}
+
+.mensajeError_txt1{
+
+	color:#666666;
+
+	font-size:14px;
+
+	font-weight:bold;
+
+	float:left;
+
+	padding-top:5px;
+
+}
+
+
+
+.colorCCC{
+
+	color:#CCCCCC!important;
+
+}
+
+.ancho20{
+
+	width:20px;
+
+	font-size:30%;
+
+}
+
+.ancho290{
+
+	width:290px;
+
+}
+
+.alto15{
+
+	height:15px!important;
+
+	font-size:30%;
+
+}
+
+.colorFF5C00{
+
+	color:#FF5C00!important;
+
+}
+
+.bgFFF{
+
+	background:#FFF;
+
+}
+
+.coloree2e24{
+
+	color:#ee2e24!important;
+
+}
+
+.color333{
+
+	color:#333333!important;
+
+}
+
+.color666{
+
+	color:#666666!important;
+
+}
+
+.paddingRight10{
+
+	padding-right:10px;
+
+}
+
+.margin0{
+
+	margin:0!important;
+
+}
+
+.marginT20{
+
+	margin-top:20px;
+
+}
+
+.negrita{
+
+	font-weight:bold;
+
+}
+
+.floatL{
+
+	float:left;
+
+}
+
+.floatR{
+
+	float:right;
+
+}
+
+
+
+.panelIzEnca3_text2{
+
+	font-size:14px;
+
+	font-weight:bold;
+
+	padding-top:4px;
+
+}
+
+.tablaSaldos3{
+
+}
+
+.tablaSaldos3 td{
+
+	padding:5px 10px 5px 10px;
+
+	color:#666;
+
+	font-size:11px;
+
+	line-height:12px;
+
+}
+
+.tablaSaldos3 span{
+
+	font-weight:bold;
+
+	color:#333;
+
+	font-size:11px;
+
+}
+
+.tablaSaldos3 p{
+
+	color:#333;
+
+	font-weight:bold;
+
+	font-size:12px;
+
+}
+
+.tablaSaldos3 a{
+
+	font-size:11px;
+
+	text-decoration:underline;
+
+}
+
+.tablaSaldos2_bordeR{
+
+	border-right:#cdcecf 1px solid;
+
+}
+
+.saldos_btn6{
+
+	width:11px;
+
+	height:11px;
+
+	cursor:pointer;
+
+	background:url(../images/marco.gif) -367px 0 no-repeat;
+
+}
+
+.bgF0F4F9{
+
+	background:#F0F4F9;
+
+}
+
+.borderTDotted{
+
+	border-top:#c0c0c0 1px dotted;
+
+}
+
+.bge2f2fe{
+
+	background:#e2f2fe;
+
+}
+
+.paddingB3{
+
+	padding-bottom:3px;
+
+}
+
+.paddingT2{
+
+	padding-top:2px;
+
+}
+
+.paddingT3{
+
+	padding-top:3px;
+
+}
+
+.paddingL20{
+
+	padding-left:20px;
+
+}
+
+.paddingL25{
+
+	padding-left:25px;
+
+}
+
+.paddingT5{
+
+	padding-top:5px;
+
+}
+
+.paddingT15{
+
+	padding-top:15px;
+
+}
+
+.paddingT10{
+
+	padding-top:10px;
+
+}
+
+.padding0{
+
+	padding:0px;
+
+}
+
+.paddingB15{
+
+	padding-bottom:15px;
+
+}
+
+.paddingB10{
+
+	padding-bottom:10px;
+
+}
+
+.paddingB20{
+
+	padding-bottom:20px;
+
+}
+
+
+
+.ancho50p{
+
+	width:50%!important;
+
+}
+
+.ancho100{
+
+	width:100px;
+
+}
+
+.ancho100p{
+
+	width:100%;
+
+}
+
+.ancho300{
+
+	width:300px!important;
+
+}
+
+.ancho420{
+
+	width:420px!important;
+
+}
+
+.ancho450{
+
+	width:450px!important;
+
+}
+
+.ancho500{
+
+	width:500px!important;
+
+}
+
+.ancho600{
+
+	width:600px!important;
+
+}
+
+.ancho640{
+
+	width:640px!important;
+
+}
+
+.alto400{
+
+	height:400px;
+
+}
+
+.paddingL35{
+
+	padding-left:35px;
+
+}
+
+.paddingR35{
+
+	padding-right:35px;
+
+}
+
+.overflow{ overflow:hidden;}
+
+.underline{ text-decoration:underline;}
+
+.saldos_bordeInfIz5_2{
+
+	width:10px;
+
+	background:url(../images/saldos_bordeInfDe5_2.gif) left top no-repeat;
+
+	height:25px;
+
+}
+
+.saldos_bordeInfCe5_2{
+
+	background:url(../images/saldos_bordeInfCe5_2.gif) top;
+
+	height:23px;
+
+	padding-top:2px;
+
+	padding-left:2px;
+
+}
+
+.saldos_bordeInfCe5_2 div{
+
+	font-size:12px;
+
+	color:#FFF;
+
+	float:left;
+
+}
+
+.saldos_bordeInfCe5_2 a{	
+
+	color:#FFFFFF;
+
+	padding-top:4px;
+
+	text-decoration:underline;
+
+	font-size:12px;
+
+	font-weight:normal;
+
+	font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.saldos_bordeInfCe5_2 a:hover{
+
+	color:#FFFFFF;	
+
+	text-decoration:underline;
+
+}
+
+.saldos_bordeInfDe5_2{
+
+	width:10px;
+
+	background:url(../images/saldos_bordeInfIz5_2.gif) left top no-repeat;
+
+	height:25px;
+
+	font-size:30%;
+
+}
+
+.nota_at_2{
+
+	text-align:center;
+
+	width:auto;
+
+	height:23px;
+
+	border-left:#7386ad 1px solid;
+
+	border-right:#7386ad 1px solid;
+
+	color:#656565;
+
+	font-size:11px;
+
+}
+
+.input{
+
+	margin:0px;
+
+	padding:0px;
+
+	border:#DEDEDE 1px solid;
+
+	padding-left:5px;
+
+	padding-right:5px;
+
+	padding-top:2px;
+
+	color:#666;
+
+	font-size:12px;
+
+	height:17px;
+
+}
+
+.input_d{
+
+	margin:0px;
+
+	padding:0px;
+
+	border:#DEDEDE 1px solid;
+
+	background:#EEEEEE;
+
+	padding-left:5px;
+
+	padding-right:5px;
+
+	padding-top:2px;
+
+	color:#666;
+
+	font-size:11px;
+
+	height:17px;
+
+}
+
+.busqueda_txt{
+
+	padding-left:36px;
+
+	color:#666666;
+
+	font-size:11px;
+
+}
+
+.paddingL4{
+
+	padding-left:4px;
+
+}
+
+.saldos_bordeSupIz2c_2{
+
+	width:10px;
+
+	background:url(../images/esquinaL.gif) no-repeat;
+
+	height:10px;
+
+	font-size:30%;
+
+}
+
+.bordeSupCe2c_2{
+
+	background:url(../images/bordeT_2.gif) bottom;
+
+}
+
+.saldos_bordeInfDe2c_2{
+
+	width:10px;
+
+	background:url(../images/esquinaR.gif) no-repeat;
+
+	height:10px;
+
+	font-size:30%;
+
+}
+
+.sel_num{ 
+
+	background:#ee8324;
+
+	color:#fff;
+
+}
+
+.saldos_bloque1_tit1_txt_2{
+
+	cursor:default;
+
+	width:450px;
+
+	color:#666;
+
+}
+
+.normal{ font-weight:normal;}
+
+.borderRPunteado{
+
+	border-right:#c0c0c0 1px dotted;
+
+}
+
+.colorF00{ color:#F00!important;}
+
+.color000{ color:#000!important;}
+
+.f11{ font-size:11px!important;}
+
+.f12b{ font-size:12px!important;}
+
+
+
+.mensajeError_Fila1_2{
+
+	border-bottom:#d6d6d6 1px solid;
+
+}
+
+.clear{
+
+	clear:both;
+
+}
+
+.paddingB5{
+
+	padding-bottom:5px;
+
+}
+
+
+
+.menu4N a{
+
+	font-size:11px;
+
+	color:#1e87dd;
+
+	text-decoration:underline;
+
+}
+
+.menu4N a:hover {
+
+	color:#09347a;
+
+	text-decoration:underline; 
+
+}
+
+.mensajeError_contenidoInc {
+
+	width:390px;
+
+	background:#ffffff;
+
+}
+
+.alto100p{
+
+	height:100%;
+
+}
+
+.select1{
+
+	border:#7e9db9 1px solid;
+
+	width:175px;
+
+	color:#666;
+
+	height:20px;
+
+	padding-top:1px;
+
+	padding-bottom:2px;
+
+	font-size:11px;
+
+}
+
+.image_carousel{
+
+	width:auto;
+
+	border-top:2px solid #999999;
+
+	border-bottom:2px solid #999999;
+
+	margin-top:37px;
+
+}
+
+
+
+.contendo_carrusel{
+
+	padding-top:8px;
+
+	padding-bottom:8px;
+
+	width:auto;
+
+	overflow:hidden;
+
+}
+
+.opcion_carrusel{
+
+	width:205px;
+
+	height:78px;
+
+	float:left;
+
+	border:1px solid #dedede;	
+
+	background:#ffffff;
+
+}
+
+.carrusel_left{
+
+	background:url(../images/marco.gif) -562px 0 no-repeat;
+
+	width:29px;
+
+	height:80px;
+
+	float:left;
+
+	cursor:pointer;
+
+}
+
+.carrusel_right{
+
+	background:url(../images/marco.gif) -591px 0 no-repeat;
+
+	width:29px;
+
+	height:80px;
+
+	float:right;
+
+	cursor:pointer;
+
+}
+
+.margin_auto{
+
+	margin:0 auto 0 auto;
+
+}
+
+.marginL10{
+
+	margin-left:10px;
+
+}
+
+.ancho935{
+
+	width:935px;
+
+}
+
+.flecha_azul{
+
+	background:url(../images/marco.gif) -704px -42px no-repeat;
+
+	padding-left:5px;
+
+	margin-top:5px;
+
+}
+
+.flecha_azul a{
+
+	color: #666666;
+
+}
+
+.flecha_azul a:hover{
+
+	color: #333333;
+
+	text-decoration:underline;
+
+}
+
+.btnAZ86{
+
+	margin:0px;
+
+	padding:0px;
+
+	color:#FFF;
+
+	padding-bottom:2px;
+
+	height:20px;
+
+	width:86px;
+
+	background:url(../images/marco.gif) -390px 0 no-repeat;
+
+	border:0px;
+
+	cursor:pointer;
+
+}
+
+.btnAZ86:hover{
+
+	background:url(../images/marco.gif) -476px 0 no-repeat;
+
+}
+
+.btnRO86{
+
+	margin:0px;
+
+	padding:0px;
+
+	color:#FFF;
+
+	padding-bottom:2px;
+
+	height:20px;
+
+	width:86px;
+
+	background:url(../images/marco.gif) -390px -21 no-repeat;
+
+	border:0px;
+
+	cursor:pointer;
+
+}
+
+.btnRO86:hover{
+
+	background:url(../images/marco.gif) -476px -21 no-repeat;
+
+}
+
+.top4{
+
+	position:relative;
+
+	top:4px;
+
+}
+
+.bordeVentana{
+
+	border:15px solid #C0C0C0;
+
+}
+
+.marginB20{
+
+	margin-bottom:20px!important;
+
+}
+
+
+
+
+
+.saldos_bloque2_f4_error_display{
+
+	height:15px;
+
+	float:left;
+
+	padding-top:5px;
+
+	padding-left:17px;
+
+	background:url(../images/bg2.gif) -38px -18px no-repeat;
+
+	width:300px;
+
+}
+
+.saldos_bloque2_f4_error_display span{
+
+	color:#ee2e24;
+
+	font-size:11px;
+
+}
+
+
+
+.saldos_bloque2_f4_error{
+
+	height:15px;
+
+	float:left;
+
+	padding-top:5px;
+
+	display:none;
+
+	width:300px;
+
+}
+
+.saldos_bloque2_f4_error span{
+
+	color:#ee2e24;
+
+	background:url(../images/bg2.gif) -38px -23px no-repeat;
+
+	padding-left:17px;
+
+	display:none;
+
+	font-size:11px;
+
+}
+
+.ancho610{
+
+	width:610px!important;
+
+}
+
+.ancho1{width:1px!important;}
+
+.alto1{height:1px!important;}
+
+.colorFFF{color:#FFF!important;}
+
+.ancho155{width:155px!important;}
+
+.ancho190{width:190px!important;}
+
+.paddingL0{padding-left:0px!important;}
+
+
+
+.saldos_bloque2_f4_inp2{
+
+	float:left;
+
+	width:180px;
+
+}
+
+.saldos_bloque2_f4_inp3{
+
+	float:left;
+
+	width:100%;
+
+	padding-left:10px;
+
+	padding-top:4px;
+
+}
+
+.saldos_bloque2_f4_txt2{
+
+	color:#666666;
+
+	float:left;
+
+	font-size:11px;
+
+	width:100%;
+
+	padding-top:10px;
+
+}
+
+.saldos_bloque2_f52{
+
+	width:380px;
+
+	float:left;
+
+}
+
+.paddingB17{padding-bottom:17px!important;}
+
+.bgF1F2F2{ background:#F1F2F2;}
+
+#bannerIzq{ margin-top:20px;}
+
+
+
+
+
+
+
+.flecha_azul2{
+
+	background:url(../images/marco.gif) -704px -54px no-repeat ;
+
+	padding-left:7px;
+
+	margin-top:5px;
+
+}
+
+.flecha_azul2 a{
+
+	color: #666666;
+
+}
+
+.flecha_azul2 a:hover{
+
+	color: #333333;
+
+	text-decoration:underline;
+
+}
+
+.headerLeft{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) 0px -638px no-repeat;
+
+	width:276px;
+
+	height:80px;
+
+}
+
+.headerLeft_es{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/header_a.gif) top left no-repeat;
+
+	width:276px;
+
+	height:100px;
+
+}
+
+.headerLeft_en{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/eng/header_a.gif) top left no-repeat;
+
+	width:276px;
+
+	height:100px;
+
+}
+
+.headerCenter{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) 0px -719px repeat-x;
+
+	height:80px;
+
+}
+
+.headerCenter_es{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/header_b.gif) top repeat-x;
+
+	height:100px;
+
+}
+
+.headerCenter_en{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/eng/header_b.gif) top repeat-x;
+
+	height:80px;
+
+}
+
+.headerRight{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) 0px -44px no-repeat;
+
+	width:673px;
+
+	height:80px;
+
+	color:#01589f;
+
+}
+
+.headerRight_es{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/header_c.gif) top right no-repeat;
+
+	width:673px;
+
+	padding-right:0px;
+
+	height:100px;
+
+	color:#01589f;
+
+}
+
+.headerRight_en{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/eng/header_c.gif) top right no-repeat;
+
+	width:673px;
+
+	padding-right:0px;
+
+	height:100px;
+
+	color:#01589f;
+
+}
+
+
+
+.headerRight a{	
+
+	font-size:11px;
+
+	text-decoration:underline;
+
+}
+
+.headerRight a:hover{
+
+	text-decoration:underline;
+
+}
+
+.headerRight_es a{
+
+	color:#FFFFFF;
+
+	font-size:11px;
+
+	text-decoration:none;
+
+}
+
+.headerRight_es a:hover{
+
+	text-decoration:underline;
+
+}
+
+.headerRight_en a{
+
+	color:#FFFFFF;
+
+	font-size:11px;
+
+	text-decoration:none;
+
+}
+
+.headerRight_en a:hover{
+
+	text-decoration:underline;
+
+}
+
+
+
+.marginT75{margin-top:75px;}
+
+.marginR15{margin-right:15px!important;}
+
+.bannerGrande{
+
+	background:url(../images/Notificaciones.gif) no-repeat;
+
+	border:0 none;
+
+	width:310px;
+
+	height:123px;
+
+	margin-top:20px;
+
+}
+
+.bannerGrande_es{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) -295px -382px no-repeat;
+
+	border:0 none;
+
+	width:310px;
+
+	height:123px;
+
+	margin-top:20px;
+
+}
+
+.bannerGrande_en{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/eng/saldos_3.gif) no-repeat;
+
+	border:0 none;
+
+	width:310px;
+
+	height:123px;
+
+	margin-top:20px;
+
+}
+
+.panelDeContenedor1_c1_t1{
+
+	color:#666;
+
+	font-size:11px;
+
+	padding-top:29px;
+
+	line-height:12px;
+
+	padding-left:15px;
+
+}
+
+.panelDeContenedor1_c1_t2{
+
+	color:#666;
+
+	font-size:16px;
+
+	line-height:16px;
+
+	padding-top:0px;
+
+	font-weight:bold;
+
+	padding-left:15px;
+
+}
+
+.panelDeContenedor1_c1_t3{
+
+	padding-top:0px;
+
+	padding-left:15px;
+
+	height:26px;
+
+}
+
+.panelDeContenedor1_c1_t4{
+
+	color:#666;
+
+	font-size:11px;
+
+	padding-top:51px;
+
+	line-height:12px;
+
+	padding-left:15px;
+
+}
+
+
+
+.panelDeContenedor1{
+
+	width:310px;
+
+	height:90px;
+
+	clear:both;
+
+}
+
+
+
+.banner_peque_1{
+
+	background:url(../images/Horizontes.gif);
+
+	border:0 none;
+
+	width:150px;
+
+	height:90px;
+
+	float:left;
+
+}
+
+.banner_peque_1_es{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) -502px -599px no-repeat;
+
+	border:0 none;
+
+	width:150px;
+
+	height:90px;
+
+	float:left;
+
+}
+
+.banner_peque_1_en{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/eng/saldos_1.gif);
+
+	border:0 none;
+
+	width:150px;
+
+	height:90px;
+
+	float:left;
+
+}
+
+.banner_peque_2{
+
+	background:url(../images/Horizontes.gif);
+
+	border:0 none;
+
+	width:150px;
+
+	height:90px;
+
+	float:right;
+
+}
+
+
+
+.banner_peque_2_es{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) -502px -507px no-repeat;
+
+	border:0 none;
+
+	width:150px;
+
+	height:90px;
+
+	float:right;
+
+}
+
+.banner_peque_2_en{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/eng/saldos_2.gif);
+
+	border:0 none;
+
+	width:150px;
+
+	height:90px;
+
+	float:right;
+
+}
+
+.salida{
+
+	cursor:pointer;
+
+	height:25px;
+
+	width:50px;
+
+	float:right;
+
+	text-align:center;
+
+	vertical-align:middle;
+
+	padding-top:6px;
+
+	margin-right:10px;
+
+}
+
+
+
+.salida_img{
+
+	background:url(../images/SpriteLogIn.gif) -114px -68px no-repeat;
+
+	height:18px;
+
+	width:17px;
+
+	float:left;
+
+	margin-top:2px !important;
+
+}
+
+.salida_txt{
+
+	float:left;
+
+	margin-top:4px;
+
+	margin-left:3px;
+
+}
+
+.salida_txt a{
+
+	color: #ee2e24;
+
+	font-size:11px;
+
+	text-decoration:underline;
+
+}
+
+
+
+.productos{
+
+	cursor:pointer;
+
+	height:25px;
+
+	width:100px;
+
+	float:right;
+
+	text-align:center;
+
+	vertical-align:middle;
+
+	padding-top:6px;
+
+	margin-right:10px;
+
+}
+
+.productos_img{
+
+	background:url(../images/marco.gif) -635px -1px no-repeat;
+
+	height:18px;
+
+	width:18px;
+
+	float:left;
+
+	margin-top:2px;
+
+}
+
+.productos_txt{
+
+	float:left;
+
+	margin-top:4px;
+
+	margin-left:3px;
+
+	text-decoration: underline;
+
+}
+
+.productos_txt a{
+
+	font-size:11px;
+
+	text-decoration:underline;
+
+}
+
+
+
+.franja_header{
+
+	background:#01589f;
+
+	width:auto;
+
+	height:25px;
+
+	opacity: .85; 
+
+	filter:Alpha(Opacity=85);
+
+	color:#ffffff;
+
+	padding-right:15px;
+
+}
+
+
+
+
+
+.tooltipcopy{
+
+	border:1px solid #DEDEDE;
+
+	background:#F1F2F2;
+
+	padding:10px;
+
+	font-size:11px;
+
+	
+
+}
+
+.p_tooltipcopy{
+
+	background:url(../images/p-tooltip.gif) no-repeat;
+
+	width:10px;
+
+	height:10px;
+
+	float:right;
+
+	margin-right:5px;
+
+}
+
+
+
+#tooltip-copy{
+
+	position:absolute;
+
+	top:0;
+
+	display:none;
+
+	opacity:.8;
+
+	filter:Alpha(Opacity=80);
+
+}
+
+
+
+#tooltip{
+
+      position:absolute;
+
+      top:0;
+
+      left:0;
+
+      z-index:99999999;
+
+	  display:none;
+
+}
+
+
+
+.tooltipC{
+
+      background:#ffffff;
+
+      font-weight:bold;
+
+      font-size:11px;
+
+      color:#1e87dd;
+
+}
+
+.tooltipT{
+
+      border-top:2px solid #09347a;
+
+      background:#FFFFFF;
+
+}
+
+
+
+.tooltipB{
+
+      border-bottom:2px solid #09347a;
+
+      background:#FFFFFF;
+
+}
+
+.tooltipL{
+
+      border-left:2px solid #09347a;
+
+      background:#FFFFFF;
+
+}
+
+.tooltipR{
+
+      border-right:2px solid #09347a;
+
+      background:#FFFFFF;
+
+}
+
+.tooltipTL{
+
+      background:url(../images/tooltip.gif) top left no-repeat;
+
+      width:10px;
+
+      height:10px;
+
+}
+
+.tooltipTR{
+
+      background:url(../images/tooltip.gif) top right no-repeat;
+
+      width:10px;
+
+      height:10px;
+
+}
+
+
+
+.tooltipBL{
+
+      background:url(../images/tooltip.gif) bottom left no-repeat;
+
+      width:10px;
+
+      height:10px;
+
+}
+
+
+
+.tooltipBR{
+
+      background:url(../images/tooltip.gif) bottom right no-repeat;
+
+      width:10px;
+
+      height:10px;
+
+}
+
+
+
+.tooltipP{
+
+      background:url(../images/p_tooltip.gif) no-repeat;
+
+      width:15px;
+
+      height:10px;
+
+      float:right;
+
+      position:relative;
+
+      top:10px;
+
+}
+
+.tooltipP_2{
+
+      background:url(../images/p_tooltip2.gif) no-repeat;
+
+      width:15px;
+
+      height:10px;
+
+      float:right;
+
+      position:relative;
+
+      top:-10px;
+
+}
+
+.paddingB8{padding-bottom:8px;}
+
+
+
+
+
+.saldos_btn2b{
+
+       width:23px;
+
+       height:21px;
+
+       margin-right:10px;
+
+       float:right;
+
+       cursor:pointer;
+
+       background:#FFFFFF url(/bb/images/bg2.gif) left -128px no-repeat;
+
+}
+
+
+
+.btnRJ86{
+
+	margin:0px;
+
+	padding:0px;
+
+	color:#FFF;
+
+	padding-bottom:2px;
+
+	height:20px;
+
+	width:86px;
+
+	background:url(../images/marco.gif) -390px -21px no-repeat;
+
+	border:0px;
+
+	cursor:pointer;
+
+}
+
+.btnRJ86:hover{
+
+	background:url(../images/marco.gif) -476px -21px no-repeat;
+
+}
+
+
+
+
+
+@media print{
+
+    .noButton{ display: none}
+
+}
+
+
+
+
+
+.tablaSaldos4 {
+
+	padding-left:10px;
+
+	padding-right:10px;
+
+	font-size:11px;
+
+}
+
+.tablaSaldos4 a {
+
+	text-decoration:underline;
+
+	font-size:11px;
+
+}
+
+.tablaSaldos4 span {
+
+	font-weight:bold;
+
+	color:#333;
+
+	font-size:11px;
+
+}
+
+.tablaSaldos4 p {
+
+	font-weight:bold;
+
+	color:#333;
+
+	font-size:12px;
+
+}
+
+.tablaSaldos4 td {
+
+	padding:5px 10px 5px 10px;
+
+	color:#666;
+
+	font-size:11px;
+
+}
+
+
+
+.btntime
+
+{
+
+    float:right;
+
+    height:17px;
+
+    width:300px;
+
+}	
+
+
+
+.btntime a
+
+{
+
+    border: #DDDDDD outset 2px;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+
+    font-size: 10px;
+
+    color:#FFFFFF;
+
+    font-weight: bold;
+
+    padding-left:50px;
+
+    padding-right:50px;
+
+    text-decoration:none;
+
+    position:relative;
+
+    top:6px;
+
+    left:52px;
+
+	display:none;
+
+}
+
+
+
+.btntime a.two
+
+{
+
+	background-color:#8899AA;
+
+}
+
+
+
+.btntime a.one_on
+
+{
+
+	background-color:#DD0000;
+
+}
+
+
+
+.btntime a.one_off
+
+{
+
+	background-color:#FFFFFF;
+
+	color:#CC0000;
+
+}
+
+
+
+.nota_at a{ text-decoration:underline;}
+
+.nota_at a:hover{ text-decoration:underline;}
+
+
+
+.nota{
+
+	background:url(../images/nota.gif) repeat-x;
+
+	width:350px;
+
+	height:248px;
+
+}
+
+.pie_nota{
+
+	background:url(../images/esqnota.gif) no-repeat;
+
+	width:370px;
+
+	height:72px;
+
+}
+
+.padding20{
+
+	padding:20px
+
+}
+
+.paddingR15{
+
+	padding-right:15px!important;
+
+}
+
+
+
+.paddingR30{
+
+	padding-right:30px!important;
+
+}
+
+
+
+.paginacion .num{
+
+	padding:0 5px 0 5px;
+
+	border-right:1px solid #01589f;
+
+	text-decoration:none;
+
+	font-size:11px!important;
+
+}
+
+
+
+.paginacion .sel_num{
+
+	background:#01589f;
+
+	color:#fff;
+
+	padding:0 5px 0 5px;
+
+	cursor:default;
+
+	margin-left:-1px;
+
+	text-decoration:none;
+
+	font-size:11px!important;
+
+}
+
+
+
+.marginR10{
+
+	margin-right:10px!important;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-container {
+
+
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-direction-rtl {
+
+	direction: rtl;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-container-horizontal {
+
+    width: auto;
+
+    padding:0 53px 0 53px;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-clip-horizontal {
+
+    width:  auto;
+
+    height: 80px;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-item {
+
+    width: 205px;
+
+    height: 78px;
+
+	background:#FFF;
+
+	text-align:center;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-item-horizontal {
+
+	margin-left: 0;
+
+    margin-right: 12px;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-direction-rtl .jcarousel-item-horizontal {
+
+	margin-left: 10px;
+
+    margin-right: 0;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-item-placeholder {
+
+    background: #fff;
+
+    color: #000;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-next-horizontal {
+
+	margin-right:10px;
+
+	position:absolute;
+
+	top:0;
+
+	right:5px;
+
+    background:url(../images/marco.gif) -591px 0px no-repeat;
+
+    width:29px;
+
+    height:80px;
+
+    float:right;
+
+    cursor:pointer;
+
+}
+
+
+
+.jcarousel-skin-tango_main .jcarousel-prev-horizontal {
+
+	margin-left:10px;
+
+	position:absolute;
+
+	top:0;
+
+	left:5px;
+
+	background:url(../images/marco.gif) -562px 0px no-repeat;
+
+    width:29px;
+
+    height:80px;
+
+    float:left;
+
+    cursor:pointer;
+
+}
+
+ 
+
+.jcarousel-skin-tango_main .jcarousel-list-horizontal {
+
+	height:80px;
+
+}
+
+
+
+.f16{
+
+	font-size:16px;
+
+}
+
+.colorCC0000{
+
+	color:#CC0000;
+
+}
+
+
+
+.f22{font-size:22px;}
+
+
+
+.bordePosIt{
+
+	border-top:10px solid #C0C0C0;
+
+	border-right:10px solid #C0C0C0;
+
+	border-left:10px solid #C0C0C0;
+
+}
+
+#ventanaEmergente-contenidoEspecial{
+
+	display:none;
+
+	width:40px;
+
+	margin-left:auto;
+
+	margin-right:auto;
+
+}
+
+.ventanaEmergente_body{
+
+	background:#FFFFFF; 
+
+	border:2px solid #DEDEDE; 
+
+	padding:20px;
+
+}
+
+#cortinaOverlayEspecial {
+
+	background-color:#FFFFFF; 
+
+	cursor:pointer;			
+
+}			
+
+.ventanaEmergenteEspecial{
+
+	width:100%;
+
+}
+
+.carruselsprite1{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) -423px -126px no-repeat;
+
+	width:205px; 
+
+	height:78px; 
+
+}
+
+.carruselsprite2{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) -423px -206px no-repeat;
+
+	width:205px; 
+
+	height:78px; 
+
+}
+
+.carruselsprite3{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) -423px -286px no-repeat;
+
+	width:205px; 
+
+	height:78px; 
+
+}
+
+.carruselsprite4{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) -295px -507px no-repeat;
+
+	width:205px; 
+
+	height:78px; 
+
+}
+
+.carruselsprite5{
+
+	background:url(https://www.banamex.com/resources/bancanets/bnp/banners/esp/SpriteNegocioEsp.gif) -295px -587px no-repeat;
+
+	width:205px; 
+
+	height:78px; 
+
+}
